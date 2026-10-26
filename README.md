@@ -56,9 +56,17 @@ Built for the Meta Global AI Developer Hackathon (Startup track, Build for Your 
 - The Mentor interview engine (Muse Spark 1.3).
 - The deterministic scoring engine implementing the published science map — [science-map.md](science-map.md).
 - The `/mentor` page (`web/mentor.html`).
+- The Mentor API (`server/`, deployed as a Vercel function at `careerglitch.com/api/mentor`) — the page runs the full live flow against it: Spark interview turns, the engine's verdict, and the Wonder report on hosts that hold the key.
+- The O*NET 30.2 data layer (`scripts/import_onet.py` → `data/onet-import.json`): real RIASEC profiles, work-values extents, abilities/skills vectors, tasks and Job Zones for **308 of the 339** professions, every mapping hand-reviewed. The other 31 have no clean O*NET occupation (creator-economy and absentee-owner cards) and are flagged, never force-matched.
 - The personal track.
 
 The profession database and the /start, /pivot, /bridge pages pre-date the hackathon. The Mentor is the new layer, built on top during the event.
+
+## Data & attribution
+
+This project includes information from the O*NET 30.2 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), used under the CC BY 4.0 license. O*NET® is a trademark of USDOL/ETA. Career Glitch has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications.
+
+Outlook and pay figures: U.S. Bureau of Labor Statistics, projections vintage 2025–35. The official BLS AI-exposure categories are carried as their own field (`bls_ai_exposure`), separate from outlook — populated only where an authoritative BLS statement was read, with its source attached; never inferred for the rest.
 
 ## Try it
 
@@ -74,9 +82,17 @@ python3 -m http.server 8080 --directory web
 # then open http://localhost:8080/mentor.html
 ```
 
-The page runs standalone in local guided mode: it walks every stage and collects structured answers on the device. The live interview needs the Meta Model API key, which is held in Muse's secure connector — never in this repo, never in the page. With no key present, nothing pretends to be the model.
+The page runs standalone in local guided mode: it walks every stage and collects structured answers on the device. Served from careerglitch.com it probes `/api/mentor` and switches to the live server flow automatically. The live interview needs the Meta Model API key, which is held in Muse's secure connector — never in this repo, never in the page. With no key present, nothing pretends to be the model: the deterministic flow still completes, and the written report refuses honestly instead of being fabricated.
 
-Session persistence is optional: `db/001_mentor_sessions.sql` is applied manually in the Supabase SQL editor; until then the page keeps state in `localStorage` only, by design.
+To run the full stack locally (API + page on one origin):
+
+```bash
+node server/local-server.mjs   # http://127.0.0.1:8377/mentor
+node scripts/verify_live_session.mjs http://127.0.0.1:8377
+node scripts/acceptance_c.mjs  # the 20-profession sourced-data cross-check
+```
+
+Session persistence: `db/001_mentor_sessions.sql` is applied manually in the Supabase SQL editor (no SQL channel exists from the build environment — the endpoint reports this honestly on every response and starts persisting the moment the table exists).
 
 ## Author
 

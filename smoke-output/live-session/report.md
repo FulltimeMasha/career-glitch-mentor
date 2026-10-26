@@ -1,58 +1,93 @@
-## 1. Your facts, played back plainly
+### 1. Your facts, played back plainly
 
-You are 30, currently working as a Retail Sales Associate, earning $38k. The minimum you need a new direction to reach is $40k — so this is not a move you can make for less money, and anything you choose has to clear that floor, not just match where you are now.
+You are 30, currently working as a Retail Sales Associate. You earn $38k now, and your income floor — the lowest you can honestly go — is $40k. So any next step has to clear at least $40k, not just eventually in theory, but as a real plan.
 
-Your real resources are solid on time and money for a start: you have 4 hours a day to give to this, a $20k budget, and a 12-month cushion. Your documents are in order, and you have no health limits to work around.
+Your real resources look like this:
 
-What you said matters most in work is relationships first, then support, then working conditions. Your energy themes are people and teaching. You have started 3 attempts before and finished 2, and money is the pattern that has stopped you before — you named money as a barrier again this time.
+- **Time:** 4 hours a day to work on a change
+- **Budget:** $20k available for training or getting started
+- **Cushion:** 12 months of living costs covered
+- **Documents:** in order — you said yes
+- **Health limits:** none listed
 
-## 2. Resources and constraints that shape what is honestly possible
+You also said what energises you is people and teaching. You ranked relationships first in what matters most to you at work, and support second. That helps explain why the three options below all sit in that people-facing world.
 
-Your cushion, budget, hours, and documents all support a genuine fresh start rather than a quick patch. Four hours a day is enough to train and test something properly, and 12 months of cushion means you do not have to take the first paid opening just to stay afloat.
+You have started 3 attempts at a change before and finished 2 of them. That's important — you do finish things. When you have stopped, money was the reason.
 
-Two constraints need respect:
+### 2. Resources and constraints that shape what is honestly possible
 
-- **Money is your known exit point.** It has ended attempts before, and it is your named barrier now. A plan that ignores early costs or slow early pay will likely break the same way.
-- **People support is your thinnest support.** Money, time, and learning access are stronger for you than having people around you to lean on. That matters because all three candidates below involve emotionally close work with people — you will need to build a small support circle on purpose, not assume one will appear.
+**What supports you:**
+Your cushion of 12 months and your $20k budget give you room that a lot of people don't have. Your documents being in order removes one common delay. With 4 hours a day, you have enough time for a real training or trial period, without having to quit your current job overnight.
 
-You named no red lines, which keeps these options open — it also means we have to judge them by fit and pay, not by a hard boundary you have set.
+**What constrains you:**
+Money is listed as your barrier, and it was also the pattern in past attempts where you stopped. That doesn't mean you can't do this. It means the plan has to protect your $40k floor and use that cushion carefully, step by step, rather than in one big leap.
 
-## 3. The top candidates
+People support is the thinnest support you listed — lower than your money, time, and learning access. For work that depends on referrals, clients, and word of mouth, that means building a small circle of contacts will need to be part of the plan, not an afterthought.
 
-Bands mode means these are worth taking seriously, not that they are proven yet. None of them has trial evidence behind it yet — you have not tested the day-to-day work — so the bands are wide and honest about that.
+You listed no red lines. That leaves the door open, but it doesn't remove the money test above.
 
-### Doula — Category A
-**LOVE 0.83–1.00 · POTENTIAL 0.74–1.00**
+You felt Doula was "mine" when you saw it. You felt Private Tutor (in person) and Tutoring Center Owner were "tolerable." That difference matters, and I'll keep it visible below.
 
-This is the one you called “mine,” and your facts line up with that. Your top values are relationships and support, your strongest interest area is people-focused work, and your energy themes are people and teaching — doula work is one-to-one support for a person through a major moment, with a lot of explaining and steadying as you go. The pay figure in your results is $45k, which clears your $40k floor, though not by a wide margin. Entry fits your 4 hours a day, your budget, and your documents according to your results. The strain is not fit — it is the thin people-support around you, because this work can be emotionally absorbing and you would be doing it largely on your own support base.
+### 3. The top candidates
 
-### Funeral Director — Category A
-**LOVE 0.82–1.00 · POTENTIAL 0.72–1.00**
+These are reported as bands, not a single clean verdict, because we don't yet have trial evidence from you actually doing the work. So read the ranges as honest uncertainty, not as a promise.
 
-On interests and values, this is a close second: it is people-facing, relationship-led work that involves supporting people and guiding them through practical steps when they are under strain. The pay figure in your results is $62k, comfortably above your $40k floor, and entry fits your time, budget, and documents. Where it strains is in your own reaction: you called this one “tolerable,” not “mine.” That does not rule it out, but it means we cannot argue it fits the way the doula option does — it fits your values and interests on paper, while your own first judgement was more cautious. Only real exposure will tell whether “tolerable” grows or hardens.
+**1. Doula — Category A**
+- LOVE 0.83–1.00
+- POTENTIAL 0.74–1.00
+- Pay listed: $45k
 
-### Nutrition Coach / Dietitian — Category A
-**LOVE 0.85–1.00 · POTENTIAL 0.69–1.00**
+Why it fits: It lines up with the strongest threads in your facts — people as an energy theme, relationships ranked first, support ranked second, and you yourself called this one "mine." The pay listed clears your $40k floor. Your budget, entry time, and documents were all rated as workable for this path, which is reflected in the POTENTIAL range.
 
-This has the highest LOVE band of the three, and it fits your people-and-teaching energy well: it is supportive, relationship-based work built around teaching people how to change daily habits. The pay figure in your results is $75k, the highest of the three and well above your floor, and your budget and documents fit. The strain is time to entry: your results show its entry path is the least aligned with your available time of the three, which is why its POTENTIAL band runs lower and wider than its LOVE band. You also called it “tolerable” rather than “mine.” So the honest read is: strong fit and strong pay, slower road in, and your own enthusiasm is not yet proven.
+Where it strains: Teaching is also one of your energy themes, and this leans less directly on teaching than tutoring does. And the POTENTIAL range is wide — 0.74–1.00 — because we have no trial yet. We don't know yet how the actual day-to-day of this work will feel to you at 2 a.m., on call, or in a hard moment.
 
-## 4. The honest BUT
+**2. Private Tutor (in person) — Category A**
+- LOVE 0.79–1.00
+- POTENTIAL 0.77–1.00
+- Pay listed: $45k
 
-- **No flags are attached to these three candidates, and all three pay figures clear your $40k floor.** The closest call is Doula at $45k — it clears the floor, but a slow start or fewer clients than expected could drop your actual early earnings near or below it. Treat that as a pay risk to test, not a guarantee.
-- **Money is where you usually quit.** You have finished 2 of 3 attempts, which is a good completion record, but money was the exit pattern. A training path that front-loads cost, or a first year with irregular income, is the exact shape most likely to break this plan. Your budget and cushion protect you — only if you track them month by month instead of discovering the squeeze late.
-- **None of these is trial-tested yet.** The wide bands are honest: we know your values and interests fit, we do not yet know how you feel at the end of a real day doing this work. That is especially true for Funeral Director and Nutrition Coach / Dietitian, where your own rating was “tolerable.”
-- **One option is deliberately set aside:** Online Tutor — Category C, LOVE 0.80–1.00, POTENTIAL 0.75–1.00 — carries a “NO” verdict flag in your results despite its bands, so it is not being put to you as a candidate. Its bands alone do not overrule that flag.
+Why it fits: This directly uses both of your energy themes: people and teaching. Relationships and support ranking high also fit one-to-one, in-person work better than working alone behind a screen. The pay listed clears your $40k floor, and budget, entry time, and documents were all rated as workable.
 
-## 5. The 90-day check plan
+Where it strains: You called this "tolerable," not "mine." That's not a reason to drop it — tolerable work that pays and uses your strengths can be a very good step. But it does mean we shouldn't pretend you felt the same pull here as with Doula. A short real trial will tell us more than any score can.
 
-**Days 1–14 — Pay and path reality check**
-Write down, for each candidate, the actual training route available to you, its total cost against your $20k budget, and how long it would take at 4 hours a day. Keep the receipts/notes: by day 14 you should have a one-page cost-and-time sheet for each, with the Doula $45k pay question — what early work actually pays — checked against a real source, not an assumption.
+**3. Tutoring Center Owner — Category A**
+- LOVE 0.79–1.00
+- POTENTIAL 0.77–1.00
+- Pay listed: $75k
 
-**Days 15–45 — Small real trials**
-Arrange one genuine taste of each candidate: shadowing, a supervised taster, or an honest conversation-plus-observation with someone doing the job. After each, write three lines the same day: what gave you energy, what drained you, whether “tolerable” moved. This written evidence is what we will use to narrow the wide bands.
+Why it fits: It draws on the same people-and-teaching interest as private tutoring, and the pay listed is well above your $40k floor. On interest alone, it scores in the same range as Private Tutor (in person).
 
-**Days 46–75 — Money stress-test and support build**
-Build a month-by-month 12-month budget using your cushion, showing training costs and lowest-realistic early income for your leading candidate. Name two people you can actually call on during training and early work, and tell them what you are doing — this is your evidence that the thin people-support gap is being closed on purpose.
+Where it strains: You are at a starting door, with 4 hours a day and a $20k budget. Owning a center is a bigger, more layered step than doing the tutoring yourself — it usually means running the business as well as serving learners. You also rated this "tolerable." So this reads honestly as a possible later direction once you have tutoring experience and income from it, rather than the safest first move now.
 
-**Days 76–90 — Check-in and decision**
-Bring four things to the check-in: (1) the cost-and-time sheets, (2) your same-day trial notes for each candidate, (3) the 12-month money plan showing you stay at or above your $40k floor path, and (4) one sentence per candidate on whether your own judgement still says “tolerable” or has changed. If the Doula pay picture cannot hold above your floor, or if a “tolerable” candidate stayed flat through a real trial, we cut it at the check-in rather than spending more of your budget finding out the harder way.
+### 4. The honest BUT
+
+Nothing here is hidden: none of the three candidates above carry a warning flag, and none have pay below your $40k floor. Doula and Private Tutor (in person) are listed at $45k — above the floor, but not by a large margin. Tutoring Center Owner is listed at $75k.
+
+What could break this plan:
+
+- **The money pattern.** You have named money as your barrier, and money is where past attempts stopped. If costs rise, income arrives slower than expected, or you have to drop shifts before the new income is stable, this is where pressure will show up first. The 12-month cushion helps, but only if spending is staged.
+- **No trial evidence yet.** All three POTENTIAL ranges are wide for a reason. Until you have shadowed, assisted, or taught a real session, we don't know how the work feels in practice — only that it fits on paper and, for Doula, that it felt like yours when you saw it.
+- **Where people usually quit.** Not at the start, when interest is high. They quit when the early work is unpaid or low-paid — finding first clients, learning the ropes, hearing "no" — and the old job feels safer by comparison. Your finish record (2 of 3 attempts finished) works in your favour, but that dip is exactly where we need a plan.
+
+### 5. The 90-day check plan
+
+**Days 1–14: Information, not commitment**
+Speak to 2 working doulas and 2 working in-person tutors. Ask what a normal week looks like, how they found their first paying clients, what training actually cost them, and how long it took to reach $40k-plus. Write down the answers, with dates.
+
+**Days 15–30: One small trial in each direction**
+Arrange one low-stakes trial for tutoring — a practice session, assisting, or a first supervised session — and one shadowing or information session for doula work, if available. After each, write three short notes the same day: what gave you energy, what drained you, and whether you would do it again next week.
+
+**Days 31–60: Run the money plan on paper**
+For the path that held up best in trial, map the real costs against your $20k budget and 12-month cushion, month by month, and check it against your $40k floor. Do not quit or cut hours based on hope. Bring in 2–3 new people contacts — a mentor, a peer, or a local group — since people support is your thinnest support right now.
+
+**Days 61–90: First paying proof, if ready**
+Aim for your first paying client or sessions, or a confirmed start date for the next training step if that's the honest next move. Track hours spent, money spent, and money earned.
+
+**Evidence to bring to the 90-day check-in:**
+- Names/dates of the people you spoke to, and what they said about pay, costs, and time to get started
+- Your same-day notes from at least one tutoring trial and one doula shadowing or session
+- A month-by-month money sheet showing budget spent, cushion remaining, and how the plan reaches $40k
+- A list of the new people contacts you built
+- One clear sentence from you: after trying it, which path still feels like "mine," which feels only tolerable, and which you want to drop
+
+At that check-in, we won't be guessing from interest alone anymore. We'll have your trial notes, your numbers, and your own words to narrow this to one next step.

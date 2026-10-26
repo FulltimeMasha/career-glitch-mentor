@@ -115,6 +115,7 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4)
 
 <footer>
 <p>Outlook figures: U.S. Bureau of Labor Statistics, projections 2025–35. Direction right for 86% of occupation groups in BLS's own 2014–24 evaluation — ranges, not promises.</p>
+<p>This page includes information from the O*NET 30.2 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the CC BY 4.0 license. O*NET&reg; is a trademark of USDOL/ETA. Career Glitch has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications.</p>
 <p>The profession database and the /start, /pivot, /bridge pages pre-date the hackathon. The Mentor is the new layer, built Oct 26 – Nov 4, 2026.</p>
 <p>Career Glitch Mentor — built for the Meta Global AI Developer Hackathon.</p>
 </footer>
@@ -366,6 +367,307 @@ document.getElementById("restartBtn").addEventListener("click",function(){
 });
 // Resume: if a door was already chosen, jump back into the flow.
 if(state.door){ document.getElementById("startScreen").classList.add("hidden"); document.getElementById("interview").classList.remove("hidden"); if(state.status==="completed_local"||state.status==="scored"){ document.getElementById("stageCard").classList.add("hidden"); renderVerdict(); } else { renderStage(); } }
+</script>
+<script>
+/* =====================================================================
+ * LIVE MODE (Stage 2) — talks to the Mentor API on this origin:
+ *   GET  /api/mentor?action=health  -> probe
+ *   POST /api/mentor {action:'start'|'cddq'|'stage'|'fit'|'report'|'current', ...}
+ * The server owns the interview state machine, the Spark mentor turns
+ * and the deterministic scoring engine; this client only renders defs
+ * and collects answers. It never derives a score locally.
+ *
+ * If the probe fails, nothing here activates and the guided flow above
+ * runs exactly as before. Live state lives in localStorage under its
+ * own key and never touches the guided session.
+ *
+ * Host honesty: on a host without the Meta API key the API still runs
+ * the full deterministic flow but returns mentor_message = null and
+ * refuses the written report (502). The page then prompts from the
+ * stage definitions themselves and shows the verdict without a
+ * fabricated report — labelled as such.
+ * ===================================================================== */
+(function(){
+  var LIVE_KEY = "cg_mentor_live_v1";
+  var live = null;        // { session_id, session }
+  var liveDef = null;     // current wire def
+  var liveAnswers = {};   // current card's tail answers
+  var liveRatings = {};   // stage-6 ratings { slug: 'mine'|'tolerable'|'not_mine' }
+  var busy = false;
+
+  function $(id){ return document.getElementById(id); }
+  function store(){ try{ if(live) localStorage.setItem(LIVE_KEY, JSON.stringify(live)); else localStorage.removeItem(LIVE_KEY); }catch(e){} }
+  function loadStored(){ try{ var s = JSON.parse(localStorage.getItem(LIVE_KEY)); if(s && s.session) return s; }catch(e){} return null; }
+  async function api(body){
+    var r = await fetch("/api/mentor", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body) });
+    var j = null; try{ j = await r.json(); }catch(e){}
+    return { status: r.status, json: j };
+  }
+  function pct(x){ return Math.round(x * 100); }
+  function band(b){ return b ? (pct(b.lo) + "–" + pct(b.hi) + "%") : "—"; }
+
+  function stepInfo(){
+    if(!live || !live.session) return { n: 1, total: 8 };
+    var s = live.session;
+    if(s.phase === "cddq") return { n: 1, total: 8 };
+    if(s.phase === "stages") return { n: 2 + (s.stage_index || 0), total: 8 };
+    if(s.phase === "stage6") return { n: 8, total: 8 };
+    return { n: 8, total: 8 };
+  }
+
+  function renderThread(){
+    var t = (live && live.session && live.session.transcript) || [];
+    $("thread").innerHTML = t.map(function(h){
+      return '<div class="msg ' + (h.who === "mentor" ? "mentor" : "user") + '"><div class="who">' + (h.who === "mentor" ? "Mentor" : "You") + '</div><div>' + esc(h.text) + '</div></div>';
+    }).join("");
+  }
+
+  function optVal(o){ return (o && typeof o === "object") ? o.value : o; }
+  function optLab(o){ return (o && typeof o === "object") ? o.label : String(o); }
+
+  function liveWidget(item, key){
+    var wrap = document.createElement("div");
+    var lab = document.createElement("label"); lab.textContent = item.label || key; wrap.appendChild(lab);
+    if(item.kind === "number"){
+      var inp = document.createElement("input"); inp.type = "number";
+      if(item.min != null) inp.min = item.min; if(item.max != null) inp.max = item.max;
+      inp.addEventListener("input", function(){ liveAnswers[key] = inp.value === "" ? null : Number(inp.value); });
+      wrap.appendChild(inp);
+    } else if(item.kind === "text_short"){
+      var ti = document.createElement("input"); ti.type = "text";
+      ti.addEventListener("input", function(){ liveAnswers[key] = ti.value.trim(); });
+      wrap.appendChild(ti);
+    } else if(item.kind === "choice"){
+      var box = document.createElement("div"); box.className = "choice";
+      (item.options || []).forEach(function(o){
+        var b = document.createElement("button"); b.type = "button"; b.textContent = optLab(o);
+        b.addEventListener("click", function(){ box.querySelectorAll("button").forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); liveAnswers[key] = optVal(o); });
+        box.appendChild(b);
+      });
+      wrap.appendChild(box);
+    } else if(item.kind === "multichoice"){
+      var checks = document.createElement("div"); checks.className = "checks"; liveAnswers[key] = [];
+      (item.options || []).forEach(function(o){
+        var l = document.createElement("label"); var c = document.createElement("input"); c.type = "checkbox";
+        c.addEventListener("change", function(){
+          var arr = liveAnswers[key] || []; var v = optVal(o);
+          if(c.checked && arr.indexOf(v) < 0) arr.push(v);
+          if(!c.checked) liveAnswers[key] = arr.filter(function(x){ return x !== v; });
+        });
+        l.appendChild(c); var s = document.createElement("span"); s.textContent = optLab(o); l.appendChild(s); checks.appendChild(l);
+      });
+      wrap.appendChild(checks);
+    } else if(item.kind === "scale"){
+      var seg = document.createElement("div"); seg.className = "seg";
+      for(var v = item.min; v <= item.max; v++){ (function(v){
+        var b = document.createElement("button"); b.type = "button"; b.textContent = String(v);
+        b.addEventListener("click", function(){ seg.querySelectorAll("button").forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); liveAnswers[key] = v; });
+        seg.appendChild(b);
+      })(v); }
+      wrap.appendChild(seg);
+      if(item.anchors){
+        var a = document.createElement("div"); a.className = "anchors";
+        a.innerHTML = "<span>" + esc(item.anchors[String(item.min)] || item.min) + "</span><span>" + esc(item.anchors[String(item.max)] || item.max) + "</span>";
+        wrap.appendChild(a);
+      }
+    } else if(item.kind === "rank6"){
+      var labels = item.value_labels || {};
+      var order = (item.values || []).slice(); liveAnswers[key] = order.slice();
+      var ul = document.createElement("ul"); ul.className = "ranklist";
+      function draw(){
+        ul.innerHTML = "";
+        order.forEach(function(k, i){
+          var li = document.createElement("li");
+          li.innerHTML = '<span class="n">' + (i + 1) + '</span><span>' + esc(labels[k] || k) + '</span>';
+          if(i > 0){
+            var up = document.createElement("button"); up.type = "button"; up.className = "up"; up.textContent = "↑ Move up";
+            up.addEventListener("click", function(){ var t = order[i - 1]; order[i - 1] = order[i]; order[i] = t; liveAnswers[key] = order.slice(); draw(); });
+            li.appendChild(up);
+          }
+          ul.appendChild(li);
+        });
+      }
+      draw(); wrap.appendChild(ul);
+    }
+    return wrap;
+  }
+
+  function renderLiveCard(resp){
+    liveDef = resp.json.def;
+    liveAnswers = {}; liveRatings = {};
+    var s = live.session;
+    var st = stepInfo();
+    $("progressLabel").textContent = "Live mentor · Door: " + s.door + " · Step " + st.n + " of " + st.total + " · " + s.phase;
+    $("barFill").style.width = Math.round(st.n / st.total * 100) + "%";
+    renderThread();
+    var def = liveDef || {};
+    $("stageTitle").textContent = def.title || (s.phase === "cddq" ? "Before we start" : "Stage");
+    $("stagePrompt").textContent = resp.json.mentor_message || def.free_prompt_hint || def.title || "";
+    var ft = $("freeText"); ft.value = ""; ft.placeholder = def.free_prompt_hint || "Be specific. Facts beat self-descriptions.";
+    var host = $("tailWidgets"); host.innerHTML = "";
+    if(s.phase === "stage6" && def.candidates){
+      def.candidates.forEach(function(c){
+        var item = { kind: "perceived_fit", label: c.name + " — one real Tuesday in this job feels…" };
+        var wrap = document.createElement("div");
+        var lab = document.createElement("label"); lab.textContent = item.label; wrap.appendChild(lab);
+        var box = document.createElement("div"); box.className = "choice";
+        [["mine", "Mine"], ["tolerable", "Tolerable"], ["not_mine", "Not mine"]].forEach(function(pair){
+          var b = document.createElement("button"); b.type = "button"; b.textContent = pair[1];
+          b.addEventListener("click", function(){ box.querySelectorAll("button").forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); liveRatings[c.slug] = pair[0]; });
+          box.appendChild(b);
+        });
+        wrap.appendChild(box);
+        var note = document.createElement("p"); note.style.cssText = "font-size:13px;color:#5c5566;margin-top:6px";
+        note.textContent = "Perceived fit is a veto: 'not mine' lowers the category by one step. It never raises a score.";
+        wrap.appendChild(note);
+        host.appendChild(wrap);
+      });
+      $("nextBtn").textContent = "Apply my ratings — finish";
+    } else {
+      (def.tail || []).forEach(function(item){
+        if(item.kind === "derived" || item.kind === "perceived_fit") return;
+        var key = item.field || item.id;
+        if(!key) return;
+        host.appendChild(liveWidget(item, key));
+      });
+      $("nextBtn").textContent = "Continue";
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function candidateCard(c, heading){
+    var html = '<div class="card" style="margin-top:12px"><b style="font-family:Outfit,sans-serif;font-size:19px">' + esc(heading || c.name) + '</b>';
+    html += ' <span class="badge">Category ' + esc(c.category) + '</span>';
+    if(c.verdict) html += ' <span class="badge ' + (c.verdict === "YES" ? "yes" : "no") + '">' + esc(c.verdict) + '</span>';
+    html += '<p style="margin-top:8px">Median pay in the base: ~$' + esc(c.payK) + 'K · LOVE ' + band(c.love) + ' · POTENTIAL ' + band(c.potential) + '</p>';
+    if(c.flags && c.flags.length) html += '<p style="margin-top:4px"><b>Flags:</b> ' + c.flags.map(esc).join(", ") + '</p>';
+    html += '</div>';
+    return html;
+  }
+
+  function renderResult(resp){
+    var s = live.session; var r = s.result || resp.json.result;
+    $("stageCard").classList.add("hidden");
+    renderThread();
+    $("barFill").style.width = "100%";
+    $("progressLabel").textContent = "Live mentor · Done";
+    var panel = $("verdict"); panel.classList.remove("hidden");
+    $("verdictEmpty").style.display = "none";
+    var html = "";
+    if(!r){
+      html = '<div class="notice">The session ended without a scoring result — nothing was invented to fill the gap. Start over to try again.</div>';
+    } else if(r.mode === "insufficient_data"){
+      html += '<p><b>Honest answer: not enough signal for a verdict yet.</b></p>';
+      if(r.mode_reason) html += '<p style="margin-top:6px">' + esc(r.mode_reason) + '</p>';
+      if(r.exploration_plan && r.exploration_plan.length){
+        html += '<h3 style="margin:14px 0 8px;font-family:Outfit,sans-serif">Your exploration plan</h3><ol style="margin-left:20px;display:grid;gap:6px">';
+        r.exploration_plan.forEach(function(step){ html += '<li>' + esc(step) + '</li>'; });
+        html += '</ol>';
+      }
+    } else {
+      html += '<p><b>Mode:</b> ' + esc(r.mode) + '</p>';
+      if(r.mode_reason) html += '<p style="margin-top:6px">' + esc(r.mode_reason) + '</p>';
+      (r.top3 || []).forEach(function(c, i){ html += candidateCard(c, (i + 1) + ". " + c.name); });
+      if(r.anti_match) html += candidateCard(r.anti_match, "Probably NOT you: " + r.anti_match.name);
+      html += '<p style="margin-top:12px;color:#5c5566;font-size:14px">Scores are ranges from the deterministic engine — LOVE and POTENTIAL, never a single match %. The verdict categories and flags come from the engine, not from the chat.</p>';
+    }
+    $("verdictBody").innerHTML = html;
+    panel.scrollIntoView({ behavior: "smooth" });
+    if(r && s.phase === "done" && !s.report) tryReport();
+  }
+
+  async function tryReport(){
+    var res = await api({ action: "report", session_id: live.session_id, session: live.session });
+    var body = $("verdictBody");
+    if(res.json && res.json.ok && res.json.report){
+      live.session = res.json.session; store();
+      var card = document.createElement("div");
+      card.className = "card"; card.style.marginTop = "14px";
+      card.innerHTML = '<h3 style="font-family:Outfit,sans-serif;margin-bottom:8px">Your mentor report</h3><div style="white-space:pre-wrap">' + esc(res.json.report) + '</div>';
+      body.appendChild(card);
+    } else {
+      var note = document.createElement("p");
+      note.style.cssText = "margin-top:12px;color:#5c5566;font-size:14px";
+      note.textContent = "The written mentor report is generated by the mentor model — it is not available on this host right now, so nothing was fabricated in its place. Your verdict above is the complete deterministic result.";
+      body.appendChild(note);
+    }
+  }
+
+  function route(resp){
+    if(!resp.json || !resp.json.ok){
+      $("stagePrompt").textContent = "The mentor API returned an error (" + ((resp.json && resp.json.error) || resp.status) + "). Your answers on this card were not sent anywhere else — press Continue to retry.";
+      busy = false; return;
+    }
+    live = { session_id: resp.json.session_id, session: resp.json.session };
+    store();
+    if(live.session.phase === "done") renderResult(resp); else renderLiveCard(resp);
+    busy = false;
+  }
+
+  async function liveContinue(){
+    if(busy || !live) return; busy = true;
+    var s = live.session;
+    var free = $("freeText").value.trim();
+    try{
+      var res;
+      if(s.phase === "cddq") res = await api({ action: "cddq", session_id: live.session_id, session: s, answers: liveAnswers, free_text: free });
+      else if(s.phase === "stage6") res = await api({ action: "fit", session_id: live.session_id, session: s, ratings: liveRatings });
+      else res = await api({ action: "stage", session_id: live.session_id, session: s, free_text: free, tail: liveAnswers });
+      route(res);
+    }catch(e){
+      $("stagePrompt").textContent = "Connection to the mentor API failed — press Continue to retry. Nothing was scored or saved from this card.";
+      busy = false;
+    }
+  }
+
+  async function liveStart(door){
+    var res = await api({ action: "start", door: door });
+    if(!res.json || !res.json.ok){ return; }
+    live = { session_id: res.json.session_id, session: res.json.session };
+    store();
+    $("startScreen").classList.add("hidden");
+    $("interview").classList.remove("hidden");
+    $("verdict").classList.add("hidden");
+    $("stageCard").classList.remove("hidden");
+    route(res);
+  }
+
+  // --- takeover: only after a successful health probe ------------------
+  fetch("/api/mentor?action=health").then(function(r){ return r.json(); }).then(function(h){
+    if(!h || !h.ok) return; // guided mode stays, untouched
+    var notice = $("localNotice");
+    notice.textContent = "Live mentor connected — the interview, the scoring engine and the verdict run on the server. Scores are never derived on this device.";
+    notice.classList.remove("hidden");
+    // Clone-swap the interactive controls so the guided handlers let go.
+    document.querySelectorAll(".door").forEach(function(btn){
+      var clone = btn.cloneNode(true);
+      btn.parentNode.replaceChild(clone, btn);
+      clone.addEventListener("click", function(){ liveStart(clone.getAttribute("data-door")); });
+    });
+    var next = $("nextBtn"); var nextClone = next.cloneNode(true); next.parentNode.replaceChild(nextClone, next);
+    nextClone.addEventListener("click", liveContinue);
+    var rst = $("restartBtn"); var rstClone = rst.cloneNode(true); rst.parentNode.replaceChild(rstClone, rst);
+    rstClone.addEventListener("click", function(){ live = null; store(); location.reload(); });
+    // Resume a live session if one exists; otherwise reset to the doors
+    // (a guided in-progress state may have unhidden the interview).
+    var stored = loadStored();
+    if(stored){
+      live = stored;
+      $("startScreen").classList.add("hidden");
+      $("interview").classList.remove("hidden");
+      if(stored.session.phase === "done"){
+        renderResult({ json: { ok: true, result: stored.session.result } });
+      } else {
+        api({ action: "current", session_id: stored.session_id, session: stored.session }).then(function(res){
+          if(res.json && res.json.ok) route(res); else renderLiveCard({ json: { def: null, mentor_message: null } });
+        }).catch(function(){ /* keep stored state visible via a fresh start */ });
+      }
+    } else {
+      $("startScreen").classList.remove("hidden");
+      $("interview").classList.add("hidden");
+    }
+  }).catch(function(){ /* probe failed — guided mode, untouched */ });
+})();
 </script>
 </body>
 </html>

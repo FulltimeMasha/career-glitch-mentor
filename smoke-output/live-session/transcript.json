@@ -1,6 +1,6 @@
 {
   "base": "https://careerglitch.com",
-  "session_id": "3bae818b-f6d7-4850-b14e-6d2d1c473eec",
+  "session_id": "d24f571c-ebe2-4ffb-aeb2-83ed88e06a96",
   "transcript": [
     {
       "who": "mentor",
@@ -81,8 +81,8 @@
       "mirror_confirmed": "confirmed",
       "perceived_fit": {
         "doula": "mine",
-        "funeral-director": "tolerable",
-        "nutrition-coach-dietitian": "tolerable"
+        "private-tutor-in-person": "tolerable",
+        "tutoring-center-owner": "tolerable"
       }
     },
     "transcript": [
@@ -159,27 +159,27 @@
         "flags": []
       },
       {
-        "slug": "funeral-director",
-        "name": "Funeral Director",
+        "slug": "private-tutor-in-person",
+        "name": "Private Tutor (in person)",
         "category": "A",
-        "verdict": null,
-        "payK": 62,
+        "verdict": "YES",
+        "payK": 45,
         "love": {
-          "mid": 0.9429166666666666,
-          "lo": 0.8229166666666666,
+          "mid": 0.9111491666666667,
+          "lo": 0.7911491666666667,
           "hi": 1,
           "parts": {
-            "needs_supplies": 1,
+            "needs_supplies": 0.8472166666666667,
             "sdt": 1,
-            "riasec": 0.7716666666666666
+            "riasec": 0.88905
           }
         },
         "potential": {
-          "mid": 0.9021428571428571,
-          "lo": 0.7221428571428572,
+          "mid": 0.95245,
+          "lo": 0.7724500000000001,
           "hi": 1,
           "parts": {
-            "interest_fit": 0.7716666666666666,
+            "interest_fit": 0.88905,
             "trial": null,
             "feasibility": 1
           },
@@ -194,33 +194,33 @@
         "flags": []
       },
       {
-        "slug": "nutrition-coach-dietitian",
-        "name": "Nutrition Coach / Dietitian",
+        "slug": "tutoring-center-owner",
+        "name": "Tutoring Center Owner",
         "category": "A",
         "verdict": "YES",
         "payK": 75,
         "love": {
-          "mid": 0.9724305555555556,
-          "lo": 0.8524305555555556,
+          "mid": 0.9111491666666667,
+          "lo": 0.7911491666666667,
           "hi": 1,
           "parts": {
-            "needs_supplies": 0.9972222222222222,
+            "needs_supplies": 0.8472166666666667,
             "sdt": 1,
-            "riasec": 0.8941666666666667
+            "riasec": 0.88905
           }
         },
         "potential": {
-          "mid": 0.8699867724867725,
-          "lo": 0.6899867724867725,
+          "mid": 0.95245,
+          "lo": 0.7724500000000001,
           "hi": 1,
           "parts": {
-            "interest_fit": 0.8941666666666667,
+            "interest_fit": 0.88905,
             "trial": null,
-            "feasibility": 0.8518518518518517
+            "feasibility": 1
           },
           "profile": "start",
           "feasibility_subs": {
-            "entry_time_ok": 0.5555555555555556,
+            "entry_time_ok": 1,
             "budget_ok": 1,
             "documents_factor": 1
           }
@@ -269,27 +269,27 @@
           "flags": []
         },
         {
-          "slug": "funeral-director",
-          "name": "Funeral Director",
+          "slug": "private-tutor-in-person",
+          "name": "Private Tutor (in person)",
           "category": "A",
-          "verdict": null,
-          "payK": 62,
+          "verdict": "YES",
+          "payK": 45,
           "love": {
-            "mid": 0.9429166666666666,
-            "lo": 0.8229166666666666,
+            "mid": 0.9111491666666667,
+            "lo": 0.7911491666666667,
             "hi": 1,
             "parts": {
-              "needs_supplies": 1,
+              "needs_supplies": 0.8472166666666667,
               "sdt": 1,
-              "riasec": 0.7716666666666666
+              "riasec": 0.88905
             }
           },
           "potential": {
-            "mid": 0.9021428571428571,
-            "lo": 0.7221428571428572,
+            "mid": 0.95245,
+            "lo": 0.7724500000000001,
             "hi": 1,
             "parts": {
-              "interest_fit": 0.7716666666666666,
+              "interest_fit": 0.88905,
               "trial": null,
               "feasibility": 1
             },
@@ -304,33 +304,33 @@
           "flags": []
         },
         {
-          "slug": "nutrition-coach-dietitian",
-          "name": "Nutrition Coach / Dietitian",
+          "slug": "tutoring-center-owner",
+          "name": "Tutoring Center Owner",
           "category": "A",
           "verdict": "YES",
           "payK": 75,
           "love": {
-            "mid": 0.9724305555555556,
-            "lo": 0.8524305555555556,
+            "mid": 0.9111491666666667,
+            "lo": 0.7911491666666667,
             "hi": 1,
             "parts": {
-              "needs_supplies": 0.9972222222222222,
+              "needs_supplies": 0.8472166666666667,
               "sdt": 1,
-              "riasec": 0.8941666666666667
+              "riasec": 0.88905
             }
           },
           "potential": {
-            "mid": 0.8699867724867725,
-            "lo": 0.6899867724867725,
+            "mid": 0.95245,
+            "lo": 0.7724500000000001,
             "hi": 1,
             "parts": {
-              "interest_fit": 0.8941666666666667,
+              "interest_fit": 0.88905,
               "trial": null,
-              "feasibility": 0.8518518518518517
+              "feasibility": 1
             },
             "profile": "start",
             "feasibility_subs": {
-              "entry_time_ok": 0.5555555555555556,
+              "entry_time_ok": 1,
               "budget_ok": 1,
               "documents_factor": 1
             }
@@ -346,21 +346,21 @@
         "verdict": "NO",
         "payK": 45,
         "love": {
-          "mid": 0.9240972222222221,
-          "lo": 0.8040972222222221,
+          "mid": 0.9111491666666667,
+          "lo": 0.7911491666666667,
           "hi": 1,
           "parts": {
-            "needs_supplies": 0.9138888888888889,
+            "needs_supplies": 0.8472166666666667,
             "sdt": 1,
-            "riasec": 0.8341666666666667
+            "riasec": 0.88905
           }
         },
         "potential": {
-          "mid": 0.9289285714285714,
-          "lo": 0.7489285714285714,
+          "mid": 0.95245,
+          "lo": 0.7724500000000001,
           "hi": 1,
           "parts": {
-            "interest_fit": 0.8341666666666667,
+            "interest_fit": 0.88905,
             "trial": null,
             "feasibility": 1
           },
@@ -444,8 +444,8 @@
       "trials": [],
       "perceived_fit": {
         "doula": "mine",
-        "funeral-director": "tolerable",
-        "nutrition-coach-dietitian": "tolerable"
+        "private-tutor-in-person": "tolerable",
+        "tutoring-center-owner": "tolerable"
       },
       "cddq_type": "lacks_information",
       "completeness": 0.974
