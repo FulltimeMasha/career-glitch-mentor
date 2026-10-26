@@ -27,9 +27,10 @@ Three ways in: start a new profession, grow in the one you have with AI, or move
 
 ## Made with Meta AI
 
-- **Muse Spark 1.3** — talks with you, checks on you, rebuilds your plan.
-- **Muse Wonder 1.0** — writes your verdict and your plan.
+- **Muse Spark 1.3** — runs the interview: the conversation, the questions, the check-ins.
+- **Muse Wonder 1.0** — the synthesis: writes the verdict explanation and the plan in human words.
 - **Muse Image 1.0** — draws your cards.
+- **Deterministic scoring engine (ours — no model)** — turns the structured answers into the LOVE / POTENTIAL ranges, the fitness categories and the flags. Models talk and write; only the engine counts.
 
 The numbers always come from the verified data — never made up.
 
@@ -40,6 +41,15 @@ Two scores, shown as **ranges** — **LOVE** and **POTENTIAL** — never a singl
 Scores come only from fixed structured answers: the anchored tail questions at the end of each interview stage, plus measured profession trials where they apply. The AI conversation never sets scores. It can interview, quote your own words back, build the mirror of contradictions, and write the report — it cannot move a number.
 
 Banned, by design: no MBTI or personality types, no grit score, no personality labels as verdicts. Self-rated ability is not a scoring input. Perceived fit ("this real day is not mine") can only lower a candidate's fitness category by one step — it never raises a score. Full reasoning: [science-map.md](science-map.md).
+
+Name, gender and country never reach the recommendation step or the report writer: the same structured answers must produce the same verdict regardless of who the person is.
+
+## Verification — what we check, and what it found
+
+- **Unit suite:** 9/9 (scoring compositions, deficit-only penalty, veto direction, stub-vs-sourced field invariants).
+- **End-to-end smoke (acceptance A):** a scripted "not ready" 18-year-old completes the interview and must NOT receive a verdict. Result, on real Meta API calls (8/8): mode `insufficient_data`, a 4-step exploration plan, a 987-word report with no profession verdict and no match %. Re-run after the O*NET swap — same behaviour.
+- **Live-session verification (both hosts):** start → CDDQ routing → stages 0–5 → verdict → stage-6 veto → done. Locally: Wonder report 1,391 words. On careerglitch.com: the deterministic path completes with the identical verdict; the written report refuses (502) because that host holds no API key — it is never fabricated.
+- **Acceptance C — 20-profession cross-check against the sources** (median exactly per BLS, 2025–35 direction per BLS, AI category exactly per the BLS table, RIASEC per O*NET 30.2): **10 pass · 5 pass with exception · 5 fail.** RIASEC equals raw O*NET 30.2 for all 18 SOC-mapped rows. The exceptions carry a `bls_inherited` flag with a written explanation (Commercial Insurance Producer, AI Automation Specialist, Site Reliability Engineer mapped to a parent series; Physician = the Family Physician card; Car Wash Owner — no such occupation exists). **All 5 fails are one root cause:** the pay figure in the site's profession base disagrees with the BLS-cited median on the profession's own roadmap card — Accountant 120K in the base vs ~84K on the card, Software Developer 125K vs ~136K, Graphic Designer 45K vs ~63K, Electrician 75K vs ~63K, AI Automation Specialist 120K vs ~100K. The site data was NOT silently edited: the door pages are a frozen live experiment, and the reconciliation is scheduled as a post-freeze fix. Full output: [acceptance/](acceptance/).
 
 ## Built during the hackathon
 
@@ -67,6 +77,13 @@ The profession database and the /start, /pivot, /bridge pages pre-date the hacka
 This project includes information from the O*NET 30.2 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA), used under the CC BY 4.0 license. O*NET® is a trademark of USDOL/ETA. Career Glitch has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications.
 
 Outlook and pay figures: U.S. Bureau of Labor Statistics, projections vintage 2025–35. The official BLS AI-exposure categories are carried as their own field (`bls_ai_exposure`), separate from outlook — populated only where an authoritative BLS statement was read, with its source attached; never inferred for the rest.
+
+## Honesty limits
+
+- **Forecasts are not verdicts.** BLS's own evaluation of its 2014–24 projections found the direction right for 86% of occupation groups — good context, not a promise. No single forecast number decides a verdict: the engine combines outlook with pay, openings, sourced AI-exposure evidence and the person's structured inputs, and shows the result as ranges.
+- **The score weights are editorial — for now.** There is no validated scientific formula that turns interests + values + constraints into one true match; the LOVE / POTENTIAL compositions are published in [science-map.md](science-map.md) and stay fixed until real outcome data (90-day and 12-month follow-ups) can calibrate them. We say this on the record rather than dressing the weights up as science.
+- **Sparse fields stay empty.** Only 11 of 339 professions carry a sourced BLS AI-exposure value; the rest are null. The O*NET work-values data is a frozen snapshot (the Work Importance Profiler closed 03.06.2024), stamped per occupation; 20 renumbered occupations have no rows at all, and their fields stay flagged stubs instead of invented values.
+- **No key, no fake report.** On a host without the Meta API key, the interview and the deterministic verdict still run — and the written report refuses instead of being fabricated.
 
 ## Try it
 

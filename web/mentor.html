@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Career Glitch Mentor — Answer honestly. Get one plan.</title>
-<meta name="description" content="A mentor that interviews you deeply, checks every profession against real U.S. labor data, and gives a verdict with ranges — never a personality label, never a single match %.">
+<title>Career Glitch Mentor — Is AI coming for your job? Find out in 10 minutes.</title>
+<meta name="description" content="You're scrolling, you're scared, and everyone online says something different. Answer a few honest questions. Get a straight answer, 3 careers that fit you, and a 90-day plan — based on real U.S. government job data.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://careerglitch.com/mentor">
-<meta property="og:title" content="Answer honestly. Get one plan — not another guide.">
-<meta property="og:description" content="Deep interview. Real BLS data. Two scores as ranges: LOVE and POTENTIAL. No personality labels.">
+<meta property="og:title" content="Is AI coming for your job? Find out in 10 minutes. Then get a plan.">
+<meta property="og:description" content="Answer a few honest questions. Get a straight answer and the next 3 steps — not another guide. Real U.S. government job data, a straight verdict, and a mentor that stays for 90 days.">
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +68,16 @@ textarea{min-height:110px;resize:vertical}
 .verdict pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:2px solid var(--ink);border-radius:10px;padding:12px;font-size:13px}
 footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4);color:var(--mut);font-size:13px;display:grid;gap:8px}
 .hidden{display:none!important}
+.facts{display:grid;gap:10px;margin:18px 0 4px}
+.fact{background:rgba(255,252,246,.08);border:2px solid rgba(249,42,130,.55);border-radius:12px;padding:12px 14px;font-weight:600;font-size:16px}
+.steps{display:grid;gap:12px}
+.step{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--pink);padding:14px 16px;font-weight:600;font-size:16px}
+.step b{font-family:'Outfit',sans-serif;font-weight:900}
+.ticks,.crosses{list-style:none;display:grid;gap:9px;font-size:16.5px;font-weight:600}
+.faq{display:grid;gap:10px}
+.qa{background:rgba(255,252,246,.08);border:2px solid rgba(249,42,130,.55);border-radius:12px;padding:12px 14px}
+.qa b{font-family:'Outfit',sans-serif}
+.qa p{color:var(--mut);margin-top:4px}
 @media(max-width:480px){h1{font-size:27px}.sub{font-size:16.5px}}
 </style>
 </head>
@@ -78,15 +88,45 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4)
 <!-- START SCREEN -->
 <section id="startScreen">
 <span class="pill">CAREER GLITCH MENTOR</span>
-<h1>Answer honestly. Get one plan — not another guide.</h1>
-<p class="sub">A mentor that interviews you deeply, checks every profession against real U.S. labor data, and gives a verdict with ranges — never a personality label, never a single &ldquo;match %&rdquo;. It asks about your real history, resources and constraints first, then shows its work: two scores, the evidence behind them, and what could prove the plan wrong.</p>
-<h2>Choose your door</h2>
-<div class="doors">
-  <button type="button" class="door" data-door="start"><span class="path">/start</span><b>Start fresh</b><p>Choosing a first or next profession from zero.</p></button>
-  <button type="button" class="door" data-door="pivot"><span class="path">/pivot</span><b>Level up</b><p>Stay competitive — rebuild your current job for the AI era.</p></button>
-  <button type="button" class="door" data-door="bridge"><span class="path">/bridge</span><b>Bridge</b><p>Foreign degree or experience &rarr; the U.S. version of your profession.</p></button>
+<h1>Is AI coming for your job? Find out in 10 minutes. Then get a plan.</h1>
+<p class="sub">You&rsquo;re scrolling, you&rsquo;re scared, and everyone online says something different. Answer a few honest questions. Get a straight answer and the next 3 steps — not another 40-minute YouTube video.</p>
+<div class="facts">
+  <div class="fact">📉 Young workers in AI-exposed jobs: −13% employment (Stanford, 2025)</div>
+  <div class="fact">🎓 4 in 10 students are rethinking their major because of AI (Gallup–Lumina, 2026)</div>
+  <div class="fact">⏳ The ones who move first get the good seats.</div>
 </div>
-<p style="color:var(--mut);font-size:14.5px">Selecting a door starts the interview. Your answers are collected in stages — a short open answer, then a few fixed questions. Only the fixed answers set scores; the open conversation never does.</p>
+<h2 id="doorPicker">Choose your door</h2>
+<div class="doors">
+  <button type="button" class="door" data-door="start"><b>😰 &ldquo;I don&rsquo;t know what to study.&rdquo;</b><p>You&rsquo;re about to spend 4 years and $100K. Make sure the job still exists when you graduate.</p><span class="path">Start here &rarr;</span></button>
+  <button type="button" class="door" data-door="pivot"><b>😬 &ldquo;AI is eating my job.&rdquo;</b><p>Fewer clients. A &ldquo;restructured&rdquo; team. Or just a bad feeling. Find out what part of your job is safe and what to do next.</p><span class="path">Save my career &rarr;</span></button>
+  <button type="button" class="door" data-door="bridge"><b>🌍 &ldquo;My degree doesn&rsquo;t count here.&rdquo;</b><p>You were a nurse, an engineer, an accountant back home. Here&rsquo;s the exact path to do it again in the U.S.</p><span class="path">Show me the path &rarr;</span></button>
+</div>
+<h2>How it works</h2>
+<div class="steps">
+  <div class="step"><b>1. Talk.</b> Your mentor asks about your life, money, time and what you&rsquo;re good at. 10 minutes.</div>
+  <div class="step"><b>2. See.</b> You get a straight answer: is your career safe, shrinking or growing? Real U.S. government data, not vibes.</div>
+  <div class="step"><b>3. Move.</b> You get a plan with real steps. Your mentor texts you, checks in, and fixes the plan when life happens.</div>
+</div>
+<h2>What you get</h2>
+<ul class="ticks">
+  <li>✅ A straight answer: safe, risky or dying</li>
+  <li>✅ 3 careers that fit YOU (with real pay)</li>
+  <li>✅ A 90-day plan, step by step</li>
+  <li>✅ A mentor that texts you so you don&rsquo;t quit</li>
+</ul>
+<h2>What this is not</h2>
+<ul class="crosses">
+  <li>❌ Not a personality quiz.</li>
+  <li>❌ Not ChatGPT making stuff up.</li>
+  <li>❌ Not a $500 career coach.</li>
+</ul>
+<a class="btn" href="#doorPicker" style="display:block;text-align:center;text-decoration:none">Find out if my job is safe &rarr;</a>
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="qa"><b>Will it just tell me what I want to hear?</b><p>No. If your plan is risky, it tells you — and shows why.</p></div>
+  <div class="qa"><b>Is this ChatGPT?</b><p>No. The answers are based on real U.S. government job data.</p></div>
+  <div class="qa"><b>How long does it take?</b><p>About 10 minutes to start. Your mentor works with you for 90 days.</p></div>
+</div>
 </section>
 
 <!-- INTERVIEW -->
@@ -114,10 +154,7 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4)
 </section>
 
 <footer>
-<p>Outlook figures: U.S. Bureau of Labor Statistics, projections 2025–35. Direction right for 86% of occupation groups in BLS's own 2014–24 evaluation — ranges, not promises.</p>
-<p>This page includes information from the O*NET 30.2 Database by the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). Used under the CC BY 4.0 license. O*NET&reg; is a trademark of USDOL/ETA. Career Glitch has modified all or some of this information. USDOL/ETA has not approved, endorsed, or tested these modifications.</p>
-<p>The profession database and the /start, /pivot, /bridge pages pre-date the hackathon. The Mentor is the new layer, built Oct 26 – Nov 4, 2026.</p>
-<p>Career Glitch Mentor — built for the Meta Global AI Developer Hackathon.</p>
+<p>Data: U.S. Bureau of Labor Statistics &amp; O*NET 30.2 (USDOL/ETA, CC BY 4.0), modified by Career Glitch.</p>
 </footer>
 </div>
 <script>
