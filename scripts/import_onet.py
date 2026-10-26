@@ -366,10 +366,15 @@ def main():
                 'riasec_profile': riasec.get(soc),
                 'work_values_extent': values_extent.get(soc),
                 'work_values_frozen_date': values_date.get(soc),
-                'supplies': ({k: round((v - 1) / 6, 4) for k, v in values_extent[soc].items()}
-                             if soc in values_extent else None),
-                'abilities_lv': abilities_lv.get(soc),
-                'skills_lv': skills_lv.get(soc),
+                # supplies is NOT stored: the loader derives it from
+                # work_values_extent ((EX - 1) / 6) — one source, no drift.
+                # abilities/skills ship as ARRAYS aligned to the element
+                # order declared in meta (abilities_elements /
+                # skills_elements) to keep the file shippable.
+                'abilities_lv': ([abilities_lv[soc].get(eid) for eid in ability_names]
+                                 if soc in abilities_lv else None),
+                'skills_lv': ([skills_lv[soc].get(eid) for eid in skill_names]
+                              if soc in skills_lv else None),
                 'tasks': top_tasks(soc),
             })
             base_soc = soc[:7]
@@ -379,7 +384,9 @@ def main():
                 entry['bls_ai_exposure_tier'] = tier
                 entry['bls_ai_exposure_source'] = src
         report[slug] = {'name': name, **entry}
-        imported[slug] = entry
+        # The shipped import drops the review-only 'candidates' field
+        # (it lives in onet-mapping-report.json).
+        imported[slug] = {k: v for k, v in entry.items() if k != 'candidates'}
 
     matched = sum(1 for e in imported.values() if 'onet_soc' in e)
     out = {

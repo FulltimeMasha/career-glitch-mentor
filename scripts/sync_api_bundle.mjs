@@ -57,10 +57,41 @@ for (const f of ['interview.mjs', 'llm.mjs', 'professions.mjs', 'scoring.mjs', '
 }
 
 // WS2 data: the O*NET import rides in the bundle at _lib/data/ so the
-// bundled engine finds it at ../data/onet-import.json (same relative
-// path as the repo layout).
+// bundled engine finds it at ../data/. The connector upload path caps a
+// single file at ~90 KB (OS argv limit on the base64 payload), so the
+// import ships as compact shards of <= 80 KB which the loader merges
+// back (see readOnetImport in engine/professions.mjs). Shard 01 also
+// carries the meta block.
+import { rmSync } from 'node:fs';
 mkdirSync(join(LIB, 'data'), { recursive: true });
-cpSync(join(ROOT, 'data', 'onet-import.json'), join(LIB, 'data', 'onet-import.json'));
-written.push('api/_lib/data/onet-import.json');
+try { rmSync(join(LIB, 'data', 'onet-import.json')); } catch { /* not present */ }
+for (const stale of (await import('node:fs')).readdirSync(join(LIB, 'data'))) {
+  if (/^onet-import-\d+\.json$/.test(stale)) rmSync(join(LIB, 'data', stale));
+}
+const imp = JSON.parse(readFileSync(join(ROOT, 'data', 'onet-import.json'), 'utf8'));
+const SHARD_LIMIT = 80000;
+const slugs = Object.keys(imp.professions).sort();
+let shardIdx = 0;
+let shard = null;
+const flushShard = () => {
+  if (!shard) return;
+  shardIdx += 1;
+  const name = `onet-import-${String(shardIdx).padStart(2, '0')}.json`;
+  writeFileSync(join(LIB, 'data', name), JSON.stringify(shard));
+  written.push(`api/_lib/data/${name}`);
+  shard = null;
+};
+for (const slug of slugs) {
+  const entry = imp.professions[slug];
+  const entrySize = Buffer.byteLength(JSON.stringify(entry)) + slug.length + 4;
+  if (!shard) shard = shardIdx === 0 ? { meta: imp.meta, professions: {} } : { professions: {} };
+  const base = Buffer.byteLength(JSON.stringify(shard));
+  if (Object.keys(shard.professions).length && base + entrySize > SHARD_LIMIT) {
+    flushShard();
+    shard = { professions: {} };
+  }
+  shard.professions[slug] = entry;
+}
+flushShard();
 
 console.log(written.join('\n'));

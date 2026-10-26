@@ -40,7 +40,7 @@
 // endorsed, or tested these modifications."
 // ---------------------------------------------------------------------------
 
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
@@ -339,6 +339,30 @@ function readOnetImport() {
       if (existsSync(c)) return JSON.parse(readFileSync(c, 'utf8'));
     } catch { /* unreadable candidate — try the next */ }
   }
+  // Sharded form (deployed bundle): the connector upload path caps a
+  // single file at ~90 KB, so the bundle ships onet-import-NN.json
+  // shards in the data dir; merge them back into one import object.
+  const dirs = [
+    new URL('../data/', import.meta.url),
+    new URL('./data/', import.meta.url),
+  ];
+  try {
+    dirs.push(join(process.cwd(), 'data'));
+    dirs.push(join(process.cwd(), 'api', '_lib', 'data'));
+  } catch { /* module-relative dirs only */ }
+  for (const d of dirs) {
+    try {
+      const names = readdirSync(d).filter((n) => /^onet-import-\d+\.json$/.test(n)).sort();
+      if (!names.length) continue;
+      const merged = { meta: {}, professions: {} };
+      for (const n of names) {
+        const s = JSON.parse(readFileSync(join(d, n), 'utf8'));
+        if (s.meta) merged.meta = s.meta;
+        Object.assign(merged.professions, s.professions || {});
+      }
+      if (Object.keys(merged.professions).length) return merged;
+    } catch { /* not this dir — try the next */ }
+  }
   return null;
 }
 
@@ -366,18 +390,30 @@ export function applyOnetImport(profs) {
         p.riasec_stub = false;
         dropFlags(p, ['riasec_stub']);
       }
-      if (e.supplies) {
-        p.supplies = e.supplies;
-        p.supplies_stub = false;
-        dropFlags(p, ['supplies_stub']);
-      }
       if (e.work_values_extent) {
         p.work_values_extent = e.work_values_extent;
         p.work_values_frozen_date = e.work_values_frozen_date ?? null;
-        dropFlags(p, ['work_values_extent', 'work_values_frozen_date']);
+        // supplies is DERIVED from the sourced extent — (EX − 1) / 6
+        // onto 0..1 — never stored separately, so it cannot drift.
+        p.supplies = Object.fromEntries(Object.entries(e.work_values_extent)
+          .map(([k, v]) => [k, Math.round(((v - 1) / 6) * 10000) / 10000]));
+        p.supplies_stub = false;
+        dropFlags(p, ['work_values_extent', 'work_values_frozen_date', 'supplies_stub']);
       }
-      if (e.abilities_lv) { p.abilities_lv = e.abilities_lv; dropFlags(p, ['abilities_lv']); }
-      if (e.skills_lv) { p.skills_lv = e.skills_lv; dropFlags(p, ['skills_lv']); }
+      // LV vectors ship as arrays aligned to the meta element order;
+      // expand them back to {element_id: level}. A length mismatch is
+      // shape drift — the field stays null and flagged, never guessed.
+      const expandVec = (vec, elementsMeta) => {
+        if (!vec) return null;
+        if (!Array.isArray(vec)) return vec;
+        const ids = Object.keys(elementsMeta || {});
+        if (ids.length !== vec.length) return null;
+        return Object.fromEntries(ids.map((id, i) => [id, vec[i]]));
+      };
+      const ab = expandVec(e.abilities_lv, imp.meta && imp.meta.abilities_elements);
+      if (ab) { p.abilities_lv = ab; dropFlags(p, ['abilities_lv']); }
+      const sk = expandVec(e.skills_lv, imp.meta && imp.meta.skills_elements);
+      if (sk) { p.skills_lv = sk; dropFlags(p, ['skills_lv']); }
       // BLS AI exposure: populated only where an authoritative statement
       // was read (tier + source travel with the value). Null elsewhere —
       // the flag stays on, because the field is still unsourced there.
