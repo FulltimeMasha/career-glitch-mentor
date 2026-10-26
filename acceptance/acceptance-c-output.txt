@@ -1,0 +1,149 @@
+=== ACCEPTANCE C — 20-profession cross-check ===
+
+Accountant  [accountant]  → FAIL
+   median: FAIL — payK 120 ≠ source 84
+   direction: per card/anchor: up (engine carries no growth field — checked at source)
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 13-2011.00)
+   soc: 13-2011.00
+
+Registered Nurse  [registered-nurse]  → PASS
+   median: PASS — payK 98 ≈ source 98
+   direction: per card/anchor: up (engine carries no growth field — checked at source)
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 29-1141.00)
+   soc: 29-1141.00
+
+Software Developer  [software-developer]  → FAIL
+   median: FAIL — payK 125 ≠ source 136
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 15-1252.00)
+   soc: 15-1252.00
+
+Bookkeeper + Advisory  [bookkeeper-advisory]  → PASS
+   median: PASS — payK 51 ≈ source 51
+   direction: per card/anchor: down (engine carries no growth field — checked at source)
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 43-3031.00)
+   soc: 43-3031.00
+
+Graphic Designer  [graphic-designer]  → FAIL
+   median: FAIL — payK 45 ≠ source 63
+   direction: per card/anchor: down (engine carries no growth field — checked at source)
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 27-1024.00)
+   soc: 27-1024.00
+
+Translator / Interpreter  [translator-interpreter]  → PASS
+   median: PASS — payK 60 ≈ source 60
+   direction: per card/anchor: up (engine carries no growth field — checked at source)
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 27-3091.00)
+   soc: 27-3091.00
+
+Customer Service Representative  [—]  → PASS (special row)
+   soc: n/a (no base row) — O*NET 43-4051.00 by card
+   median: n/a — card states no median (deliberate)
+   direction: down ✓ (card: −5% to 2035, BLS)
+   ai: Very high ✓ (BLS official text, 43-4051)
+   riasec: n/a (no base row)
+
+Physician  [physician]  → PASS (exception)
+   median: PASS — payK 238 ≈ source 238
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 29-1215.00)
+   soc: 29-1215.00
+   exception: "Physician" in the base is the Family Physician card (29-1215.00); the ~$238K figure is the project card figure for family physicians.
+
+Electrician  [electrician]  → FAIL
+   median: FAIL — payK 75 ≠ source 63
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — Moderate (secondary_report)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 47-2111.00)
+   soc: 47-2111.00
+
+Dental Hygienist  [dental-hygienist]  → PASS
+   median: PASS — payK 98 ≈ source 98
+   direction: per card/anchor: up (engine carries no growth field — checked at source)
+   ai: PASS — Low (bls_official_text)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 29-1292.00)
+   soc: 29-1292.00
+
+Nuclear Reactor Operator  [nuclear-reactor-operator]  → PASS
+   median: PASS — payK 123 ≈ source 123
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 51-8011.00)
+   soc: 51-8011.00
+
+Commercial Insurance Producer  [commercial-insurance-producer]  → PASS (exception)
+   median: PASS — payK 62 ≈ source 62
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 41-3021.00)
+   soc: 41-3021.00
+   exception: bls_inherited: producer = Insurance Sales Agents (41-3021.00); the card median ($62K) is itself the BLS insurance-agents figure.
+
+AI Automation Specialist  [ai-automation-specialist]  → FAIL
+   median: FAIL — payK 120 ≠ source 100
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 15-1252.00)
+   soc: 15-1252.00
+   exception: No BLS occupation or series exists (emerging title). SOC/RIASEC inherited from Software Developers (bls_inherited); card median is from live postings, not BLS.
+
+CRNA  [registered-nurse-2]  → PASS
+   median: N/A — no card/anchor median to check payK=214 against
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 29-1151.00)
+   soc: 29-1151.00
+
+Family Physician  [physician]  → PASS (exception)
+   median: PASS — payK 238 ≈ source 238
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 29-1215.00)
+   soc: 29-1215.00
+   exception: "Physician" in the base is the Family Physician card (29-1215.00); the ~$238K figure is the project card figure for family physicians.
+
+Site Reliability Engineer  [site-reliability-engineer]  → PASS (exception)
+   median: N/A — no card/anchor median to check payK=135 against
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 15-1252.00)
+   soc: 15-1252.00
+   exception: bls_inherited: no O*NET occupation for SRE; series inherited from Software Developers.
+
+Harbor Pilot  [harbor-pilot]  → PASS
+   median: N/A — no card/anchor median to check payK=175 against
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 53-5021.00)
+   soc: 53-5021.00
+
+Marriage and Family Therapist  [marriage-and-family-therapist]  → PASS
+   median: N/A — no card/anchor median to check payK=63 against
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 21-1013.00)
+   soc: 21-1013.00
+
+Hazardous Materials Removal Worker  [hazardous-materials-removal-worker]  → PASS
+   median: N/A — no card/anchor median to check payK=50 against
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: PASS — profile == O*NET 30.2 raw (SOC 47-4041.00)
+   soc: 47-4041.00
+
+Car Wash Owner  [car-wash-owner]  → PASS (exception)
+   median: N/A — no card/anchor median to check payK=75 against
+   direction: N/A — no sourced direction in card/anchors
+   ai: PASS — null (no authoritative statement read; not invented)
+   riasec: N/A — no SOC (documented exception)
+   soc: null (exception)
+   exception: No O*NET occupation exists for an automated car-wash owner-operator business; SOC/RIASEC stay null by design.
+
+SUMMARY: 10 pass, 5 pass-with-exception, 5 fail (of 20)
