@@ -1,0 +1,552 @@
+{
+  "persona": "persona10",
+  "door": "start",
+  "cddq_type": "not_ready",
+  "transcript": [
+    {
+      "stage": "cddq",
+      "who": "mentor",
+      "text": "Fair, that makes sense. What makes this decision hard for you right now?"
+    },
+    {
+      "stage": "cddq",
+      "who": "user",
+      "text": "idk, my mom says I need to figure something out I guess"
+    },
+    {
+      "stage": 0,
+      "who": "mentor",
+      "text": "Got it, that's a lot of pressure. Are you working at all right now — job, odd gigs, school? What money comes in, if any?"
+    },
+    {
+      "stage": 0,
+      "who": "user",
+      "text": "I'm 18, just finished school. I don't really have a job yet. I want something AI-proof that makes money."
+    },
+    {
+      "stage": 1,
+      "who": "mentor",
+      "text": "Got it, fresh out of school.\n\nWhat’s anything you started outside class — a hobby, game, gym, side hustle — what did you like in it, and when did you quit it and why?"
+    },
+    {
+      "stage": 1,
+      "who": "user",
+      "text": "haven't tried anything really. started some stuff online but yeah, didn't finish"
+    },
+    {
+      "stage": 2,
+      "who": "mentor",
+      "text": "Yeah, that's really common. No judgment here — whose life do you low-key envy, and what exact part of it?"
+    },
+    {
+      "stage": 2,
+      "who": "user",
+      "text": "my mom says computers make money. idk what I actually like"
+    },
+    {
+      "stage": 3,
+      "who": "mentor",
+      "text": "Yeah, that's tough. Last time you tried something and quit or froze — what happened right before?"
+    },
+    {
+      "stage": 3,
+      "who": "user",
+      "text": "I dunno. nothing really stopped me, I just never started"
+    },
+    {
+      "stage": 4,
+      "who": "mentor",
+      "text": "Makes sense — starting is the hardest part. Quick one: imagine fixing stuff IS your job — in this job you would repair phones or bikes all day. Like it, hate it, or meh?"
+    },
+    {
+      "stage": 4,
+      "who": "user",
+      "text": "idk, all of it sounds whatever honestly"
+    },
+    {
+      "stage": 5,
+      "who": "mentor",
+      "text": "Fair enough.\n\nHere's what I got so far — correct me: you said \"all of it sounds whatever honestly.\"\n\nDid I miss any small part that felt a little less whatever?"
+    },
+    {
+      "stage": 5,
+      "who": "user",
+      "text": "yeah sure, sounds right I guess"
+    }
+  ],
+  "session": {
+    "door": "start",
+    "phase": "done",
+    "stage_index": 5,
+    "cddq_answers": {
+      "cddq_1": "not_started",
+      "cddq_2": "starting_at_all",
+      "cddq_3": "would_not_act"
+    },
+    "cddq_type": "not_ready",
+    "structured": {
+      "cddq_vote_1": "not_started",
+      "cddq_vote_2": "starting_at_all",
+      "cddq_vote_3": "would_not_act",
+      "country": "US",
+      "age": 18,
+      "current_income_k": 0,
+      "income_floor_k": 45,
+      "cushion_months": 0,
+      "hours_per_day": 4,
+      "budget_k": 0,
+      "documents_ok": "yes",
+      "health_limits": [
+        "none"
+      ],
+      "languages": [
+        "en"
+      ],
+      "attempts_started": 2,
+      "attempts_finished": 0,
+      "exit_pattern": "none_yet",
+      "energy_themes": [
+        "none_clear"
+      ],
+      "values_rank": {
+        "working_conditions": 1,
+        "achievement": 2,
+        "independence": 3,
+        "relationships": 4,
+        "support": 5,
+        "recognition": 6
+      },
+      "autonomy_need": 1,
+      "relatedness_need": 1,
+      "supports_money": 0,
+      "supports_time": 1,
+      "supports_people": 1,
+      "supports_learning_access": 1,
+      "barriers": [
+        "none"
+      ],
+      "red_lines": [
+        "none"
+      ],
+      "riasec_r1": 2,
+      "riasec_r2": 2,
+      "riasec_i1": 2,
+      "riasec_i2": 2,
+      "riasec_a1": 2,
+      "riasec_a2": 2,
+      "riasec_s1": 2,
+      "riasec_s2": 2,
+      "riasec_e1": 2,
+      "riasec_e2": 2,
+      "riasec_c1": 2,
+      "riasec_c2": 2,
+      "remote_pref": 1,
+      "hands_pref": 1,
+      "people_pref": 1,
+      "mirror_confirmed": "confirmed"
+    },
+    "transcript": [
+      {
+        "stage": "cddq",
+        "who": "mentor",
+        "text": "Fair, that makes sense. What makes this decision hard for you right now?"
+      },
+      {
+        "stage": "cddq",
+        "who": "user",
+        "text": "idk, my mom says I need to figure something out I guess"
+      },
+      {
+        "stage": 0,
+        "who": "mentor",
+        "text": "Got it, that's a lot of pressure. Are you working at all right now — job, odd gigs, school? What money comes in, if any?"
+      },
+      {
+        "stage": 0,
+        "who": "user",
+        "text": "I'm 18, just finished school. I don't really have a job yet. I want something AI-proof that makes money."
+      },
+      {
+        "stage": 1,
+        "who": "mentor",
+        "text": "Got it, fresh out of school.\n\nWhat’s anything you started outside class — a hobby, game, gym, side hustle — what did you like in it, and when did you quit it and why?"
+      },
+      {
+        "stage": 1,
+        "who": "user",
+        "text": "haven't tried anything really. started some stuff online but yeah, didn't finish"
+      },
+      {
+        "stage": 2,
+        "who": "mentor",
+        "text": "Yeah, that's really common. No judgment here — whose life do you low-key envy, and what exact part of it?"
+      },
+      {
+        "stage": 2,
+        "who": "user",
+        "text": "my mom says computers make money. idk what I actually like"
+      },
+      {
+        "stage": 3,
+        "who": "mentor",
+        "text": "Yeah, that's tough. Last time you tried something and quit or froze — what happened right before?"
+      },
+      {
+        "stage": 3,
+        "who": "user",
+        "text": "I dunno. nothing really stopped me, I just never started"
+      },
+      {
+        "stage": 4,
+        "who": "mentor",
+        "text": "Makes sense — starting is the hardest part. Quick one: imagine fixing stuff IS your job — in this job you would repair phones or bikes all day. Like it, hate it, or meh?"
+      },
+      {
+        "stage": 4,
+        "who": "user",
+        "text": "idk, all of it sounds whatever honestly"
+      },
+      {
+        "stage": 5,
+        "who": "mentor",
+        "text": "Fair enough.\n\nHere's what I got so far — correct me: you said \"all of it sounds whatever honestly.\"\n\nDid I miss any small part that felt a little less whatever?"
+      },
+      {
+        "stage": 5,
+        "who": "user",
+        "text": "yeah sure, sounds right I guess"
+      }
+    ],
+    "candidates": [
+      {
+        "slug": "luxury-real-estate-agent",
+        "name": "Luxury Real Estate Agent",
+        "category": "A",
+        "verdict": "YES",
+        "payK": 140,
+        "love": {
+          "mid": 0.9627083333333333,
+          "lo": 0.7627083333333333,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 0.975,
+            "sdt": 1,
+            "riasec": 0.8908333333333334
+          }
+        },
+        "potential": {
+          "mid": 0.7415740740740742,
+          "lo": 0.48157407407407415,
+          "hi": 1,
+          "parts": {
+            "interest_fit": 0.8908333333333334,
+            "trial": null,
+            "feasibility": 0.6296296296296297
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 0.8888888888888888,
+            "budget_ok": 0,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": []
+      },
+      {
+        "slug": "streamer-content-creator",
+        "name": "Streamer / Content Creator",
+        "category": "A",
+        "verdict": "YES",
+        "payK": 75,
+        "love": {
+          "mid": 0.9527777777777778,
+          "lo": 0.7527777777777778,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 0.986111111111111,
+            "sdt": 1,
+            "riasec": 0.8333333333333334
+          }
+        },
+        "potential": {
+          "mid": 0.738095238095238,
+          "lo": 0.478095238095238,
+          "hi": 0.998095238095238,
+          "parts": {
+            "interest_fit": 0.8333333333333334,
+            "trial": null,
+            "feasibility": 0.6666666666666666
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 1,
+            "budget_ok": 0,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": []
+      },
+      {
+        "slug": "dog-trainer",
+        "name": "Dog Trainer",
+        "category": "A",
+        "verdict": "YES",
+        "payK": 75,
+        "love": {
+          "mid": 0.945486111111111,
+          "lo": 0.7454861111111111,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 0.9611111111111109,
+            "sdt": 1,
+            "riasec": 0.8441666666666666
+          }
+        },
+        "potential": {
+          "mid": 0.7427380952380952,
+          "lo": 0.4827380952380952,
+          "hi": 1,
+          "parts": {
+            "interest_fit": 0.8441666666666666,
+            "trial": null,
+            "feasibility": 0.6666666666666666
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 1,
+            "budget_ok": 0,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": []
+      }
+    ],
+    "result": {
+      "mode": "insufficient_data",
+      "mode_reason": "CDDQ type is not_ready: the person has not yet decided to choose — coaching and small steps first, no verdict is forced.",
+      "top3": [
+        {
+          "slug": "luxury-real-estate-agent",
+          "name": "Luxury Real Estate Agent",
+          "category": "A",
+          "verdict": "YES",
+          "payK": 140,
+          "love": {
+            "mid": 0.9627083333333333,
+            "lo": 0.7627083333333333,
+            "hi": 1,
+            "parts": {
+              "needs_supplies": 0.975,
+              "sdt": 1,
+              "riasec": 0.8908333333333334
+            }
+          },
+          "potential": {
+            "mid": 0.7415740740740742,
+            "lo": 0.48157407407407415,
+            "hi": 1,
+            "parts": {
+              "interest_fit": 0.8908333333333334,
+              "trial": null,
+              "feasibility": 0.6296296296296297
+            },
+            "profile": "start",
+            "feasibility_subs": {
+              "entry_time_ok": 0.8888888888888888,
+              "budget_ok": 0,
+              "documents_factor": 1
+            }
+          },
+          "confidence": "medium",
+          "flags": []
+        },
+        {
+          "slug": "streamer-content-creator",
+          "name": "Streamer / Content Creator",
+          "category": "A",
+          "verdict": "YES",
+          "payK": 75,
+          "love": {
+            "mid": 0.9527777777777778,
+            "lo": 0.7527777777777778,
+            "hi": 1,
+            "parts": {
+              "needs_supplies": 0.986111111111111,
+              "sdt": 1,
+              "riasec": 0.8333333333333334
+            }
+          },
+          "potential": {
+            "mid": 0.738095238095238,
+            "lo": 0.478095238095238,
+            "hi": 0.998095238095238,
+            "parts": {
+              "interest_fit": 0.8333333333333334,
+              "trial": null,
+              "feasibility": 0.6666666666666666
+            },
+            "profile": "start",
+            "feasibility_subs": {
+              "entry_time_ok": 1,
+              "budget_ok": 0,
+              "documents_factor": 1
+            }
+          },
+          "confidence": "medium",
+          "flags": []
+        },
+        {
+          "slug": "dog-trainer",
+          "name": "Dog Trainer",
+          "category": "A",
+          "verdict": "YES",
+          "payK": 75,
+          "love": {
+            "mid": 0.945486111111111,
+            "lo": 0.7454861111111111,
+            "hi": 1,
+            "parts": {
+              "needs_supplies": 0.9611111111111109,
+              "sdt": 1,
+              "riasec": 0.8441666666666666
+            }
+          },
+          "potential": {
+            "mid": 0.7427380952380952,
+            "lo": 0.4827380952380952,
+            "hi": 1,
+            "parts": {
+              "interest_fit": 0.8441666666666666,
+              "trial": null,
+              "feasibility": 0.6666666666666666
+            },
+            "profile": "start",
+            "feasibility_subs": {
+              "entry_time_ok": 1,
+              "budget_ok": 0,
+              "documents_factor": 1
+            }
+          },
+          "confidence": "medium",
+          "flags": []
+        }
+      ],
+      "anti_match": {
+        "slug": "real-estate-agent",
+        "name": "Real Estate Agent",
+        "category": "C",
+        "verdict": "NO",
+        "payK": 53,
+        "love": {
+          "mid": 0.9509027777777777,
+          "lo": 0.7509027777777777,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 0.9611111111111109,
+            "sdt": 1,
+            "riasec": 0.8658333333333333
+          }
+        },
+        "potential": {
+          "mid": 0.7520238095238095,
+          "lo": 0.49202380952380953,
+          "hi": 1,
+          "parts": {
+            "interest_fit": 0.8658333333333333,
+            "trial": null,
+            "feasibility": 0.6666666666666666
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 1,
+            "budget_ok": 0,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": [
+          "base_verdict_no"
+        ]
+      },
+      "results_count": 339,
+      "exploration_plan": [
+        "Start with the coaching block, not the diagnosis: pick ONE small step this week (e.g. shadow one working day, or interview one person in a field you envy) — no deep testing until you actually want to choose.",
+        "Run 2 profession trials — short real-task samples from an actual working day — for the two most plausible directions, and record the scores.",
+        "Schedule an interest retest in 6–12 months — interests at 18–24 are still moving (stability ≈ .67–.70), so today's answer is \"your leanings now\", not a label.",
+        "Do the stage-6 real-Tuesday check on ONE candidate before committing to anything."
+      ]
+    },
+    "person": {
+      "door": "start",
+      "age": 18,
+      "age_band": "18_24",
+      "income_floor_k": 45,
+      "current_profession_name": null,
+      "country": "US",
+      "state": null,
+      "current_income_k": 0,
+      "languages": [
+        "en"
+      ],
+      "values_rank": {
+        "achievement": 2,
+        "independence": 3,
+        "recognition": 6,
+        "relationships": 4,
+        "support": 5,
+        "working_conditions": 1
+      },
+      "autonomy_need": 1,
+      "relatedness_need": 1,
+      "supports": {
+        "money": 0,
+        "time": 1,
+        "people": 1,
+        "learning_access": 1
+      },
+      "riasec": {
+        "R": 5,
+        "I": 5,
+        "A": 5,
+        "S": 5,
+        "E": 5,
+        "C": 5
+      },
+      "tolerances": {
+        "remote_pref": 1,
+        "hands_pref": 1,
+        "people_pref": 1
+      },
+      "attempts_started": 2,
+      "attempts_finished": 0,
+      "exit_pattern": "none_yet",
+      "energy_themes": [
+        "none_clear"
+      ],
+      "barriers": [
+        "none"
+      ],
+      "red_lines": [
+        "none"
+      ],
+      "mirror_confirmed": "confirmed",
+      "resources": {
+        "hours_per_day": 4,
+        "budget_k": 0,
+        "cushion_months": 0,
+        "documents_ok": "yes",
+        "health_limits": [
+          "none"
+        ]
+      },
+      "trials": [],
+      "perceived_fit": {},
+      "cddq_type": "not_ready",
+      "completeness": 1
+    },
+    "report": "### 1. Your facts, played back plainly\n\nHere is what we actually know so far:\n\n- You are 18, and you are at the starting point — not currently in a profession, and not currently earning.\n- You have said an income of at least 45k would be your floor.\n- You have about 4 hours a day available.\n- Right now your budget for training or change is 0, and you have 0 months of financial cushion. That is a real constraint, and any next step needs to respect it.\n- Your documents are in order, and you have noted no health limits.\n- When you ranked what matters in work, you put working conditions first, then achievement, then independence. After that came relationships, then support, and recognition last.\n- You have people, time, and access to learning you can draw on. Money support is the one piece that is not there right now.\n- You have started 2 attempts before and finished 0 so far. You have no clear pattern yet for how you leave things, and no clear energy themes have shown up yet either.\n- You have noted no specific barriers and no firm red lines so far.\n- Your interest answers came out completely even across the board. That does not tell us a direction yet — it tells us your leanings have not separated out into a clear shape.\n- You confirmed that this picture of your situation looks right to you.\n\nThat is an honest starting picture. It is not a finished one.\n\n### 2. Why there is no verdict yet\n\nThere is no profession verdict in this report, and that is deliberate.\n\nYour result came back as \"not ready\": you have not yet decided that you want to choose right now. Coaching and small steps come first, and no verdict should be forced before that decision is actually yours.\n\nOn top of that, a few pieces needed for a responsible verdict are still missing:\n\n- Your interests have not yet settled into a pattern we can read.\n- You have not yet tried real tasks from a real working day and recorded how those went.\n- We do not yet know what a normal, ordinary week would feel like in any particular direction — only how it sounds in the abstract.\n\nSaying \"not yet\" here is honesty, not failure. A verdict made now would just be a guess dressed up as an answer, and you deserve better than that.\n\n### 3. Your exploration plan — this is the product for now\n\nEach step below is small, doable this month, and costs nothing or next to nothing. Each one will prove something specific.\n\n**Step 1: Start with one small step this week, not with more testing.**\nPick one: shadow someone for one working day, or have one real conversation with a person doing work you find yourself envying. No deep testing, no big decisions until you actually want to choose.\n*What it will prove:* Whether curiosity is there when you see the real thing up close — and it starts building the feeling of \"I am choosing to explore,\" which has to come before choosing a direction.\n\n**Step 2: Try 2 short profession trials.**\nThese are short samples of real tasks from an actual working day, for the two directions that seem most plausible to you. Do the task, then write down honestly how it went — what was easy, what dragged, what you would not want to do again on a rainy Tuesday.\n*What it will prove:* The difference between liking the idea of something and liking the doing of it. That difference is exactly what we cannot see yet.\n\n**Step 3: Book an interest retest for 6–12 months from now.**\nPut it in the calendar this month, even though it happens later. Interests at 18–24 are still moving, so today's answers are \"your leanings now,\" not a label for life.\n*What it will prove:* Which leanings stay steady over time and which were just passing through. Steady ones are worth building on.\n\n**Step 4: Do one \"real Tuesday\" check before committing to anything.**\nFor one direction only, look at the unglamorous version: the ordinary tasks, the hours, the pay at the start, the conditions on a normal week — and check it against what you said matters most, starting with working conditions.\n*What it will prove:* Whether the day-to-day reality fits the life you actually want, not just whether the title sounds good.\n\n### 4. The 90-day check\n\nIn 90 days, we will know things we genuinely do not know today:\n\n- Whether you want to choose now — in your own words, not because a test told you to.\n- What at least two real-task trials actually felt like, with your own notes to show for it.\n- What one ordinary working week looks like up close, from shadowing, a conversation, or a real-Tuesday check.\n- Whether any early leanings are starting to repeat, or whether things are still wide open — both are useful answers.\n\nThat is how a verdict gets built later: not from one set of answers on one day, but from evidence you collect yourself — tasks you tried, days you saw, notes you wrote, and a clear decision from you that you are ready to choose.\n\nWhen those pieces are in place, a verdict will mean something. Until then, the plan above is the work — and it is real work, one small step at a time."
+  }
+}

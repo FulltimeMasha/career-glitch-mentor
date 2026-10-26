@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Glitch Mentor — Answer honestly. Get one plan.</title>
+<meta name="description" content="A mentor that interviews you deeply, checks every profession against real U.S. labor data, and gives a verdict with ranges — never a personality label, never a single match %.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerglitch.com/mentor">
+<meta property="og:title" content="Answer honestly. Get one plan — not another guide.">
+<meta property="og:description" content="Deep interview. Real BLS data. Two scores as ranges: LOVE and POTENTIAL. No personality labels.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:wght@400;600&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{--bg:#2a1030;--pink:#F92A82;--paper:#FFFCF6;--ink:#1C1A1F;--blush:#FFD8EA;--mut:rgba(255,252,246,.75);--green:#2fbf71;--red:#D90429}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--paper);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.55;background-image:linear-gradient(rgba(249,42,130,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(249,42,130,.13) 1px,transparent 1px);background-size:44px 44px}
+.wrap{max-width:720px;margin:0 auto;padding:20px 18px 56px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:6px 0 22px}
+.logo{font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:.06em;color:var(--paper);text-decoration:none;font-size:17px}
+.logo span{color:var(--pink)}
+nav a.home{color:var(--mut);text-decoration:none;font-size:14px}
+h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:33px;line-height:1.14;margin:6px 0 14px}
+h2{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;margin:26px 0 12px}
+.sub{font-size:18px;margin-bottom:20px}
+.mono{font-family:'DM Mono',monospace}
+.pill{display:inline-block;background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:999px;padding:5px 12px;font-family:'DM Mono',monospace;font-size:13px}
+.doors{display:grid;gap:14px;margin:20px 0}
+@media(min-width:560px){.doors{grid-template-columns:1fr 1fr 1fr}}
+.door{background:var(--blush);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--pink);padding:16px;text-align:left;cursor:pointer;font:inherit;width:100%}
+.door:hover,.door.sel{outline:3px solid var(--paper)}
+.door b{font-family:'Outfit',sans-serif;font-weight:900;font-size:19px;display:block;margin-bottom:6px}
+.door p{font-size:15px;font-weight:600}
+.door .path{font-family:'DM Mono',monospace;font-size:13px;color:#7a1042}
+.card{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--pink);padding:20px;margin-top:16px}
+.notice{background:var(--blush);color:var(--ink);border:3px solid var(--ink);border-radius:12px;padding:14px 16px;font-weight:600;margin:16px 0}
+.progress{font-family:'DM Mono',monospace;font-size:13px;color:var(--mut);margin:14px 0 6px}
+.bar{background:rgba(28,26,31,.45);border-radius:999px;height:12px;overflow:hidden;border:2px solid rgba(255,252,246,.35)}
+.barfill{background:var(--pink);height:100%;width:0%;transition:width .4s}
+.thread{display:grid;gap:14px;margin-top:14px}
+.msg{border-radius:14px;padding:15px 16px;border:3px solid var(--ink)}
+.msg.mentor{background:var(--paper);color:var(--ink);box-shadow:6px 6px 0 var(--pink)}
+.msg.user{background:rgba(255,252,246,.08);color:var(--paper);border-color:rgba(249,42,130,.5)}
+.msg .who{font-family:'DM Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.75;margin-bottom:6px}
+.msg .hint{color:#5c5566;font-size:14.5px;margin-top:6px}
+label{display:block;font-weight:600;font-size:15px;margin:16px 0 6px;color:var(--ink)}
+textarea,input[type=number],input[type=text]{width:100%;padding:12px;border-radius:10px;border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+textarea{min-height:110px;resize:vertical}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button,.choice button,.ranklist button{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:10px 13px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer}
+.seg button.sel,.choice button.sel{background:var(--pink);color:#fff}
+.choice{display:flex;flex-wrap:wrap;gap:8px}
+.anchors{display:flex;justify-content:space-between;font-size:13px;color:#5c5566;font-weight:600;margin-top:4px}
+.ranklist{display:grid;gap:8px;list-style:none}
+.ranklist li{display:flex;gap:10px;align-items:center;background:#fff;border:2px solid var(--ink);border-radius:10px;padding:10px 12px;font-weight:600}
+.ranklist .n{font-family:'DM Mono',monospace;background:var(--ink);color:#fff;border-radius:999px;width:26px;height:26px;display:grid;place-items:center;flex:none}
+.ranklist .up{margin-left:auto;padding:6px 10px;font-size:13px}
+.checks{display:grid;gap:8px}
+.checks label{display:flex;gap:10px;align-items:flex-start;margin:0;background:#fff;border:2px solid var(--ink);border-radius:10px;padding:10px 12px;cursor:pointer}
+.checks input{width:20px;height:20px;accent-color:var(--pink);margin-top:2px}
+.btn{width:100%;margin-top:20px;background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:10px;padding:14px;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--ink)}
+.badge{display:inline-block;padding:5px 13px;border-radius:999px;border:3px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:900;font-size:14px}
+.badge.yes{background:var(--green);color:#fff}.badge.no{background:var(--red);color:#fff}
+.verdict pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:2px solid var(--ink);border-radius:10px;padding:12px;font-size:13px}
+footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4);color:var(--mut);font-size:13px;display:grid;gap:8px}
+.hidden{display:none!important}
+@media(max-width:480px){h1{font-size:27px}.sub{font-size:16.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="/">CAREER<span>GLITCH</span></a><a class="home" href="/">careerglitch.com</a></nav>
+
+<!-- START SCREEN -->
+<section id="startScreen">
+<span class="pill">CAREER GLITCH MENTOR</span>
+<h1>Answer honestly. Get one plan — not another guide.</h1>
+<p class="sub">A mentor that interviews you deeply, checks every profession against real U.S. labor data, and gives a verdict with ranges — never a personality label, never a single &ldquo;match %&rdquo;. It asks about your real history, resources and constraints first, then shows its work: two scores, the evidence behind them, and what could prove the plan wrong.</p>
+<h2>Choose your door</h2>
+<div class="doors">
+  <button type="button" class="door" data-door="start"><span class="path">/start</span><b>Start fresh</b><p>Choosing a first or next profession from zero.</p></button>
+  <button type="button" class="door" data-door="pivot"><span class="path">/pivot</span><b>Level up</b><p>Stay competitive — rebuild your current job for the AI era.</p></button>
+  <button type="button" class="door" data-door="bridge"><span class="path">/bridge</span><b>Bridge</b><p>Foreign degree or experience &rarr; the U.S. version of your profession.</p></button>
+</div>
+<p style="color:var(--mut);font-size:14.5px">Selecting a door starts the interview. Your answers are collected in stages — a short open answer, then a few fixed questions. Only the fixed answers set scores; the open conversation never does.</p>
+</section>
+
+<!-- INTERVIEW -->
+<section id="interview" class="hidden">
+<div class="progress" id="progressLabel"></div>
+<div class="bar"><div class="barfill" id="barFill"></div></div>
+<div class="notice hidden" id="localNotice">Live mentor brain connects here — this preview collects your answers on this device only.</div>
+<div class="thread" id="thread"></div>
+<div class="card" id="stageCard">
+  <h2 id="stageTitle" style="margin-top:0"></h2>
+  <p id="stagePrompt" style="font-weight:600"></p>
+  <label for="freeText">Your answer, in your own words</label>
+  <textarea id="freeText" placeholder="Be specific. Facts beat self-descriptions."></textarea>
+  <div id="tailWidgets"></div>
+  <button type="button" class="btn" id="nextBtn">Continue</button>
+  <button type="button" class="btn ghost" id="restartBtn">Start over</button>
+</div>
+</section>
+
+<!-- VERDICT PLACEHOLDER -->
+<section id="verdict" class="card verdict hidden">
+<h2 style="margin-top:0">Your verdict</h2>
+<p id="verdictEmpty">No scoring result yet. When the deterministic scoring engine runs, this panel renders its result object directly — LOVE and POTENTIAL as ranges, a fitness category, and any flags. Nothing here is invented by the chat.</p>
+<div id="verdictBody"></div>
+</section>
+
+<footer>
+<p>Outlook figures: U.S. Bureau of Labor Statistics, projections 2025–35. Direction right for 86% of occupation groups in BLS's own 2014–24 evaluation — ranges, not promises.</p>
+<p>The profession database and the /start, /pivot, /bridge pages pre-date the hackathon. The Mentor is the new layer, built Oct 26 – Nov 4, 2026.</p>
+<p>Career Glitch Mentor — built for the Meta Global AI Developer Hackathon.</p>
+</footer>
+</div>
+<script>
+/* Transport contract
+ * const MENTOR_API_BASE = ""  -> LOCAL GUIDED MODE (see below).
+ * When MENTOR_API_BASE is non-empty, each completed stage is sent as:
+ *   POST {MENTOR_API_BASE}/turn
+ *   Content-Type: application/json
+ *   Body: { client_ref, door, cddq_type, stage_id, free_text, structured }
+ *   Expected response: { mentor_message?: string, scores?: object|null,
+ *                        report?: string|null, status?: string }
+ * The client renders scores/report verbatim if present; it never
+ * derives scores locally and never treats a chat reply as a score.
+ */
+const MENTOR_API_BASE = "";
+// Supabase constants copied exactly from ~/workspace/careerglitch-site/start.html
+const CG_SUPA = "https://stwzrcahhieqbabvljue.supabase.co";
+const CG_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0d3pyY2FoaGllcWJhYnZsanVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE1Njk4NzMsImV4cCI6MjEwNzE0NTg3M30.T8RWclXoxK8z5dqUPtSYYjAO5a6BsdLsDwaB4t7NIJM";
+
+/*
+ * Stage definitions — embedded faithful copy, following
+ * career-glitch-test-v3-spec.md (stages 0-6 + CDDQ routing).
+ * Shape matches engine/stages.json (built separately):
+ *   { id, title, free_prompt_hint, tail: [{id,label,kind,...}] }
+ * kinds: number | choice | scale | rank6 | multichoice | text_short | perceived_fit
+ * Only `tail` values are scoring inputs. Free text is narrative only.
+ */
+const STAGES = [
+  { id:"cddq", title:"Before we start — what kind of stuck is this?",
+    free_prompt_hint:"In one or two sentences: what makes this decision hard right now?",
+    prompt:"Three quick routing questions. They change the route and the emphasis — never your scores.",
+    tail:[
+      {id:"cddq_motivation",label:"Right now, I…",kind:"choice",options:["am not ready to decide at all","want to decide but keep putting it off","am ready to decide and want a plan"]},
+      {id:"cddq_knowledge",label:"What I am missing most is…",kind:"choice",options:["knowledge about myself","knowledge about professions","knowledge about how to decide / the process","not mainly knowledge — my information conflicts"]},
+      {id:"cddq_conflict",label:"My biggest conflict is…",kind:"choice",options:["no real conflict","inside me — I want incompatible things","pressure from people around me","conflicting facts about money / time / documents"]}
+    ]},
+  { id:"stage0", title:"Stage 0 — Point A: facts and resources",
+    free_prompt_hint:"Where are you, exactly? Current work, income, time, money, documents, constraints — only facts and numbers.",
+    prompt:"No self-descriptions yet. Just Point A: where you live, what you do now, what you earn, what floor you cannot go below, and what resources you actually have.",
+    tail:[
+      {id:"age_band",label:"Age band",kind:"choice",options:["under 18","18–24","25–34","35–44","45–54","55+"]},
+      {id:"current_income_usd",label:"Current income (USD / year, 0 if none)",kind:"number",min:0,placeholder:"e.g. 42000"},
+      {id:"income_floor_usd",label:"Income floor you cannot go below (USD / year)",kind:"number",min:0,placeholder:"e.g. 36000"},
+      {id:"savings_months",label:"Savings cushion (months of expenses)",kind:"number",min:0,placeholder:"e.g. 3"},
+      {id:"hours_per_day",label:"Real hours per day for study / transition",kind:"number",min:0,max:16,placeholder:"e.g. 2"},
+      {id:"entry_budget_usd",label:"Budget you can spend on entry / training (USD)",kind:"number",min:0,placeholder:"e.g. 2000"},
+      {id:"work_authorization",label:"U.S. work / licence eligibility",kind:"choice",options:["U.S. citizen / authorised, no barrier","authorised, some licence steps still needed","not yet authorised in the U.S.","not sure"]},
+      {id:"education",label:"Highest completed education",kind:"choice",options:["high school or less","some college / certificate","associate / bachelor","master or higher","foreign degree (any level)"]},
+      {id:"body_limits",label:"Body / health limits that rule out kinds of work (short)",kind:"text_short",placeholder:"e.g. cannot stand 8h, voice limit, none"}
+    ]},
+  { id:"stage1", title:"Stage 1 — History: behaviour, not self-description",
+    free_prompt_hint:"Walk through your past jobs or attempts: what you did, what gave energy, and — most important — why you left each one.",
+    prompt:"Preferences lie; behaviour doesn't. The pattern of why you left matters more than what you say you like.",
+    tail:[
+      {id:"exit_pattern",label:"My most common reason for leaving / quitting was…",kind:"choice",options:["pay / money ran out","boredom / lost interest","people / boss / environment","too hard / felt I couldn't do it","life circumstances","I usually finish what I start"]},
+      {id:"completion",label:"Things I started and actually finished",kind:"scale",min:1,max:5,anchor_low:"Almost nothing finished",anchor_high:"Almost everything finished"},
+      {id:"energy_theme",label:"Work that reliably gave me energy involved…",kind:"multichoice",options:["people","hands / building","numbers / systems","words / teaching","care / helping","organising / process"]},
+      {id:"drain_theme",label:"Work that reliably drained me involved…",kind:"multichoice",options:["people","hands / building","numbers / systems","words / teaching","care / helping","organising / process"]}
+    ]},
+  { id:"stage2", title:"Stage 2 — Hidden desires, values and supports",
+    free_prompt_hint:"Whose life do you envy — specifically, what part of it? And if success were guaranteed and nobody would judge you, what would you do?",
+    prompt:"This stage is coaching material: it shapes the explanation and the plan. The rankings below are the structured part.",
+    tail:[
+      {id:"values_rank6",label:"Rank the 6 work values — tap to move the most important to the top",kind:"rank6",options:["Achievement","Independence","Recognition","Relationships","Support","Working Conditions"]},
+      {id:"life_rank",label:"Rank what a good outcome means (most first)",kind:"rank6",options:["Money","Recognition","Freedom","Mastery","Security","Time with family"]},
+      {id:"supports",label:"Concrete supports I actually have",kind:"multichoice",options:["money / savings","time","a person who backs me","access to training","a network / audience","none of these yet"]}
+    ]},
+  { id:"stage3", title:"Stage 3 — Shadows and blockers",
+    free_prompt_hint:"What has actually stopped you before — in facts, not feelings? What are you afraid of in each possible ending, and who are you afraid of disappointing?",
+    prompt:"Barriers go into your plan, not your score. Red lines go into hard limits on what we may recommend.",
+    tail:[
+      {id:"main_barrier",label:"The barrier that stopped me most often",kind:"choice",options:["money","time","fear of failing publicly","family / caregiving load","documents / licence","not knowing the first step"]},
+      {id:"barrier_strength",label:"How strongly does that barrier bind right now?",kind:"scale",min:1,max:5,anchor_low:"Barely binds",anchor_high:"Completely blocks me"},
+      {id:"red_line",label:"One red line — a kind of work / condition I will not accept (short)",kind:"text_short",placeholder:"e.g. night shifts, sales calls, relocating"}
+    ]},
+  { id:"stage4", title:"Stage 4 — Preferences, tolerances and interests",
+    free_prompt_hint:"Think of specific jobs, not activities in general: which daily work sounds tolerable 200 days a year, and which does not?",
+    prompt:"Job-focused interest questions — about this work, not about hobbies. Tolerances matter as much as likes.",
+    tail:[
+      {id:"riasec_hands",label:"Working with hands, tools or machines, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+      {id:"riasec_analysis",label:"Analysing data / systems / problems, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+      {id:"riasec_people",label:"Helping, teaching or caring for people, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+      {id:"riasec_create",label:"Creating, designing or writing, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+      {id:"tolerate_paperwork",label:"I can tolerate heavy paperwork / documentation",kind:"scale",min:1,max:5,anchor_low:"Cannot tolerate",anchor_high:"Fine with it"},
+      {id:"training_length",label:"Longest training I will accept",kind:"choice",options:["1–6 months","6–12 months","1–2 years","2–4 years","4+ years"]}
+    ]},
+  { id:"stage5", title:"Stage 5 — Contradictions: the mirror",
+    free_prompt_hint:"Read the mirror below when it appears: where your words and your choices disagree. Confirm what is true, correct what is not.",
+    prompt:"I will hold up contradictions — for example, saying freedom matters most while repeatedly choosing money. You validate or correct the data before any verdict is built from it.",
+    tail:[
+      {id:"mirror_ack",label:"The mirror summary (shown in the full mentor) is…",kind:"choice",options:["accurate — proceed","partly accurate — I corrected it in my answer above","not accurate — my answer above is the correction"]},
+      {id:"priority_final",label:"If I must pick one priority for the next 90 days",kind:"choice",options:["money first","freedom first","mastery first","security first","recognition first"]}
+    ]},
+  { id:"stage6", title:"Stage 6 — A real Tuesday, and perceived fit",
+    free_prompt_hint:"Picture a normal Tuesday in a candidate profession: the routine, the people, the paperwork, the worst parts. Could you do 200 of those Tuesdays?",
+    prompt:"Perceived fit is a veto, never a boost: saying 'not mine' lowers a candidate by one fitness category; saying 'mine' never raises a score.",
+    tail:[
+      {id:"fit_candidate_1",label:"Candidate 1 — the real day feels…",kind:"perceived_fit",options:["mine","tolerable","not mine"]},
+      {id:"fit_candidate_2",label:"Candidate 2 — the real day feels…",kind:"perceived_fit",options:["mine","tolerable","not mine"]},
+      {id:"fit_candidate_3",label:"Candidate 3 — the real day feels…",kind:"perceived_fit",options:["mine","tolerable","not mine"]},
+      {id:"tuesdays_200",label:"I could do 200 Tuesdays like my top candidate's",kind:"scale",min:1,max:5,anchor_low:"No — I would quit",anchor_high:"Yes — that is a life I can live"}
+    ]}
+];
+
+// CDDQ routing: derive cddq_type from the 3 CDDQ answers (route only, never a score).
+function deriveCddqType(s){
+  if(!s) return null;
+  if(String(s.cddq_motivation||"").indexOf("not ready")>=0) return "not_ready";
+  if(String(s.cddq_conflict||"").indexOf("no real conflict")<0 && s.cddq_conflict) return "inconsistent_information";
+  return "lacks_information";
+}
+
+let state = loadState();
+function newClientRef(){ try{ return "cgm_"+crypto.randomUUID(); }catch(e){ return "cgm_"+Date.now()+"_"+Math.random().toString(36).slice(2,10); } }
+function loadState(){
+  try{ const raw=localStorage.getItem("cg_mentor_session"); if(raw){ const s=JSON.parse(raw); if(s && Array.isArray(s.history)) return s; } }catch(e){}
+  return { client_ref:newClientRef(), door:null, cddq_type:null, stageIndex:0, status:"in_progress", structured:{}, free:{}, history:[], scores:null, report:null };
+}
+function saveLocal(){ try{ localStorage.setItem("cg_mentor_session", JSON.stringify(state)); }catch(e){} }
+/* Session persistence to Supabase.
+ * Table: mentor_sessions, from db/001_mentor_sessions.sql.
+ * That migration may not be applied yet — failures are expected and silent,
+ * wrapped in try/catch so they never block the flow. */
+async function saveRemote(){
+  saveLocal();
+  try{
+    if(!CG_SUPA || !CG_ANON) return;
+    const headers={"apikey":CG_ANON,"Authorization":"Bearer "+CG_ANON,"Content-Type":"application/json","Prefer":"resolution=merge-duplicates,return=minimal"};
+    const row={ client_ref:state.client_ref, door:state.door, cddq_type:state.cddq_type, stage:state.stageIndex, status:state.status, structured:state.structured||{}, scores:state.scores||null, report:state.report||null, updated_at:new Date().toISOString() };
+    await fetch(CG_SUPA+"/rest/v1/mentor_sessions?on_conflict=client_ref",{method:"POST",headers:headers,body:JSON.stringify(row)});
+  }catch(e){ /* silent by design */ }
+}
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+const answers = {}; // current stage widget state
+function renderStage(){
+  const idx=state.stageIndex;
+  const st=STAGES[idx];
+  document.getElementById("progressLabel").textContent = state.door ? ("Door: "+state.door+"  ·  Step "+(idx+1)+" of "+STAGES.length+"  ·  "+st.id) : ("Step "+(idx+1)+" of "+STAGES.length);
+  document.getElementById("barFill").style.width = Math.round(idx/STAGES.length*100)+"%";
+  document.getElementById("localNotice").classList.toggle("hidden", !!MENTOR_API_BASE);
+  // thread: prior mentor prompts are the fixed stage prompts (guided flow, not fake AI)
+  const thread=document.getElementById("thread");
+  thread.innerHTML = state.history.map(function(h){
+    return '<div class="msg '+(h.who==="mentor"?"mentor":"user")+'"><div class="who">'+(h.who==="mentor"?"Mentor — guided flow":"You")+'</div><div>'+esc(h.text)+'</div></div>';
+  }).join("");
+  document.getElementById("stageTitle").textContent=st.title;
+  document.getElementById("stagePrompt").textContent=st.prompt;
+  const ft=document.getElementById("freeText"); ft.value=""; ft.placeholder=st.free_prompt_hint;
+  Object.keys(answers).forEach(function(k){delete answers[k];});
+  const host=document.getElementById("tailWidgets"); host.innerHTML="";
+  (st.tail||[]).forEach(function(item){ host.appendChild(renderWidget(item)); });
+  document.getElementById("nextBtn").textContent = idx===STAGES.length-1 ? "Finish — show verdict panel" : "Continue";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderWidget(item){
+  const wrap=document.createElement("div");
+  const lab=document.createElement("label"); lab.textContent=item.label; wrap.appendChild(lab);
+  if(item.kind==="number"){
+    const inp=document.createElement("input"); inp.type="number"; if(item.min!=null)inp.min=item.min; if(item.max!=null)inp.max=item.max; inp.placeholder=item.placeholder||"";
+    inp.addEventListener("input",function(){ answers[item.id]= inp.value===""?null:Number(inp.value); }); wrap.appendChild(inp);
+  } else if(item.kind==="text_short"){
+    const inp=document.createElement("input"); inp.type="text"; inp.placeholder=item.placeholder||"";
+    inp.addEventListener("input",function(){ answers[item.id]=inp.value.trim(); }); wrap.appendChild(inp);
+  } else if(item.kind==="choice" || item.kind==="perceived_fit"){
+    const box=document.createElement("div"); box.className="choice";
+    (item.options||[]).forEach(function(opt){
+      const b=document.createElement("button"); b.type="button"; b.textContent=opt;
+      b.addEventListener("click",function(){ box.querySelectorAll("button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); answers[item.id]=opt; });
+      box.appendChild(b);
+    }); wrap.appendChild(box);
+    if(item.kind==="perceived_fit"){ const n=document.createElement("p"); n.style.cssText="font-size:13px;color:#5c5566;margin-top:6px"; n.textContent="Perceived fit can only lower a category — never raise it."; wrap.appendChild(n); }
+  } else if(item.kind==="scale"){
+    const box=document.createElement("div"); box.className="seg";
+    for(let v=item.min; v<=item.max; v++){ (function(v){ const b=document.createElement("button"); b.type="button"; b.textContent=String(v);
+      b.addEventListener("click",function(){ box.querySelectorAll("button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); answers[item.id]=v; }); box.appendChild(b); })(v); }
+    wrap.appendChild(box);
+    const a=document.createElement("div"); a.className="anchors"; a.innerHTML="<span>"+esc(item.anchor_low||item.min)+"</span><span>"+esc(item.anchor_high||item.max)+"</span>"; wrap.appendChild(a);
+  } else if(item.kind==="multichoice"){
+    const box=document.createElement("div"); box.className="checks"; answers[item.id]=[];
+    (item.options||[]).forEach(function(opt){
+      const l=document.createElement("label"); const c=document.createElement("input"); c.type="checkbox";
+      c.addEventListener("change",function(){ const arr=answers[item.id]||[]; if(c.checked && arr.indexOf(opt)<0)arr.push(opt); if(!c.checked)answers[item.id]=arr.filter(function(x){return x!==opt;}); });
+      l.appendChild(c); const s=document.createElement("span"); s.textContent=opt; l.appendChild(s); box.appendChild(l);
+    }); wrap.appendChild(box);
+  } else if(item.kind==="rank6"){
+    let order=(item.options||[]).slice(); answers[item.id]=order.slice();
+    const ul=document.createElement("ul"); ul.className="ranklist";
+    function draw(){ ul.innerHTML=""; order.forEach(function(opt,i){ const li=document.createElement("li");
+      li.innerHTML='<span class="n">'+(i+1)+'</span><span>'+esc(opt)+'</span>';
+      if(i>0){ const up=document.createElement("button"); up.type="button"; up.className="up"; up.textContent="↑ Move up";
+        up.addEventListener("click",function(){ const t=order[i-1]; order[i-1]=order[i]; order[i]=t; answers[item.id]=order.slice(); draw(); }); li.appendChild(up); }
+      ul.appendChild(li); }); }
+    draw(); wrap.appendChild(ul);
+    const n=document.createElement("p"); n.style.cssText="font-size:13px;color:#5c5566;margin-top:6px"; n.textContent="Tap “Move up” (or drag on desktop in the full mentor) — #1 is most important."; wrap.appendChild(n);
+  }
+  return wrap;
+}
+async function postTurn(stageId){
+  if(!MENTOR_API_BASE) return null;
+  try{
+    const r=await fetch(MENTOR_API_BASE.replace(/\/$/,"")+"/turn",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({client_ref:state.client_ref,door:state.door,cddq_type:state.cddq_type,stage_id:stageId,free_text:state.free[stageId]||"",structured:state.structured})});
+    if(!r.ok) return null; const j=await r.json();
+    if(j && j.scores) state.scores=j.scores; if(j && j.report) state.report=j.report; if(j && j.status) state.status=j.status;
+    return j;
+  }catch(e){ return null; }
+}
+function renderVerdict(){
+  const panel=document.getElementById("verdict"); panel.classList.remove("hidden");
+  document.getElementById("barFill").style.width="100%";
+  const body=document.getElementById("verdictBody"); const s=state.scores;
+  if(!s){ document.getElementById("verdictEmpty").style.display="block"; body.innerHTML = MENTOR_API_BASE ? "" : '<div class="notice">Live mentor brain connects here — this preview collects your answers on this device only.</div>'; return; }
+  document.getElementById("verdictEmpty").style.display="none";
+  function band(v){ if(v==null) return "—"; if(Array.isArray(v)) return esc(v[0])+" – "+esc(v[1]); if(typeof v==="object") return esc(v.low??v.min??"")+" – "+esc(v.high??v.max??""); return esc(v); }
+  let html="";
+  if(s.love||s.LOVE) html+="<p><b>LOVE:</b> "+band(s.love||s.LOVE)+"</p>";
+  if(s.potential||s.POTENTIAL) html+="<p><b>POTENTIAL:</b> "+band(s.potential||s.POTENTIAL)+"</p>";
+  if(s.category) html+='<p><b>Category:</b> <span class="badge">'+esc(s.category)+"</span></p>";
+  if(s.flags && s.flags.length) html+="<p><b>Flags:</b> "+s.flags.map(esc).join(", ")+"</p>";
+  if(state.report) html+="<p style='margin-top:10px'>"+esc(state.report)+"</p>";
+  html+="<pre>"+esc(JSON.stringify(s,null,2))+"</pre>";
+  body.innerHTML=html;
+}
+document.querySelectorAll(".door").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    state.door=btn.getAttribute("data-door"); state.status="in_progress"; state.stageIndex=0;
+    document.getElementById("startScreen").classList.add("hidden");
+    document.getElementById("interview").classList.remove("hidden");
+    saveRemote(); renderStage();
+  });
+});
+document.getElementById("nextBtn").addEventListener("click", async function(){
+  const st=STAGES[state.stageIndex];
+  const free=document.getElementById("freeText").value.trim();
+  state.free[st.id]=free;
+  state.history.push({who:"mentor",text:st.prompt});
+  if(free) state.history.push({who:"user",text:free});
+  Object.keys(answers).forEach(function(k){ state.structured[k]=answers[k]; });
+  if(st.id==="cddq") state.cddq_type=deriveCddqType(state.structured);
+  await postTurn(st.id);
+  if(state.stageIndex>=STAGES.length-1){ state.status = state.scores ? "scored" : "completed_local"; document.getElementById("stageCard").classList.add("hidden"); saveRemote(); renderVerdict(); document.getElementById("verdict").scrollIntoView({behavior:"smooth"}); return; }
+  state.stageIndex+=1; saveRemote(); renderStage();
+});
+document.getElementById("restartBtn").addEventListener("click",function(){
+  state={client_ref:newClientRef(),door:null,cddq_type:null,stageIndex:0,status:"in_progress",structured:{},free:{},history:[],scores:null,report:null};
+  saveLocal(); location.reload();
+});
+// Resume: if a door was already chosen, jump back into the flow.
+if(state.door){ document.getElementById("startScreen").classList.add("hidden"); document.getElementById("interview").classList.remove("hidden"); if(state.status==="completed_local"||state.status==="scored"){ document.getElementById("stageCard").classList.add("hidden"); renderVerdict(); } else { renderStage(); } }
+</script>
+</body>
+</html>

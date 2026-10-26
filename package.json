@@ -1,0 +1,12 @@
+{
+  "description": "Career Glitch Mentor \u2014 deep interview, deterministic scoring, personal track. Built for the Meta Global AI Developer Hackathon, Oct 26 \u2013 Nov 4, 2026.",
+  "name": "career-glitch-mentor",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8080 --directory web",
+    "smoke": "node scripts/smoke_persona10.mjs",
+    "test": "node --test \"tests/**/*.test.mjs\""
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

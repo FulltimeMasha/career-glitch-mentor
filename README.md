@@ -33,20 +33,50 @@ Three ways in: start a new profession, grow in the one you have with AI, or move
 
 The numbers always come from the verified data — never made up.
 
+## How scoring works
+
+Two scores, shown as **ranges** — **LOVE** and **POTENTIAL** — never a single "match %".
+
+Scores come only from fixed structured answers: the anchored tail questions at the end of each interview stage, plus measured profession trials where they apply. The AI conversation never sets scores. It can interview, quote your own words back, build the mirror of contradictions, and write the report — it cannot move a number.
+
+Banned, by design: no MBTI or personality types, no grit score, no personality labels as verdicts. Self-rated ability is not a scoring input. Perceived fit ("this real day is not mine") can only lower a candidate's fitness category by one step — it never raises a score. Full reasoning: [science-map.md](science-map.md).
+
 ## Built during the hackathon
 
-Oct 26 – Nov 4, 2026: the mentor, the interview, the matching, the plans, the check-ins, the cards, the page at careerglitch.com/mentor — everything in this repo.
-
-Before the hackathon, the author had already built the profession database and the careerglitch.com site. The mentor is the new part, built on top during the event.
-
 Built for the Meta Global AI Developer Hackathon (Startup track, Build for Your World).
+
+**PRE-EXISTING — before Oct 26, 2026:**
+
+- The 339-profession verdict database, checked against BLS data.
+- The careerglitch.com site.
+- The `/start`, `/pivot` and `/bridge` pages, including the $49 personal-map offer — an experiment that runs during the hackathon.
+
+**NEW — in the window Oct 26 – Nov 4, 2026, everything in this repo:**
+
+- The Mentor interview engine (Muse Spark 1.3).
+- The deterministic scoring engine implementing the published science map — [science-map.md](science-map.md).
+- The `/mentor` page (`web/mentor.html`).
+- The personal track.
+
+The profession database and the /start, /pivot, /bridge pages pre-date the hackathon. The Mentor is the new layer, built on top during the event.
 
 ## Try it
 
 ```bash
-npm install
-MODEL_API_KEY=<your key from dev.meta.ai> npm run dev
+git clone <this repo>
+cd career-glitch-mentor
+
+# Scoring / engine tests (no dependencies, Node 20+)
+node --test tests/
+
+# The /mentor page, locally
+python3 -m http.server 8080 --directory web
+# then open http://localhost:8080/mentor.html
 ```
+
+The page runs standalone in local guided mode: it walks every stage and collects structured answers on the device. The live interview needs the Meta Model API key, which is held in Muse's secure connector — never in this repo, never in the page. With no key present, nothing pretends to be the model.
+
+Session persistence is optional: `db/001_mentor_sessions.sql` is applied manually in the Supabase SQL editor; until then the page keeps state in `localStorage` only, by design.
 
 ## Author
 
