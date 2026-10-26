@@ -1,64 +1,64 @@
-### 1. Your facts, played back plainly
+### 1. What we actually know so far
 
-Here is what we actually know so far:
+Here is what you have told us, plainly:
 
-- You are 18, and you are at the starting point — not currently in a profession, and not currently earning.
-- You have said an income of at least 45k would be your floor.
-- You have about 4 hours a day available.
-- Right now your budget for training or change is 0, and you have 0 months of financial cushion. That is a real constraint, and any next step needs to respect it.
-- Your documents are in order, and you have noted no health limits.
-- When you ranked what matters in work, you put working conditions first, then achievement, then independence. After that came relationships, then support, and recognition last.
-- You have people, time, and access to learning you can draw on. Money support is the one piece that is not there right now.
-- You have started 2 attempts before and finished 0 so far. You have no clear pattern yet for how you leave things, and no clear energy themes have shown up yet either.
-- You have noted no specific barriers and no firm red lines so far.
-- Your interest answers came out completely even across the board. That does not tell us a direction yet — it tells us your leanings have not separated out into a clear shape.
-- You confirmed that this picture of your situation looks right to you.
+- You are 18, and you are starting out — you are not currently working in a profession, and your current income is 0.
+- If you think ahead to income, $45k is the floor you have named.
+- You have about 4 hours a day you can give to this.
+- Right now there is no budget set aside for training or trying things, and no financial cushion — money support is at 0, while time, people who can help, and access to learning are present.
+- Your documents are in order, and you have named no health limits.
+- When you ranked what matters in work, you put working conditions first, then achievement, then independence, then relationships, then support, and recognition last.
+- You have started 2 attempts so far and finished 0. You have not named a clear pattern for why, and that is okay — it is still early.
+- You have not named clear energy themes yet — the kinds of tasks or days that reliably give you energy — and you have named no clear barriers and no hard red lines.
+- Your interest answers came out even across the board, with no one area standing out above the others yet.
+- You confirmed that this picture sounds right to you.
 
-That is an honest starting picture. It is not a finished one.
+That is a real starting point. It tells us about your circumstances, your time, and what you value. It does not yet tell us what day-to-day work actually suits you — and we are not going to pretend it does.
 
 ### 2. Why there is no verdict yet
 
-There is no profession verdict in this report, and that is deliberate.
+There is no profession verdict in this report, on purpose.
 
-Your result came back as "not ready": you have not yet decided that you want to choose right now. Coaching and small steps come first, and no verdict should be forced before that decision is actually yours.
+The reason is simple: you are in a not-ready-to-choose place right now. That is not a failure, and it is not a problem to fix quickly. It means you have not yet decided that you want to choose — and forcing a verdict before that decision exists would just be us guessing confidently on your behalf.
 
-On top of that, a few pieces needed for a responsible verdict are still missing:
+A few important pieces are still missing:
 
-- Your interests have not yet settled into a pattern we can read.
-- You have not yet tried real tasks from a real working day and recorded how those went.
-- We do not yet know what a normal, ordinary week would feel like in any particular direction — only how it sounds in the abstract.
+- **No real-task evidence yet.** You have not yet tried the actual work of a direction and seen how it feels, so there is nothing concrete to judge a fit against.
+- **No clear leaning to follow yet.** Because your interest answers were even across the board, they do not point anywhere in particular today. At 18, that is normal — interests are still moving.
+- **The starting attempts have not finished.** With 2 started and 0 finished, we do not yet know what happens for you when you get past the beginning of something.
 
-Saying "not yet" here is honesty, not failure. A verdict made now would just be a guess dressed up as an answer, and you deserve better than that.
+So this report is honest about that: no verdict is being made, hinted at, or hidden in scores. What you get instead is a way to gather the evidence a real verdict would need.
 
-### 3. Your exploration plan — this is the product for now
+### 3. Your exploration plan — this is the product
 
-Each step below is small, doable this month, and costs nothing or next to nothing. Each one will prove something specific.
+Think of the next steps as small, doable experiments. Each one this month, each one teaching you something specific.
 
-**Step 1: Start with one small step this week, not with more testing.**
-Pick one: shadow someone for one working day, or have one real conversation with a person doing work you find yourself envying. No deep testing, no big decisions until you actually want to choose.
-*What it will prove:* Whether curiosity is there when you see the real thing up close — and it starts building the feeling of "I am choosing to explore," which has to come before choosing a direction.
+**Step 1: Start with one small step this week — not deep testing.**
+Pick ONE thing: shadow someone for one working day, or interview one person doing work you envy. Keep it that small.
+*What it will prove:* Whether you actually want to move closer to choosing right now, and what a real day in someone else's work looks like up close — not imagined.
 
-**Step 2: Try 2 short profession trials.**
-These are short samples of real tasks from an actual working day, for the two directions that seem most plausible to you. Do the task, then write down honestly how it went — what was easy, what dragged, what you would not want to do again on a rainy Tuesday.
-*What it will prove:* The difference between liking the idea of something and liking the doing of it. That difference is exactly what we cannot see yet.
+**Step 2: Try 2 short, real tasks.**
+When you are ready, take two plausible directions and do a short sample of a real task from an actual working day in each — not reading about it, doing a piece of it. Write down how each one went: what was easy, what dragged, what you would or would not do again tomorrow.
+*What it will prove:* The difference between liking the idea of something and liking the work itself. That difference is exactly what we do not know yet.
 
-**Step 3: Book an interest retest for 6–12 months from now.**
-Put it in the calendar this month, even though it happens later. Interests at 18–24 are still moving, so today's answers are "your leanings now," not a label for life.
-*What it will prove:* Which leanings stay steady over time and which were just passing through. Steady ones are worth building on.
+**Step 3: Put a retest date in the calendar.**
+Schedule an interest retest in 6–12 months. Interests at 18–24 are still moving, so today's answers are "your leanings now," not a label for life.
+*What it will prove:* Whether a leaning is emerging and holding over time, which makes any later verdict much more trustworthy.
 
-**Step 4: Do one "real Tuesday" check before committing to anything.**
-For one direction only, look at the unglamorous version: the ordinary tasks, the hours, the pay at the start, the conditions on a normal week — and check it against what you said matters most, starting with working conditions.
-*What it will prove:* Whether the day-to-day reality fits the life you actually want, not just whether the title sounds good.
+**Step 4: Do a real-Tuesday check before committing to anything.**
+When one direction starts to feel plausible, look hard at an ordinary Tuesday in it: the hours, the pay at the start, the people, the boring parts, the cost to get in — with your 4 hours a day and no budget right now kept honestly in view.
+*What it will prove:* Whether the direction works in your actual life, not just in theory.
 
 ### 4. The 90-day check
 
-In 90 days, we will know things we genuinely do not know today:
+In 90 days, we can sit down again and ask: what do we know then that we do not know now?
 
-- Whether you want to choose now — in your own words, not because a test told you to.
-- What at least two real-task trials actually felt like, with your own notes to show for it.
-- What one ordinary working week looks like up close, from shadowing, a conversation, or a real-Tuesday check.
-- Whether any early leanings are starting to repeat, or whether things are still wide open — both are useful answers.
+By then, if you do these small steps, we should know:
 
-That is how a verdict gets built later: not from one set of answers on one day, but from evidence you collect yourself — tasks you tried, days you saw, notes you wrote, and a clear decision from you that you are ready to choose.
+- Whether you want to choose yet — in your own words, not because a report pushed you.
+- What happened when you watched or did real work, even for a day — what gave energy, what drained it.
+- How two real tasks actually went, in your own recorded notes, instead of guesses.
+- What an ordinary day in one plausible direction would really look like, including the practical side: time, money, and how you would get started.
+- Whether your even interests are starting to lean somewhere, or are still wide open.
 
-When those pieces are in place, a verdict will mean something. Until then, the plan above is the work — and it is real work, one small step at a time.
+A verdict gets built from exactly that evidence: tried work, your recorded reaction to it, a real-day picture, and your practical circumstances all together. When those pieces exist, a recommendation would mean something. Until they do, the most useful and honest thing we can give you is this plan — and it is yours to start with one small step this week.

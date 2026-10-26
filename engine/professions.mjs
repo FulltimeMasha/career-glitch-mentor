@@ -21,14 +21,26 @@
 //        1 "1–6 mo", 2 "6–12 mo", 3 "1–2 yrs", 4 "2–4 yrs", 5 "4+ yrs")
 //   [14] payK (median pay, $K/year)
 //
-// HONESTY RULE (model v2 §1в): fields that would come from O*NET / BLS
-// imports (onet_soc, bls_*, work_values_extent, abilities_lv, skills_lv,
-// license_type, inflow_competition_flag) are NOT in the site data, so they
-// stay null and are listed in data_flags. Nothing sourced is invented.
-// Everything derived is a documented stub and flagged as such.
+// HONESTY RULE (model v2 §1в): fields that come from O*NET / BLS imports
+// (onet_soc, bls_*, work_values_extent, abilities_lv, skills_lv) are filled
+// ONLY from data/onet-import.json (WS2, scripts/import_onet.py — O*NET
+// 30.2, hand-reviewed mapping) when that file is present next to the
+// engine. Where a profession has no clean O*NET match (31 of 339), the
+// sourced fields stay null, the Day-1 stub derivations remain, and
+// data_flags says so ('no_onet_match'). license_type and
+// inflow_competition_flag have no source at all yet: always null, always
+// flagged. Nothing sourced is invented; everything derived is a
+// documented stub and flagged as such.
+//
+// O*NET attribution (CC BY 4.0): "This page includes information from
+// the O*NET 30.2 Database by the U.S. Department of Labor, Employment
+// and Training Administration (USDOL/ETA). Used under the CC BY 4.0
+// license. O*NET® is a trademark of USDOL/ETA. Career Glitch has
+// modified all or some of this information. USDOL/ETA has not approved,
+// endorsed, or tested these modifications."
 // ---------------------------------------------------------------------------
 
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 
@@ -221,7 +233,7 @@ export function buildProfessions(profData, roadmapData) {
   const index = buildRoadmapIndex(roadmapData);
 
   const usedSlugs = new Set();
-  return tuples.map((t) => {
+  const built = tuples.map((t) => {
     const [name, category, pay, ai, remote, lic, hands, people, biz, tech, out, care, creat, studyBand, payK] = t;
     const attrs = { pay, ai, remote, lic, hands, people, biz, tech, out, care, creat };
 
@@ -277,11 +289,18 @@ export function buildProfessions(profData, roadmapData) {
         // physical: maximum hands-on load.
         physical: hands === 2,
       },
-      // --- model v2 §1в fields with NO source in the site data: null, flagged.
+      // --- model v2 §1в sourced fields: null until applyOnetImport()
+      // fills them from data/onet-import.json; flagged while null.
       onet_soc: null,
+      onet_title: null,
+      onet_match: null,
+      job_zone: null,
+      tasks: null,
       bls_inherited: null,
       bls_vintage: null,
       bls_ai_exposure: null,
+      bls_ai_exposure_tier: null,
+      bls_ai_exposure_source: null,
       work_values_extent: null,
       work_values_frozen_date: null,
       abilities_lv: null,
@@ -291,12 +310,92 @@ export function buildProfessions(profData, roadmapData) {
       data_flags: dataFlags,
     };
   });
+  return applyOnetImport(built);
 }
 
 // ---------------------------------------------------------------------------
 // loadProfessions(opts) — file-reading wrapper over buildProfessions().
 // Reads the live site dir (default ~/workspace/careerglitch-site).
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// WS2 swap: merge data/onet-import.json (O*NET 30.2) into the built
+// professions. The import file is looked for relative to this module so
+// the same code works in the repo layout (engine/ -> ../data/) and in
+// the deployed Vercel bundle (api/_lib/engine/ -> ../data/), with cwd
+// fallbacks for serverless hosts. Absent file → Day-1 behaviour,
+// untouched (stubs + nulls + flags).
+// ---------------------------------------------------------------------------
+function readOnetImport() {
+  const candidates = [
+    new URL('../data/onet-import.json', import.meta.url),
+    new URL('./data/onet-import.json', import.meta.url),
+  ];
+  try {
+    candidates.push(join(process.cwd(), 'data', 'onet-import.json'));
+    candidates.push(join(process.cwd(), 'api', '_lib', 'data', 'onet-import.json'));
+  } catch { /* no cwd — module-relative paths only */ }
+  for (const c of candidates) {
+    try {
+      if (existsSync(c)) return JSON.parse(readFileSync(c, 'utf8'));
+    } catch { /* unreadable candidate — try the next */ }
+  }
+  return null;
+}
+
+const dropFlags = (p, names) => { p.data_flags = p.data_flags.filter((f) => !names.includes(f)); };
+
+export function applyOnetImport(profs) {
+  const imp = readOnetImport();
+  if (!imp || !imp.professions) return profs;
+  for (const p of profs) {
+    // bls_vintage stamps the BLS projection vintage of the site series
+    // (2025–35) on EVERY vector, matched or not (model v2 §1в).
+    p.bls_vintage = '2025-35';
+    dropFlags(p, ['bls_vintage']);
+    const e = imp.professions[p.slug];
+    if (e && e.onet_soc) {
+      p.onet_soc = e.onet_soc;
+      p.onet_title = e.onet_title ?? null;
+      p.onet_match = e.match_method ?? null;
+      p.job_zone = e.job_zone ?? null;
+      p.tasks = Array.isArray(e.tasks) ? e.tasks : null;
+      p.bls_inherited = !!e.bls_inherited;
+      dropFlags(p, ['onet_soc', 'bls_inherited']);
+      if (e.riasec_profile) {
+        p.riasec = e.riasec_profile;
+        p.riasec_stub = false;
+        dropFlags(p, ['riasec_stub']);
+      }
+      if (e.supplies) {
+        p.supplies = e.supplies;
+        p.supplies_stub = false;
+        dropFlags(p, ['supplies_stub']);
+      }
+      if (e.work_values_extent) {
+        p.work_values_extent = e.work_values_extent;
+        p.work_values_frozen_date = e.work_values_frozen_date ?? null;
+        dropFlags(p, ['work_values_extent', 'work_values_frozen_date']);
+      }
+      if (e.abilities_lv) { p.abilities_lv = e.abilities_lv; dropFlags(p, ['abilities_lv']); }
+      if (e.skills_lv) { p.skills_lv = e.skills_lv; dropFlags(p, ['skills_lv']); }
+      // BLS AI exposure: populated only where an authoritative statement
+      // was read (tier + source travel with the value). Null elsewhere —
+      // the flag stays on, because the field is still unsourced there.
+      p.bls_ai_exposure = e.bls_ai_exposure ?? null;
+      p.bls_ai_exposure_tier = e.bls_ai_exposure_tier ?? null;
+      p.bls_ai_exposure_source = e.bls_ai_exposure_source ?? null;
+      if (p.bls_ai_exposure) dropFlags(p, ['bls_ai_exposure']);
+      p.data_flags.push('onet_sourced');
+    } else {
+      // No clean O*NET match: stubs and nulls stay, flagged honestly.
+      p.onet_match = e ? (e.match_method ?? 'unmatched') : 'not_in_import';
+      p.onet_unmatched_reason = e ? (e.match_method ?? null) : null;
+      p.data_flags.push('no_onet_match');
+    }
+  }
+  return profs;
+}
+
 export function loadProfessions(opts = {}) {
   const siteDir = opts.siteDir || process.env.CG_SITE_DIR || DEFAULT_SITE_DIR;
   const profData = JSON.parse(readFileSync(join(siteDir, 'professions.json'), 'utf8'));

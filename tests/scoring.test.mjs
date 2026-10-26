@@ -200,11 +200,32 @@ test('loadProfessions: 300+ professions, data_flags everywhere, verdicts parsed 
   assert.ok(professions.length >= 300, `expected 300+ professions, got ${professions.length}`);
   for (const p of professions) {
     assert.ok(Array.isArray(p.data_flags), `${p.name}: data_flags must be an array`);
-    assert.ok(p.supplies && p.riasec && p.sdt, `${p.name}: stub vectors must exist`);
-    // Unsourced fields stay null — never invented.
-    assert.equal(p.onet_soc, null);
-    assert.equal(p.bls_ai_exposure, null);
-    assert.equal(p.license_type, null);
+    assert.ok(p.supplies && p.riasec && p.sdt, `${p.name}: vectors must exist`);
+    // WS2 invariant: a sourced field is either null WITH its honesty
+    // flag still on, or filled WITH provenance. Never a bare value.
+    assert.equal(p.license_type, null); // no source exists anywhere yet
+    assert.equal(p.bls_vintage, '2025-35', `${p.name}: vintage stamped on every vector`);
+    if (p.onet_soc == null) {
+      assert.ok(p.data_flags.includes('no_onet_match'), `${p.name}: unmatched must be flagged`);
+    } else {
+      assert.ok(p.onet_match, `${p.name}: a sourced SOC needs its match method`);
+      assert.ok(!p.data_flags.includes('onet_soc'), `${p.name}: sourced SOC must drop the unsourced flag`);
+      assert.equal(p.riasec_stub, false, `${p.name}: sourced RIASEC is not a stub`);
+      // Per-field honesty: a value is present exactly when its stub
+      // flag is off. (The frozen Work Values snapshot genuinely has no
+      // rows for 20 SOC-2018-renumbered occupations — Software
+      // Developers among them — so their supplies honestly stay stub.)
+      assert.equal(p.supplies_stub === false, p.work_values_extent != null,
+        `${p.name}: supplies provenance must match the work-values presence`);
+      assert.equal(p.abilities_lv != null, !p.data_flags.includes('abilities_lv'),
+        `${p.name}: abilities provenance must match its flag`);
+      assert.equal(p.skills_lv != null, !p.data_flags.includes('skills_lv'),
+        `${p.name}: skills provenance must match its flag`);
+    }
+    if (p.bls_ai_exposure != null) {
+      assert.ok(p.bls_ai_exposure_tier && p.bls_ai_exposure_source,
+        `${p.name}: an AI-exposure value must carry its evidence tier and source`);
+    }
   }
   const withVerdict = professions.filter((p) => p.verdict === 'YES' || p.verdict === 'NO');
   assert.ok(withVerdict.length >= 240, `expected 240+ verdict-parsed professions, got ${withVerdict.length}`);

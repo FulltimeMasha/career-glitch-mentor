@@ -72,33 +72,33 @@
     "mode_reason": "CDDQ type is not_ready: the person has not yet decided to choose — coaching and small steps first, no verdict is forced.",
     "top3": [
       {
-        "slug": "luxury-real-estate-agent",
-        "name": "Luxury Real Estate Agent",
+        "slug": "home-stager",
+        "name": "Home Stager",
         "category": "A",
         "verdict": "YES",
-        "payK": 140,
+        "payK": 75,
         "love": {
-          "mid": 0.9627083333333333,
-          "lo": 0.7627083333333333,
+          "mid": 0.934621388888889,
+          "lo": 0.7346213888888891,
           "hi": 1,
           "parts": {
-            "needs_supplies": 0.975,
+            "needs_supplies": 0.9027722222222224,
             "sdt": 1,
-            "riasec": 0.8908333333333334
+            "riasec": 0.89405
           }
         },
         "potential": {
-          "mid": 0.7415740740740742,
-          "lo": 0.48157407407407415,
+          "mid": 0.7641166666666668,
+          "lo": 0.5041166666666668,
           "hi": 1,
           "parts": {
-            "interest_fit": 0.8908333333333334,
+            "interest_fit": 0.89405,
             "trial": null,
-            "feasibility": 0.6296296296296297
+            "feasibility": 0.6666666666666666
           },
           "profile": "start",
           "feasibility_subs": {
-            "entry_time_ok": 0.8888888888888888,
+            "entry_time_ok": 1,
             "budget_ok": 0,
             "documents_factor": 1
           }
@@ -142,27 +142,27 @@
         "flags": []
       },
       {
-        "slug": "dog-trainer",
-        "name": "Dog Trainer",
+        "slug": "online-course-creator",
+        "name": "Online Course Creator",
         "category": "A",
         "verdict": "YES",
         "payK": 75,
         "love": {
-          "mid": 0.945486111111111,
-          "lo": 0.7454861111111111,
+          "mid": 0.9325694444444443,
+          "lo": 0.7325694444444444,
           "hi": 1,
           "parts": {
-            "needs_supplies": 0.9611111111111109,
+            "needs_supplies": 0.9277777777777777,
             "sdt": 1,
-            "riasec": 0.8441666666666666
+            "riasec": 0.8458333333333333
           }
         },
         "potential": {
-          "mid": 0.7427380952380952,
-          "lo": 0.4827380952380952,
+          "mid": 0.743452380952381,
+          "lo": 0.48345238095238097,
           "hi": 1,
           "parts": {
-            "interest_fit": 0.8441666666666666,
+            "interest_fit": 0.8458333333333333,
             "trial": null,
             "feasibility": 0.6666666666666666
           },
@@ -178,40 +178,41 @@
       }
     ],
     "anti_match": {
-      "slug": "real-estate-agent",
-      "name": "Real Estate Agent",
+      "slug": "cosmetologist-hair-stylist",
+      "name": "Cosmetologist / Hair Stylist",
       "category": "C",
       "verdict": "NO",
-      "payK": 53,
+      "payK": 36,
       "love": {
-        "mid": 0.9509027777777777,
-        "lo": 0.7509027777777777,
+        "mid": 0.894298888888889,
+        "lo": 0.694298888888889,
         "hi": 1,
         "parts": {
-          "needs_supplies": 0.9611111111111109,
+          "needs_supplies": 0.810288888888889,
           "sdt": 1,
-          "riasec": 0.8658333333333333
+          "riasec": 0.8807333333333334
         }
       },
       "potential": {
-        "mid": 0.7520238095238095,
-        "lo": 0.49202380952380953,
-        "hi": 1,
+        "mid": 0.7372455026455027,
+        "lo": 0.4772455026455027,
+        "hi": 0.9972455026455027,
         "parts": {
-          "interest_fit": 0.8658333333333333,
+          "interest_fit": 0.8807333333333334,
           "trial": null,
-          "feasibility": 0.6666666666666666
+          "feasibility": 0.6296296296296297
         },
         "profile": "start",
         "feasibility_subs": {
-          "entry_time_ok": 1,
+          "entry_time_ok": 0.8888888888888888,
           "budget_ok": 0,
           "documents_factor": 1
         }
       },
       "confidence": "medium",
       "flags": [
-        "base_verdict_no"
+        "base_verdict_no",
+        "exploitation_risk"
       ]
     },
     "results_count": 339,
@@ -224,33 +225,33 @@
   },
   "candidates": [
     {
-      "slug": "luxury-real-estate-agent",
-      "name": "Luxury Real Estate Agent",
+      "slug": "home-stager",
+      "name": "Home Stager",
       "category": "A",
       "verdict": "YES",
-      "payK": 140,
+      "payK": 75,
       "love": {
-        "mid": 0.9627083333333333,
-        "lo": 0.7627083333333333,
+        "mid": 0.934621388888889,
+        "lo": 0.7346213888888891,
         "hi": 1,
         "parts": {
-          "needs_supplies": 0.975,
+          "needs_supplies": 0.9027722222222224,
           "sdt": 1,
-          "riasec": 0.8908333333333334
+          "riasec": 0.89405
         }
       },
       "potential": {
-        "mid": 0.7415740740740742,
-        "lo": 0.48157407407407415,
+        "mid": 0.7641166666666668,
+        "lo": 0.5041166666666668,
         "hi": 1,
         "parts": {
-          "interest_fit": 0.8908333333333334,
+          "interest_fit": 0.89405,
           "trial": null,
-          "feasibility": 0.6296296296296297
+          "feasibility": 0.6666666666666666
         },
         "profile": "start",
         "feasibility_subs": {
-          "entry_time_ok": 0.8888888888888888,
+          "entry_time_ok": 1,
           "budget_ok": 0,
           "documents_factor": 1
         }
@@ -294,27 +295,27 @@
       "flags": []
     },
     {
-      "slug": "dog-trainer",
-      "name": "Dog Trainer",
+      "slug": "online-course-creator",
+      "name": "Online Course Creator",
       "category": "A",
       "verdict": "YES",
       "payK": 75,
       "love": {
-        "mid": 0.945486111111111,
-        "lo": 0.7454861111111111,
+        "mid": 0.9325694444444443,
+        "lo": 0.7325694444444444,
         "hi": 1,
         "parts": {
-          "needs_supplies": 0.9611111111111109,
+          "needs_supplies": 0.9277777777777777,
           "sdt": 1,
-          "riasec": 0.8441666666666666
+          "riasec": 0.8458333333333333
         }
       },
       "potential": {
-        "mid": 0.7427380952380952,
-        "lo": 0.4827380952380952,
+        "mid": 0.743452380952381,
+        "lo": 0.48345238095238097,
         "hi": 1,
         "parts": {
-          "interest_fit": 0.8441666666666666,
+          "interest_fit": 0.8458333333333333,
           "trial": null,
           "feasibility": 0.6666666666666666
         },

@@ -56,4 +56,11 @@ for (const f of ['interview.mjs', 'llm.mjs', 'professions.mjs', 'scoring.mjs', '
   written.push(`api/_lib/engine/${f}`);
 }
 
+// WS2 data: the O*NET import rides in the bundle at _lib/data/ so the
+// bundled engine finds it at ../data/onet-import.json (same relative
+// path as the repo layout).
+mkdirSync(join(LIB, 'data'), { recursive: true });
+cpSync(join(ROOT, 'data', 'onet-import.json'), join(LIB, 'data', 'onet-import.json'));
+written.push('api/_lib/data/onet-import.json');
+
 console.log(written.join('\n'));
