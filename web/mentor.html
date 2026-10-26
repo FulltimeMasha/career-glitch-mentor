@@ -78,6 +78,25 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4)
 .qa{background:rgba(255,252,246,.08);border:2px solid rgba(249,42,130,.55);border-radius:12px;padding:12px 14px}
 .qa b{font-family:'Outfit',sans-serif}
 .qa p{color:var(--mut);margin-top:4px}
+.rline{font-size:16.5px;font-weight:600}
+.rnote{color:var(--mut);font-size:13.5px;margin-top:6px}
+.radarWrap{max-width:430px;margin:14px auto 0}
+.radar{position:relative;width:100%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#1c0a20 0%,#24102c 70%,#2a1030 100%);border:2px solid rgba(249,42,130,.55);overflow:hidden}
+.radar svg.rings{position:absolute;inset:0;width:100%;height:100%}
+.sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(249,42,130,.55),rgba(249,42,130,.13) 42deg,transparent 74deg);will-change:transform}
+.hub{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px rgba(249,42,130,.9);z-index:2}
+.blip{position:absolute;width:36px;height:36px;margin:-18px 0 0 -18px;background:none;border:0;padding:0;cursor:pointer;z-index:3;-webkit-tap-highlight-color:transparent;color:#2ad4a7}
+.blip.no{color:var(--pink)}
+.blip i{display:block;width:11px;height:11px;margin:12.5px auto 0;border-radius:50%;background:currentColor;transition:box-shadow .35s}
+.blip.lit i{box-shadow:0 0 15px 4px currentColor}
+.blip.sel i{outline:2px solid var(--paper);outline-offset:2px}
+.rcard .rname{font-family:'Outfit',sans-serif;font-weight:900;font-size:20px;margin-right:8px}
+.rcard .rrow{margin-top:7px;font-weight:600}
+.ticker{margin-top:14px;background:rgba(255,252,246,.08);border:2px solid rgba(249,42,130,.55);border-radius:12px;padding:11px 14px;font-family:'DM Mono',monospace;font-size:13.5px;min-height:46px;display:flex;align-items:center}
+.ticker .tline{transition:opacity .45s}
+.ticker.stack{display:block}
+.ticker.stack .tline{display:block;padding:3px 0}
+@media (prefers-reduced-motion: reduce){.ticker .tline{transition:none}}
 @media(max-width:480px){h1{font-size:27px}.sub{font-size:16.5px}}
 </style>
 </head>
@@ -95,6 +114,29 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4)
   <div class="fact">🎓 4 in 10 students are rethinking their major because of AI (Gallup–Lumina, 2026)</div>
   <div class="fact">⏳ The ones who move first get the good seats.</div>
 </div>
+<h2>The Radar</h2>
+<p class="rline">Every profession, under the beam. Green is growing. Pink is shrinking. Tap a dot — its verdict, outlook and pay show up below.</p>
+<p class="rnote">Signals from BLS 2025–35 projections and AI-exposure data.</p>
+<div class="radarWrap">
+  <div class="radar" id="radarDisc" role="group" aria-label="Career radar — tap a profession">
+    <svg class="rings" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="rgba(255,252,246,.16)" stroke-width=".4">
+        <circle cx="50" cy="50" r="12.5"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="37.5"/><circle cx="50" cy="50" r="49.2"/>
+      </g>
+      <g stroke="rgba(255,252,246,.10)" stroke-width=".35">
+        <line x1="50" y1="1" x2="50" y2="99"/><line x1="1" y1="50" x2="99" y2="50"/>
+        <line x1="15.4" y1="15.4" x2="84.6" y2="84.6"/><line x1="84.6" y1="15.4" x2="15.4" y2="84.6"/>
+      </g>
+    </svg>
+    <div class="sweep" id="radarSweep"></div>
+    <div class="hub"></div>
+  </div>
+</div>
+<div class="card rcard" id="radarCard" aria-live="polite">
+  <span class="rname">Nothing picked yet</span>
+  <p class="rrow">Tap a dot on the radar — the verdict for entering in 2027, the jobs outlook and the median pay land here.</p>
+</div>
+<div class="ticker" id="radarTicker"><span class="tline" id="tickerLine"></span></div>
 <h2 id="doorPicker">Choose your door</h2>
 <div class="doors">
   <button type="button" class="door" data-door="start"><b>😰 &ldquo;I don&rsquo;t know what to study.&rdquo;</b><p>You&rsquo;re about to spend 4 years and $100K. Make sure the job still exists when you graduate.</p><span class="path">Start here &rarr;</span></button>
@@ -704,6 +746,142 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
       $("interview").classList.add("hidden");
     }
   }).catch(function(){ /* probe failed — guided mode, untouched */ });
+})();
+</script>
+<script>
+/* =====================================================================
+ * THE RADAR — interactive scanner on the start screen.
+ * Blips are REAL professions baked from the project base
+ * (data/site-snapshot/professions.json: name, median payK; verdict from
+ * the profession's roadmap card "Our take: YES/NO"). The outlook line is
+ * included ONLY where a source states it: the verified BLS anchors in
+ * scripts/acceptance_c.mjs (Accountant +5%, Registered Nurse +6%,
+ * Interpreters & Translators +2%, Bookkeeping clerks −6% — BLS 2025–35)
+ * or the profession's own card (Dental Hygienist +8% growth;
+ * Graphic Designer −2%, BLS May 2025). Everywhere else the field is
+ * omitted — never invented. The ticker lines are the verified BLS facts
+ * from the same project research; a daily radar feed plugs in later.
+ * Animation uses transform/opacity only and honours reduced motion.
+ * ===================================================================== */
+(function(){
+  var BLIPS = [
+    ["AI Automation Specialist","YES",120,58.8,17.2,null],
+    ["Cybersecurity Analyst","YES",125,81.2,21.9,null],
+    ["Data Analyst","YES",90,76.4,44.4,null],
+    ["Accountant (CPA track)","YES",120,91.5,61.1,"Growing · +5% to 2035 (BLS)"],
+    ["Bookkeeper + Advisory","NO",51,74.4,69.1,"Shrinking · −6% to 2035 (BLS)"],
+    ["Translator / Interpreter","NO",60,70.7,88.8,"Growing · +2% to 2035 (BLS)"],
+    ["Copywriter","NO",75,53.6,75.7,null],
+    ["Registered Nurse","YES",98,39.5,86.5,"Growing · +6% to 2035 (BLS)"],
+    ["Dental Hygienist","YES",98,32.1,72.9,"Growing · +8% projected growth (its card, BLS-based)"],
+    ["Pharmacist","YES",135,11.8,73.8,null],
+    ["Electrician","YES",75,17.7,56.9,null],
+    ["HVAC Technician","YES",61,26.2,46.7,null],
+    ["Wind Turbine Technician","YES",75,15.2,28.3,null],
+    ["Graphic Designer","NO",45,30.2,30.2,"Shrinking · −2% (its card, BLS May 2025)"],
+    ["Videographer","YES",75,34.4,16.5,null],
+    ["Photographer","NO",45,46.3,7.2,null],
+    ["School Teacher","YES",67,62.9,34.7,null],
+    ["Psychologist / Therapist","YES",105,92.0,48.5,null],
+    ["Chef","NO",62,60.9,63.0,null],
+    ["CDL Truck Driver","YES",59,34.4,59.0,null],
+    ["Commercial Pilot","YES",160,7.5,38.6,null],
+    ["Barber","NO",38,42.0,67.2,null],
+    ["Administrative Assistant","NO",48,23.5,16.1,null]
+  ];
+  var TICKER = [
+    "Customer Service Representatives: −5% to 2035 · AI exposure: Very high (BLS)",
+    "Bookkeeping clerks: −6% to 2035 · −85,600 jobs (BLS)",
+    "Computer Programmers: −7% to 2035 (BLS)",
+    "Interpreters & Translators: +2% to 2035 (BLS)"
+  ];
+  function escR(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  var disc = document.getElementById("radarDisc");
+  var sweep = document.getElementById("radarSweep");
+  var card = document.getElementById("radarCard");
+  if(!disc || !sweep || !card) return;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var blipEls = [];
+  BLIPS.forEach(function(b){
+    var name = b[0], verdict = b[1], payK = b[2], x = b[3], y = b[4], outlook = b[5];
+    var el = document.createElement("button");
+    el.type = "button";
+    el.className = "blip" + (verdict === "NO" ? " no" : "");
+    el.style.left = x + "%"; el.style.top = y + "%";
+    el.setAttribute("aria-label", name + " — verdict " + verdict + " for entering in 2027");
+    el.innerHTML = "<i></i>";
+    // angle of the blip: degrees clockwise from straight up
+    var ang = (Math.atan2(x - 50, -(y - 50)) * 180 / Math.PI + 360) % 360;
+    el.addEventListener("click", function(){
+      blipEls.forEach(function(o){ o.el.classList.remove("sel"); });
+      el.classList.add("sel");
+      var html = '<span class="rname">' + escR(name) + '</span>';
+      html += '<span class="badge ' + (verdict === "YES" ? "yes" : "no") + '">' + verdict + '</span>';
+      html += '<p class="rrow">Our verdict for entering this profession in 2027.</p>';
+      if(outlook) html += '<p class="rrow">Jobs outlook: ' + escR(outlook) + '</p>';
+      if(payK != null) html += '<p class="rrow">Median pay in the base: ~$' + payK + 'K</p>';
+      html += '<a class="btn" href="#doorPicker" style="display:block;text-align:center;text-decoration:none;margin-top:14px">Is this your job? &rarr;</a>';
+      card.innerHTML = html;
+    });
+    disc.appendChild(el);
+    blipEls.push({ el: el, ang: ang, lastOp: -1, lit: false });
+  });
+
+  // --- ticker ------------------------------------------------------------
+  var ticker = document.getElementById("radarTicker");
+  var tline = document.getElementById("tickerLine");
+  if(ticker && tline){
+    if(reduced){
+      ticker.classList.add("stack");
+      tline.remove();
+      TICKER.forEach(function(line){
+        var s = document.createElement("span"); s.className = "tline"; s.textContent = "▸ " + line;
+        ticker.appendChild(s);
+      });
+    } else {
+      var ti = 0;
+      tline.textContent = "▸ " + TICKER[0];
+      setInterval(function(){
+        tline.style.opacity = "0";
+        setTimeout(function(){
+          ti = (ti + 1) % TICKER.length;
+          tline.textContent = "▸ " + TICKER[ti];
+          tline.style.opacity = "1";
+        }, 460);
+      }, 4200);
+    }
+  }
+
+  // --- sweep -------------------------------------------------------------
+  if(reduced){
+    sweep.style.transform = "rotate(-24deg)";
+    blipEls.forEach(function(b){ b.el.style.opacity = "0.9"; });
+    return;
+  }
+  var inView = true, angle = 0, last = performance.now();
+  function frame(now){
+    var dt = now - last; last = now;
+    if(inView && !document.hidden){
+      angle = (angle + dt / 6000 * 360) % 360;
+      var ang = angle;
+      sweep.style.transform = "rotate(" + ang.toFixed(1) + "deg)";
+      for(var i = 0; i < blipEls.length; i++){
+        var b = blipEls[i];
+        var diff = (ang - b.ang + 360) % 360;
+        var op = diff <= 170 ? 0.35 + 0.65 * (1 - diff / 170) : 0.35;
+        var rop = Math.round(op * 20) / 20;
+        if(rop !== b.lastOp){ b.el.style.opacity = rop; b.lastOp = rop; }
+        var lit = diff < 28;
+        if(lit !== b.lit){ b.el.classList.toggle("lit", lit); b.lit = lit; }
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(en){ inView = en[0].isIntersecting; }, { threshold: 0.05 }).observe(disc);
+  }
 })();
 </script>
 </body>
