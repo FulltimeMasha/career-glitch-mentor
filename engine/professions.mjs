@@ -208,16 +208,16 @@ function parseVerdict(sticker) {
 }
 
 // ---------------------------------------------------------------------------
-// loadProfessions() → array of profession stub objects (see header comment
-// and the task spec for the exact shape). Pure file read; no network.
+// buildProfessions(profData, roadmapDataArray) → array of profession stub
+// objects (see header comment and the task spec for the exact shape).
+// Pure data transform — no I/O — so the Mentor API can build the same
+// objects from JSON fetched over HTTP when no local site dir exists
+// (serverless hosts). loadProfessions() below is the file-reading wrapper.
 // ---------------------------------------------------------------------------
-export function loadProfessions(opts = {}) {
-  const siteDir = opts.siteDir || process.env.CG_SITE_DIR || DEFAULT_SITE_DIR;
-  const profData = JSON.parse(readFileSync(join(siteDir, 'professions.json'), 'utf8'));
+export function buildProfessions(profData, roadmapData) {
   const tuples = Array.isArray(profData) ? profData : profData.n;
   if (!Array.isArray(tuples)) throw new Error('professions.json: expected { n: [...] }');
 
-  const roadmapData = ROADMAP_FILES.map((f) => JSON.parse(readFileSync(join(siteDir, f), 'utf8')));
   const index = buildRoadmapIndex(roadmapData);
 
   const usedSlugs = new Set();
@@ -292,5 +292,18 @@ export function loadProfessions(opts = {}) {
     };
   });
 }
+
+// ---------------------------------------------------------------------------
+// loadProfessions(opts) — file-reading wrapper over buildProfessions().
+// Reads the live site dir (default ~/workspace/careerglitch-site).
+// ---------------------------------------------------------------------------
+export function loadProfessions(opts = {}) {
+  const siteDir = opts.siteDir || process.env.CG_SITE_DIR || DEFAULT_SITE_DIR;
+  const profData = JSON.parse(readFileSync(join(siteDir, 'professions.json'), 'utf8'));
+  const roadmapData = ROADMAP_FILES.map((f) => JSON.parse(readFileSync(join(siteDir, f), 'utf8')));
+  return buildProfessions(profData, roadmapData);
+}
+
+export const ROADMAP_FILE_NAMES = ROADMAP_FILES;
 
 export default loadProfessions;

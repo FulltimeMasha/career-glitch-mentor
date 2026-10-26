@@ -267,7 +267,7 @@ export function stagePrompt(session) {
  * such as age_band are accepted and ignored — they are computed, never
  * collected). After stage 5, scoring runs and the phase branches.
  */
-export function applyStage(session, { freeText = '', tailAnswers = {} } = {}) {
+export function applyStage(session, { freeText = '', tailAnswers = {} } = {}, professionsOverride = null) {
   if (session.phase !== 'stages') {
     throw new Error(`applyStage: session phase is '${session.phase}', expected 'stages' (stage 6 goes through applyPerceivedFit)`);
   }
@@ -296,8 +296,11 @@ export function applyStage(session, { freeText = '', tailAnswers = {} } = {}) {
 
   // Stage 5 applied -> the data the verdict is built from is complete.
   // Run the deterministic engine. The LLM never touches these numbers.
+  // professionsOverride lets server hosts inject a list they loaded
+  // themselves (e.g. fetched over HTTP where no site dir exists);
+  // default behaviour is unchanged: read the local site files.
   const person = assemblePerson(session);
-  const result = scorePerson(person, loadProfessions());
+  const result = scorePerson(person, professionsOverride ?? loadProfessions());
   session.person = person;
   session.result = result;
   session.candidates = result.top3;
@@ -315,7 +318,7 @@ export function applyStage(session, { freeText = '', tailAnswers = {} } = {}) {
  * Writes person.perceived_fit, re-runs scoring (the veto lives in
  * scoring.mjs), and closes the session.
  */
-export function applyPerceivedFit(session, ratings) {
+export function applyPerceivedFit(session, ratings, professionsOverride = null) {
   if (session.phase !== 'stage6') {
     throw new Error(`applyPerceivedFit: session phase is '${session.phase}', expected 'stage6'`);
   }
@@ -329,7 +332,7 @@ export function applyPerceivedFit(session, ratings) {
   }
   session.structured.perceived_fit = { ...(session.structured.perceived_fit || {}), ...ratings };
   const person = assemblePerson(session);
-  const result = scorePerson(person, loadProfessions());
+  const result = scorePerson(person, professionsOverride ?? loadProfessions());
   session.person = person;
   session.result = result;
   session.candidates = result.top3;

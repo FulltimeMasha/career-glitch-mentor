@@ -1,0 +1,223 @@
+{
+  "person": {
+    "door": "start",
+    "age": 30,
+    "age_band": "25_34",
+    "income_floor_k": 40,
+    "current_profession_name": "Retail Sales Associate",
+    "country": "United States",
+    "state": "North Carolina",
+    "current_income_k": 38,
+    "languages": [
+      "en"
+    ],
+    "values_rank": {
+      "relationships": 1,
+      "support": 2,
+      "working_conditions": 3,
+      "achievement": 4,
+      "independence": 5,
+      "recognition": 6
+    },
+    "autonomy_need": 1,
+    "relatedness_need": 2,
+    "supports": {
+      "money": 2,
+      "time": 2,
+      "people": 1,
+      "learning_access": 2
+    },
+    "riasec": {
+      "R": 2.5,
+      "I": 5,
+      "A": 2.5,
+      "S": 10,
+      "E": 2.5,
+      "C": 7.5
+    },
+    "tolerances": {
+      "remote_pref": 1,
+      "hands_pref": 1,
+      "people_pref": 2
+    },
+    "attempts_started": 3,
+    "attempts_finished": 2,
+    "exit_pattern": "money",
+    "energy_themes": [
+      "people",
+      "teaching"
+    ],
+    "barriers": [
+      "money"
+    ],
+    "red_lines": [],
+    "mirror_confirmed": "confirmed",
+    "resources": {
+      "hours_per_day": 4,
+      "budget_k": 20,
+      "cushion_months": 12,
+      "documents_ok": "yes",
+      "health_limits": [
+        "none"
+      ]
+    },
+    "trials": [],
+    "perceived_fit": {
+      "doula": "mine",
+      "funeral-director": "tolerable",
+      "nutrition-coach-dietitian": "tolerable"
+    },
+    "cddq_type": "lacks_information",
+    "completeness": 0.974
+  },
+  "result": {
+    "mode": "bands",
+    "mode_reason": "Scores are reported as bands: the top candidate is not a clean A/high-confidence case, or the <25 evidence rule is not met.",
+    "top3": [
+      {
+        "slug": "doula",
+        "name": "Doula",
+        "category": "A",
+        "verdict": "YES",
+        "payK": 45,
+        "love": {
+          "mid": 0.9516666666666667,
+          "lo": 0.8316666666666667,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 1,
+            "sdt": 1,
+            "riasec": 0.8066666666666666
+          }
+        },
+        "potential": {
+          "mid": 0.9171428571428573,
+          "lo": 0.7371428571428573,
+          "hi": 1,
+          "parts": {
+            "interest_fit": 0.8066666666666666,
+            "trial": null,
+            "feasibility": 1
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 1,
+            "budget_ok": 1,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": []
+      },
+      {
+        "slug": "funeral-director",
+        "name": "Funeral Director",
+        "category": "A",
+        "verdict": null,
+        "payK": 62,
+        "love": {
+          "mid": 0.9429166666666666,
+          "lo": 0.8229166666666666,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 1,
+            "sdt": 1,
+            "riasec": 0.7716666666666666
+          }
+        },
+        "potential": {
+          "mid": 0.9021428571428571,
+          "lo": 0.7221428571428572,
+          "hi": 1,
+          "parts": {
+            "interest_fit": 0.7716666666666666,
+            "trial": null,
+            "feasibility": 1
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 1,
+            "budget_ok": 1,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": []
+      },
+      {
+        "slug": "nutrition-coach-dietitian",
+        "name": "Nutrition Coach / Dietitian",
+        "category": "A",
+        "verdict": "YES",
+        "payK": 75,
+        "love": {
+          "mid": 0.9724305555555556,
+          "lo": 0.8524305555555556,
+          "hi": 1,
+          "parts": {
+            "needs_supplies": 0.9972222222222222,
+            "sdt": 1,
+            "riasec": 0.8941666666666667
+          }
+        },
+        "potential": {
+          "mid": 0.8699867724867725,
+          "lo": 0.6899867724867725,
+          "hi": 1,
+          "parts": {
+            "interest_fit": 0.8941666666666667,
+            "trial": null,
+            "feasibility": 0.8518518518518517
+          },
+          "profile": "start",
+          "feasibility_subs": {
+            "entry_time_ok": 0.5555555555555556,
+            "budget_ok": 1,
+            "documents_factor": 1
+          }
+        },
+        "confidence": "medium",
+        "flags": []
+      }
+    ],
+    "anti_match": {
+      "slug": "online-tutor",
+      "name": "Online Tutor",
+      "category": "C",
+      "verdict": "NO",
+      "payK": 45,
+      "love": {
+        "mid": 0.9240972222222221,
+        "lo": 0.8040972222222221,
+        "hi": 1,
+        "parts": {
+          "needs_supplies": 0.9138888888888889,
+          "sdt": 1,
+          "riasec": 0.8341666666666667
+        }
+      },
+      "potential": {
+        "mid": 0.9289285714285714,
+        "lo": 0.7489285714285714,
+        "hi": 1,
+        "parts": {
+          "interest_fit": 0.8341666666666667,
+          "trial": null,
+          "feasibility": 1
+        },
+        "profile": "start",
+        "feasibility_subs": {
+          "entry_time_ok": 1,
+          "budget_ok": 1,
+          "documents_factor": 1
+        }
+      },
+      "confidence": "medium",
+      "flags": [
+        "base_verdict_no"
+      ]
+    },
+    "results_count": 339,
+    "exploration_plan": []
+  }
+}
