@@ -417,14 +417,17 @@ export function assemblePerson(session) {
 // Report (Wonder) — presentation only; it never moves a number.
 // ---------------------------------------------------------------------------
 
+const PLAIN_REGISTER = 'REGISTER — plain words only, like talking to a smart friend who is busy: short sentences, zero internal terms. NEVER use these words or forms: RIASEC, CDDQ, cddq, "bands", "evidence", "needs-supplies", category letters (say Top fit / Good fit / Weak fit instead), "in the base", stage numbers, flag names or any code from the JSON. Be honest about risks and weak points — no rose-colored glasses — and end with one concrete next step that makes the reader want to move.';
+
 const REPORT_STRUCTURE = [
   'Write the verdict report in this argued-answer structure, in order:',
-  '1. His/her facts, played back plainly (Point A: age, current situation, income floor, real resources — hours, budget, cushion, documents, health limits).',
+  '1. His/her facts, played back plainly (age, current situation, the minimum pay they named, real resources — hours, budget, cushion, documents, health limits).',
   '2. Resources and constraints that shape what is honestly possible — including supports, barriers and red lines.',
-  '3. The top candidates (only when the mode allows a verdict): for each, the LOVE band and the POTENTIAL band, each written as a RANGE (e.g. "LOVE 0.55–0.79"), its fitness category, and the plain-language reason it fits or strains — argued from the facts above, not from adjectives.',
-  '4. The honest BUT: what could break this plan, where people usually quit, and any flags (e.g. pay below the income floor). Never hide a flag.',
-  '5. The 90-day check plan: concrete dated-style steps and what evidence will be collected by the check-in.',
+  '3. The top candidates (only when the mode allows a verdict): for each, the LOVE range and the POTENTIAL range, each written as a RANGE (e.g. "LOVE 0.55–0.79"), its fit in plain words (Top fit / Good fit / Weak fit), and the argued reason it fits or strains. Build each section on that candidate\'s "argument" object in the input (why_you / math / but / bridge) — argue from the person\'s own facts, not from adjectives.',
+  '4. The honest BUT: what could break this plan, where people usually quit, and every pay warning. Each candidate\'s floor_status is the truth about pay: if it says below_floor, say plainly that typical pay misses the minimum they named and never present that pick as clean; if it says top_tier_only, say it only works at the top-earner tier.',
+  '5. The 90-day check plan: concrete dated-style steps and what will be known by the check-in.',
   'Hard rules: present every score as a range, NEVER as a single number and NEVER as a "match %". Never invent pay figures, professions or facts that are not in the input JSON. No personality labels, no type names. Warm, plain-spoken, concrete — this is written for the person, not about them.',
+  PLAIN_REGISTER,
 ].join('\n');
 
 const REPORT_STRUCTURE_INSUFFICIENT = [
@@ -433,8 +436,9 @@ const REPORT_STRUCTURE_INSUFFICIENT = [
   '1. His/her facts, played back plainly — what we actually know so far.',
   '2. Why there is no verdict yet, in plain language, using the mode_reason from the input: what is missing or not yet decided. This is honesty, not failure — say so.',
   '3. The exploration plan from the input, presented as the product itself: each step warm, concrete and doable this month, with what it will prove.',
-  '4. The 90-day check: what we will know by then that we do not know now, and how the verdict gets built from that evidence.',
+  '4. The 90-day check: what we will know by then that we do not know now, and how the verdict gets built from those facts.',
   'Hard rules: no profession names presented as recommendations, no scores presented as verdicts, no "match %", no personality labels. Warm, plain-spoken, concrete.',
+  PLAIN_REGISTER,
 ].join('\n');
 
 export async function generateReport(session) {

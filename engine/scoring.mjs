@@ -74,6 +74,57 @@ function confidenceLevel(totalNullParts, completeness) {
   return 'medium';
 }
 
+// ---------------------------------------------------------------------------
+// Profession families for the top-3 diversity rule. A family is the base
+// category, EXCEPT the creator economy, which the base splits across
+// 'online' and 'creative' while being one job wearing many hats (streaming,
+// courses, UGC, content strategy…). At most ONE profession per family may
+// appear in a top-3 — three wrappers of the same job are not three options.
+// ---------------------------------------------------------------------------
+const CREATOR_CLUSTER = new Set([
+  'streamer-content-creator', 'online-course-creator', 'ugc-creator',
+  'content-strategist', 'copywriter', 'podcast-producer', 'video-editor',
+  'brand-strategist', 'videographer', 'voice-actor', 'photographer',
+  'wedding-photographer',
+]);
+
+export function professionFamily(prof) {
+  if (!prof) return 'other';
+  if (CREATOR_CLUSTER.has(prof.slug)) return 'creator';
+  return prof.category || `solo:${prof.slug}`;
+}
+
+const FAMILY_LABELS = {
+  creator: 'online content creation',
+  online: 'online and digital work',
+  health: 'healthcare',
+  trades: 'the trades',
+  creative: 'creative work',
+  beauty: 'beauty',
+  food: 'food',
+  people: 'working with people',
+  transport: 'transport',
+  business: 'business',
+};
+
+// ---------------------------------------------------------------------------
+// Income-floor status of one candidate vs the person's own stated minimum.
+//   clears        — typical pay is at or above the floor.
+//   top_tier_only — typical pay is under the floor, but the top 25% clear it
+//                   (only when a sourced top-quartile figure exists).
+//   below_floor   — typical pay is under the floor and no sourced figure
+//                   shows the top earners clearing it.
+//   null          — no floor stated, or no pay figure to compare.
+// ---------------------------------------------------------------------------
+function floorStatus(person, prof) {
+  const floor = person ? person.income_floor_k : null;
+  if (!isNum(floor) || !prof || !isNum(prof.payK)) return null;
+  if (prof.payK >= floor) return 'clears';
+  const tq = isNum(prof.pay_top_quartile_k) ? prof.pay_top_quartile_k : null;
+  if (tq != null && tq >= floor) return 'top_tier_only';
+  return 'below_floor';
+}
+
 /** RIASEC congruence: 1 − mean|diff| between person (0..10 → 0..1) and
  *  profession (0..1). Symmetric congruence is used ONLY here, for interests;
  *  the banned symmetric distance is the skill-distance in /pivot. */
@@ -238,6 +289,168 @@ function potentialPivot(person, prof, professions, flags) {
 }
 
 // ---------------------------------------------------------------------------
+// Deterministic per-profession ARGUMENT (the argued verdict, spec 25.10).
+// Built ONLY from the person's coded answers and real base fields — no
+// invented numbers, no generic praise. Plain register throughout (short
+// sentences, no internal terms): the UI prints these lines as-is, and the
+// written report uses them as its spine. Sections: why_you (the person's
+// own answers that drive the pick) · math (pay / outlook / AI / floor /
+// training, sourced fields only) · but (the honest weak points, incl. the
+// person's own blockers) · bridge (first steps out of their real numbers).
+// ---------------------------------------------------------------------------
+const VALUE_LABELS = {
+  achievement: 'Achievement', independence: 'Independence', recognition: 'Recognition',
+  relationships: 'Relationships', support: 'Support', working_conditions: 'Working conditions',
+};
+
+const BARRIER_LINES = {
+  money: 'Money running out is what stopped you before — this path has to be paced so it does not happen again.',
+  time: 'Time is what stopped you before — this only works if the hours you named stay protected.',
+  documents: 'Documents stopped you before — step zero below puts that first.',
+  health: 'Your health limits shape this path — every step below stays inside them.',
+  family_pressure: 'Family pressure has stopped you before — this plan has to be explainable at home, in plain words.',
+  fear_of_failure: 'You named fear of failing in public as a blocker — the first steps here are private and cheap, on purpose.',
+  skills_gap: 'A skill gap felt impossible before — this entry is broken into small steps for exactly that reason.',
+  location: 'Location limited you before — check the real commute and remote options before you commit.',
+};
+
+/** Per-value deficit fit for the values the person ranked: [{key, rank, fit}]. */
+function valueFits(person, prof) {
+  const out = [];
+  if (person && person.values_rank && prof && prof.supplies) {
+    for (const key of VALUE_KEYS) {
+      const rank = person.values_rank[key];
+      const supply = prof.supplies[key];
+      if (isNum(rank) && isNum(supply)) out.push({ key, rank, fit: deficitFit((7 - rank) / 6, supply) });
+    }
+  }
+  return out;
+}
+
+function buildArgument(person, prof, ctx) {
+  const { love, potential, category, flags, floor_status: fs } = ctx;
+  const res = person.resources || {};
+  const why = [];
+  const math = [];
+  const but = [];
+  const bridge = [];
+  const floor = isNum(person.income_floor_k) ? person.income_floor_k : null;
+  const pct = (x) => Math.round(x * 100);
+
+  // ---- WHY YOU — this person's own answers, not adjectives.
+  const fits = valueFits(person, prof).sort((a, b) => a.rank - b.rank);
+  for (const f of fits.slice(0, 2)) {
+    if (f.fit >= 0.7) why.push(`Your #${f.rank} must-have at work is ${VALUE_LABELS[f.key]} — and this job actually delivers it.`);
+  }
+  if (love.parts && isNum(love.parts.sdt) && love.parts.sdt >= 0.75) {
+    if (isNum(person.autonomy_need) && person.autonomy_need >= 1 && prof.sdt && prof.sdt.autonomy >= 0.6) {
+      why.push('You said being told exactly what to do is what kills a job for you — here, the decisions stay with you.');
+    } else if (isNum(person.relatedness_need) && person.relatedness_need === 2 && prof.sdt && prof.sdt.relatedness >= 0.6) {
+      why.push('People are the point for you — and this job is people, all day, not a screen.');
+    }
+  }
+  if (love.parts && isNum(love.parts.riasec) && love.parts.riasec >= 0.75) {
+    why.push('In the "one real day in this job" questions, your answers lined up with this work more than with almost anything else we checked.');
+  }
+  const trial = (person.trials || []).find((t) => t && t.slug === prof.slug);
+  if (trial && isNum(trial.score) && trial.score >= 0.6) {
+    why.push(`You already tried a real task from this job and scored ${pct(trial.score)}% — that is a real tryout, not a guess.`);
+  }
+  if (potential.profile === 'pivot' || potential.profile === 'bridge') {
+    const tc = potential.parts && potential.parts.transfer_capital;
+    const sd = potential.parts && potential.parts.shortage_distance;
+    if (isNum(tc) && isNum(sd) && tc >= sd) why.push('Most of what you already do carries over to this job — it is a step up from where you stand, not a restart from zero.');
+  } else if (potential.feasibility_subs) {
+    const s = potential.feasibility_subs;
+    if (isNum(s.entry_time_ok) && s.entry_time_ok >= 0.8 && isNum(s.budget_ok) && s.budget_ok >= 0.8 && isNum(prof.training_months)) {
+      why.push(`The entry is realistic on your numbers: about ${prof.training_months} months of training, and your cushion plus budget cover it.`);
+    }
+  }
+  if (isNum(person.attempts_finished) && isNum(person.attempts_started) && person.attempts_started >= 2 && person.attempts_finished >= Math.ceil(person.attempts_started / 2)) {
+    why.push(`You finished ${person.attempts_finished} of the ${person.attempts_started} serious things you started — you close what you start, and this path rewards finishers.`);
+  }
+
+  // ---- THE MATH — sourced figures only; gaps are stated, never filled.
+  if (isNum(prof.payK)) math.push(`Typical pay: ~$${prof.payK}K a year.`);
+  else math.push('We do not have a checked pay figure for this job yet — no number is better than an invented one.');
+  if (prof.bls_outlook) math.push(`Jobs outlook: ${prof.bls_outlook}.`);
+  if (prof.bls_ai_exposure) math.push(`AI risk: ${prof.bls_ai_exposure} (${prof.bls_ai_exposure_source}).`);
+  else math.push('AI risk: no checked data for this job yet — we will not invent a number.');
+  const tq = isNum(prof.pay_top_quartile_k) ? prof.pay_top_quartile_k : null;
+  if (floor != null && isNum(prof.payK)) {
+    if (fs === 'clears') math.push(`Your minimum is $${floor}K — typical pay clears it.`);
+    else if (fs === 'top_tier_only') math.push(`Typical pay ($${prof.payK}K) is under your $${floor}K minimum. The top 25% earn about $${tq}K — this only works if you reach that tier.`);
+    else if (fs === 'below_floor') {
+      if (tq != null) math.push(`Typical pay ($${prof.payK}K) is under your $${floor}K minimum — and even the top 25% (about $${tq}K) stay under it.`);
+      else math.push(`Typical pay ($${prof.payK}K) is under your $${floor}K minimum, and we have no checked top-earner pay for this job — there is no honest pay ladder to point at.`);
+    }
+  }
+  if (isNum(prof.training_months)) math.push(`Time to get in: about ${prof.training_months} months of training.`);
+
+  // ---- THE HONEST PART — weak points, incl. the person's own blockers.
+  const worst = valueFits(person, prof).filter((f) => f.rank <= 3).sort((a, b) => a.fit - b.fit)[0];
+  if (worst && worst.fit <= 0.55) but.push(`The rub: you ranked ${VALUE_LABELS[worst.key]} #${worst.rank}, and this job is weak exactly there — that is the friction you would feel every week.`);
+  for (const b of (Array.isArray(person.barriers) ? person.barriers : [])) {
+    if (BARRIER_LINES[b]) { but.push(BARRIER_LINES[b]); break; }
+  }
+  if (fs === 'below_floor') but.push('The pay problem is real: loving a job does not pay rent. Treat this as a maybe, not a plan.');
+  if (potential.feasibility_subs) {
+    const s = potential.feasibility_subs;
+    if (isNum(s.entry_time_ok) && s.entry_time_ok <= 0.5 && isNum(prof.training_months)) {
+      but.push(`Training takes about ${prof.training_months} months, and your cushion is ${isNum(res.cushion_months) ? res.cushion_months : 0} months — the money side of the bridge is tight.`);
+    } else if (isNum(s.budget_ok) && s.budget_ok <= 0.5) {
+      but.push('The entry costs run ahead of the budget you named — the first stretch has to be funded some other way.');
+    }
+  }
+  if (love.parts) {
+    if (isNum(love.parts.riasec) && love.parts.riasec <= 0.5) but.push('Part of the daily work here is stuff you rated "not my job" in the day-in-the-job questions.');
+    else if (isNum(love.parts.sdt) && love.parts.sdt <= 0.5) but.push('The day-to-day setup fights how you work best — that grinds people down slowly, not loudly.');
+  }
+  if (flags.includes('perceived_fit_veto')) but.push('You pictured one real Tuesday in this job and said "not mine" — that pulled its grade down. Believe that answer.');
+  if (flags.includes('physical_limit')) but.push('You named a physical limit, and this job is heavy on the body — its grade was held down for exactly that reason.');
+  if (flags.includes('current_profession_not_in_base')) but.push('Your current job is not in our base yet, so your chances here were scored the starter way.');
+  if (category === 'C') but.push('Honest grade: this is the weakest fit of your three. Try it cheap before you believe in it.');
+
+  // ---- FIRST STEPS — the bridge out of the person's real situation.
+  if (person.current_profession_name) bridge.push(`Keep ${person.current_profession_name} paying while you switch — it funds the bridge. Do not quit first.`);
+  if (res.documents_ok && res.documents_ok !== 'yes' && prof.attrs && prof.attrs.lic >= 1) {
+    bridge.push('Step zero: sort out the licence documents — you told us they are not fully in order, and this job needs them.');
+  }
+  if (isNum(prof.training_months)) {
+    let line = `Training runs about ${prof.training_months} months`;
+    if (isNum(res.hours_per_day)) line += `; at your ${res.hours_per_day} hours a day, that is the pace the 90-day plan is built on`;
+    bridge.push(line + '.');
+    if (isNum(res.cushion_months) && res.cushion_months < prof.training_months) {
+      bridge.push(`Your cushion (${res.cushion_months} months) is shorter than the training — keep some income running next to it.`);
+    }
+  }
+  bridge.push('First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it.');
+
+  return { why_you: why.slice(0, 3), math, but: but.slice(0, 3), bridge: bridge.slice(0, 3) };
+}
+
+/** Why the anti-match is NOT this person — the deciding personal factors. */
+function buildWhyNot(person, prof, r) {
+  const lines = [];
+  const fits = valueFits(person, prof).filter((f) => f.rank <= 3).sort((a, b) => a.fit - b.fit);
+  for (const f of fits.slice(0, 2)) {
+    if (f.fit <= 0.6) lines.push(`You put ${VALUE_LABELS[f.key]} at #${f.rank} — this job gives you very little of it.`);
+  }
+  if (r.love.parts && isNum(r.love.parts.riasec) && r.love.parts.riasec <= 0.55) {
+    lines.push('Your answers to the "one real day" questions point away from this work, not toward it.');
+  }
+  if (r.love.parts && isNum(r.love.parts.sdt) && r.love.parts.sdt <= 0.5) {
+    lines.push('The daily setup fights how you work best — you would be forcing yourself, every day.');
+  }
+  if (prof.verdict === 'NO') lines.push('The market side agrees: our base says NO to starting this job in 2027.');
+  if (r.floor_status === 'below_floor' && isNum(person.income_floor_k) && isNum(prof.payK)) {
+    lines.push(`And it fails your own pay test: typical pay ~$${prof.payK}K against your $${person.income_floor_k}K minimum.`);
+  }
+  if (!lines.length) lines.push('On your answers, this is simply the weakest fit we measured — nothing in it matches what you asked for.');
+  return lines.slice(0, 3);
+}
+
+// ---------------------------------------------------------------------------
 // scoreCandidate(person, prof, professions?)
 // professions is needed only for the /pivot|bridge current-profession lookup.
 // ---------------------------------------------------------------------------
@@ -313,16 +526,26 @@ export function scoreCandidate(person, prof, professions = []) {
     flags.push('exploitation_risk');
   }
 
+  const fs = floorStatus(person, prof);
   return {
     slug: prof.slug,
     name: prof.name,
     category,
+    family: professionFamily(prof),
     verdict: prof.verdict ?? null,
     payK: isNum(prof.payK) ? prof.payK : null,
+    pay_top_quartile_k: isNum(prof.pay_top_quartile_k) ? prof.pay_top_quartile_k : null,
+    training_months: isNum(prof.training_months) ? prof.training_months : null,
+    outlook: prof.bls_outlook ?? null,
+    ai_exposure: prof.bls_ai_exposure ?? null,
+    ai_exposure_tier: prof.bls_ai_exposure_tier ?? null,
+    ai_exposure_source: prof.bls_ai_exposure_source ?? null,
+    floor_status: fs,
     love,
     potential,
     confidence,
     flags,
+    argument: buildArgument(person, prof, { love, potential, category, flags, floor_status: fs }),
   };
 }
 
@@ -332,27 +555,27 @@ export function scoreCandidate(person, prof, professions = []) {
 function buildExplorationPlan(person) {
   const steps = [];
   if (person.cddq_type === 'not_ready') {
-    steps.push('Start with the coaching block, not the diagnosis: pick ONE small step this week (e.g. shadow one working day, or interview one person in a field you envy) — no deep testing until you actually want to choose.');
+    steps.push('Start small, not deep: pick ONE tiny step this week — shadow one working day, or talk to one person in a field you envy. No big testing until you actually want to choose.');
   }
   if (!person.riasec) {
-    steps.push('Complete the stage-4 job-focused interest items (12 anchored "in this job you would…" items) so interests are measured, not guessed.');
+    steps.push('Answer the 12 "in this job you would…" interest questions, so your interests are measured, not guessed.');
   }
   if (!Array.isArray(person.trials) || person.trials.length === 0) {
-    steps.push('Run 2 profession trials — short real-task samples from an actual working day — for the two most plausible directions, and record the scores.');
+    steps.push('Try 2 jobs for real — short task samples from an actual working day — in the two most plausible directions, and keep the scores.');
   }
   if (!isNum(person.completeness) || person.completeness < 0.8) {
-    steps.push('Fill the missing stage-0 facts (income floor, cushion in months, documents status, health limits) — scores stay wide bands until the facts are in.');
+    steps.push('Fill in the missing facts: your minimum pay, savings cushion in months, documents, health limits. Until then, any score would be a guess.');
   }
   if (!(person.supports && Object.values(person.supports).some((v) => isNum(v) && v > 0))) {
-    steps.push('Do the supports inventory by name: who gives money, time, backing, learning access — supports predict outcomes better than barriers do.');
+    steps.push('Name your support out loud: who gives you money, time, backing, a way to learn. Support predicts outcomes better than willpower does.');
   }
   if (isNum(person.age) && person.age < 25) {
-    steps.push('Schedule an interest retest in 6–12 months — interests at 18–24 are still moving (stability ≈ .67–.70), so today\'s answer is "your leanings now", not a label.');
+    steps.push('Book an interest retest in 6–12 months — at your age interests are still moving, so today\'s answer is "what fits you now", not a label for life.');
   }
   // Pad to a minimum of 4 concrete steps, cap at 6.
   const padding = [
-    'Do the stage-6 real-Tuesday check on ONE candidate before committing to anything.',
-    'Set a 90-day check-in: whatever you tried by then becomes the data the next verdict is built from.',
+    'Do the "one real Tuesday" check on ONE job before you commit to anything.',
+    'Set a 90-day check-in: whatever you tried by then becomes the facts the next verdict is built from.',
   ];
   for (const p of padding) {
     if (steps.length >= 4) break;
@@ -369,6 +592,7 @@ function buildExplorationPlan(person) {
 export function scorePerson(person, professions) {
   const list = Array.isArray(professions) ? professions : [];
   const results = list.map((prof) => scoreCandidate(person, prof, list));
+  const profBySlug = new Map(list.map((p) => [p.slug, p]));
 
   const sortable = results
     .filter((r) => r.category !== 'D')
@@ -380,21 +604,51 @@ export function scorePerson(person, professions) {
       if (sumB !== sumA) return sumB - sumA;
       return a.slug < b.slug ? -1 : 1; // deterministic tie-break
     });
-  const top3 = sortable.slice(0, 3);
+
+  // ---- Top-3 selection: diversity + income floor, scores never inflated.
+  // Pass 1: best-ranked candidates whose family is not yet represented AND
+  //         whose typical pay does not fail the person's floor.
+  // Pass 2: best-ranked remaining candidates from families still not
+  //         represented (a below-floor pick may enter here — its card then
+  //         carries the pay warning, never silence).
+  // No pass ever takes a second profession from a family: if fewer than 3
+  // families clear the bar, the list is honestly shorter than 3.
+  const top3 = [];
+  const usedFamilies = new Set();
+  for (const pass of [1, 2]) {
+    for (const r of sortable) {
+      if (top3.length >= 3) break;
+      if (top3.includes(r) || usedFamilies.has(r.family)) continue;
+      if (pass === 1 && r.floor_status === 'below_floor') continue;
+      top3.push(r);
+      usedFamilies.add(r.family);
+    }
+  }
   const topSlugs = new Set(top3.map((r) => r.slug));
 
-  // Anti-match: the NO-verdict profession the person's interests fit BEST
-  // (that is exactly what makes it dangerous) — never one already in top-3.
+  // Anti-match: the LOWEST personal fit (the LOVE score decides, not the
+  // market verdict) among candidates with real measurement behind them —
+  // at least 2 of the 3 LOVE parts present — never a top-3 pick, never a
+  // factually gated (D) one. If the lowest fit's LOVE range still reaches
+  // into the #1 pick's range, prefer the next-lowest fit whose range does
+  // not: side by side, "not you" must not look better than "you".
   let antiMatch = null;
-  if (person.riasec) {
-    let best = -1;
-    for (const prof of list) {
-      if (prof.verdict !== 'NO' || topSlugs.has(prof.slug)) continue;
-      const cong = riasecCongruence(person.riasec, prof.riasec);
-      if (isNum(cong) && cong > best) {
-        best = cong;
-        antiMatch = results.find((r) => r.slug === prof.slug) || null;
-      }
+  {
+    const top1 = top3[0] || null;
+    const lovePartsCount = (r) => [r.love.parts.needs_supplies, r.love.parts.sdt, r.love.parts.riasec].filter(isNum).length;
+    const cands = results
+      .filter((r) => r.category !== 'D' && !topSlugs.has(r.slug) && isNum(r.love.mid) && lovePartsCount(r) >= 2)
+      .sort((a, b) => {
+        if (a.love.mid !== b.love.mid) return a.love.mid - b.love.mid;
+        const pa = a.potential.mid ?? 0;
+        const pb = b.potential.mid ?? 0;
+        if (pa !== pb) return pa - pb;
+        return a.slug < b.slug ? -1 : 1;
+      });
+    antiMatch = cands.find((r) => !top1 || !isNum(top1.love.lo) || (isNum(r.love.hi) && r.love.hi <= top1.love.lo)) || cands[0] || null;
+    if (antiMatch) {
+      const prof = profBySlug.get(antiMatch.slug);
+      antiMatch = { ...antiMatch, why_not: buildWhyNot(person, prof || {}, antiMatch) };
     }
   }
 
@@ -404,13 +658,13 @@ export function scorePerson(person, professions) {
   let modeReason;
   if (person.cddq_type === 'not_ready') {
     mode = 'insufficient_data';
-    modeReason = 'CDDQ type is not_ready: the person has not yet decided to choose — coaching and small steps first, no verdict is forced.';
+    modeReason = 'You said you have not decided to choose yet — no verdict gets forced. Small steps first.';
   } else if (isNum(person.completeness) && person.completeness < 0.45) {
     mode = 'insufficient_data';
-    modeReason = `Interview completeness ${person.completeness} is below 0.45 — not enough structured facts to score honestly.`;
+    modeReason = 'Too many answers are missing to score this honestly.';
   } else if (!person.riasec && trialsEmpty) {
     mode = 'insufficient_data';
-    modeReason = 'No measured interests (RIASEC) and no profession trials — preferences alone are not a verdict.';
+    modeReason = 'The interest questions are not answered and no job has been tried yet — liking the idea of a job is not a verdict.';
   } else {
     const top = top3[0];
     const topHasTrial = top ? (person.trials || []).some((t) => t && t.slug === top.slug) : false;
@@ -422,19 +676,42 @@ export function scorePerson(person, professions) {
       top.category === 'A' &&
       top.confidence === 'high' &&
       !top.flags.includes('exploitation_risk') &&
+      top.floor_status !== 'below_floor' &&
       ageRuleOk
     ) {
       mode = 'direct';
-      modeReason = 'Top candidate is category A with high confidence, no exploitation flag, and the age rule is satisfied (25+, or a measured trial plus a finished attempt).';
+      modeReason = 'Your top pick is a top fit on full answers, and its typical pay clears your minimum.';
     } else {
       mode = 'bands';
-      modeReason = 'Scores are reported as bands: the top candidate is not a clean A/high-confidence case, or the <25 evidence rule is not met.';
+      modeReason = 'Some answers are still thin, so the scores are ranges, not single numbers — the direction is still clear.';
     }
+  }
+
+  // ---- "Why these three", in plain words, from the actual picks.
+  let setReason = null;
+  if (mode !== 'insufficient_data' && top3.length > 0) {
+    const parts = [];
+    if (mode === 'bands') parts.push('Some answers were thin, so your scores are ranges, not single numbers — the direction is still clear.');
+    if (top3.length >= 2) {
+      const labels = top3.map((r) => FAMILY_LABELS[r.family] || r.family);
+      parts.push(`These picks are deliberately from different worlds — ${labels.join(', ')} — not three versions of the same job.`);
+    }
+    if (isNum(person.income_floor_k)) {
+      const clearCount = top3.filter((r) => r.floor_status === 'clears').length;
+      if (clearCount === top3.length) parts.push(`Every one of them clears your $${person.income_floor_k}K minimum on typical pay.`);
+      else if (clearCount > 0) parts.push(`${clearCount} of the ${top3.length} clear your $${person.income_floor_k}K minimum on typical pay. The rest are marked on their cards — nothing is hidden.`);
+      else parts.push(`None of the strong fits clears your $${person.income_floor_k}K minimum on typical pay — each card says exactly where it lands instead of hiding it.`);
+    }
+    if (top3.length < 3) parts.push(`Only ${top3.length} job${top3.length === 1 ? '' : 's'} cleared the bar honestly — the list is not padded with copies.`);
+    parts.push('Next step: pick the one you would try first — the 90-day plan starts there.');
+    setReason = parts.join(' ');
   }
 
   return {
     mode,
     mode_reason: modeReason,
+    income_floor_k: isNum(person.income_floor_k) ? person.income_floor_k : null,
+    set_reason: setReason,
     top3,
     anti_match: antiMatch,
     results_count: results.length,

@@ -2,12 +2,16 @@
 // ---------------------------------------------------------------------------
 // Career Glitch Mentor — Meta Model API client (Day 1).
 //
-// The API key lives in Muse's secure connector and is NEVER read here.
-// Every call goes through the registered helper, which places a surrogate
-// credential on the request and Muse swaps in the real key only for
-// api.meta.ai:
-//
-//   echo '<json>' | python3 ~/workspace/custom-connectors/custom.meta-model-api/bin/meta_api.py respond
+// Two transports, same Responses API shape:
+//   1. DIRECT (hosts that hold a real key): when the env var
+//      META_MODEL_API_KEY is set, POST https://api.meta.ai/v1/responses
+//      with that key as a Bearer token. This is how the Vercel deployment
+//      talks to Meta (the founder placed the key in the project's env).
+//   2. CONNECTOR HELPER (Muse's local host): no env key — every call goes
+//      through the registered helper, which places a surrogate credential
+//      on the request and Muse swaps in the real key only for api.meta.ai:
+//        echo '<json>' | python3 ~/workspace/custom-connectors/custom.meta-model-api/bin/meta_api.py respond
+//      The key itself is never read by this code on that path either.
 //
 // Body is the Meta Responses API shape:
 //   { model, instructions, input, max_output_tokens, reasoning? }
@@ -80,6 +84,54 @@ export async function metaRespond({ model, instructions, input, maxOutputTokens 
   };
   if (reasoning !== undefined) body.reasoning = reasoning;
 
+  // ---- Transport 1: direct call with the host's own key (Vercel env).
+  const directKey = process.env.META_MODEL_API_KEY;
+  if (directKey) {
+    let resp;
+    try {
+      resp = await fetch('https://api.meta.ai/v1/responses', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${directKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch (e) {
+      throw new Error(`metaRespond: direct Meta API call failed: ${e.message}`);
+    }
+    const rawText = await resp.text();
+    let parsed = null;
+    try { parsed = JSON.parse(rawText); } catch { /* handled below */ }
+    if (!resp.ok) {
+      // Diagnostic: list the model ids THIS key can actually see (ids are
+      // not secrets) so a wrong-scope key is distinguishable from a typo'd
+      // model name without ever exposing the key itself.
+      let catalog = '';
+      try {
+        const mr = await fetch('https://api.meta.ai/v1/models', {
+          headers: { Authorization: `Bearer ${directKey}` },
+        });
+        if (mr.ok) {
+          const mj = await mr.json();
+          const ids = (mj.data || []).map((m) => m.id).filter(Boolean);
+          if (ids.length) catalog = ` | models visible to this key: ${ids.join(', ')}`;
+        } else {
+          catalog = ` | model catalog check: HTTP ${mr.status}`;
+        }
+      } catch { /* diagnostic only — never mask the original error */ }
+      throw new Error(`metaRespond: Meta API HTTP error ${resp.status}: ${rawText.slice(0, 500)}${catalog}`);
+    }
+    if (!parsed) throw new Error(`metaRespond: direct Meta API returned unparseable output: ${rawText.slice(0, 500)}`);
+    if (parsed.error) {
+      const msg = typeof parsed.error === 'string' ? parsed.error : JSON.stringify(parsed.error).slice(0, 500);
+      throw new Error(`metaRespond: Meta API error: ${msg}`);
+    }
+    const text = extractText(parsed);
+    if (!text) {
+      throw new Error(`metaRespond: no output_text found in API response: ${JSON.stringify(parsed).slice(0, 500)}`);
+    }
+    return { text, raw: parsed };
+  }
+
+  // ---- Transport 2: the connector helper (Muse's local host).
   const { stdout, stderr, code } = await new Promise((resolve, reject) => {
     const child = spawn('python3', [HELPER_PATH, 'respond'], {
       stdio: ['pipe', 'pipe', 'pipe'],

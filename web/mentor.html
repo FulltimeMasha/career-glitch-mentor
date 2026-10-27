@@ -53,7 +53,15 @@ textarea{min-height:110px;resize:vertical}
 .seg button,.choice button,.ranklist button{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:10px 13px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer}
 .seg button.sel,.choice button.sel{background:var(--pink);color:#fff}
 .choice{display:flex;flex-wrap:wrap;gap:8px}
-.anchors{display:flex;justify-content:space-between;font-size:13px;color:#5c5566;font-weight:600;margin-top:4px}
+.anchors{display:flex;justify-content:space-between;gap:18px;font-size:13px;color:#5c5566;font-weight:600;margin-top:6px}
+.anchors span{flex:1 1 0;min-width:0;overflow-wrap:break-word}
+.anchors span:last-child{text-align:right}
+.histstrip{width:100%;text-align:left;background:rgba(255,252,246,.08);color:var(--paper);border:2px dashed rgba(249,42,130,.55);border-radius:10px;padding:9px 12px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.badge.floor{background:var(--red);color:#fff}
+.argsec{margin-top:10px}
+.argsec h4{font-family:'Outfit',sans-serif;font-weight:900;font-size:15px;margin-bottom:4px}
+.argsec ul{margin-left:18px;display:grid;gap:4px;font-size:15px}
+.argsec ul.warn{list-style:none;margin-left:0}
 .ranklist{display:grid;gap:8px;list-style:none}
 .ranklist li{display:flex;gap:10px;align-items:center;background:#fff;border:2px solid var(--ink);border-radius:10px;padding:10px 12px;font-weight:600}
 .ranklist .n{font-family:'DM Mono',monospace;background:var(--ink);color:#fff;border-radius:999px;width:26px;height:26px;display:grid;place-items:center;flex:none}
@@ -191,7 +199,7 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4)
 <!-- VERDICT PLACEHOLDER -->
 <section id="verdict" class="card verdict hidden">
 <h2 style="margin-top:0">Your verdict</h2>
-<p id="verdictEmpty">No scoring result yet. When the deterministic scoring engine runs, this panel renders its result object directly — LOVE and POTENTIAL as ranges, a fitness category, and any flags. Nothing here is invented by the chat.</p>
+<p id="verdictEmpty">No result yet. When your answers are scored, your top jobs land here — each with the reasons, the pay and the honest weak points. Nothing here is invented by the chat.</p>
 <div id="verdictBody"></div>
 </section>
 
@@ -330,20 +338,31 @@ async function saveRemote(){
   }catch(e){ /* silent by design */ }
 }
 function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function cleanTitle(t){ return String(t||"").replace(/^Stage\s+\d+\s*[—–-]\s*/,"").replace(/\s*\([^)]*\)\s*$/,"").trim(); }
+function fitWord(c){ return {A:"Top fit",B:"Good fit",C:"Weak fit",D:"Not a fit"}[c] || ""; }
 
 const answers = {}; // current stage widget state
 function renderStage(){
   const idx=state.stageIndex;
   const st=STAGES[idx];
-  document.getElementById("progressLabel").textContent = state.door ? ("Door: "+state.door+"  ·  Step "+(idx+1)+" of "+STAGES.length+"  ·  "+st.id) : ("Step "+(idx+1)+" of "+STAGES.length);
+  document.getElementById("progressLabel").textContent = "Step "+(idx+1)+" of "+STAGES.length;
   document.getElementById("barFill").style.width = Math.round(idx/STAGES.length*100)+"%";
   document.getElementById("localNotice").classList.toggle("hidden", !!MENTOR_API_BASE);
-  // thread: prior mentor prompts are the fixed stage prompts (guided flow, not fake AI)
+  // thread: past steps collapse into one strip — the current card carries
+  // the question (full history stays in state; this is display only).
   const thread=document.getElementById("thread");
-  thread.innerHTML = state.history.map(function(h){
-    return '<div class="msg '+(h.who==="mentor"?"mentor":"user")+'"><div class="who">'+(h.who==="mentor"?"Mentor — guided flow":"You")+'</div><div>'+esc(h.text)+'</div></div>';
-  }).join("");
-  document.getElementById("stageTitle").textContent=st.title;
+  if(state.history.length){
+    const nSteps = state.history.filter(function(h){return h.who==="mentor";}).length;
+    thread.innerHTML = '<button type="button" class="histstrip" id="histToggle">✓ '+nSteps+' earlier step'+(nSteps===1?"":"s")+' answered — tap to view</button>'
+      + '<div class="histpast hidden" id="histPast">'
+      + state.history.map(function(h){
+          return '<div class="msg '+(h.who==="mentor"?"mentor":"user")+'"><div class="who">'+(h.who==="mentor"?"Mentor":"You")+'</div><div>'+esc(h.text)+'</div></div>';
+        }).join("")
+      + '</div>';
+    const tg=document.getElementById("histToggle");
+    tg.addEventListener("click",function(){ const p=document.getElementById("histPast"); const nowHidden=p.classList.toggle("hidden"); tg.textContent = nowHidden ? ("✓ "+nSteps+" earlier step"+(nSteps===1?"":"s")+" answered — tap to view") : "Hide earlier steps"; });
+  } else { thread.innerHTML=""; }
+  document.getElementById("stageTitle").textContent=cleanTitle(st.title);
   document.getElementById("stagePrompt").textContent=st.prompt;
   const ft=document.getElementById("freeText"); ft.value=""; ft.placeholder=st.free_prompt_hint;
   Object.keys(answers).forEach(function(k){delete answers[k];});
@@ -368,7 +387,7 @@ function renderWidget(item){
       b.addEventListener("click",function(){ box.querySelectorAll("button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); answers[item.id]=opt; });
       box.appendChild(b);
     }); wrap.appendChild(box);
-    if(item.kind==="perceived_fit"){ const n=document.createElement("p"); n.style.cssText="font-size:13px;color:#5c5566;margin-top:6px"; n.textContent="Perceived fit can only lower a category — never raise it."; wrap.appendChild(n); }
+    if(item.kind==="perceived_fit"){ const n=document.createElement("p"); n.style.cssText="font-size:13px;color:#5c5566;margin-top:6px"; n.textContent="This can only lower a fit grade — never raise it."; wrap.appendChild(n); }
   } else if(item.kind==="scale"){
     const box=document.createElement("div"); box.className="seg";
     for(let v=item.min; v<=item.max; v++){ (function(v){ const b=document.createElement("button"); b.type="button"; b.textContent=String(v);
@@ -414,10 +433,8 @@ function renderVerdict(){
   let html="";
   if(s.love||s.LOVE) html+="<p><b>LOVE:</b> "+band(s.love||s.LOVE)+"</p>";
   if(s.potential||s.POTENTIAL) html+="<p><b>POTENTIAL:</b> "+band(s.potential||s.POTENTIAL)+"</p>";
-  if(s.category) html+='<p><b>Category:</b> <span class="badge">'+esc(s.category)+"</span></p>";
-  if(s.flags && s.flags.length) html+="<p><b>Flags:</b> "+s.flags.map(esc).join(", ")+"</p>";
+  if(s.category) html+='<p><b>Fit:</b> <span class="badge">'+esc(fitWord(s.category))+"</span></p>";
   if(state.report) html+="<p style='margin-top:10px'>"+esc(state.report)+"</p>";
-  html+="<pre>"+esc(JSON.stringify(s,null,2))+"</pre>";
   body.innerHTML=html;
 }
 document.querySelectorAll(".door").forEach(function(btn){
@@ -494,11 +511,34 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
     return { n: 8, total: 8 };
   }
 
+  function bubbleHtml(h){
+    return '<div class="msg ' + (h.who === "mentor" ? "mentor" : "user") + '"><div class="who">' + (h.who === "mentor" ? "Mentor" : "You") + '</div><div>' + esc(h.text) + '</div></div>';
+  }
+
+  // Past steps collapse into one slim strip (tap to expand); only the
+  // current turn — the latest mentor message and anything after it —
+  // stays open. Display only: the session transcript is untouched.
   function renderThread(){
     var t = (live && live.session && live.session.transcript) || [];
-    $("thread").innerHTML = t.map(function(h){
-      return '<div class="msg ' + (h.who === "mentor" ? "mentor" : "user") + '"><div class="who">' + (h.who === "mentor" ? "Mentor" : "You") + '</div><div>' + esc(h.text) + '</div></div>';
-    }).join("");
+    var lastMentor = -1;
+    for(var i = 0; i < t.length; i++) if(t[i].who === "mentor") lastMentor = i;
+    var past = lastMentor > 0 ? t.slice(0, lastMentor) : [];
+    var current = lastMentor >= 0 ? t.slice(lastMentor) : t.slice();
+    var nSteps = past.filter(function(h){ return h.who === "mentor"; }).length;
+    var label = "✓ " + nSteps + " earlier step" + (nSteps === 1 ? "" : "s") + " answered — tap to view";
+    var html = "";
+    if(past.length){
+      html += '<button type="button" class="histstrip" id="histToggle">' + label + '</button>';
+      html += '<div class="histpast hidden" id="histPast">' + past.map(bubbleHtml).join("") + '</div>';
+    }
+    html += '<div id="currentTurn">' + current.map(bubbleHtml).join("") + '</div>';
+    $("thread").innerHTML = html;
+    var tg = $("histToggle");
+    if(tg) tg.addEventListener("click", function(){
+      var p = $("histPast"); if(!p) return;
+      var nowHidden = p.classList.toggle("hidden");
+      tg.textContent = nowHidden ? label : "Hide earlier steps";
+    });
   }
 
   function optVal(o){ return (o && typeof o === "object") ? o.value : o; }
@@ -576,13 +616,13 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
     liveAnswers = {}; liveRatings = {};
     var s = live.session;
     var st = stepInfo();
-    $("progressLabel").textContent = "Live mentor · Door: " + s.door + " · Step " + st.n + " of " + st.total + " · " + s.phase;
+    $("progressLabel").textContent = "Step " + st.n + " of " + st.total;
     $("barFill").style.width = Math.round(st.n / st.total * 100) + "%";
     renderThread();
     var def = liveDef || {};
-    $("stageTitle").textContent = def.title || (s.phase === "cddq" ? "Before we start" : "Stage");
-    $("stagePrompt").textContent = resp.json.mentor_message || def.free_prompt_hint || def.title || "";
-    var ft = $("freeText"); ft.value = ""; ft.placeholder = def.free_prompt_hint || "Be specific. Facts beat self-descriptions.";
+    $("stageTitle").textContent = cleanTitle(def.title) || (s.phase === "cddq" ? "Before we start" : "Your answers");
+    $("stagePrompt").textContent = "";
+    var ft = $("freeText"); ft.value = ""; ft.placeholder = "Type your answer…";
     var host = $("tailWidgets"); host.innerHTML = "";
     if(s.phase === "stage6" && def.candidates){
       def.candidates.forEach(function(c){
@@ -597,7 +637,7 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
         });
         wrap.appendChild(box);
         var note = document.createElement("p"); note.style.cssText = "font-size:13px;color:#5c5566;margin-top:6px";
-        note.textContent = "Perceived fit is a veto: 'not mine' lowers the category by one step. It never raises a score.";
+        note.textContent = "'Not mine' lowers this job's fit grade by one step. It can never push a grade up.";
         wrap.appendChild(note);
         host.appendChild(wrap);
       });
@@ -611,15 +651,33 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
       });
       $("nextBtn").textContent = "Continue";
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    var curTurn = $("currentTurn");
+    if(curTurn) window.scrollTo({ top: Math.max(0, curTurn.getBoundingClientRect().top + window.scrollY - 8), behavior: "smooth" });
   }
 
-  function candidateCard(c, heading){
+  function argSection(title, lines, warn){
+    if(!lines || !lines.length) return "";
+    var html = '<div class="argsec"><h4>' + esc(title) + '</h4><ul' + (warn ? ' class="warn"' : '') + '>';
+    lines.forEach(function(l){ html += '<li>' + (warn ? '⚠️ ' : '') + esc(l) + '</li>'; });
+    return html + '</ul></div>';
+  }
+
+  function candidateCard(c, heading, isAnti){
     var html = '<div class="card" style="margin-top:12px"><b style="font-family:Outfit,sans-serif;font-size:19px">' + esc(heading || c.name) + '</b>';
-    html += ' <span class="badge">Category ' + esc(c.category) + '</span>';
+    if(!isAnti && fitWord(c.category)) html += ' <span class="badge">' + esc(fitWord(c.category)) + '</span>';
     if(c.verdict) html += ' <span class="badge ' + (c.verdict === "YES" ? "yes" : "no") + '">' + esc(c.verdict) + '</span>';
-    html += '<p style="margin-top:8px">Median pay in the base: ~$' + esc(c.payK) + 'K · LOVE ' + band(c.love) + ' · POTENTIAL ' + band(c.potential) + '</p>';
-    if(c.flags && c.flags.length) html += '<p style="margin-top:4px"><b>Flags:</b> ' + c.flags.map(esc).join(", ") + '</p>';
+    if(c.floor_status === "below_floor") html += ' <span class="badge floor">Below your floor</span>';
+    html += '<p style="margin-top:8px">LOVE ' + band(c.love) + ' — how much it matches what you love<br>POTENTIAL ' + band(c.potential) + ' — how strong your chances look: what you already have, plus demand</p>';
+    var arg = c.argument || {};
+    if(isAnti){
+      html += argSection("Why not you", (c.why_not && c.why_not.length) ? c.why_not : arg.but, true);
+      html += argSection("The math", arg.math, false);
+    } else {
+      html += argSection("Why you", arg.why_you, false);
+      html += argSection("The math", arg.math, false);
+      html += argSection("The honest part", arg.but, true);
+      html += argSection("First steps", arg.bridge, false);
+    }
     html += '</div>';
     return html;
   }
@@ -629,7 +687,7 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
     $("stageCard").classList.add("hidden");
     renderThread();
     $("barFill").style.width = "100%";
-    $("progressLabel").textContent = "Live mentor · Done";
+    $("progressLabel").textContent = "Done";
     var panel = $("verdict"); panel.classList.remove("hidden");
     $("verdictEmpty").style.display = "none";
     var html = "";
@@ -644,11 +702,10 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
         html += '</ol>';
       }
     } else {
-      html += '<p><b>Mode:</b> ' + esc(r.mode) + '</p>';
-      if(r.mode_reason) html += '<p style="margin-top:6px">' + esc(r.mode_reason) + '</p>';
-      (r.top3 || []).forEach(function(c, i){ html += candidateCard(c, (i + 1) + ". " + c.name); });
-      if(r.anti_match) html += candidateCard(r.anti_match, "Probably NOT you: " + r.anti_match.name);
-      html += '<p style="margin-top:12px;color:#5c5566;font-size:14px">Scores are ranges from the deterministic engine — LOVE and POTENTIAL, never a single match %. The verdict categories and flags come from the engine, not from the chat.</p>';
+      if(r.set_reason) html += '<h3 style="margin:6px 0 8px;font-family:Outfit,sans-serif">Why these three</h3><p>' + esc(r.set_reason) + '</p>';
+      (r.top3 || []).forEach(function(c, i){ html += candidateCard(c, (i + 1) + ". " + c.name, false); });
+      if(r.anti_match) html += candidateCard(r.anti_match, "Probably NOT you: " + r.anti_match.name, true);
+      html += '<p style="margin-top:12px;color:#5c5566;font-size:14px">Scores are ranges, never one magic number. Every figure comes from your answers and checked job-market data.</p>';
     }
     $("verdictBody").innerHTML = html;
     panel.scrollIntoView({ behavior: "smooth" });
@@ -715,7 +772,7 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
   fetch("/api/mentor?action=health").then(function(r){ return r.json(); }).then(function(h){
     if(!h || !h.ok) return; // guided mode stays, untouched
     var notice = $("localNotice");
-    notice.textContent = "Live mentor connected — the interview, the scoring engine and the verdict run on the server. Scores are never derived on this device.";
+    notice.textContent = "Live mentor connected. Your answers are scored on the server with real job-market data — nothing is made up on this phone.";
     notice.classList.remove("hidden");
     // Clone-swap the interactive controls so the guided handlers let go.
     document.querySelectorAll(".door").forEach(function(btn){

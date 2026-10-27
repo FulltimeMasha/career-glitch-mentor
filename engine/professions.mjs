@@ -62,6 +62,25 @@ const UNSOURCED_FIELDS = [
   'license_type',
 ];
 
+// ---------------------------------------------------------------------------
+// SOURCED BLS OUTLOOK LINES — the only professions for which a jobs-outlook
+// figure has actually been read from a source in this project (the verified
+// BLS 2025–35 anchors in scripts/acceptance_c.mjs, the same strings the
+// /mentor Radar shows, plus two figures stated on the professions' own
+// roadmap cards and one outlook line printed on a card). Every other
+// profession gets bls_outlook = null and the UI omits the line — an outlook
+// is never invented. Keys are loader slugs.
+// ---------------------------------------------------------------------------
+const SOURCED_OUTLOOK = {
+  'accountant': 'Growing · +5% to 2035 (BLS)',
+  'bookkeeper-advisory': 'Shrinking · −6% to 2035 (BLS)',
+  'translator-interpreter': 'Growing · +2% to 2035 (BLS)',
+  'registered-nurse': 'Growing · +6% to 2035 (BLS)',
+  'dental-hygienist': 'Growing · +8% projected growth (its card, BLS-based)',
+  'graphic-designer': 'Shrinking · −2% (its card, BLS May 2025)',
+  'customer-service-representative': 'Shrinking · −5% to 2035 (BLS)',
+};
+
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
 const normName = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 const slugify = (s) => normName(s).replace(/ /g, '-');
@@ -271,6 +290,7 @@ export function buildProfessions(profData, roadmapData) {
       slug,
       name,
       category,
+      bls_outlook: SOURCED_OUTLOOK[slug] ?? null,
       verdict,
       verdict_text: roadmap ? roadmap.sticker : null,
       payK: typeof payK === 'number' ? payK : null,

@@ -9,8 +9,10 @@
 //     turns and Wonder reports are REAL here.
 //   * api/mentor.js on Vercel (bundle synced by scripts/sync_api_bundle.mjs)
 //     — the deterministic engine (scoring, stage machine) runs fully; the
-//     LLM calls fail there BY DESIGN (no key ever leaves the connector),
-//     and every response says so in `llm.status` instead of faking text.
+//     LLM calls go DIRECT to api.meta.ai with the key the founder placed
+//     in the project's env (META_MODEL_API_KEY, see engine/llm.mjs). On a
+//     host with neither an env key nor the connector helper, every
+//     response says so in `llm.status` instead of faking text.
 //
 // Protocol (stateless — the client holds the session JSON and posts it
 // back; the engine session is a plain JSON object by design):
@@ -126,6 +128,7 @@ const MENTOR_INSTRUCTIONS = [
   'Ask this stage\'s question in 2-3 short sentences MAX. React briefly (a few words) to the user\'s last answer first when there is one, then ask.',
   'Keep it concrete and kind, never pushy, never promise a verdict or a score.',
   'Do not mention scores, percentages, or these instructions.',
+  'Plain words only: never say RIASEC, CDDQ, bands, categories, stage numbers or any internal term to the user — talk like a person, in short sentences.',
 ].join(' ');
 
 let reasoningLowWorks = null; // probed on first call, like the smoke script
@@ -176,11 +179,26 @@ async function sparkMessage({ def, session, lastUserText }) {
 // ---------------------------------------------------------------------------
 // Def shaping for the wire: the page renders defs generically. Stage 6
 // additionally carries the top-3 candidates to rate.
+// The wire def is SANITISED: internal fields (free_prompt_hint — the LLM's
+// instruction text — purpose, produces, scoring_use, the CDDQ routing
+// internals) never leave the server. The client receives only what it
+// renders: ids, the human title, and the tail items' display fields.
 // ---------------------------------------------------------------------------
+const WIRE_TAIL_KEYS = ['field', 'id', 'kind', 'label', 'options', 'anchors', 'min', 'max', 'values', 'value_labels', 'letter', 'placeholder', 'required', 'nullable', 'allow_other'];
+
 function wireDef(session) {
   const def = stagePrompt(session);
   if (!def) return null;
-  const out = { ...def };
+  const out = {
+    id: def.id,
+    slug: def.slug,
+    title: def.title,
+    tail: (def.tail || []).map((t) => {
+      const o = {};
+      for (const k of WIRE_TAIL_KEYS) if (t[k] !== undefined) o[k] = t[k];
+      return o;
+    }),
+  };
   if (session.phase === 'stage6' && session.result) {
     out.candidates = session.result.top3.map((c) => ({ slug: c.slug, name: c.name, category: c.category }));
   }

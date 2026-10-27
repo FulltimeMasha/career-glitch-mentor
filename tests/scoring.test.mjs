@@ -313,3 +313,74 @@ test('<25 direct-verdict rule: no direct mode on interests alone, direct allowed
   assert.equal(adultOut.top3[0].confidence, 'high');
   assert.equal(adultOut.mode, 'direct');
 });
+
+// ---------------------------------------------------------------------------
+// (7) Diversity + income floor + anti-match + argument (27.10 fixes).
+// A creator-leaning person who names a $120K minimum must not be handed
+// three creator-economy wrappers at $45–75K in silence.
+// ---------------------------------------------------------------------------
+const creatorPersona = {
+  door: 'start',
+  age: 34,
+  income_floor_k: 120,
+  current_profession_name: 'Cleaning Business Owner',
+  current_income_k: 90,
+  values_rank: { recognition: 1, achievement: 2, independence: 3, relationships: 4, working_conditions: 5, support: 6 },
+  autonomy_need: 2,
+  relatedness_need: 1,
+  supports: { money: 1, time: 1, people: 2, learning_access: 2 },
+  riasec: { R: 1.25, I: 5, A: 8.75, S: 6.25, E: 8.75, C: 3.75 },
+  tolerances: { remote_pref: 2, hands_pref: 0, people_pref: 2 },
+  attempts_started: 5,
+  attempts_finished: 3,
+  exit_pattern: 'boredom',
+  energy_themes: ['creative', 'selling', 'people'],
+  barriers: ['fear_of_failure'],
+  red_lines: [],
+  mirror_confirmed: 'confirmed',
+  resources: { hours_per_day: 3, budget_k: 10, cushion_months: 6, documents_ok: 'yes', health_limits: ['none'] },
+  trials: [],
+  perceived_fit: {},
+  cddq_type: 'lacks_information',
+  completeness: 1,
+};
+
+test('diversity + floor: three families, no silent below-floor pick, argued cards', () => {
+  const out = scorePerson(creatorPersona, professions);
+  assert.equal(out.top3.length, 3);
+  assert.equal(new Set(out.top3.map((r) => r.family)).size, 3, 'top-3 must span 3 families');
+  assert.ok(out.top3.filter((r) => r.family === 'creator').length <= 1, 'at most one creator-economy pick');
+  for (const r of out.top3) {
+    assert.notEqual(r.floor_status, 'below_floor', `${r.slug} is below the $120K floor and must not be presented silently`);
+    assert.ok(r.argument && r.argument.why_you.length > 0, `${r.slug} must carry a why-you argument`);
+    assert.ok(r.argument.math.some((l) => l.includes('Typical pay')), `${r.slug} must carry the pay math`);
+  }
+  // Anti-match: lowest personal fit, and its LOVE range must not reach
+  // into the winner's range when a non-overlapping candidate exists.
+  assert.ok(out.anti_match, 'an anti-match is produced');
+  assert.ok(out.anti_match.love.hi <= out.top3[0].love.lo,
+    `anti-match LOVE hi ${out.anti_match.love.hi} must not exceed winner lo ${out.top3[0].love.lo}`);
+  assert.ok(Array.isArray(out.anti_match.why_not) && out.anti_match.why_not.length > 0, 'anti-match must say why not');
+  // Plain register: nothing user-facing may carry internal terms.
+  const rendered = [
+    out.set_reason, out.mode_reason,
+    ...out.top3.flatMap((r) => [...r.argument.why_you, ...r.argument.math, ...r.argument.but, ...r.argument.bridge]),
+    ...(out.anti_match.why_not || []),
+    ...out.exploration_plan,
+  ].join('\n');
+  for (const banned of ['RIASEC', 'CDDQ', 'cddq', 'bands', 'evidence', 'needs-supplies', 'in the base', 'exploitation_risk', 'base_verdict']) {
+    assert.ok(!rendered.includes(banned), `user-facing text must not contain "${banned}"`);
+  }
+});
+
+test('floor demotion: a below-floor favourite yields the slot to a floor-clearing pick, and is marked when kept', () => {
+  const streamer = professions.find((p) => p.slug === 'streamer-content-creator');
+  const pilot = professions.find((p) => p.slug === 'commercial-pilot');
+  assert.ok(streamer && pilot, 'fixture professions exist');
+  const out = scorePerson(creatorPersona, [streamer, pilot]);
+  assert.equal(out.top3[0].slug, 'commercial-pilot', 'the floor-clearing pick leads');
+  const kept = out.top3.find((r) => r.slug === 'streamer-content-creator');
+  assert.ok(kept, 'the below-floor favourite may stay only as a marked extra');
+  assert.equal(kept.floor_status, 'below_floor');
+  assert.ok(kept.argument.math.some((l) => l.includes('under your $120K minimum')), 'the card must state the floor miss in plain words');
+});
