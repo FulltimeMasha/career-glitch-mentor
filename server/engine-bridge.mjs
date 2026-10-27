@@ -10,6 +10,8 @@ export {
   applyStage,
   applyPerceivedFit,
   generateReport,
+  generateVerifiedReport,
+  buildChecklist,
   deserializeSession,
   serializeSession,
 } from '../engine/interview.mjs';

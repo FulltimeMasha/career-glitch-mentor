@@ -43,6 +43,8 @@ export {
   applyStage,
   applyPerceivedFit,
   generateReport,
+  generateVerifiedReport,
+  buildChecklist,
   deserializeSession,
   serializeSession,
 } from './engine/interview.mjs';
@@ -51,7 +53,7 @@ export { loadProfessions, buildProfessions, ROADMAP_FILE_NAMES } from './engine/
 `);
 
 // Engine files (verbatim copies)
-for (const f of ['interview.mjs', 'llm.mjs', 'professions.mjs', 'scoring.mjs', 'stages.json']) {
+for (const f of ['interview.mjs', 'llm.mjs', 'professions.mjs', 'scoring.mjs', 'verify.mjs', 'stages.json']) {
   cpSync(join(ROOT, 'engine', f), join(LIB, 'engine', f));
   written.push(`api/_lib/engine/${f}`);
 }

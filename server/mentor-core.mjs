@@ -40,6 +40,8 @@ import {
   applyStage,
   applyPerceivedFit,
   generateReport,
+  generateVerifiedReport,
+  buildChecklist,
   deserializeSession,
   metaRespond,
   MODELS,
@@ -214,6 +216,8 @@ function baseResponse(sessionId, session, extra = {}) {
     def: wireDef(session),
     result: session.result ?? null,
     report: session.report ?? null,
+    checklist: buildChecklist(session),
+    verification: session.verification ?? null,
     ...extra,
   };
 }
@@ -290,11 +294,13 @@ export async function handleMentorRequest(body) {
       if (!session.result) {
         return { status: 409, json: { ok: false, error: 'no scoring result yet — finish the interview first' } };
       }
-      // The engine scores against ITS profession list internally; ensure
-      // the list is warm so any host behaves the same. (generateReport
-      // itself only reads session.result/person.)
-      await getProfessions();
-      const report = await generateReport(session);
+      // The engine scores against ITS profession list internally; the
+      // list also feeds the verification layer's base cross-check.
+      const professions = await getProfessions();
+      // Verified report (Agents-101 checker pattern): the Wonder draft
+      // passes the number/claim audit in engine/verify.mjs before it is
+      // stored on the session; the outcome lands on session.verification.
+      const report = await generateVerifiedReport(session, professions);
       const persistence = await persistSession(sessionId, session);
       return {
         status: 200,

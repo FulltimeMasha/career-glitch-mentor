@@ -108,6 +108,70 @@ const FAMILY_LABELS = {
 };
 
 // ---------------------------------------------------------------------------
+// SLOW-MONEY professions — EDITORIAL classification (founder's rule,
+// 27.10.2026). In these professions the income is BUILT, not hired: an
+// audience, a client book, a practice, commissions, ownership. There is no
+// wage from month one, however good the fit is. When the #1 match is
+// slow-money, scorePerson additionally picks ONE very stable HIRED job —
+// the cushion (bridge_pick) — that clears the person's own income floor
+// from the first paycheck while the main road is being built. Membership
+// is by exact profession name in professions.json; review by hand, the
+// way the verdicts themselves are reviewed.
+// ---------------------------------------------------------------------------
+export const SLOW_MONEY_NAMES = new Set([
+  'Streamer / Content Creator', 'UGC Creator', 'Online Course Creator',
+  'Podcast Producer', 'Real Estate Agent', 'Luxury Real Estate Agent',
+  'Insurance Agent', 'Mortgage Broker', 'Copywriter', 'Brand Strategist',
+  'Business Consultant', 'Video Editor', 'Grant Writer',
+  'Translator / Interpreter', 'Motion Designer / 3D Artist', 'Web Designer',
+  'Photographer', 'Wedding Photographer', 'Videographer', 'Tattoo Artist',
+  'Illustrator', 'Fashion Designer', 'Voice Actor', 'DJ / Event Host',
+  'Jewelry Maker', 'Home Stager', 'Interior Designer', 'Event Planner',
+  'Wedding Planner', 'Choreographer', 'Set / Production Designer',
+  'Costume Designer', 'Barber', 'Cosmetologist / Hair Stylist',
+  'Beauty Salon Owner', 'Spa Owner', 'Makeup Artist', 'Nail Technician',
+  'Lash / Brow Artist', 'Permanent Makeup Artist',
+  'Personal / Fashion Stylist', 'Body Piercing Artist',
+  'Hair Replacement / Wig Specialist', 'Paramedical Tattoo Artist',
+  'Scalp Micropigmentation Artist', 'Electrologist', 'Reflexologist',
+  'Life Coach', 'Wellness Coach', 'Fitness Trainer',
+  'Yoga / Pilates Instructor', 'Dance Instructor', 'Music Instructor',
+  'Private Tutor (in person)', 'Speech / Public Speaking Coach',
+  'Chiropractor', 'Massage Therapist', 'Nutrition Coach / Dietitian',
+  'Doula', 'Farmers Market Producer', 'Food Truck Owner',
+  'Bakery / Café Owner', 'Meal-Prep Business Owner', 'Private Chef',
+  'Caterer', 'Food Stylist', 'Chocolatier / Candy Maker', 'Coffee Roaster',
+  'Owner-Operator Trucking', 'Medical Courier (owner route)',
+  'Auto Detailing (mobile/owner)', 'Freight Broker / Agent', 'Yacht Broker',
+  'Drone Pilot (commercial)', 'Airbnb Co-host / STR Manager',
+  'Amazon FBA Seller', 'Boat Restoration / Flipping', 'Business Broker',
+  'Car Flipping', 'Car Wash Owner', 'Cleaning Company Owner',
+  'Commercial Insurance Producer', 'Etsy / Digital Products Seller',
+  'Franchise Owner (home services)', 'Gym / Fitness Studio Owner',
+  'Handyman Company Owner', 'Junk Removal Owner', 'Laundromat Owner',
+  'Lawn Care Company Owner', 'Mobile Mechanic (owner)', 'Mobile Pet Groomer',
+  'Painting Company Owner', 'Pet Boarding / Daycare Owner',
+  'Pet Grooming Salon Owner', 'Photo Booth / Event Rentals Owner',
+  'Pressure Washing Owner', 'Print-on-Demand Seller',
+  'Real Estate Investor (flips)', 'Real Estate Investor (rentals)',
+  'Resale / Flipping Business', 'Self-Storage Owner',
+  'Senior Home Care Agency Owner', 'Tutoring Center Owner',
+  'Vending / ATM Route Owner', 'Window Cleaning Owner',
+  'Childcare Center Owner', 'Dog Trainer', 'Home Organizer (pro)',
+  'Personal Financial Advisor', 'Loan Officer', 'Real Estate Appraiser',
+  'General Contractor', 'Handyman (solo pro)', 'Furniture Restorer',
+  'Home Inspector', 'Landscaper / Lawn Pro', 'House Painter',
+]);
+
+/** True when a profession (object with .name, or a bare name) is one of
+ *  the slow-money professions above — income built, not a wage. */
+export function isSlowMoney(profOrName) {
+  if (!profOrName) return false;
+  const name = typeof profOrName === 'string' ? profOrName : profOrName.name;
+  return typeof name === 'string' && SLOW_MONEY_NAMES.has(name);
+}
+
+// ---------------------------------------------------------------------------
 // Income-floor status of one candidate vs the person's own stated minimum.
 //   clears        — typical pay is at or above the floor.
 //   top_tier_only — typical pay is under the floor, but the top 25% clear it
@@ -606,7 +670,10 @@ function buildExplorationPlan(person) {
 
 // ---------------------------------------------------------------------------
 // scorePerson(person, professions) →
-//   { mode, mode_reason, top3, bottom3, results_count, exploration_plan }
+//   { mode, mode_reason, top3, bottom3, bridge_pick, results_count,
+//     exploration_plan }
+// bridge_pick is the slow-money cushion (see the block above the return);
+// null unless the founder's 27.10.2026 rule fires and a candidate clears.
 // No `match` / `percent` field exists anywhere in this output — by design.
 // ---------------------------------------------------------------------------
 export function scorePerson(person, professions) {
@@ -739,6 +806,74 @@ export function scorePerson(person, professions) {
     setReason = parts.join(' ');
   }
 
+  // ---- The cushion (founder's rule, 27.10.2026): when the #1 match is a
+  // slow-money profession, also name ONE very stable HIRED job that
+  // carries the bills while the main road is being built. Deterministic,
+  // like everything here: the candidate must clear the person's own
+  // income floor on typical pay, be quick to enter (≤12 months), carry
+  // low AI exposure in the base (attrs.ai ≤ 1), not be a base-verdict NO,
+  // fit the person at A/B on their own answers, not be slow-money itself,
+  // and not duplicate a top-3 or bottom-3 pick. Among the survivors the
+  // engine prefers one sharing the main road's strongest work muscle
+  // (hands / people / tech / creat), so the cushion FEEDS the main road
+  // instead of competing with it. If nothing clears every bar, the field
+  // is null — an honest absence, never a padded pick.
+  let bridgePick = null;
+  if (mode === 'bands' && top3.length > 0 && SLOW_MONEY_NAMES.has(top3[0].name)) {
+    const excludedSlugs = new Set([...top3, ...bottom3].map((r) => r.slug));
+    const topProf = profBySlug.get(top3[0].slug);
+    const FEED_LABELS = { hands: 'hands-on', people: 'people-facing', tech: 'technical', creat: 'creative' };
+    let topAttr = null;
+    let topAttrVal = 0;
+    if (topProf && topProf.attrs) {
+      for (const key of ['hands', 'people', 'tech', 'creat']) {
+        const v = topProf.attrs[key];
+        if (isNum(v) && v > topAttrVal) { topAttrVal = v; topAttr = key; }
+      }
+      if (topAttrVal < 1) topAttr = null;
+    }
+    const feedsMainRoad = (r) => {
+      if (!topAttr) return false;
+      const prof = profBySlug.get(r.slug);
+      return !!(prof && prof.attrs && isNum(prof.attrs[topAttr]) && prof.attrs[topAttr] >= 1);
+    };
+    const pool = sortable.filter((r) => {
+      if (excludedSlugs.has(r.slug)) return false;
+      if (r.floor_status !== 'clears') return false;
+      if (r.category !== 'A' && r.category !== 'B') return false;
+      const prof = profBySlug.get(r.slug);
+      if (!prof) return false;
+      if (prof.verdict === 'NO') return false;
+      if (!isNum(r.training_months) || r.training_months > 12) return false;
+      if (!prof.attrs || !isNum(prof.attrs.ai) || prof.attrs.ai > 1) return false;
+      if (SLOW_MONEY_NAMES.has(r.name)) return false;
+      return true;
+    });
+    const pick = pool.find(feedsMainRoad) || pool[0] || null;
+    if (pick) {
+      const prof = profBySlug.get(pick.slug);
+      const whyBridge = [];
+      if (isNum(pick.payK) && isNum(person.income_floor_k)) {
+        whyBridge.push(`Typical pay ~$${pick.payK}K — a wage that clears your $${person.income_floor_k}K minimum from the first paycheck, not from an audience.`);
+      }
+      if (isNum(pick.training_months)) {
+        if (pick.training_months <= 1) whyBridge.push('No long training — employers hire into it directly.');
+        else whyBridge.push(`Short road in: about ${pick.training_months} months of training before employers hire.`);
+      }
+      if (prof && prof.attrs && prof.attrs.lic >= 1) {
+        whyBridge.push('Licensed work — employers hire for the license, which keeps the seat stable.');
+      }
+      if (prof && prof.attrs && prof.attrs.ai === 0) {
+        whyBridge.push('AI exposure in our research base: low — this seat is not the kind AI is eating.');
+      }
+      if (feedsMainRoad(pick) && topAttr) {
+        whyBridge.push(`It feeds your main road: both this job and ${top3[0].name} are ${FEED_LABELS[topAttr]} work — the muscle transfers.`);
+      }
+      whyBridge.push(`It fits you personally, too: ${pick.category === 'A' ? 'Top fit' : 'Good fit'} on your own answers.`);
+      bridgePick = { ...pick, why_bridge: whyBridge };
+    }
+  }
+
   return {
     mode,
     mode_reason: modeReason,
@@ -746,6 +881,7 @@ export function scorePerson(person, professions) {
     set_reason: setReason,
     top3,
     bottom3,
+    bridge_pick: bridgePick || null,
     results_count: results.length,
     exploration_plan: mode === 'insufficient_data' ? buildExplorationPlan(person) : [],
   };

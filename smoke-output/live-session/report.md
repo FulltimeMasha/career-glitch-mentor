@@ -1,93 +1,99 @@
 ### 1. Your facts, played back plainly
 
-You are 30, currently working as a Retail Sales Associate. You earn $38k now, and your income floor — the lowest you can honestly go — is $40k. So any next step has to clear at least $40k, not just eventually in theory, but as a real plan.
+You are 30. You work now as a Retail Sales Associate, making about $38K a year.
 
-Your real resources look like this:
+The minimum pay you named is $40K. That is the line any new road has to clear.
 
-- **Time:** 4 hours a day to work on a change
-- **Budget:** $20k available for training or getting started
-- **Cushion:** 12 months of living costs covered
-- **Documents:** in order — you said yes
-- **Health limits:** none listed
+You have 4 hours a day to put toward a switch. You have a $20K budget and a 12-month cushion. Your documents are in order. You named no health limits.
 
-You also said what energises you is people and teaching. You ranked relationships first in what matters most to you at work, and support second. That helps explain why the three options below all sit in that people-facing world.
+You have started 3 serious things and finished 2 of them. Money running out is what stopped you before. That matters for how any plan is paced.
 
-You have started 3 attempts at a change before and finished 2 of them. That's important — you do finish things. When you have stopped, money was the reason.
+What you want most at work is clear. Relationships comes first for you. Support comes second. Then working conditions, achievement, independence, and recognition, in that order. People and teaching are where your energy shows up.
 
 ### 2. Resources and constraints that shape what is honestly possible
 
-**What supports you:**
-Your cushion of 12 months and your $20k budget give you room that a lot of people don't have. Your documents being in order removes one common delay. With 4 hours a day, you have enough time for a real training or trial period, without having to quit your current job overnight.
+Your cushion and budget are real. They cover the shorter roads below and give you room to learn without rushing.
 
-**What constrains you:**
-Money is listed as your barrier, and it was also the pattern in past attempts where you stopped. That doesn't mean you can't do this. It means the plan has to protect your $40k floor and use that cushion carefully, step by step, rather than in one big leap.
+Your time is real too. At 4 hours a day, a road that takes about 3.5 months of training is a very different ask from one that takes 9 months, and both are different from one that takes 36 months.
 
-People support is the thinnest support you listed — lower than your money, time, and learning access. For work that depends on referrals, clients, and word of mouth, that means building a small circle of contacts will need to be part of the plan, not an afterthought.
+Your support is not all even. You have some support with money, time, and access to learning. Support from people around you is thinner. So a plan that needs a lot of outside help every week would strain.
 
-You listed no red lines. That leaves the door open, but it doesn't remove the money test above.
+Your biggest risk is also clear. Money running out stopped you before. Any road here has to be paced so that does not happen again. That is not a reason to stay stuck. It is a reason to keep income coming in while you build the next step, and to test the work before you spend big on it.
 
-You felt Doula was "mine" when you saw it. You felt Private Tutor (in person) and Tutoring Center Owner were "tolerable." That difference matters, and I'll keep it visible below.
+There is one more honest limit. Some of your answers were still thin, so scores below are ranges, not single numbers. The direction is still clear.
 
 ### 3. The top candidates
 
-These are reported as bands, not a single clean verdict, because we don't yet have trial evidence from you actually doing the work. So read the ranges as honest uncertainty, not as a promise.
+These three picks are deliberately from different worlds — healthcare, working with people, and business — not three versions of the same job. Every one clears your $40K minimum on typical pay.
 
-**1. Doula — Category A**
-- LOVE 0.83–1.00
-- POTENTIAL 0.74–1.00
-- Pay listed: $45k
+**Doula — Top fit**
+LOVE 0.83–1.00
+POTENTIAL 0.74–1.00
 
-Why it fits: It lines up with the strongest threads in your facts — people as an energy theme, relationships ranked first, support ranked second, and you yourself called this one "mine." The pay listed clears your $40k floor. Your budget, entry time, and documents were all rated as workable for this path, which is reflected in the POTENTIAL range.
+This fits the heart of what you asked for. Your #1 must-have at work is Relationships, and this job actually delivers it. Your #2 must-have is Support, and this job delivers that too. People are the point for you, and this job is people, all day, not a screen.
 
-Where it strains: Teaching is also one of your energy themes, and this leans less directly on teaching than tutoring does. And the POTENTIAL range is wide — 0.74–1.00 — because we have no trial yet. We don't know yet how the actual day-to-day of this work will feel to you at 2 a.m., on call, or in a hard moment.
+Typical pay is about $45K a year. That clears your $40K minimum. Time to get in is about 3.5 months of training. We have no checked data on AI risk for this job yet, so we will not invent a number.
 
-**2. Private Tutor (in person) — Category A**
-- LOVE 0.79–1.00
-- POTENTIAL 0.77–1.00
-- Pay listed: $45k
+At your 4 hours a day, that training time is the pace the 90-day plan below is built on.
 
-Why it fits: This directly uses both of your energy themes: people and teaching. Relationships and support ranking high also fit one-to-one, in-person work better than working alone behind a screen. The pay listed clears your $40k floor, and budget, entry time, and documents were all rated as workable.
+**Private Tutor (in person) — Top fit**
+LOVE 0.79–1.00
+POTENTIAL 0.77–1.00
 
-Where it strains: You called this "tolerable," not "mine." That's not a reason to drop it — tolerable work that pays and uses your strengths can be a very good step. But it does mean we shouldn't pretend you felt the same pull here as with Doula. A short real trial will tell us more than any score can.
+Your #1 must-have at work is Relationships, and this job actually delivers it. That is the strong part of the fit, and it is built on your own ranking, not on a guess.
 
-**3. Tutoring Center Owner — Category A**
-- LOVE 0.79–1.00
-- POTENTIAL 0.77–1.00
-- Pay listed: $75k
+Typical pay is about $45K a year. That clears your $40K minimum. Time to get in is about 3.5 months of training. We have no checked data on AI risk for this job yet, so we will not invent a number.
 
-Why it fits: It draws on the same people-and-teaching interest as private tutoring, and the pay listed is well above your $40k floor. On interest alone, it scores in the same range as Private Tutor (in person).
+This one has a real rub, covered below. You ranked Support #2, and this job is weak exactly there. That does not wipe out the fit, but it is friction you would feel every week.
 
-Where it strains: You are at a starting door, with 4 hours a day and a $20k budget. Owning a center is a bigger, more layered step than doing the tutoring yourself — it usually means running the business as well as serving learners. You also rated this "tolerable." So this reads honestly as a possible later direction once you have tutoring experience and income from it, rather than the safest first move now.
+**Tutoring Center Owner — Top fit**
+LOVE 0.79–1.00
+POTENTIAL 0.77–1.00
+
+Your #1 must-have at work is Relationships, and this job actually delivers it. People are the point for you, and this job is people, all day, not a screen.
+
+Typical pay is about $75K a year. That clears your $40K minimum by the widest margin of the three. Time to get in is about 9 months of training — much longer than the other two. We have no checked data on AI risk for this job yet, so we will not invent a number.
+
+Like private tutoring, this one also has the Support rub. You ranked Support #2, and this job is weak exactly there.
+
+### Your cushion
+
+Your cushion job is **Community Health Worker**. LOVE 0.78–1.00, POTENTIAL 0.77–1.00. The main road pays later, so this job carries the bills meanwhile — it is the floor under the main road, not a second verdict and not a better match. It is short to get into, at about 3.5 months of training, and it is licensed work, so employers hire for the license, which keeps the seat stable. It also feeds your main road: both this job and Doula are people-facing work, so the muscle transfers, and it fits you personally, too. Typical pay is about $51K a year.
 
 ### 4. The honest BUT
 
-Nothing here is hidden: none of the three candidates above carry a warning flag, and none have pay below your $40k floor. Doula and Private Tutor (in person) are listed at $45k — above the floor, but not by a large margin. Tutoring Center Owner is listed at $75k.
+No pick here is clean just because the pay clears. Here is what could break each plan, and where people usually quit.
 
-What could break this plan:
+For **Doula**, pay is not the warning — typical pay of about $45K clears your $40K minimum. The warning is pacing. Money running out stopped you before, so training and the slow first months have to be planned around income that keeps coming in. Quit that pacing, and the plan breaks.
 
-- **The money pattern.** You have named money as your barrier, and money is where past attempts stopped. If costs rise, income arrives slower than expected, or you have to drop shifts before the new income is stable, this is where pressure will show up first. The 12-month cushion helps, but only if spending is staged.
-- **No trial evidence yet.** All three POTENTIAL ranges are wide for a reason. Until you have shadowed, assisted, or taught a real session, we don't know how the work feels in practice — only that it fits on paper and, for Doula, that it felt like yours when you saw it.
-- **Where people usually quit.** Not at the start, when interest is high. They quit when the early work is unpaid or low-paid — finding first clients, learning the ropes, hearing "no" — and the old job feels safer by comparison. Your finish record (2 of 3 attempts finished) works in your favour, but that dip is exactly where we need a plan.
+For **Private Tutor (in person)**, typical pay of about $45K clears your $40K minimum. The warning is the Support gap. You ranked Support #2, and this job is weak exactly there. That is the kind of slow, weekly friction that makes people drift away, even when they like the people they teach. Money pacing matters here too, for the same reason as above.
 
-### 5. The 90-day check plan
+For **Tutoring Center Owner**, typical pay of about $75K clears your $40K minimum. The warnings are time and that same Support gap. Nine months of training at 4 hours a day is a long stretch to hold. You ranked Support #2, and this job is weak exactly there. Money running out stopped you before, so a 9-month road with no pacing is where this one would break.
 
-**Days 1–14: Information, not commitment**
-Speak to 2 working doulas and 2 working in-person tutors. Ask what a normal week looks like, how they found their first paying clients, what training actually cost them, and how long it took to reach $40k-plus. Write down the answers, with dates.
+For all three, we have no checked data on AI risk yet. We will not invent a number to fill that gap.
 
-**Days 15–30: One small trial in each direction**
-Arrange one low-stakes trial for tutoring — a practice session, assisting, or a first supervised session — and one shadowing or information session for doula work, if available. After each, write three short notes the same day: what gave you energy, what drained you, and whether you would do it again next week.
+### 5. The jobs to run from
 
-**Days 31–60: Run the money plan on paper**
-For the path that held up best in trial, map the real costs against your $20k budget and 12-month cushion, month by month, and check it against your $40k floor. Do not quit or cut hours based on hope. Bring in 2–3 new people contacts — a mentor, a peer, or a local group — since people support is your thinnest support right now.
+Knowing what to run from is half the match. The matchmaker does not let you marry the wrong career. These are the worst measured fits for you, worst first.
 
-**Days 61–90: First paying proof, if ready**
-Aim for your first paying client or sessions, or a confirmed start date for the next training step if that's the honest next move. Track hours spent, money spent, and money earned.
+**Data Center Technician.** Typical pay is about $72K a year, so pay clears your $40K minimum — pay is not the problem. You put Relationships at #1 and Support at #2, and this job gives you very little of either. The daily setup would have you forcing yourself, every day.
 
-**Evidence to bring to the 90-day check-in:**
-- Names/dates of the people you spoke to, and what they said about pay, costs, and time to get started
-- Your same-day notes from at least one tutoring trial and one doula shadowing or session
-- A month-by-month money sheet showing budget spent, cushion remaining, and how the plan reaches $40k
-- A list of the new people contacts you built
-- One clear sentence from you: after trying it, which path still feels like "mine," which feels only tolerable, and which you want to drop
+**Vertical Farm Technician.** Typical pay is about $48K a year, so pay clears your $40K minimum — pay is not the problem. You put Relationships at #1 and Support at #2, and this job gives you very little of either. The daily setup fights how you work best.
 
-At that check-in, we won't be guessing from interest alone anymore. We'll have your trial notes, your numbers, and your own words to narrow this to one next step.
+**Medical Laboratory Scientist.** Typical pay is about $63K a year, so pay clears your $40K minimum — pay is not the problem. You put Relationships at #1 and Support at #2, and this job gives you very little of either. Getting in also takes about 36 months of training before it pays anything, and your cushion is 12 months, so the money runs out first.
+
+### 6. The 90-day check plan
+
+Pick the one of the top three you would try first. The plan starts there.
+
+**This week:** Do one real task from that job — a trial day or a sample project — before you spend a dollar on it. Write down what the day actually felt like.
+
+**Days 1–30:** Keep your Retail Sales Associate income running. Use your 4 hours a day to start the first block of training or prep for the road you picked. Track hours and spend against your $20K budget as you go.
+
+**Days 31–60:** Do a second, longer taste of the real work. Talk to one person doing the job now. Ask what a bad week looks like, and what support they actually get — that question matters most for the two tutoring roads.
+
+**Days 61–90:** Finish the first clear chunk of training or prep. Check the money: what you have spent, what is left of your cushion, and whether income is still coming in beside the training.
+
+By the 90-day check-in, you will know three things you do not know today: whether you like the real day, not the idea of the day; whether the Support gap, if your pick has one, is livable for you; and whether the money pace holds at 4 hours a day.
+
+Your one next step: pick which of the three you will try first, and book one real trial task for it this week.

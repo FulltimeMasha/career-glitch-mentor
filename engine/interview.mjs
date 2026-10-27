@@ -65,6 +65,7 @@ import { dirname, join } from 'node:path';
 import { scorePerson } from './scoring.mjs';
 import { loadProfessions } from './professions.mjs';
 import { metaRespond, MODELS } from './llm.mjs';
+import { verifyReport, buildVerifyFeedback, removeSentences } from './verify.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const STAGES_DATA = JSON.parse(readFileSync(join(HERE, 'stages.json'), 'utf8'));
@@ -159,6 +160,7 @@ export function createSession(door) {
     result: null,
     person: null,
     report: null,
+    verification: null,
   };
 }
 
@@ -180,6 +182,7 @@ export function deserializeSession(json) {
     result: s.result ?? null,
     person: s.person ?? null,
     report: s.report ?? null,
+    verification: s.verification ?? null,
   };
 }
 
@@ -442,7 +445,13 @@ const REPORT_STRUCTURE_INSUFFICIENT = [
   PLAIN_REGISTER,
 ].join('\n');
 
-export async function generateReport(session) {
+// Appended to REPORT_STRUCTURE only when the deterministic engine picked
+// a cushion (result.bridge_pick): the #1 road is slow-money, so the report
+// must also name the stable hired job that carries the bills meanwhile.
+// Presentation only — the pick and its numbers are already final.
+const BRIDGE_NOTE = 'The input also contains "bridge_pick" — a stable hired job chosen as this person\'s cushion, because their #1 road pays slowly at first. After the top-candidates section, add one short section titled "Your cushion". Name the bridge job. Say plainly: the main road pays later, so this job carries the bills meanwhile — it is the floor under the main road, not a second verdict and not a better match. Argue it ONLY from its why_bridge lines, its LOVE/POTENTIAL ranges and its pay facts in the JSON; invent nothing. Keep it to one short paragraph plus the pay figure.';
+
+export async function generateReport(session, opts = {}) {
   if (!session.result) {
     throw new Error('generateReport: session has no scoring result yet (finish stage 5 first)');
   }
@@ -478,9 +487,23 @@ export async function generateReport(session) {
   };
 
   const input = JSON.stringify({ result: session.result, facts }, null, 2);
+  let instructions = insufficient
+    ? REPORT_STRUCTURE_INSUFFICIENT
+    : (REPORT_STRUCTURE + (session.result && session.result.bridge_pick ? '\n' + BRIDGE_NOTE : ''));
+  if (opts && typeof opts.verifyFeedback === 'string' && opts.verifyFeedback.trim()) {
+    // Correction pass (verification layer, engine/verify.mjs): the
+    // previous draft failed the checker's audit; the mismatches are
+    // listed verbatim and ONLY those get fixed — same structure, same
+    // facts, nothing new invented to fill the holes.
+    instructions += [
+      '',
+      'CORRECTION PASS: a checker compared your previous draft of this report against the checked job data and the person\'s own answers, and found the problems below. Rewrite the FULL report, fixing exactly these problems and changing nothing else. Where a figure or claim is wrong, remove it or replace it with the exact figure or fact from the input JSON — never invent a replacement.',
+      opts.verifyFeedback.trim(),
+    ].join('\n');
+  }
   const { text } = await metaRespond({
     model: MODELS.report,
-    instructions: insufficient ? REPORT_STRUCTURE_INSUFFICIENT : REPORT_STRUCTURE,
+    instructions,
     input,
     // Wonder's default reasoning effort is "max" and consumed an entire
     // 3000-token budget with no message output (status "incomplete",
@@ -493,6 +516,108 @@ export async function generateReport(session) {
   return text;
 }
 
+// ---------------------------------------------------------------------------
+// Verified report — the Agents-101 checker pattern (engine/verify.mjs).
+// The Wonder draft is verified BEFORE anyone sees it: every figure
+// against the base/scoring/person's own numbers, every claim about the
+// person against their verbatim answers. One failed check buys exactly
+// ONE regeneration with the mismatch list as feedback. A second failure
+// does not buy a third draft: the unsupported sentences are cut (when
+// what remains is still a real letter) and the report goes out UNSIGNED
+// — the verdict screen shows the honest line instead of the signature.
+// The outcome is logged on session.verification either way:
+//   { status: 'passed'|'failed'|'error', signed, attempts, sanitized,
+//     claims_status, issues[], drift[], checked_at }
+// deps ({reportGenerator, claimChecker}) exist for unit tests only.
+// ---------------------------------------------------------------------------
+export async function generateVerifiedReport(session, professions = null, deps = {}) {
+  const gen = deps.reportGenerator || ((s, o) => generateReport(s, o));
+  const verifyOpts = { professions, claimChecker: deps.claimChecker };
+
+  let text = await gen(session, {});
+  let v = await verifyReport(session, text, verifyOpts);
+  let attempts = 1;
+  let sanitized = false;
+
+  if (!v.ok && v.status === 'failed' && v.claimsStatus === 'ok') {
+    try {
+      const retry = await gen(session, { verifyFeedback: buildVerifyFeedback(v) });
+      const v2 = await verifyReport(session, retry, verifyOpts);
+      text = retry;
+      v = v2;
+      attempts = 2;
+    } catch { /* keep the first draft and its verdict — a failed retry changes nothing */ }
+  }
+
+  if (!v.ok && v.status === 'failed') {
+    const badSentences = [...v.numberIssues, ...v.claimIssues].map((i) => i.sentence).filter(Boolean);
+    const cut = removeSentences(text, badSentences);
+    if (cut.removed > 0 && cut.text.trim().length >= 200) {
+      text = cut.text;
+      sanitized = true;
+    }
+  }
+
+  session.report = text;
+  session.verification = {
+    status: v.ok ? 'passed' : v.status,
+    signed: !!v.ok,
+    attempts,
+    sanitized,
+    claims_status: v.claimsStatus,
+    ...(v.claimError ? { error: v.claimError } : {}),
+    issues: [
+      ...v.numberIssues.map((i) => `figure: ${i.token} — ${i.detail}`),
+      ...v.claimIssues.map((i) => `claim: ${i.detail}`),
+    ].slice(0, 12),
+    drift: v.drift || [],
+    checked_at: new Date().toISOString(),
+  };
+  return text;
+}
+
+// ---------------------------------------------------------------------------
+// The matchmaker's visible checklist — what she checks, in plain words,
+// derived from the session's existing stage machine (display only; the
+// flow never changes). States: 'done' | 'current' | 'todo'.
+// ---------------------------------------------------------------------------
+const CHECKLIST_DEFS = [
+  { key: 'answers', label: 'Your answers — where you stand: the facts, your pay floor, the time you have' },
+  { key: 'story', label: 'Your pattern — what you tried before, and why you walked away' },
+  { key: 'wants', label: 'What you want from a working day' },
+  { key: 'blockers', label: 'Your blockers — papers, health, hard lines' },
+  { key: 'market', label: 'The market check — real pay against your floor, and the AI risk' },
+  { key: 'trial', label: 'The first date — one real Tuesday in each top job' },
+];
+
+export function buildChecklist(session) {
+  const state = { answers: 'todo', story: 'todo', wants: 'todo', blockers: 'todo', market: 'todo', trial: 'todo' };
+  if (session) {
+    const phase = session.phase;
+    if (phase === 'cddq') {
+      state.answers = 'current';
+    } else if (phase === 'stages') {
+      const i = session.stage_index || 0;
+      state.answers = i >= 1 ? 'done' : 'current';
+      state.story = i >= 2 ? 'done' : (i === 1 ? 'current' : 'todo');
+      state.wants = i >= 5 ? 'done' : (i >= 2 ? 'current' : 'todo');
+      state.blockers = i >= 4 ? 'done' : (i === 3 ? 'current' : 'todo');
+      state.market = i >= 5 ? 'current' : 'todo';
+    } else if (phase === 'stage6') {
+      state.answers = 'done'; state.story = 'done'; state.wants = 'done'; state.blockers = 'done';
+      state.market = 'done';
+      state.trial = 'current';
+    } else if (phase === 'done') {
+      state.answers = 'done'; state.story = 'done'; state.wants = 'done'; state.blockers = 'done';
+      state.market = 'done'; // the check ran — its answer may be "not enough data yet"
+      // With no verdict there was no first date; the exploration plan
+      // keeps it open instead of pretending it happened.
+      state.trial = session.result && session.result.mode === 'insufficient_data' ? 'todo' : 'done';
+    }
+  }
+  return CHECKLIST_DEFS.map((d) => ({ key: d.key, label: d.label, state: state[d.key] }));
+}
+
 export default {
   createSession,
   applyCddq,
@@ -501,6 +626,8 @@ export default {
   applyPerceivedFit,
   assemblePerson,
   generateReport,
+  generateVerifiedReport,
+  buildChecklist,
   serializeSession,
   deserializeSession,
 };

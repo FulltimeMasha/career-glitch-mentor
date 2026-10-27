@@ -1,11 +1,46 @@
 {
   "base": "https://careerglitch.com",
-  "session_id": "d24f571c-ebe2-4ffb-aeb2-83ed88e06a96",
+  "session_id": "2ba1e290-ac47-49b2-929a-a148363d318c",
   "transcript": [
     {
       "who": "mentor",
+      "stage": "cddq",
+      "text": "Welcome — glad you're here. What makes this decision hard for you right now?"
+    },
+    {
+      "who": "mentor",
       "stage": 0,
-      "text": null
+      "text": "Heard — let's keep it practical. What exactly do you do in retail now, and what lands in your pocket in a normal month? What's the lowest monthly number you can live with?"
+    },
+    {
+      "who": "mentor",
+      "stage": 1,
+      "text": "Got that, thank you. List each job you've had — what you did, what you liked, and why you left? What did you finish that you're proud of, and what did you start then drop?"
+    },
+    {
+      "who": "mentor",
+      "stage": 2,
+      "text": "Makes sense — training gave you energy. No shame here, whose life makes you a bit jealous, and what exact part is it?"
+    },
+    {
+      "who": "mentor",
+      "stage": 3,
+      "text": "Good nurses earn that respect. Last time you leaned toward care work, what got in the way in real life?"
+    },
+    {
+      "who": "mentor",
+      "stage": 4,
+      "text": "Understood — no nights for good. Imagine this IS your job — in this job you would repair machines with your hands each day. How does that sound?"
+    },
+    {
+      "who": "mentor",
+      "stage": 5,
+      "text": "Makes sense, thank you.\nHere is what I understood — you said \"Helping and teaching people is my day\", \"Paperwork is fine\", and \"building things is not\".\nCorrect me — what should I fix?"
+    },
+    {
+      "who": "mentor",
+      "stage": 6,
+      "text": "Good to hear.\n\nPicture a real Tuesday as a Doula — up all night at a long birth with blood and tears and waiting, as a Private Tutor in person — driving house to house repeating the same lesson with cancellations, as a Tutoring Center Owner — covering staff, chasing payments, and filling seats.\n\nFor each one, in your own words — does it feel like mine or not mine?"
     }
   ],
   "session": {
@@ -88,8 +123,18 @@
     "transcript": [
       {
         "stage": "cddq",
+        "who": "mentor",
+        "text": "Welcome — glad you're here. What makes this decision hard for you right now?"
+      },
+      {
+        "stage": "cddq",
         "who": "user",
         "text": "I have been in retail for six years and I need a real plan, not vibes."
+      },
+      {
+        "stage": 0,
+        "who": "mentor",
+        "text": "Heard — let's keep it practical. What exactly do you do in retail now, and what lands in your pocket in a normal month? What's the lowest monthly number you can live with?"
       },
       {
         "stage": 0,
@@ -98,8 +143,18 @@
       },
       {
         "stage": 1,
+        "who": "mentor",
+        "text": "Got that, thank you. List each job you've had — what you did, what you liked, and why you left? What did you finish that you're proud of, and what did you start then drop?"
+      },
+      {
+        "stage": 1,
         "who": "user",
         "text": "I finished two of the three things I started. I left retail roles when the pay flatlined; the work that gave me energy was training new people."
+      },
+      {
+        "stage": 2,
+        "who": "mentor",
+        "text": "Makes sense — training gave you energy. No shame here, whose life makes you a bit jealous, and what exact part is it?"
       },
       {
         "stage": 2,
@@ -108,8 +163,18 @@
       },
       {
         "stage": 3,
+        "who": "mentor",
+        "text": "Good nurses earn that respect. Last time you leaned toward care work, what got in the way in real life?"
+      },
+      {
+        "stage": 3,
         "who": "user",
         "text": "Money stopped me before. No red lines besides night shifts forever."
+      },
+      {
+        "stage": 4,
+        "who": "mentor",
+        "text": "Understood — no nights for good. Imagine this IS your job — in this job you would repair machines with your hands each day. How does that sound?"
       },
       {
         "stage": 4,
@@ -118,8 +183,18 @@
       },
       {
         "stage": 5,
+        "who": "mentor",
+        "text": "Makes sense, thank you.\nHere is what I understood — you said \"Helping and teaching people is my day\", \"Paperwork is fine\", and \"building things is not\".\nCorrect me — what should I fix?"
+      },
+      {
+        "stage": 5,
         "who": "user",
         "text": "Yes, that summary is me."
+      },
+      {
+        "stage": 6,
+        "who": "mentor",
+        "text": "Good to hear.\n\nPicture a real Tuesday as a Doula — up all night at a long birth with blood and tears and waiting, as a Private Tutor in person — driving house to house repeating the same lesson with cancellations, as a Tutoring Center Owner — covering staff, chasing payments, and filling seats.\n\nFor each one, in your own words — does it feel like mine or not mine?"
       }
     ],
     "candidates": [
@@ -127,8 +202,16 @@
         "slug": "doula",
         "name": "Doula",
         "category": "A",
+        "family": "health",
         "verdict": "YES",
         "payK": 45,
+        "pay_top_quartile_k": null,
+        "training_months": 3.5,
+        "outlook": null,
+        "ai_exposure": null,
+        "ai_exposure_tier": null,
+        "ai_exposure_source": null,
+        "floor_status": "clears",
         "love": {
           "mid": 0.9516666666666667,
           "lo": 0.8316666666666667,
@@ -156,14 +239,43 @@
           }
         },
         "confidence": "medium",
-        "flags": []
+        "flags": [],
+        "argument": {
+          "why_you": [
+            "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+            "Your #2 must-have at work is Support — and this job actually delivers it.",
+            "People are the point for you — and this job is people, all day, not a screen."
+          ],
+          "math": [
+            "Typical pay: ~$45K a year.",
+            "AI risk: no checked data for this job yet — we will not invent a number.",
+            "Your minimum is $40K — typical pay clears it.",
+            "Time to get in: about 3.5 months of training."
+          ],
+          "but": [
+            "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+          ],
+          "bridge": [
+            "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+            "Training runs about 3.5 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+            "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+          ]
+        }
       },
       {
         "slug": "private-tutor-in-person",
         "name": "Private Tutor (in person)",
         "category": "A",
+        "family": "people",
         "verdict": "YES",
         "payK": 45,
+        "pay_top_quartile_k": null,
+        "training_months": 3.5,
+        "outlook": null,
+        "ai_exposure": null,
+        "ai_exposure_tier": null,
+        "ai_exposure_source": null,
+        "floor_status": "clears",
         "love": {
           "mid": 0.9111491666666667,
           "lo": 0.7911491666666667,
@@ -191,14 +303,44 @@
           }
         },
         "confidence": "medium",
-        "flags": []
+        "flags": [],
+        "argument": {
+          "why_you": [
+            "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+            "You said being told exactly what to do is what kills a job for you — here, the decisions stay with you.",
+            "In the \"one real day in this job\" questions, your answers lined up with this work more than with almost anything else we checked."
+          ],
+          "math": [
+            "Typical pay: ~$45K a year.",
+            "AI risk: no checked data for this job yet — we will not invent a number.",
+            "Your minimum is $40K — typical pay clears it.",
+            "Time to get in: about 3.5 months of training."
+          ],
+          "but": [
+            "The rub: you ranked Support #2, and this job is weak exactly there — that is the friction you would feel every week.",
+            "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+          ],
+          "bridge": [
+            "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+            "Training runs about 3.5 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+            "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+          ]
+        }
       },
       {
         "slug": "tutoring-center-owner",
         "name": "Tutoring Center Owner",
         "category": "A",
+        "family": "business",
         "verdict": "YES",
         "payK": 75,
+        "pay_top_quartile_k": null,
+        "training_months": 9,
+        "outlook": null,
+        "ai_exposure": null,
+        "ai_exposure_tier": null,
+        "ai_exposure_source": null,
+        "floor_status": "clears",
         "love": {
           "mid": 0.9111491666666667,
           "lo": 0.7911491666666667,
@@ -226,19 +368,51 @@
           }
         },
         "confidence": "medium",
-        "flags": []
+        "flags": [],
+        "argument": {
+          "why_you": [
+            "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+            "People are the point for you — and this job is people, all day, not a screen.",
+            "In the \"one real day in this job\" questions, your answers lined up with this work more than with almost anything else we checked."
+          ],
+          "math": [
+            "Typical pay: ~$75K a year.",
+            "AI risk: no checked data for this job yet — we will not invent a number.",
+            "Your minimum is $40K — typical pay clears it.",
+            "Time to get in: about 9 months of training."
+          ],
+          "but": [
+            "The rub: you ranked Support #2, and this job is weak exactly there — that is the friction you would feel every week.",
+            "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+          ],
+          "bridge": [
+            "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+            "Training runs about 9 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+            "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+          ]
+        }
       }
     ],
     "result": {
       "mode": "bands",
-      "mode_reason": "Scores are reported as bands: the top candidate is not a clean A/high-confidence case, or the <25 evidence rule is not met.",
+      "mode_reason": "Some answers are still thin, so the scores are ranges, not single numbers — the direction is still clear.",
+      "income_floor_k": 40,
+      "set_reason": "Some answers were thin, so your scores are ranges, not single numbers — the direction is still clear. These picks are deliberately from different worlds — healthcare, working with people, business — not three versions of the same job. Every one of them clears your $40K minimum on typical pay. Next step: pick the one you would try first — the 90-day plan starts there.",
       "top3": [
         {
           "slug": "doula",
           "name": "Doula",
           "category": "A",
+          "family": "health",
           "verdict": "YES",
           "payK": 45,
+          "pay_top_quartile_k": null,
+          "training_months": 3.5,
+          "outlook": null,
+          "ai_exposure": null,
+          "ai_exposure_tier": null,
+          "ai_exposure_source": null,
+          "floor_status": "clears",
           "love": {
             "mid": 0.9516666666666667,
             "lo": 0.8316666666666667,
@@ -266,14 +440,43 @@
             }
           },
           "confidence": "medium",
-          "flags": []
+          "flags": [],
+          "argument": {
+            "why_you": [
+              "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+              "Your #2 must-have at work is Support — and this job actually delivers it.",
+              "People are the point for you — and this job is people, all day, not a screen."
+            ],
+            "math": [
+              "Typical pay: ~$45K a year.",
+              "AI risk: no checked data for this job yet — we will not invent a number.",
+              "Your minimum is $40K — typical pay clears it.",
+              "Time to get in: about 3.5 months of training."
+            ],
+            "but": [
+              "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+            ],
+            "bridge": [
+              "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+              "Training runs about 3.5 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+              "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+            ]
+          }
         },
         {
           "slug": "private-tutor-in-person",
           "name": "Private Tutor (in person)",
           "category": "A",
+          "family": "people",
           "verdict": "YES",
           "payK": 45,
+          "pay_top_quartile_k": null,
+          "training_months": 3.5,
+          "outlook": null,
+          "ai_exposure": null,
+          "ai_exposure_tier": null,
+          "ai_exposure_source": null,
+          "floor_status": "clears",
           "love": {
             "mid": 0.9111491666666667,
             "lo": 0.7911491666666667,
@@ -301,14 +504,44 @@
             }
           },
           "confidence": "medium",
-          "flags": []
+          "flags": [],
+          "argument": {
+            "why_you": [
+              "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+              "You said being told exactly what to do is what kills a job for you — here, the decisions stay with you.",
+              "In the \"one real day in this job\" questions, your answers lined up with this work more than with almost anything else we checked."
+            ],
+            "math": [
+              "Typical pay: ~$45K a year.",
+              "AI risk: no checked data for this job yet — we will not invent a number.",
+              "Your minimum is $40K — typical pay clears it.",
+              "Time to get in: about 3.5 months of training."
+            ],
+            "but": [
+              "The rub: you ranked Support #2, and this job is weak exactly there — that is the friction you would feel every week.",
+              "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+            ],
+            "bridge": [
+              "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+              "Training runs about 3.5 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+              "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+            ]
+          }
         },
         {
           "slug": "tutoring-center-owner",
           "name": "Tutoring Center Owner",
           "category": "A",
+          "family": "business",
           "verdict": "YES",
           "payK": 75,
+          "pay_top_quartile_k": null,
+          "training_months": 9,
+          "outlook": null,
+          "ai_exposure": null,
+          "ai_exposure_tier": null,
+          "ai_exposure_source": null,
+          "floor_status": "clears",
           "love": {
             "mid": 0.9111491666666667,
             "lo": 0.7911491666666667,
@@ -336,31 +569,276 @@
             }
           },
           "confidence": "medium",
-          "flags": []
+          "flags": [],
+          "argument": {
+            "why_you": [
+              "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+              "People are the point for you — and this job is people, all day, not a screen.",
+              "In the \"one real day in this job\" questions, your answers lined up with this work more than with almost anything else we checked."
+            ],
+            "math": [
+              "Typical pay: ~$75K a year.",
+              "AI risk: no checked data for this job yet — we will not invent a number.",
+              "Your minimum is $40K — typical pay clears it.",
+              "Time to get in: about 9 months of training."
+            ],
+            "but": [
+              "The rub: you ranked Support #2, and this job is weak exactly there — that is the friction you would feel every week.",
+              "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+            ],
+            "bridge": [
+              "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+              "Training runs about 9 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+              "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+            ]
+          }
         }
       ],
-      "anti_match": {
-        "slug": "online-tutor",
-        "name": "Online Tutor",
-        "category": "C",
-        "verdict": "NO",
-        "payK": 45,
+      "bottom3": [
+        {
+          "slug": "data-center-technician",
+          "name": "Data Center Technician",
+          "category": "B",
+          "family": "trades",
+          "verdict": null,
+          "payK": 72,
+          "pay_top_quartile_k": null,
+          "training_months": 9,
+          "outlook": null,
+          "ai_exposure": null,
+          "ai_exposure_tier": null,
+          "ai_exposure_source": null,
+          "floor_status": "clears",
+          "love": {
+            "mid": 0.4623611111111111,
+            "lo": 0.3423611111111111,
+            "hi": 0.5823611111111111,
+            "parts": {
+              "needs_supplies": 0.5444444444444444,
+              "sdt": 0.25,
+              "riasec": 0.6283333333333334
+            }
+          },
+          "potential": {
+            "mid": 0.8407142857142857,
+            "lo": 0.6607142857142858,
+            "hi": 1,
+            "parts": {
+              "interest_fit": 0.6283333333333334,
+              "trial": null,
+              "feasibility": 1
+            },
+            "profile": "start",
+            "feasibility_subs": {
+              "entry_time_ok": 1,
+              "budget_ok": 1,
+              "documents_factor": 1
+            }
+          },
+          "confidence": "medium",
+          "flags": [],
+          "argument": {
+            "why_you": [
+              "The entry is realistic on your numbers: about 9 months of training, and your cushion plus budget cover it.",
+              "You finished 2 of the 3 serious things you started — you close what you start, and this path rewards finishers."
+            ],
+            "math": [
+              "Typical pay: ~$72K a year.",
+              "AI risk: no checked data for this job yet — we will not invent a number.",
+              "Your minimum is $40K — typical pay clears it.",
+              "Time to get in: about 9 months of training."
+            ],
+            "but": [
+              "The rub: you ranked Relationships #1, and this job is weak exactly there — that is the friction you would feel every week.",
+              "Money running out is what stopped you before — this path has to be paced so it does not happen again.",
+              "The day-to-day setup fights how you work best — that grinds people down slowly, not loudly."
+            ],
+            "bridge": [
+              "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+              "Training runs about 9 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+              "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+            ]
+          },
+          "why_not": [
+            "You put Relationships at #1 — this job gives you very little of it.",
+            "You put Support at #2 — this job gives you very little of it.",
+            "The daily setup fights how you work best — you would be forcing yourself, every day."
+          ],
+          "closing": "That is the matchmaker's whole job: not letting you marry the wrong career. This door stays closed — on purpose."
+        },
+        {
+          "slug": "vertical-farm-technician",
+          "name": "Vertical Farm Technician",
+          "category": "B",
+          "family": "food",
+          "verdict": null,
+          "payK": 48,
+          "pay_top_quartile_k": null,
+          "training_months": 3.5,
+          "outlook": null,
+          "ai_exposure": null,
+          "ai_exposure_tier": null,
+          "ai_exposure_source": null,
+          "floor_status": "clears",
+          "love": {
+            "mid": 0.5025,
+            "lo": 0.38249999999999995,
+            "hi": 0.6224999999999999,
+            "parts": {
+              "needs_supplies": 0.5166666666666666,
+              "sdt": 0.325,
+              "riasec": 0.7283333333333333
+            }
+          },
+          "potential": {
+            "mid": 0.8835714285714287,
+            "lo": 0.7035714285714287,
+            "hi": 1,
+            "parts": {
+              "interest_fit": 0.7283333333333333,
+              "trial": null,
+              "feasibility": 1
+            },
+            "profile": "start",
+            "feasibility_subs": {
+              "entry_time_ok": 1,
+              "budget_ok": 1,
+              "documents_factor": 1
+            }
+          },
+          "confidence": "medium",
+          "flags": [],
+          "argument": {
+            "why_you": [
+              "The entry is realistic on your numbers: about 3.5 months of training, and your cushion plus budget cover it.",
+              "You finished 2 of the 3 serious things you started — you close what you start, and this path rewards finishers."
+            ],
+            "math": [
+              "Typical pay: ~$48K a year.",
+              "AI risk: no checked data for this job yet — we will not invent a number.",
+              "Your minimum is $40K — typical pay clears it.",
+              "Time to get in: about 3.5 months of training."
+            ],
+            "but": [
+              "The rub: you ranked Relationships #1, and this job is weak exactly there — that is the friction you would feel every week.",
+              "Money running out is what stopped you before — this path has to be paced so it does not happen again.",
+              "The day-to-day setup fights how you work best — that grinds people down slowly, not loudly."
+            ],
+            "bridge": [
+              "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+              "Training runs about 3.5 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+              "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+            ]
+          },
+          "why_not": [
+            "You put Relationships at #1 — this job gives you very little of it.",
+            "You put Support at #2 — this job gives you very little of it.",
+            "The daily setup fights how you work best — you would be forcing yourself, every day."
+          ],
+          "closing": "That is the matchmaker's whole job: not letting you marry the wrong career. This door stays closed — on purpose."
+        },
+        {
+          "slug": "medical-laboratory-scientist",
+          "name": "Medical Laboratory Scientist",
+          "category": "B",
+          "family": "health",
+          "verdict": null,
+          "payK": 63,
+          "pay_top_quartile_k": null,
+          "training_months": 36,
+          "outlook": null,
+          "ai_exposure": null,
+          "ai_exposure_tier": null,
+          "ai_exposure_source": null,
+          "floor_status": "clears",
+          "love": {
+            "mid": 0.5348611111111111,
+            "lo": 0.4148611111111111,
+            "hi": 0.6548611111111111,
+            "parts": {
+              "needs_supplies": 0.5861111111111111,
+              "sdt": 0.325,
+              "riasec": 0.7466666666666666
+            }
+          },
+          "potential": {
+            "mid": 0.8067724867724868,
+            "lo": 0.6267724867724869,
+            "hi": 0.9867724867724867,
+            "parts": {
+              "interest_fit": 0.7466666666666666,
+              "trial": null,
+              "feasibility": 0.8518518518518517
+            },
+            "profile": "start",
+            "feasibility_subs": {
+              "entry_time_ok": 0.5555555555555556,
+              "budget_ok": 1,
+              "documents_factor": 1
+            }
+          },
+          "confidence": "medium",
+          "flags": [],
+          "argument": {
+            "why_you": [
+              "You finished 2 of the 3 serious things you started — you close what you start, and this path rewards finishers."
+            ],
+            "math": [
+              "Typical pay: ~$63K a year.",
+              "AI risk: no checked data for this job yet — we will not invent a number.",
+              "Your minimum is $40K — typical pay clears it.",
+              "Time to get in: about 36 months of training."
+            ],
+            "but": [
+              "The rub: you ranked Relationships #1, and this job is weak exactly there — that is the friction you would feel every week.",
+              "Money running out is what stopped you before — this path has to be paced so it does not happen again.",
+              "The day-to-day setup fights how you work best — that grinds people down slowly, not loudly."
+            ],
+            "bridge": [
+              "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+              "Training runs about 36 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+              "Your cushion (12 months) is shorter than the training — keep some income running next to it."
+            ]
+          },
+          "why_not": [
+            "You put Relationships at #1 — this job gives you very little of it.",
+            "You put Support at #2 — this job gives you very little of it.",
+            "The daily setup fights how you work best — you would be forcing yourself, every day.",
+            "Getting in takes about 36 months of training before it pays anything — your cushion is 12 months, so the money runs out first."
+          ],
+          "closing": "That is the matchmaker's whole job: not letting you marry the wrong career. This door stays closed — on purpose."
+        }
+      ],
+      "bridge_pick": {
+        "slug": "community-health-worker",
+        "name": "Community Health Worker",
+        "category": "A",
+        "family": "people",
+        "verdict": null,
+        "payK": 51,
+        "pay_top_quartile_k": null,
+        "training_months": 3.5,
+        "outlook": null,
+        "ai_exposure": null,
+        "ai_exposure_tier": null,
+        "ai_exposure_source": null,
+        "floor_status": "clears",
         "love": {
-          "mid": 0.9111491666666667,
-          "lo": 0.7911491666666667,
+          "mid": 0.90357,
+          "lo": 0.78357,
           "hi": 1,
           "parts": {
-            "needs_supplies": 0.8472166666666667,
-            "sdt": 1,
-            "riasec": 0.88905
+            "needs_supplies": 0.9397166666666666,
+            "sdt": 0.875,
+            "riasec": 0.8857333333333334
           }
         },
         "potential": {
-          "mid": 0.95245,
-          "lo": 0.7724500000000001,
+          "mid": 0.9510285714285717,
+          "lo": 0.7710285714285716,
           "hi": 1,
           "parts": {
-            "interest_fit": 0.88905,
+            "interest_fit": 0.8857333333333334,
             "trial": null,
             "feasibility": 1
           },
@@ -372,11 +850,37 @@
           }
         },
         "confidence": "medium",
-        "flags": [
-          "base_verdict_no"
+        "flags": [],
+        "argument": {
+          "why_you": [
+            "Your #1 must-have at work is Relationships — and this job actually delivers it.",
+            "Your #2 must-have at work is Support — and this job actually delivers it.",
+            "People are the point for you — and this job is people, all day, not a screen."
+          ],
+          "math": [
+            "Typical pay: ~$51K a year.",
+            "AI risk: no checked data for this job yet — we will not invent a number.",
+            "Your minimum is $40K — typical pay clears it.",
+            "Time to get in: about 3.5 months of training."
+          ],
+          "but": [
+            "Money running out is what stopped you before — this path has to be paced so it does not happen again."
+          ],
+          "bridge": [
+            "Keep Retail Sales Associate paying while you switch — it funds the bridge. Do not quit first.",
+            "Training runs about 3.5 months; at your 4 hours a day, that is the pace the 90-day plan is built on.",
+            "First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it."
+          ]
+        },
+        "why_bridge": [
+          "Typical pay ~$51K — a wage that clears your $40K minimum from the first paycheck, not from an audience.",
+          "Short road in: about 3.5 months of training before employers hire.",
+          "Licensed work — employers hire for the license, which keeps the seat stable.",
+          "It feeds your main road: both this job and Doula are people-facing work — the muscle transfers.",
+          "It fits you personally, too: Top fit on your own answers."
         ]
       },
-      "results_count": 339,
+      "results_count": 369,
       "exploration_plan": []
     },
     "person": {
@@ -450,6 +954,16 @@
       "cddq_type": "lacks_information",
       "completeness": 0.974
     },
-    "report": null
+    "report": "### 1. Your facts, played back plainly\n\nYou are 30. You work now as a Retail Sales Associate, making about $38K a year.\n\nThe minimum pay you named is $40K. That is the line any new road has to clear.\n\nYou have 4 hours a day to put toward a switch. You have a $20K budget and a 12-month cushion. Your documents are in order. You named no health limits.\n\nYou have started 3 serious things and finished 2 of them. Money running out is what stopped you before. That matters for how any plan is paced.\n\nWhat you want most at work is clear. Relationships comes first for you. Support comes second. Then working conditions, achievement, independence, and recognition, in that order. People and teaching are where your energy shows up.\n\n### 2. Resources and constraints that shape what is honestly possible\n\nYour cushion and budget are real. They cover the shorter roads below and give you room to learn without rushing.\n\nYour time is real too. At 4 hours a day, a road that takes about 3.5 months of training is a very different ask from one that takes 9 months, and both are different from one that takes 36 months.\n\nYour support is not all even. You have some support with money, time, and access to learning. Support from people around you is thinner. So a plan that needs a lot of outside help every week would strain.\n\nYour biggest risk is also clear. Money running out stopped you before. Any road here has to be paced so that does not happen again. That is not a reason to stay stuck. It is a reason to keep income coming in while you build the next step, and to test the work before you spend big on it.\n\nThere is one more honest limit. Some of your answers were still thin, so scores below are ranges, not single numbers. The direction is still clear.\n\n### 3. The top candidates\n\nThese three picks are deliberately from different worlds — healthcare, working with people, and business — not three versions of the same job. Every one clears your $40K minimum on typical pay.\n\n**Doula — Top fit**\nLOVE 0.83–1.00\nPOTENTIAL 0.74–1.00\n\nThis fits the heart of what you asked for. Your #1 must-have at work is Relationships, and this job actually delivers it. Your #2 must-have is Support, and this job delivers that too. People are the point for you, and this job is people, all day, not a screen.\n\nTypical pay is about $45K a year. That clears your $40K minimum. Time to get in is about 3.5 months of training. We have no checked data on AI risk for this job yet, so we will not invent a number.\n\nAt your 4 hours a day, that training time is the pace the 90-day plan below is built on.\n\n**Private Tutor (in person) — Top fit**\nLOVE 0.79–1.00\nPOTENTIAL 0.77–1.00\n\nYour #1 must-have at work is Relationships, and this job actually delivers it. That is the strong part of the fit, and it is built on your own ranking, not on a guess.\n\nTypical pay is about $45K a year. That clears your $40K minimum. Time to get in is about 3.5 months of training. We have no checked data on AI risk for this job yet, so we will not invent a number.\n\nThis one has a real rub, covered below. You ranked Support #2, and this job is weak exactly there. That does not wipe out the fit, but it is friction you would feel every week.\n\n**Tutoring Center Owner — Top fit**\nLOVE 0.79–1.00\nPOTENTIAL 0.77–1.00\n\nYour #1 must-have at work is Relationships, and this job actually delivers it. People are the point for you, and this job is people, all day, not a screen.\n\nTypical pay is about $75K a year. That clears your $40K minimum by the widest margin of the three. Time to get in is about 9 months of training — much longer than the other two. We have no checked data on AI risk for this job yet, so we will not invent a number.\n\nLike private tutoring, this one also has the Support rub. You ranked Support #2, and this job is weak exactly there.\n\n### Your cushion\n\nYour cushion job is **Community Health Worker**. LOVE 0.78–1.00, POTENTIAL 0.77–1.00. The main road pays later, so this job carries the bills meanwhile — it is the floor under the main road, not a second verdict and not a better match. It is short to get into, at about 3.5 months of training, and it is licensed work, so employers hire for the license, which keeps the seat stable. It also feeds your main road: both this job and Doula are people-facing work, so the muscle transfers, and it fits you personally, too. Typical pay is about $51K a year.\n\n### 4. The honest BUT\n\nNo pick here is clean just because the pay clears. Here is what could break each plan, and where people usually quit.\n\nFor **Doula**, pay is not the warning — typical pay of about $45K clears your $40K minimum. The warning is pacing. Money running out stopped you before, so training and the slow first months have to be planned around income that keeps coming in. Quit that pacing, and the plan breaks.\n\nFor **Private Tutor (in person)**, typical pay of about $45K clears your $40K minimum. The warning is the Support gap. You ranked Support #2, and this job is weak exactly there. That is the kind of slow, weekly friction that makes people drift away, even when they like the people they teach. Money pacing matters here too, for the same reason as above.\n\nFor **Tutoring Center Owner**, typical pay of about $75K clears your $40K minimum. The warnings are time and that same Support gap. Nine months of training at 4 hours a day is a long stretch to hold. You ranked Support #2, and this job is weak exactly there. Money running out stopped you before, so a 9-month road with no pacing is where this one would break.\n\nFor all three, we have no checked data on AI risk yet. We will not invent a number to fill that gap.\n\n### 5. The jobs to run from\n\nKnowing what to run from is half the match. The matchmaker does not let you marry the wrong career. These are the worst measured fits for you, worst first.\n\n**Data Center Technician.** Typical pay is about $72K a year, so pay clears your $40K minimum — pay is not the problem. You put Relationships at #1 and Support at #2, and this job gives you very little of either. The daily setup would have you forcing yourself, every day.\n\n**Vertical Farm Technician.** Typical pay is about $48K a year, so pay clears your $40K minimum — pay is not the problem. You put Relationships at #1 and Support at #2, and this job gives you very little of either. The daily setup fights how you work best.\n\n**Medical Laboratory Scientist.** Typical pay is about $63K a year, so pay clears your $40K minimum — pay is not the problem. You put Relationships at #1 and Support at #2, and this job gives you very little of either. Getting in also takes about 36 months of training before it pays anything, and your cushion is 12 months, so the money runs out first.\n\n### 6. The 90-day check plan\n\nPick the one of the top three you would try first. The plan starts there.\n\n**This week:** Do one real task from that job — a trial day or a sample project — before you spend a dollar on it. Write down what the day actually felt like.\n\n**Days 1–30:** Keep your Retail Sales Associate income running. Use your 4 hours a day to start the first block of training or prep for the road you picked. Track hours and spend against your $20K budget as you go.\n\n**Days 31–60:** Do a second, longer taste of the real work. Talk to one person doing the job now. Ask what a bad week looks like, and what support they actually get — that question matters most for the two tutoring roads.\n\n**Days 61–90:** Finish the first clear chunk of training or prep. Check the money: what you have spent, what is left of your cushion, and whether income is still coming in beside the training.\n\nBy the 90-day check-in, you will know three things you do not know today: whether you like the real day, not the idea of the day; whether the Support gap, if your pick has one, is livable for you; and whether the money pace holds at 4 hours a day.\n\nYour one next step: pick which of the three you will try first, and book one real trial task for it this week.",
+    "verification": {
+      "status": "passed",
+      "signed": true,
+      "attempts": 2,
+      "sanitized": false,
+      "claims_status": "ok",
+      "issues": [],
+      "drift": [],
+      "checked_at": "2026-10-27T18:27:30.150Z"
+    }
   }
 }
