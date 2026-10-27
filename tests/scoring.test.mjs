@@ -315,7 +315,7 @@ test('<25 direct-verdict rule: no direct mode on interests alone, direct allowed
 });
 
 // ---------------------------------------------------------------------------
-// (7) Diversity + income floor + anti-match + argument (27.10 fixes).
+// (7) Diversity + income floor + bottom-3 + argument (27.10 fixes).
 // A creator-leaning person who names a $120K minimum must not be handed
 // three creator-economy wrappers at $45–75K in silence.
 // ---------------------------------------------------------------------------
@@ -355,17 +355,36 @@ test('diversity + floor: three families, no silent below-floor pick, argued card
     assert.ok(r.argument && r.argument.why_you.length > 0, `${r.slug} must carry a why-you argument`);
     assert.ok(r.argument.math.some((l) => l.includes('Typical pay')), `${r.slug} must carry the pay math`);
   }
-  // Anti-match: lowest personal fit, and its LOVE range must not reach
+  // Bottom-3: the least suitable professions — worst first, three
+  // different families, never a top-3 pick, each with a why-not and the
+  // protective closing line. The lead card's LOVE range must not reach
   // into the winner's range when a non-overlapping candidate exists.
-  assert.ok(out.anti_match, 'an anti-match is produced');
-  assert.ok(out.anti_match.love.hi <= out.top3[0].love.lo,
-    `anti-match LOVE hi ${out.anti_match.love.hi} must not exceed winner lo ${out.top3[0].love.lo}`);
-  assert.ok(Array.isArray(out.anti_match.why_not) && out.anti_match.why_not.length > 0, 'anti-match must say why not');
+  assert.ok(Array.isArray(out.bottom3) && out.bottom3.length >= 1 && out.bottom3.length <= 3,
+    'a bottom list of 1–3 is produced');
+  assert.equal(new Set(out.bottom3.map((r) => r.family)).size, out.bottom3.length,
+    'bottom picks must span distinct families');
+  assert.ok(out.bottom3[0].love.hi <= out.top3[0].love.lo,
+    `bottom #1 LOVE hi ${out.bottom3[0].love.hi} must not exceed winner lo ${out.top3[0].love.lo}`);
+  for (let i = 1; i < out.bottom3.length; i++) {
+    assert.ok(
+      out.bottom3[i].love.mid >= out.bottom3[i - 1].love.mid
+        || (out.bottom3[i - 1].love.hi <= out.top3[0].love.lo && out.bottom3[i].love.hi > out.top3[0].love.lo),
+      'bottom list is worst-first (non-overlapping group first, then by fit)');
+  }
+  for (const b of out.bottom3) {
+    assert.ok(!out.top3.some((t) => t.slug === b.slug), `bottom pick ${b.slug} must not repeat a top pick`);
+    assert.ok(Array.isArray(b.why_not) && b.why_not.length > 0, `bottom pick ${b.slug} must say why not`);
+    assert.ok(typeof b.closing === 'string' && b.closing.length > 0, `bottom pick ${b.slug} must end with the protective line`);
+    if (b.floor_status === 'below_floor') {
+      assert.ok(b.argument.math.some((l) => l.includes('under your $120K minimum')),
+        `below-floor bottom pick ${b.slug} must carry the plain floor line (its chip renders from floor_status)`);
+    }
+  }
   // Plain register: nothing user-facing may carry internal terms.
   const rendered = [
     out.set_reason, out.mode_reason,
     ...out.top3.flatMap((r) => [...r.argument.why_you, ...r.argument.math, ...r.argument.but, ...r.argument.bridge]),
-    ...(out.anti_match.why_not || []),
+    ...out.bottom3.flatMap((r) => [...(r.why_not || []), r.closing || '', ...r.argument.math]),
     ...out.exploration_plan,
   ].join('\n');
   for (const banned of ['RIASEC', 'CDDQ', 'cddq', 'bands', 'evidence', 'needs-supplies', 'in the base', 'exploitation_risk', 'base_verdict']) {

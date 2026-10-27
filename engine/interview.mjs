@@ -425,7 +425,8 @@ const REPORT_STRUCTURE = [
   '2. Resources and constraints that shape what is honestly possible — including supports, barriers and red lines.',
   '3. The top candidates (only when the mode allows a verdict): for each, the LOVE range and the POTENTIAL range, each written as a RANGE (e.g. "LOVE 0.55–0.79"), its fit in plain words (Top fit / Good fit / Weak fit), and the argued reason it fits or strains. Build each section on that candidate\'s "argument" object in the input (why_you / math / but / bridge) — argue from the person\'s own facts, not from adjectives.',
   '4. The honest BUT: what could break this plan, where people usually quit, and every pay warning. Each candidate\'s floor_status is the truth about pay: if it says below_floor, say plainly that typical pay misses the minimum they named and never present that pick as clean; if it says top_tier_only, say it only works at the top-earner tier.',
-  '5. The 90-day check plan: concrete dated-style steps and what will be known by the check-in.',
+  '5. The jobs to run from (the "bottom3" in the input — the worst measured fits for this person): name all of them briefly, worst first. For each, one or two plain sentences on why it is wrong for THIS person, built on its why_not lines and its pay facts — never soften a pay warning here either. Frame the list as protection, not failure: knowing what to run from is half the match, and the matchmaker does not let you marry the wrong career.',
+  '6. The 90-day check plan: concrete dated-style steps and what will be known by the check-in.',
   'Hard rules: present every score as a range, NEVER as a single number and NEVER as a "match %". Never invent pay figures, professions or facts that are not in the input JSON. No personality labels, no type names. Warm, plain-spoken, concrete — this is written for the person, not about them.',
   PLAIN_REGISTER,
 ].join('\n');

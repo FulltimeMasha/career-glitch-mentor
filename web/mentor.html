@@ -672,6 +672,7 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
     if(isAnti){
       html += argSection("Why not you", (c.why_not && c.why_not.length) ? c.why_not : arg.but, true);
       html += argSection("The math", arg.math, false);
+      if(c.closing) html += '<p style="margin-top:8px">' + esc(c.closing) + '</p>';
     } else {
       html += argSection("Why you", arg.why_you, false);
       html += argSection("The math", arg.math, false);
@@ -704,7 +705,12 @@ if(state.door){ document.getElementById("startScreen").classList.add("hidden"); 
     } else {
       if(r.set_reason) html += '<h3 style="margin:6px 0 8px;font-family:Outfit,sans-serif">Why these three</h3><p>' + esc(r.set_reason) + '</p>';
       (r.top3 || []).forEach(function(c, i){ html += candidateCard(c, (i + 1) + ". " + c.name, false); });
-      if(r.anti_match) html += candidateCard(r.anti_match, "Probably NOT you: " + r.anti_match.name, true);
+      var bottom = r.bottom3 || (r.anti_match ? [r.anti_match] : []);
+      if(bottom.length){
+        html += '<h3 style="margin:16px 0 4px;font-family:Outfit,sans-serif">' + (bottom.length > 1 ? bottom.length + " jobs to run from" : "One job to run from") + '</h3>';
+        html += '<p>The worst fits for you, measured on your own answers — worst first. Knowing your no-list is half the match.</p>';
+        bottom.forEach(function(c){ html += candidateCard(c, "Probably NOT you: " + c.name, true); });
+      }
       html += '<p style="margin-top:12px;color:#5c5566;font-size:14px">Scores are ranges, never one magic number. Every figure comes from your answers and checked job-market data.</p>';
     }
     $("verdictBody").innerHTML = html;

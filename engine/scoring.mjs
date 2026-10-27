@@ -429,9 +429,14 @@ function buildArgument(person, prof, ctx) {
   return { why_you: why.slice(0, 3), math, but: but.slice(0, 3), bridge: bridge.slice(0, 3) };
 }
 
-/** Why the anti-match is NOT this person — the deciding personal factors. */
+/** Why a bottom-3 job is NOT this person — the deciding personal factors,
+ *  in plain words, built ONLY from the person's own coded answers and real
+ *  base fields: the must-haves this job starves, the day-in-the-life
+ *  answers pointing away, the blockers it collides with, the pay test it
+ *  fails, and an entry path longer than the cushion behind it. */
 function buildWhyNot(person, prof, r) {
   const lines = [];
+  const res = person.resources || {};
   const fits = valueFits(person, prof).filter((f) => f.rank <= 3).sort((a, b) => a.fit - b.fit);
   for (const f of fits.slice(0, 2)) {
     if (f.fit <= 0.6) lines.push(`You put ${VALUE_LABELS[f.key]} at #${f.rank} — this job gives you very little of it.`);
@@ -442,13 +447,28 @@ function buildWhyNot(person, prof, r) {
   if (r.love.parts && isNum(r.love.parts.sdt) && r.love.parts.sdt <= 0.5) {
     lines.push('The daily setup fights how you work best — you would be forcing yourself, every day.');
   }
+  if (r.flags && r.flags.includes('physical_limit')) {
+    lines.push('You named a physical limit, and this job is heavy on the body — it would fight you every week.');
+  }
+  if (Array.isArray(person.barriers) && person.barriers.includes('documents') && prof.attrs && prof.attrs.lic >= 1) {
+    lines.push('Documents stopped you before, and this job needs a licence — the wall you already hit stands right at the door.');
+  }
+  if (r.flags && r.flags.includes('perceived_fit_veto')) {
+    lines.push('You pictured one real Tuesday in this job and said "not mine" — believe that answer.');
+  }
   if (prof.verdict === 'NO') lines.push('The market side agrees: our base says NO to starting this job in 2027.');
   if (r.floor_status === 'below_floor' && isNum(person.income_floor_k) && isNum(prof.payK)) {
     lines.push(`And it fails your own pay test: typical pay ~$${prof.payK}K against your $${person.income_floor_k}K minimum.`);
   }
+  if (isNum(prof.training_months) && isNum(res.cushion_months) && prof.training_months > res.cushion_months) {
+    lines.push(`Getting in takes about ${prof.training_months} months of training before it pays anything — your cushion is ${res.cushion_months} months, so the money runs out first.`);
+  }
   if (!lines.length) lines.push('On your answers, this is simply the weakest fit we measured — nothing in it matches what you asked for.');
-  return lines.slice(0, 3);
+  return lines.slice(0, 4);
 }
+
+/** The matchmaker's protective closing line on every "run from" card. */
+const BOTTOM_CLOSING = 'That is the matchmaker\'s whole job: not letting you marry the wrong career. This door stays closed — on purpose.';
 
 // ---------------------------------------------------------------------------
 // scoreCandidate(person, prof, professions?)
@@ -586,7 +606,7 @@ function buildExplorationPlan(person) {
 
 // ---------------------------------------------------------------------------
 // scorePerson(person, professions) →
-//   { mode, mode_reason, top3, anti_match, results_count, exploration_plan }
+//   { mode, mode_reason, top3, bottom3, results_count, exploration_plan }
 // No `match` / `percent` field exists anywhere in this output — by design.
 // ---------------------------------------------------------------------------
 export function scorePerson(person, professions) {
@@ -626,29 +646,41 @@ export function scorePerson(person, professions) {
   }
   const topSlugs = new Set(top3.map((r) => r.slug));
 
-  // Anti-match: the LOWEST personal fit (the LOVE score decides, not the
-  // market verdict) among candidates with real measurement behind them —
-  // at least 2 of the 3 LOVE parts present — never a top-3 pick, never a
-  // factually gated (D) one. If the lowest fit's LOVE range still reaches
-  // into the #1 pick's range, prefer the next-lowest fit whose range does
-  // not: side by side, "not you" must not look better than "you".
-  let antiMatch = null;
+  // Bottom-3: the three LEAST suitable professions for this person — the
+  // lowest personal fit (the LOVE score decides, not the market verdict)
+  // among candidates with real measurement behind them — at least 2 of
+  // the 3 LOVE parts present — never a top-3 pick, never a factually
+  // gated (D) one, and at most ONE per family, like the top-3: three
+  // different kinds of "not you", not three clones. Scores are never
+  // inflated or deflated; if fewer than 3 candidates clear the bar, the
+  // list is honestly shorter (never padded).
+  // Order: worst first. Candidates whose LOVE range still reaches into
+  // the #1 pick's range sort AFTER every candidate whose range does not:
+  // side by side, "not you" must not look better than "you".
+  const bottom3 = [];
   {
     const top1 = top3[0] || null;
     const lovePartsCount = (r) => [r.love.parts.needs_supplies, r.love.parts.sdt, r.love.parts.riasec].filter(isNum).length;
+    const overlapsWinner = (r) => !!(top1 && isNum(top1.love.lo) && isNum(r.love.hi) && r.love.hi > top1.love.lo);
     const cands = results
       .filter((r) => r.category !== 'D' && !topSlugs.has(r.slug) && isNum(r.love.mid) && lovePartsCount(r) >= 2)
       .sort((a, b) => {
+        const oa = overlapsWinner(a) ? 1 : 0;
+        const ob = overlapsWinner(b) ? 1 : 0;
+        if (oa !== ob) return oa - ob;
         if (a.love.mid !== b.love.mid) return a.love.mid - b.love.mid;
         const pa = a.potential.mid ?? 0;
         const pb = b.potential.mid ?? 0;
         if (pa !== pb) return pa - pb;
         return a.slug < b.slug ? -1 : 1;
       });
-    antiMatch = cands.find((r) => !top1 || !isNum(top1.love.lo) || (isNum(r.love.hi) && r.love.hi <= top1.love.lo)) || cands[0] || null;
-    if (antiMatch) {
-      const prof = profBySlug.get(antiMatch.slug);
-      antiMatch = { ...antiMatch, why_not: buildWhyNot(person, prof || {}, antiMatch) };
+    const usedBottomFamilies = new Set();
+    for (const r of cands) {
+      if (bottom3.length >= 3) break;
+      if (usedBottomFamilies.has(r.family)) continue;
+      usedBottomFamilies.add(r.family);
+      const prof = profBySlug.get(r.slug);
+      bottom3.push({ ...r, why_not: buildWhyNot(person, prof || {}, r), closing: BOTTOM_CLOSING });
     }
   }
 
@@ -713,7 +745,7 @@ export function scorePerson(person, professions) {
     income_floor_k: isNum(person.income_floor_k) ? person.income_floor_k : null,
     set_reason: setReason,
     top3,
-    anti_match: antiMatch,
+    bottom3,
     results_count: results.length,
     exploration_plan: mode === 'insufficient_data' ? buildExplorationPlan(person) : [],
   };
