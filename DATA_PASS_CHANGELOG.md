@@ -392,3 +392,165 @@ RIASEC у всех 23 — собственный, из Interests.
   состав и порядок (алфавит) сохранены; загрузчик через шарды даёт
   идентичный результат, что через единый файл (проверено).
 - Локальные тесты: 22/23 (падает только pre-existing perceived-fit veto).
+
+---
+
+## Причина B, 28.10.2026 — красные линии и возраст: поля базы вместо эвристик по названиям
+
+Что было: фильтры скоринга определяли факты о профессии эвристиками в
+`scoring.mjs` — `night_shifts` одним слагом (air-traffic-controller),
+`public_voice` множеством из 5 слагов, `voice_load` стоял у 42/373,
+`age_gate` — у 2/373, а красная линия `no_relocation` не проверялась
+вообще (ответ собирался в интервью, скоринг его не читал — мёртвый
+фильтр). Гейт при этом держал ВТОРУЮ копию эвристик — regex по именам
+(NIGHTS/PUBLIC/RELOC/ADULT), из-за чего движок и гейт спорили о фактах
+(ложное срабатывание: Drone Pilot под no_nights; промахи: Online
+Course Creator под no_public_voice; смешение полей: health-voice
+гейта срабатывал по voice_load || PUBLIC-имени).
+
+Что стало: каждое поле производится в одном месте —
+`buildProfessions()`/`finalizeBaseFields()` в
+`api/_lib/engine/professions.mjs` (+ импорт Work Context в
+`scripts/import_onet.py`), экспортируется в `professions-base.json`
+(новый `scripts/export_base.mjs`), читается скорингом и гейтом только
+как поле. Слаг-сеты PUBLIC_VOICE_SLUGS/NIGHT_SLUGS из scoring.mjs
+удалены; regex NIGHTS/PUBLIC/RELOC/ADULT из regression.mjs удалены;
+линия no_relocation оживлена (topBlockReason →
+'relocation_red_line' + фраза в BLOCK_REASON_PHRASES). Запасной
+вариант по правилу брифа структурный: topBlockReason только сужает
+пул кандидатов в scorePerson — слот топ-3 заполняется следующими
+кандидатами, а честно пустой результат уходит в
+insufficient_data + exploration_plan, как раньше.
+
+### night_shifts (bool) — было: 1 слаг в движке → стало: 50 профессий
+
+Источника в O*NET нет (элемента «ночная работа» в Work Context не
+существует; Work Schedules Regular/Irregular — не ночи). Редакторский
+сет, ручное решение по каждой профессии: true ⇔ ночная работа
+СТРУКТУРНА (входящего ставят в ночные/ротационные смены как норму).
+True (50): registered-nurse, registered-nurse-2, lpn-lvn,
+nurse-practitioner, physician-assistant, emt-paramedic,
+respiratory-therapist, surgical-technologist, dialysis-technician,
+lab-technician, medical-laboratory-scientist, radiology-tech,
+mri-technologist, sonographer-ultrasound, sterile-processing-tech,
+sleep-technologist, cardiovascular-technologist, ekg-technician,
+nuclear-medicine-technologist, physician, general-surgeon,
+certified-anesthesiologist-assistant, cardiovascular-perfusionist,
+certified-nurse-midwife, home-health-aide (live-in смены — спорное,
+включена по дизайн-разбору), cdl-truck-driver,
+owner-operator-trucking, train-conductor, locomotive-engineer,
+subway-streetcar-operator, air-traffic-controller,
+aircraft-dispatcher-faa, bus-driver, ship-engineer-merchant-marine,
+harbor-pilot, boat-captain, tow-truck-operator, commercial-pilot,
+helicopter-pilot, flight-attendant, police-officer, firefighter,
+funeral-director (ночные first-call выезды — часть службы),
+power-plant-operator, nuclear-reactor-operator,
+water-wastewater-treatment-operator, millwright (сменные ротации на
+производствах), semiconductor-technician (фабрики 24/7),
+data-center-technician (ночные ротации покрытия), aircraft-mechanic-a-p
+(авиакомпании обслуживают борта ночью).
+Осознанные FALSE: baker (старты в 3–4 утра — раннее утро, не ночь),
+doula (on-call роды ≠ смены), pharmacist/pharmacy-technician
+(амбулаторный модальный формат по дизайн-разбору),
+dispatcher-trucking (офис; ночные диспетчерские существуют — не
+структурны), drone-pilot-commercial (дневные операции),
+lineworker-power-lines (on-call выезды ≠ смены), tow-truck включён в
+true (дежурства 24/7 — норма формата). Провенанс у всех:
+data_flag 'night_shifts_editorial'.
+
+### public_voice (bool) — было: 5 слагов → стало: 23 (18 по данным + 5 исключений)
+
+Источник дотянут импортом: Work Context 30.2, элемент Public
+Speaking (4.C.1.a.2.c) — CX-среднее и доля категории 5 CXP («каждый
+день»); заодно Telephone (4.C.1.a.2.f) и Face-to-Face (4.C.1.a.2.l).
+Покрытие: work_context есть у 346/373 профессий (359 с SOC, минус 13
+SOC без строк Work Context в 30.2, напр. 27-2091 Disc Jockeys).
+Правило (дизайн §1.2): CX ≥ 3.5 ИЛИ доля cat5 ≥ 50%. Контроль: RN
+2.32 — false, CSR 1.65 — false, voice-actor 4.54/74.9% — true.
+True по правилу (18): streamer-content-creator, ugc-creator,
+voice-actor, fitness-trainer, yoga-pilates-instructor,
+food-truck-owner, school-teacher, swim-instructor, corporate-trainer,
+sports-coach, flight-attendant, substance-abuse-counselor (cat5 ≥ 50%
+— групповые сессии ежедневно), instructional-designer,
+recreational-therapist, helicopter-pilot, gym-fitness-studio-owner,
+esl-adult-literacy-teacher, career-and-technical-education-teacher.
+Ручные исключения поверх правила (5, 'public_voice_editorial'):
+podcast-producer, dj-event-host, speech-public-speaking-coach (все
+трое — наследие старого сета основателя; их SOC меряет средне-
+офисный профиль занятия, а не день ведущего; у DJ строк Work Context
+нет вообще), online-course-creator и funeral-director (два
+зафиксированных промаха старого сета из брифа).
+Пограничная очередь CX 3.0–3.49 просмотрена вручную, правило везде
+выдержано (false): product-manager 3.35, general-contractor 3.15,
+wellness-coach 3.23, recruiter/hr-specialist 3.33 (1:1 — не
+публичный голос), grant-writer 3.14,
+computer-and-information-research-scientist 3.13,
+urban-and-regional-planner 3.28, community-health-worker 3.42
+(продукт — поддержка и навигация, не собственный публичный голос;
+её срабатывание в старом гейте было смешением с voice_load),
+aba-therapist-kids 3.24, librarian 3.34, choreographer 3.33,
+athletic-trainer 3.38, dental-assistant 3.19, chef/private-chef 3.21,
+cleaning-company-owner 3.0, solar-installer 3.27.
+
+### voice_load — было: 42/373 → стало: 152/373
+
+Состав (провенанс — data_flags): 'voice_load_editorial' 8 —
+VOICE_PRIMARY_SLUGS (6, как раньше) + recruiter +
+commercial-insurance-producer (ручные исключения брифа: телефонные
+продажи/рекрутинг, день — сплошные звонки; у CIP правило по SOC дало
+бы true и само, исключение фиксирует приоритет); 'voice_load_onet'
+130 — правило дизайна §1.4 по skills_lv Speaking (2.A.1.d):
+LV ≥ 4.0 ИЛИ (LV ≥ 3.75 И Telephone CX ≥ 4.5); 'voice_load_from_category'
+14 — прежняя деривация category=='people' && people==2 ТОЛЬКО как
+фолбэк для care/teaching-ролей, не покрытых первыми двумя (их день —
+непрерывный разговор 1:1; измеренный Speaking ниже порога не должен
+снимать защиту). Потерь против старых 42 нет: старое множество —
+подмножество нового. Диапазон совпал с прогнозом дизайна (120–170).
+
+### relocation_required (bool) — было: поля и потребителя нет → стало: 9
+
+Редакторский белый список (источника в данных нет): переезд к
+назначенной базе или жизнь вне дома — УСЛОВИЕ ВХОДА.
+True (9): ship-engineer-merchant-marine (месяцы в море),
+harbor-pilot (лицензия одного пилотного района — переезд и есть
+вход), commercial-diver (офшорные ротации), flight-attendant и
+commercial-pilot (авиакомпания назначает базу экипажа),
+helicopter-pilot (базы EMS/офшора), tower-climber-telecom
+(разъездные бригады), wind-turbine-technician (travelling-tech —
+модальный вход), lineworker-power-lines (ученичество и storm-crew —
+разъездные). Осознанно НЕ включены (дизайн §1.3): owner-operator-
+trucking, train-conductor, locomotive-engineer, boat-captain —
+недели вне дома это absence, а не relocation; ждут слова основателя.
+Провенанс: 'relocation_editorial'.
+
+### age_gate — было: 2/373 → стало: 108/373
+
+Расширена та же редакторская таблица AGE_GATES в professions.mjs,
+каждая запись со строкой source. Состав: {max:30} ATC и {min:23}
+aircraft-dispatcher — без изменений; {min:21} ×5 — cdl-truck-driver,
+owner-operator-trucking (FMCSA interstate), customs-broker
+(19 CFR 111.11), police-officer, probation-officer; {min:16} ×1 —
+drone-pilot-commercial (FAA Part 107); {min:18} ×100 — лицензии
+18+ (страхование ×3, недвижимость и брокеры ×6, NMLS ×2, FINRA,
+CPA-трек, подрядчики/инспекторы), сертификаты FAA/USCG (пилоты 18 —
+ATP 23 отмечен в source, A&P, капитан, merchant marine, commercial
+diver), клинические лицензии штатов ×32, пожарные/бортпроводники/
+PI/похоронные/NRC/операторы очистных/лифты/пестициды/HAZWOPER/
+землемеры, ж/д и транзит ×4, боди-арт ×4, владение бизнесом ×30
+(контракты, аренда, кредит — legal majority; Tutoring Center Owner
+и Business/Yacht Broker из находки прохода по заглушкам входят
+сюда). Вилка «age_gate автоматически из lic==2» ОТКЛОНЕНА: lic==2
+покрывает и роли, куда в ряде штатов можно с 16–17 (косметологические
+лицензии, ученичества), — автоправило перекрывало бы легальные входы.
+Осознанно без ворот: учителя (нет статутного минимума сверх
+степени), underwriter, enrolled agent (IRS минимума не ставит),
+косметология/парикмахерские (лицензии с 16–17 во многих штатах).
+
+### Гейт (scripts/regression.mjs) — синхронизация, отдельно
+
+Regex NIGHTS/PUBLIC/RELOC/ADULT удалены. Правила читают те же поля
+из --base: no_public_voice → p.public_voice; no_nights →
+p.night_shifts; no_relocation → p.relocation_required; health voice
+→ только p.gates.voice_load (старая дизъюнкция с PUBLIC-именем и
+voice_load убрана — она смешивала два разных факта); under-18 →
+p.age_gate (age < min), подпись правила: '(base age_gate)'.

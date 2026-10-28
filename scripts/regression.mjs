@@ -78,11 +78,15 @@ function randomAnswer(it, fixed, door, nullOptional) {
 const top3 = o => (o.result && o.result.top3) || [];
 
 // ---------- rule book ----------
-// Red-line heuristics until the base carries explicit tags (night_shifts, public_voice, relocation).
-const NIGHTS = /registered nurse|lpn|crna|nurse practitioner|emt|paramedic|police|firefight|air traffic|cdl|truck driver|owner-operator|dispatcher|power plant|nuclear reactor|flight attendant|pilot|locomotive|subway|train conductor|sleep tech|surgeon|physician|respiratory|security officer|bus driver/i;
-const PUBLIC = /voice actor|streamer|content creator|ugc|dj|event host|online course creator|life coach|public speaking|corporate trainer|influencer|podcast|actor|tour guide|auctioneer|funeral director|fitness trainer|yoga|music instructor|dance instructor/i;
-const RELOC = /merchant marine|ship engineer|harbor pilot|commercial diver|flight attendant|commercial pilot|helicopter pilot|lineworker|tower climber|wind turbine/i;
-const ADULT = /real estate|insurance|loan|mortgage|cdl|truck|dispatcher|pilot|police|firefight|bartend|owner|investor|broker|crna|nurse|physician|surgeon|financial advisor|security/i;
+// Cause B (28.10.2026): the gate's name-regex heuristics (NIGHTS /
+// PUBLIC / RELOC / ADULT) are RETIRED. The base now carries the facts
+// as fields — night_shifts, public_voice, relocation_required,
+// gates.voice_load, age_gate — produced once in professions.mjs, and
+// the gate checks exactly the fields the engine reads. One fact, one
+// producer: the gate can no longer disagree with the engine about
+// what a profession IS (the old copies produced false positives like
+// Drone Pilot under "no_nights" and misses like Online Course Creator
+// under "no_public_voice").
 
 const F = {}; const add = (rule, msg) => { (F[rule] = F[rule] || []).push(msg); };
 const stats = { sessions: 0, completed: 0, withTop: 0, slots: 0, stubSlots: 0, freq: {}, modes: {} };
@@ -106,14 +110,14 @@ function check(o, tag) {
     if (vetoed.includes(x.slug)) add('HARD "not mine" removes the job', tg);
     if (rated.length && !rated.includes(x.slug)) add('HARD final top3 only from rated stage-6 candidates', tg);
     if (rl.includes('no_degree') && x.training_months >= 36) add('HARD red line no_degree', tg);
-    if (rl.includes('no_public_voice') && (p.gates?.voice_load || PUBLIC.test(x.name))) add('HARD red line no_public_voice (heuristic list — review)', tg);
-    if (rl.includes('no_nights') && NIGHTS.test(x.name)) add('HARD red line no_nights (heuristic list — review)', tg);
-    if (rl.includes('no_relocation') && RELOC.test(x.name)) add('HARD red line no_relocation (heuristic list — review)', tg);
-    if ((a.health_limits || []).includes('voice') && (p.gates?.voice_load || PUBLIC.test(x.name) || /recruit|sales|insurance producer|call/i.test(x.name))) add('HARD health limit voice', tg);
+    if (rl.includes('no_public_voice') && p.public_voice === true) add('HARD red line no_public_voice (base field)', tg);
+    if (rl.includes('no_nights') && p.night_shifts === true) add('HARD red line no_nights (base field)', tg);
+    if (rl.includes('no_relocation') && p.relocation_required === true) add('HARD red line no_relocation (base field)', tg);
+    if ((a.health_limits || []).includes('voice') && p.gates?.voice_load) add('HARD health limit voice', tg);
     if ((a.health_limits || []).includes('physical') && p.gates?.physical) add('HARD health limit physical', tg);
     if (a.documents_ok === 'no' && p.attrs?.lic >= 2) add('HARD documents=no excludes licensed jobs', tg);
     const ag = p.age_gate || {}; if (a.age != null && ((ag.max != null && a.age > ag.max) || (ag.min != null && a.age < ag.min))) add('HARD age_gate respected', tg);
-    if (a.age != null && a.age < 18 && ADULT.test(x.name)) add('HARD no adult-only/licensed job for under-18 (heuristic — review)', tg);
+    if (a.age != null && a.age < 18 && p.age_gate && a.age < p.age_gate.min) add('HARD no adult-only/licensed job for under-18 (base age_gate)', tg);
     if (a.income_floor_k > x.payK && !['top_decile_only', 'top_tier_only'].includes(x.floor_status)) add('HARD pay below floor only with explicit top-decile reason', `${tg} status=${x.floor_status}`);
     const txt = [...(x.argument?.math || []), ...(x.argument?.but || []), ...(x.argument?.bridge || [])].join(' ');
     const m = txt.match(/cushion (?:is|\()(\d+) months/); if (m && a.cushion_months != null && +m[1] !== +a.cushion_months) add('HARD card text matches answers (cushion)', `${tg} says ${m[1]} vs answered ${a.cushion_months}`);

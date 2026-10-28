@@ -22,6 +22,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -48,6 +51,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -74,6 +80,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -100,6 +109,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -126,6 +138,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -135,7 +150,7 @@
   "payK": 118,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -152,6 +167,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -161,7 +179,7 @@
   "payK": 104,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -178,6 +196,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -204,6 +225,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -230,6 +254,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -256,6 +283,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -282,6 +312,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -308,6 +341,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -317,7 +353,7 @@
   "payK": 45,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -334,6 +370,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -360,6 +399,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -386,6 +428,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -412,6 +457,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -438,6 +486,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -464,6 +515,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -490,6 +544,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -499,7 +556,7 @@
   "payK": 62,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -516,6 +573,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -525,7 +585,7 @@
   "payK": 78,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -542,6 +602,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -551,7 +614,7 @@
   "payK": 77,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -568,6 +631,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -594,6 +660,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -620,6 +689,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -646,6 +718,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -672,6 +747,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -681,7 +759,7 @@
   "payK": 79,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -698,6 +776,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -707,7 +788,7 @@
   "payK": 84,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -723,7 +804,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "CPA licensure requires 18 in most states (this card is the CPA track)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -750,6 +837,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -776,6 +866,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -802,6 +895,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -811,7 +907,7 @@
   "payK": 61,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -827,7 +923,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State insurance producer licensing requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -837,7 +939,7 @@
   "payK": 77,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -853,7 +955,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "NMLS mortgage licensing under the SAFE Act requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -863,7 +971,7 @@
   "payK": 76,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -880,6 +988,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -889,7 +1000,7 @@
   "payK": 69,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -906,6 +1017,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -915,7 +1029,7 @@
   "payK": 69,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -932,6 +1046,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -958,6 +1075,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -967,7 +1087,7 @@
   "payK": 106,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -984,6 +1104,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -993,7 +1116,7 @@
   "payK": 58,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1010,6 +1133,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1019,7 +1145,7 @@
   "payK": 60,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1036,6 +1162,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1045,7 +1174,7 @@
   "payK": 79,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1062,6 +1191,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1071,7 +1203,7 @@
   "payK": 75,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1088,6 +1220,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1097,7 +1232,7 @@
   "payK": 79,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1114,6 +1249,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1140,6 +1278,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -1149,7 +1290,7 @@
   "payK": 120,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1166,6 +1307,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1175,7 +1319,7 @@
   "payK": 53,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1191,7 +1335,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State real-estate licensing requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1218,6 +1368,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1244,6 +1397,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1253,7 +1409,7 @@
   "payK": 45,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1270,6 +1426,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1296,6 +1455,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1305,7 +1467,7 @@
   "payK": 98,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1321,7 +1483,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State nursing licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1331,7 +1499,7 @@
   "payK": 64,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1347,7 +1515,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State practical-nursing licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1357,7 +1531,7 @@
   "payK": 45,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1374,6 +1548,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1383,7 +1560,7 @@
   "payK": 45,
   "training_months": 4.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -1400,6 +1577,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1426,6 +1606,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1452,6 +1635,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1461,7 +1647,7 @@
   "payK": 95,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1478,6 +1664,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1487,7 +1676,7 @@
   "payK": 82,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1503,7 +1692,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State respiratory-care licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1513,7 +1708,7 @@
   "payK": 100,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -1529,7 +1724,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State PT licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1556,6 +1757,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1565,7 +1769,7 @@
   "payK": 100,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -1581,7 +1785,13 @@
    "care": 2,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State OT licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1591,7 +1801,7 @@
   "payK": 98,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1607,7 +1817,13 @@
    "care": 2,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State speech-language pathology licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1634,6 +1850,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1660,6 +1879,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1686,6 +1908,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1712,6 +1937,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1721,7 +1949,7 @@
   "payK": 135,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1737,7 +1965,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State pharmacy licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1764,6 +1998,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1790,6 +2027,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1816,6 +2056,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1842,6 +2085,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1868,6 +2114,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1894,6 +2143,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1920,6 +2172,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1929,7 +2184,7 @@
   "payK": 130,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1945,7 +2200,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State optometry licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1955,7 +2216,7 @@
   "payK": 76,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -1971,7 +2232,13 @@
    "care": 2,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Registered-dietitian licensure requires 18 (the licensed anchor of this card)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -1998,6 +2265,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2024,6 +2294,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2050,6 +2323,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2076,6 +2352,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2102,6 +2381,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2128,6 +2410,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2154,6 +2439,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2180,6 +2468,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2206,6 +2497,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2232,6 +2526,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2258,6 +2555,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2284,6 +2584,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2310,6 +2613,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2336,6 +2642,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2362,6 +2671,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2388,6 +2700,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2413,7 +2728,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Elevator-mechanic licensing (in licensing states) requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2440,6 +2761,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2466,6 +2790,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2492,6 +2819,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2517,7 +2847,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Pesticide applicator licensing requires 18 (EPA/state)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2527,7 +2863,7 @@
   "payK": 75,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -2543,7 +2879,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Home-inspector licensing (in licensing states) requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2553,7 +2895,7 @@
   "payK": 105,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -2569,7 +2911,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Contractor licensing requires 18 in licensing states"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2596,6 +2944,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2622,6 +2973,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2648,6 +3002,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2674,6 +3031,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2700,6 +3060,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2726,6 +3089,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2752,6 +3118,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2778,6 +3147,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2804,6 +3176,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2829,7 +3204,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "FAA — the mechanic certificate (A&P) requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2856,6 +3237,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2882,6 +3266,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2908,6 +3295,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2934,6 +3324,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2960,6 +3353,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -2985,7 +3381,13 @@
    "care": 1,
    "creat": 2
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Tattooing is licensed at 18 in most states"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -3012,6 +3414,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3021,7 +3426,7 @@
   "payK": 63,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3038,6 +3443,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3047,7 +3455,7 @@
   "payK": 67,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3064,6 +3472,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3073,7 +3484,7 @@
   "payK": 59,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3090,6 +3501,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3099,7 +3513,7 @@
   "payK": 61,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3116,6 +3530,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3142,6 +3559,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3168,6 +3588,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3194,6 +3617,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3220,6 +3646,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3246,6 +3675,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -3255,7 +3687,7 @@
   "payK": 120,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3272,6 +3704,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3298,6 +3733,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3324,6 +3762,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3350,6 +3791,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3376,6 +3820,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3402,6 +3849,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3428,6 +3878,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3454,6 +3907,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3480,6 +3936,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3505,7 +3964,13 @@
    "care": 1,
    "creat": 2
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3532,6 +3997,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3558,6 +4026,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3584,6 +4055,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3593,7 +4067,7 @@
   "payK": 75,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3609,7 +4083,13 @@
    "care": 2,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3619,7 +4099,7 @@
   "payK": 62,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -3636,6 +4116,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3662,6 +4145,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3671,7 +4157,7 @@
   "payK": 48,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3688,6 +4174,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3697,7 +4186,7 @@
   "payK": 69,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -3714,6 +4203,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3723,7 +4215,7 @@
   "payK": 69,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -3739,7 +4231,13 @@
    "care": 1,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3749,7 +4247,7 @@
   "payK": 69,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -3765,7 +4263,13 @@
    "care": 1,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3792,6 +4296,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3818,6 +4325,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3827,7 +4337,7 @@
   "payK": 69,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -3844,6 +4354,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3869,7 +4382,13 @@
    "care": 1,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3896,6 +4415,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3905,7 +4427,7 @@
   "payK": 45,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -3922,6 +4444,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3948,6 +4473,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -3974,6 +4502,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4000,6 +4531,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4026,6 +4560,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4051,7 +4588,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "School-counsellor certification requires 18 (and the master's degree)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4078,6 +4621,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4103,7 +4649,13 @@
    "care": 2,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18); centre licensing also sets 18+ for the licensee"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4130,6 +4682,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4155,7 +4710,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Clinical social-work licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4181,7 +4742,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State psychology licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4208,6 +4775,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -4234,6 +4804,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4260,6 +4833,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4286,6 +4862,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4312,6 +4891,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4338,6 +4920,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4364,6 +4949,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4390,6 +4978,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4416,6 +5007,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4441,7 +5035,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 21,
+   "source": "FMCSA — interstate commercial driving requires 21 (the intrastate floor is 18)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4467,7 +5067,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 21,
+   "source": "FMCSA — interstate commercial driving requires 21 (the intrastate floor is 18)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4493,7 +5099,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "FAA — the commercial pilot certificate requires 18 (the airline ATP certificate: 23)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4519,7 +5131,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "US airlines hire flight attendants from 18 (some carriers set 21)"
+  },
+  "night_shifts": true,
+  "public_voice": true,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4545,7 +5163,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "USCG — the OUPV/master licence requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4555,7 +5179,7 @@
   "payK": 150,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -4571,7 +5195,13 @@
    "care": 0,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Yacht brokerage licensing (e.g. Florida DBPR yacht broker) requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4581,7 +5211,7 @@
   "payK": 45,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -4598,6 +5228,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4607,7 +5240,7 @@
   "payK": 82,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -4624,6 +5257,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4649,7 +5285,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4676,6 +5318,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4701,7 +5346,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4727,7 +5378,13 @@
    "care": 0,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4753,7 +5410,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4779,7 +5442,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4805,7 +5474,13 @@
    "care": 0,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4831,7 +5506,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4857,7 +5538,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4883,7 +5570,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4909,7 +5602,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4919,7 +5618,7 @@
   "payK": 45,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -4936,6 +5635,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4945,7 +5647,7 @@
   "payK": 70,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -4961,7 +5663,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Third-party property management requires a real-estate licence in most states (18+)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -4971,7 +5679,7 @@
   "payK": 78,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -4987,7 +5695,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State adjuster licensing (in licensing states) requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5014,6 +5728,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5023,7 +5740,7 @@
   "payK": 77,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -5040,6 +5757,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5049,7 +5769,7 @@
   "payK": 77,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -5065,7 +5785,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "NMLS mortgage licensing under the SAFE Act requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5075,7 +5801,7 @@
   "payK": 75,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -5092,6 +5818,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5117,7 +5846,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5143,7 +5878,13 @@
    "care": 1,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5170,6 +5911,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5195,7 +5939,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5222,6 +5972,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5247,7 +6000,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5273,7 +6032,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5299,7 +6064,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5325,7 +6096,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Home-care agency ownership/administration is licensed (18+); its contracts also require legal majority"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5351,7 +6128,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5377,7 +6160,13 @@
    "care": 1,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5404,6 +6193,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5430,6 +6222,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5456,6 +6251,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5482,6 +6280,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5491,7 +6292,7 @@
   "payK": 85,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -5507,7 +6308,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Buying and selling property requires legal majority (18) — contracts and financing"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5517,7 +6324,7 @@
   "payK": 70,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -5533,7 +6340,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Buying and holding rental property requires legal majority (18) — contracts and financing"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5560,6 +6373,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5586,6 +6402,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5611,7 +6430,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "A franchise agreement is a major contract — it requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -5638,6 +6463,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5664,6 +6492,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5690,6 +6521,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5716,6 +6550,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5742,6 +6579,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5768,6 +6608,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5777,7 +6620,7 @@
   "payK": 69,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -5793,7 +6636,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Land-surveyor licensure requires 18 (and the degree)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5820,6 +6669,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5846,6 +6698,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5872,6 +6727,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5897,7 +6755,13 @@
    "care": 0,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 16,
+   "source": "FAA — Part 107 remote-pilot certification requires 16"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5927,6 +6791,9 @@
    "max": 30,
    "source": "FAA — controller applicants must be under 31 at entry"
   },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5952,7 +6819,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "The CDL floor is 18 for intrastate commercial driving (interstate: 21); transit and school employers hire 18+"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5978,7 +6851,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Railroads hire conductors at 18+ (FRA-regulated safety-sensitive role)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -5988,7 +6867,7 @@
   "payK": 132,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6004,7 +6883,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State APRN licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6014,7 +6899,7 @@
   "payK": 136,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6030,7 +6915,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State PA licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6057,6 +6948,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6066,7 +6960,7 @@
   "payK": 101,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6083,6 +6977,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6108,7 +7005,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State radiation-therapy licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6118,7 +7021,7 @@
   "payK": 95,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6134,7 +7037,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State audiology licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6144,7 +7053,7 @@
   "payK": 100,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6160,7 +7069,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State genetic-counsellor licensure requires 18 (in licensing states)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6170,7 +7085,7 @@
   "payK": 60,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6187,6 +7102,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6213,6 +7131,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6239,6 +7160,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6265,6 +7189,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6291,6 +7218,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6300,7 +7230,7 @@
   "payK": 99,
   "training_months": 3.5,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6317,6 +7247,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6343,6 +7276,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6352,7 +7288,7 @@
   "payK": 63,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6369,6 +7305,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6378,7 +7317,7 @@
   "payK": 125,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6395,6 +7334,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6420,7 +7362,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "NRC operator licensing requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6430,7 +7378,7 @@
   "payK": 62,
   "training_months": 1,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6446,7 +7394,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State insurance producer licensing requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6473,6 +7427,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6499,6 +7456,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6508,7 +7468,7 @@
   "payK": 103,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6525,6 +7485,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6551,6 +7514,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6576,7 +7542,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State AA licensure requires 18 (in licensing states)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6602,7 +7574,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Perfusionist licensure/certification requires 18 (in licensing states)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6612,7 +7590,7 @@
   "payK": 124,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6629,6 +7607,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6638,7 +7619,7 @@
   "payK": 81,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -6655,6 +7636,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6664,7 +7648,7 @@
   "payK": 62,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -6680,7 +7664,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State athletic-trainer licensure requires 18 (in licensing states)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6707,6 +7697,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6733,6 +7726,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6759,6 +7755,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6785,6 +7784,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6811,6 +7813,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6836,7 +7841,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State water/wastewater operator licensing requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6863,6 +7874,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6889,6 +7903,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6915,6 +7932,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6941,6 +7961,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6950,7 +7973,7 @@
   "payK": 79,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -6967,6 +7990,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -6993,6 +8019,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7018,7 +8047,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Substance-use counsellor licensure/certification requires 18 in most states"
+  },
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7044,7 +8079,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "US fire departments hire at 18 (the standard minimum)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7070,7 +8111,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State funeral-service licensing requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7097,6 +8144,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7106,7 +8156,7 @@
   "payK": 65,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7126,6 +8176,9 @@
    "min": 23,
    "source": "FAA — the aircraft dispatcher certificate requires age 23+"
   },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7151,7 +8204,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "USCG — officer endorsements on the merchant mariner credential require 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7178,6 +8237,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7203,7 +8265,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State appraiser licensing requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7213,7 +8281,7 @@
   "payK": 77,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7230,6 +8298,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7239,7 +8310,7 @@
   "payK": 97,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7256,6 +8327,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7282,6 +8356,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7291,7 +8368,7 @@
   "payK": 140,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7308,6 +8385,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7317,7 +8397,7 @@
   "payK": 77,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7334,6 +8414,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7343,7 +8426,7 @@
   "payK": 125,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -7359,7 +8442,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State veterinary licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7369,7 +8458,7 @@
   "payK": 179,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -7385,7 +8474,13 @@
    "care": 1,
    "creat": 1
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State dental licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7395,7 +8490,7 @@
   "payK": 79,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -7411,7 +8506,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State chiropractic licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7421,7 +8522,7 @@
   "payK": 83,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7438,6 +8539,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7447,7 +8551,7 @@
   "payK": 239,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7463,7 +8567,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State medical licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7473,7 +8583,7 @@
   "payK": 58,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -7490,6 +8600,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7516,6 +8629,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7541,7 +8657,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "ADC commercial-diver certification requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7568,6 +8690,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7594,6 +8719,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7603,7 +8731,7 @@
   "payK": 100,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7620,6 +8748,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7629,7 +8760,7 @@
   "payK": 79,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7646,6 +8777,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7655,7 +8789,7 @@
   "payK": 80,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7672,6 +8806,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7698,6 +8835,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7723,7 +8863,13 @@
    "care": 1,
    "creat": 2
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Body-piercing licensure requires 18 in most states"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -7750,6 +8896,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7776,6 +8925,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7802,6 +8954,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7827,7 +8982,13 @@
    "care": 1,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 21,
+   "source": "Most US jurisdictions set 21 for sworn officers (some hire at 18–20); the federal standard is 21"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7837,7 +8998,7 @@
   "payK": 52,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7853,7 +9014,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State PI licensing requires 18 (some states set 21)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7880,6 +9047,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7906,6 +9076,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7931,7 +9104,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Railroads hire engineers at 18+ (FRA-regulated safety-sensitive role)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7958,6 +9137,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -7967,7 +9149,7 @@
   "payK": 120,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -7983,7 +9165,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "FINRA securities licensing requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8010,6 +9198,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8019,7 +9210,7 @@
   "payK": 140,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8036,6 +9227,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8062,6 +9256,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8071,7 +9268,7 @@
   "payK": 85,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8088,6 +9285,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8114,6 +9314,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8123,7 +9326,7 @@
   "payK": 237,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -8139,7 +9342,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State nursing licensure requires 18 (CRNA practice sits on the RN licence)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8149,7 +9358,7 @@
   "payK": 238,
   "training_months": 48,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8165,7 +9374,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State medical licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8175,7 +9390,7 @@
   "payK": 141,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -8191,7 +9406,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State podiatry licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8201,7 +9422,7 @@
   "payK": 60,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8218,6 +9439,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8244,6 +9468,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8269,7 +9496,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "OSHA HAZWOPER-regulated work requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8296,6 +9529,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8322,6 +9558,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8348,6 +9587,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8374,6 +9616,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8383,7 +9628,7 @@
   "payK": 83,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8400,6 +9645,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8409,7 +9657,7 @@
   "payK": 61,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8426,6 +9674,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8452,6 +9703,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8478,6 +9732,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8504,6 +9761,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8513,7 +9773,7 @@
   "payK": 83,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -8530,6 +9790,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8556,6 +9819,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8581,7 +9847,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "LMFT licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8608,6 +9880,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8633,7 +9908,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 21,
+   "source": "Probation/parole officers hold peace-officer status — most jurisdictions require 21"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8660,6 +9941,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8685,7 +9969,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "FAA — the commercial helicopter certificate requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": true,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8712,6 +10002,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": true,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8738,6 +10031,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8763,7 +10059,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -8789,7 +10091,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8816,6 +10124,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8825,7 +10136,7 @@
   "payK": 118,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8842,6 +10153,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8851,7 +10165,7 @@
   "payK": 135,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8868,6 +10182,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8894,6 +10211,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8919,7 +10239,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State medical licensure requires 18"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": true,
   "supplies_stub": true
  },
@@ -8929,7 +10255,7 @@
   "payK": 132,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8945,7 +10271,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "State APRN licensure requires 18 (CNM sits on the RN licence)"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8955,7 +10287,7 @@
   "payK": 63,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": true
   },
   "attrs": {
@@ -8972,6 +10304,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -8981,7 +10316,7 @@
   "payK": 85,
   "training_months": 54,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -8998,6 +10333,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9024,6 +10362,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9050,6 +10391,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9076,6 +10420,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9102,6 +10449,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9128,6 +10478,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9154,6 +10507,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9180,6 +10536,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9206,6 +10565,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9231,7 +10593,13 @@
    "care": 2,
    "creat": 2
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Paramedical tattooing sits under tattoo licensure — 18 in most states"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9257,7 +10625,13 @@
    "care": 0,
    "creat": 2
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Scalp micropigmentation is tattooing — licensed at 18 in most states"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9284,6 +10658,9 @@
    "creat": 2
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9310,6 +10687,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9336,6 +10716,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9361,7 +10744,13 @@
    "care": 2,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "School-psychologist certification requires 18 (and the graduate degree)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9388,6 +10777,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9414,6 +10806,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": true,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9440,6 +10835,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9449,7 +10847,7 @@
   "payK": 80,
   "training_months": 18,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -9465,7 +10863,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 21,
+   "source": "19 CFR 111.11 — a US customs broker licence requires age 21+"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9492,6 +10896,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9517,7 +10924,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Transit agencies hire operators at 18+"
+  },
+  "night_shifts": true,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9527,7 +10940,7 @@
   "payK": 110,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -9543,7 +10956,13 @@
    "care": 0,
    "creat": 0
   },
-  "age_gate": null,
+  "age_gate": {
+   "min": 18,
+   "source": "Business brokerage is practised under a real-estate licence (18+)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9553,7 +10972,7 @@
   "payK": 118,
   "training_months": 36,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -9570,6 +10989,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9596,6 +11018,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9622,6 +11047,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9648,6 +11076,9 @@
    "creat": 1
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9657,7 +11088,7 @@
   "payK": 72,
   "training_months": 9,
   "gates": {
-   "voice_load": false,
+   "voice_load": true,
    "physical": false
   },
   "attrs": {
@@ -9674,6 +11105,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  },
@@ -9700,6 +11134,9 @@
    "creat": 0
   },
   "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
   "riasec_stub": false,
   "supplies_stub": false
  }

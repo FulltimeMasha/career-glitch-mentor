@@ -1,0 +1,44 @@
+Regression gate → https://careerglitch-mvd952edz-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 37) · modes {"bands":32,"direct":6,"insufficient_data":12} · 380s
+Top3 stub share 4% (base 4%) · distinct jobs 54 · most frequent: UX/UI Designer 9, Corporate Trainer 4, Project Manager 4, Yacht Broker 4, Home Organizer (pro) 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 1 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD copy matches count (no "three" with <3 cards)  — 15 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none n=2
+   · random #2 age=60 floor=90 red=no_relocation+no_public_voice n=2
+   · random #5 age=15 floor=0 red=no_degree n=2
+   · random #10 age=52 floor=0 red=no_relocation+no_kids n=2
+   · random #14 age=45 floor=130 red=none n=2
+   · random #20 age=45 floor=20 red=no_relocation+no_public_voice n=2
+
+HARD pay below floor only with explicit top-decile reason  — 7 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none → Corporate Trainer ($69K, 9mo) status=below_floor
+   · random #2 age=60 floor=90 red=no_relocation+no_public_voice → Home Inspector ($75K, 9mo) status=below_floor
+   · random #23 age=19 floor=70 red=no_nights → Corporate Trainer ($69K, 9mo) status=below_floor
+   · random #26 age=15 floor=90 red=no_nights+no_relocation+no_public_voice+no_kids → Dispatcher (trucking) ($45K, 3.5mo) status=below_floor
+   · random #34 age=28 floor=90 red=none → Spa Owner ($75K, 9mo) status=below_floor
+   · random #36 age=28 floor=50 red=no_nights+no_degree → Home Organizer (pro) ($45K, 3.5mo) status=below_floor
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · UX/UI Designer in 9 of 37 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 21 of 37
+
+FAIL — 4 hard + 2 soft rule(s) broken. Do not deploy.

@@ -24,6 +24,15 @@ Field rules (model v2 §1в + science map §4 — nothing is invented):
                       the file is a frozen snapshot (science map §4)
   abilities_lv        Abilities.txt scale LV (0..7), keyed by Element ID
   skills_lv           Skills.txt scale LV (0..7), keyed by Element ID
+  work_context        Work Context.txt for three elements (cause-B fields,
+                      28.10.2026): Public Speaking 4.C.1.a.2.c, Telephone
+                      Conversations 4.C.1.a.2.f, Face-to-Face Discussions
+                      4.C.1.a.2.l — scale CX (mean, 1..5) plus the CXP
+                      category-5 share ("every day", %) where rated. Ten
+                      base SOCs have no Work Context rows at all in 30.2
+                      (e.g. 27-2091 Disc Jockeys) — the entry then carries
+                      work_context = null and the loader falls back to the
+                      editorial exception tables, flagged.
   job_zone            Job Zones.txt (1..5)
   tasks               top-5 Task Statements by Task Ratings scale IM
   bls_ai_exposure     ONLY where an authoritative statement of the BLS
@@ -386,6 +395,25 @@ def main():
     abilities_lv, ability_names = lv_vectors('Abilities.txt')
     skills_lv, skill_names = lv_vectors('Skills.txt')
 
+    # --- Work Context (cause B): CX mean + CXP category-5 share for the
+    # three elements the base fields derive from. Occupations without
+    # incumbent-survey rows simply never appear here.
+    WC_ELEMENTS = {
+        '4.C.1.a.2.c': 'public_speaking',
+        '4.C.1.a.2.f': 'telephone',
+        '4.C.1.a.2.l': 'face_to_face',
+    }
+    work_context = {}
+    for r in read_tsv('Work Context.txt'):
+        key = WC_ELEMENTS.get(r['Element ID'])
+        if not key:
+            continue
+        d = work_context.setdefault(r['O*NET-SOC Code'], {})
+        if r['Scale ID'] == 'CX':
+            d[key + '_cx'] = round(float(r['Data Value']), 2)
+        elif r['Scale ID'] == 'CXP' and r['Category'] == '5':
+            d[key + '_daily_pct'] = round(float(r['Data Value']), 1)
+
     task_text = {}
     for r in read_tsv('Task Statements.txt'):
         task_text[(r['O*NET-SOC Code'], r['Task ID'])] = r['Task']
@@ -457,6 +485,11 @@ def main():
                 'skills_lv': ([skills_lv[soc].get(eid) for eid in skill_names]
                               if soc in skills_lv else None),
                 'tasks': top_tasks(soc),
+                # Work Context for the matched SOC (cause B): the raw
+                # CX/CXP values the loader derives public_voice and the
+                # voice_load telephone leg from — stored raw, derived
+                # once in the loader, so the two can never drift.
+                'work_context': work_context.get(soc),
             })
             # Supplies donor: the occupation's own Work Values row does
             # not exist in 30.2 — borrow the extent from the nearest
@@ -495,6 +528,7 @@ def main():
             'abilities_elements': ability_names,
             'skills_elements': skill_names,
             'bls_ai_exposure_note': 'Populated only from read authoritative statements (see per-entry source/tier). The full BLS XLSX could not be downloaded from the build environment (Akamai 403); unlisted occupations stay null.',
+            'work_context_note': 'Work Context.txt (O*NET 30.2): CX mean (1..5) and CXP category-5 share (%) for Public Speaking (4.C.1.a.2.c), Telephone Conversations (4.C.1.a.2.f) and Face-to-Face Discussions (4.C.1.a.2.l), added 28.10.2026 for the cause-B base fields (public_voice, voice_load). Null where the occupation has no Work Context rows.',
             'professions_total': len(profs),
             'professions_matched': matched,
         },

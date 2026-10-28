@@ -237,6 +237,7 @@ const BLOCK_REASON_PHRASES = {
   public_voice_red_line: 'crossed your no-public-voice line',
   kids_red_line: 'crossed your no-children line',
   nights_red_line: 'crossed your no-nights line',
+  relocation_red_line: 'crossed your no-relocation line',
   physical_limit_gate: 'collided with the physical limit you named',
   age_gate: 'sat behind a legal age limit',
   perceived_fit_veto: 'got your own "not mine"',
@@ -352,21 +353,22 @@ export function riasecSpread(personRiasec) {
 // would waste the person's attention.
 // ---------------------------------------------------------------------------
 
-// Professions whose product IS the person's own public voice/performance.
-// A "no public voice" red line excludes exactly these.
-export const PUBLIC_VOICE_SLUGS = new Set([
-  'podcast-producer', 'streamer-content-creator', 'dj-event-host',
-  'voice-actor', 'speech-public-speaking-coach',
-]);
 // Professions whose working day is spent WITH children as the subjects.
+// (Still a slug set: the base carries no children-contact field yet —
+// out of the cause-B scope, which covered nights / public voice /
+// relocation / voice load / age.)
 export const KIDS_SLUGS = new Set([
   'preschool-teacher', 'aba-therapist-kids', 'nanny-family-assistant-pro',
   'child-life-specialist',
 ]);
-// Professions where night work is structural, not a scheduling choice.
-// (The base carries no per-profession shift data yet; this set is
-// deliberately minimal — only roles where nights are definitional.)
-export const NIGHT_SLUGS = new Set(['air-traffic-controller']);
+// Cause B (28.10.2026): the public-voice and night slug sets that used
+// to live here are RETIRED. Both facts are base fields now —
+// prof.public_voice and prof.night_shifts, derived once in
+// professions.mjs (O*NET Work Context rule + hand-reviewed editorial
+// sets) — and prof.relocation_required joins them: the no_relocation
+// red line collected since Day 1 finally has a field to check. A
+// second, name-based copy of any of these facts must never grow back
+// here or in the gate: one fact, one producer, fields only.
 
 // "No multi-year degree" as a coded red line → a conservative training cap:
 // certificate and associate routes (up to a year) stay legal; degree-length
@@ -393,9 +395,10 @@ export function topBlockReason(person, prof) {
   if (prof.verdict === 'NO') return 'base_verdict_no';
   const cap = trainingCapMonths(person);
   if (cap != null && isNum(prof.training_months) && prof.training_months > cap) return 'training_red_line';
-  if (red.includes('no_public_voice') && PUBLIC_VOICE_SLUGS.has(prof.slug)) return 'public_voice_red_line';
+  if (red.includes('no_public_voice') && prof.public_voice === true) return 'public_voice_red_line';
   if (red.includes('no_kids') && KIDS_SLUGS.has(prof.slug)) return 'kids_red_line';
-  if (red.includes('no_nights') && NIGHT_SLUGS.has(prof.slug)) return 'nights_red_line';
+  if (red.includes('no_nights') && prof.night_shifts === true) return 'nights_red_line';
+  if (red.includes('no_relocation') && prof.relocation_required === true) return 'relocation_red_line';
   if (healthLimits.includes('physical') && prof.attrs && prof.attrs.hands === 2) return 'physical_limit_gate';
   if (prof.age_gate && isNum(person.age)) {
     if (isNum(prof.age_gate.max) && person.age > prof.age_gate.max) return 'age_gate';

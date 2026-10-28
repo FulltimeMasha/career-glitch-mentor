@@ -58,6 +58,7 @@ const UNSOURCED_FIELDS = [
   'work_values_frozen_date',
   'abilities_lv',
   'skills_lv',
+  'work_context',
   'inflow_competition_flag',
   'license_type',
 ];
@@ -568,6 +569,129 @@ const EDITORIAL_VERDICTS = {
 const AGE_GATES = {
   'air-traffic-controller': { max: 30, source: 'FAA — controller applicants must be under 31 at entry' },
   'aircraft-dispatcher-faa': { min: 23, source: 'FAA — the aircraft dispatcher certificate requires age 23+' },
+  // --- Cause-B expansion (28.10.2026): every entry is a statutory or
+  // licensing floor, or — for the owner block — the legal-majority rule
+  // for signing the contracts the business runs on. Deliberately NOT
+  // derived from attrs.lic: lic==2 also covers roles a 16–17-year-old
+  // may legally enter in many states (cosmetology-family licences,
+  // apprenticeships), so an automatic lic→age rule would over-block.
+  // Per-entry sources below; the full journal is in
+  // DATA_PASS_CHANGELOG.md (cause-B entry).
+  // 21+ — federal interstate / sworn-officer floors.
+  'cdl-truck-driver': { min: 21, source: 'FMCSA — interstate commercial driving requires 21 (the intrastate floor is 18)' },
+  'owner-operator-trucking': { min: 21, source: 'FMCSA — interstate commercial driving requires 21 (the intrastate floor is 18)' },
+  'customs-broker': { min: 21, source: '19 CFR 111.11 — a US customs broker licence requires age 21+' },
+  'police-officer': { min: 21, source: 'Most US jurisdictions set 21 for sworn officers (some hire at 18–20); the federal standard is 21' },
+  'probation-officer': { min: 21, source: 'Probation/parole officers hold peace-officer status — most jurisdictions require 21' },
+  // 18 — FAA / USCG certificates.
+  'commercial-pilot': { min: 18, source: 'FAA — the commercial pilot certificate requires 18 (the airline ATP certificate: 23)' },
+  'helicopter-pilot': { min: 18, source: 'FAA — the commercial helicopter certificate requires 18' },
+  'drone-pilot-commercial': { min: 16, source: 'FAA — Part 107 remote-pilot certification requires 16' },
+  'aircraft-mechanic-a-p': { min: 18, source: 'FAA — the mechanic certificate (A&P) requires 18' },
+  'boat-captain': { min: 18, source: 'USCG — the OUPV/master licence requires 18' },
+  'ship-engineer-merchant-marine': { min: 18, source: 'USCG — officer endorsements on the merchant mariner credential require 18' },
+  'commercial-diver': { min: 18, source: 'ADC commercial-diver certification requires 18' },
+  // 18 — state-licensed sales, finance and brokerage.
+  'insurance-agent': { min: 18, source: 'State insurance producer licensing requires 18' },
+  'commercial-insurance-producer': { min: 18, source: 'State insurance producer licensing requires 18' },
+  'insurance-claims-adjuster': { min: 18, source: 'State adjuster licensing (in licensing states) requires 18' },
+  'real-estate-agent': { min: 18, source: 'State real-estate licensing requires 18' },
+  'real-estate-appraiser': { min: 18, source: 'State appraiser licensing requires 18' },
+  'business-broker': { min: 18, source: 'Business brokerage is practised under a real-estate licence (18+)' },
+  'yacht-broker': { min: 18, source: 'Yacht brokerage licensing (e.g. Florida DBPR yacht broker) requires 18' },
+  'property-manager': { min: 18, source: 'Third-party property management requires a real-estate licence in most states (18+)' },
+  'mortgage-broker': { min: 18, source: 'NMLS mortgage licensing under the SAFE Act requires 18' },
+  'loan-officer': { min: 18, source: 'NMLS mortgage licensing under the SAFE Act requires 18' },
+  'personal-financial-advisor': { min: 18, source: 'FINRA securities licensing requires 18' },
+  'accountant': { min: 18, source: 'CPA licensure requires 18 in most states (this card is the CPA track)' },
+  'general-contractor': { min: 18, source: 'Contractor licensing requires 18 in licensing states' },
+  'home-inspector': { min: 18, source: 'Home-inspector licensing (in licensing states) requires 18' },
+  // 18 — state-board licensed clinical professions (licence + degree).
+  'registered-nurse': { min: 18, source: 'State nursing licensure requires 18' },
+  'registered-nurse-2': { min: 18, source: 'State nursing licensure requires 18 (CRNA practice sits on the RN licence)' },
+  'lpn-lvn': { min: 18, source: 'State practical-nursing licensure requires 18' },
+  'nurse-practitioner': { min: 18, source: 'State APRN licensure requires 18' },
+  'physician-assistant': { min: 18, source: 'State PA licensure requires 18' },
+  'pharmacist': { min: 18, source: 'State pharmacy licensure requires 18' },
+  'physical-therapist': { min: 18, source: 'State PT licensure requires 18' },
+  'occupational-therapist': { min: 18, source: 'State OT licensure requires 18' },
+  'speech-therapist': { min: 18, source: 'State speech-language pathology licensure requires 18' },
+  'respiratory-therapist': { min: 18, source: 'State respiratory-care licensure requires 18' },
+  'dentist': { min: 18, source: 'State dental licensure requires 18' },
+  'optometrist': { min: 18, source: 'State optometry licensure requires 18' },
+  'veterinarian': { min: 18, source: 'State veterinary licensure requires 18' },
+  'chiropractor': { min: 18, source: 'State chiropractic licensure requires 18' },
+  'psychiatrist': { min: 18, source: 'State medical licensure requires 18' },
+  'physician': { min: 18, source: 'State medical licensure requires 18' },
+  'general-surgeon': { min: 18, source: 'State medical licensure requires 18' },
+  'podiatrist': { min: 18, source: 'State podiatry licensure requires 18' },
+  'audiologist': { min: 18, source: 'State audiology licensure requires 18' },
+  'certified-nurse-midwife': { min: 18, source: 'State APRN licensure requires 18 (CNM sits on the RN licence)' },
+  'certified-anesthesiologist-assistant': { min: 18, source: 'State AA licensure requires 18 (in licensing states)' },
+  'cardiovascular-perfusionist': { min: 18, source: 'Perfusionist licensure/certification requires 18 (in licensing states)' },
+  'radiation-therapist': { min: 18, source: 'State radiation-therapy licensure requires 18' },
+  'athletic-trainer': { min: 18, source: 'State athletic-trainer licensure requires 18 (in licensing states)' },
+  'genetic-counselor': { min: 18, source: 'State genetic-counsellor licensure requires 18 (in licensing states)' },
+  'nutrition-coach-dietitian': { min: 18, source: 'Registered-dietitian licensure requires 18 (the licensed anchor of this card)' },
+  'psychologist-therapist': { min: 18, source: 'State psychology licensure requires 18' },
+  'social-worker': { min: 18, source: 'Clinical social-work licensure requires 18' },
+  'school-counselor': { min: 18, source: 'School-counsellor certification requires 18 (and the master\'s degree)' },
+  'school-psychologist': { min: 18, source: 'School-psychologist certification requires 18 (and the graduate degree)' },
+  'substance-abuse-counselor': { min: 18, source: 'Substance-use counsellor licensure/certification requires 18 in most states' },
+  'marriage-and-family-therapist': { min: 18, source: 'LMFT licensure requires 18' },
+  // 18 — regulated public-safety / technical licences and hiring floors.
+  'firefighter': { min: 18, source: 'US fire departments hire at 18 (the standard minimum)' },
+  'flight-attendant': { min: 18, source: 'US airlines hire flight attendants from 18 (some carriers set 21)' },
+  'private-investigator': { min: 18, source: 'State PI licensing requires 18 (some states set 21)' },
+  'funeral-director': { min: 18, source: 'State funeral-service licensing requires 18' },
+  'nuclear-reactor-operator': { min: 18, source: 'NRC operator licensing requires 18' },
+  'water-wastewater-treatment-operator': { min: 18, source: 'State water/wastewater operator licensing requires 18' },
+  'elevator-mechanic': { min: 18, source: 'Elevator-mechanic licensing (in licensing states) requires 18' },
+  'pest-control-tech': { min: 18, source: 'Pesticide applicator licensing requires 18 (EPA/state)' },
+  'hazardous-materials-removal-worker': { min: 18, source: 'OSHA HAZWOPER-regulated work requires 18' },
+  'land-surveyor': { min: 18, source: 'Land-surveyor licensure requires 18 (and the degree)' },
+  'bus-driver': { min: 18, source: 'The CDL floor is 18 for intrastate commercial driving (interstate: 21); transit and school employers hire 18+' },
+  'train-conductor': { min: 18, source: 'Railroads hire conductors at 18+ (FRA-regulated safety-sensitive role)' },
+  'locomotive-engineer': { min: 18, source: 'Railroads hire engineers at 18+ (FRA-regulated safety-sensitive role)' },
+  'subway-streetcar-operator': { min: 18, source: 'Transit agencies hire operators at 18+' },
+  // 18 — body-art licensure.
+  'tattoo-artist': { min: 18, source: 'Tattooing is licensed at 18 in most states' },
+  'tattoo-artist-2': { min: 18, source: 'Paramedical tattooing sits under tattoo licensure — 18 in most states' },
+  'body-piercing-artist': { min: 18, source: 'Body-piercing licensure requires 18 in most states' },
+  'scalp-micropigmentation-artist': { min: 18, source: 'Scalp micropigmentation is tattooing — licensed at 18 in most states' },
+  // 18 — business ownership: the contracts the business runs on
+  // (formation, leases, business credit, client contracts) require
+  // legal majority. One shared source line for the whole block.
+  'beauty-salon-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'spa-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'food-truck-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'bakery-caf-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'meal-prep-business-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'childcare-center-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18); centre licensing also sets 18+ for the licensee' },
+  'moving-company-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'cleaning-company-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'handyman-company-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'painting-company-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'lawn-care-company-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'pressure-washing-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'window-cleaning-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'junk-removal-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'pet-grooming-salon-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'pet-boarding-daycare-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'mobile-mechanic-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'vending-atm-route-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'laundromat-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'self-storage-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'senior-home-care-agency-owner': { min: 18, source: 'Home-care agency ownership/administration is licensed (18+); its contracts also require legal majority' },
+  'tutoring-center-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'photo-booth-event-rentals-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'gym-fitness-studio-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'car-wash-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'medical-courier-owner-route': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'auto-detailing-mobile-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
+  'real-estate-investor-flips': { min: 18, source: 'Buying and selling property requires legal majority (18) — contracts and financing' },
+  'real-estate-investor-rentals': { min: 18, source: 'Buying and holding rental property requires legal majority (18) — contracts and financing' },
+  'franchise-owner-home-services': { min: 18, source: 'A franchise agreement is a major contract — it requires legal majority (18)' },
 };
 
 // ---------------------------------------------------------------------------
@@ -589,6 +713,145 @@ const VOICE_PRIMARY_SLUGS = new Set([
   'speech-public-speaking-coach', // demonstrates voice work all day
   'customer-service-representative', // call-centre-heavy: back-to-back calls
 ]);
+
+// ---------------------------------------------------------------------------
+// CAUSE-B BASE FIELDS (28.10.2026). The red-line filters used to read
+// hand-kept slug sets inside scoring.mjs (nights: one slug; public
+// voice: five) and relocation was never checked at all. The fields now
+// live on the profession object, derived HERE — the only producer —
+// from the sources named per field, and scoring reads fields only.
+// The full per-field journal (sources, borderline calls, coverage) is
+// in DATA_PASS_CHANGELOG.md, cause-B entry.
+// ---------------------------------------------------------------------------
+
+// night_shifts — night work is STRUCTURAL to the job (a normal entrant
+// is rostered onto overnight/rotating shifts), not an occasional
+// on-call. O*NET carries no such element, so this is an editorial set,
+// reviewed by hand per profession. Deliberate FALSEs worth recording:
+// baker (03:00–04:00 starts are early mornings, not night shifts),
+// doula and pharmacist (per the design review), drone-pilot-commercial
+// (daylight operations — its baseline gate hit was a name-regex false
+// positive on the gate side, never an engine fact).
+const NIGHT_SHIFTS_SLUGS = new Set([
+  // inpatient / 24-7 clinical operations
+  'registered-nurse', 'registered-nurse-2', 'lpn-lvn', 'nurse-practitioner',
+  'physician-assistant', 'emt-paramedic', 'respiratory-therapist',
+  'surgical-technologist', 'dialysis-technician', 'lab-technician',
+  'medical-laboratory-scientist', 'radiology-tech', 'mri-technologist',
+  'sonographer-ultrasound', 'sterile-processing-tech', 'sleep-technologist',
+  'cardiovascular-technologist', 'ekg-technician', 'nuclear-medicine-technologist',
+  'physician', 'general-surgeon', 'certified-anesthesiologist-assistant',
+  'cardiovascular-perfusionist', 'certified-nurse-midwife', 'home-health-aide',
+  // transport operations that run around the clock
+  'cdl-truck-driver', 'owner-operator-trucking', 'train-conductor',
+  'locomotive-engineer', 'subway-streetcar-operator', 'air-traffic-controller',
+  'aircraft-dispatcher-faa', 'bus-driver', 'ship-engineer-merchant-marine',
+  'harbor-pilot', 'boat-captain', 'tow-truck-operator', 'commercial-pilot',
+  'helicopter-pilot', 'flight-attendant',
+  // public safety / 24-7 services
+  'police-officer', 'firefighter', 'funeral-director',
+  // 24-7 plants, networks and line maintenance
+  'power-plant-operator', 'nuclear-reactor-operator',
+  'water-wastewater-treatment-operator', 'millwright',
+  'semiconductor-technician', 'data-center-technician', 'aircraft-mechanic-a-p',
+]);
+
+// relocation_required — living away from home, or relocating to an
+// assigned work base, is a CONDITION OF ENTRY (not ordinary travel and
+// not the one-off move any job can imply). Editorial white list.
+// Deliberate exclusions (design review): owner-operator-trucking,
+// train-conductor, locomotive-engineer, boat-captain — weeks away are
+// ABSENCE, not relocation, and stay ungated until the founder rules.
+const RELOCATION_SLUGS = new Set([
+  'ship-engineer-merchant-marine', // months at sea per contract
+  'harbor-pilot', // licensed only for one pilotage district — the move is the entry ticket
+  'commercial-diver', // offshore / saturation rotations, weeks on site
+  'flight-attendant', // the airline assigns the crew base; you relocate to it
+  'commercial-pilot', // base assignment, same mechanics as cabin crew
+  'helicopter-pilot', // EMS / offshore bases are assigned, often remote
+  'tower-climber-telecom', // itinerant tower crews, weeks on the road
+  'wind-turbine-technician', // travelling-tech crews are the modal entry path
+  'lineworker-power-lines', // apprentice line work is travelling / storm-crew based
+]);
+
+// public_voice editorial exceptions — the Work Context rule (below)
+// measures the matched SOC occupation, and for these cards the
+// occupation's survey average dilutes exactly the part the card sells.
+// Membership is by the card's own definition of the work:
+//   podcast-producer / dj-event-host / speech-public-speaking-coach —
+//     carried over from the retired scoring-side slug set (founder QA);
+//     their SOCs (Producers & Directors 27-2012, Disc Jockeys 27-2091 —
+//     no Work Context rows exist at all, Self-Enrichment Teachers
+//     25-3021) survey the back-office average, not the host's day.
+//   online-course-creator, funeral-director — the two recorded misses
+//     of the old set (brief §B; funeral directors present to assembled
+//     families daily, course creators record/perform on camera).
+const PUBLIC_VOICE_EXCEPTIONS = new Set([
+  'podcast-producer', 'dj-event-host', 'speech-public-speaking-coach',
+  'online-course-creator', 'funeral-director',
+]);
+
+// voice_load manual additions (brief §B, recorded L10-type misses):
+// phone-first sales / recruiting roles whose O*NET Speaking level sits
+// under the rule threshold while the working day is back-to-back calls.
+const VOICE_LOAD_MANUAL_SLUGS = new Set([
+  'recruiter', 'commercial-insurance-producer',
+]);
+
+const SPEAKING_SKILL_ID = '2.A.1.d'; // O*NET Skills element "Speaking"
+
+/**
+ * Derive the cause-B fields on one built profession, AFTER the O*NET
+ * import merge (the derivations read work_context / skills_lv). Every
+ * value carries its provenance in data_flags:
+ *   night_shifts_editorial / relocation_editorial — the hand-reviewed
+ *     sets above (no O*NET source exists for either fact);
+ *   public_voice_onet / public_voice_editorial — Work Context rule vs
+ *     the exception set; no flag + work_context null = unmeasured, and
+ *     the field is false (an unmeasured profession must not be blocked
+ *     on a guess);
+ *   voice_load_onet / voice_load_editorial / voice_load_from_category —
+ *     Speaking-rule vs manual sets vs the Day-1 people-category
+ *     derivation, which stays ONLY as the care/teaching fallback (the
+ *     L10 comment above): a measured low Speaking level must not strip
+ *     protection from roles whose day is continuous 1:1 talking.
+ */
+function finalizeBaseFields(p) {
+  p.night_shifts = NIGHT_SHIFTS_SLUGS.has(p.slug);
+  p.data_flags.push('night_shifts_editorial');
+  p.relocation_required = RELOCATION_SLUGS.has(p.slug);
+  p.data_flags.push('relocation_editorial');
+
+  if (PUBLIC_VOICE_EXCEPTIONS.has(p.slug)) {
+    p.public_voice = true;
+    p.data_flags.push('public_voice_editorial');
+  } else if (p.work_context) {
+    p.public_voice =
+      (typeof p.work_context.public_speaking_cx === 'number' && p.work_context.public_speaking_cx >= 3.5) ||
+      (typeof p.work_context.public_speaking_daily_pct === 'number' && p.work_context.public_speaking_daily_pct >= 50);
+    p.data_flags.push('public_voice_onet');
+  } else {
+    p.public_voice = false;
+  }
+
+  const speaking = p.skills_lv ? p.skills_lv[SPEAKING_SKILL_ID] : null;
+  const telCx = p.work_context ? p.work_context.telephone_cx : null;
+  if (VOICE_PRIMARY_SLUGS.has(p.slug) || VOICE_LOAD_MANUAL_SLUGS.has(p.slug)) {
+    p.gates.voice_load = true;
+    p.data_flags.push('voice_load_editorial');
+  } else if (
+    typeof speaking === 'number' &&
+    (speaking >= 4.0 || (speaking >= 3.75 && typeof telCx === 'number' && telCx >= 4.5))
+  ) {
+    p.gates.voice_load = true;
+    p.data_flags.push('voice_load_onet');
+  } else if (p.category === 'people' && p.attrs && p.attrs.people === 2) {
+    p.gates.voice_load = true;
+    p.data_flags.push('voice_load_from_category');
+  } else {
+    p.gates.voice_load = false;
+  }
+}
 
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
 const normName = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -862,15 +1125,19 @@ export function buildProfessions(profData, roadmapData) {
       riasec,
       riasec_stub: true,
       gates: {
-        // voice_load: voice-PRIMARY professions by explicit slug set
-        // (audit L10 — see VOICE_PRIMARY_SLUGS above), plus the Day-1
-        // derivation: a people-category profession with maximum
-        // people-contact is voice-heavy all day (calls, clients,
-        // teaching aloud). Used by the factual voice gate in scoring.
-        voice_load: VOICE_PRIMARY_SLUGS.has(slug) || (category === 'people' && people === 2),
+        // voice_load: FINAL value is derived in finalizeBaseFields()
+        // after the O*NET merge (manual voice-primary set ∪ Speaking-LV
+        // rule ∪ people-category fallback — see the cause-B block
+        // above). The literal here is only the pre-import placeholder.
+        voice_load: false,
         // physical: maximum hands-on load.
         physical: hands === 2,
       },
+      // --- cause-B base fields (28.10.2026): placeholders, derived for
+      // real in finalizeBaseFields() once the import has merged.
+      night_shifts: false,
+      public_voice: false,
+      relocation_required: false,
       // --- model v2 §1в sourced fields: null until applyOnetImport()
       // fills them from data/onet-import.json; flagged while null.
       onet_soc: null,
@@ -891,12 +1158,18 @@ export function buildProfessions(profData, roadmapData) {
       supplies_neighbor: null,
       abilities_lv: null,
       skills_lv: null,
+      work_context: null,
       inflow_competition_flag: null,
       license_type: null,
       data_flags: dataFlags,
     };
   });
-  return applyOnetImport(built);
+  const merged = applyOnetImport(built);
+  // Cause-B fields derive from the merged record (work_context,
+  // skills_lv), so they are finalised only now — one producer, one
+  // place, no second copy of the rules anywhere downstream.
+  for (const p of merged) finalizeBaseFields(p);
+  return merged;
 }
 
 // ---------------------------------------------------------------------------
@@ -1007,6 +1280,12 @@ export function applyOnetImport(profs) {
       if (ab) { p.abilities_lv = ab; dropFlags(p, ['abilities_lv']); }
       const sk = expandVec(e.skills_lv, imp.meta && imp.meta.skills_elements);
       if (sk) { p.skills_lv = sk; dropFlags(p, ['skills_lv']); }
+      // Work Context raw values (cause B): public_speaking / telephone /
+      // face_to_face CX means + daily shares for the matched SOC. Null
+      // where the occupation has no Work Context rows in 30.2 — the
+      // field derivation in finalizeBaseFields handles the absence.
+      p.work_context = e.work_context ?? null;
+      if (p.work_context) dropFlags(p, ['work_context']);
       // BLS AI exposure: populated only where an authoritative statement
       // was read (tier + source travel with the value). Null elsewhere —
       // the flag stays on, because the field is still unsourced there.

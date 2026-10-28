@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { loadProfessions } from '../api/_lib/engine/professions.mjs';
-import { scorePerson, scoreCandidate } from '../api/_lib/engine/scoring.mjs';
+import { scorePerson, scoreCandidate, topBlockReason } from '../api/_lib/engine/scoring.mjs';
 
 const professions = loadProfessions();
 
@@ -265,6 +265,79 @@ test('factual gates: documents=no + hard license → D; voice limit excludes voi
   const out = scorePerson(voicePerson, professions);
   const voiceLoadedSlugs = new Set(professions.filter((p) => p.gates.voice_load).map((p) => p.slug));
   assert.ok(out.top3.every((r) => !voiceLoadedSlugs.has(r.slug)), 'no voice-load profession may appear in top3 for a voice-limited person');
+});
+
+// ---------------------------------------------------------------------------
+// Cause B (28.10.2026): red lines read base FIELDS, not name heuristics.
+// ---------------------------------------------------------------------------
+test('cause B: base carries the red-line fields with provenance, known values hold', () => {
+  for (const p of professions) {
+    assert.equal(typeof p.night_shifts, 'boolean', `${p.slug}: night_shifts must be a boolean field`);
+    assert.equal(typeof p.public_voice, 'boolean', `${p.slug}: public_voice must be a boolean field`);
+    assert.equal(typeof p.relocation_required, 'boolean', `${p.slug}: relocation_required must be a boolean field`);
+    assert.ok(p.data_flags.includes('night_shifts_editorial'), `${p.slug}: night provenance flag`);
+    assert.ok(p.data_flags.includes('relocation_editorial'), `${p.slug}: relocation provenance flag`);
+    if (p.public_voice) {
+      assert.ok(
+        p.data_flags.includes('public_voice_onet') || p.data_flags.includes('public_voice_editorial'),
+        `${p.slug}: a public_voice=true needs its provenance flag`,
+      );
+    }
+  }
+  const bySlug = Object.fromEntries(professions.map((p) => [p.slug, p]));
+  // nights: structural night work flagged; daylight work is not
+  assert.equal(bySlug['registered-nurse'].night_shifts, true);
+  assert.equal(bySlug['police-officer'].night_shifts, true);
+  assert.equal(bySlug['drone-pilot-commercial'].night_shifts, false);
+  assert.equal(bySlug['baker'].night_shifts, false); // 3–4am starts are early mornings, not night shifts
+  // public voice: measured rule + editorial exceptions; the old gate's
+  // recorded false positives (flagged via the voice_load mix-up) stay false
+  assert.equal(bySlug['voice-actor'].public_voice, true);
+  assert.equal(bySlug['online-course-creator'].public_voice, true);
+  assert.equal(bySlug['funeral-director'].public_voice, true);
+  assert.equal(bySlug['registered-nurse'].public_voice, false);
+  assert.equal(bySlug['community-health-worker'].public_voice, false);
+  assert.equal(bySlug['wellness-coach'].public_voice, false);
+  // relocation: the previously dead red line has a field now; absence is not relocation
+  assert.equal(bySlug['ship-engineer-merchant-marine'].relocation_required, true);
+  assert.equal(bySlug['flight-attendant'].relocation_required, true);
+  assert.equal(bySlug['owner-operator-trucking'].relocation_required, false);
+  assert.equal(bySlug['software-developer'].relocation_required, false);
+  // age gates: the cause-B statutory table
+  assert.equal(bySlug['cdl-truck-driver'].age_gate.min, 21);
+  assert.equal(bySlug['commercial-insurance-producer'].age_gate.min, 18);
+  assert.equal(bySlug['business-broker'].age_gate.min, 18);
+  assert.equal(bySlug['yacht-broker'].age_gate.min, 18);
+  assert.equal(bySlug['tutoring-center-owner'].age_gate.min, 18);
+  assert.equal(bySlug['air-traffic-controller'].age_gate.max, 30); // pre-existing gate untouched
+  // voice load: the recorded misses are covered by the field now
+  assert.equal(bySlug['commercial-insurance-producer'].gates.voice_load, true);
+  assert.equal(bySlug['recruiter'].gates.voice_load, true);
+});
+
+test('cause B: topBlockReason reads fields — the relocation line is alive', () => {
+  const mk = (over) => makeProf({
+    age_gate: null, night_shifts: false, public_voice: false, relocation_required: false, ...over,
+  });
+  const person = (red_lines) => strongPerson({ red_lines });
+  assert.equal(topBlockReason(person(['no_relocation']), mk({ relocation_required: true })), 'relocation_red_line');
+  assert.equal(topBlockReason(person(['no_relocation']), mk({})), null);
+  assert.equal(topBlockReason(person(['no_nights']), mk({ night_shifts: true })), 'nights_red_line');
+  assert.equal(topBlockReason(person(['no_nights']), mk({})), null);
+  assert.equal(topBlockReason(person(['no_public_voice']), mk({ public_voice: true })), 'public_voice_red_line');
+  // voice_load alone must NOT trip the public-voice line — the retired
+  // gate rule conflated the two fields; the engine never may.
+  assert.equal(topBlockReason(person(['no_public_voice']), mk({ gates: { voice_load: true, physical: false } })), null);
+});
+
+test('cause B: voice health limit gates Commercial Insurance Producer at category D', () => {
+  const cip = professions.find((p) => p.slug === 'commercial-insurance-producer');
+  const voicePerson = strongPerson({
+    resources: { hours_per_day: 2, budget_k: 5, cushion_months: 3, documents_ok: 'yes', health_limits: ['voice'] },
+  });
+  const cand = scoreCandidate(voicePerson, cip, professions);
+  assert.equal(cand.category, 'D');
+  assert.ok(cand.flags.includes('voice_gate'));
 });
 
 test('pivot: transfer capital rewards adjacent moves, flags unknown current profession', () => {
