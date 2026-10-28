@@ -1196,32 +1196,6 @@
   "supplies_stub": false
  },
  {
-  "slug": "luxury-real-estate-agent",
-  "verdict": "YES",
-  "payK": 140,
-  "training_months": 9,
-  "gates": {
-   "voice_load": false,
-   "physical": false
-  },
-  "attrs": {
-   "pay": 3,
-   "ai": 0,
-   "remote": 1,
-   "lic": 1,
-   "hands": 0,
-   "people": 2,
-   "biz": 1,
-   "tech": 0,
-   "out": 1,
-   "care": 0,
-   "creat": 1
-  },
-  "age_gate": null,
-  "riasec_stub": false,
-  "supplies_stub": false
- },
- {
   "slug": "online-course-creator",
   "verdict": "YES",
   "payK": 75,
