@@ -1427,8 +1427,8 @@
   },
   {
    "file": "api/_lib/engine/professions.mjs",
-   "sha": "9da56350cbce01a9c8bd1f66d10bcd48b8df9021",
-   "size": 51536
+   "sha": "4cf96313dd9abe80b1b543d63f3a5c357456e78d",
+   "size": 52152
   },
   {
    "file": "api/_lib/engine/scoring.mjs",
@@ -1442,33 +1442,33 @@
   },
   {
    "file": "api/_lib/data/onet-import-01.json",
-   "sha": "c043a5bd365e9453a153cc6f27d7719cd0d1f0bf",
-   "size": 79986
+   "sha": "61c237102761cc2f54336ecda88b1bf96f8f5710",
+   "size": 89136
   },
   {
    "file": "api/_lib/data/onet-import-02.json",
-   "sha": "0763151867b61fe1ca6d3d0c53e3a03c20f28985",
-   "size": 79987
+   "sha": "aadcd57e5acac9bdfe6f607c0bdf8366f483e5df",
+   "size": 89445
   },
   {
    "file": "api/_lib/data/onet-import-03.json",
-   "sha": "215679c06eb5b7f50aadc73f3b1347310c79be8a",
-   "size": 79474
+   "sha": "43ec13106d5e28a34efd08288e3573686eec3810",
+   "size": 88732
   },
   {
    "file": "api/_lib/data/onet-import-04.json",
-   "sha": "33659aed07abf25f9151c4ae170cd98c1604adc9",
-   "size": 79376
+   "sha": "6c28e64c25259041cf8b0f4a606780dd1e0ff429",
+   "size": 89823
   },
   {
    "file": "api/_lib/data/onet-import-05.json",
-   "sha": "0a4ae862083ec44a7379786c3b794922a6d30f44",
-   "size": 79027
+   "sha": "cc3a6fac1a31f71d22857f452698522b941c237d",
+   "size": 88300
   },
   {
    "file": "api/_lib/data/onet-import-06.json",
-   "sha": "6ddbfccce62c3a5ea23e65eab8f88279a3480a78",
-   "size": 37037
+   "sha": "5dbd58794e46665e1a49880e1565fc5cc822c7f8",
+   "size": 59529
   },
   {
    "file": "mentor-face.jpg",
@@ -1761,5 +1761,5 @@
    "size": 3006
   }
  ],
- "deployment": "dpl_5wQDg7eKLt49YH234sYcQLMNNAkX"
+ "deployment": "dpl_B5ezzfo2EBotD71iunTBAK3nevrF"
 }

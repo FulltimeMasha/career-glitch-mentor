@@ -262,3 +262,133 @@ gym-fitness-studio-owner (+ scalp-micropigmentation-artist — ниши без
   не порождает), хранимый день плейграунда в playground-days-07.json,
   PDF роадмапа CareerGlitch_LuxuryRealEstateAgent_Roadmap_2027_v1.pdf
   (карточки на него больше нет — файл ни на что не ссылается).
+
+---
+
+## Проход по заглушкам 28.10.2026 — placeholder-профили заменены данными O*NET (стабы 80 → 14)
+
+Решение Маши: «Ну доделай тогда» — дозаполнить все заглушки. Исходное
+состояние: 80 из 373 профессий несли supplies_stub и/или riasec_stub
+(векторы — Day-1 формулы от attrs, deriveStubs). Каждая из 80 строк
+вручную проверена по Occupation Data, Alternate Titles, Sample of
+Reported Titles и задачам O*NET 30.2. Итог: 66 строк полностью
+un-stubbed, 14 оставлены стабами на решение Маши (список ниже).
+
+Ключевой факт источника: Work Values (шкала EX) в O*NET 30.2 покрывает
+874 из 923 data-level оккупаций. У 23 профессий собственной строки EX
+нет (в основном post-2018 split-оккупации) — для них supplies измерены
+на ближайшей рейтингованной родственной оккупации (SUPPLIES_NEIGHBOR в
+scripts/import_onet.py), заимствование записано в данных импорта
+(work_values_neighbor) и на объекте профессии (supplies_neighbor +
+data_flag supplies_from_neighbor) — не выдаётся за собственную строку.
+RIASEC у всех 23 — собственный, из Interests.
+
+### A. Supplies по соседу (23; собственная оккупация связана, строки EX у неё нет)
+- software-developer · своя 15-1252.00 Software Developers → supplies 15-1251.00 Computer Programmers
+- devops-engineer · своя 15-1252.00 → supplies 15-1251.00
+- ai-automation-specialist · своя 15-1252.00 → supplies 15-1251.00
+- mobile-app-developer · своя 15-1252.00 → supplies 15-1251.00
+- site-reliability-engineer · своя 15-1252.00 → supplies 15-1251.00
+- embedded-systems-engineer · своя 15-1252.00 (alternate titles «Embedded Software Engineer») → supplies 15-1251.00
+- data-analyst · своя 15-2051.00 Data Scientists → supplies 15-2041.00 Statisticians (родительская оккупация split-а SOC 2018)
+- data-scientist-ml-engineer · своя 15-2051.00 → supplies 15-2041.00
+- ux-ui-designer · своя 15-1255.00 → supplies 15-1254.00 Web Developers (рейтингованный sibling split)
+- web-designer · своя 15-1255.00 → supplies 15-1254.00
+- ux-researcher · своя 15-1255.00 (alternate title «UX Researcher») → supplies 15-1254.00
+- financial-analyst · своя 13-2051.00 → supplies 13-2052.00 Personal Financial Advisors
+- project-manager · своя 13-1082.00 → supplies 13-1081.00 Logisticians
+- emt-paramedic · своя 29-2042.00 → supplies 33-2011.00 Firefighters (у split-а Paramedics строки EX тоже нет; EMT — в основном fire-service)
+- medical-coder · своя 29-2072.00 → supplies 43-3021.00 Billing and Posting Clerks
+- special-education-teacher · своя 25-2056.00 → supplies 25-2057.00 Special Education Teachers, Middle School
+- bus-driver · своя 53-3051.00 → supplies 53-3052.00 Bus Drivers, Transit and Intercity
+- penetration-tester · своя 15-1299.04 → supplies 15-1212.00 Information Security Analysts
+- digital-forensics-analyst · своя 15-1299.06 → supplies 15-1212.00
+- medical-dosimetrist · своя 29-2036.00 → supplies 29-1124.00 Radiation Therapists
+- histotechnologist · своя 29-2011.04 → supplies 29-2011.00 Medical and Clinical Laboratory Technologists (родитель)
+- film-stage-lighting-technician · своя 27-4015.00 → supplies 27-4011.00 Audio and Video Technicians
+- dj-event-host · своя 27-2091.00 Disc Jockeys, Except Radio (alternate titles «Event Disc Jockey», «Club Disc Jockey») → supplies 27-3011.00 Broadcast Announcers and Radio Disc Jockeys
+
+### B. Связи hold-back профессий (21 проверена; 19 связаны, 1 редакторская внутри, 1 осталась)
+- mechanical-engineer → 17-2141.00 Mechanical Engineers (точная оккупация; оба вектора свои)
+- electrical-engineer → 17-2071.00 Electrical Engineers (точная)
+- audio-video-equipment-technician → 27-4011.00 Audio and Video Technicians (точная)
+- avionics-technician → 49-2091.00 Avionics Technicians (точная)
+- career-and-technical-education-teacher → 25-2032.00 (точная)
+- certified-nurse-midwife → 29-1161.00 Nurse Midwives (точная)
+- customs-broker → 13-1041.08 Customs Brokers (точная детальная)
+- power-plant-operator → 51-8013.00 Power Plant Operators (точная)
+- school-psychologist → 19-3034.00 School Psychologists (точная)
+- subway-streetcar-operator → 53-4041.00 (точная)
+- telecommunications-equipment-installer → 49-2022.00 (точная)
+- platform-engineer → 15-1299.08 Computer Systems Engineers/Architects (автоматч подтверждён по задачам)
+- freight-broker-agent → 43-5011.00 Cargo and Freight Agents (задачи — буквально переговоры и организация перевозок)
+- medical-laboratory-scientist → 29-2011.00 Medical and Clinical Laboratory Technologists (автоматч 19-1042 Medical Scientists был НЕВЕРЕН — исследовательская оккупация)
+- child-life-specialist → 39-9011.00 Childcare Workers (alternate title «Child Life Specialist» у самой оккупации)
+- costume-designer → 27-1022.00 Fashion Designers (alternate title «Costume Designer»)
+- food-stylist → 27-1027.00 Set and Exhibit Designers (alternate title «Food Stylist»)
+- lighting-designer → 27-1027.00 Set and Exhibit Designers (alternate title «Lighting Designer»; автоматч 27-1021 product design отклонён)
+- distiller → 51-9012.00 Still Machine Setters/Operators (alternate title «Distiller»)
+- business-broker → 41-9022.00 Real Estate Sales Agents — РЕДАКТОРСКАЯ связь: reported title у O*NET сидит под Brokerage Clerks (43-4011, securities back office — чужая семья работ); профиль взят у лицензионных продаж активов
+- general-surgeon → ОСТАЛСЯ СТАБОМ (см. раздел E)
+
+### C. Связи ранее unmatched профессий (8)
+- board-certified-behavior-analyst-bcba → 19-3033.00 Clinical and Counseling Psychologists (alternate title «Behavior Analyst»)
+- cnc-machinist-programmer → 51-4041.00 Machinists (alternate title «CNC Machinist»; programmer-only split — 51-9162)
+- data-center-technician → 49-2011.00 Computer/ATM/Office Machine Repairers (ручная проверка: работа — hands-on установка, кабели, ремонт вычислительного железа)
+- esl-adult-literacy-teacher → 25-3011.00 (ESL входит в само название оккупации)
+- sleep-technologist → 29-2099.01 Neurodiagnostic Technologists (в рейтингованных задачах буквально polysomnography, PSG)
+- vertical-farm-technician → 45-2092.00 Farmworkers, Crop/Nursery/Greenhouse (alternate title «Hydroponic Controlled Environment Agricultural Grower»)
+- tattoo-artist-2 (Paramedical Tattoo Artist) → 39-5094.00 Skincare Specialists (практика перманентного макияжа; прецедент permanent-makeup-artist)
+- scalp-micropigmentation-artist → 39-5094.00 Skincare Specialists (SMP — это перманентный макияж; тот же прецедент)
+
+### D. Редакторские связи по соседу (11; своего ряда у роли нет, профиль заимствован и помечен «editorial neighbor» в onet_match и здесь)
+- content-strategist → 13-1161.00 Market Research Analysts and Marketing Specialists (прецедент brand-strategist)
+- online-course-creator → 25-3021.00 Self-Enrichment Teachers (прецедент частных инструкторов)
+- streamer-content-creator → 27-3011.00 Broadcast Announcers and Radio Disc Jockeys
+- ugc-creator → 27-2011.00 Actors
+- doula → 31-1122.00 Personal Care Aides (прецедент elder-care-companion-pro)
+- yacht-broker → 41-9022.00 Real Estate Sales Agents
+- business-broker → 41-9022.00 (см. раздел B)
+- salesforce-administrator → 15-1244.00 Network and Computer Systems Administrators
+- home-organizer-pro → 27-1025.00 Interior Designers (прецедент home-stager)
+- real-estate-investor-flips → 11-9021.00 Construction Managers (прецедент general-contractor)
+- real-estate-investor-rentals → 11-9141.00 Property, Real Estate, and Community Association Managers (прецедент airbnb-co-host)
+- sommelier → 35-3031.00 Waiters and Waitresses (alternate title «Wine Steward» у оккупации-донора)
+
+### E. Связи по reported titles O*NET (2; своей оккупации нет, профиль — дом reported title, заимствование записано)
+- dialysis-technician → 29-2012.00 Medical and Clinical Laboratory Technicians (reported titles «Certified Dialysis Technician», «Hemodialysis Technician»)
+- cardiovascular-perfusionist → 29-2031.00 Cardiovascular Technologists and Technicians (reported title «Perfusionist»)
+
+### F. Остались стабами — на решение Маши (14)
+- general-surgeon — оккупация Surgeons, All Other (29-1249.00) в 30.2 НЕ data-level (нет Job Zone и рейтингов); рейтингованные хирурги — другие специальности, донор незащищаем.
+- customer-success-manager — O*NET паркует reported title под 43-1011 (офисные супервайзеры), профиль канцелярского супервайзера искажает аккаунтную роль.
+- tattoo-artist — ряда нет; Craft Artists отклонён ещё в WS2 (fine art — другая практика), профиль Skincare искажает A-ядро.
+- body-piercing-artist — ряда и титульного дома нет.
+- personal-fashion-stylist — ряда нет; Fashion Designers проектируют одежду, а не стилизуют людей.
+- life-coach — 21-1019 Counselors, All Other в 30.2 не data-level; лицензионная психология (19-3033) искажает нелицензионную практику.
+- laundromat-owner, self-storage-owner, car-wash-owner — absentee-бизнесы без исполняемого ремесла; профиль General/Operations Managers сделал бы их универсальными генералистами (паттерн CIP).
+- resale-flipping-business, etsy-digital-products-seller, print-on-demand-seller, amazon-fba-seller — платформенные продавцы; Retail Salespersons (41-2031) — наёмная роль, противоречит ядру карточек (independence).
+- franchise-owner-home-services — форма бизнеса, не оккупация; единого ремесла нет.
+
+### G. Brewer / Brewmaster — структура НЕ тронута
+- brewer-brewmaster → 51-9012.00: «Brewer» и «Brewmaster» — alternate
+  titles самой оккупации still-machine (пивоваренные сосуды в таксономии —
+  still/kettle family). Данные заполнены, карточка по-прежнему одна.
+  Рекомендация Маше (по паттерну риелтора): Brewer — профессия входа,
+  brewmaster — ступень роста внутри неё; если разделять, то как
+  real-estate-agent/luxury: одна строка входа + пометка ступени в карточке.
+
+### H. Побочные эффекты и целостность
+- Импорт регенерирован из живого списка 373 профессий: сиротская запись
+  luxury-real-estate-agent (кортеж удалён фиксом 28.10) больше не
+  эмитится в data/onet-import.json; в шардах api/_lib/data/ её запись
+  сохранена инертной для байт-стабильности распределения.
+- Проверка диффа импорта: ни одна ранее связанная профессия не сменила
+  SOC; изменения полей у ранее связанных — только 20 строк раздела A
+  (extent + frozen_date + neighbor). professions-base.json: изменились
+  только флаги стабов (66 строк), прочих полей — 0.
+- Шарды перебалансированы по размеру (все ≤ 89,9 КБ при лимите
+  загрузки ~98 КБ): часть хвостовых слагов переехала между шардами,
+  состав и порядок (алфавит) сохранены; загрузчик через шарды даёт
+  идентичный результат, что через единый файл (проверено).
+- Локальные тесты: 22/23 (падает только pre-existing perceived-fit veto).

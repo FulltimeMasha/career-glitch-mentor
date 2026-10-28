@@ -885,6 +885,10 @@ export function buildProfessions(profData, roadmapData) {
       bls_ai_exposure_source: null,
       work_values_extent: null,
       work_values_frozen_date: null,
+      // Set by applyOnetImport() when the supplies extent was measured
+      // on a neighbouring occupation (the occupation's own Work Values
+      // row does not exist in O*NET 30.2): {soc, title, reason}.
+      supplies_neighbor: null,
       abilities_lv: null,
       skills_lv: null,
       inflow_competition_flag: null,
@@ -981,6 +985,13 @@ export function applyOnetImport(profs) {
           .map(([k, v]) => [k, Math.round(((v - 1) / 6) * 10000) / 10000]));
         p.supplies_stub = false;
         dropFlags(p, ['work_values_extent', 'work_values_frozen_date', 'supplies_stub']);
+        if (e.work_values_neighbor) {
+          // The extent is real O*NET data but belongs to a neighbouring
+          // occupation (this occupation has no Work Values row of its
+          // own). Provenance is stored on the object — never hidden.
+          p.supplies_neighbor = e.work_values_neighbor;
+          p.data_flags.push('supplies_from_neighbor');
+        }
       }
       // LV vectors ship as arrays aligned to the meta element order;
       // expand them back to {element_id: level}. A length mismatch is

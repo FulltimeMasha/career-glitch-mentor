@@ -13,6 +13,12 @@ Field rules (model v2 §1в + science map §4 — nothing is invented):
   onet_soc            matched O*NET-SOC code (data-level occupations only)
   riasec_profile      Interests.txt scale OI (0..7) / 7 -> 0..1 per letter
   work_values_extent  Work Values.txt scale EX (1..7), RAW values
+  work_values_neighbor  present ONLY where the occupation has no Work
+                      Values row of its own and the extent was measured
+                      on the nearest rated sibling/parent (SUPPLIES_
+                      NEIGHBOR below); the borrowing is recorded, and
+                      the loader stamps it on the profession object as
+                      supplies_neighbor — never passed off as its own.
   supplies            (EX - 1) / 6 -> 0..1, keyed by the model's 6 values
   work_values_frozen_date  latest Date among the occupation's EX rows —
                       the file is a frozen snapshot (science map §4)
@@ -111,12 +117,12 @@ _O = {
     'caterer': ('11-9051.00', 'caterers operate food-service businesses (Food Service Managers); auto-match hit line food-preparation work', False),
     'farm-ranch-manager': ('11-9013.00', 'Farmers, Ranchers, and Other Agricultural Managers; auto-match hit farmworkers', False),
     'septic-system-installer': ('47-4071.00', 'Septic Tank Servicers and Sewer Pipe Cleaners is the septic occupation; auto-match hit alarm installers', False),
-    'content-strategist': (None, 'auto-match (Document Management Specialists) is a different job; no clean O*NET occupation for content strategy', False),
-    'customer-success-manager': (None, 'auto-match (office-support supervisors) is a different job; no clean O*NET occupation', False),
-    'real-estate-investor-flips': (None, 'auto-match (financial analysts) describes employees, not investor-operators; no clean O*NET occupation', False),
-    'real-estate-investor-rentals': (None, 'auto-match (financial analysts) describes employees, not investor-operators; no clean O*NET occupation', False),
-    'ux-researcher': (None, 'auto-match (interface designers) is a different job; no clean O*NET occupation for UX research', False),
-    'doula': (None, 'auto-match (Midwives) is a clinical provider role; doulas are non-clinical support with no O*NET occupation', False),
+    'content-strategist': ('13-1161.00', 'editorial neighbor: content strategy is audience/content planning inside marketing; measured profile borrowed from Market Research Analysts and Marketing Specialists (same precedent as brand-strategist); auto-match (Document Management Specialists) is a different job', False),
+    'customer-success-manager': (None, 'auto-match (office-support supervisors) is a different job; O*NET also parks the reported title under 43-1011, but that clerical-supervisor profile mis-shapes an account-relationship role — stays a stub for a founder decision (re-reviewed 28.10.2026)', False),
+    'real-estate-investor-flips': ('11-9021.00', 'editorial neighbor: a flip operation is acquire-renovate-sell; the operating work is renovation project management — same taxonomy home as general-contractor (auto-match financial analysts describes employees, not investor-operators)', False),
+    'real-estate-investor-rentals': ('11-9141.00', 'editorial neighbor: operating rentals is property management of own assets — same home as airbnb-co-host-str-manager (auto-match financial analysts describes employees, not investor-operators)', False),
+    'ux-researcher': ('15-1255.00', 'hand-reviewed 28.10.2026: "UX Researcher" IS an O*NET alternate title of Web and Digital Interface Designers — the taxonomy home after all; supplies via SUPPLIES_NEIGHBOR from the rated sibling', False),
+    'doula': ('31-1122.00', 'editorial neighbor: doula work is non-clinical personal support and companionship; measured profile borrowed from Personal Care Aides (same precedent as elder-care-companion-pro); auto-match (Midwives) is a clinical provider role', False),
     # -- parent-series mappings (bls_inherited = true)
     'site-reliability-engineer': ('15-1252.00', 'no O*NET occupation for site reliability engineering; BLS series inherited from Software Developers', True),
     'data-analyst': ('15-2051.00', 'no distinct O*NET occupation for data analysts; standard crosswalk parent is Data Scientists', True),
@@ -175,14 +181,14 @@ _O = {
     'amazon-fba-seller': (None, 'marketplace selling has no O*NET occupation', False),
     'franchise-owner-home-services': (None, 'franchise ownership is a business form, not an occupation', False),
     'life-coach': (None, 'life coaching is unlicensed and has no O*NET occupation', False),
-    'yacht-broker': (None, 'yacht brokerage has no O*NET occupation (nearest sales occupations describe different markets)', False),
-    'salesforce-administrator': (None, 'platform-specific admin role; no clean O*NET occupation', False),
-    'cardiovascular-perfusionist': (None, 'perfusionists have no data-level O*NET occupation in 30.2; cardiovascular technologists are a different role', False),
-    'sleep-technologist': (None, 'polysomnographic technologists have no distinct data-level occupation in 30.2', False),
-    'body-piercing-artist': (None, 'body piercing has no O*NET occupation', False),
-    'brewer-brewmaster': (None, 'brewing has no distinct data-level O*NET occupation in 30.2', False),
-    'winemaker-enologist': (None, 'winemaking has no distinct data-level O*NET occupation in 30.2', False),
-    'sommelier': (None, 'sommelier has no O*NET occupation', False),
+    'yacht-broker': ('41-9022.00', 'editorial neighbor: yacht brokerage is licensed big-ticket asset sales on commission; measured profile borrowed from Real Estate Sales Agents (no own O*NET occupation)', False),
+    'salesforce-administrator': ('15-1244.00', 'editorial neighbor: platform administration is systems-administration work on a business platform; measured profile borrowed from Network and Computer Systems Administrators', False),
+    'cardiovascular-perfusionist': ('29-2031.00', 'hand-reviewed 28.10.2026: no own data-level occupation, but "Perfusionist" is an O*NET reported title under Cardiovascular Technologists and Technicians — the profile is borrowed from that reported-title home and the borrowing is recorded here', False),
+    'sleep-technologist': ('29-2099.01', 'hand-reviewed 28.10.2026: Neurodiagnostic Technologists is the occupation — its rated tasks literally include polysomnography (PSG)', False),
+    'body-piercing-artist': (None, 'body piercing has no O*NET occupation (re-reviewed 28.10.2026: no alternate/reported title home; the PMU licence-family profile mis-shapes a body-art practice — stays a stub for a founder decision)', False),
+    'brewer-brewmaster': ('51-9012.00', 'hand-reviewed 28.10.2026: "Brewer" and "Brewmaster" are O*NET alternate titles of the still-machine occupation — brewing vessels sit in the still/kettle family in the taxonomy', False),
+    'winemaker-enologist': ('51-9012.00', 'hand-reviewed 28.10.2026: "Winemaker" is an O*NET alternate title of the still-machine occupation (the science-side sibling, Food Scientists 19-1012, carries "Enologist")', False),
+    'sommelier': ('35-3031.00', 'editorial neighbor: the sommelier is the wine specialist of dining-room service; "Wine Steward" is an O*NET alternate title of Waiters and Waitresses — measured profile borrowed from that occupation', False),
     # -- second pass: obvious homes the tokeniser missed (abbreviations,
     #    merged titles, SOC-2018 renames)
     'ux-ui-designer': ('15-1255.00', 'UX/UI design IS Web and Digital Interface Designers in the SOC-2018 taxonomy', False),
@@ -218,14 +224,14 @@ _O = {
     'yoga-pilates-instructor': ('39-9031.00', 'Exercise Trainers and Group Fitness Instructors', False),
     'airbnb-co-host-str-manager': ('11-9141.00', 'short-term rental management is Property, Real Estate, and Community Association Managers work', False),
     'home-stager': ('27-1025.00', 'staging is interior-decoration work; taxonomy home is Interior Designers', True),
-    'dialysis-technician': (None, 'dialysis/patient-care technicians have no distinct data-level O*NET occupation in 30.2', False),
-    'online-course-creator': (None, 'course creation as a creator business has no O*NET occupation', False),
-    'streamer-content-creator': (None, 'streaming/content creation has no O*NET occupation', False),
-    'ugc-creator': (None, 'UGC creation has no O*NET occupation', False),
-    'tattoo-artist': (None, 'tattoo artistry has no O*NET occupation (Craft Artists is fine art, a different practice)', False),
-    'dj-event-host': (None, 'event DJ/host work has no clean O*NET occupation', False),
-    'personal-fashion-stylist': (None, 'personal styling has no O*NET occupation (Fashion Designers design garments, a different practice)', False),
-    'home-organizer-pro': (None, 'professional organising has no O*NET occupation', False),
+    'dialysis-technician': ('29-2012.00', 'hand-reviewed 28.10.2026: no distinct data-level occupation, but "Certified Dialysis Technician" and "Hemodialysis Technician" are O*NET reported titles under Medical and Clinical Laboratory Technicians — profile borrowed from that reported-title home and the borrowing is recorded here', False),
+    'online-course-creator': ('25-3021.00', 'editorial neighbor: a course creator designs and delivers their own instruction as a business; measured profile borrowed from Self-Enrichment Teachers (same precedent as music/dance/driving instructors)', False),
+    'streamer-content-creator': ('27-3011.00', 'editorial neighbor: streaming is live audience performance and hosting; measured profile borrowed from Broadcast Announcers and Radio Disc Jockeys', False),
+    'ugc-creator': ('27-2011.00', 'editorial neighbor: UGC work is on-camera commercial performance plus self-production; measured profile borrowed from Actors', False),
+    'tattoo-artist': (None, 'tattoo artistry has no O*NET occupation (Craft Artists is fine art, a different practice; re-reviewed 28.10.2026 — stays a stub for a founder decision)', False),
+    'dj-event-host': ('27-2091.00', 'hand-reviewed 28.10.2026: Disc Jockeys, Except Radio is the occupation itself (alternate titles include "Event Disc Jockey" and "Club Disc Jockey"); it has no Work Values row, so supplies come via SUPPLIES_NEIGHBOR from the radio sibling', False),
+    'personal-fashion-stylist': (None, 'personal styling has no O*NET occupation (Fashion Designers design garments, a different practice; re-reviewed 28.10.2026 — stays a stub for a founder decision)', False),
+    'home-organizer-pro': ('27-1025.00', 'editorial neighbor: professional organising is residential spatial arrangement work; measured profile borrowed from Interior Designers (same precedent as home-stager)', False),
     # -- third pass: trades the tokeniser missed on word-form differences
     'appliance-repair-tech': ('49-9031.00', 'Home Appliance Repairers', False),
     'auto-mechanic': ('49-3023.00', 'Automotive Service Technicians and Mechanics', False),
@@ -241,31 +247,73 @@ _O = {
     'cad-drafter': ('17-3011.00', 'Architectural and Civil Drafters is the CAD drafter occupation', False),
     'building-inspector': ('47-4011.00', 'Construction and Building Inspectors is the exact SOC occupation (home-inspector already maps here)', False),
     'civil-engineering-technician': ('17-3022.00', 'Civil Engineering Technologists and Technicians is the exact SOC occupation', False),
-    # -- fix A scope hold-back (28.10.2026): these professions entered
-    #    the base after the WS2 import froze. An auto-match exists but
-    #    was never hand-reviewed; they keep their stubs until a
-    #    mapping-review change ships them (one change at a time).
-    'audio-video-equipment-technician': (None, 'auto-match (27-4011.00) not hand-reviewed; held back at fix A scope', False),
-    'avionics-technician': (None, 'auto-match (49-2091.00) not hand-reviewed; held back at fix A scope', False),
-    'business-broker': (None, 'auto-match (43-4011.00) not hand-reviewed; held back at fix A scope', False),
-    'career-and-technical-education-teacher': (None, 'auto-match (25-2032.00) not hand-reviewed; held back at fix A scope', False),
-    'certified-nurse-midwife': (None, 'auto-match (29-1161.00) not hand-reviewed; held back at fix A scope', False),
-    'child-life-specialist': (None, 'auto-match (39-9011.00) not hand-reviewed; held back at fix A scope', False),
-    'costume-designer': (None, 'auto-match (27-1022.00) not hand-reviewed; held back at fix A scope', False),
-    'customs-broker': (None, 'auto-match (13-1041.08) not hand-reviewed; held back at fix A scope', False),
-    'distiller': (None, 'auto-match (51-9012.00) not hand-reviewed; held back at fix A scope', False),
-    'electrical-engineer': (None, 'auto-match (17-2071.00) not hand-reviewed; held back at fix A scope', False),
-    'food-stylist': (None, 'auto-match (27-1027.00) not hand-reviewed; held back at fix A scope', False),
-    'freight-broker-agent': (None, 'auto-match (43-5011.00) not hand-reviewed; held back at fix A scope', False),
-    'general-surgeon': (None, 'auto-match (29-1242.00) not hand-reviewed; held back at fix A scope', False),
-    'lighting-designer': (None, 'auto-match (27-1021.00) not hand-reviewed; held back at fix A scope', False),
-    'mechanical-engineer': (None, 'auto-match (17-2141.00) not hand-reviewed; held back at fix A scope', False),
-    'medical-laboratory-scientist': (None, 'auto-match (19-1042.00) not hand-reviewed; held back at fix A scope', False),
-    'platform-engineer': (None, 'auto-match (15-1299.08) not hand-reviewed; held back at fix A scope', False),
-    'power-plant-operator': (None, 'auto-match (51-8013.00) not hand-reviewed; held back at fix A scope', False),
-    'school-psychologist': (None, 'auto-match (19-3034.00) not hand-reviewed; held back at fix A scope', False),
-    'subway-streetcar-operator': (None, 'auto-match (53-4041.00) not hand-reviewed; held back at fix A scope', False),
-    'telecommunications-equipment-installer': (None, 'auto-match (49-2022.00) not hand-reviewed; held back at fix A scope', False),
+    # -- stub-fill pass (28.10.2026): the fix-A hold-backs, hand-reviewed
+    #    one by one against Occupation Data, Alternate Titles and tasks.
+    'audio-video-equipment-technician': ('27-4011.00', 'hand-reviewed 28.10.2026: Audio and Video Technicians is the exact occupation (auto-match confirmed)', False),
+    'avionics-technician': ('49-2091.00', 'hand-reviewed 28.10.2026: Avionics Technicians is the exact occupation (auto-match confirmed)', False),
+    'business-broker': ('41-9022.00', 'editorial neighbor: business brokerage is licensed asset-sale brokerage; O*NET parks the reported title under Brokerage Clerks (43-4011, securities back office — a different work family), so the measured profile is borrowed from Real Estate Sales Agents', False),
+    'career-and-technical-education-teacher': ('25-2032.00', 'hand-reviewed 28.10.2026: Career/Technical Education Teachers, Secondary School is the exact occupation (auto-match confirmed)', False),
+    'certified-nurse-midwife': ('29-1161.00', 'hand-reviewed 28.10.2026: Nurse Midwives is the exact occupation (auto-match confirmed)', False),
+    'child-life-specialist': ('39-9011.00', 'hand-reviewed 28.10.2026: "Child Life Specialist" is an O*NET alternate title of Childcare Workers (auto-match confirmed)', False),
+    'costume-designer': ('27-1022.00', 'hand-reviewed 28.10.2026: "Costume Designer" is an O*NET alternate title of Fashion Designers (auto-match confirmed)', False),
+    'customs-broker': ('13-1041.08', 'hand-reviewed 28.10.2026: Customs Brokers is the exact detailed occupation (auto-match confirmed)', False),
+    'distiller': ('51-9012.00', 'hand-reviewed 28.10.2026: "Distiller" is an O*NET alternate title of the still-machine occupation (auto-match confirmed)', False),
+    'electrical-engineer': ('17-2071.00', 'hand-reviewed 28.10.2026: Electrical Engineers is the exact occupation (auto-match confirmed)', False),
+    'food-stylist': ('27-1027.00', 'hand-reviewed 28.10.2026: "Food Stylist" is an O*NET alternate title of Set and Exhibit Designers (auto-match confirmed)', False),
+    'freight-broker-agent': ('43-5011.00', 'hand-reviewed 28.10.2026: Cargo and Freight Agents is the standard crosswalk home — its rated tasks are literally negotiating and arranging freight transport (auto-match confirmed)', False),
+    'general-surgeon': (None, 'hand-reviewed 28.10.2026: auto-match (29-1242) is Orthopedic Surgeons — wrong specialty; general surgery sits in Surgeons, All Other (29-1249.00), which is NOT a data-level occupation in 30.2 (no Job Zone, no ratings), and no rated surgeon sibling is a defensible donor — stays a stub for a founder decision', False),
+    'lighting-designer': ('27-1027.00', 'hand-reviewed 28.10.2026: "Lighting Designer" is an O*NET alternate title of Set and Exhibit Designers — the stage/production-design family home (the technician side is film-stage-lighting-technician); auto-match (27-1021 product design) rejected', False),
+    'mechanical-engineer': ('17-2141.00', 'hand-reviewed 28.10.2026: Mechanical Engineers is the exact occupation (auto-match confirmed)', False),
+    'medical-laboratory-scientist': ('29-2011.00', 'hand-reviewed 28.10.2026: auto-match (19-1042 Medical Scientists, a research occupation) was WRONG; the MLS is Medical and Clinical Laboratory Technologists', False),
+    'platform-engineer': ('15-1299.08', 'hand-reviewed 28.10.2026: Computer Systems Engineers/Architects accepted after task review — platform engineering is internal systems architecture and infrastructure design (auto-match confirmed)', False),
+    'power-plant-operator': ('51-8013.00', 'hand-reviewed 28.10.2026: Power Plant Operators is the exact occupation (auto-match confirmed)', False),
+    'school-psychologist': ('19-3034.00', 'hand-reviewed 28.10.2026: School Psychologists is the exact occupation (auto-match confirmed)', False),
+    'subway-streetcar-operator': ('53-4041.00', 'hand-reviewed 28.10.2026: Subway and Streetcar Operators is the exact occupation (auto-match confirmed)', False),
+    'telecommunications-equipment-installer': ('49-2022.00', 'hand-reviewed 28.10.2026: Telecommunications Equipment Installers and Repairers, Except Line Installers is the exact occupation (auto-match confirmed)', False),
+    # -- stub-fill pass (28.10.2026): previously unmatched professions,
+    #    hand-reviewed against Alternate Titles / Reported Titles / tasks.
+    'embedded-systems-engineer': ('15-1252.00', 'hand-reviewed 28.10.2026: "Embedded Software Engineer" and "Embedded Systems Software Developer" are O*NET alternate titles of Software Developers; supplies via SUPPLIES_NEIGHBOR like the rest of the software family', False),
+    'board-certified-behavior-analyst-bcba': ('19-3033.00', 'hand-reviewed 28.10.2026: "Behavior Analyst" is an O*NET alternate title of Clinical and Counseling Psychologists; the BCBA is the credentialed plan designer (delivery sits in aba-therapist-kids / Social and Human Service Assistants)', False),
+    'data-center-technician': ('49-2011.00', 'hand-reviewed 28.10.2026: no alternate-title home; the work is hands-on installation, cabling and repair of computing hardware, so the measured profile is Computer, Automated Teller, and Office Machine Repairers (15-1231 network support is the screen-side sibling)', False),
+    'cnc-machinist-programmer': ('51-4041.00', 'hand-reviewed 28.10.2026: "CNC Machinist" is an O*NET alternate title of Machinists; the machinist craft is the card home (the programmer-only split is 51-9162)', False),
+    'tattoo-artist-2': ('39-5094.00', 'hand-reviewed 28.10.2026: paramedical tattooing (scar/areola restoration) is permanent-makeup practice; same licence-family home as permanent-makeup-artist (Skincare Specialists)', False),
+    'scalp-micropigmentation-artist': ('39-5094.00', 'hand-reviewed 28.10.2026: scalp micropigmentation IS permanent makeup; same licence-family home as permanent-makeup-artist (Skincare Specialists)', False),
+    'vertical-farm-technician': ('45-2092.00', 'hand-reviewed 28.10.2026: "Hydroponic Controlled Environment Agricultural Grower" is an O*NET alternate title of Farmworkers and Laborers, Crop, Nursery, and Greenhouse — the taxonomy home of CEA growing work', False),
+    'esl-adult-literacy-teacher': ('25-3011.00', 'hand-reviewed 28.10.2026: the occupation title itself is Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors', False),
+}
+
+# --- Supplies donors ------------------------------------------------------
+# Occupations whose OWN Work Values row does not exist in O*NET 30.2
+# (Work Values covers 874 of 923 data-level occupations; the missing
+# ones are mostly post-2018 splits). For these, supplies (work values)
+# are measured on the nearest rated sibling/parent occupation, and the
+# borrowing is recorded on the entry (work_values_neighbor) and on the
+# built profession object (supplies_neighbor) — never passed off as the
+# occupation's own row. RIASEC always stays the occupation's own.
+SUPPLIES_NEIGHBOR = {
+    'software-developer': ('15-1251.00', 'Software Developers has no Work Values row in 30.2; supplies measured on Computer Programmers, the sibling craft occupation'),
+    'devops-engineer': ('15-1251.00', 'inherited software-developer series; same supplies donor as software-developer'),
+    'ai-automation-specialist': ('15-1251.00', 'inherited software-developer series; same supplies donor as software-developer'),
+    'mobile-app-developer': ('15-1251.00', 'software-developer series; same supplies donor as software-developer'),
+    'site-reliability-engineer': ('15-1251.00', 'inherited software-developer series; same supplies donor as software-developer'),
+    'embedded-systems-engineer': ('15-1251.00', 'software-developer series; same supplies donor as software-developer'),
+    'data-analyst': ('15-2041.00', 'Data Scientists was split out of Statisticians in SOC 2018 and has no Work Values row; supplies measured on the parent occupation'),
+    'data-scientist-ml-engineer': ('15-2041.00', 'same parent-occupation donor as data-analyst'),
+    'ux-ui-designer': ('15-1254.00', 'Web and Digital Interface Designers has no Work Values row; supplies measured on Web Developers, the rated sibling split'),
+    'web-designer': ('15-1254.00', 'same sibling donor as ux-ui-designer'),
+    'ux-researcher': ('15-1254.00', 'taxonomy home 15-1255 has no Work Values row; same sibling donor as ux-ui-designer'),
+    'financial-analyst': ('13-2052.00', 'Financial and Investment Analysts has no Work Values row; supplies measured on Personal Financial Advisors, the rated sibling in the 13-205x family'),
+    'project-manager': ('13-1081.00', 'Project Management Specialists has no Work Values row; supplies measured on Logisticians, the rated sibling in the 13-108x business-operations group'),
+    'emt-paramedic': ('33-2011.00', 'Emergency Medical Technicians has no Work Values row (nor does the Paramedics split); supplies measured on Firefighters, the rated first-responder sibling — most EMTs are fire-service based'),
+    'medical-coder': ('43-3021.00', 'Medical Records Specialists has no Work Values row; supplies measured on Billing and Posting Clerks, the rated sibling in the same revenue-cycle records chain'),
+    'special-education-teacher': ('25-2057.00', 'the Elementary split has no Work Values row; supplies measured on Special Education Teachers, Middle School, the rated adjacent grade band of the same occupation family'),
+    'bus-driver': ('53-3052.00', 'the School split has no Work Values row; supplies measured on Bus Drivers, Transit and Intercity, the rated sibling split'),
+    'penetration-tester': ('15-1212.00', 'Penetration Testers has no Work Values row; supplies measured on Information Security Analysts, the rated parent specialty'),
+    'digital-forensics-analyst': ('15-1212.00', 'Digital Forensics Analysts has no Work Values row; supplies measured on Information Security Analysts, the rated parent specialty'),
+    'medical-dosimetrist': ('29-1124.00', 'Medical Dosimetrists has no Work Values row; supplies measured on Radiation Therapists, the rated sibling in the radiation-oncology team'),
+    'histotechnologist': ('29-2011.00', 'the Histotechnologists split has no Work Values row; supplies measured on Medical and Clinical Laboratory Technologists, the rated parent occupation'),
+    'film-stage-lighting-technician': ('27-4011.00', 'Lighting Technicians has no Work Values row; supplies measured on Audio and Video Technicians, the rated sibling stage/production-tech occupation'),
+    'dj-event-host': ('27-3011.00', 'Disc Jockeys, Except Radio has no Work Values row; supplies measured on Broadcast Announcers and Radio Disc Jockeys, the rated sibling performance occupation'),
 }
 OVERRIDES = _O
 
@@ -410,6 +458,22 @@ def main():
                               if soc in skills_lv else None),
                 'tasks': top_tasks(soc),
             })
+            # Supplies donor: the occupation's own Work Values row does
+            # not exist in 30.2 — borrow the extent from the nearest
+            # rated sibling/parent and RECORD the borrowing on the entry.
+            if not entry.get('work_values_extent') and slug in SUPPLIES_NEIGHBOR:
+                n_soc, n_reason = SUPPLIES_NEIGHBOR[slug]
+                if n_soc not in values_extent:
+                    raise SystemExit(f'supplies donor {n_soc} for {slug} has no Work Values rows')
+                entry['work_values_extent'] = values_extent[n_soc]
+                entry['work_values_frozen_date'] = values_date.get(n_soc)
+                entry['work_values_neighbor'] = {
+                    'soc': n_soc,
+                    'title': title_by_soc.get(n_soc),
+                    'reason': n_reason,
+                }
+            elif entry.get('work_values_extent') and slug in SUPPLIES_NEIGHBOR:
+                print(f'NOTE: {slug} has its own Work Values row — donor entry unused')
             base_soc = soc[:7]
             if base_soc in BLS_AI_EVIDENCE:
                 cat, tier, src = BLS_AI_EVIDENCE[base_soc]
