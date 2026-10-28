@@ -1397,8 +1397,8 @@
   },
   {
    "file": "mentor.html",
-   "sha": "3883a27ef4281f9d91dc81125b140e0d46622130",
-   "size": 94837
+   "sha": "1a68dd048742d4bbf933f1be5ba9768754f932a8",
+   "size": 94955
   },
   {
    "file": "api/mentor.js",
@@ -1407,8 +1407,8 @@
   },
   {
    "file": "api/_lib/mentor-core.mjs",
-   "sha": "3b4a5b8ea8a10fb3df328d8b66a269ed7cd6dab6",
-   "size": 29253
+   "sha": "afab2a3b6041eb099810e7910bd8b8e9919c84ae",
+   "size": 30088
   },
   {
    "file": "api/_lib/engine-bridge.mjs",
@@ -1417,8 +1417,8 @@
   },
   {
    "file": "api/_lib/engine/interview.mjs",
-   "sha": "5381122cd62a6f8b39f636a13d8f299c1b8fc192",
-   "size": 43325
+   "sha": "9146814a2f41d85b98787f51f96ace05a0d64b76",
+   "size": 44292
   },
   {
    "file": "api/_lib/engine/llm.mjs",
@@ -1427,13 +1427,13 @@
   },
   {
    "file": "api/_lib/engine/professions.mjs",
-   "sha": "89969b30744485539b09a7223bf5d861c43a121c",
-   "size": 73680
+   "sha": "a9588e3d6da515cdbe84faf9c2e0b2b8b0a5359b",
+   "size": 76717
   },
   {
    "file": "api/_lib/engine/scoring.mjs",
-   "sha": "3cb25c681dfbea996971aece467a10601a2d9c80",
-   "size": 90389
+   "sha": "ef88cf7ee49436db6a3f021e88ec724fab644fba",
+   "size": 92598
   },
   {
    "file": "api/_lib/engine/stages.json",
@@ -1477,8 +1477,8 @@
   },
   {
    "file": "api/_lib/engine/verify.mjs",
-   "sha": "a1ad4c723530b3f55a146cd761f6bb684c7caf91",
-   "size": 21533
+   "sha": "d0a4f6a04aa508e62ab47f5e94f17c9abaecf565",
+   "size": 21865
   },
   {
    "file": "mock-a.html",
@@ -1769,7 +1769,17 @@
    "file": "api/_lib/data/onet-import-08.json",
    "sha": "7efb2a61578a8e975f96943a87b1a4f3075f0c84",
    "size": 9751
+  },
+  {
+   "file": "api/_lib/engine/side-hustle.mjs",
+   "sha": "9884672182042be974ef81250e87e7856d619ed2",
+   "size": 6586
+  },
+  {
+   "file": "sh.js",
+   "sha": "b8aef54e7a17bc72ca96d82ec750c0de4c40d588",
+   "size": 2376
   }
  ],
- "deployment": "dpl_91VkafX4AtS3EGy1BKcn34vXYGEP"
+ "deployment": "dpl_GfM8MurvZ3CD6TXfCMK5tSbKhWwY"
 }

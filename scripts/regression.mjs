@@ -122,6 +122,16 @@ function check(o, tag) {
     const txt = [...(x.argument?.math || []), ...(x.argument?.but || []), ...(x.argument?.bridge || [])].join(' ');
     const m = txt.match(/cushion (?:is|\()(\d+) months/); if (m && a.cushion_months != null && +m[1] !== +a.cushion_months) add('HARD card text matches answers (cushion)', `${tg} says ${m[1]} vs answered ${a.cushion_months}`);
   }
+  // Career vs side hustle (founder's rule, 28.10.2026 — gate change,
+  // recorded separately in the commit): a side hustle is not a job, so
+  // it must never surface as a match (top3), an anti-match (bottom3)
+  // or the cushion (bridge_pick). The one place it may appear is
+  // side_hustle_pick — and then the base row must be a side_hustle.
+  for (const x of [...t, ...(r.bottom3 || []), ...(r.bridge_pick ? [r.bridge_pick] : [])]) {
+    if ((PROF[x.slug] || {}).kind === 'side_hustle') add('HARD no side_hustle in top3/bottom3/cushion', `${id} → ${x.name}`);
+  }
+  const shp = r.side_hustle_pick;
+  if (shp && (!PROF[shp.slug] || PROF[shp.slug].kind !== 'side_hustle')) add('HARD side_hustle_pick must be a side_hustle row', `${id} → ${shp.name || shp.slug}`);
 }
 
 // ---------- targeted personas (expected direction) ----------

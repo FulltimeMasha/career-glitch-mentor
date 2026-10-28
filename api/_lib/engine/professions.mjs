@@ -800,6 +800,47 @@ const VOICE_LOAD_MANUAL_SLUGS = new Set([
 
 const SPEAKING_SKILL_ID = '2.A.1.d'; // O*NET Skills element "Speaking"
 
+// ---------------------------------------------------------------------------
+// CAREER vs SIDE HUSTLE (founder's rule, 28.10.2026). A match is a stable
+// job: hired work, or your own business as your MAIN occupation. A
+// side hustle is an income format nobody hires you into and that is
+// typically run NEXT TO a main job — you cannot "get hired" as an Etsy
+// seller. Membership below is by exact slug, reviewed by hand against
+// that rule; every other profession is kind 'career' by default.
+// Scoring excludes side hustles from the top-3, the bottom-3, the
+// cushion and the bridge anchor, and may offer ONE of them as a
+// separate extra-money idea (scorePerson's side_hustle_pick). The full
+// classification — every member's one-line basis, and every borderline
+// profession deliberately KEPT a career — is the table in
+// DATA_PASS_CHANGELOG.md (career/side-hustle entry). Two families:
+//   * marketplace / asset formats (her named cases): selling on Etsy,
+//     Amazon FBA or print-on-demand, resale/flipping in all its wrappers
+//     (goods, cars, boats), franchise format, absentee assets
+//     (laundromat, self-storage, car wash, vending routes, weekend
+//     event-rental rigs), real-estate investing as deal flow.
+//   * audience / practice formats with no hiring market: streaming and
+//     own-course creation (income is an audience or an asset you build,
+//     typically alongside a job first) and unlicensed coaching
+//     practices (no licence, no employer — typically a side practice).
+// Deliberately NOT here (kept careers, reasons in the changelog):
+// UGC Creator (brands hire creators per video — client work), Doula,
+// Personal / Fashion Stylist, Home Organizer, Airbnb Co-host (client
+// services), Tutoring Center Owner and the other operating owners
+// (the owner works IN the business — it is the main occupation),
+// Freight / Business / Yacht Broker (licensed, brokerages hire).
+// ---------------------------------------------------------------------------
+const SIDE_HUSTLE_SLUGS = new Set([
+  // marketplace / asset formats
+  'etsy-digital-products-seller', 'amazon-fba-seller', 'print-on-demand-seller',
+  'resale-flipping-business', 'car-flipping', 'boat-restoration-flipping',
+  'franchise-owner-home-services', 'laundromat-owner', 'self-storage-owner',
+  'car-wash-owner', 'vending-atm-route-owner', 'photo-booth-event-rentals-owner',
+  'real-estate-investor-flips', 'real-estate-investor-rentals',
+  // audience / unlicensed-practice formats
+  'streamer-content-creator', 'online-course-creator',
+  'life-coach', 'wellness-coach',
+]);
+
 /**
  * Derive the cause-B fields on one built profession, AFTER the O*NET
  * import merge (the derivations read work_context / skills_lv). Every
@@ -817,6 +858,11 @@ const SPEAKING_SKILL_ID = '2.A.1.d'; // O*NET Skills element "Speaking"
  *     protection from roles whose day is continuous 1:1 talking.
  */
 function finalizeBaseFields(p) {
+  // Career vs side hustle (founder's rule, 28.10.2026 — see the set
+  // above). Default is 'career': only a hand-reviewed member of the
+  // set is a side hustle, and the flag records the provenance.
+  p.kind = SIDE_HUSTLE_SLUGS.has(p.slug) ? 'side_hustle' : 'career';
+  if (p.kind === 'side_hustle') p.data_flags.push('side_hustle_editorial');
   p.night_shifts = NIGHT_SHIFTS_SLUGS.has(p.slug);
   p.data_flags.push('night_shifts_editorial');
   p.relocation_required = RELOCATION_SLUGS.has(p.slug);
@@ -1135,6 +1181,7 @@ export function buildProfessions(profData, roadmapData) {
       },
       // --- cause-B base fields (28.10.2026): placeholders, derived for
       // real in finalizeBaseFields() once the import has merged.
+      kind: 'career', // placeholder — finalizeBaseFields() sets the real value
       night_shifts: false,
       public_voice: false,
       relocation_required: false,

@@ -475,13 +475,90 @@ test('diversity + floor: three families, no silent below-floor pick, argued card
   }
 });
 
+// ---------------------------------------------------------------------------
+// Career vs side hustle (founder's rule, 28.10.2026). A match is a
+// stable job — hired work or your own business as your main
+// occupation. A side hustle (nobody hires you into it; typically run
+// next to a main job) is never a match: not in the top-3, not in the
+// bottom-3, not the cushion. It may appear exactly once, as the
+// separate side_hustle_pick idea, inside the person's own limits.
+// ---------------------------------------------------------------------------
+test('career/side-hustle: base classification is complete, explicit and defaulted to career', () => {
+  const bySlug = Object.fromEntries(professions.map((p) => [p.slug, p]));
+  for (const p of professions) {
+    assert.ok(p.kind === 'career' || p.kind === 'side_hustle', `${p.slug}: kind must be career|side_hustle`);
+    if (p.kind === 'side_hustle') assert.ok(p.data_flags.includes('side_hustle_editorial'), `${p.slug}: provenance flag`);
+  }
+  const side = professions.filter((p) => p.kind === 'side_hustle').map((p) => p.slug).sort();
+  assert.deepEqual(side, [
+    'amazon-fba-seller', 'boat-restoration-flipping', 'car-flipping', 'car-wash-owner',
+    'etsy-digital-products-seller', 'franchise-owner-home-services', 'laundromat-owner',
+    'life-coach', 'online-course-creator', 'photo-booth-event-rentals-owner',
+    'print-on-demand-seller', 'real-estate-investor-flips', 'real-estate-investor-rentals',
+    'resale-flipping-business', 'self-storage-owner', 'streamer-content-creator',
+    'vending-atm-route-owner', 'wellness-coach',
+  ]);
+  assert.equal(professions.length - side.length, 355, 'career count the page stat may claim');
+  // Borderline rows the founder reviews by name — kept careers on the
+  // record (client-hired services and operating owners).
+  for (const slug of ['ugc-creator', 'doula', 'personal-fashion-stylist', 'tutoring-center-owner',
+    'airbnb-co-host-str-manager', 'senior-home-care-agency-owner', 'freight-broker-agent',
+    'speech-public-speaking-coach', 'home-organizer-pro', 'medical-courier-owner-route']) {
+    assert.equal(bySlug[slug].kind, 'career', `${slug} stays a career`);
+  }
+});
+
+test('career/side-hustle: no side hustle in top3, bottom3 or the cushion — for any fixture person', () => {
+  const persons = [
+    strongPerson(),
+    creatorPersona,
+    { ...creatorPersona, door: 'pivot', current_profession_name: 'Accountant (CPA track)' },
+    strongPerson({ values_rank: { achievement: 1, independence: 2, recognition: 3, relationships: 6, support: 5, working_conditions: 4 }, autonomy_need: 2, relatedness_need: 0, riasec: { R: 2, I: 4, A: 9, S: 3, E: 9, C: 4 } }),
+  ];
+  for (const person of persons) {
+    const out = scorePerson(person, professions);
+    const surfaces = [...out.top3, ...out.bottom3, ...(out.bridge_pick ? [out.bridge_pick] : [])];
+    for (const r of surfaces) assert.notEqual(r.kind, 'side_hustle', `${r.slug} must never be a match surface`);
+    if (out.side_hustle_pick) assert.equal(out.side_hustle_pick.kind, 'side_hustle');
+  }
+});
+
+test('career/side-hustle: a base of only side hustles produces no matches at all', () => {
+  const only = professions.filter((p) => p.kind === 'side_hustle');
+  const out = scorePerson(creatorPersona, only);
+  assert.equal(out.top3.length, 0, 'side hustles cannot fill a top-3');
+  assert.equal(out.bottom3.length, 0, 'side hustles cannot fill a bottom-3');
+  assert.equal(out.bridge_pick, null);
+});
+
+test('career/side-hustle: the idea respects the named budget and hours, and stays under the fit threshold otherwise', () => {
+  const rich = scorePerson(creatorPersona, professions);
+  assert.ok(rich.side_hustle_pick, 'a complete creative person with $10K and 3h/day gets an idea');
+  assert.ok(['low', 'mid'].includes(rich.side_hustle_pick.startup_tier), 'a $10K budget cannot buy a high-tier (asset) format');
+  assert.ok(rich.side_hustle_pick.why_side.length >= 1, 'the idea carries its coded reasons');
+
+  const broke = scorePerson({ ...creatorPersona, resources: { ...creatorPersona.resources, budget_k: 0 } }, professions);
+  assert.equal(broke.side_hustle_pick, null, 'a named $0 budget buys no idea — nothing is pushed');
+
+  const cheap = scorePerson({ ...creatorPersona, resources: { ...creatorPersona.resources, budget_k: 1 } }, professions);
+  if (cheap.side_hustle_pick) assert.equal(cheap.side_hustle_pick.startup_tier, 'low', 'a $1K budget only ever buys the pocket-money tier');
+
+  const noTime = scorePerson({ ...creatorPersona, resources: { ...creatorPersona.resources, hours_per_day: 0 } }, professions);
+  assert.equal(noTime.side_hustle_pick, null, 'zero named spare hours — no side idea');
+});
+
 test('floor demotion: a below-floor favourite yields the slot to a floor-clearing pick, and is marked when kept', () => {
-  const streamer = professions.find((p) => p.slug === 'streamer-content-creator');
+  // Fixture profession swapped 28.10.2026: this test used Streamer /
+  // Content Creator as the favourite — under the career/side-hustle
+  // rule a streamer is no longer a match at all, so the demotion
+  // mechanics are asserted on Video Editor instead (a creator-family
+  // CAREER, $71K against the persona's $120K floor).
+  const streamer = professions.find((p) => p.slug === 'video-editor');
   const pilot = professions.find((p) => p.slug === 'commercial-pilot');
   assert.ok(streamer && pilot, 'fixture professions exist');
   const out = scorePerson(creatorPersona, [streamer, pilot]);
   assert.equal(out.top3[0].slug, 'commercial-pilot', 'the floor-clearing pick leads');
-  const kept = out.top3.find((r) => r.slug === 'streamer-content-creator');
+  const kept = out.top3.find((r) => r.slug === 'video-editor');
   assert.ok(kept, 'the below-floor favourite may stay only as a marked extra');
   assert.equal(kept.floor_status, 'below_floor');
   assert.ok(kept.argument.math.some((l) => l.includes('under your $120K minimum')), 'the card must state the floor miss in plain words');

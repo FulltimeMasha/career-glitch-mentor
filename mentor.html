@@ -228,7 +228,7 @@ footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(28,26,31,.14);
 <div class="mnote">Free to start</div>
 </div>
 <div class="tile tile-stat wide">
-  <div class="stat-n"><span id="profCount">369</span></div>
+  <div class="stat-n"><span id="profCount">355</span></div>
   <div class="stat-t">professions checked against real BLS pay &amp; AI-risk levels</div>
   <div class="stat-n" style="margin-top:14px">10<span class="stat-min"> min</span></div>
   <div class="stat-t">one live matchmaking — free to start</div>
@@ -1076,6 +1076,7 @@ html += wowMeter("Long-term potential", bp.potential, "how strong your chances l
 html += argSection("Why this one", bp.why_bridge, false);
 html += '</div>';
 }
+if(r.side_hustle_pick && window.shCardHtml) html += window.shCardHtml(r.side_hustle_pick);
 var bottom = r.bottom3 || (r.anti_match ? [r.anti_match] : []);
 if(bottom.length){
 html += '<div id="antiBlock">';
@@ -1318,7 +1319,7 @@ if(bub) bub.textContent = "I couldn't open the matchmaking just now — somethin
 
 fetch("/api/mentor?action=health").then(function(r){ return r.json(); }).then(function(h){
 if(!h || !h.ok){ doorEls0.forEach(function(b){ b.disabled = false; }); return; } // guided mode: hand the original doors back, untouched
-var pc = $("profCount"); if(pc && h.professions) pc.textContent = h.professions;
+var pc = $("profCount"); if(pc) pc.textContent = h.careers || h.professions;
 var notice = $("localNotice");
 notice.textContent = "Live matchmaker connected. Your answers are scored on the server with real job-market data — nothing is made up on this phone.";
 notice.classList.remove("hidden");
@@ -1348,6 +1349,7 @@ Object.defineProperty(window, "lastResult", { configurable: true, get: function(
 </script>
 <script src="/pg.js"></script>
 <script src="/lead.js"></script>
+<script src="/sh.js"></script>
 <script>
 (function(){
 var BLIPS = [

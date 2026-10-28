@@ -690,6 +690,14 @@ const REPORT_STRUCTURE_INSUFFICIENT = [
 // Presentation only — the pick and its numbers are already final.
 const BRIDGE_NOTE = 'The input also contains "bridge_pick" — a stable hired job chosen as this person\'s cushion, because their #1 road pays slowly at first. After the top-candidates section, add one short section titled "Your cushion". Name the bridge job. Say plainly: the main road pays later, so this job carries the bills meanwhile — it is the floor under the main road, not a second verdict and not a better match. Argue it ONLY from its why_bridge lines, its LOVE/POTENTIAL ranges and its pay facts in the JSON; invent nothing. Keep it to one short paragraph plus the pay figure.';
 
+// Appended to REPORT_STRUCTURE only when the deterministic engine
+// picked a side-hustle idea (result.side_hustle_pick): one extra-money
+// format offered next to the verdict. Presentation only — the pick,
+// its tier and its reasons are already final, and the framing is the
+// founder's rule itself: it is NOT a career and must never read as a
+// fourth match.
+const SIDE_HUSTLE_NOTE = 'The input also contains "side_hustle_pick" — ONE side-hustle idea the engine picked for extra money on the side. After the top-candidates section, add one short section titled "A side-hustle idea". Name it once. Say plainly: nobody hires you into it — it is extra money built sale by sale next to a main job, not a career, not a match and not a verdict. Argue it ONLY from its why_side lines and its figures in the JSON; invent nothing. Two or three sentences, no more.';
+
 export async function generateReport(session, opts = {}) {
   if (!session.result) {
     throw new Error('generateReport: session has no scoring result yet (finish stage 5 first)');
@@ -730,7 +738,9 @@ export async function generateReport(session, opts = {}) {
   const input = JSON.stringify({ result: session.result, facts }, null, 2);
   let instructions = insufficient
     ? REPORT_STRUCTURE_INSUFFICIENT
-    : (REPORT_STRUCTURE + (session.result && session.result.bridge_pick ? '\n' + BRIDGE_NOTE : ''));
+    : (REPORT_STRUCTURE
+      + (session.result && session.result.bridge_pick ? '\n' + BRIDGE_NOTE : '')
+      + (session.result && session.result.side_hustle_pick ? '\n' + SIDE_HUSTLE_NOTE : ''));
   if (opts && typeof opts.verifyFeedback === 'string' && opts.verifyFeedback.trim()) {
     // Correction pass (verification layer, engine/verify.mjs): the
     // previous draft failed the checker's audit; the mismatches are

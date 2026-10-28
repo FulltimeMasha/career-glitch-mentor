@@ -257,6 +257,13 @@ export async function handleMentorRequest(body) {
           ok: true,
           service: 'career-glitch-mentor-api',
           professions: professions.length,
+          // The page's stat tile counts CAREERS — the professions a
+          // person can actually be matched into. Side hustles ride
+          // along in the base (they power the side-hustle idea) but
+          // are not careers, and the tile must not claim them
+          // (founder's rule, 28.10.2026: no claim the data does
+          // not back).
+          careers: professions.filter((p) => p.kind !== 'side_hustle').length,
           persistence: PERSISTENCE,
         },
       };
@@ -484,6 +491,12 @@ export async function handleMentorRequest(body) {
       const prof = professions.find((p) => p.slug === slug);
       if (!prof) {
         return { status: 404, json: { ok: false, error: 'That profession is not in the base, so there is no day to preview yet.' } };
+      }
+      if (prof.kind === 'side_hustle') {
+        // A side hustle is an extra-money idea, not a career with a
+        // working day to live through (founder's rule, 28.10.2026):
+        // no playground day is generated or served for one.
+        return { status: 404, json: { ok: false, error: 'That one is a side-hustle idea, not a career — there is no working day to preview.' } };
       }
       const stored = getStoredPlaygroundDay(slug);
       if (stored) {

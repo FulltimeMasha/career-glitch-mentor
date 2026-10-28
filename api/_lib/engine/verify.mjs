@@ -179,6 +179,10 @@ export function buildGroundTruth(session, professions = null) {
   const res = person.resources || {};
   const cands = [...(result.top3 || []), ...(result.bottom3 || [])];
   if (result.bridge_pick) cands.push(result.bridge_pick);
+  // The side-hustle idea is part of the report's checked data too: its
+  // figures (pay, training, ranges) ground the letter's one short
+  // section exactly like the cushion's do.
+  if (result.side_hustle_pick) cands.push(result.side_hustle_pick);
 
   const moneyK = new Set();
   const trainingMonths = new Set();
@@ -327,6 +331,7 @@ function slimResultFacts(result) {
     top: (result.top3 || []).map(slim),
     bottom: (result.bottom3 || []).map(slim),
     cushion: result.bridge_pick ? slim(result.bridge_pick) : null,
+    side_hustle: result.side_hustle_pick ? slim(result.side_hustle_pick) : null,
   };
 }
 

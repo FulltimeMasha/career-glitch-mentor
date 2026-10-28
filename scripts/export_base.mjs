@@ -21,6 +21,7 @@ const professions = buildProfessions(profData, roadmapData);
 
 const rows = professions.map((p) => ({
   slug: p.slug,
+  kind: p.kind,
   verdict: p.verdict,
   payK: p.payK,
   training_months: p.training_months,
@@ -36,6 +37,7 @@ const rows = professions.map((p) => ({
 
 writeFileSync(join(ROOT, 'professions-base.json'), JSON.stringify(rows, null, 1) + '\n');
 console.log(`professions-base.json: ${rows.length} rows`);
+console.log(`  kind career: ${rows.filter((r) => r.kind === 'career').length} · side_hustle: ${rows.filter((r) => r.kind === 'side_hustle').length}`);
 console.log(`  age_gate set: ${rows.filter((r) => r.age_gate).length}`);
 console.log(`  night_shifts true: ${rows.filter((r) => r.night_shifts).length}`);
 console.log(`  public_voice true: ${rows.filter((r) => r.public_voice).length}`);

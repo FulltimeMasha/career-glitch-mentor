@@ -1,6 +1,7 @@
 [
  {
   "slug": "software-developer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 136,
   "training_months": 12,
@@ -30,6 +31,7 @@
  },
  {
   "slug": "data-analyst",
+  "kind": "career",
   "verdict": "YES",
   "payK": 90,
   "training_months": 9,
@@ -59,6 +61,7 @@
  },
  {
   "slug": "data-scientist-ml-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 120,
   "training_months": 36,
@@ -88,6 +91,7 @@
  },
  {
   "slug": "ux-ui-designer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 105,
   "training_months": 9,
@@ -117,6 +121,7 @@
  },
  {
   "slug": "web-designer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 63,
   "training_months": 9,
@@ -146,6 +151,7 @@
  },
  {
   "slug": "product-manager",
+  "kind": "career",
   "verdict": "NO",
   "payK": 118,
   "training_months": 18,
@@ -175,6 +181,7 @@
  },
  {
   "slug": "qa-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 104,
   "training_months": 9,
@@ -204,6 +211,7 @@
  },
  {
   "slug": "devops-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 130,
   "training_months": 48,
@@ -233,6 +241,7 @@
  },
  {
   "slug": "cybersecurity-analyst",
+  "kind": "career",
   "verdict": "YES",
   "payK": 125,
   "training_months": 48,
@@ -262,6 +271,7 @@
  },
  {
   "slug": "ai-automation-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 100,
   "training_months": 9,
@@ -291,6 +301,7 @@
  },
  {
   "slug": "no-code-developer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 93,
   "training_months": 9,
@@ -320,6 +331,7 @@
  },
  {
   "slug": "mobile-app-developer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 125,
   "training_months": 48,
@@ -349,6 +361,7 @@
  },
  {
   "slug": "it-support-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -378,6 +391,7 @@
  },
  {
   "slug": "technical-writer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 90,
   "training_months": 9,
@@ -407,6 +421,7 @@
  },
  {
   "slug": "video-editor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 71,
   "training_months": 36,
@@ -436,6 +451,7 @@
  },
  {
   "slug": "motion-designer-3d-artist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 102,
   "training_months": 36,
@@ -465,6 +481,7 @@
  },
  {
   "slug": "game-designer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 104,
   "training_months": 36,
@@ -494,6 +511,7 @@
  },
  {
   "slug": "seo-specialist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 79,
   "training_months": 36,
@@ -523,6 +541,7 @@
  },
  {
   "slug": "ppc-paid-ads-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 36,
@@ -552,6 +571,7 @@
  },
  {
   "slug": "smm-manager",
+  "kind": "career",
   "verdict": "NO",
   "payK": 62,
   "training_months": 36,
@@ -581,6 +601,7 @@
  },
  {
   "slug": "content-strategist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 78,
   "training_months": 36,
@@ -610,6 +631,7 @@
  },
  {
   "slug": "copywriter",
+  "kind": "career",
   "verdict": "NO",
   "payK": 77,
   "training_months": 36,
@@ -639,6 +661,7 @@
  },
  {
   "slug": "podcast-producer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 36,
@@ -668,6 +691,7 @@
  },
  {
   "slug": "online-tutor",
+  "kind": "career",
   "verdict": "NO",
   "payK": 45,
   "training_months": 3.5,
@@ -697,6 +721,7 @@
  },
  {
   "slug": "virtual-assistant",
+  "kind": "career",
   "verdict": "NO",
   "payK": 45,
   "training_months": 3.5,
@@ -726,6 +751,7 @@
  },
  {
   "slug": "e-commerce-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 83,
   "training_months": 36,
@@ -755,6 +781,7 @@
  },
  {
   "slug": "crm-email-marketer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 9,
@@ -784,6 +811,7 @@
  },
  {
   "slug": "accountant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 84,
   "training_months": 48,
@@ -816,6 +844,7 @@
  },
  {
   "slug": "enrolled-agent-tax-pro",
+  "kind": "career",
   "verdict": "YES",
   "payK": 55,
   "training_months": 9,
@@ -845,6 +874,7 @@
  },
  {
   "slug": "bookkeeper-advisory",
+  "kind": "career",
   "verdict": "NO",
   "payK": 51,
   "training_months": 9,
@@ -874,6 +904,7 @@
  },
  {
   "slug": "financial-analyst",
+  "kind": "career",
   "verdict": "YES",
   "payK": 105,
   "training_months": 36,
@@ -903,6 +934,7 @@
  },
  {
   "slug": "insurance-agent",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 3.5,
@@ -935,6 +967,7 @@
  },
  {
   "slug": "mortgage-broker",
+  "kind": "career",
   "verdict": "NO",
   "payK": 77,
   "training_months": 36,
@@ -967,6 +1000,7 @@
  },
  {
   "slug": "b2b-sales-rep",
+  "kind": "career",
   "verdict": "YES",
   "payK": 76,
   "training_months": 9,
@@ -996,6 +1030,7 @@
  },
  {
   "slug": "recruiter",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 36,
@@ -1025,6 +1060,7 @@
  },
  {
   "slug": "hr-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 36,
@@ -1054,6 +1090,7 @@
  },
  {
   "slug": "project-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 102,
   "training_months": 9,
@@ -1083,6 +1120,7 @@
  },
  {
   "slug": "operations-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 106,
   "training_months": 36,
@@ -1112,6 +1150,7 @@
  },
  {
   "slug": "grant-writer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 58,
   "training_months": 36,
@@ -1141,6 +1180,7 @@
  },
  {
   "slug": "translator-interpreter",
+  "kind": "career",
   "verdict": "NO",
   "payK": 60,
   "training_months": 36,
@@ -1170,6 +1210,7 @@
  },
  {
   "slug": "brand-strategist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 36,
@@ -1199,6 +1240,7 @@
  },
  {
   "slug": "pr-specialist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 75,
   "training_months": 36,
@@ -1228,6 +1270,7 @@
  },
  {
   "slug": "market-researcher",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 9,
@@ -1257,6 +1300,7 @@
  },
  {
   "slug": "customer-success-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -1286,6 +1330,7 @@
  },
  {
   "slug": "business-consultant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 120,
   "training_months": 36,
@@ -1315,6 +1360,7 @@
  },
  {
   "slug": "real-estate-agent",
+  "kind": "career",
   "verdict": "NO",
   "payK": 53,
   "training_months": 3.5,
@@ -1347,6 +1393,7 @@
  },
  {
   "slug": "online-course-creator",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -1376,6 +1423,7 @@
  },
  {
   "slug": "streamer-content-creator",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -1405,6 +1453,7 @@
  },
  {
   "slug": "ugc-creator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -1434,6 +1483,7 @@
  },
  {
   "slug": "dental-hygienist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 98,
   "training_months": 36,
@@ -1463,6 +1513,7 @@
  },
  {
   "slug": "registered-nurse",
+  "kind": "career",
   "verdict": "YES",
   "payK": 98,
   "training_months": 36,
@@ -1495,6 +1546,7 @@
  },
  {
   "slug": "lpn-lvn",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 9,
@@ -1527,6 +1579,7 @@
  },
  {
   "slug": "medical-assistant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -1556,6 +1609,7 @@
  },
  {
   "slug": "phlebotomist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 4.5,
@@ -1585,6 +1639,7 @@
  },
  {
   "slug": "radiology-tech",
+  "kind": "career",
   "verdict": "YES",
   "payK": 80,
   "training_months": 18,
@@ -1614,6 +1669,7 @@
  },
  {
   "slug": "sonographer-ultrasound",
+  "kind": "career",
   "verdict": "YES",
   "payK": 97,
   "training_months": 18,
@@ -1643,6 +1699,7 @@
  },
  {
   "slug": "mri-technologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 95,
   "training_months": 18,
@@ -1672,6 +1729,7 @@
  },
  {
   "slug": "respiratory-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 82,
   "training_months": 18,
@@ -1704,6 +1762,7 @@
  },
  {
   "slug": "physical-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 100,
   "training_months": 48,
@@ -1736,6 +1795,7 @@
  },
  {
   "slug": "pt-assistant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -1765,6 +1825,7 @@
  },
  {
   "slug": "occupational-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 100,
   "training_months": 48,
@@ -1797,6 +1858,7 @@
  },
  {
   "slug": "speech-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 98,
   "training_months": 48,
@@ -1829,6 +1891,7 @@
  },
  {
   "slug": "massage-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 58,
   "training_months": 9,
@@ -1858,6 +1921,7 @@
  },
  {
   "slug": "esthetician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -1887,6 +1951,7 @@
  },
  {
   "slug": "dental-assistant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -1916,6 +1981,7 @@
  },
  {
   "slug": "vet-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 18,
@@ -1945,6 +2011,7 @@
  },
  {
   "slug": "pharmacist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 135,
   "training_months": 48,
@@ -1977,6 +2044,7 @@
  },
  {
   "slug": "pharmacy-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2006,6 +2074,7 @@
  },
  {
   "slug": "surgical-technologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 65,
   "training_months": 9,
@@ -2035,6 +2104,7 @@
  },
  {
   "slug": "emt-paramedic",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2064,6 +2134,7 @@
  },
  {
   "slug": "lab-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 18,
@@ -2093,6 +2164,7 @@
  },
  {
   "slug": "dialysis-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2122,6 +2194,7 @@
  },
  {
   "slug": "home-health-aide",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -2151,6 +2224,7 @@
  },
  {
   "slug": "doula",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 4.5,
@@ -2180,6 +2254,7 @@
  },
  {
   "slug": "optometrist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 130,
   "training_months": 48,
@@ -2212,6 +2287,7 @@
  },
  {
   "slug": "nutrition-coach-dietitian",
+  "kind": "career",
   "verdict": "YES",
   "payK": 76,
   "training_months": 36,
@@ -2244,6 +2320,7 @@
  },
  {
   "slug": "medical-coder",
+  "kind": "career",
   "verdict": "NO",
   "payK": 51,
   "training_months": 9,
@@ -2273,6 +2350,7 @@
  },
  {
   "slug": "sterile-processing-tech",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2302,6 +2380,7 @@
  },
  {
   "slug": "ekg-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2331,6 +2410,7 @@
  },
  {
   "slug": "electrician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 54,
@@ -2360,6 +2440,7 @@
  },
  {
   "slug": "plumber",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 36,
@@ -2389,6 +2470,7 @@
  },
  {
   "slug": "hvac-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 18,
@@ -2418,6 +2500,7 @@
  },
  {
   "slug": "carpenter",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 36,
@@ -2447,6 +2530,7 @@
  },
  {
   "slug": "house-painter",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -2476,6 +2560,7 @@
  },
  {
   "slug": "drywall-finisher",
+  "kind": "career",
   "verdict": "NO",
   "payK": 68,
   "training_months": 9,
@@ -2505,6 +2590,7 @@
  },
  {
   "slug": "tile-setter",
+  "kind": "career",
   "verdict": "YES",
   "payK": 51,
   "training_months": 36,
@@ -2534,6 +2620,7 @@
  },
  {
   "slug": "roofer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 55,
   "training_months": 3.5,
@@ -2563,6 +2650,7 @@
  },
  {
   "slug": "welder",
+  "kind": "career",
   "verdict": "YES",
   "payK": 54,
   "training_months": 9,
@@ -2592,6 +2680,7 @@
  },
  {
   "slug": "auto-mechanic",
+  "kind": "career",
   "verdict": "YES",
   "payK": 51,
   "training_months": 9,
@@ -2621,6 +2710,7 @@
  },
  {
   "slug": "diesel-mechanic",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 9,
@@ -2650,6 +2740,7 @@
  },
  {
   "slug": "locksmith",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2679,6 +2770,7 @@
  },
  {
   "slug": "appliance-repair-tech",
+  "kind": "career",
   "verdict": "YES",
   "payK": 51,
   "training_months": 4.5,
@@ -2708,6 +2800,7 @@
  },
  {
   "slug": "elevator-mechanic",
+  "kind": "career",
   "verdict": "YES",
   "payK": 105,
   "training_months": 48,
@@ -2740,6 +2833,7 @@
  },
  {
   "slug": "solar-installer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 52,
   "training_months": 9,
@@ -2769,6 +2863,7 @@
  },
  {
   "slug": "landscaper-lawn-pro",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -2798,6 +2893,7 @@
  },
  {
   "slug": "pool-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -2827,6 +2923,7 @@
  },
  {
   "slug": "pest-control-tech",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -2859,6 +2956,7 @@
  },
  {
   "slug": "home-inspector",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -2891,6 +2989,7 @@
  },
  {
   "slug": "general-contractor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 105,
   "training_months": 36,
@@ -2923,6 +3022,7 @@
  },
  {
   "slug": "flooring-installer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 54,
   "training_months": 36,
@@ -2952,6 +3052,7 @@
  },
  {
   "slug": "garage-door-tech",
+  "kind": "career",
   "verdict": "YES",
   "payK": 50,
   "training_months": 4.5,
@@ -2981,6 +3082,7 @@
  },
  {
   "slug": "arborist-tree-pro",
+  "kind": "career",
   "verdict": "YES",
   "payK": 51,
   "training_months": 3.5,
@@ -3010,6 +3112,7 @@
  },
  {
   "slug": "concrete-finisher",
+  "kind": "career",
   "verdict": "YES",
   "payK": 57,
   "training_months": 36,
@@ -3039,6 +3142,7 @@
  },
  {
   "slug": "glazier-glass",
+  "kind": "career",
   "verdict": "YES",
   "payK": 55,
   "training_months": 9,
@@ -3068,6 +3172,7 @@
  },
  {
   "slug": "handyman-solo-pro",
+  "kind": "career",
   "verdict": "YES",
   "payK": 50,
   "training_months": 4.5,
@@ -3097,6 +3202,7 @@
  },
  {
   "slug": "cabinet-maker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 46,
   "training_months": 9,
@@ -3126,6 +3232,7 @@
  },
  {
   "slug": "furniture-restorer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -3155,6 +3262,7 @@
  },
  {
   "slug": "boat-mechanic-marine-tech",
+  "kind": "career",
   "verdict": "YES",
   "payK": 58,
   "training_months": 4.5,
@@ -3184,6 +3292,7 @@
  },
  {
   "slug": "aircraft-mechanic-a-p",
+  "kind": "career",
   "verdict": "YES",
   "payK": 80,
   "training_months": 18,
@@ -3216,6 +3325,7 @@
  },
  {
   "slug": "photographer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 45,
   "training_months": 9,
@@ -3245,6 +3355,7 @@
  },
  {
   "slug": "wedding-photographer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 43,
   "training_months": 9,
@@ -3274,6 +3385,7 @@
  },
  {
   "slug": "videographer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 36,
@@ -3303,6 +3415,7 @@
  },
  {
   "slug": "graphic-designer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 63,
   "training_months": 9,
@@ -3332,6 +3445,7 @@
  },
  {
   "slug": "illustrator",
+  "kind": "career",
   "verdict": "NO",
   "payK": 55,
   "training_months": 9,
@@ -3361,6 +3475,7 @@
  },
  {
   "slug": "tattoo-artist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 59,
   "training_months": 36,
@@ -3393,6 +3508,7 @@
  },
  {
   "slug": "florist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -3422,6 +3538,7 @@
  },
  {
   "slug": "interior-designer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 63,
   "training_months": 18,
@@ -3451,6 +3568,7 @@
  },
  {
   "slug": "home-stager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 67,
   "training_months": 3.5,
@@ -3480,6 +3598,7 @@
  },
  {
   "slug": "event-planner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 59,
   "training_months": 36,
@@ -3509,6 +3628,7 @@
  },
  {
   "slug": "wedding-planner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 36,
@@ -3538,6 +3658,7 @@
  },
  {
   "slug": "dj-event-host",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -3567,6 +3688,7 @@
  },
  {
   "slug": "voice-actor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 4.5,
@@ -3596,6 +3718,7 @@
  },
  {
   "slug": "animator",
+  "kind": "career",
   "verdict": "NO",
   "payK": 102,
   "training_months": 36,
@@ -3625,6 +3748,7 @@
  },
  {
   "slug": "makeup-artist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 97,
   "training_months": 4.5,
@@ -3654,6 +3778,7 @@
  },
  {
   "slug": "personal-fashion-stylist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -3683,6 +3808,7 @@
  },
  {
   "slug": "art-director",
+  "kind": "career",
   "verdict": "NO",
   "payK": 120,
   "training_months": 18,
@@ -3712,6 +3838,7 @@
  },
  {
   "slug": "set-production-designer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 75,
   "training_months": 36,
@@ -3741,6 +3868,7 @@
  },
  {
   "slug": "music-instructor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -3770,6 +3898,7 @@
  },
  {
   "slug": "jewelry-maker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 18,
@@ -3799,6 +3928,7 @@
  },
  {
   "slug": "cosmetologist-hair-stylist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 36,
   "training_months": 9,
@@ -3828,6 +3958,7 @@
  },
  {
   "slug": "barber",
+  "kind": "career",
   "verdict": "NO",
   "payK": 38,
   "training_months": 9,
@@ -3857,6 +3988,7 @@
  },
  {
   "slug": "nail-technician",
+  "kind": "career",
   "verdict": "NO",
   "payK": 36,
   "training_months": 4.5,
@@ -3886,6 +4018,7 @@
  },
  {
   "slug": "lash-brow-artist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 4.5,
@@ -3915,6 +4048,7 @@
  },
  {
   "slug": "permanent-makeup-artist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 55,
   "training_months": 4.5,
@@ -3944,6 +4078,7 @@
  },
  {
   "slug": "beauty-salon-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -3976,6 +4111,7 @@
  },
  {
   "slug": "fitness-trainer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -4005,6 +4141,7 @@
  },
  {
   "slug": "yoga-pilates-instructor",
+  "kind": "career",
   "verdict": "NO",
   "payK": 45,
   "training_months": 3.5,
@@ -4034,6 +4171,7 @@
  },
  {
   "slug": "wellness-coach",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 45,
   "training_months": 36,
@@ -4063,6 +4201,7 @@
  },
  {
   "slug": "spa-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -4095,6 +4234,7 @@
  },
  {
   "slug": "chef",
+  "kind": "career",
   "verdict": "NO",
   "payK": 62,
   "training_months": 36,
@@ -4124,6 +4264,7 @@
  },
  {
   "slug": "baker",
+  "kind": "career",
   "verdict": "NO",
   "payK": 37,
   "training_months": 9,
@@ -4153,6 +4294,7 @@
  },
  {
   "slug": "private-chef",
+  "kind": "career",
   "verdict": "NO",
   "payK": 48,
   "training_months": 36,
@@ -4182,6 +4324,7 @@
  },
  {
   "slug": "caterer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 9,
@@ -4211,6 +4354,7 @@
  },
  {
   "slug": "food-truck-owner",
+  "kind": "career",
   "verdict": "NO",
   "payK": 69,
   "training_months": 9,
@@ -4243,6 +4387,7 @@
  },
  {
   "slug": "bakery-caf-owner",
+  "kind": "career",
   "verdict": "NO",
   "payK": 69,
   "training_months": 9,
@@ -4275,6 +4420,7 @@
  },
  {
   "slug": "barista-craft-coffee",
+  "kind": "career",
   "verdict": "NO",
   "payK": 31,
   "training_months": 3.5,
@@ -4304,6 +4450,7 @@
  },
  {
   "slug": "butcher",
+  "kind": "career",
   "verdict": "NO",
   "payK": 40,
   "training_months": 18,
@@ -4333,6 +4480,7 @@
  },
  {
   "slug": "restaurant-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 36,
@@ -4362,6 +4510,7 @@
  },
  {
   "slug": "meal-prep-business-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -4394,6 +4543,7 @@
  },
  {
   "slug": "chocolatier-candy-maker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -4423,6 +4573,7 @@
  },
  {
   "slug": "farmers-market-producer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 36,
@@ -4452,6 +4603,7 @@
  },
  {
   "slug": "sommelier",
+  "kind": "career",
   "verdict": "NO",
   "payK": 35,
   "training_months": 36,
@@ -4481,6 +4633,7 @@
  },
  {
   "slug": "school-teacher",
+  "kind": "career",
   "verdict": "YES",
   "payK": 67,
   "training_months": 36,
@@ -4510,6 +4663,7 @@
  },
  {
   "slug": "preschool-teacher",
+  "kind": "career",
   "verdict": "NO",
   "payK": 38,
   "training_months": 18,
@@ -4539,6 +4693,7 @@
  },
  {
   "slug": "special-education-teacher",
+  "kind": "career",
   "verdict": "YES",
   "payK": 67,
   "training_months": 36,
@@ -4568,6 +4723,7 @@
  },
  {
   "slug": "school-counselor",
+  "kind": "career",
   "verdict": "NO",
   "payK": 64,
   "training_months": 48,
@@ -4600,6 +4756,7 @@
  },
  {
   "slug": "private-tutor-in-person",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -4629,6 +4786,7 @@
  },
  {
   "slug": "childcare-center-owner",
+  "kind": "career",
   "verdict": "NO",
   "payK": 59,
   "training_months": 36,
@@ -4661,6 +4819,7 @@
  },
  {
   "slug": "aba-therapist-kids",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -4690,6 +4849,7 @@
  },
  {
   "slug": "social-worker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 36,
@@ -4722,6 +4882,7 @@
  },
  {
   "slug": "psychologist-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 105,
   "training_months": 48,
@@ -4754,6 +4915,7 @@
  },
  {
   "slug": "life-coach",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -4783,6 +4945,7 @@
  },
  {
   "slug": "dance-instructor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 36,
@@ -4812,6 +4975,7 @@
  },
  {
   "slug": "swim-instructor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -4841,6 +5005,7 @@
  },
  {
   "slug": "driving-instructor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -4870,6 +5035,7 @@
  },
  {
   "slug": "corporate-trainer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 9,
@@ -4899,6 +5065,7 @@
  },
  {
   "slug": "sports-coach",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 36,
@@ -4928,6 +5095,7 @@
  },
  {
   "slug": "speech-public-speaking-coach",
+  "kind": "career",
   "verdict": "YES",
   "payK": 47,
   "training_months": 9,
@@ -4957,6 +5125,7 @@
  },
  {
   "slug": "nanny-family-assistant-pro",
+  "kind": "career",
   "verdict": "NO",
   "payK": 35,
   "training_months": 3.5,
@@ -4986,6 +5155,7 @@
  },
  {
   "slug": "elder-care-companion-pro",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -5015,6 +5185,7 @@
  },
  {
   "slug": "cdl-truck-driver",
+  "kind": "career",
   "verdict": "YES",
   "payK": 59,
   "training_months": 4.5,
@@ -5047,6 +5218,7 @@
  },
  {
   "slug": "owner-operator-trucking",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 4.5,
@@ -5079,6 +5251,7 @@
  },
  {
   "slug": "commercial-pilot",
+  "kind": "career",
   "verdict": "YES",
   "payK": 123,
   "training_months": 36,
@@ -5111,6 +5284,7 @@
  },
  {
   "slug": "flight-attendant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -5143,6 +5317,7 @@
  },
  {
   "slug": "boat-captain",
+  "kind": "career",
   "verdict": "YES",
   "payK": 92,
   "training_months": 18,
@@ -5175,6 +5350,7 @@
  },
  {
   "slug": "yacht-broker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 150,
   "training_months": 9,
@@ -5207,6 +5383,7 @@
  },
  {
   "slug": "dispatcher-trucking",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -5236,6 +5413,7 @@
  },
  {
   "slug": "logistics-coordinator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 82,
   "training_months": 36,
@@ -5265,6 +5443,7 @@
  },
  {
   "slug": "moving-company-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5297,6 +5476,7 @@
  },
  {
   "slug": "tow-truck-operator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 4.5,
@@ -5326,6 +5506,7 @@
  },
  {
   "slug": "medical-courier-owner-route",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -5358,6 +5539,7 @@
  },
  {
   "slug": "auto-detailing-mobile-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5390,6 +5572,7 @@
  },
  {
   "slug": "cleaning-company-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5422,6 +5605,7 @@
  },
  {
   "slug": "handyman-company-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5454,6 +5638,7 @@
  },
  {
   "slug": "painting-company-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5486,6 +5671,7 @@
  },
  {
   "slug": "lawn-care-company-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5518,6 +5704,7 @@
  },
  {
   "slug": "pressure-washing-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5550,6 +5737,7 @@
  },
  {
   "slug": "window-cleaning-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -5582,6 +5770,7 @@
  },
  {
   "slug": "junk-removal-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5614,6 +5803,7 @@
  },
  {
   "slug": "home-organizer-pro",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -5643,6 +5833,7 @@
  },
  {
   "slug": "property-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 70,
   "training_months": 36,
@@ -5675,6 +5866,7 @@
  },
  {
   "slug": "insurance-claims-adjuster",
+  "kind": "career",
   "verdict": "NO",
   "payK": 78,
   "training_months": 3.5,
@@ -5707,6 +5899,7 @@
  },
  {
   "slug": "administrative-assistant",
+  "kind": "career",
   "verdict": "NO",
   "payK": 48,
   "training_months": 3.5,
@@ -5736,6 +5929,7 @@
  },
  {
   "slug": "executive-assistant",
+  "kind": "career",
   "verdict": "NO",
   "payK": 77,
   "training_months": 36,
@@ -5765,6 +5959,7 @@
  },
  {
   "slug": "loan-officer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 77,
   "training_months": 36,
@@ -5797,6 +5992,7 @@
  },
  {
   "slug": "airbnb-co-host-str-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5826,6 +6022,7 @@
  },
  {
   "slug": "laundromat-owner",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5858,6 +6055,7 @@
  },
  {
   "slug": "pet-grooming-salon-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -5890,6 +6088,7 @@
  },
  {
   "slug": "dog-trainer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 40,
   "training_months": 4.5,
@@ -5919,6 +6118,7 @@
  },
  {
   "slug": "pet-boarding-daycare-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5951,6 +6151,7 @@
  },
  {
   "slug": "mobile-pet-groomer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -5980,6 +6181,7 @@
  },
  {
   "slug": "mobile-mechanic-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -6012,6 +6214,7 @@
  },
  {
   "slug": "vending-atm-route-owner",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -6044,6 +6247,7 @@
  },
  {
   "slug": "self-storage-owner",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 85,
   "training_months": 9,
@@ -6076,6 +6280,7 @@
  },
  {
   "slug": "senior-home-care-agency-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 110,
   "training_months": 9,
@@ -6108,6 +6313,7 @@
  },
  {
   "slug": "tutoring-center-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -6140,6 +6346,7 @@
  },
  {
   "slug": "photo-booth-event-rentals-owner",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -6172,6 +6379,7 @@
  },
  {
   "slug": "resale-flipping-business",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -6201,6 +6409,7 @@
  },
  {
   "slug": "etsy-digital-products-seller",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -6230,6 +6439,7 @@
  },
  {
   "slug": "print-on-demand-seller",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -6259,6 +6469,7 @@
  },
  {
   "slug": "amazon-fba-seller",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -6288,6 +6499,7 @@
  },
  {
   "slug": "real-estate-investor-flips",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 85,
   "training_months": 9,
@@ -6320,6 +6532,7 @@
  },
  {
   "slug": "real-estate-investor-rentals",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 70,
   "training_months": 9,
@@ -6352,6 +6565,7 @@
  },
  {
   "slug": "boat-restoration-flipping",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -6381,6 +6595,7 @@
  },
  {
   "slug": "car-flipping",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -6410,6 +6625,7 @@
  },
  {
   "slug": "franchise-owner-home-services",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -6442,6 +6658,7 @@
  },
  {
   "slug": "wind-turbine-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 9,
@@ -6471,6 +6688,7 @@
  },
  {
   "slug": "robotics-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 68,
   "training_months": 18,
@@ -6500,6 +6718,7 @@
  },
  {
   "slug": "ev-charging-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 63,
   "training_months": 54,
@@ -6529,6 +6748,7 @@
  },
  {
   "slug": "fiber-optic-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 74,
   "training_months": 9,
@@ -6558,6 +6778,7 @@
  },
  {
   "slug": "semiconductor-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 51,
   "training_months": 3.5,
@@ -6587,6 +6808,7 @@
  },
  {
   "slug": "tower-climber-telecom",
+  "kind": "career",
   "verdict": "NO",
   "payK": 64,
   "training_months": 3.5,
@@ -6616,6 +6838,7 @@
  },
  {
   "slug": "land-surveyor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 36,
@@ -6648,6 +6871,7 @@
  },
  {
   "slug": "heavy-equipment-operator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 60,
   "training_months": 36,
@@ -6677,6 +6901,7 @@
  },
  {
   "slug": "crane-operator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 68,
   "training_months": 36,
@@ -6706,6 +6931,7 @@
  },
  {
   "slug": "pipefitter",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 36,
@@ -6735,6 +6961,7 @@
  },
  {
   "slug": "drone-pilot-commercial",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 9,
@@ -6767,6 +6994,7 @@
  },
  {
   "slug": "air-traffic-controller",
+  "kind": "career",
   "verdict": "YES",
   "payK": 130,
   "training_months": 18,
@@ -6799,6 +7027,7 @@
  },
  {
   "slug": "bus-driver",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -6831,6 +7060,7 @@
  },
  {
   "slug": "train-conductor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 72,
   "training_months": 9,
@@ -6863,6 +7093,7 @@
  },
  {
   "slug": "nurse-practitioner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 132,
   "training_months": 48,
@@ -6895,6 +7126,7 @@
  },
  {
   "slug": "physician-assistant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 136,
   "training_months": 48,
@@ -6927,6 +7159,7 @@
  },
  {
   "slug": "cardiovascular-technologist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 70,
   "training_months": 18,
@@ -6956,6 +7189,7 @@
  },
  {
   "slug": "nuclear-medicine-technologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 101,
   "training_months": 18,
@@ -6985,6 +7219,7 @@
  },
  {
   "slug": "radiation-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 105,
   "training_months": 18,
@@ -7017,6 +7252,7 @@
  },
  {
   "slug": "audiologist",
+  "kind": "career",
   "verdict": "NO",
   "payK": 95,
   "training_months": 48,
@@ -7049,6 +7285,7 @@
  },
  {
   "slug": "genetic-counselor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 100,
   "training_months": 48,
@@ -7081,6 +7318,7 @@
  },
  {
   "slug": "clinical-research-coordinator",
+  "kind": "career",
   "verdict": "NO",
   "payK": 60,
   "training_months": 36,
@@ -7110,6 +7348,7 @@
  },
  {
   "slug": "veterinary-assistant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -7139,6 +7378,7 @@
  },
  {
   "slug": "data-engineer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 130,
   "training_months": 36,
@@ -7168,6 +7408,7 @@
  },
  {
   "slug": "cloud-architect",
+  "kind": "career",
   "verdict": "NO",
   "payK": 145,
   "training_months": 48,
@@ -7197,6 +7438,7 @@
  },
  {
   "slug": "penetration-tester",
+  "kind": "career",
   "verdict": "NO",
   "payK": 125,
   "training_months": 48,
@@ -7226,6 +7468,7 @@
  },
  {
   "slug": "salesforce-administrator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 99,
   "training_months": 3.5,
@@ -7255,6 +7498,7 @@
  },
  {
   "slug": "ux-researcher",
+  "kind": "career",
   "verdict": "NO",
   "payK": 110,
   "training_months": 18,
@@ -7284,6 +7528,7 @@
  },
  {
   "slug": "paralegal",
+  "kind": "career",
   "verdict": "NO",
   "payK": 63,
   "training_months": 18,
@@ -7313,6 +7558,7 @@
  },
  {
   "slug": "actuary",
+  "kind": "career",
   "verdict": "YES",
   "payK": 125,
   "training_months": 36,
@@ -7342,6 +7588,7 @@
  },
  {
   "slug": "nuclear-reactor-operator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 123,
   "training_months": 48,
@@ -7374,6 +7621,7 @@
  },
  {
   "slug": "commercial-insurance-producer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 1,
@@ -7406,6 +7654,7 @@
  },
  {
   "slug": "computer-network-architect",
+  "kind": "career",
   "verdict": "YES",
   "payK": 130,
   "training_months": 36,
@@ -7435,6 +7684,7 @@
  },
  {
   "slug": "database-administrator-architect",
+  "kind": "career",
   "verdict": "YES",
   "payK": 123,
   "training_months": 36,
@@ -7464,6 +7714,7 @@
  },
  {
   "slug": "computer-systems-analyst",
+  "kind": "career",
   "verdict": "YES",
   "payK": 103,
   "training_months": 36,
@@ -7493,6 +7744,7 @@
  },
  {
   "slug": "gis-specialist-cartographer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 78,
   "training_months": 36,
@@ -7522,6 +7774,7 @@
  },
  {
   "slug": "certified-anesthesiologist-assistant",
+  "kind": "career",
   "verdict": "YES",
   "payK": 132,
   "training_months": 54,
@@ -7554,6 +7807,7 @@
  },
  {
   "slug": "cardiovascular-perfusionist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 135,
   "training_months": 54,
@@ -7586,6 +7840,7 @@
  },
  {
   "slug": "medical-dosimetrist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 124,
   "training_months": 36,
@@ -7615,6 +7870,7 @@
  },
  {
   "slug": "orthotist-prosthetist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 81,
   "training_months": 54,
@@ -7644,6 +7900,7 @@
  },
  {
   "slug": "athletic-trainer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 54,
@@ -7676,6 +7933,7 @@
  },
  {
   "slug": "biomedical-equipment-technician-bmet",
+  "kind": "career",
   "verdict": "YES",
   "payK": 60,
   "training_months": 18,
@@ -7705,6 +7963,7 @@
  },
  {
   "slug": "millwright",
+  "kind": "career",
   "verdict": "YES",
   "payK": 72,
   "training_months": 36,
@@ -7734,6 +7993,7 @@
  },
  {
   "slug": "structural-ironworker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 69,
   "training_months": 36,
@@ -7763,6 +8023,7 @@
  },
  {
   "slug": "brick-mason",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 18,
@@ -7792,6 +8053,7 @@
  },
  {
   "slug": "sheet-metal-worker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 65,
   "training_months": 36,
@@ -7821,6 +8083,7 @@
  },
  {
   "slug": "water-wastewater-treatment-operator",
+  "kind": "career",
   "verdict": "NO",
   "payK": 57,
   "training_months": 9,
@@ -7853,6 +8116,7 @@
  },
  {
   "slug": "lineworker-power-lines",
+  "kind": "career",
   "verdict": "YES",
   "payK": 93,
   "training_months": 36,
@@ -7882,6 +8146,7 @@
  },
  {
   "slug": "sound-engineering-technician",
+  "kind": "career",
   "verdict": "NO",
   "payK": 60,
   "training_months": 9,
@@ -7911,6 +8176,7 @@
  },
  {
   "slug": "fashion-designer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 81,
   "training_months": 36,
@@ -7940,6 +8206,7 @@
  },
  {
   "slug": "electrologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 48,
   "training_months": 9,
@@ -7969,6 +8236,7 @@
  },
  {
   "slug": "food-scientist-technologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 36,
@@ -7998,6 +8266,7 @@
  },
  {
   "slug": "brewer-brewmaster",
+  "kind": "career",
   "verdict": "YES",
   "payK": 52,
   "training_months": 9,
@@ -8027,6 +8296,7 @@
  },
  {
   "slug": "substance-abuse-counselor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 59,
   "training_months": 36,
@@ -8059,6 +8329,7 @@
  },
  {
   "slug": "firefighter",
+  "kind": "career",
   "verdict": "YES",
   "payK": 57,
   "training_months": 9,
@@ -8091,6 +8362,7 @@
  },
  {
   "slug": "funeral-director",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 18,
@@ -8123,6 +8395,7 @@
  },
  {
   "slug": "emergency-management-director",
+  "kind": "career",
   "verdict": "YES",
   "payK": 92,
   "training_months": 36,
@@ -8152,6 +8425,7 @@
  },
  {
   "slug": "aircraft-dispatcher-faa",
+  "kind": "career",
   "verdict": "YES",
   "payK": 65,
   "training_months": 9,
@@ -8184,6 +8458,7 @@
  },
  {
   "slug": "ship-engineer-merchant-marine",
+  "kind": "career",
   "verdict": "YES",
   "payK": 100,
   "training_months": 36,
@@ -8216,6 +8491,7 @@
  },
  {
   "slug": "insurance-underwriter",
+  "kind": "career",
   "verdict": "NO",
   "payK": 79,
   "training_months": 36,
@@ -8245,6 +8521,7 @@
  },
  {
   "slug": "real-estate-appraiser",
+  "kind": "career",
   "verdict": "YES",
   "payK": 68,
   "training_months": 18,
@@ -8277,6 +8554,7 @@
  },
  {
   "slug": "construction-estimator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 77,
   "training_months": 36,
@@ -8306,6 +8584,7 @@
  },
  {
   "slug": "network-and-computer-systems-administrator",
+  "kind": "career",
   "verdict": "NO",
   "payK": 97,
   "training_months": 36,
@@ -8335,6 +8614,7 @@
  },
  {
   "slug": "robotics-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 120,
   "training_months": 36,
@@ -8364,6 +8644,7 @@
  },
  {
   "slug": "computer-hardware-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 140,
   "training_months": 36,
@@ -8393,6 +8674,7 @@
  },
  {
   "slug": "instructional-designer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 77,
   "training_months": 54,
@@ -8422,6 +8704,7 @@
  },
  {
   "slug": "veterinarian",
+  "kind": "career",
   "verdict": "YES",
   "payK": 125,
   "training_months": 54,
@@ -8454,6 +8737,7 @@
  },
  {
   "slug": "dentist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 179,
   "training_months": 54,
@@ -8486,6 +8770,7 @@
  },
  {
   "slug": "chiropractor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 54,
@@ -8518,6 +8803,7 @@
  },
  {
   "slug": "epidemiologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 83,
   "training_months": 54,
@@ -8547,6 +8833,7 @@
  },
  {
   "slug": "psychiatrist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 239,
   "training_months": 54,
@@ -8579,6 +8866,7 @@
  },
  {
   "slug": "sleep-technologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 58,
   "training_months": 9,
@@ -8608,6 +8896,7 @@
  },
  {
   "slug": "boilermaker",
+  "kind": "career",
   "verdict": "NO",
   "payK": 76,
   "training_months": 54,
@@ -8637,6 +8926,7 @@
  },
  {
   "slug": "commercial-diver",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 9,
@@ -8669,6 +8959,7 @@
  },
  {
   "slug": "water-well-driller",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 18,
@@ -8698,6 +8989,7 @@
  },
  {
   "slug": "septic-system-installer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -8727,6 +9019,7 @@
  },
  {
   "slug": "civil-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 100,
   "training_months": 36,
@@ -8756,6 +9049,7 @@
  },
  {
   "slug": "landscape-architect",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 54,
@@ -8785,6 +9079,7 @@
  },
  {
   "slug": "commercial-industrial-designer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 80,
   "training_months": 36,
@@ -8814,6 +9109,7 @@
  },
  {
   "slug": "choreographer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 54,
@@ -8843,6 +9139,7 @@
  },
  {
   "slug": "body-piercing-artist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -8875,6 +9172,7 @@
  },
  {
   "slug": "laser-hair-removal-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 52,
   "training_months": 9,
@@ -8904,6 +9202,7 @@
  },
  {
   "slug": "coffee-roaster",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -8933,6 +9232,7 @@
  },
  {
   "slug": "winemaker-enologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 82,
   "training_months": 36,
@@ -8962,6 +9262,7 @@
  },
  {
   "slug": "police-officer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 72,
   "training_months": 9,
@@ -8994,6 +9295,7 @@
  },
  {
   "slug": "private-investigator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 52,
   "training_months": 9,
@@ -9026,6 +9328,7 @@
  },
  {
   "slug": "librarian",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 54,
@@ -9055,6 +9358,7 @@
  },
  {
   "slug": "community-health-worker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 51,
   "training_months": 3.5,
@@ -9084,6 +9388,7 @@
  },
  {
   "slug": "locomotive-engineer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 74,
   "training_months": 18,
@@ -9116,6 +9421,7 @@
  },
  {
   "slug": "delivery-driver-light-truck",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -9145,6 +9451,7 @@
  },
  {
   "slug": "personal-financial-advisor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 120,
   "training_months": 36,
@@ -9177,6 +9484,7 @@
  },
  {
   "slug": "compliance-officer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 80,
   "training_months": 36,
@@ -9206,6 +9514,7 @@
  },
  {
   "slug": "computer-and-information-research-scientist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 140,
   "training_months": 54,
@@ -9235,6 +9544,7 @@
  },
  {
   "slug": "site-reliability-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 135,
   "training_months": 36,
@@ -9264,6 +9574,7 @@
  },
  {
   "slug": "health-informatics-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 85,
   "training_months": 36,
@@ -9293,6 +9604,7 @@
  },
  {
   "slug": "digital-forensics-analyst",
+  "kind": "career",
   "verdict": "YES",
   "payK": 120,
   "training_months": 36,
@@ -9322,6 +9634,7 @@
  },
  {
   "slug": "registered-nurse-2",
+  "kind": "career",
   "verdict": "YES",
   "payK": 237,
   "training_months": 36,
@@ -9354,6 +9667,7 @@
  },
  {
   "slug": "physician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 238,
   "training_months": 48,
@@ -9386,6 +9700,7 @@
  },
  {
   "slug": "podiatrist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 141,
   "training_months": 54,
@@ -9418,6 +9733,7 @@
  },
  {
   "slug": "recreational-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 60,
   "training_months": 36,
@@ -9447,6 +9763,7 @@
  },
  {
   "slug": "histotechnologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 36,
@@ -9476,6 +9793,7 @@
  },
  {
   "slug": "hazardous-materials-removal-worker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 50,
   "training_months": 3.5,
@@ -9508,6 +9826,7 @@
  },
  {
   "slug": "security-and-fire-alarm-systems-installer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 18,
@@ -9537,6 +9856,7 @@
  },
  {
   "slug": "plasterer-and-stucco-mason",
+  "kind": "career",
   "verdict": "YES",
   "payK": 55,
   "training_months": 18,
@@ -9566,6 +9886,7 @@
  },
  {
   "slug": "reinforcing-iron-and-rebar-worker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 36,
@@ -9595,6 +9916,7 @@
  },
  {
   "slug": "farm-equipment-mechanic",
+  "kind": "career",
   "verdict": "YES",
   "payK": 52,
   "training_months": 18,
@@ -9624,6 +9946,7 @@
  },
  {
   "slug": "urban-and-regional-planner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 83,
   "training_months": 54,
@@ -9653,6 +9976,7 @@
  },
  {
   "slug": "museum-curator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 61,
   "training_months": 54,
@@ -9682,6 +10006,7 @@
  },
  {
   "slug": "film-stage-lighting-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 68,
   "training_months": 9,
@@ -9711,6 +10036,7 @@
  },
  {
   "slug": "hair-replacement-wig-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 9,
@@ -9740,6 +10066,7 @@
  },
  {
   "slug": "reflexologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 3.5,
@@ -9769,6 +10096,7 @@
  },
  {
   "slug": "farm-ranch-manager",
+  "kind": "career",
   "verdict": "NO",
   "payK": 83,
   "training_months": 36,
@@ -9798,6 +10126,7 @@
  },
  {
   "slug": "food-safety-inspector",
+  "kind": "career",
   "verdict": "YES",
   "payK": 60,
   "training_months": 36,
@@ -9827,6 +10156,7 @@
  },
  {
   "slug": "marriage-and-family-therapist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 63,
   "training_months": 54,
@@ -9859,6 +10189,7 @@
  },
  {
   "slug": "rehabilitation-counselor",
+  "kind": "career",
   "verdict": "YES",
   "payK": 47,
   "training_months": 54,
@@ -9888,6 +10219,7 @@
  },
  {
   "slug": "probation-officer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 64,
   "training_months": 36,
@@ -9920,6 +10252,7 @@
  },
  {
   "slug": "mediator-arbitrator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 67,
   "training_months": 36,
@@ -9949,6 +10282,7 @@
  },
  {
   "slug": "helicopter-pilot",
+  "kind": "career",
   "verdict": "YES",
   "payK": 110,
   "training_months": 18,
@@ -9981,6 +10315,7 @@
  },
  {
   "slug": "harbor-pilot",
+  "kind": "career",
   "verdict": "YES",
   "payK": 175,
   "training_months": 54,
@@ -10010,6 +10345,7 @@
  },
  {
   "slug": "transportation-inspector",
+  "kind": "career",
   "verdict": "YES",
   "payK": 80,
   "training_months": 36,
@@ -10039,6 +10375,7 @@
  },
  {
   "slug": "car-wash-owner",
+  "kind": "side_hustle",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -10071,6 +10408,7 @@
  },
  {
   "slug": "gym-fitness-studio-owner",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -10103,6 +10441,7 @@
  },
  {
   "slug": "mechanical-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 102,
   "training_months": 36,
@@ -10132,6 +10471,7 @@
  },
  {
   "slug": "electrical-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 118,
   "training_months": 36,
@@ -10161,6 +10501,7 @@
  },
  {
   "slug": "platform-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 135,
   "training_months": 36,
@@ -10190,6 +10531,7 @@
  },
  {
   "slug": "embedded-systems-engineer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 130,
   "training_months": 36,
@@ -10219,6 +10561,7 @@
  },
  {
   "slug": "general-surgeon",
+  "kind": "career",
   "verdict": "YES",
   "payK": 239,
   "training_months": 54,
@@ -10251,6 +10594,7 @@
  },
  {
   "slug": "certified-nurse-midwife",
+  "kind": "career",
   "verdict": "YES",
   "payK": 132,
   "training_months": 54,
@@ -10283,6 +10627,7 @@
  },
  {
   "slug": "medical-laboratory-scientist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 63,
   "training_months": 36,
@@ -10312,6 +10657,7 @@
  },
  {
   "slug": "board-certified-behavior-analyst-bcba",
+  "kind": "career",
   "verdict": "YES",
   "payK": 85,
   "training_months": 54,
@@ -10341,6 +10687,7 @@
  },
  {
   "slug": "data-center-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 72,
   "training_months": 9,
@@ -10370,6 +10717,7 @@
  },
  {
   "slug": "cnc-machinist-programmer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 62,
   "training_months": 18,
@@ -10399,6 +10747,7 @@
  },
  {
   "slug": "avionics-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 79,
   "training_months": 18,
@@ -10428,6 +10777,7 @@
  },
  {
   "slug": "power-plant-operator",
+  "kind": "career",
   "verdict": "NO",
   "payK": 100,
   "training_months": 18,
@@ -10457,6 +10807,7 @@
  },
  {
   "slug": "telecommunications-equipment-installer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 64,
   "training_months": 9,
@@ -10486,6 +10837,7 @@
  },
  {
   "slug": "costume-designer",
+  "kind": "career",
   "verdict": "NO",
   "payK": 65,
   "training_months": 36,
@@ -10515,6 +10867,7 @@
  },
  {
   "slug": "lighting-designer",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 36,
@@ -10544,6 +10897,7 @@
  },
  {
   "slug": "audio-video-equipment-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 60,
   "training_months": 9,
@@ -10573,6 +10927,7 @@
  },
  {
   "slug": "tattoo-artist-2",
+  "kind": "career",
   "verdict": "NO",
   "payK": 70,
   "training_months": 12,
@@ -10605,6 +10960,7 @@
  },
  {
   "slug": "scalp-micropigmentation-artist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 75,
   "training_months": 3.5,
@@ -10637,6 +10993,7 @@
  },
  {
   "slug": "food-stylist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 65,
   "training_months": 3.5,
@@ -10666,6 +11023,7 @@
  },
  {
   "slug": "distiller",
+  "kind": "career",
   "verdict": "YES",
   "payK": 58,
   "training_months": 9,
@@ -10695,6 +11053,7 @@
  },
  {
   "slug": "vertical-farm-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 48,
   "training_months": 3.5,
@@ -10724,6 +11083,7 @@
  },
  {
   "slug": "school-psychologist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 87,
   "training_months": 54,
@@ -10756,6 +11116,7 @@
  },
  {
   "slug": "esl-adult-literacy-teacher",
+  "kind": "career",
   "verdict": "NO",
   "payK": 60,
   "training_months": 36,
@@ -10785,6 +11146,7 @@
  },
  {
   "slug": "career-and-technical-education-teacher",
+  "kind": "career",
   "verdict": "YES",
   "payK": 63,
   "training_months": 36,
@@ -10814,6 +11176,7 @@
  },
  {
   "slug": "child-life-specialist",
+  "kind": "career",
   "verdict": "YES",
   "payK": 58,
   "training_months": 36,
@@ -10843,6 +11206,7 @@
  },
  {
   "slug": "customs-broker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 80,
   "training_months": 18,
@@ -10875,6 +11239,7 @@
  },
  {
   "slug": "freight-broker-agent",
+  "kind": "career",
   "verdict": "YES",
   "payK": 70,
   "training_months": 3.5,
@@ -10904,6 +11269,7 @@
  },
  {
   "slug": "subway-streetcar-operator",
+  "kind": "career",
   "verdict": "YES",
   "payK": 65,
   "training_months": 3.5,
@@ -10936,6 +11302,7 @@
  },
  {
   "slug": "business-broker",
+  "kind": "career",
   "verdict": "YES",
   "payK": 110,
   "training_months": 9,
@@ -10968,6 +11335,7 @@
  },
  {
   "slug": "medical-health-services-manager",
+  "kind": "career",
   "verdict": "YES",
   "payK": 118,
   "training_months": 36,
@@ -10997,6 +11365,7 @@
  },
  {
   "slug": "customer-service-representative",
+  "kind": "career",
   "verdict": "NO",
   "payK": 45,
   "training_months": 1,
@@ -11026,6 +11395,7 @@
  },
  {
   "slug": "medical-secretary",
+  "kind": "career",
   "verdict": "YES",
   "payK": 45,
   "training_months": 9,
@@ -11055,6 +11425,7 @@
  },
  {
   "slug": "cad-drafter",
+  "kind": "career",
   "verdict": "NO",
   "payK": 65,
   "training_months": 18,
@@ -11084,6 +11455,7 @@
  },
  {
   "slug": "building-inspector",
+  "kind": "career",
   "verdict": "YES",
   "payK": 72,
   "training_months": 9,
@@ -11113,6 +11485,7 @@
  },
  {
   "slug": "civil-engineering-technician",
+  "kind": "career",
   "verdict": "YES",
   "payK": 65,
   "training_months": 18,

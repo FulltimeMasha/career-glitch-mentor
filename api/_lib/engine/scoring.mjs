@@ -41,6 +41,12 @@
 // hidden inside formulas.
 // ---------------------------------------------------------------------------
 
+// The side-hustle idea (founder's rule, 28.10.2026) lives in its own
+// module — this file sits at the deploy per-file size cap. One-way
+// import: side-hustle.mjs never imports back; scorePerson hands it
+// the scored results plus the small helpers it needs.
+import { pickSideHustle } from './side-hustle.mjs';
+
 const clamp01 = (x) => (x == null || Number.isNaN(x) ? null : Math.min(1, Math.max(0, x)));
 const isNum = (x) => typeof x === 'number' && Number.isFinite(x);
 
@@ -1100,6 +1106,7 @@ export function scoreCandidate(person, prof, professions = []) {
   return {
     slug: prof.slug,
     name: prof.name,
+    kind: prof.kind === 'side_hustle' ? 'side_hustle' : 'career',
     category,
     family: professionFamily(prof),
     verdict: prof.verdict ?? null,
@@ -1160,10 +1167,14 @@ function buildExplorationPlan(person) {
   return steps.slice(0, 6);
 }
 
+// SIDE-HUSTLE IDEA (founder's rule, 28.10.2026): the pick lives in
+// ./side-hustle.mjs (this file is at the deploy size cap) —
+// pickSideHustle() below the cushion block in scorePerson.
+
 // ---------------------------------------------------------------------------
 // scorePerson(person, professions) →
-//   { mode, mode_reason, top3, bottom3, bridge_pick, results_count,
-//     exploration_plan }
+//   { mode, mode_reason, top3, bottom3, bridge_pick, side_hustle_pick,
+//     results_count, exploration_plan }
 // bridge_pick is the slow-money cushion (see the block above the return);
 // null unless the founder's 27.10.2026 rule fires and a candidate clears.
 // No `match` / `percent` field exists anywhere in this output — by design.
@@ -1207,9 +1218,15 @@ export function scorePerson(person, professions) {
   }
 
   // Only candidates that may honestly be PROPOSED: not factually gated
-  // (D) and not hard-blocked by the person's own lines (top_block).
+  // (D), not hard-blocked by the person's own lines (top_block), and a
+  // CAREER (founder's rule, 28.10.2026): a side hustle is not a job you
+  // can be matched into — it never enters the match pools at all. The
+  // selection pool, the direction anchor, the bridge anchor and the
+  // cushion all draw from `sortable`/`selectionPool`, so this one
+  // filter keeps side hustles out of every match surface; they are
+  // offered separately, once, as side_hustle_pick below.
   const sortable = results
-    .filter((r) => r.category !== 'D' && !r.top_block)
+    .filter((r) => r.category !== 'D' && !r.top_block && (profBySlug.get(r.slug) || {}).kind !== 'side_hustle')
     .sort((a, b) => {
       const rankDiff = CATEGORY_RANK[a.category] - CATEGORY_RANK[b.category];
       if (rankDiff !== 0) return rankDiff;
@@ -1337,6 +1354,9 @@ export function scorePerson(person, professions) {
         } else {
           for (const r of results) {
             if (!inField(r) || !r.top_block) continue;
+            // Side hustles are not doors into a field — they are not
+            // careers, so their blocks never pad the field's count.
+            if ((profBySlug.get(r.slug) || {}).kind === 'side_hustle') continue;
             direction.blocked_reasons[r.top_block] = (direction.blocked_reasons[r.top_block] || 0) + 1;
           }
         }
@@ -1408,7 +1428,7 @@ export function scorePerson(person, professions) {
     const lovePartsCount = (r) => [r.love.parts.needs_supplies, r.love.parts.sdt, r.love.parts.riasec].filter(isNum).length;
     const overlapsWinner = (r) => !!(top1 && isNum(top1.love.lo) && isNum(r.love.hi) && r.love.hi > top1.love.lo);
     const cands = results
-      .filter((r) => r.category !== 'D' && r.top_block !== 'age_gate' && !topSlugs.has(r.slug) && isNum(r.love.mid) && lovePartsCount(r) >= 2)
+      .filter((r) => r.category !== 'D' && r.top_block !== 'age_gate' && !topSlugs.has(r.slug) && isNum(r.love.mid) && lovePartsCount(r) >= 2 && (profBySlug.get(r.slug) || {}).kind !== 'side_hustle')
       .sort((a, b) => {
         const oa = overlapsWinner(a) ? 1 : 0;
         const ob = overlapsWinner(b) ? 1 : 0;
@@ -1606,6 +1626,21 @@ export function scorePerson(person, professions) {
     }
   }
 
+  // ---- The side-hustle idea (founder's rule, 28.10.2026): ONE
+  // extra-money format next to the verdict — never in the matches
+  // above, never in the anti-matches, never the cushion. The pick
+  // itself (best LOVE inside the person's own budget/hours limits,
+  // threshold-gated, null when nothing clears) is pickSideHustle()
+  // in ./side-hustle.mjs; it receives the helpers it needs so the
+  // import stays one-way.
+  const sideHustleTaken = new Set([...top3, ...bottom3].map((r) => r.slug));
+  if (bridgePick) sideHustleTaken.add(bridgePick.slug);
+  const sideHustlePick = mode === 'insufficient_data'
+    ? null
+    : pickSideHustle(person, results, profBySlug, sideHustleTaken, {
+        isNum, isStubProfile, valueFits, riasecKeys: RIASEC_KEYS, dayThemes: RIASEC_DAY_THEMES, valueLabels: VALUE_LABELS,
+      });
+
   return {
     mode,
     mode_reason: modeReason,
@@ -1620,6 +1655,7 @@ export function scorePerson(person, professions) {
     top3: mode === 'insufficient_data' ? [] : top3,
     bottom3: mode === 'insufficient_data' ? [] : bottom3,
     bridge_pick: bridgePick || null,
+    side_hustle_pick: sideHustlePick,
     results_count: results.length,
     exploration_plan: mode === 'insufficient_data' ? buildExplorationPlan(person) : [],
   };

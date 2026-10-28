@@ -1,0 +1,44 @@
+Regression gate → https://careerglitch.com/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 35) · modes {"bands":33,"direct":3,"insufficient_data":14} · 351s
+Top3 stub share 0% (base 4%) · distinct jobs 50 · most frequent: Drone Pilot (commercial) 7, Tutoring Center Owner 6, Project Manager 6, UX/UI Designer 4, Corporate Trainer 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 1 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD copy matches count (no "three" with <3 cards)  — 14 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none n=2
+   · random #6 age=34 floor=70 red=no_nights+no_relocation n=2
+   · random #11 age=19 floor=50 red=no_nights+no_relocation+no_kids+no_degree n=2
+   · random #13 age=17 floor=130 red=none n=2
+   · random #14 age=19 floor=90 red=no_public_voice n=2
+   · random #15 age=17 floor=50 red=none n=2
+
+HARD pay below floor only with explicit top-decile reason  — 10 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none → Corporate Trainer ($69K, 9mo) status=below_floor
+   · random #5 age=28 floor=90 red=no_nights+no_public_voice+no_degree → Drone Pilot (commercial) ($75K, 9mo) status=below_floor
+   · random #5 age=28 floor=90 red=no_nights+no_public_voice+no_degree → Medical Secretary ($45K, 9mo) status=below_floor
+   · random #11 age=19 floor=50 red=no_nights+no_relocation+no_kids+no_degree → Dispatcher (trucking) ($45K, 3.5mo) status=below_floor
+   · random #13 age=17 floor=130 red=none → Business Consultant ($120K, 36mo) status=below_floor
+   · random #14 age=19 floor=90 red=no_public_voice → Dispatcher (trucking) ($45K, 3.5mo) status=below_floor
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Drone Pilot (commercial) in 7 of 35 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 18 of 35
+
+FAIL — 4 hard + 2 soft rule(s) broken. Do not deploy.

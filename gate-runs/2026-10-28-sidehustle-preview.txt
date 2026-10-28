@@ -1,0 +1,41 @@
+Regression gate → https://careerglitch-e5sp701wo-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 41) · modes {"bands":38,"direct":4,"insufficient_data":8} · 349s
+Top3 stub share 1% (base 4%) · distinct jobs 54 · most frequent: UX/UI Designer 5, Drone Pilot (commercial) 5, UGC Creator 4, Yacht Broker 3, Project Manager 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 1 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD pay below floor only with explicit top-decile reason  — 8 case(s)
+   · special "age 15" age=15 floor=90 red=none → IT Support Specialist ($45K, 9mo) status=below_floor
+   · random #12 age=15 floor=130 red=no_nights+no_relocation → Personal / Fashion Stylist ($75K, 3.5mo) status=below_floor
+   · random #19 age=15 floor=130 red=no_nights+no_kids → UGC Creator ($45K, 3.5mo) status=below_floor
+   · random #19 age=15 floor=130 red=no_nights+no_kids → DJ / Event Host ($45K, 3.5mo) status=below_floor
+   · random #23 age=15 floor=130 red=no_public_voice+no_degree → Florist ($45K, 3.5mo) status=below_floor
+   · random #36 age=17 floor=130 red=no_relocation+no_degree → Wedding Photographer ($43K, 9mo) status=below_floor
+
+HARD copy matches count (no "three" with <3 cards)  — 13 case(s)
+   · random #4 age=19 floor=35 red=none n=2
+   · random #6 age=15 floor=50 red=none n=2
+   · random #9 age=15 floor=20 red=no_kids n=2
+   · random #11 age=15 floor=0 red=no_nights+no_relocation+no_public_voice+no_kids n=2
+   · random #14 age=17 floor=20 red=no_nights n=2
+   · random #20 age=28 floor=50 red=no_degree n=2
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 24 of 41
+
+FAIL — 4 hard + 1 soft rule(s) broken. Do not deploy.
