@@ -233,6 +233,39 @@ _O = {
     'hvac-technician': ('49-9021.00', 'Heating, Air Conditioning, and Refrigeration Mechanics and Installers', False),
     'landscaper-lawn-pro': ('37-3011.00', 'Landscaping and Groundskeeping Workers', False),
     'pest-control-tech': ('37-2021.00', 'Pest Control Workers', False),
+    # -- fourth pass (fix A, 28.10.2026): the six professions added in the
+    #    28.10 QA pass, each with its exact SOC occupation (brief §2A)
+    'customer-service-representative': ('43-4051.00', 'Customer Service Representatives is the exact SOC occupation', False),
+    'medical-health-services-manager': ('11-9111.00', 'Medical and Health Services Managers is the exact SOC occupation', False),
+    'medical-secretary': ('43-6013.00', 'Medical Secretaries and Administrative Assistants is the exact SOC occupation', False),
+    'cad-drafter': ('17-3011.00', 'Architectural and Civil Drafters is the CAD drafter occupation', False),
+    'building-inspector': ('47-4011.00', 'Construction and Building Inspectors is the exact SOC occupation (home-inspector already maps here)', False),
+    'civil-engineering-technician': ('17-3022.00', 'Civil Engineering Technologists and Technicians is the exact SOC occupation', False),
+    # -- fix A scope hold-back (28.10.2026): these professions entered
+    #    the base after the WS2 import froze. An auto-match exists but
+    #    was never hand-reviewed; they keep their stubs until a
+    #    mapping-review change ships them (one change at a time).
+    'audio-video-equipment-technician': (None, 'auto-match (27-4011.00) not hand-reviewed; held back at fix A scope', False),
+    'avionics-technician': (None, 'auto-match (49-2091.00) not hand-reviewed; held back at fix A scope', False),
+    'business-broker': (None, 'auto-match (43-4011.00) not hand-reviewed; held back at fix A scope', False),
+    'career-and-technical-education-teacher': (None, 'auto-match (25-2032.00) not hand-reviewed; held back at fix A scope', False),
+    'certified-nurse-midwife': (None, 'auto-match (29-1161.00) not hand-reviewed; held back at fix A scope', False),
+    'child-life-specialist': (None, 'auto-match (39-9011.00) not hand-reviewed; held back at fix A scope', False),
+    'costume-designer': (None, 'auto-match (27-1022.00) not hand-reviewed; held back at fix A scope', False),
+    'customs-broker': (None, 'auto-match (13-1041.08) not hand-reviewed; held back at fix A scope', False),
+    'distiller': (None, 'auto-match (51-9012.00) not hand-reviewed; held back at fix A scope', False),
+    'electrical-engineer': (None, 'auto-match (17-2071.00) not hand-reviewed; held back at fix A scope', False),
+    'food-stylist': (None, 'auto-match (27-1027.00) not hand-reviewed; held back at fix A scope', False),
+    'freight-broker-agent': (None, 'auto-match (43-5011.00) not hand-reviewed; held back at fix A scope', False),
+    'general-surgeon': (None, 'auto-match (29-1242.00) not hand-reviewed; held back at fix A scope', False),
+    'lighting-designer': (None, 'auto-match (27-1021.00) not hand-reviewed; held back at fix A scope', False),
+    'mechanical-engineer': (None, 'auto-match (17-2141.00) not hand-reviewed; held back at fix A scope', False),
+    'medical-laboratory-scientist': (None, 'auto-match (19-1042.00) not hand-reviewed; held back at fix A scope', False),
+    'platform-engineer': (None, 'auto-match (15-1299.08) not hand-reviewed; held back at fix A scope', False),
+    'power-plant-operator': (None, 'auto-match (51-8013.00) not hand-reviewed; held back at fix A scope', False),
+    'school-psychologist': (None, 'auto-match (19-3034.00) not hand-reviewed; held back at fix A scope', False),
+    'subway-streetcar-operator': (None, 'auto-match (53-4041.00) not hand-reviewed; held back at fix A scope', False),
+    'telecommunications-equipment-installer': (None, 'auto-match (49-2022.00) not hand-reviewed; held back at fix A scope', False),
 }
 OVERRIDES = _O
 

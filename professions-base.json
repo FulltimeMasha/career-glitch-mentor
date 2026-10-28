@@ -9570,8 +9570,8 @@
    "creat": 0
   },
   "age_gate": null,
-  "riasec_stub": true,
-  "supplies_stub": true
+  "riasec_stub": false,
+  "supplies_stub": false
  },
  {
   "slug": "customer-service-representative",
@@ -9596,8 +9596,8 @@
    "creat": 0
   },
   "age_gate": null,
-  "riasec_stub": true,
-  "supplies_stub": true
+  "riasec_stub": false,
+  "supplies_stub": false
  },
  {
   "slug": "medical-secretary",
@@ -9622,8 +9622,8 @@
    "creat": 0
   },
   "age_gate": null,
-  "riasec_stub": true,
-  "supplies_stub": true
+  "riasec_stub": false,
+  "supplies_stub": false
  },
  {
   "slug": "cad-drafter",
@@ -9648,8 +9648,8 @@
    "creat": 1
   },
   "age_gate": null,
-  "riasec_stub": true,
-  "supplies_stub": true
+  "riasec_stub": false,
+  "supplies_stub": false
  },
  {
   "slug": "building-inspector",
@@ -9674,8 +9674,8 @@
    "creat": 0
   },
   "age_gate": null,
-  "riasec_stub": true,
-  "supplies_stub": true
+  "riasec_stub": false,
+  "supplies_stub": false
  },
  {
   "slug": "civil-engineering-technician",
@@ -9700,7 +9700,7 @@
    "creat": 0
   },
   "age_gate": null,
-  "riasec_stub": true,
-  "supplies_stub": true
+  "riasec_stub": false,
+  "supplies_stub": false
  }
 ]

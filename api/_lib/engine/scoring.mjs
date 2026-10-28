@@ -443,8 +443,76 @@ export function riasecCongruence(personRiasec, profRiasec) {
 /** Deficit-only fit for one need/supply pair: surplus is never penalised. */
 const deficitFit = (need, supply) => 1 - Math.max(0, need - supply);
 
+/** RIASEC profile congruence — the LOVE interest component (fix A,
+ *  congruence attempt, 28.10.2026): Pearson correlation between the
+ *  person's interest vector and the profession's, mapped r → (r+1)/2.
+ *  Holland congruence is a SHAPE match (peaks and valleys); the L1 form
+ *  above mostly measures level and compressed every candidate into a
+ *  narrow high band, so people with different interests but similar
+ *  values received the same ranking and a "fits everyone" measured
+ *  profile always won. The mapped correlation is squared: only a real
+ *  shape match scores high, a merely non-negative one does not.
+ *  (Calibration record, 28.10.2026: squared measured dominance 13.5%
+ *  on the preview gate and 19% on prod; sharpening further did NOT
+ *  move the crown count down — cubed 7/31, 4th power 8/38, both
+ *  Luxury Real Estate Agent — so squared is the calibration this
+ *  attempt is recorded with.) A flat
+ *  vector on either side carries no shape: congruence is then neutral
+ *  0.5 — a flat profession profile wins nothing on interests, for
+ *  anyone. (riasecCongruence above stays in service for POTENTIAL's
+ *  interest_fit, unchanged.) */
+export function riasecProfileCongruence(personRiasec, profRiasec) {
+  if (!personRiasec || !profRiasec) return null;
+  const xs = [];
+  const ys = [];
+  for (const k of RIASEC_KEYS) {
+    if (isNum(personRiasec[k]) && isNum(profRiasec[k])) {
+      xs.push(personRiasec[k] / 10);
+      ys.push(profRiasec[k]);
+    }
+  }
+  if (xs.length < 4) return null;
+  const mx = xs.reduce((a, b) => a + b, 0) / xs.length;
+  const my = ys.reduce((a, b) => a + b, 0) / ys.length;
+  let sxy = 0;
+  let sxx = 0;
+  let syy = 0;
+  for (let i = 0; i < xs.length; i++) {
+    const dx = xs[i] - mx;
+    const dy = ys[i] - my;
+    sxy += dx * dy;
+    sxx += dx * dx;
+    syy += dy * dy;
+  }
+  if (sxx <= 1e-9 || syy <= 1e-9) return 0.5;
+  const cong = (sxy / Math.sqrt(sxx * syy) + 1) / 2; return clamp01(cong * cong);
+}
+
 // ---------------------------------------------------------------------------
-// LOVE — needs–supplies .40 · SDT .35 · RIASEC .25 (deficit-only mechanics)
+// Fix A (28.10.2026): stub profiles must not out-score measured ones.
+// A stub's vectors are Day-1 derivations from a handful of attrs, and
+// the formulas are generous (achievement 1, independence 1…): under
+// deficit-only LOVE a stub fits almost everyone. While a profile is a
+// stub (supplies_stub || riasec_stub — the regression gate's own
+// definition), its supplies are scored as NEUTRAL 0.5 — in the
+// needs–supplies fit AND in the SDT affordances (both are supplies of
+// the same guessed profile; valueFits below reads through the same
+// helpers, so the report's words stay in sync with the score) — and
+// scoreCandidate subtracts a flat confidence penalty from both mids.
+// Nothing is ever excluded: a stub still fills a slot when no measured
+// candidate clears, so the fallback is structural, not a filter rule.
+// ---------------------------------------------------------------------------
+export const STUB_CONFIDENCE_PENALTY = 0.08;
+const WEAK_SUPPLY_PENALTY = 0.2;
+const isStubProfile = (prof) => !!(prof && (prof.supplies_stub || prof.riasec_stub));
+const effSupply = (prof, key) => (isStubProfile(prof) ? 0.5 : (prof.supplies ? prof.supplies[key] : undefined));
+const effSdt = (prof, key) => (isStubProfile(prof) ? 0.5 : (prof.sdt ? prof.sdt[key] : undefined));
+
+// ---------------------------------------------------------------------------
+// LOVE — needs–supplies .30 · SDT .35 · RIASEC .35. Values and SDT keep
+// deficit-only mechanics; the RIASEC component is profile congruence
+// (shape), not a deficit — interests are the layer that differentiates
+// people, and at .25 in L1 form it could not (fix A, 28.10.2026).
 // ---------------------------------------------------------------------------
 export function loveParts(person, prof) {
   const parts = { needs_supplies: null, sdt: null, riasec: null };
@@ -455,24 +523,47 @@ export function loveParts(person, prof) {
   // negative LOVE component.
   if (person.values_rank && prof.supplies) {
     const fits = [];
+    let weakTopNeeds = 0;
     for (const key of VALUE_KEYS) {
       const rank = person.values_rank[key];
-      const supply = prof.supplies[key];
-      if (isNum(rank) && isNum(supply)) fits.push(deficitFit(clamp01((7 - rank) / 6), supply));
+      const supply = effSupply(prof, key);
+      if (isNum(rank) && isNum(supply)) {
+        fits.push(deficitFit(clamp01((7 - rank) / 6), supply));
+        // Weak-spot penalty (fix A): a MEASURED profile whose supply is
+        // at or below neutral (≤ 0.5) on one of the person's top-3 needs
+        // is weak exactly where it matters most. Deficit-only math alone
+        // let a flat, no-weakness profile (supplies 0.44–0.72 across the
+        // board, e.g. Commercial Insurance Producer) fit nearly every
+        // ranking and dominate the output. Stubs are exempt here: their
+        // supplies are already neutralised above, and a guessed vector
+        // is not punished twice for guesses it never made.
+        if (!isStubProfile(prof) && rank <= 3 && supply <= 0.5) weakTopNeeds += 1;
+      }
     }
-    if (fits.length > 0) parts.needs_supplies = fits.reduce((a, b) => a + b, 0) / fits.length;
+    if (fits.length > 0) {
+      let ns = fits.reduce((a, b) => a + b, 0) / fits.length;
+      if (weakTopNeeds > 0) ns = clamp01(ns - WEAK_SUPPLY_PENALTY * weakTopNeeds);
+      parts.needs_supplies = ns;
+    }
   }
 
   // SDT affordances: autonomy + relatedness (competence lives on the
   // POTENTIAL narrative side, per the merged science map §2).
   if (isNum(person.autonomy_need) && isNum(person.relatedness_need) && prof.sdt) {
     const fits = [];
-    if (isNum(prof.sdt.autonomy)) fits.push(deficitFit(clamp01(person.autonomy_need / 2), prof.sdt.autonomy));
-    if (isNum(prof.sdt.relatedness)) fits.push(deficitFit(clamp01(person.relatedness_need / 2), prof.sdt.relatedness));
+    const sdtAut = effSdt(prof, 'autonomy');
+    const sdtRel = effSdt(prof, 'relatedness');
+    if (isNum(sdtAut)) fits.push(deficitFit(clamp01(person.autonomy_need / 2), sdtAut));
+    if (isNum(sdtRel)) fits.push(deficitFit(clamp01(person.relatedness_need / 2), sdtRel));
     if (fits.length > 0) parts.sdt = fits.reduce((a, b) => a + b, 0) / fits.length;
   }
 
-  parts.riasec = riasecCongruence(person.riasec, prof.riasec);
+  // RIASEC component of LOVE = profile congruence. A stub's RIASEC is a
+  // formula, not a measurement: scored neutral 0.5, exactly like its
+  // supplies — a guessed vector must not differentiate people.
+  if (person.riasec && prof.riasec) {
+    parts.riasec = isStubProfile(prof) ? 0.5 : riasecProfileCongruence(person.riasec, prof.riasec);
+  }
   return parts;
 }
 
@@ -487,21 +578,31 @@ export function loveParts(person, prof) {
  *     the Day-1 formula added 2·hours_per_day to the cushion, so a
  *     person with a 0-month cushion and 2 daily hours was told their
  *     money would last 4 months — hours are time, not money).
- *     entry_time_ok = clamp01(cushion / training_months); null if the
+ *     entry_time_ok = clamp01(cushion / eff_months); null if the
  *     profession's training length is unknown.
- *   - budget_ok: entry cost STUB cost_k = training_months × 0.4 ($K per
+ *   - budget_ok: entry cost STUB cost_k = eff_months × 0.4 ($K per
  *     training month, editorial stub, flagged 'entry_cost_stub');
  *     budget_ok = clamp01(budget_k / cost_k).
+ *   - eff_months = max(training_months, ENTRY_MONTHS_FLOOR) in BOTH
+ *     denominators (fix A saturation, 28.10.2026): without the floor a
+ *     1-month certificate saturates feasibility (entry_time_ok ≈ 1 and
+ *     budget_ok ≈ 1) and beats real 6–24-month paths on feasibility
+ *     alone — the mechanism that let Commercial Insurance Producer
+ *     (training 1 month) dominate the output. The DISPLAYED training
+ *     length is untouched; only the feasibility denominators change.
  *   - documents_factor: yes → 1, partial → 0.6, no → 0.25. (The hard
  *     documents GATE is separate: no-documents + hard-license = D.) */
+const ENTRY_MONTHS_FLOOR = 12;
+
 function feasibilityStart(person, prof) {
   const res = person.resources || {};
   const subs = { entry_time_ok: null, budget_ok: null, documents_factor: null };
 
   if (isNum(prof.training_months) && prof.training_months > 0) {
     const cushion = isNum(res.cushion_months) ? res.cushion_months : 0;
-    subs.entry_time_ok = clamp01(cushion / prof.training_months);
-    const costK = prof.training_months * 0.4;
+    const effMonths = Math.max(prof.training_months, ENTRY_MONTHS_FLOOR);
+    subs.entry_time_ok = clamp01(cushion / effMonths);
+    const costK = effMonths * 0.4;
     if (isNum(res.budget_k) && costK > 0) subs.budget_ok = clamp01(res.budget_k / costK);
   }
   if (res.documents_ok === 'yes') subs.documents_factor = 1;
@@ -659,7 +760,7 @@ function valueFits(person, prof) {
   if (person && person.values_rank && prof && prof.supplies) {
     for (const key of VALUE_KEYS) {
       const rank = person.values_rank[key];
-      const supply = prof.supplies[key];
+      const supply = effSupply(prof, key);
       if (isNum(rank) && isNum(supply)) out.push({ key, rank, fit: deficitFit((7 - rank) / 6, supply) });
     }
   }
@@ -875,7 +976,7 @@ export function scoreCandidate(person, prof, professions = []) {
 
   // ---- LOVE
   const lParts = loveParts(person, prof);
-  const loveMid = weightedMean(lParts, { needs_supplies: 0.4, sdt: 0.35, riasec: 0.25 });
+  const loveMid = weightedMean(lParts, { needs_supplies: 0.3, sdt: 0.35, riasec: 0.35 });
   const love = band(loveMid, countNullParts(lParts), person.age);
   love.parts = lParts;
 
@@ -902,6 +1003,27 @@ export function scoreCandidate(person, prof, professions = []) {
   potential.profile = pot.profile;
   if (pot.feasibility_subs) potential.feasibility_subs = pot.feasibility_subs;
   if (pot.current_profession_slug) potential.current_profession_slug = pot.current_profession_slug;
+
+  // Fix A stub penalty (28.10.2026): a guessed profile carries a flat
+  // confidence penalty on BOTH mids — re-ranking only, applied before
+  // the category is read (see the note above loveParts). The band is
+  // recomputed from the penalised mid, same pattern as the 'mine'
+  // nudge, so lo/hi stay consistent with the mid.
+  if (isStubProfile(prof)) {
+    if (isNum(love.mid)) {
+      const reb = band(clamp01(love.mid - STUB_CONFIDENCE_PENALTY), countNullParts(lParts), person.age);
+      love.mid = reb.mid;
+      love.lo = reb.lo;
+      love.hi = reb.hi;
+    }
+    if (isNum(potential.mid)) {
+      const reb = band(clamp01(potential.mid - STUB_CONFIDENCE_PENALTY), countNullParts(pot.parts), person.age);
+      potential.mid = reb.mid;
+      potential.lo = reb.lo;
+      potential.hi = reb.hi;
+    }
+    flags.push('stub_profile_penalty');
+  }
 
   const totalNullParts = countNullParts(lParts) + countNullParts(pot.parts);
   const confidence = confidenceLevel(totalNullParts, person.completeness);

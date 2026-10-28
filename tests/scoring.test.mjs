@@ -131,11 +131,17 @@ test('deficit-only: surplus supplies score the same needs_supplies as an exact f
   const needs = Object.fromEntries(
     Object.entries(person.values_rank).map(([k, rank]) => [k, (7 - rank) / 6]),
   );
-  const exact = makeProf({ supplies: { ...needs } });
+  // Fix A (28.10.2026): a stub profile's supplies are neutralised at
+  // scoring time, so the deficit-only invariant is asserted on MEASURED
+  // profiles — the only kind whose supplies the engine reads literally.
+  const measured = { supplies_stub: false, riasec_stub: false };
+  const exact = makeProf({ ...measured, supplies: { ...needs } });
   const surplus = makeProf({
+    ...measured,
     supplies: Object.fromEntries(Object.keys(needs).map((k) => [k, 1])),
   });
   const deficit = makeProf({
+    ...measured,
     supplies: Object.fromEntries(Object.keys(needs).map((k) => [k, 0])),
   });
   const nsExact = scoreCandidate(person, exact).love.parts.needs_supplies;
@@ -182,7 +188,11 @@ test('perceived-fit veto lowers exactly one step with floor C', () => {
 // (5) Exploitation risk: high LOVE + pay below the income floor.
 // ---------------------------------------------------------------------------
 test('exploitation flag when payK is below the income floor and LOVE is high; blocks direct mode', () => {
-  const lowPayProf = makeProf({ payK: 30 });
+  // Fix A (28.10.2026): the invariant is about a profession that
+  // GENUINELY fits this person, so the fixture is a MEASURED profile —
+  // a stub's supplies and RIASEC are neutralised at scoring time by
+  // construction and cannot carry "high LOVE" on their own vectors.
+  const lowPayProf = makeProf({ payK: 30, supplies_stub: false, riasec_stub: false, data_flags: [] });
   const person = strongPerson({ income_floor_k: 50 });
   const cand = scoreCandidate(person, lowPayProf);
   assert.ok(cand.love.mid >= 0.62, `fixture LOVE should be high, got ${cand.love.mid}`);

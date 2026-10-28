@@ -38557,5 +38557,1105 @@
    "Plan routines, choose appropriate music, and choose different movements for each set of muscles, depending on participants' capabilities and limitations.",
    "Evaluate individuals' abilities, needs, and physical conditions, and develop suitable training programs to meet any special requirements."
   ]
+ },
+ "mechanical-engineer": {
+  "name": "Mechanical Engineer",
+  "match_method": "override: auto-match (17-2141.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "electrical-engineer": {
+  "name": "Electrical Engineer",
+  "match_method": "override: auto-match (17-2071.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "platform-engineer": {
+  "name": "Platform Engineer",
+  "match_method": "override: auto-match (15-1299.08) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "embedded-systems-engineer": {
+  "name": "Embedded Systems Engineer",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Solar Energy Systems Engineers",
+    0.67,
+    0.4
+   ],
+   [
+    "Computer Systems Engineers/Architects",
+    0.67,
+    0.4
+   ],
+   [
+    "Ship Engineers",
+    0.5,
+    0.25
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "general-surgeon": {
+  "name": "General Surgeon",
+  "match_method": "override: auto-match (29-1242.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "certified-nurse-midwife": {
+  "name": "Certified Nurse-Midwife",
+  "match_method": "override: auto-match (29-1161.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "medical-laboratory-scientist": {
+  "name": "Medical Laboratory Scientist",
+  "match_method": "override: auto-match (19-1042.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "board-certified-behavior-analyst-bcba": {
+  "name": "Board Certified Behavior Analyst (BCBA)",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Intelligence Analysts",
+    0.5,
+    0.2
+   ],
+   [
+    "Credit Analysts",
+    0.5,
+    0.2
+   ],
+   [
+    "Budget Analysts",
+    0.5,
+    0.2
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "data-center-technician": {
+  "name": "Data Center Technician",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Traffic Technicians",
+    0.5,
+    0.25
+   ],
+   [
+    "Geothermal Technicians",
+    0.5,
+    0.25
+   ],
+   [
+    "Avionics Technicians",
+    0.5,
+    0.25
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "cnc-machinist-programmer": {
+  "name": "CNC Machinist / Programmer",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Machinists",
+    1.0,
+    0.33
+   ],
+   [
+    "Computer Programmers",
+    0.5,
+    0.25
+   ],
+   [
+    "Computer Numerically Controlled Tool Programmers",
+    0.33,
+    0.14
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "avionics-technician": {
+  "name": "Avionics Technician",
+  "match_method": "override: auto-match (49-2091.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "power-plant-operator": {
+  "name": "Power Plant Operator",
+  "match_method": "override: auto-match (51-8013.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "telecommunications-equipment-installer": {
+  "name": "Telecommunications Equipment Installer",
+  "match_method": "override: auto-match (49-2022.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [
+   [
+    "Telecommunications Equipment Installers and Repairers, Except Line Installers",
+    1.0,
+    0.43
+   ],
+   [
+    "Telecommunications Line Installers and Repairers",
+    0.67,
+    0.33
+   ],
+   [
+    "Audiovisual Equipment Installers and Repairers",
+    0.67,
+    0.33
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "costume-designer": {
+  "name": "Costume Designer",
+  "match_method": "override: auto-match (27-1022.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "lighting-designer": {
+  "name": "Lighting Designer",
+  "match_method": "override: auto-match (27-1021.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "audio-video-equipment-technician": {
+  "name": "Audio-Video Equipment Technician",
+  "match_method": "override: auto-match (27-4011.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [
+   [
+    "Audio and Video Technicians",
+    0.75,
+    0.6
+   ],
+   [
+    "Farm Equipment Mechanics and Service Technicians",
+    0.5,
+    0.25
+   ],
+   [
+    "Traffic Technicians",
+    0.5,
+    0.2
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "tattoo-artist-2": {
+  "name": "Paramedical Tattoo Artist",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Craft Artists",
+    0.5,
+    0.25
+   ],
+   [
+    "Makeup Artists, Theatrical and Performance",
+    0.33,
+    0.14
+   ],
+   [
+    "Special Effects Artists and Animators",
+    0.33,
+    0.14
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "scalp-micropigmentation-artist": {
+  "name": "Scalp Micropigmentation Artist",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Craft Artists",
+    0.5,
+    0.25
+   ],
+   [
+    "Makeup Artists, Theatrical and Performance",
+    0.33,
+    0.14
+   ],
+   [
+    "Special Effects Artists and Animators",
+    0.33,
+    0.14
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "food-stylist": {
+  "name": "Food Stylist",
+  "match_method": "override: auto-match (27-1027.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "distiller": {
+  "name": "Distiller",
+  "match_method": "override: auto-match (51-9012.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "vertical-farm-technician": {
+  "name": "Vertical Farm Technician",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Farm Equipment Mechanics and Service Technicians",
+    0.67,
+    0.29
+   ],
+   [
+    "Traffic Technicians",
+    0.5,
+    0.25
+   ],
+   [
+    "Geothermal Technicians",
+    0.5,
+    0.25
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "school-psychologist": {
+  "name": "School Psychologist",
+  "match_method": "override: auto-match (19-3034.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "esl-adult-literacy-teacher": {
+  "name": "ESL / Adult Literacy Teacher",
+  "match_method": "unmatched",
+  "candidates": [
+   [
+    "Self-Enrichment Teachers",
+    0.33,
+    0.17
+   ],
+   [
+    "History Teachers, Postsecondary",
+    0.33,
+    0.17
+   ],
+   [
+    "Communications Teachers, Postsecondary",
+    0.33,
+    0.17
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "career-and-technical-education-teacher": {
+  "name": "Career and Technical Education Teacher",
+  "match_method": "override: auto-match (25-2032.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "child-life-specialist": {
+  "name": "Child Life Specialist",
+  "match_method": "override: auto-match (39-9011.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "customs-broker": {
+  "name": "Customs Broker",
+  "match_method": "override: auto-match (13-1041.08) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "freight-broker-agent": {
+  "name": "Freight Broker / Agent",
+  "match_method": "override: auto-match (43-5011.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "subway-streetcar-operator": {
+  "name": "Subway / Streetcar Operator",
+  "match_method": "override: auto-match (53-4041.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [
+   [
+    "Subway and Streetcar Operators",
+    1.0,
+    0.75
+   ],
+   [
+    "Dredge Operators",
+    0.5,
+    0.25
+   ],
+   [
+    "Motorboat Operators",
+    0.5,
+    0.25
+   ]
+  ],
+  "bls_inherited": false
+ },
+ "business-broker": {
+  "name": "Business Broker",
+  "match_method": "override: auto-match (43-4011.00) not hand-reviewed; held back at fix A scope",
+  "candidates": [],
+  "bls_inherited": false
+ },
+ "medical-health-services-manager": {
+  "name": "Medical & Health Services Manager",
+  "match_method": "override: Medical and Health Services Managers is the exact SOC occupation",
+  "candidates": [],
+  "bls_inherited": false,
+  "onet_soc": "11-9111.00",
+  "onet_title": "Medical and Health Services Managers",
+  "job_zone": 4,
+  "riasec_profile": {
+   "R": 0.2929,
+   "I": 0.5357,
+   "A": 0.2071,
+   "S": 0.6286,
+   "E": 0.85,
+   "C": 0.7386
+  },
+  "work_values_extent": {
+   "achievement": 5.0,
+   "working_conditions": 6.0,
+   "recognition": 4.67,
+   "relationships": 6.0,
+   "support": 5.67,
+   "independence": 6.0
+  },
+  "work_values_frozen_date": "06/2008",
+  "abilities_lv": [
+   4.88,
+   4.38,
+   4.12,
+   4.12,
+   3.62,
+   3.75,
+   4.0,
+   4.0,
+   4.0,
+   3.75,
+   3.12,
+   3.62,
+   3.12,
+   2.75,
+   2.5,
+   2.88,
+   2.62,
+   0.0,
+   2.12,
+   3.0,
+   2.62,
+   0.5,
+   0.5,
+   0.5,
+   0.25,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.88,
+   0.0,
+   0.0,
+   0.0,
+   0.75,
+   1.5,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   3.88,
+   3.0,
+   2.12,
+   0.0,
+   0.0,
+   1.25,
+   0.0,
+   2.0,
+   2.0,
+   0.0,
+   4.0,
+   4.0
+  ],
+  "skills_lv": [
+   4.12,
+   4.12,
+   4.0,
+   4.0,
+   3.0,
+   2.5,
+   4.12,
+   3.88,
+   3.88,
+   4.12,
+   4.0,
+   4.12,
+   4.0,
+   3.5,
+   3.88,
+   3.75,
+   3.5,
+   3.88,
+   1.12,
+   0.0,
+   0.0,
+   1.38,
+   1.88,
+   0.0,
+   0.0,
+   0.62,
+   0.0,
+   1.62,
+   4.0,
+   3.38,
+   3.88,
+   4.0,
+   3.62,
+   3.62,
+   4.12
+  ],
+  "tasks": [
+   "Direct, supervise and evaluate work activities of medical, nursing, technical, clerical, service, maintenance, and other personnel.",
+   "Develop and maintain computerized record management systems to store and process data, such as personnel activities and information, and to produce reports.",
+   "Plan, implement, and administer programs and services in a health care or medical facility, including personnel administration, training, and coordination of medical, nursing and physical plant staff.",
+   "Maintain awareness of advances in medicine, computerized diagnostic and treatment equipment, data processing technology, government regulations, health insurance changes, and financing options.",
+   "Conduct and administer fiscal operations, including accounting, planning budgets, authorizing expenditures, establishing rates for services, and coordinating financial reporting."
+  ]
+ },
+ "customer-service-representative": {
+  "name": "Customer Service Representative",
+  "match_method": "override: Customer Service Representatives is the exact SOC occupation",
+  "candidates": [],
+  "bls_inherited": false,
+  "onet_soc": "43-4051.00",
+  "onet_title": "Customer Service Representatives",
+  "job_zone": 2,
+  "riasec_profile": {
+   "R": 0.2814,
+   "I": 0.2329,
+   "A": 0.1429,
+   "S": 0.5386,
+   "E": 0.7257,
+   "C": 0.9029
+  },
+  "work_values_extent": {
+   "achievement": 3.0,
+   "working_conditions": 2.83,
+   "recognition": 3.0,
+   "relationships": 6.0,
+   "support": 4.33,
+   "independence": 3.67
+  },
+  "work_values_frozen_date": "06/2008",
+  "abilities_lv": [
+   3.75,
+   3.12,
+   3.88,
+   3.12,
+   2.62,
+   2.62,
+   3.25,
+   3.12,
+   3.12,
+   3.0,
+   2.88,
+   2.12,
+   2.25,
+   2.12,
+   2.12,
+   2.88,
+   2.38,
+   0.0,
+   2.12,
+   2.88,
+   2.12,
+   1.62,
+   1.38,
+   2.12,
+   1.0,
+   0.25,
+   0.0,
+   0.0,
+   0.0,
+   0.62,
+   0.0,
+   0.38,
+   0.25,
+   0.38,
+   0.62,
+   0.25,
+   0.38,
+   0.0,
+   0.25,
+   0.12,
+   3.25,
+   2.62,
+   1.88,
+   0.0,
+   0.0,
+   0.25,
+   0.0,
+   1.88,
+   2.0,
+   0.0,
+   3.25,
+   3.25
+  ],
+  "skills_lv": [
+   3.12,
+   4.0,
+   3.0,
+   3.75,
+   2.25,
+   0.0,
+   3.5,
+   2.88,
+   2.88,
+   3.0,
+   3.0,
+   3.0,
+   3.0,
+   3.0,
+   2.88,
+   3.62,
+   3.0,
+   0.62,
+   0.88,
+   0.0,
+   0.0,
+   0.62,
+   1.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.12,
+   3.0,
+   2.12,
+   2.12,
+   3.0,
+   0.5,
+   0.5,
+   2.12
+  ],
+  "tasks": [
+   "Confer with customers by telephone or in person to provide information about products or services, take or enter orders, cancel accounts, or obtain details of complaints.",
+   "Keep records of customer interactions or transactions, recording details of inquiries, complaints, or comments, as well as actions taken.",
+   "Check to ensure that appropriate changes were made to resolve customers' problems.",
+   "Contact customers to respond to inquiries or to notify them of claim investigation results or any planned adjustments.",
+   "Resolve customers' service or billing complaints by performing activities such as exchanging merchandise, refunding money, or adjusting bills."
+  ],
+  "bls_ai_exposure": "Very high",
+  "bls_ai_exposure_tier": "bls_official_text",
+  "bls_ai_exposure_source": "BLS EP FAQ + AI exposure categories publication: customer service representatives named as Very high"
+ },
+ "medical-secretary": {
+  "name": "Medical Secretary",
+  "match_method": "override: Medical Secretaries and Administrative Assistants is the exact SOC occupation",
+  "candidates": [],
+  "bls_inherited": false,
+  "onet_soc": "43-6013.00",
+  "onet_title": "Medical Secretaries and Administrative Assistants",
+  "job_zone": 2,
+  "riasec_profile": {
+   "R": 0.3271,
+   "I": 0.4314,
+   "A": 0.1429,
+   "S": 0.59,
+   "E": 0.4529,
+   "C": 0.9529
+  },
+  "work_values_extent": {
+   "achievement": 3.33,
+   "working_conditions": 3.5,
+   "recognition": 3.0,
+   "relationships": 5.33,
+   "support": 4.33,
+   "independence": 3.0
+  },
+  "work_values_frozen_date": "06/2008",
+  "abilities_lv": [
+   4.0,
+   3.5,
+   4.0,
+   3.0,
+   2.12,
+   2.0,
+   2.88,
+   3.0,
+   3.0,
+   2.88,
+   3.0,
+   2.0,
+   2.0,
+   2.0,
+   1.75,
+   2.0,
+   2.12,
+   0.0,
+   2.0,
+   2.75,
+   2.25,
+   1.62,
+   1.38,
+   2.75,
+   1.25,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.62,
+   0.0,
+   0.0,
+   0.0,
+   0.25,
+   0.88,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   3.12,
+   2.12,
+   1.62,
+   0.0,
+   0.0,
+   0.12,
+   0.0,
+   0.88,
+   1.38,
+   0.0,
+   3.12,
+   3.0
+  ],
+  "skills_lv": [
+   3.12,
+   3.5,
+   3.0,
+   3.62,
+   2.0,
+   0.12,
+   3.0,
+   2.25,
+   2.12,
+   2.88,
+   3.0,
+   2.75,
+   2.0,
+   1.75,
+   2.12,
+   3.25,
+   2.75,
+   0.75,
+   0.25,
+   0.0,
+   0.0,
+   0.38,
+   0.75,
+   0.25,
+   0.0,
+   0.0,
+   0.0,
+   0.12,
+   2.25,
+   2.0,
+   2.0,
+   2.88,
+   0.38,
+   0.62,
+   2.12
+  ],
+  "tasks": [
+   "Answer telephones and direct calls to appropriate staff.",
+   "Transcribe recorded messages or practitioners' diagnoses or recommendations into patients' medical records.",
+   "Compile and record medical charts, reports, or correspondence, using typewriter or personal computer.",
+   "Schedule and confirm patient diagnostic appointments, surgeries, or medical consultations.",
+   "Complete insurance or other claim forms."
+  ]
+ },
+ "cad-drafter": {
+  "name": "CAD Drafter",
+  "match_method": "override: Architectural and Civil Drafters is the CAD drafter occupation",
+  "candidates": [],
+  "bls_inherited": false,
+  "onet_soc": "17-3011.00",
+  "onet_title": "Architectural and Civil Drafters",
+  "job_zone": 3,
+  "riasec_profile": {
+   "R": 0.7914,
+   "I": 0.6043,
+   "A": 0.64,
+   "S": 0.2214,
+   "E": 0.2186,
+   "C": 0.6986
+  },
+  "work_values_extent": {
+   "achievement": 3.83,
+   "working_conditions": 4.08,
+   "recognition": 3.83,
+   "relationships": 3.33,
+   "support": 4.17,
+   "independence": 3.5
+  },
+  "work_values_frozen_date": "11/2020",
+  "abilities_lv": [
+   3.88,
+   3.75,
+   3.75,
+   3.5,
+   3.25,
+   3.12,
+   3.38,
+   3.62,
+   3.25,
+   3.5,
+   3.38,
+   3.25,
+   3.12,
+   2.62,
+   3.12,
+   3.25,
+   2.38,
+   0.75,
+   4.0,
+   3.25,
+   2.38,
+   2.25,
+   1.88,
+   2.12,
+   2.0,
+   0.38,
+   0.38,
+   0.38,
+   0.38,
+   2.12,
+   0.38,
+   0.38,
+   0.38,
+   1.0,
+   2.25,
+   0.38,
+   0.38,
+   0.38,
+   0.38,
+   0.38,
+   3.75,
+   3.38,
+   3.38,
+   0.25,
+   0.5,
+   1.75,
+   0.0,
+   2.12,
+   2.0,
+   0.0,
+   3.25,
+   3.12
+  ],
+  "skills_lv": [
+   3.75,
+   3.5,
+   3.5,
+   3.25,
+   3.5,
+   2.12,
+   3.62,
+   3.5,
+   2.88,
+   3.12,
+   2.88,
+   3.12,
+   2.75,
+   2.62,
+   3.38,
+   2.88,
+   3.75,
+   2.25,
+   2.12,
+   0.75,
+   0.38,
+   1.75,
+   2.0,
+   0.62,
+   0.38,
+   1.62,
+   0.38,
+   2.25,
+   3.12,
+   3.5,
+   3.12,
+   3.12,
+   1.75,
+   1.38,
+   3.0
+  ],
+  "tasks": [
+   "Produce drawings, using computer-assisted drafting systems (CAD) or drafting machines, or by hand, using compasses, dividers, protractors, triangles, and other drafting devices.",
+   "Draft plans and detailed drawings for structures, installations, and construction projects, such as highways, sewage disposal systems, and dikes, working from sketches or notes.",
+   "Coordinate structural, electrical, and mechanical designs and determine a method of presentation to graphically represent building plans.",
+   "Analyze building codes, by-laws, space and site requirements, and other technical documents and reports to determine their effect on architectural designs.",
+   "Draw maps, diagrams, and profiles, using cross-sections and surveys, to represent elevations, topographical contours, subsurface formations, and structures."
+  ]
+ },
+ "building-inspector": {
+  "name": "Building Inspector",
+  "match_method": "override: Construction and Building Inspectors is the exact SOC occupation (home-inspector already maps here)",
+  "candidates": [],
+  "bls_inherited": false,
+  "onet_soc": "47-4011.00",
+  "onet_title": "Construction and Building Inspectors",
+  "job_zone": 3,
+  "riasec_profile": {
+   "R": 0.8814,
+   "I": 0.5857,
+   "A": 0.1743,
+   "S": 0.2086,
+   "E": 0.3071,
+   "C": 0.7729
+  },
+  "work_values_extent": {
+   "achievement": 4.33,
+   "working_conditions": 4.5,
+   "recognition": 3.67,
+   "relationships": 4.33,
+   "support": 5.67,
+   "independence": 5.0
+  },
+  "work_values_frozen_date": "06/2008",
+  "abilities_lv": [
+   4.0,
+   4.0,
+   4.0,
+   4.0,
+   3.0,
+   3.0,
+   4.0,
+   4.0,
+   4.0,
+   3.25,
+   3.12,
+   2.88,
+   2.88,
+   2.25,
+   2.88,
+   3.12,
+   3.0,
+   2.0,
+   3.0,
+   3.12,
+   2.88,
+   2.0,
+   0.88,
+   1.25,
+   1.75,
+   2.0,
+   0.88,
+   1.0,
+   1.38,
+   0.5,
+   0.38,
+   1.12,
+   0.25,
+   1.0,
+   2.12,
+   1.88,
+   2.0,
+   0.0,
+   2.0,
+   2.0,
+   3.88,
+   3.75,
+   3.0,
+   1.12,
+   1.12,
+   2.0,
+   1.88,
+   2.0,
+   2.12,
+   1.25,
+   3.12,
+   3.0
+  ],
+  "skills_lv": [
+   4.0,
+   3.88,
+   3.12,
+   3.88,
+   3.38,
+   2.25,
+   3.88,
+   3.12,
+   3.0,
+   3.0,
+   3.0,
+   3.0,
+   3.0,
+   3.0,
+   3.0,
+   2.75,
+   3.0,
+   1.88,
+   0.75,
+   0.0,
+   0.0,
+   0.62,
+   2.88,
+   1.75,
+   0.0,
+   1.75,
+   0.0,
+   3.12,
+   3.38,
+   3.0,
+   3.0,
+   3.25,
+   0.62,
+   1.0,
+   3.0
+  ],
+  "tasks": [
+   "Approve building plans that meet required specifications.",
+   "Review and interpret plans, blueprints, site layouts, specifications, or construction methods to ensure compliance to legal requirements and safety regulations.",
+   "Issue permits for construction, relocation, demolition, or occupancy.",
+   "Inspect bridges, dams, highways, buildings, wiring, plumbing, electrical circuits, sewers, heating systems, or foundations during and after construction for structural quality, general safety, or conformance to specifications and codes.",
+   "Monitor installation of plumbing, wiring, equipment, or appliances to ensure that installation is performed properly and is in compliance with applicable regulations."
+  ],
+  "bls_ai_exposure": "High",
+  "bls_ai_exposure_tier": "secondary_report",
+  "bls_ai_exposure_source": "NAHB analysis of BLS data via buildradicals.com: construction and building inspectors High"
+ },
+ "civil-engineering-technician": {
+  "name": "Civil Engineering Technician",
+  "match_method": "override: Civil Engineering Technologists and Technicians is the exact SOC occupation",
+  "candidates": [],
+  "bls_inherited": false,
+  "onet_soc": "17-3022.00",
+  "onet_title": "Civil Engineering Technologists and Technicians",
+  "job_zone": 3,
+  "riasec_profile": {
+   "R": 0.8214,
+   "I": 0.7671,
+   "A": 0.4114,
+   "S": 0.2214,
+   "E": 0.2857,
+   "C": 0.7529
+  },
+  "work_values_extent": {
+   "achievement": 4.33,
+   "working_conditions": 4.17,
+   "recognition": 3.67,
+   "relationships": 4.0,
+   "support": 5.33,
+   "independence": 4.67
+  },
+  "work_values_frozen_date": "06/2008",
+  "abilities_lv": [
+   4.12,
+   4.0,
+   4.0,
+   4.0,
+   3.12,
+   2.88,
+   3.88,
+   4.0,
+   3.75,
+   3.88,
+   3.5,
+   3.75,
+   3.38,
+   2.5,
+   2.88,
+   3.12,
+   2.88,
+   1.12,
+   4.0,
+   3.0,
+   2.62,
+   1.88,
+   1.88,
+   2.38,
+   2.0,
+   1.25,
+   0.75,
+   0.62,
+   1.12,
+   0.88,
+   0.0,
+   0.0,
+   0.0,
+   0.5,
+   1.12,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   3.88,
+   3.25,
+   2.38,
+   0.62,
+   0.38,
+   1.88,
+   0.5,
+   2.12,
+   2.12,
+   0.38,
+   3.25,
+   3.12
+  ],
+  "skills_lv": [
+   4.12,
+   4.0,
+   3.5,
+   3.5,
+   3.38,
+   2.62,
+   3.62,
+   3.0,
+   2.62,
+   3.38,
+   2.88,
+   3.0,
+   2.38,
+   2.75,
+   2.38,
+   2.62,
+   3.25,
+   3.0,
+   0.75,
+   0.25,
+   0.0,
+   1.0,
+   2.38,
+   2.0,
+   0.0,
+   0.88,
+   0.0,
+   2.0,
+   3.12,
+   3.0,
+   2.75,
+   2.88,
+   1.62,
+   2.0,
+   2.25
+  ],
+  "tasks": [
+   "Calculate dimensions, square footage, profile and component specifications, and material quantities, using calculator or computer.",
+   "Inspect project site and evaluate contractor work to detect design malfunctions and ensure conformance to design specifications and applicable codes.",
+   "Read and review project blueprints and structural specifications to determine dimensions of structure or system and material requirements.",
+   "Draft detailed dimensional drawings and design layouts for projects to ensure conformance to specifications.",
+   "Conduct materials test and analysis, using tools and equipment and applying engineering knowledge."
+  ]
  }
 }

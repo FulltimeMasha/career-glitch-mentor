@@ -1,0 +1,63 @@
+Regression gate → https://careerglitch-b6sldem9v-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 35) · modes {"bands":34,"direct":3,"insufficient_data":13} · 659s
+Top3 stub share 5% (base 21%) · distinct jobs 47 · most frequent: Home Stager 5, Corporate Trainer 4, Accountant (CPA track) 3, Spa Owner 3, Commercial Insurance Producer 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 2 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+   · random #5 age=60 floor=50 red=no_kids+no_degree mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD pay below floor only with explicit top-decile reason  — 5 case(s)
+   · special "age 15" age=15 floor=90 red=none → IT Support Specialist ($45K, 9mo) status=below_floor
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none → Corporate Trainer ($69K, 9mo) status=below_floor
+   · random #14 age=45 floor=130 red=no_nights+no_relocation+no_kids → General Contractor ($105K, 36mo) status=below_floor
+   · random #21 age=17 floor=130 red=no_relocation+no_public_voice → Home Stager ($67K, 3.5mo) status=below_floor
+   · random #30 age=60 floor=70 red=no_relocation+no_public_voice+no_kids+no_degree → Home Stager ($67K, 3.5mo) status=below_floor
+
+HARD copy matches count (no "three" with <3 cards)  — 14 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none n=2
+   · random #0 age=60 floor=70 red=no_kids n=2
+   · random #7 age=60 floor=0 red=no_nights+no_degree n=2
+   · random #14 age=45 floor=130 red=no_nights+no_relocation+no_kids n=2
+   · random #16 age=45 floor=50 red=none n=2
+   · random #18 age=45 floor=50 red=no_kids+no_degree n=2
+
+HARD no adult-only/licensed job for under-18 (heuristic — review)  — 5 case(s)
+   · random #6 age=15 floor=50 red=no_relocation+no_kids → Drone Pilot (commercial) ($75K, 9mo)
+   · random #10 age=15 floor=0 red=no_nights+no_degree → Drone Pilot (commercial) ($75K, 9mo)
+   · random #21 age=17 floor=130 red=no_relocation+no_public_voice → Commercial Insurance Producer ($62K, 1mo)
+   · random #31 age=17 floor=70 red=no_relocation+no_public_voice+no_kids → Physician Assistant ($136K, 48mo)
+   · random #31 age=17 floor=70 red=no_relocation+no_public_voice+no_kids → Gym / Fitness Studio Owner ($75K, 3.5mo)
+
+HARD red line no_nights (heuristic list — review)  — 2 case(s)
+   · random #10 age=15 floor=0 red=no_nights+no_degree → Drone Pilot (commercial) ($75K, 9mo)
+   · random #13 age=22 floor=90 red=no_nights → Helicopter Pilot ($110K, 18mo)
+
+HARD health limit voice  — 2 case(s)
+   · random #14 age=45 floor=130 red=no_nights+no_relocation+no_kids → General Contractor ($105K, 36mo)
+   · random #39 age=34 floor=0 red=no_nights → B2B Sales Rep ($76K, 9mo)
+
+HARD red line no_public_voice (heuristic list — review)  — 1 case(s)
+   · random #38 age=17 floor=35 red=no_public_voice → Corporate Trainer ($69K, 9mo)
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT persona gets at least one job from its obvious field  — 1 case(s)
+   · Ex-mechanic, hands-on, outdoors → Home Inspector, Computer Systems Analyst, Logistics Coordinator
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 21 of 35
+
+FAIL — 8 hard + 2 soft rule(s) broken. Do not deploy.
+EXIT=1
