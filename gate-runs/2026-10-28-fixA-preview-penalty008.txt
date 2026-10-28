@@ -1,0 +1,68 @@
+Regression gate → https://careerglitch-biuw5kczf-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 37) · modes {"bands":37,"direct":1,"insufficient_data":12} · 335s
+Top3 stub share 3% (base 21%) · distinct jobs 36 · most frequent: Commercial Insurance Producer 16, Luxury Real Estate Agent 9, Home Stager 5, Drone Pilot (commercial) 4, Gym / Fitness Studio Owner 4
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD copy matches count (no "three" with <3 cards)  — 11 case(s)
+   · persona "Foreign accountant (bridge)" age=38 floor=45 red=none n=2
+   · random #2 age=22 floor=90 red=no_nights n=2
+   · random #12 age=15 floor=130 red=no_public_voice n=2
+   · random #15 age=52 floor=130 red=no_relocation+no_kids n=2
+   · random #16 age=52 floor=20 red=no_kids n=2
+   · random #20 age=19 floor=90 red=no_relocation+no_kids+no_degree n=2
+
+HARD no dead end: empty top3 needs an exploration plan  — 1 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD no adult-only/licensed job for under-18 (heuristic — review)  — 6 case(s)
+   · special "age 15" age=15 floor=90 red=none → Commercial Insurance Producer ($62K, 1mo)
+   · random #0 age=15 floor=35 red=no_kids → Commercial Insurance Producer ($62K, 1mo)
+   · random #12 age=15 floor=130 red=no_public_voice → Luxury Real Estate Agent ($140K, 9mo)
+   · random #12 age=15 floor=130 red=no_public_voice → Commercial Insurance Producer ($62K, 1mo)
+   · random #14 age=15 floor=50 red=no_relocation+no_public_voice+no_degree → Dispatcher (trucking) ($45K, 3.5mo)
+   · random #37 age=15 floor=20 red=no_nights+no_degree → Commercial Insurance Producer ($62K, 1mo)
+
+HARD red line no_public_voice (heuristic list — review)  — 5 case(s)
+   · random #8 age=28 floor=50 red=no_public_voice+no_kids → General Contractor ($105K, 36mo)
+   · random #14 age=15 floor=50 red=no_relocation+no_public_voice+no_degree → Corporate Trainer ($69K, 9mo)
+   · random #24 age=34 floor=50 red=no_public_voice → Community Health Worker ($51K, 3.5mo)
+   · random #26 age=60 floor=20 red=no_nights+no_public_voice → Community Health Worker ($51K, 3.5mo)
+   · random #29 age=45 floor=35 red=no_public_voice → Librarian ($64K, 54mo)
+
+HARD health limit voice  — 2 case(s)
+   · random #12 age=15 floor=130 red=no_public_voice → Commercial Insurance Producer ($62K, 1mo)
+   · random #21 age=38 floor=130 red=no_public_voice+no_kids → Commercial Insurance Producer ($62K, 1mo)
+
+HARD pay below floor only with explicit top-decile reason  — 1 case(s)
+   · random #14 age=15 floor=50 red=no_relocation+no_public_voice+no_degree → Dispatcher (trucking) ($45K, 3.5mo) status=below_floor
+
+HARD red line no_nights (heuristic list — review)  — 2 case(s)
+   · random #27 age=22 floor=70 red=no_nights+no_relocation+no_kids → Drone Pilot (commercial) ($123K, 9mo)
+   · random #35 age=60 floor=90 red=no_nights+no_degree → Drone Pilot (commercial) ($123K, 9mo)
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT persona gets at least one job from its obvious field  — 1 case(s)
+   · Ex-mechanic, hands-on, outdoors → Construction Estimator, Logistics Coordinator, Computer Systems Analyst
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Commercial Insurance Producer in 16 of 37 sessions with results
+
+SOFT variety: distinct jobs ≥ number of sessions with results  — 1 case(s)
+   · 36 distinct for 37 sessions
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 18 of 37
+
+FAIL — 8 hard + 4 soft rule(s) broken. Do not deploy.
