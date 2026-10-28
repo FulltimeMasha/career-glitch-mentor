@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matchmaker tile — variants 4–6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Instrument+Sans:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#FAF5EC; font-family:'Instrument Sans',sans-serif; color:#1C1A1F; padding:26px 16px 70px; }
+  .wrap { max-width:430px; margin:0 auto; }
+  .lbl { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.16em; color:#b3a48e; margin:46px 4px 26px; }
+  .lbl:first-child { margin-top:6px; }
+  .tile { background:#fff; border-radius:26px; padding:22px; box-shadow:0 12px 30px rgba(42,36,48,.06); position:relative; }
+  .who { font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.14em; color:#c2185b; margin-bottom:6px; }
+  .bub { font-size:15.5px; line-height:1.5; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .chip { border:2px solid #ECEDE6; background:#fff; border-radius:999px; padding:7px 12px; font-weight:600; font-size:13.5px; }
+
+  /* V4 — peeking from behind the left edge */
+  .v4box { position:relative; padding-left:56px; }
+  .v4box .peek { position:absolute; left:0; top:50%; transform:translateY(-50%); width:168px; height:168px; border-radius:50%; overflow:hidden; z-index:0; box-shadow:0 14px 28px rgba(42,36,48,.18); }
+  .v4box .peek img { width:100%; height:100%; object-fit:cover; object-position:68% 42%; }
+  .v4box .tile { z-index:1; }
+
+  /* V5 — chat: no tile at all, a bubble + sticker avatar */
+  .v5 .row { display:flex; gap:12px; align-items:flex-start; }
+  .v5 .ava { width:56px; height:56px; flex:none; border-radius:50%; overflow:hidden; border:3px solid #fff; box-shadow:0 10px 20px rgba(42,36,48,.20); transform:rotate(-5deg); margin-top:2px; }
+  .v5 .ava img { width:100%; height:100%; object-fit:cover; }
+  .v5 .bubble { background:#fff; border-radius:6px 22px 22px 22px; padding:16px 18px; box-shadow:0 12px 30px rgba(42,36,48,.06); flex:1; }
+  .v5 .chips { margin:12px 0 0 68px; }
+
+  /* V6 — popping over the top edge, centered */
+  .v6 { margin-top:44px; text-align:center; padding-top:56px; }
+  .v6 .pop { position:absolute; top:-44px; left:50%; transform:translateX(-50%); width:118px; height:118px; border-radius:999px 999px 18px 18px; overflow:hidden; border:4px solid #fff; box-shadow:0 14px 26px rgba(42,36,48,.18); }
+  .v6 .pop img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .v6 .chips { justify-content:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lbl">VARIANT 4 — «PEEKING FROM BEHIND» · HALF OF HER STAYS OUTSIDE</div>
+  <div class="v4box">
+    <div class="peek"><img src="/avatar.jpg" alt=""></div>
+    <div class="tile">
+      <div class="who">YOUR MATCHMAKER</div>
+      <p class="bub">Hi — I'm the Matchmaker. I know you, I know the job market, and I won't let you marry a career AI is about to kill. Ask me something — or just start.</p>
+      <div class="chips">
+        <span class="chip">Will AI kill my job?</span>
+        <span class="chip">What to study?</span>
+        <span class="chip">Too late to switch?</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lbl">VARIANT 5 — «THE CHAT» · NO TILE AT ALL, JUST HER MESSAGE</div>
+  <div class="v5">
+    <div class="row">
+      <div class="ava"><img src="/avatar.jpg" alt=""></div>
+      <div class="bubble">
+        <div class="who">YOUR MATCHMAKER</div>
+        <p class="bub">Hi — I'm the Matchmaker. I know you, I know the job market, and I won't let you marry a career AI is about to kill.</p>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip">Will AI kill my job?</span>
+      <span class="chip">I don't know what to study</span>
+      <span class="chip">Is it too late to switch?</span>
+    </div>
+  </div>
+
+  <div class="lbl">VARIANT 6 — «OVER THE FENCE» · SHE POPS OVER THE TOP</div>
+  <div class="tile v6">
+    <div class="pop"><img src="/avatar.jpg" alt=""></div>
+    <div class="who">YOUR MATCHMAKER</div>
+    <p class="bub">I know you, I know the job market — and I won't let you marry a career AI is about to kill. Ask me something, or just start.</p>
+    <div class="chips">
+      <span class="chip">Will AI kill my job?</span>
+      <span class="chip">What to study?</span>
+      <span class="chip">Too late to switch?</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

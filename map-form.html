@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Glitch — your personal career map</title>
+<meta name="description" content="You paid for a personal career map. Tell Masha what to build it from — your map arrives within 48 hours.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:wght@400;600&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{--bg:#2a1030;--pink:#F92A82;--paper:#FFFCF6;--ink:#1C1A1F;--blush:#FFD8EA;--mut:rgba(255,252,246,.75)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--paper);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.55;
+background-image:linear-gradient(rgba(249,42,130,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(249,42,130,.13) 1px,transparent 1px);
+background-size:44px 44px}
+.wrap{max-width:720px;margin:0 auto;padding:20px 18px 56px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:6px 0 22px}
+.logo{font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:.06em;color:var(--paper);text-decoration:none;font-size:17px}
+.logo span{color:var(--pink)}
+nav a.home{color:var(--mut);text-decoration:none;font-size:14px}
+h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:33px;line-height:1.14;margin:6px 0 14px}
+h2{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;margin:30px 0 12px}
+.sub{font-size:18px;color:var(--paper);margin-bottom:20px}
+.bullets{display:grid;gap:14px;margin:20px 0 8px}
+.bcard{background:var(--blush);color:var(--ink);border:3px solid var(--ink);border-radius:14px;
+box-shadow:8px 8px 0 var(--pink);padding:15px 16px;font-size:16.5px;font-weight:600}
+.founding{background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:14px;
+box-shadow:8px 8px 0 var(--ink);padding:18px;margin:26px 0 6px}
+.founding p{font-weight:600;font-size:16.5px}
+.counter{display:inline-block;background:var(--ink);color:#fff;font-family:'DM Mono',monospace;
+font-size:16px;padding:9px 14px;border-radius:999px;margin:14px 0 10px}
+.counter.hot{background:#D90429;animation:pulse 1s infinite}
+.bar{background:rgba(28,26,31,.45);border-radius:999px;height:14px;overflow:hidden}
+.barfill{background:var(--paper);height:100%;width:0%;transition:width .6s}
+.barfill.hot{background:#D90429}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.skipbtn{display:none;margin-top:14px;background:#fff;color:var(--ink);font-family:'Outfit',sans-serif;
+font-weight:900;padding:12px 18px;border-radius:10px;border:3px solid var(--ink);text-decoration:none;font-size:16px}
+form,.success{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;
+box-shadow:8px 8px 0 var(--pink);padding:20px;margin-top:16px}
+label{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+label:first-child{margin-top:0}
+input[type=text],input[type=email],input[type=tel],select{width:100%;padding:12px;border-radius:10px;
+border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+input[type=range]{width:100%;accent-color:var(--pink)}
+.confval{font-family:'DM Mono',monospace;color:var(--pink);font-weight:700}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.check input{width:20px;height:20px;accent-color:var(--pink);margin-top:2px}
+button.submit{width:100%;margin-top:20px;background:var(--pink);color:#fff;border:3px solid var(--ink);
+border-radius:10px;padding:14px;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;cursor:pointer}
+button.submit:disabled{opacity:.55;cursor:wait}
+.btn2{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:11px 16px;
+font-family:'Outfit',sans-serif;font-weight:900;font-size:15px;cursor:pointer;margin:8px 8px 0 0}
+.status{margin-top:14px;font-size:15px;min-height:22px;font-weight:600}
+.status.ok{color:#0a7a3d}.status.err{color:#c21807}
+.sharebox{background:var(--blush);border:3px solid var(--ink);border-radius:12px;padding:14px 16px;margin-top:14px}
+.sharebox a{color:var(--ink);font-family:'DM Mono',monospace;font-size:14px;word-break:break-all}
+.faq{display:grid;gap:14px}
+.fitem{background:rgba(255,252,246,.06);border:2px solid rgba(249,42,130,.4);border-radius:12px;padding:14px 16px}
+.fitem b{font-family:'Outfit',sans-serif;display:block;margin-bottom:4px;font-size:16.5px}
+.fitem p{color:var(--mut);font-size:15.5px}
+footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4);color:var(--mut);font-size:13px}
+.mut{color:#5c5566;font-weight:400}
+.offer{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--pink);padding:18px;margin:24px 0 8px}
+.offer p{font-weight:600;font-size:17px}
+.offerbtn{display:block;text-align:center;background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:10px;padding:14px;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;text-decoration:none;margin-top:12px}
+.offerbtn.parent{background:#fff;color:var(--ink)}
+.notready{margin-top:28px;color:var(--mut);font-size:16px}
+textarea{width:100%;padding:12px;border-radius:10px;border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+.doorline{font-size:16px;margin-bottom:6px}
+.freecheck{background:var(--blush);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--pink);padding:18px;margin:24px 0 8px}
+.fc-h{font-family:'Outfit',sans-serif;font-weight:900;font-size:21px;margin:0 0 10px}
+.fc-card{margin-top:14px;background:#fff;border:3px solid var(--ink);border-radius:12px;padding:14px 16px}
+.fc-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:19px}
+.fc-badge{display:inline-block;padding:5px 13px;border-radius:999px;border:3px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:900;font-size:14px;margin-left:8px;vertical-align:middle}
+.fc-badge.yes{background:#2fbf71;color:#fff}
+.fc-badge.no{background:#D90429;color:#fff}
+.fc-line{margin-top:6px;font-weight:600}
+.fc-take{margin-top:8px;color:#444}
+.fc-cta{display:block;margin-top:14px;font-weight:700;color:var(--ink);font-size:16.5px}
+.fc-hint{margin-top:10px;font-weight:600;color:#c21807}
+@media(max-width:480px){h1{font-size:27px}.sub{font-size:16.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+<a class="logo" href="/">CAREER<span>GLITCH</span></a>
+<a class="home" href="/">careerglitch.com</a>
+</nav>
+<h1>One last step</h1>
+<p class="sub">You paid for a personal career map. Tell Masha what to build it from — your map arrives within 48 hours.</p>
+<p class="doorline">Your door: <b id="doorLabel">…</b></p>
+<form id="mfForm" novalidate>
+<label for="mEmail">Email (to match the payment)</label>
+<input type="email" id="mEmail" autocomplete="email" required>
+<label for="mProf">Your profession</label>
+<input type="text" id="mProf" required>
+<label for="mSituation">What’s happening now? (your situation)</label>
+<textarea id="mSituation" rows="3" required></textarea>
+<label for="mState">US state</label>
+<select id="mState">
+<option value="">Pick your state…</option>
+<option value="Alabama">Alabama</option>
+<option value="Alaska">Alaska</option>
+<option value="Arizona">Arizona</option>
+<option value="Arkansas">Arkansas</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="Delaware">Delaware</option>
+<option value="Washington DC">Washington DC</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Iowa">Iowa</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Maine">Maine</option>
+<option value="Maryland">Maryland</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Missouri">Missouri</option>
+<option value="Montana">Montana</option>
+<option value="Nebraska">Nebraska</option>
+<option value="Nevada">Nevada</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="New York">New York</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Vermont">Vermont</option>
+<option value="Virginia">Virginia</option>
+<option value="Washington">Washington</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="Wyoming">Wyoming</option>
+</select>
+<label for="mResidency" id="resLabel">Where do you live now?</label>
+<select id="mResidency">
+<option value="">Pick one…</option>
+<option value="In the US">In the US</option>
+<option value="Outside the US">Outside the US</option>
+</select>
+<label for="mTried">What have you already tried?</label>
+<input type="text" id="mTried">
+<label for="mPhone">Phone <span class="mut">(so your mentor can text you)</span></label>
+<input type="tel" id="mPhone" autocomplete="tel">
+<label class="check"><input type="checkbox" id="mTexts"> <span>I agree to receive texts. Reply STOP to opt out</span></label>
+<button type="submit" class="submit" id="mfSubmit">Send — build my map</button>
+<div class="status" id="mfStatus"></div>
+</form>
+<div class="success" id="mfOk" style="display:none">
+<h2>Got it. Your map arrives within 48 hours.</h2>
+</div>
+<footer>Career Glitch Mentor — built for the Meta Global AI Developer Hackathon.</footer>
+</div>
+<script>
+const CG_SUPA = "https://stwzrcahhieqbabvljue.supabase.co";
+const CG_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0d3pyY2FoaGllcWJhYnZsanVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE1Njk4NzMsImV4cCI6MjEwNzE0NTg3M30.T8RWclXoxK8z5dqUPtSYYjAO5a6BsdLsDwaB4t7NIJM";
+const ORDERS_ROW = 1002;
+const DOORS = ["start-self", "start-parent", "pivot", "bridge"];
+const DOOR_LABELS = {
+  "start-self": "Choosing a career \u2014 for me (/start)",
+  "start-parent": "Choosing a career \u2014 a parent buying for their kid (/start)",
+  "pivot": "Career pivot after AI hit my job (/pivot)",
+  "bridge": "Moving my profession to the US (/bridge)"
+};
+let door = new URLSearchParams(location.search).get("door") || "";
+if (DOORS.indexOf(door) < 0) door = "start-self";
+function cgHeaders(extra) {
+  return Object.assign({
+    "apikey": CG_ANON,
+    "Authorization": "Bearer " + CG_ANON,
+    "Content-Type": "application/json"
+  }, extra || {});
+}
+async function fetchOrders() {
+  const r = await fetch(CG_SUPA + "/rest/v1/creator_state?id=eq." + ORDERS_ROW + "&select=data", { headers: cgHeaders() });
+  if (!r.ok) throw new Error("read " + r.status);
+  const rows = await r.json();
+  if (!rows.length || !rows[0].data) throw new Error("no orders row");
+  const d = rows[0].data;
+  if (!Array.isArray(d.orders)) d.orders = [];
+  return d;
+}
+function setStatus(m, cls) {
+  const e = document.getElementById("mfStatus");
+  e.textContent = m;
+  e.className = "status " + (cls || "");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("doorLabel").textContent = DOOR_LABELS[door];
+  if (door === "bridge") {
+    document.getElementById("resLabel").innerHTML = "Where do you live now? *";
+  }
+  document.getElementById("mfForm").addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    const btn = document.getElementById("mfSubmit");
+    const email = document.getElementById("mEmail").value.trim();
+    const profession = document.getElementById("mProf").value.trim();
+    const situation = document.getElementById("mSituation").value.trim();
+    const state = document.getElementById("mState").value;
+    const residency = document.getElementById("mResidency").value;
+    const tried = document.getElementById("mTried").value.trim();
+    const phone = document.getElementById("mPhone").value.trim();
+    const textsConsent = document.getElementById("mTexts").checked;
+    if (!email || email.indexOf("@") < 0 || !profession || !situation || !state) {
+      setStatus("Please fill in your email, profession, situation, and state.", "err");
+      return;
+    }
+    if (!textsConsent) {
+      setStatus("Please check the consent box so your mentor can text you.", "err");
+      return;
+    }
+    if (door === "bridge" && !residency) {
+      setStatus("Please pick where you live now.", "err");
+      return;
+    }
+    btn.disabled = true;
+    setStatus("Saving\u2026", "");
+    try {
+      const data = await fetchOrders();
+      const orders = data.orders;
+      const nextId = orders.reduce(function (m, x) { return Math.max(m, x.id || 0); }, 0) + 1;
+      orders.push({
+        id: nextId,
+        created_at: new Date().toISOString(),
+        door: door,
+        email: email,
+        profession: profession,
+        situation: situation,
+        state: state,
+        residency: residency,
+        tried: tried,
+        phone: phone,
+        texts_consent: textsConsent
+      });
+      data.orders = orders;
+      const r = await fetch(CG_SUPA + "/rest/v1/creator_state?id=eq." + ORDERS_ROW, {
+        method: "PATCH",
+        headers: cgHeaders({ "Prefer": "return=representation" }),
+        body: JSON.stringify({ data: data })
+      });
+      if (!r.ok) throw new Error("write " + r.status);
+      document.getElementById("mfForm").style.display = "none";
+      document.getElementById("mfOk").style.display = "block";
+    } catch (e) {
+      setStatus("Something went wrong and nothing was saved. Please try again in a minute.", "err");
+    }
+    btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>

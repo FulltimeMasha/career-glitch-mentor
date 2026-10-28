@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept A — Airy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Instrument+Sans:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#FBF7EF; font-family:'Instrument Sans',sans-serif; color:#1C1A1F; padding:28px 18px 60px; }
+  .wrap { max-width:430px; margin:0 auto; }
+  .brand { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; color:#8a8378; text-align:center; margin-bottom:26px; }
+  .brand b { color:#F92A82; }
+  .lbl { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.18em; color:#b3aa99; margin:38px 4px 12px; }
+  .card { background:#fff; border-radius:30px; padding:26px 24px; box-shadow:0 18px 40px rgba(28,26,31,.07); }
+  .pill { display:inline-block; background:#FFEEF5; color:#c2185b; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.12em; padding:7px 12px; border-radius:99px; }
+  h1 { font-family:'Outfit',sans-serif; font-weight:900; font-size:37px; line-height:1.04; margin:16px 0 12px; }
+  h1 .pink { color:#F92A82; }
+  .sub { font-size:16px; line-height:1.5; color:#57534a; }
+  .heroRow { display:flex; gap:14px; align-items:flex-start; margin-top:22px; }
+  .heroRow img { width:76px; height:76px; border-radius:24px; object-fit:cover; }
+  .bubble { background:#FFEEF5; border-radius:20px; border-bottom-left-radius:6px; padding:14px 16px; font-size:14.5px; line-height:1.45; }
+  .bubble b { display:block; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.14em; color:#c2185b; margin-bottom:5px; }
+  .btn { display:block; text-align:center; background:#F92A82; color:#fff; font-family:'Outfit',sans-serif; font-weight:800; font-size:17px; padding:17px; border-radius:99px; margin-top:22px; box-shadow:0 12px 26px rgba(249,42,130,.35); }
+  .note { text-align:center; font-size:12.5px; color:#a39a88; margin-top:12px; font-family:'DM Mono',monospace; }
+  .radar { margin-top:14px; background:#2A1030; color:#FFD8EA; border-radius:24px; padding:16px 18px; display:flex; gap:12px; align-items:center; }
+  .radar .dot { width:10px; height:10px; border-radius:50%; background:#FF8CBE; box-shadow:0 0 0 5px rgba(255,140,190,.25); flex:none; }
+  .radar p { font-size:13.5px; line-height:1.45; } .radar b { color:#fff; }
+  .dots { display:flex; gap:6px; margin-bottom:18px; }
+  .dots i { height:6px; flex:1; border-radius:99px; background:#EFE7D8; }
+  .dots i.on { background:#F92A82; }
+  .q { font-family:'Outfit',sans-serif; font-weight:800; font-size:22px; line-height:1.25; margin:6px 0 4px; }
+  .qsub { font-size:14px; color:#8a8378; margin-bottom:18px; }
+  .opt { border:2px solid #F1EADD; border-radius:18px; padding:15px 16px; font-size:15px; margin-bottom:10px; background:#FFFCF6; }
+  .opt.sel { border-color:#F92A82; background:#FFEEF5; font-weight:600; }
+  .field { border:2px dashed #E4DAC6; border-radius:18px; padding:14px 16px; color:#b3aa99; font-size:14px; margin-top:6px; }
+  .stamp { display:inline-block; transform:rotate(-4deg); border:2.5px solid #F92A82; color:#F92A82; font-family:'Outfit',sans-serif; font-weight:900; font-size:13px; letter-spacing:.06em; padding:6px 12px; border-radius:10px; }
+  .job { font-family:'Outfit',sans-serif; font-weight:900; font-size:28px; line-height:1.1; margin:14px 0 4px; }
+  .fit { color:#c2185b; font-weight:600; font-size:14px; }
+  .rings { display:flex; gap:14px; margin-top:20px; }
+  .ring { flex:1; background:#FFFCF6; border-radius:22px; padding:16px; text-align:center; }
+  .ring svg { width:86px; height:86px; }
+  .ring .rl { font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.14em; color:#8a8378; margin-top:6px; }
+  .ring .rv { font-family:'Outfit',sans-serif; font-weight:800; font-size:16px; }
+  .why { margin-top:18px; font-size:14.5px; line-height:1.55; color:#57534a; }
+  .cushion { background:#F0E6CF; border-radius:30px; padding:24px; margin-top:14px; box-shadow:0 18px 40px rgba(28,26,31,.06); }
+  .cushion .k { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8a6d1f; }
+  .cushion .job { font-size:24px; }
+  .cushion p { font-size:14.5px; line-height:1.55; color:#5c5136; margin-top:6px; }
+  .letter { margin-top:14px; display:flex; gap:14px; align-items:center; }
+  .letter .ic { width:46px; height:46px; flex:none; border-radius:16px; background:#FFD8EA; display:flex; align-items:center; justify-content:center; font-size:21px; }
+  .letter h3 { font-family:'Outfit',sans-serif; font-size:17px; font-weight:800; }
+  .letter p { font-size:13.5px; color:#8a8378; margin-top:2px; }
+  .letter .arr { margin-left:auto; font-size:20px; color:#F92A82; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">♥ CAREER GLITCH — CONCEPT A «AIR»</div>
+
+  <div class="lbl">01 — START</div>
+  <div class="card">
+    <span class="pill">THE AI CAREER MATCHMAKER</span>
+    <h1>Is AI coming<br>for <span class="pink">your job?</span></h1>
+    <p class="sub">Ten minutes with the Matchmaker — a straight verdict, your top-3 professions and a plan. No horoscopes.</p>
+    <div class="heroRow">
+      <img src="/avatar.jpg" alt="">
+      <div class="bubble"><b>THE MATCHMAKER</b>It knows you, it knows the job market — and it won't let you marry a career AI is about to kill.</div>
+    </div>
+    <div class="btn">Start the interview →</div>
+    <div class="note">FREE TO START · 10 MINUTES</div>
+  </div>
+  <div class="radar"><div class="dot"></div><p><b>Market Radar is on.</b> We re-check the news every day — if AI moves against your profession, your verdict moves too.</p></div>
+
+  <div class="lbl">02 — THE INTERVIEW</div>
+  <div class="card">
+    <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="pill">STEP 3 OF 8</span>
+    <div class="q">What kind of stuck is this?</div>
+    <div class="qsub">Pick the closest one — I'll dig from there.</div>
+    <div class="opt">I haven't really decided to change anything yet</div>
+    <div class="opt sel">I want to choose, but I don't know enough yet ✓</div>
+    <div class="opt">I keep getting conflicting signals</div>
+    <div class="field">…or say it in your own words</div>
+    <div class="btn">Continue →</div>
+  </div>
+
+  <div class="lbl">03 — YOUR RESULT</div>
+  <div class="card">
+    <span class="stamp">IT'S A MATCH 💘</span>
+    <div class="job">Streamer /<br>Content Creator</div>
+    <div class="fit">Top fit · typical pay ~$75K</div>
+    <div class="rings">
+      <div class="ring">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#F1EADD" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#F92A82" stroke-width="11" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="45" transform="rotate(-90 50 50)"/></svg>
+        <div class="rv">74–98%</div><div class="rl">LOVE</div>
+      </div>
+      <div class="ring">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#F1EADD" stroke-width="11"/><circle cx="50" cy="50" r="42" fill="none" stroke="#FF8CBE" stroke-width="11" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="60" transform="rotate(-90 50 50)"/></svg>
+        <div class="rv">69–100%</div><div class="rl">POTENTIAL</div>
+      </div>
+    </div>
+    <p class="why">Your #1 must-have at work is Achievement — and this job actually delivers it. The honest part: money comes later here, so there's a cushion below.</p>
+  </div>
+
+  <div class="cushion">
+    <div class="k">🛟 YOUR CUSHION</div>
+    <div class="job">AI Automation Specialist</div>
+    <p>Pays ~$120K from the first paycheck while you build the main road. Short road in: about 2.5 months.</p>
+  </div>
+
+  <div class="card letter">
+    <div class="ic">💌</div>
+    <div><h3>A letter from your matchmaker</h3><p>Your full verdict, the honest BUT and a 90-day plan…</p></div>
+    <div class="arr">→</div>
+  </div>
+</div>
+</body>
+</html>

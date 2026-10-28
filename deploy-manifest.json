@@ -1,0 +1,1765 @@
+{
+ "manifest": [
+  {
+   "file": "index.html",
+   "sha": "84f302e7a7e88037aac3ffe25c09fc8228ca18c1",
+   "size": 67209
+  },
+  {
+   "file": "professions.json",
+   "sha": "98831634380d9023f85aaaca8e4ca0edf21e0139",
+   "size": 33162
+  },
+  {
+   "file": "roadmaps-data-1.json",
+   "sha": "985b08e777b080afd716d1c5de56d200d6e710ad",
+   "size": 95152
+  },
+  {
+   "file": "roadmaps-data-2.json",
+   "sha": "99e783014315f420ff24afc09e3f43eb7e636e4c",
+   "size": 93824
+  },
+  {
+   "file": "master_prompt.txt",
+   "sha": "b14358df02967971bc25d340bcd537383cffa77d",
+   "size": 15706
+  },
+  {
+   "file": "avatar.jpg",
+   "sha": "c9de6e0642bc9451e780b823461ef250b3abb1e3",
+   "size": 53508
+  },
+  {
+   "file": "masha.jpg",
+   "sha": "3dba9e0f7842b5f26b0147bfa7ef74e19d9c02a1",
+   "size": 39312
+  },
+  {
+   "file": "logo.jpg",
+   "sha": "3c758fa12dad73db61b6cd4b91f9d46448fa3159",
+   "size": 65665
+  },
+  {
+   "file": "cover-dental.jpg",
+   "sha": "87256bb68cec8e6c6169562503a73f59def78741",
+   "size": 97979
+  },
+  {
+   "file": "favicon.ico",
+   "sha": "67fe92ea4658f2596dac6c3db380b02567b0b5c2",
+   "size": 5389
+  },
+  {
+   "file": "favicon-32.png",
+   "sha": "d9b47b1a42c89dfb02cff5ab1770811c28249209",
+   "size": 1720
+  },
+  {
+   "file": "favicon-180.png",
+   "sha": "cfd570df1fabfbd38ff961e6fd9563794a48e8cd",
+   "size": 16294
+  },
+  {
+   "file": "cat-online.jpg",
+   "sha": "e7eb7702d51a307b3a481a2a224c6207af23314f",
+   "size": 23248
+  },
+  {
+   "file": "cat-health.jpg",
+   "sha": "1a43cc52668ba47ea3f6a965e38f5362ab6bc2ac",
+   "size": 24340
+  },
+  {
+   "file": "cat-trades.jpg",
+   "sha": "c7dc5b2fb4b559460f61f216724cd5a188380cda",
+   "size": 29347
+  },
+  {
+   "file": "cat-creative.jpg",
+   "sha": "e82ce3e328b6d1352c7b1840f8656d26ad8cfa65",
+   "size": 24540
+  },
+  {
+   "file": "cat-beauty.jpg",
+   "sha": "0ccac2a302a8ad6142497c830481d355f0d67159",
+   "size": 28300
+  },
+  {
+   "file": "cat-food.jpg",
+   "sha": "fb6a1965909f9aee367fbb525dc31d15512e9640",
+   "size": 19318
+  },
+  {
+   "file": "cat-people.jpg",
+   "sha": "7dd8d1034a5c62e70280f249aae1e79f86f6dd08",
+   "size": 22330
+  },
+  {
+   "file": "cat-transport.jpg",
+   "sha": "348c94be4202565a615fa728902778759f0e9024",
+   "size": 19030
+  },
+  {
+   "file": "cat-business.jpg",
+   "sha": "b6ee2e1b2af7b8785341c551a2af1a78b4c10c46",
+   "size": 24818
+  },
+  {
+   "file": "CareerGlitch_AIAgentManager_Roadmap_2027_v1.pdf",
+   "sha": "d42caeac4b0b77a38baaa1eaab98ab3273ec02d7",
+   "size": 82133
+  },
+  {
+   "file": "CareerGlitch_AbaTherapistKids_Roadmap_2027_v1.pdf",
+   "sha": "081205abd7a712f568667347a5ce9350875cbb8b",
+   "size": 79627
+  },
+  {
+   "file": "CareerGlitch_Accountant_Roadmap_2027_v7.pdf",
+   "sha": "69b995e45c984efba0f8a6ec736cd03057e205d1",
+   "size": 83650
+  },
+  {
+   "file": "CareerGlitch_Actuary_Roadmap_2027_v1.pdf",
+   "sha": "05fa934d2ffdb590d712067b214f69350b5b39e3",
+   "size": 78808
+  },
+  {
+   "file": "CareerGlitch_AirTrafficController_Roadmap_2027_v1.pdf",
+   "sha": "4374f5759d403be2205928b1223edac00407152e",
+   "size": 78759
+  },
+  {
+   "file": "CareerGlitch_AirbnbCoHostStrManager_Roadmap_2027_v1.pdf",
+   "sha": "f4459c902d8cbfde770a4022f548b4dd4b43ef8c",
+   "size": 78261
+  },
+  {
+   "file": "CareerGlitch_AircraftMechanicAP_Roadmap_2027_v1.pdf",
+   "sha": "687a4f84934d4035e0e4a802362627d5912dcfb6",
+   "size": 78889
+  },
+  {
+   "file": "CareerGlitch_AmazonFbaSeller_Roadmap_2027_v1.pdf",
+   "sha": "b9e6e54aea77a6eeed6fe362ad1adca3b9f63c1c",
+   "size": 79133
+  },
+  {
+   "file": "CareerGlitch_Animator_Roadmap_2027_v1.pdf",
+   "sha": "743f21c0fb803e106611e011f5def801cb9397ff",
+   "size": 80699
+  },
+  {
+   "file": "CareerGlitch_ApplianceRepairTech_Roadmap_2027_v1.pdf",
+   "sha": "6902f433511874bd3f099e91d90ef75012f8edb2",
+   "size": 79696
+  },
+  {
+   "file": "CareerGlitch_ArboristTreePro_Roadmap_2027_v1.pdf",
+   "sha": "843362c845e876d8a90ed8b298e747e11f56ac40",
+   "size": 78236
+  },
+  {
+   "file": "CareerGlitch_ArtDirector_Roadmap_2027_v1.pdf",
+   "sha": "8739c6cb57ad80b2f28f52e52368d955b553ab13",
+   "size": 81027
+  },
+  {
+   "file": "CareerGlitch_Audiologist_Roadmap_2027_v1.pdf",
+   "sha": "280fe7f532d449538ce4b635b84dd9cf3ad21f53",
+   "size": 80893
+  },
+  {
+   "file": "CareerGlitch_AutoDetailingMobileOwner_Roadmap_2027_v1.pdf",
+   "sha": "c5c3372198afacac112a43ae3f6361ccfa5b2660",
+   "size": 78166
+  },
+  {
+   "file": "CareerGlitch_AutoMechanic_Roadmap_2027_v1.pdf",
+   "sha": "7f63a14b460bb0fbaeb563ddb1dba60d96747720",
+   "size": 79598
+  },
+  {
+   "file": "CareerGlitch_B2bSalesRep_Roadmap_2027_v1.pdf",
+   "sha": "e72d00090a20f48b6b26ad25dff1cb92fd713dff",
+   "size": 78222
+  },
+  {
+   "file": "CareerGlitch_BakeryCafOwner_Roadmap_2027_v1.pdf",
+   "sha": "417c0e3be6f524f9917936a138ef7213c64bd265",
+   "size": 81929
+  },
+  {
+   "file": "CareerGlitch_Barber_Roadmap_2027_v1.pdf",
+   "sha": "06ac3cbd8e8a4265be5615b26f4ca5201fdc861f",
+   "size": 80647
+  },
+  {
+   "file": "CareerGlitch_BaristaCraftCoffee_Roadmap_2027_v1.pdf",
+   "sha": "0295c30e57547e58804e11c594c0ff5152778243",
+   "size": 80607
+  },
+  {
+   "file": "CareerGlitch_BeautySalonOwner_Roadmap_2027_v1.pdf",
+   "sha": "2c5ba0d53238c36497dfc62365a2dbca75a15c18",
+   "size": 78277
+  },
+  {
+   "file": "CareerGlitch_BoatCaptain_Roadmap_2027_v1.pdf",
+   "sha": "a6d4cac8aac273944f755f729721b4b7a7e7c428",
+   "size": 78448
+  },
+  {
+   "file": "CareerGlitch_BoatMechanicMarineTech_Roadmap_2027_v1.pdf",
+   "sha": "0de21809869d22eedce90b61558f5ef6bdf4b818",
+   "size": 78465
+  },
+  {
+   "file": "CareerGlitch_BoatRestorationFlipping_Roadmap_2027_v1.pdf",
+   "sha": "a69e207f77fffa231eafffa21e66115afc0c2d13",
+   "size": 79766
+  },
+  {
+   "file": "CareerGlitch_BookkeeperAdvisory_Roadmap_2027_v1.pdf",
+   "sha": "7a10eb4a1ab45e8cb4c62a64b604fea0e9ed6365",
+   "size": 79413
+  },
+  {
+   "file": "CareerGlitch_BrandStrategist_Roadmap_2027_v1.pdf",
+   "sha": "5da796906a259186ad2e6b156ac481f459b40235",
+   "size": 78134
+  },
+  {
+   "file": "CareerGlitch_BusDriver_Roadmap_2027_v1.pdf",
+   "sha": "8022744732b7c45c74a71efb5d3748574fc380cf",
+   "size": 81222
+  },
+  {
+   "file": "CareerGlitch_BusinessConsultant_Roadmap_2027_v1.pdf",
+   "sha": "0df98d1cf5c67a46dc52a021cf5703aab35122ff",
+   "size": 78411
+  },
+  {
+   "file": "CareerGlitch_Butcher_Roadmap_2027_v1.pdf",
+   "sha": "c8cb6aaa014fffe5751de5e01b29ee255b678215",
+   "size": 81233
+  },
+  {
+   "file": "CareerGlitch_CabinetMaker_Roadmap_2027_v1.pdf",
+   "sha": "645291af44403b8a268611b0d4976c23f51fb932",
+   "size": 78330
+  },
+  {
+   "file": "CareerGlitch_CarFlipping_Roadmap_2027_v1.pdf",
+   "sha": "c55eca7818299603b716f3ac840841ef439c357d",
+   "size": 79067
+  },
+  {
+   "file": "CareerGlitch_CardiovascularTechnologist_Roadmap_2027_v1.pdf",
+   "sha": "f6e03b2f05b7fb8de64b81c8061f6fec976af6d4",
+   "size": 81021
+  },
+  {
+   "file": "CareerGlitch_Carpenter_Roadmap_2027_v1.pdf",
+   "sha": "1e300f828012b330e57bef85cce745fb09cb3580",
+   "size": 79480
+  },
+  {
+   "file": "CareerGlitch_Caterer_Roadmap_2027_v1.pdf",
+   "sha": "9c52b9be797d84986b49a52434ecd4fe7de04d65",
+   "size": 81115
+  },
+  {
+   "file": "CareerGlitch_CdlTruckDriver_Roadmap_2027_v1.pdf",
+   "sha": "50210c99837cb327316d93bc72baeb5b38430db9",
+   "size": 78369
+  },
+  {
+   "file": "CareerGlitch_Chef_Roadmap_2027_v1.pdf",
+   "sha": "298bfbcd6d8abc76bd43adbfe989284c414ea2ff",
+   "size": 80788
+  },
+  {
+   "file": "CareerGlitch_ChildcareCenterOwner_Roadmap_2027_v1.pdf",
+   "sha": "a0f59ad936ed74d31ff9e7a9167645363c98049b",
+   "size": 79759
+  },
+  {
+   "file": "CareerGlitch_ChocolatierCandyMaker_Roadmap_2027_v1.pdf",
+   "sha": "7f3fc8e5554523ef587150555c70d86cd3e853bb",
+   "size": 78625
+  },
+  {
+   "file": "CareerGlitch_CleaningCompanyOwner_Roadmap_2027_v1.pdf",
+   "sha": "6eb3cc2f72b088e2f182b21af463da2ca55254eb",
+   "size": 78038
+  },
+  {
+   "file": "CareerGlitch_ClinicalResearchCoordinator_Roadmap_2027_v1.pdf",
+   "sha": "cf074bef86d67a8a45fc8ba3e6957fe036bc73b5",
+   "size": 81224
+  },
+  {
+   "file": "CareerGlitch_CloudArchitect_Roadmap_2027_v1.pdf",
+   "sha": "9c8f9100eacc06d8e8b3ba37f9c6faaa6e62eb58",
+   "size": 81160
+  },
+  {
+   "file": "CareerGlitch_CommercialPilot_Roadmap_2027_v1.pdf",
+   "sha": "6f39d570117e99d84c43600fa18187ee02b6f01c",
+   "size": 78333
+  },
+  {
+   "file": "CareerGlitch_ConcreteFinisher_Roadmap_2027_v1.pdf",
+   "sha": "9e3ed2042208d710d6e78335776338cc515c5ca6",
+   "size": 78230
+  },
+  {
+   "file": "CareerGlitch_ContentStrategist_Roadmap_2027_v1.pdf",
+   "sha": "4b8fd382977466306251a60b570f891e3abc81b4",
+   "size": 79321
+  },
+  {
+   "file": "CareerGlitch_Copywriter_Roadmap_2027_v1.pdf",
+   "sha": "8ffc2c53b98e315e1a1435b8b1da1eb1d59cb129",
+   "size": 79261
+  },
+  {
+   "file": "CareerGlitch_CorporateTrainer_Roadmap_2027_v1.pdf",
+   "sha": "7f13c7c35d981041467e1a003825f94d593f0a49",
+   "size": 78253
+  },
+  {
+   "file": "CareerGlitch_CosmetologistHairStylist_Roadmap_2027_v1.pdf",
+   "sha": "deddcfbe1b8e2d3c3596cf3fc185d037bb8d5629",
+   "size": 81002
+  },
+  {
+   "file": "CareerGlitch_CraneOperator_Roadmap_2027_v1.pdf",
+   "sha": "65e4e16ae2b03956f36258ff90742bd4047e88e6",
+   "size": 81308
+  },
+  {
+   "file": "CareerGlitch_CrmEmailMarketer_Roadmap_2027_v1.pdf",
+   "sha": "3c2d719979126871270597024e61d3fc3b5d962f",
+   "size": 78495
+  },
+  {
+   "file": "CareerGlitch_CustomerSuccessManager_Roadmap_2027_v1.pdf",
+   "sha": "b1e3827fdb02a5b552da2bf520abd97eefb0062c",
+   "size": 78157
+  },
+  {
+   "file": "CareerGlitch_CybersecurityAnalyst_Roadmap_2027_v1.pdf",
+   "sha": "e69dfe9528a325c0904f9510bf890523f4f956a2",
+   "size": 81874
+  },
+  {
+   "file": "CareerGlitch_DanceInstructor_Roadmap_2027_v1.pdf",
+   "sha": "5f4eb4235df16a28665b1a94f7b8585ab8a8b015",
+   "size": 77949
+  },
+  {
+   "file": "CareerGlitch_DataAnalyst_Roadmap_2027_v1.pdf",
+   "sha": "8d8e0f6f5bd762189d5bb42292ce768af8c147b9",
+   "size": 78714
+  },
+  {
+   "file": "CareerGlitch_DataEngineer_Roadmap_2027_v1.pdf",
+   "sha": "8b065d7c279845d63f51a4ba5259af2b205c9785",
+   "size": 80775
+  },
+  {
+   "file": "CareerGlitch_DataScientistMlEngineer_Roadmap_2027_v1.pdf",
+   "sha": "ba5987b11784c4eece4d318467201192953824a5",
+   "size": 81329
+  },
+  {
+   "file": "CareerGlitch_DentalAssistant_Roadmap_2027_v1.pdf",
+   "sha": "1cff079a3c56ca70267552617ce02f299833c8a3",
+   "size": 78398
+  },
+  {
+   "file": "CareerGlitch_DentalHygienist_Roadmap_2027_v1.pdf",
+   "sha": "c0de07d1340ec01069fd7fb4ea823819d4b6d4c3",
+   "size": 83656
+  },
+  {
+   "file": "CareerGlitch_DevopsEngineer_Roadmap_2027_v1.pdf",
+   "sha": "80a20fe8944ae040fe2ff3fd939a1c1ca786d5f0",
+   "size": 81443
+  },
+  {
+   "file": "CareerGlitch_DialysisTechnician_Roadmap_2027_v1.pdf",
+   "sha": "9e7c26f11a3cb523340487c3dae680e1e6bcb9a4",
+   "size": 78456
+  },
+  {
+   "file": "CareerGlitch_DieselMechanic_Roadmap_2027_v1.pdf",
+   "sha": "67cc77a367806cf5c3dcb4bba295f8c1dd71754c",
+   "size": 79359
+  },
+  {
+   "file": "CareerGlitch_DispatcherTrucking_Roadmap_2027_v1.pdf",
+   "sha": "3513b64aca7fdde416fd6b109bd108b3f8123c4b",
+   "size": 78387
+  },
+  {
+   "file": "CareerGlitch_DjEventHost_Roadmap_2027_v1.pdf",
+   "sha": "f91853593e6c296b521d05ff86bf4f212382348d",
+   "size": 78330
+  },
+  {
+   "file": "CareerGlitch_DogTrainer_Roadmap_2027_v1.pdf",
+   "sha": "c29529dbec28f9001ad77ab6827e75a625d16be4",
+   "size": 78337
+  },
+  {
+   "file": "CareerGlitch_Doula_Roadmap_2027_v1.pdf",
+   "sha": "be03ce4a1e7dcf571f06a31c13a1235f136bf47c",
+   "size": 78548
+  },
+  {
+   "file": "CareerGlitch_DrivingInstructor_Roadmap_2027_v1.pdf",
+   "sha": "57bcf8593bad68294245e45840af869c685a79b5",
+   "size": 78154
+  },
+  {
+   "file": "CareerGlitch_DronePilotCommercial_Roadmap_2027_v1.pdf",
+   "sha": "a7695c1b94025a4c25e5402d0b74d681f648e5fb",
+   "size": 78582
+  },
+  {
+   "file": "CareerGlitch_DrywallFinisher_Roadmap_2027_v1.pdf",
+   "sha": "3c4b125caac9e9fdc59e9022bf9c568e086c82eb",
+   "size": 82188
+  },
+  {
+   "file": "CareerGlitch_ECommerceManager_Roadmap_2027_v1.pdf",
+   "sha": "4d8623f0a15368c4395169264d11bb30fda1583a",
+   "size": 78590
+  },
+  {
+   "file": "CareerGlitch_EkgTechnician_Roadmap_2027_v1.pdf",
+   "sha": "eb3e824a542282d3b850b4f4e9773db5f58986ef",
+   "size": 79524
+  },
+  {
+   "file": "CareerGlitch_ElderCareCompanionPro_Roadmap_2027_v1.pdf",
+   "sha": "67f1de252ff04563ad9f3212d81436b2c9461766",
+   "size": 78193
+  },
+  {
+   "file": "CareerGlitch_Electrician_Roadmap_2027_v1.pdf",
+   "sha": "a5aaefbc1227da34b7bba511b19c4221e7ab19de",
+   "size": 81955
+  },
+  {
+   "file": "CareerGlitch_ElevatorMechanic_Roadmap_2027_v1.pdf",
+   "sha": "a6ba2882f87b2e2da3e5683661bebdfb0de426b7",
+   "size": 80201
+  },
+  {
+   "file": "CareerGlitch_EmtParamedic_Roadmap_2027_v1.pdf",
+   "sha": "4703f7009f5c738478544b68ca6e93e769f2a6e2",
+   "size": 79297
+  },
+  {
+   "file": "CareerGlitch_EnrolledAgentTaxPro_Roadmap_2027_v1.pdf",
+   "sha": "a6695e60588c6195034de367f6dc5fbf3c7ef993",
+   "size": 78287
+  },
+  {
+   "file": "CareerGlitch_Esthetician_Roadmap_2027_v1.pdf",
+   "sha": "a3cf502990c06b96e45b46615550d1a4a55d9963",
+   "size": 80766
+  },
+  {
+   "file": "CareerGlitch_EtsyDigitalProductsSeller_Roadmap_2027_v1.pdf",
+   "sha": "00b537d061dc2c732ae51948383b9c669af0b51d",
+   "size": 78642
+  },
+  {
+   "file": "CareerGlitch_EvChargingTechnician_Roadmap_2027_v1.pdf",
+   "sha": "28a589ab618f6a3f3fb468de83677ff04e8da324",
+   "size": 79862
+  },
+  {
+   "file": "CareerGlitch_EventPlanner_Roadmap_2027_v1.pdf",
+   "sha": "14a1c5e7389375544e0390a4fe9793741fe332a8",
+   "size": 78241
+  },
+  {
+   "file": "CareerGlitch_FarmersMarketProducer_Roadmap_2027_v1.pdf",
+   "sha": "ad06627b8ca07df7416e16f3593f2117971d5682",
+   "size": 78048
+  },
+  {
+   "file": "CareerGlitch_FiberOpticTechnician_Roadmap_2027_v1.pdf",
+   "sha": "8de9cc340da0403733ad63673aad9856bec263ff",
+   "size": 81521
+  },
+  {
+   "file": "CareerGlitch_FinancialAnalyst_Roadmap_2027_v1.pdf",
+   "sha": "8f2c793e538339ca7c25ec1f619c7415832a6851",
+   "size": 79244
+  },
+  {
+   "file": "CareerGlitch_FitnessTrainer_Roadmap_2027_v1.pdf",
+   "sha": "199914ef365799d051986adef1cf73eaa939ca60",
+   "size": 80789
+  },
+  {
+   "file": "CareerGlitch_FlightAttendant_Roadmap_2027_v1.pdf",
+   "sha": "b7b255d3b7f44d6a105a86b819661d641980d153",
+   "size": 78893
+  },
+  {
+   "file": "CareerGlitch_FlooringInstaller_Roadmap_2027_v1.pdf",
+   "sha": "7ea4af47e126451e4c12ce814d979583fe2b9698",
+   "size": 80542
+  },
+  {
+   "file": "CareerGlitch_Florist_Roadmap_2027_v1.pdf",
+   "sha": "cf750ae5fbf9b5b49954181adef6fdc30e17149f",
+   "size": 78023
+  },
+  {
+   "file": "CareerGlitch_FoodTruckOwner_Roadmap_2027_v1.pdf",
+   "sha": "be571f39e921ceb13a6b582e710ea8579393954a",
+   "size": 81491
+  },
+  {
+   "file": "CareerGlitch_FranchiseOwnerHomeServices_Roadmap_2027_v1.pdf",
+   "sha": "91e0b02ff9b84abb431458f0b08dc6c2ff662e66",
+   "size": 79334
+  },
+  {
+   "file": "CareerGlitch_FurnitureRestorer_Roadmap_2027_v1.pdf",
+   "sha": "2482f3239b673f1dcea644016b1909b522cea409",
+   "size": 78243
+  },
+  {
+   "file": "CareerGlitch_GameDesigner_Roadmap_2027_v1.pdf",
+   "sha": "472b132caa097f1197f87f0748edf92beff96300",
+   "size": 81224
+  },
+  {
+   "file": "CareerGlitch_GarageDoorTech_Roadmap_2027_v1.pdf",
+   "sha": "22301037e58a34145a735117266aae49c1dd59f7",
+   "size": 78669
+  },
+  {
+   "file": "CareerGlitch_GeneralContractor_Roadmap_2027_v1.pdf",
+   "sha": "afcd7eb1dde2fc914d572f6836d6d6c471ab6cd9",
+   "size": 80232
+  },
+  {
+   "file": "CareerGlitch_GeneticCounselor_Roadmap_2027_v1.pdf",
+   "sha": "b12c3cc5b01e84477ff5c61a84fb63cfa4065639",
+   "size": 80777
+  },
+  {
+   "file": "CareerGlitch_GlazierGlass_Roadmap_2027_v1.pdf",
+   "sha": "b63838b17bcd087a8c0f188d4a56af7d7a9b1a42",
+   "size": 78272
+  },
+  {
+   "file": "CareerGlitch_GrantWriter_Roadmap_2027_v1.pdf",
+   "sha": "ad9c474104fe32ceb8cd0344bdd03599914f1d1d",
+   "size": 79937
+  },
+  {
+   "file": "CareerGlitch_GraphicDesigner_Roadmap_2027_v1.pdf",
+   "sha": "90c1c45d0c8601f374cbbfefee15c4b9d4e568a3",
+   "size": 82471
+  },
+  {
+   "file": "CareerGlitch_HandymanCompanyOwner_Roadmap_2027_v1.pdf",
+   "sha": "2dc7422396def54722c057084e6ad4116539be2e",
+   "size": 78200
+  },
+  {
+   "file": "CareerGlitch_HandymanSoloPro_Roadmap_2027_v1.pdf",
+   "sha": "35b7c18034bc2413b61db02349e8b6bd70b36dad",
+   "size": 78600
+  },
+  {
+   "file": "CareerGlitch_HeavyEquipmentOperator_Roadmap_2027_v1.pdf",
+   "sha": "57c3228f432370ca367b28a3dd641307eb2cd3a7",
+   "size": 79337
+  },
+  {
+   "file": "CareerGlitch_HomeHealthAide_Roadmap_2027_v1.pdf",
+   "sha": "044625dcc7c87cf50aea0b8c423d8f2509eef1a0",
+   "size": 78480
+  },
+  {
+   "file": "CareerGlitch_HomeInspector_Roadmap_2027_v1.pdf",
+   "sha": "3a070c82daee3a84e9fb9d9659bfb2906af245eb",
+   "size": 80266
+  },
+  {
+   "file": "CareerGlitch_HomeOrganizerPro_Roadmap_2027_v1.pdf",
+   "sha": "a3864cc3803133977b8e08d126a8903ab13baf77",
+   "size": 78037
+  },
+  {
+   "file": "CareerGlitch_HomeStager_Roadmap_2027_v1.pdf",
+   "sha": "7b705efb40691c58bfb9e2b1be40bce6ee357e9c",
+   "size": 78311
+  },
+  {
+   "file": "CareerGlitch_HousePainter_Roadmap_2027_v1.pdf",
+   "sha": "ebf9e9918e183fdd50b6c7b1148ff8e7102faf5e",
+   "size": 79460
+  },
+  {
+   "file": "CareerGlitch_HvacTechnician_Roadmap_2027_v1.pdf",
+   "sha": "2381604d86b216250ff43b2aabbbbedcf041d0be",
+   "size": 80148
+  },
+  {
+   "file": "CareerGlitch_Illustrator_Roadmap_2027_v1.pdf",
+   "sha": "a791344c6ab3be0825b3bb26c5b66c5e17fa9c57",
+   "size": 80045
+  },
+  {
+   "file": "CareerGlitch_InsuranceAgent_Roadmap_2027_v1.pdf",
+   "sha": "c9006425a59929da10d017a0b09c35a1d8f7b4c1",
+   "size": 78198
+  },
+  {
+   "file": "CareerGlitch_InsuranceProducer_Roadmap_2027_v1.pdf",
+   "sha": "3aebb906c66b01fbed049212bc4171d46066e11e",
+   "size": 83516
+  },
+  {
+   "file": "CareerGlitch_InteriorDesigner_Roadmap_2027_v1.pdf",
+   "sha": "f98b4ff27a0a3c9b6f9279b20bbe77746db43dd9",
+   "size": 78374
+  },
+  {
+   "file": "CareerGlitch_ItSupportSpecialist_Roadmap_2027_v1.pdf",
+   "sha": "9f10eb2c6067fda93eae76b5e59d96c33c69ced1",
+   "size": 78739
+  },
+  {
+   "file": "CareerGlitch_JewelryMaker_Roadmap_2027_v1.pdf",
+   "sha": "05f2ceb04453a20f958b0fdb3cf093f755973169",
+   "size": 78141
+  },
+  {
+   "file": "CareerGlitch_JuniorDeveloper_Roadmap_2027_v1.pdf",
+   "sha": "cc3f7edc489ad2d47bc9d9e6bab33607645c00d2",
+   "size": 83286
+  },
+  {
+   "file": "CareerGlitch_JunkRemovalOwner_Roadmap_2027_v1.pdf",
+   "sha": "96970a1ca09e6be320409343cae7304dda3b943a",
+   "size": 78047
+  },
+  {
+   "file": "CareerGlitch_LabTechnician_Roadmap_2027_v1.pdf",
+   "sha": "340adde816e3370e1ebb06647253ca954d69f888",
+   "size": 78536
+  },
+  {
+   "file": "CareerGlitch_LandSurveyor_Roadmap_2027_v1.pdf",
+   "sha": "d6c6e0324869c15134e8d5b13aae29d519792eed",
+   "size": 79794
+  },
+  {
+   "file": "CareerGlitch_LandscaperLawnPro_Roadmap_2027_v1.pdf",
+   "sha": "081c5327f61f17a05d22182617e64d9525771313",
+   "size": 79630
+  },
+  {
+   "file": "CareerGlitch_LashBrowArtist_Roadmap_2027_v1.pdf",
+   "sha": "662132dbc8cb216c2dacac9abb63650c616a7634",
+   "size": 78219
+  },
+  {
+   "file": "CareerGlitch_LaundromatOwner_Roadmap_2027_v1.pdf",
+   "sha": "f4a45ac1863734587a890693b518c0685ff3120b",
+   "size": 78234
+  },
+  {
+   "file": "CareerGlitch_LawnCareCompanyOwner_Roadmap_2027_v1.pdf",
+   "sha": "23bf0eba533b691f1d72c40942855dfd6a6c6e3f",
+   "size": 78136
+  },
+  {
+   "file": "CareerGlitch_LifeCoach_Roadmap_2027_v1.pdf",
+   "sha": "08645f1d99df18d9587af7ae89937f924dcc8224",
+   "size": 78004
+  },
+  {
+   "file": "CareerGlitch_Locksmith_Roadmap_2027_v1.pdf",
+   "sha": "7d40d26ff9adc744ae75e3fb9773c0fd77e062a9",
+   "size": 79667
+  },
+  {
+   "file": "CareerGlitch_LogisticsCoordinator_Roadmap_2027_v1.pdf",
+   "sha": "81ac32ad2884dda9c52e0b368608a9311c1a89c4",
+   "size": 79907
+  },
+  {
+   "file": "CareerGlitch_LpnLvn_Roadmap_2027_v1.pdf",
+   "sha": "1c4a815af52662f2b342ab3b4d09698437bd2017",
+   "size": 78815
+  },
+  {
+   "file": "CareerGlitch_LuxuryRealEstateAgent_Roadmap_2027_v1.pdf",
+   "sha": "0d7396d24601f3c08723806083c341d0e4ad7f1c",
+   "size": 78407
+  },
+  {
+   "file": "CareerGlitch_MakeupArtist_Roadmap_2027_v1.pdf",
+   "sha": "4746641ebd5c03ba0cb23ef6320bc547b768ef12",
+   "size": 80834
+  },
+  {
+   "file": "CareerGlitch_MarketResearcher_Roadmap_2027_v1.pdf",
+   "sha": "74a90c905668208448e921cf7b2e0a1423aad05c",
+   "size": 78131
+  },
+  {
+   "file": "CareerGlitch_MassageTherapist_Roadmap_2027_v1.pdf",
+   "sha": "77403e66e25c3bcb1f5ab8d4530b52f1d16e928d",
+   "size": 80104
+  },
+  {
+   "file": "CareerGlitch_MealPrepBusinessOwner_Roadmap_2027_v1.pdf",
+   "sha": "2e3d941802f4688eee28752d13265717a196f576",
+   "size": 78337
+  },
+  {
+   "file": "CareerGlitch_MedicalAssistant_Roadmap_2027_v1.pdf",
+   "sha": "972cfbe05b4783401ebdb8815d42574002fcf98b",
+   "size": 79175
+  },
+  {
+   "file": "CareerGlitch_MedicalCoder_Roadmap_2027_v1.pdf",
+   "sha": "d81718353b4d002885983f48134c25581faadcd6",
+   "size": 79990
+  },
+  {
+   "file": "CareerGlitch_MedicalCourierOwnerRoute_Roadmap_2027_v1.pdf",
+   "sha": "235ff96026a098b2a19716b17b34b3ffc3ab4e08",
+   "size": 78248
+  },
+  {
+   "file": "CareerGlitch_MobileAppDeveloper_Roadmap_2027_v1.pdf",
+   "sha": "52433d969c9e74c852cb41fe74e6751e6ebc387a",
+   "size": 78812
+  },
+  {
+   "file": "CareerGlitch_MobileMechanicOwner_Roadmap_2027_v1.pdf",
+   "sha": "c69b41c50d3687cc082ed39dfa0aeb6ffa21d5e6",
+   "size": 79033
+  },
+  {
+   "file": "CareerGlitch_MobilePetGroomer_Roadmap_2027_v1.pdf",
+   "sha": "bc7fd2a5e3fa8fff7dcd5484e5fc573d395a5967",
+   "size": 78007
+  },
+  {
+   "file": "CareerGlitch_MortgageBroker_Roadmap_2027_v1.pdf",
+   "sha": "e50baa61bb0fd4abbba6d2c7050968b77a90a99c",
+   "size": 80949
+  },
+  {
+   "file": "CareerGlitch_MotionDesigner3dArtist_Roadmap_2027_v1.pdf",
+   "sha": "406f546a272c3d2b8fc2ab3783561c84b0b8f317",
+   "size": 81321
+  },
+  {
+   "file": "CareerGlitch_MovingCompanyOwner_Roadmap_2027_v1.pdf",
+   "sha": "405252a4430f39a7e9aa5843da697b997e49b357",
+   "size": 78118
+  },
+  {
+   "file": "CareerGlitch_MriTechnologist_Roadmap_2027_v1.pdf",
+   "sha": "05f9d8de13547d5a73b4225cf77d4a1c4c426c52",
+   "size": 78421
+  },
+  {
+   "file": "CareerGlitch_MusicInstructor_Roadmap_2027_v1.pdf",
+   "sha": "93c0f15a30d362a8ee2cb338d0ce03595dfe9bc2",
+   "size": 78214
+  },
+  {
+   "file": "CareerGlitch_NailTechnician_Roadmap_2027_v1.pdf",
+   "sha": "2f34f70a7bcd7aded7fcf3ab206e66b5b68ae3f3",
+   "size": 80804
+  },
+  {
+   "file": "CareerGlitch_NannyFamilyAssistantPro_Roadmap_2027_v1.pdf",
+   "sha": "19af53c839e0cfd67a2b44acd81678788962f94b",
+   "size": 79664
+  },
+  {
+   "file": "CareerGlitch_NoCodeDeveloper_Roadmap_2027_v1.pdf",
+   "sha": "effc3e869a5b15b1b658e5e8efcafe07c804b1e0",
+   "size": 81383
+  },
+  {
+   "file": "CareerGlitch_NuclearMedicineTechnologist_Roadmap_2027_v1.pdf",
+   "sha": "a69894ad34e3ae34cca6a3e5370e2f443ea89d52",
+   "size": 78777
+  },
+  {
+   "file": "CareerGlitch_NuclearReactorOperator_Roadmap_2027_v1.pdf",
+   "sha": "c687e9dfce4465b6480b1269320d7a3813b61d70",
+   "size": 83652
+  },
+  {
+   "file": "CareerGlitch_NursePractitioner_Roadmap_2027_v1.pdf",
+   "sha": "98900dd7c4cb06bd470a1f63d6a00aa56e90e277",
+   "size": 80445
+  },
+  {
+   "file": "CareerGlitch_NutritionCoachDietitian_Roadmap_2027_v1.pdf",
+   "sha": "c1815fc71638da00dfc173476e7e07f731e3fff1",
+   "size": 80285
+  },
+  {
+   "file": "CareerGlitch_OccupationalTherapist_Roadmap_2027_v1.pdf",
+   "sha": "81f91645aeaa3871c0236b4b73f48f1614112109",
+   "size": 79266
+  },
+  {
+   "file": "CareerGlitch_OnlineCourseCreator_Roadmap_2027_v1.pdf",
+   "sha": "c9e0417c12f8afa7a1d1291f0fa14fd427b2b9d1",
+   "size": 78107
+  },
+  {
+   "file": "CareerGlitch_OnlineTutor_Roadmap_2027_v1.pdf",
+   "sha": "39a60abc18f7a049caf86e31bf6a1cfe5bd90ed8",
+   "size": 79756
+  },
+  {
+   "file": "CareerGlitch_OperationsManager_Roadmap_2027_v1.pdf",
+   "sha": "1d1e6675e9c265dbca70fd23cc80d66e8ba6b947",
+   "size": 78102
+  },
+  {
+   "file": "CareerGlitch_Optometrist_Roadmap_2027_v1.pdf",
+   "sha": "0eb18791f9b69994a03205abbefa2d98fe6283ac",
+   "size": 78632
+  },
+  {
+   "file": "CareerGlitch_OwnerOperatorTrucking_Roadmap_2027_v1.pdf",
+   "sha": "bd0eb75332740048eea3f767679addb705c11446",
+   "size": 78229
+  },
+  {
+   "file": "CareerGlitch_PaintingCompanyOwner_Roadmap_2027_v1.pdf",
+   "sha": "ad46d12f7c4273ef06297abbb9dae33c943c7622",
+   "size": 78008
+  },
+  {
+   "file": "CareerGlitch_Paralegal_Roadmap_2027_v1.pdf",
+   "sha": "b9526344f3d38b2540fbc5ce7b9da607dbf416c7",
+   "size": 80900
+  },
+  {
+   "file": "CareerGlitch_PenetrationTester_Roadmap_2027_v1.pdf",
+   "sha": "b10795c8c37717e143b164540d52e8c11250e0f6",
+   "size": 81254
+  },
+  {
+   "file": "CareerGlitch_PermanentMakeupArtist_Roadmap_2027_v1.pdf",
+   "sha": "965697a1521f1485f3d71816820a8e3f50622a55",
+   "size": 81104
+  },
+  {
+   "file": "CareerGlitch_PersonalFashionStylist_Roadmap_2027_v1.pdf",
+   "sha": "4d0428c47f077d217d7e93a844fd38b13f6566b1",
+   "size": 78458
+  },
+  {
+   "file": "CareerGlitch_PestControlTech_Roadmap_2027_v1.pdf",
+   "sha": "8f3715b390a51bd9a3c46abf63674e38d22d97e5",
+   "size": 79367
+  },
+  {
+   "file": "CareerGlitch_PetBoardingDaycareOwner_Roadmap_2027_v1.pdf",
+   "sha": "66876160f30ded35454edb2b42ce0128cb364eea",
+   "size": 78282
+  },
+  {
+   "file": "CareerGlitch_PetGroomingSalonOwner_Roadmap_2027_v1.pdf",
+   "sha": "7d413637fcc74e9437f38c35607ddb575de91555",
+   "size": 78241
+  },
+  {
+   "file": "CareerGlitch_Pharmacist_Roadmap_2027_v1.pdf",
+   "sha": "ac79fefef669ca4fd77f2447adbeec59df534b43",
+   "size": 78781
+  },
+  {
+   "file": "CareerGlitch_PharmacyTechnician_Roadmap_2027_v1.pdf",
+   "sha": "0c78176b825ed3db09ec0ae9172c7b0bd89d24f2",
+   "size": 79147
+  },
+  {
+   "file": "CareerGlitch_Phlebotomist_Roadmap_2027_v1.pdf",
+   "sha": "3093c735580b899f5d94d2de5f171fddf30e3ebf",
+   "size": 78675
+  },
+  {
+   "file": "CareerGlitch_PhotoBoothEventRentalsOwner_Roadmap_2027_v1.pdf",
+   "sha": "cbe6477af6fb9ccfaa987dea4292c35f5a649bb7",
+   "size": 78815
+  },
+  {
+   "file": "CareerGlitch_Photographer_Roadmap_2027_v1.pdf",
+   "sha": "d70b60bde37fd7a0c02d26501fc9e33d2ef7f553",
+   "size": 80049
+  },
+  {
+   "file": "CareerGlitch_PhysicalTherapist_Roadmap_2027_v1.pdf",
+   "sha": "ee0db9f569c0345c86b40f9d7a76803a4d63a2ed",
+   "size": 78765
+  },
+  {
+   "file": "CareerGlitch_PhysicianAssistant_Roadmap_2027_v1.pdf",
+   "sha": "cf231d6f3f58ae4148b14162b7b4061748ad2aa8",
+   "size": 79440
+  },
+  {
+   "file": "CareerGlitch_Pipefitter_Roadmap_2027_v1.pdf",
+   "sha": "c56a69d10e6aee6dd3b09a463d6a6e6d6153e635",
+   "size": 78686
+  },
+  {
+   "file": "CareerGlitch_Plumber_Roadmap_2027_v1.pdf",
+   "sha": "a5fc1cb6693a2ffc33f7e7de8a5b7d0830df3153",
+   "size": 80210
+  },
+  {
+   "file": "CareerGlitch_PodcastProducer_Roadmap_2027_v1.pdf",
+   "sha": "f24b2b3d4aefaf0bca0ed57e0870bddbdd9c876a",
+   "size": 78529
+  },
+  {
+   "file": "CareerGlitch_PoolTechnician_Roadmap_2027_v1.pdf",
+   "sha": "c6a10abab5ac507cb3e2342adb0855f116d0eaf1",
+   "size": 79512
+  },
+  {
+   "file": "CareerGlitch_PpcPaidAdsSpecialist_Roadmap_2027_v1.pdf",
+   "sha": "d3414e8d2d3cb66dba5aca79ff7d698e15a39e37",
+   "size": 78872
+  },
+  {
+   "file": "CareerGlitch_PrSpecialist_Roadmap_2027_v1.pdf",
+   "sha": "4458609ad5dfc1b9562a95ad151a05379994e556",
+   "size": 80744
+  },
+  {
+   "file": "CareerGlitch_PreschoolTeacher_Roadmap_2027_v1.pdf",
+   "sha": "65444a4433834ab47527e787e5bb79bbaf1f5339",
+   "size": 79388
+  },
+  {
+   "file": "CareerGlitch_PressureWashingOwner_Roadmap_2027_v1.pdf",
+   "sha": "f1d49912e8d7b9dd09ba4f7718cfb4c0b386b8ef",
+   "size": 78048
+  },
+  {
+   "file": "CareerGlitch_PrintOnDemandSeller_Roadmap_2027_v1.pdf",
+   "sha": "6cdb2510cfc3504925f74da67295a45f6b4bb58b",
+   "size": 78686
+  },
+  {
+   "file": "CareerGlitch_PrivateChef_Roadmap_2027_v1.pdf",
+   "sha": "b3d902e04d5af8ca3d5c55c8141d378d78a3bfd3",
+   "size": 80779
+  },
+  {
+   "file": "CareerGlitch_PrivateTutorInPerson_Roadmap_2027_v1.pdf",
+   "sha": "f2ce49c929f85b38004fb208111d260d66f01bd8",
+   "size": 79329
+  },
+  {
+   "file": "CareerGlitch_ProductManager_Roadmap_2027_v1.pdf",
+   "sha": "a6908337419c297fbc76c39dcf679d6ca95af753",
+   "size": 80986
+  },
+  {
+   "file": "CareerGlitch_ProjectManager_Roadmap_2027_v1.pdf",
+   "sha": "e79170e0cb35f006a32c363f70fa8d15482c4203",
+   "size": 78205
+  },
+  {
+   "file": "CareerGlitch_PropertyManager_Roadmap_2027_v1.pdf",
+   "sha": "5b00fecb0967ca04fe588b5ba032414abaeea5b2",
+   "size": 79187
+  },
+  {
+   "file": "CareerGlitch_PsychologistTherapist_Roadmap_2027_v1.pdf",
+   "sha": "7c0299a706433f1110e269f109d8e232f4a0f564",
+   "size": 78285
+  },
+  {
+   "file": "CareerGlitch_PtAssistant_Roadmap_2027_v1.pdf",
+   "sha": "3afedba3d458469cd76e456456dda5b4e90d5e6d",
+   "size": 78554
+  },
+  {
+   "file": "CareerGlitch_QaEngineer_Roadmap_2027_v1.pdf",
+   "sha": "c4381b0ec2144ab19d17d350462c9b782574c5e9",
+   "size": 81280
+  },
+  {
+   "file": "CareerGlitch_RadiationTherapist_Roadmap_2027_v1.pdf",
+   "sha": "c2bcdd48d8466e85ad78253aee7ad7e2578a21c9",
+   "size": 78692
+  },
+  {
+   "file": "CareerGlitch_RadiologyTech_Roadmap_2027_v1.pdf",
+   "sha": "33c777aa0a9ede0f274fc2a10f9ab2f136b97de9",
+   "size": 78525
+  },
+  {
+   "file": "CareerGlitch_RealEstateAgent_Roadmap_2027_v1.pdf",
+   "sha": "adf0f427c1633e1b6120665b837685793aa11850",
+   "size": 79873
+  },
+  {
+   "file": "CareerGlitch_RealEstateInvestorFlips_Roadmap_2027_v1.pdf",
+   "sha": "8590ed6682b151a390af6b2c4dcfe12d9a52ef7b",
+   "size": 79250
+  },
+  {
+   "file": "CareerGlitch_RealEstateInvestorRentals_Roadmap_2027_v1.pdf",
+   "sha": "a5f3beb44dd2e0246e966824ec9e53d2f1ce0852",
+   "size": 79336
+  },
+  {
+   "file": "CareerGlitch_Recruiter_Roadmap_2027_v1.pdf",
+   "sha": "3b5c1f145102a9ff6ce7a31bb3b43e0f16da8a78",
+   "size": 77964
+  },
+  {
+   "file": "CareerGlitch_RegisteredNurse_Roadmap_2027_v1.pdf",
+   "sha": "59b1071f097cb46733e5a571922a0714da5fa48a",
+   "size": 79086
+  },
+  {
+   "file": "CareerGlitch_ResaleFlippingBusiness_Roadmap_2027_v1.pdf",
+   "sha": "b3bd8113118f737e078d29e6e8c2009fa1000d9e",
+   "size": 79021
+  },
+  {
+   "file": "CareerGlitch_RespiratoryTherapist_Roadmap_2027_v1.pdf",
+   "sha": "1735cc96bfd5a32776cfa74d208493e13e199e6d",
+   "size": 78449
+  },
+  {
+   "file": "CareerGlitch_RestaurantManager_Roadmap_2027_v1.pdf",
+   "sha": "47d5a47a7c77ca13f49adc8a031a52587afb713c",
+   "size": 81146
+  },
+  {
+   "file": "CareerGlitch_RoboticsTechnician_Roadmap_2027_v1.pdf",
+   "sha": "7fab43b39a4877ea8a20a3d335db664906856672",
+   "size": 79204
+  },
+  {
+   "file": "CareerGlitch_Roofer_Roadmap_2027_v1.pdf",
+   "sha": "83e5ce3b3e5e2aa5df2d17910800187d8b2eeebc",
+   "size": 79233
+  },
+  {
+   "file": "CareerGlitch_SalesforceAdministrator_Roadmap_2027_v1.pdf",
+   "sha": "1388487eda01f0b666ca319e53e19d6a55688e74",
+   "size": 78630
+  },
+  {
+   "file": "CareerGlitch_SchoolCounselor_Roadmap_2027_v1.pdf",
+   "sha": "aabfb05b3bddf6e062cb608669805b6dcb94d2a4",
+   "size": 79454
+  },
+  {
+   "file": "CareerGlitch_SchoolTeacher_Roadmap_2027_v1.pdf",
+   "sha": "c9e3b4fe07a24fe413084f299d8e6f29149f3f9f",
+   "size": 79408
+  },
+  {
+   "file": "CareerGlitch_SelfStorageOwner_Roadmap_2027_v1.pdf",
+   "sha": "f3840d4fbc178ab38c44cb7411a8bf32775efae5",
+   "size": 79231
+  },
+  {
+   "file": "CareerGlitch_SemiconductorTechnician_Roadmap_2027_v1.pdf",
+   "sha": "e7454ea5861ebe22e002fb150a74f4adbab555de",
+   "size": 81978
+  },
+  {
+   "file": "CareerGlitch_SeniorHomeCareAgencyOwner_Roadmap_2027_v1.pdf",
+   "sha": "6fdb5b5fbab54ccf2ceb73961700ea678ee954b3",
+   "size": 80051
+  },
+  {
+   "file": "CareerGlitch_SeoSpecialist_Roadmap_2027_v1.pdf",
+   "sha": "ed9c6bdfb39db071dc444bd177cd452a18ffb874",
+   "size": 79254
+  },
+  {
+   "file": "CareerGlitch_SetProductionDesigner_Roadmap_2027_v1.pdf",
+   "sha": "3b596f323c1d2ac2f28b7b150a137a0938392e72",
+   "size": 81326
+  },
+  {
+   "file": "CareerGlitch_SmmManager_Roadmap_2027_v1.pdf",
+   "sha": "1d26e96e5230404c863ec737ebd1e98efd95a2e4",
+   "size": 80452
+  },
+  {
+   "file": "CareerGlitch_SocialWorker_Roadmap_2027_v1.pdf",
+   "sha": "8b0906f662374f1b74a398796a3db2d44be62d09",
+   "size": 79236
+  },
+  {
+   "file": "CareerGlitch_SolarInstaller_Roadmap_2027_v1.pdf",
+   "sha": "84a8b4c565a1fa3910b305f532b18e8f2902a114",
+   "size": 79367
+  },
+  {
+   "file": "CareerGlitch_Sommelier_Roadmap_2027_v1.pdf",
+   "sha": "0f3394ed834207ec37579541479e95abb8491a9d",
+   "size": 81154
+  },
+  {
+   "file": "CareerGlitch_SonographerUltrasound_Roadmap_2027_v1.pdf",
+   "sha": "95a62c42dc677b9f32949cce289abe7b8dd53e01",
+   "size": 78466
+  },
+  {
+   "file": "CareerGlitch_SpaOwner_Roadmap_2027_v1.pdf",
+   "sha": "01e390e77c8a86b53299e9fe25085e3b6e4c77cb",
+   "size": 78191
+  },
+  {
+   "file": "CareerGlitch_SpecialEducationTeacher_Roadmap_2027_v1.pdf",
+   "sha": "5aa338bdae0de1c5451365fae22796436c1108e1",
+   "size": 79587
+  },
+  {
+   "file": "CareerGlitch_SpeechPublicSpeakingCoach_Roadmap_2027_v1.pdf",
+   "sha": "a4a1078245df2eaef8fc4340ccb4c34f724bb3d4",
+   "size": 78155
+  },
+  {
+   "file": "CareerGlitch_SpeechTherapist_Roadmap_2027_v1.pdf",
+   "sha": "4eb04315ac54e9c84e9a2770f44b44530d47f0c7",
+   "size": 79409
+  },
+  {
+   "file": "CareerGlitch_SportsCoach_Roadmap_2027_v1.pdf",
+   "sha": "0bfb73ee3e3b6e8b92dc1091ee4e10bf20cfcb77",
+   "size": 77751
+  },
+  {
+   "file": "CareerGlitch_SterileProcessingTech_Roadmap_2027_v1.pdf",
+   "sha": "828542bb0e63b3cec99195c4e03e4826eb89991e",
+   "size": 80213
+  },
+  {
+   "file": "CareerGlitch_StreamerContentCreator_Roadmap_2027_v1.pdf",
+   "sha": "8b2d4db9458fc20a6794c8805a2af0b74fe1ac17",
+   "size": 78228
+  },
+  {
+   "file": "CareerGlitch_SurgicalTechnologist_Roadmap_2027_v1.pdf",
+   "sha": "01c561c4a3b57453519730a99049b926f6e5fef9",
+   "size": 78640
+  },
+  {
+   "file": "CareerGlitch_SwimInstructor_Roadmap_2027_v1.pdf",
+   "sha": "d2a06aa222ff8ef41eebeb11f74e14915ca14166",
+   "size": 78207
+  },
+  {
+   "file": "CareerGlitch_TattooArtist_Roadmap_2027_v1.pdf",
+   "sha": "a2319fca21d0868266295e8f626572fab0193647",
+   "size": 81093
+  },
+  {
+   "file": "CareerGlitch_TechnicalWriter_Roadmap_2027_v1.pdf",
+   "sha": "709d8bca24488a3fda1a38f5f821c0bdfb39173f",
+   "size": 79551
+  },
+  {
+   "file": "CareerGlitch_TileSetter_Roadmap_2027_v1.pdf",
+   "sha": "405bd69e9b4aa202eee0e6588bacab4981d902ce",
+   "size": 79237
+  },
+  {
+   "file": "CareerGlitch_TowTruckOperator_Roadmap_2027_v1.pdf",
+   "sha": "133059f20dda5aa7e7849573c3de53aa78b9a3ba",
+   "size": 78122
+  },
+  {
+   "file": "CareerGlitch_TowerClimberTelecom_Roadmap_2027_v1.pdf",
+   "sha": "e12ab594eaeef013058168ec26b73cb79ef8822c",
+   "size": 81266
+  },
+  {
+   "file": "CareerGlitch_TrainConductor_Roadmap_2027_v1.pdf",
+   "sha": "dbbf30130edbb58f04c39e60f6da3decb2422d53",
+   "size": 78641
+  },
+  {
+   "file": "CareerGlitch_TranslatorInterpreter_Roadmap_2027_v1.pdf",
+   "sha": "9496e7d3a93af1d6d2c935a832de4fb89cdefd40",
+   "size": 79533
+  },
+  {
+   "file": "CareerGlitch_TutoringCenterOwner_Roadmap_2027_v1.pdf",
+   "sha": "cf3803343fa104a7a539c222debd631c4ac58830",
+   "size": 79296
+  },
+  {
+   "file": "CareerGlitch_UgcCreator_Roadmap_2027_v1.pdf",
+   "sha": "9be78f3ad4f073655a32ec01506c548f5128d053",
+   "size": 78225
+  },
+  {
+   "file": "CareerGlitch_UxResearcher_Roadmap_2027_v1.pdf",
+   "sha": "eb19e639fd04dd60b76e9f62ecab424fa4b8d544",
+   "size": 80802
+  },
+  {
+   "file": "CareerGlitch_UxUiDesigner_Roadmap_2027_v1.pdf",
+   "sha": "adc46cc2b3d51dba969d1cf6fbb491ea0f67533a",
+   "size": 78479
+  },
+  {
+   "file": "CareerGlitch_VendingAtmRouteOwner_Roadmap_2027_v1.pdf",
+   "sha": "ce3a3b36bb5cfe99af0655be4e952792022b16cc",
+   "size": 78992
+  },
+  {
+   "file": "CareerGlitch_VetTechnician_Roadmap_2027_v1.pdf",
+   "sha": "d0ecaefb702a038fc59eff346ec51b57036a54f6",
+   "size": 78487
+  },
+  {
+   "file": "CareerGlitch_VeterinaryAssistant_Roadmap_2027_v1.pdf",
+   "sha": "54216dd27416706ca117edaebdf2bbe75f3629c6",
+   "size": 78745
+  },
+  {
+   "file": "CareerGlitch_VideoEditor_Roadmap_2027_v1.pdf",
+   "sha": "576832d9de8eaba0d5e66dde3799b0a97d7b8b38",
+   "size": 78523
+  },
+  {
+   "file": "CareerGlitch_Videographer_Roadmap_2027_v1.pdf",
+   "sha": "91dae32bf4f0cfce0a212f309f66145cd5a3a09e",
+   "size": 78224
+  },
+  {
+   "file": "CareerGlitch_VirtualAssistant_Roadmap_2027_v1.pdf",
+   "sha": "e1441a07a0f481ae84c53c6f79027901c7d30100",
+   "size": 79273
+  },
+  {
+   "file": "CareerGlitch_VoiceActor_Roadmap_2027_v1.pdf",
+   "sha": "31b846560034aadae5692cf28404984bcea9888e",
+   "size": 78398
+  },
+  {
+   "file": "CareerGlitch_WebDesigner_Roadmap_2027_v1.pdf",
+   "sha": "bab91bf684137b6d4aead87b9c849c620053caef",
+   "size": 80973
+  },
+  {
+   "file": "CareerGlitch_WeddingPhotographer_Roadmap_2027_v1.pdf",
+   "sha": "6f7e68c38d253a0f6006a62dfd3b4e6f12f9978d",
+   "size": 78211
+  },
+  {
+   "file": "CareerGlitch_WeddingPlanner_Roadmap_2027_v1.pdf",
+   "sha": "f90dc42e53a7350de315580fdb4ee86fd8aafe31",
+   "size": 78165
+  },
+  {
+   "file": "CareerGlitch_Welder_Roadmap_2027_v1.pdf",
+   "sha": "317471c51a934ffaac5e6279d7f313926a678e6f",
+   "size": 79611
+  },
+  {
+   "file": "CareerGlitch_WellnessCoach_Roadmap_2027_v1.pdf",
+   "sha": "aa347b26f9b118d2fc8e447e3c0f30c9b2ee83dd",
+   "size": 78283
+  },
+  {
+   "file": "CareerGlitch_WindTurbineTechnician_Roadmap_2027_v1.pdf",
+   "sha": "bf9368e42adc3b59b9373296950dfc6eef25b662",
+   "size": 79214
+  },
+  {
+   "file": "CareerGlitch_WindowCleaningOwner_Roadmap_2027_v1.pdf",
+   "sha": "c99a732d41fd1a4b406af258c83236a29af1d0bb",
+   "size": 78036
+  },
+  {
+   "file": "CareerGlitch_YachtBroker_Roadmap_2027_v1.pdf",
+   "sha": "16b2f5c41c0617e6c3a96a35b406e5df5a221c22",
+   "size": 78222
+  },
+  {
+   "file": "CareerGlitch_YogaPilatesInstructor_Roadmap_2027_v1.pdf",
+   "sha": "9c7c161211c4a88e542ad4affc4b604edab30e7f",
+   "size": 81014
+  },
+  {
+   "file": "Career_Mentor_Master_Prompt.pdf",
+   "sha": "ba5723c3e6845b0bc4dd426e089adeb234a762e9",
+   "size": 54831
+  },
+  {
+   "file": "CareerGlitch_InsuranceClaimsAdjuster_Roadmap_2027_v1.pdf",
+   "sha": "2c756d5c067af84fd6db00b670fa4d6041c01265",
+   "size": 80704
+  },
+  {
+   "file": "CareerGlitch_AdministrativeAssistant_Roadmap_2027_v1.pdf",
+   "sha": "1b4c7c1d2c9fd6d2773880a42bd6e47df5aac120",
+   "size": 79938
+  },
+  {
+   "file": "CareerGlitch_ExecutiveAssistant_Roadmap_2027_v1.pdf",
+   "sha": "58109817215aa6131b3b580840a04085edd41910",
+   "size": 79974
+  },
+  {
+   "file": "CareerGlitch_LoanOfficer_Roadmap_2027_v1.pdf",
+   "sha": "39cafd1408a874c084d2cadb3a21d1a396698123",
+   "size": 80084
+  },
+  {
+   "file": "CareerGlitch_HrSpecialist_Roadmap_2027_v1.pdf",
+   "sha": "c75264019d02696df9644b4f9693c2e4a3a82ae0",
+   "size": 79144
+  },
+  {
+   "file": "CareerGlitch_Baker_Roadmap_2027_v1.pdf",
+   "sha": "494de8815b612234a2640258e7f227feb2b2744a",
+   "size": 80025
+  },
+  {
+   "file": "start.html",
+   "sha": "f9e617e16a6e4363f3ddb53d291aab9090e73c56",
+   "size": 25748
+  },
+  {
+   "file": "pivot.html",
+   "sha": "d7e1861fef9a01ceae7de46d8501c07569f38b20",
+   "size": 25957
+  },
+  {
+   "file": "bridge.html",
+   "sha": "58fa3069b0af6f47f84e092e8da12e566818c334",
+   "size": 28277
+  },
+  {
+   "file": "admin-waitlist.html",
+   "sha": "b20d9bb23df394e511317dc121c3b513823d74c9",
+   "size": 6783
+  },
+  {
+   "file": "admin/waitlist.html",
+   "sha": "b20d9bb23df394e511317dc121c3b513823d74c9",
+   "size": 6783
+  },
+  {
+   "file": "vercel.json",
+   "sha": "83359ca1b3a3eb2731ed525c9ebc418dcd5395a7",
+   "size": 18
+  },
+  {
+   "file": "map-form.html",
+   "sha": "1d485833714f727ff0d4b83ff1ba15ee9eabfbab",
+   "size": 14887
+  },
+  {
+   "file": "roadmaps-data-3.json",
+   "sha": "9385fb4784afe2cdd07a53b5408524e716eb1a40",
+   "size": 8755
+  },
+  {
+   "file": "mentor.html",
+   "sha": "3883a27ef4281f9d91dc81125b140e0d46622130",
+   "size": 94837
+  },
+  {
+   "file": "api/mentor.js",
+   "sha": "847b8edf1ec09e4821492b637af6984ce57686ab",
+   "size": 1320
+  },
+  {
+   "file": "api/_lib/mentor-core.mjs",
+   "sha": "3b4a5b8ea8a10fb3df328d8b66a269ed7cd6dab6",
+   "size": 29253
+  },
+  {
+   "file": "api/_lib/engine-bridge.mjs",
+   "sha": "e687614d45e72f1438a3567cb40a4ac5d9ec2951",
+   "size": 780
+  },
+  {
+   "file": "api/_lib/engine/interview.mjs",
+   "sha": "5381122cd62a6f8b39f636a13d8f299c1b8fc192",
+   "size": 43325
+  },
+  {
+   "file": "api/_lib/engine/llm.mjs",
+   "sha": "c68fa4ceeec4c6d817ac49419e61108d9e679b33",
+   "size": 8141
+  },
+  {
+   "file": "api/_lib/engine/professions.mjs",
+   "sha": "9da56350cbce01a9c8bd1f66d10bcd48b8df9021",
+   "size": 51536
+  },
+  {
+   "file": "api/_lib/engine/scoring.mjs",
+   "sha": "76e808eda816a2776d2e80ed7863ef0fcdef452c",
+   "size": 82625
+  },
+  {
+   "file": "api/_lib/engine/stages.json",
+   "sha": "d304b52d099af24c32d0f95a9973b00475da7dba",
+   "size": 25458
+  },
+  {
+   "file": "api/_lib/data/onet-import-01.json",
+   "sha": "81fe8f43cda132788c606fa3b2dfc33294b6949c",
+   "size": 79623
+  },
+  {
+   "file": "api/_lib/data/onet-import-02.json",
+   "sha": "7605d012812137e4bd58456617f8a6438a242b56",
+   "size": 78944
+  },
+  {
+   "file": "api/_lib/data/onet-import-03.json",
+   "sha": "8ba00401357310fafe6a7aa6a4fdc1a4c46bda4b",
+   "size": 78635
+  },
+  {
+   "file": "api/_lib/data/onet-import-04.json",
+   "sha": "d08cb2cac7dc96152a8d303e22cfc1b3e8ba1aef",
+   "size": 79083
+  },
+  {
+   "file": "api/_lib/data/onet-import-05.json",
+   "sha": "eade8ccd7449f194c510228f9a23a32a6e8624ac",
+   "size": 79261
+  },
+  {
+   "file": "api/_lib/data/onet-import-06.json",
+   "sha": "9f114d68c8a58cbf2b30fae4a101d3e4e05ad514",
+   "size": 25956
+  },
+  {
+   "file": "mentor-face.jpg",
+   "sha": "452a7cdc4f01a20b38fea313a6eadf1357027c8a",
+   "size": 45672
+  },
+  {
+   "file": "api/_lib/engine/verify.mjs",
+   "sha": "a1ad4c723530b3f55a146cd761f6bb684c7caf91",
+   "size": 21533
+  },
+  {
+   "file": "mock-a.html",
+   "sha": "50efac77bd4d8aa0d35f4d610f19a51779d773bf",
+   "size": 8249
+  },
+  {
+   "file": "mock-b.html",
+   "sha": "900adb8e4baeef19d062bc66680103cec0002ada",
+   "size": 7116
+  },
+  {
+   "file": "mock-c.html",
+   "sha": "93ab3415082ab47f99c88d004712132c0204ecec",
+   "size": 7366
+  },
+  {
+   "file": "mock-d.html",
+   "sha": "bf3456a6160487ea3cd2319983c1ac3fa7dbc3cd",
+   "size": 7190
+  },
+  {
+   "file": "mock-peek.html",
+   "sha": "dc01190386561e7a41098f2903f93ce8257c65e4",
+   "size": 4342
+  },
+  {
+   "file": "mock-peek2.html",
+   "sha": "7201eeb6e74852fa8df81c6f99dcf32edef83125",
+   "size": 4627
+  },
+  {
+   "file": "mock-steps.html",
+   "sha": "67001afea58507cd295c85c4af203f4cf5e416c2",
+   "size": 3816
+  },
+  {
+   "file": "mock-get.html",
+   "sha": "fcbaed28c73b1e4c3b2c9f2e5124f21b58245ceb",
+   "size": 2983
+  },
+  {
+   "file": "api/_lib/engine/playground.mjs",
+   "sha": "950253d5546e37bf090389d0d95d4cc2037cbd7f",
+   "size": 19677
+  },
+  {
+   "file": "pg/dental-hygienist.webp",
+   "sha": "2c5f315a4cc4dc84f6af15f2f93fea2fd786b64c",
+   "size": 64290
+  },
+  {
+   "file": "pg/doula.webp",
+   "sha": "20604b90b5be1214d21d166821189d4c2d1d21ed",
+   "size": 39716
+  },
+  {
+   "file": "pg/electrician.webp",
+   "sha": "76f755bd53d5d46a8e443f6b281050ee94e361b7",
+   "size": 84646
+  },
+  {
+   "file": "pg/registered-nurse.webp",
+   "sha": "a930ad136b0ec21750e15e168580f980b97a0682",
+   "size": 35764
+  },
+  {
+   "file": "pg/speech-public-speaking-coach.webp",
+   "sha": "cfa133da3bcf7b2b16e32ec8b8a93fc4d99502fe",
+   "size": 28850
+  },
+  {
+   "file": "pg/personal-fashion-stylist.webp",
+   "sha": "17abd6d8e135563247db26583c04d2b95f6200fa",
+   "size": 35304
+  },
+  {
+   "file": "pg/private-tutor-in-person.webp",
+   "sha": "96b8440c65aa589f335edbf0ee62970c43ddce35",
+   "size": 29250
+  },
+  {
+   "file": "pg/real-estate-agent.webp",
+   "sha": "d2ebbebf6bc71104519db575edf5d53243264e0f",
+   "size": 16776
+  },
+  {
+   "file": "pg/wedding-photographer.webp",
+   "sha": "1bdef853cec54deb3d1aeeec89ed4b61af61e432",
+   "size": 34058
+  },
+  {
+   "file": "pg.js",
+   "sha": "905e184ab0653059464f8f4dc0e80a421bd5afb3",
+   "size": 34692
+  },
+  {
+   "file": "api/_lib/engine/playground-days.mjs",
+   "sha": "947160c0e234a797e7d16402b3c719ae0313cfd3",
+   "size": 2790
+  },
+  {
+   "file": "api/_lib/data/playground-days-01.json",
+   "sha": "c06c16c7c1db8c98bc0c36b91c84d1fb2cdeaabd",
+   "size": 86124
+  },
+  {
+   "file": "api/_lib/data/playground-days-02.json",
+   "sha": "f7e7d0bea2f9fe24949c65e1c1493408fa1f8083",
+   "size": 86879
+  },
+  {
+   "file": "api/_lib/data/playground-days-03.json",
+   "sha": "955ba4c1565e28204dfe78c465f46a1b934e57c6",
+   "size": 86280
+  },
+  {
+   "file": "api/_lib/data/playground-days-04.json",
+   "sha": "4de57610ced1ff957d78ab1499edaf8d92ea2384",
+   "size": 86271
+  },
+  {
+   "file": "api/_lib/data/playground-days-05.json",
+   "sha": "5558bdbe9baffa2ea0f77de3128696b3bb338a88",
+   "size": 87840
+  },
+  {
+   "file": "api/_lib/data/playground-days-06.json",
+   "sha": "42d075f19be01991595dc1f65f9f08de08ce10d0",
+   "size": 87373
+  },
+  {
+   "file": "api/_lib/data/playground-days-07.json",
+   "sha": "55b7166fb3dfd2a668cb4b924f6ec7e4b0c3157d",
+   "size": 87698
+  },
+  {
+   "file": "api/_lib/data/playground-days-08.json",
+   "sha": "e3a1ca7f041556a789b5eb61944a80d4466d63bd",
+   "size": 87567
+  },
+  {
+   "file": "api/_lib/data/playground-days-09.json",
+   "sha": "4fccd69799d8691503dac7c2f9b051be281435f5",
+   "size": 86909
+  },
+  {
+   "file": "api/_lib/data/playground-days-10.json",
+   "sha": "b897f7ac7eccc975e3d026a6bab24aaac90cfad0",
+   "size": 87691
+  },
+  {
+   "file": "api/_lib/data/playground-days-11.json",
+   "sha": "17ea46d16ba87178f89049d7af04badc0b5adb8b",
+   "size": 85965
+  },
+  {
+   "file": "api/_lib/data/playground-days-12.json",
+   "sha": "6a1e57ba7b168cc588ac72472d1697b0b382f492",
+   "size": 81384
+  },
+  {
+   "file": "pg/w-hospital.webp",
+   "sha": "7e9b1a6c711c9ec54f60d868d54be1c7eb947351",
+   "size": 25650
+  },
+  {
+   "file": "pg/w-office.webp",
+   "sha": "5e8f92bd2b286eb7733b590fb74452f649780f68",
+   "size": 36884
+  },
+  {
+   "file": "pg/w-remote.webp",
+   "sha": "e20eca301c79a5746452bd20f7153a278bad3fc2",
+   "size": 40346
+  },
+  {
+   "file": "pg/w-clients-home.webp",
+   "sha": "082bd794e0da035655865e961b71c97ac97a25f6",
+   "size": 37304
+  },
+  {
+   "file": "pg/w-construction.webp",
+   "sha": "0b9b7b40bcfc5ba57232a70528ccbfbe52105520",
+   "size": 36480
+  },
+  {
+   "file": "pg/w-school.webp",
+   "sha": "7ed849223efdb16b16af7a70489e70a117d00822",
+   "size": 33310
+  },
+  {
+   "file": "pg/w-factory.webp",
+   "sha": "d075eca9c310f3a8e792daa83b106edc5c7a3d21",
+   "size": 36194
+  },
+  {
+   "file": "pg/w-transport.webp",
+   "sha": "2adf332387ce27b63239e016e6c800ce53497249",
+   "size": 24164
+  },
+  {
+   "file": "pg/w-studio.webp",
+   "sha": "2cbd6daac27a78424eec1df00d884f8a32d52927",
+   "size": 37708
+  },
+  {
+   "file": "pg/w-salon.webp",
+   "sha": "bf65493a9941286735c47f3a692e508458580272",
+   "size": 25646
+  },
+  {
+   "file": "pg/w-restaurant.webp",
+   "sha": "75ec846d4f7987ff461770422ff3fc32ae82fe40",
+   "size": 30272
+  },
+  {
+   "file": "pg/w-warehouse.webp",
+   "sha": "3f34e3069b8c543d26f7ff8a21aa3e0d16af6bf4",
+   "size": 40006
+  },
+  {
+   "file": "pg/w-retail.webp",
+   "sha": "ed74ac864da1ceab25b07106c2a2fad54c787261",
+   "size": 28510
+  },
+  {
+   "file": "pg/w-lab.webp",
+   "sha": "c35c6e658de5b6381a8f4ba0b430ac96c9c5a8c5",
+   "size": 32970
+  },
+  {
+   "file": "pg/w-outdoors.webp",
+   "sha": "efa07651a5ffd79ce1ee944eb4fc9cab88266933",
+   "size": 54298
+  },
+  {
+   "file": "pg/w-marine.webp",
+   "sha": "58edcf4d27933108eced269c15db8f1aabdeadeb",
+   "size": 42586
+  },
+  {
+   "file": "pg/w-gym.webp",
+   "sha": "18e3f581b80058116f303910a35650ffbafc66c6",
+   "size": 41718
+  },
+  {
+   "file": "pg/w-hotel.webp",
+   "sha": "7447473f59f7f3e0adce11ce61978b22beb9912e",
+   "size": 28128
+  },
+  {
+   "file": "pg/w-government.webp",
+   "sha": "f97fb8b522345168c640dc4079c1c295e53c3aab",
+   "size": 27688
+  },
+  {
+   "file": "pg/w-workshop.webp",
+   "sha": "e5921187490b4e00367ad1fe13c1313ee6fe494e",
+   "size": 33040
+  },
+  {
+   "file": "pg/w-street.webp",
+   "sha": "9e542040a85ecc832df76bb3a6df1c6d1134127a",
+   "size": 43456
+  },
+  {
+   "file": "pg/w-business.webp",
+   "sha": "988659eb9d26e593b01898889a8aa5c3a173159c",
+   "size": 19630
+  },
+  {
+   "file": "lead.js",
+   "sha": "b4d938ad07291d24a17247a07553239147024d4b",
+   "size": 12840
+  },
+  {
+   "file": "api/_lib/leads.mjs",
+   "sha": "bd0bb3ca4bed53b49c6c14c2bb10bc2481a215eb",
+   "size": 3006
+  }
+ ],
+ "deployment": "dpl_GowThxSNknZ3BNfe2QwUKd7azKC1"
+}

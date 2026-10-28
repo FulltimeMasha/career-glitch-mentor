@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matchmaker tile — 3 variants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Instrument+Sans:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#FAF5EC; font-family:'Instrument Sans',sans-serif; color:#1C1A1F; padding:26px 16px 70px; }
+  .wrap { max-width:430px; margin:0 auto; }
+  .lbl { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.16em; color:#b3a48e; margin:44px 4px 30px; }
+  .lbl:first-child { margin-top:6px; }
+  .tile { background:#fff; border-radius:26px; padding:22px; box-shadow:0 12px 30px rgba(42,36,48,.06); position:relative; }
+  .who { font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.14em; color:#c2185b; margin-bottom:6px; }
+  .bub { font-size:15.5px; line-height:1.5; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .chip { border:2px solid #ECEDE6; background:#fff; border-radius:999px; padding:7px 12px; font-weight:600; font-size:13.5px; }
+
+  /* V1 — the window: arch portrait rising above the tile */
+  .v1 { margin-top:34px; padding-top:0; }
+  .v1 .row { display:flex; gap:16px; }
+  .v1 .arch { width:118px; height:158px; flex:none; margin-top:-34px; border-radius:999px 999px 18px 18px; overflow:hidden; box-shadow:0 14px 26px rgba(42,36,48,.18); border:4px solid #fff; }
+  .v1 .arch img { width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
+  .v1 .txt { padding-top:16px; }
+
+  /* V2 — breaking out: big portrait overflowing right edge */
+  .v2 { overflow:visible; padding-right:150px; min-height:196px; }
+  .v2 .big { position:absolute; right:-8px; bottom:0; width:158px; height:212px; border-radius:999px 999px 0 0; overflow:hidden; border:4px solid #fff; border-bottom:none; box-shadow:0 16px 30px rgba(42,36,48,.20); }
+  .v2 .big img { width:100%; height:100%; object-fit:cover; object-position:50% 28%; }
+
+  /* V3 — the sticker: die-cut on the corner, compact bubble */
+  .v3 { margin-top:26px; padding:20px 20px 20px 96px; }
+  .v3 .stk { position:absolute; left:-6px; top:-26px; width:96px; height:96px; border-radius:50%; overflow:hidden; border:5px solid #fff; box-shadow:0 12px 24px rgba(42,36,48,.20); transform:rotate(-6deg); }
+  .v3 .stk img { width:100%; height:100%; object-fit:cover; }
+  .v3 .chips { margin-top:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lbl">VARIANT 1 — «THE WINDOW» · SHE PEEKS OUT OF AN ARCH</div>
+  <div class="tile v1">
+    <div class="row">
+      <div class="arch"><img src="/avatar.jpg" alt=""></div>
+      <div class="txt">
+        <div class="who">YOUR MATCHMAKER</div>
+        <p class="bub">Hi — I'm the Matchmaker. I know you, I know the job market, and I won't let you marry a career AI is about to kill.</p>
+      </div>
+    </div>
+    <div class="chips">
+      <span class="chip">Will AI kill my job?</span>
+      <span class="chip">I don't know what to study</span>
+      <span class="chip">Is it too late to switch?</span>
+    </div>
+  </div>
+
+  <div class="lbl">VARIANT 2 — «BREAKING OUT» · BIG, OVER THE EDGE</div>
+  <div class="tile v2">
+    <div class="who">YOUR MATCHMAKER</div>
+    <p class="bub">Hi — I'm the Matchmaker. I know you, I know the job market, and I won't let you marry a career AI is about to kill. Ask me something — or just start.</p>
+    <div class="chips">
+      <span class="chip">Will AI kill my job?</span>
+      <span class="chip">What to study?</span>
+    </div>
+    <div class="big"><img src="/avatar.jpg" alt=""></div>
+  </div>
+
+  <div class="lbl">VARIANT 3 — «THE STICKER» · SMALL, TILTED, COMPACT TILE</div>
+  <div class="tile v3">
+    <div class="stk"><img src="/avatar.jpg" alt=""></div>
+    <div class="who">YOUR MATCHMAKER</div>
+    <p class="bub">I know you, I know the job market — and I won't let you marry a career AI is about to kill.</p>
+    <div class="chips">
+      <span class="chip">Will AI kill my job?</span>
+      <span class="chip">What to study?</span>
+      <span class="chip">Too late to switch?</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

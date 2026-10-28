@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Glitch — Careers, money & what's worth starting</title>
+<meta name="description" content="A database of professions re-checked for the AI era: what dies, what pays, the exact road in. Don't know yours? Meet the Matchmaker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=Instrument+Sans:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFCF6;--ink:#1C1A1F;--pop:#FFB8D9;--blush:#FFD8EA;--soft:#FFEEF5;--butter:#F0E6CF;--grey:#6E6873;--line:#EAD9C8;--gold:#C99A2E;--heart:#FF8CBE;--coral:#E4572E;--green:#2E7D4F}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--soft);color:var(--ink);font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+.narrow{max-width:720px;margin:0 auto}
+header{position:sticky;top:0;background:var(--soft);z-index:10;padding-top:10px}
+.navbar{background:var(--paper);border:2px solid var(--ink);border-radius:99px;display:flex;align-items:center;padding:8px 10px 8px 20px}
+.logo{font-family:'Outfit';font-weight:900;font-size:20px;text-decoration:none;color:var(--ink);letter-spacing:-.5px}
+.logo span{color:var(--heart)}
+.navlinks{margin-left:auto;display:flex;gap:6px}
+.navlinks a{font-family:'DM Mono';font-size:12px;text-transform:uppercase;text-decoration:none;color:var(--ink);padding:8px 13px;border-radius:99px}
+.navlinks a.on{background:var(--ink);color:#fff}
+.panel{background:var(--paper);border:2px solid var(--ink);border-radius:26px;padding:22px}
+.kicker{font-family:'DM Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+h1{font-family:'Outfit';font-weight:900;font-size:40px;line-height:1.06;letter-spacing:-.8px;margin:8px 0 10px}
+h2{font-family:'Outfit';font-weight:900;font-size:27px;margin:30px 0 6px;letter-spacing:-.4px}
+.oneline{font-size:18.5px;line-height:1.45}
+.btn{display:block;text-align:center;background:var(--heart);color:var(--ink);font-family:'Outfit';font-weight:700;font-size:18px;padding:15px 22px;border-radius:99px;text-decoration:none;border:2px solid var(--ink);cursor:pointer;margin:14px 0 6px}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.coral{background:var(--ink);color:#fff}
+.btn.ghost{background:#fff;color:var(--ink)}
+.hint{font-size:13.5px;color:var(--grey);text-align:center}
+.hero{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px;margin-top:16px;align-items:start}
+.hero .panel{display:flex;flex-direction:column}
+.brandimg{width:100%;border-radius:16px;display:block}
+.hero .spacer{flex:1}
+.chat{background:#fff;border:2px solid var(--ink);border-radius:26px;padding:18px 16px 12px;box-shadow:7px 7px 0 var(--pop)}
+.chathead{display:flex;align-items:center;gap:11px;border-bottom:1.5px dashed var(--line);padding-bottom:11px;margin-bottom:13px}
+.chathead img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--heart)}
+.chathead .nm{font-family:'Outfit';font-weight:900;font-size:17px;line-height:1.15}
+.chathead .st{font-size:12px;color:var(--green);font-family:'DM Mono'}
+.msg{display:flex;gap:9px;margin-bottom:11px;opacity:0;transform:translateY(10px);transition:.45s}
+.msg.in{opacity:1;transform:none}
+.msg img{width:33px;height:33px;border-radius:50%;object-fit:cover;flex:none;margin-top:2px}
+.bub{background:var(--soft);border:1.5px solid var(--pop);border-radius:16px;border-top-left-radius:4px;padding:11px 14px;font-size:16px;line-height:1.45}
+.bub .btn{margin:10px 0 2px;font-size:16.5px;padding:12px}
+.typing{display:inline-flex;gap:4px;padding:6px 2px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--heart);animation:bl 1s infinite}
+.typing i:nth-child(2){animation-delay:.18s}.typing i:nth-child(3){animation-delay:.36s}
+@keyframes bl{0%,100%{opacity:.25}50%{opacity:1}}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.chips a{font-family:'DM Mono';font-size:11.5px;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:99px;padding:7px 12px;background:#fff}
+.galrow{display:flex;gap:14px;overflow-x:auto;padding:8px 2px 16px;scroll-snap-type:x mandatory}
+.galhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.viewall{font-family:'DM Mono';font-size:12px;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:99px;padding:8px 14px;background:#fff;white-space:nowrap}
+.viewall:hover{background:var(--soft)}
+.gcard{flex:0 0 188px;scroll-snap-align:start;background:#fff;border:2px solid var(--ink);border-radius:20px;overflow:hidden;text-decoration:none;color:var(--ink);display:block}
+.gcard .art{height:188px;display:flex;flex-direction:column;justify-content:center;padding:18px}
+.gcard img.art{padding:0;object-fit:cover;width:100%}
+.gcard .cap{padding:12px 16px 15px}
+.gcard .cap .t{font-family:'Outfit';font-weight:900;font-size:18px}
+.gcard .cap p{font-size:14px;color:#3d3942;margin-top:3px}
+.pink{background:var(--blush)}.butterbg{background:var(--butter)}.skybg{background:#DCEFF7}
+.bigword{font-family:'Outfit';font-weight:900;font-size:22px;line-height:1.12}
+.gcard .art .sm{font-size:14px;margin-top:8px;color:#3d3942}
+.tag{font-family:'DM Mono';font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--ink);color:#fff;display:inline-block;margin-bottom:9px}
+.tag.soon{background:var(--butter);color:var(--grey)}
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;align-items:stretch}
+.about img{width:100%;height:100%;object-fit:cover;border-radius:20px;border:2px solid var(--ink);display:block;min-height:280px}
+.catgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px;margin:10px 0 6px}
+.scard{background:#fff;border:2px solid var(--ink);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--ink);display:block}
+.scard .art{height:104px;display:flex;flex-direction:column;justify-content:center;padding:13px}
+.scard img.art{padding:0;object-fit:cover;object-position:top;width:100%}
+.scard .cap{padding:9px 12px 12px}
+.scard .cap .t{font-family:'Outfit';font-weight:900;font-size:16px}
+.scard .cap p{font-size:12.5px;color:#3d3942;margin-top:2px;line-height:1.4}
+.scard .bigword{font-size:19px}
+.catchips{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+.catchips button{font-family:'Outfit';font-weight:800;font-size:14px;padding:9px 16px;border-radius:999px;border:2px solid var(--ink);background:#fff;cursor:pointer}
+.catchips button:active{background:var(--ink);color:#fff}
+.catname{font-family:'Outfit';font-weight:900;font-size:19px;margin:24px 0 2px}
+.testcta{background:var(--butter);border:2px solid var(--ink);border-radius:26px;padding:26px 22px;margin-top:16px;text-align:left}
+.testcta h2{margin-top:0}
+ul.get{margin:10px 0 6px 20px}
+ul.get li{margin-bottom:7px;font-size:17px}
+.view{display:none;padding:18px 0 8px}
+.view.on{display:block}
+table.cmp{width:100%;border-collapse:collapse;margin:12px 0;font-size:15.5px;background:#fff}
+table.cmp td,table.cmp th{border:1.5px solid var(--line);padding:13px;vertical-align:top;text-align:left}
+table.cmp th{background:var(--butter);font-family:'Outfit';font-size:17px}
+ul.tight{margin:8px 0 14px 20px}
+ul.tight li{margin-bottom:9px}
+.q{font-family:'Outfit';font-weight:700;font-size:21px;margin:20px 0 14px;line-height:1.35}
+.opt{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px;font-size:17px;font-family:'Instrument Sans';cursor:pointer;margin-bottom:11px}
+.opt:hover{border-color:var(--ink);background:var(--soft)}
+.prog{height:12px;background:#fff;border:1.5px solid var(--line);border-radius:99px;overflow:hidden;margin:16px 0 4px}
+.prog i{display:block;height:100%;background:var(--heart);width:0;transition:.3s}
+.score{font-family:'Outfit';font-weight:900;font-size:32px;margin:6px 0 8px}
+.box{background:#fff;border:1.5px solid var(--pop);border-radius:16px;padding:20px;margin:16px 0}
+.sticker{background:var(--butter);border:1.5px solid var(--pop);border-radius:14px;padding:15px 17px;font-weight:700;font-size:17px;margin:16px 0;line-height:1.45}
+.videowrap{max-width:330px;margin:18px auto 6px;border-radius:18px;overflow:hidden;border:2px solid var(--ink);aspect-ratio:9/16;background:#000}
+.videowrap iframe{width:100%;height:100%;border:0;display:block}
+.small{font-size:13.5px;color:var(--grey)}
+footer{margin-top:40px;padding:20px 0 30px;font-size:13.5px;color:var(--grey);text-align:center}
+@media(max-width:760px){.hero,.about{grid-template-columns:1fr}h1{font-size:32px}}
+.qbar{height:10px;background:var(--soft);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.qbar div{height:100%;background:var(--pop);border-radius:99px;transition:width .3s}
+.qcount{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.qtext{font-family:'Outfit';font-weight:900;font-size:24px;line-height:1.2;margin:8px 0 14px}
+.optbtn{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;font-size:16px;font-weight:600;cursor:pointer;margin-bottom:9px;color:var(--ink)}
+.optbtn:hover{border-color:var(--ink)}
+.backlink{background:none;border:none;color:var(--grey);font-size:14px;cursor:pointer;margin-top:4px}
+.rescard{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:18px;margin-bottom:12px}
+.resfit{display:inline-block;background:var(--pop);border-radius:999px;font-family:'DM Mono',monospace;font-size:12px;padding:4px 11px}
+.resname{font-family:'Outfit';font-weight:900;font-size:22px;margin-top:8px}
+.rescat{color:#3d3942;font-size:14.5px;margin-top:3px}
+.resai{font-size:14px;margin-top:6px;color:#3d3942}
+.reswhy{font-size:14.5px;margin-top:6px}
+.resstep{font-size:14.5px;margin-top:8px;background:var(--soft);border-radius:10px;padding:10px 12px}
+.fgroup{margin-top:14px}
+.flabel{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--grey);margin-bottom:7px}
+.frow{display:flex;gap:7px;flex-wrap:wrap}
+.fchip{font-family:'Outfit';font-weight:700;font-size:13.5px;padding:8px 14px;border-radius:999px;border:2px solid var(--ink);background:#fff;cursor:pointer;color:var(--ink)}
+.fchip.on{background:var(--ink);color:#fff}
+.fcount{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--grey);margin:16px 0 8px}
+.libgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+.libgrid .scard .cap{padding:12px}
+.promptprev{white-space:pre-wrap;word-break:break-word;background:#fff;border:2px solid var(--line);border-radius:14px;padding:16px;font-family:'DM Mono',monospace;font-size:12.5px;line-height:1.55;max-height:300px;overflow:hidden;margin:10px 0 14px;text-align:left}
+.promptprev.tall{max-height:520px;overflow:auto}
+.gatebox{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:18px;margin:16px 0}
+.gateform{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.gateform input{font:inherit;font-size:16px;padding:13px 14px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.gateform input:focus{border-color:var(--ink);outline:none}
+#v-test .panel{padding:30px 28px 32px;margin-top:24px}
+#v-test .rescard{padding:24px}
+#v-prompt .steps{display:grid;gap:18px;margin:22px 0 2px}
+#v-prompt .panel{margin-top:22px}
+#v-prompt .narrow>p.note{margin-top:16px}
+.libgrid .scard .art.cgstrip{position:relative;height:118px;background:#2a1030;background-image:linear-gradient(rgba(249,42,130,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(249,42,130,.14) 1px,transparent 1px);background-size:26px 26px;display:flex;align-items:center;justify-content:center;padding:10px 14px;width:100%;object-fit:unset;object-position:unset}
+.cgframe{background:#FFFCF6;border:2px solid #1C1A1F;border-radius:12px;padding:8px 12px;box-shadow:4px 4px 0 #F92A82;font-family:Outfit,sans-serif;font-weight:800;font-size:15px;line-height:1.18;color:#1C1A1F;text-transform:uppercase;text-align:center}
+.pstrip{position:relative;margin:14px 0 16px;min-height:110px;border-radius:18px;background:#2a1030;background-image:linear-gradient(rgba(249,42,130,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(249,42,130,.14) 1px,transparent 1px);background-size:26px 26px;display:flex;align-items:center;justify-content:center;padding:16px 14px}
+.pstrip .cgframe{font-size:19px;padding:10px 18px}
+.libgrid .scard img.cgsticker{position:absolute;top:10px;right:10px;width:54px;height:54px;object-fit:cover;border-radius:50%;border:2px solid #1C1A1F;transform:rotate(-8deg);background:#FFF6EC}
+.galrow .gcard .art.cgstrip{position:relative;height:118px;background:#2a1030;background-image:linear-gradient(rgba(249,42,130,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(249,42,130,.14) 1px,transparent 1px);background-size:26px 26px;display:flex;align-items:center;justify-content:center;padding:10px 14px;width:100%}
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"></head>
+<body>
+<header><div class="wrap"><div class="navbar">
+<a class="logo" href="#home">CAREER<span>GLITCH</span></a>
+<nav class="navlinks">
+<a href="#roadmaps" data-nav="roadmaps">Roadmaps</a>
+<a href="/mentor">The Matchmaker</a>
+</nav></div></div></header>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section class="view" id="v-home">
+<div class="panel" style="margin-bottom:20px">
+  <div class="kicker">CAREER GLITCH MATCHMAKER</div>
+  <h1>An AI career matchmaker.</h1>
+  <p class="oneline">It matches you to a future-proof career — then gamifies the learning so you get there faster.</p>
+  <p>It knows you. It knows the job market. And it won't let you marry a career AI is about to kill. Answer honest questions, get your verdict and your top 3 matches — then play your way in: real job trials — a first date with the job before you marry it — quests and check-ins instead of a boring course.</p>
+  <a class="btn coral" href="/mentor">Meet your matchmaker &rarr;</a>
+</div>
+<div class="hero">
+  <div class="panel">
+    <img class="brandimg" src="/logo.jpg" alt="Career Glitch — careers, money and what's worth starting">
+    <div class="spacer"></div>
+    <p class="oneline" style="margin-top:16px">A database of professions, <b>re-checked for the AI era</b>. What dies. What pays. The exact road in.</p>
+    <a class="btn ink" href="#roadmaps">Browse the professions ↓</a>
+  </div>
+  <div class="chat" id="chatbox">
+    <div class="chathead">
+      <img src="/avatar.jpg" alt="Masha's character">
+      <div><div class="nm">Masha · your glitch guide</div><div class="st">● online</div></div>
+    </div>
+    <div id="msgs"></div>
+    <div class="chips">
+      <a href="#roadmaps">Professions</a>
+      <a href="#prompt">Personal program</a>
+      <a href="#" id="replay">↺ Replay</a>
+    </div>
+  </div>
+</div>
+
+<div class="galhead"><h2>Professions — pick one, read its roadmap</h2><a class="viewall" href="#roadmaps">View all →</a></div>
+<div class="galrow">
+  <a class="gcard" href="#roadmap-accountant">
+    <div class="art cgstrip"><div class="cgframe">Accountant</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>Verdict, the fork, the money, the 6 steps. Free PDF.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-dental-hygienist">
+    <div class="art cgstrip"><div class="cgframe">Dental Hygienist</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>Hands, people, a license AI can't hold.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-robotics-technician">
+    <div class="art cgstrip"><div class="cgframe">Robotics Technician</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>The robots are taking the jobs. Somebody has to keep them working.</p></div>
+  </a>
+  <a class="gcard" href="#businesses">
+    <div class="art skybg"><div class="bigword">BUSINESS PATHS</div><div class="sm">Start this business in 2027?</div></div>
+    <div class="cap"><span class="tag soon">New section</span><div class="t">Businesses</div><p>Same honest method, other arena.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-electrician">
+    <div class="art cgstrip"><div class="cgframe">Electrician</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>No college. Paid from day one. A license AI can’t hold.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-ai-agent-manager">
+    <div class="art cgstrip"><div class="cgframe">AI Agent Manager</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>A superpower on top of a real field — not a job by itself.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-graphic-designer">
+    <div class="art cgstrip"><div class="cgframe">Graphic Designer</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>The easy layer is automated. Aim at branding and judgment.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-junior-developer">
+    <div class="art cgstrip"><div class="cgframe">Junior Software Developer</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>The first rung moved. Proof beats paper.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-nuclear-reactor-operator">
+    <div class="art cgstrip"><div class="cgframe">Nuclear Reactor Operator</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>Six figures, no degree. A license AI can’t hold.</p></div>
+  </a>
+  <a class="gcard" href="#roadmap-commercial-insurance-producer">
+    <div class="art cgstrip"><div class="cgframe">Commercial Insurance Producer</div></div>
+    <div class="cap"><span class="tag">● Roadmap live</span><p>A license in weeks. A book that pays for years.</p></div>
+  </a>
+  <div class="gcard" style="border-color:var(--line)">
+    <div class="art butterbg"><div class="bigword" style="color:var(--grey)">NEXT PROFESSION</div><div class="sm">Drops with the next video.</div></div>
+    <div class="cap"><span class="tag soon">Coming soon</span><div class="t" style="color:var(--grey)">Every week</div><p>Subscribe so yours doesn't pass you by.</p></div>
+  </div>
+</div>
+
+<div class="about">
+  <img src="/masha.jpg" alt="Masha — the real human behind Career Glitch">
+  <div class="panel">
+    <div class="kicker">About the project</div>
+    <h2 style="margin-top:6px">Hi, I'm Masha 👋</h2>
+    <p>The cartoon in the chat is my glitch twin. The real me makes the videos and checks every number.</p>
+    <p><b>Why this exists:</b> people spend years and thousands of dollars training for jobs that AI is quietly deleting. I break down one profession at a time — the money, the traps, the license, the real road in — so you choose with your eyes open.</p>
+    <p>No guru talk. Government data, real prices, honest verdicts.</p>
+  </div>
+</div>
+
+<div class="testcta">
+  <div class="kicker">The Matchmaker</div>
+  <h2>Don't know which profession is yours?</h2>
+  <p class="oneline">Don't guess years of your life away — <b>meet the Matchmaker</b>. It reads <b>you</b> first: how you think, what you can stand, how you live. Then it matches you against real professions — every one re-checked for the AI era: real pay, AI-displacement risk, license traps, training time. Then it points — and shows its work.</p>
+  <a class="btn coral" href="/mentor">Meet your matchmaker &rarr;</a>
+  </div>
+</section>
+
+<!-- ROADMAPS -->
+<section class="view" id="v-roadmaps"><div class="narrow" style="max-width:920px">
+<div class="kicker">The library</div>
+<h1>Roadmaps</h1>
+<p class="oneline">Every path in the database. Filter by what fits your life — the list updates as you tap.</p>
+<div class="fgroup"><div class="flabel">Search by name</div><input id="libsearch" type="text" placeholder="Type a profession — e.g. Robotics Technician" oninput="cgFQ(this.value)" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:inherit"></div>
+<div class="fgroup"><div class="flabel">Category</div><div class="frow" id="f-cat"></div></div>
+<div class="fgroup"><div class="flabel">Format & pay</div><div class="frow">
+  <button class="fchip" data-k="online" onclick="cgFTog('online')">💻 Online</button>
+  <button class="fchip" data-k="pay" data-v="55" onclick="cgFSet('pay',55)">$50K+</button>
+  <button class="fchip" data-k="pay" data-v="105" onclick="cgFSet('pay',105)">$100K+</button>
+  <button class="fchip" data-k="pay" data-v="145" onclick="cgFSet('pay',145)">$150K+</button>
+</div></div>
+<div class="fgroup"><div class="flabel">Training time</div><div class="frow" id="f-study"></div></div>
+<div class="fcount" id="libcount"></div>
+<div class="libgrid" id="libgrid"></div>
+</div></section>
+
+<!-- ACCOUNTANT -->
+<section class="view" id="v-roadmap-accountant"><div class="narrow">
+<div class="kicker">Roadmap №1 · Accountant</div>
+<h1>Accountant in the AI era</h1>
+<div class="sticker">★ Verdict: YES — with a license.<br>NO — as a typist. The license is a ticket into the arena, not a shield: inside, trust and niche win.</div>
+<div class="videowrap"><iframe src="https://www.youtube.com/embed/5nOhS_wHaUI" title="Accountant — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p class="hint">Watch it right here — 60 seconds.</p>
+<div class="gatebox" data-prof="accountant" data-pdf="/CareerGlitch_Accountant_Roadmap_2027_v7.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_Accountant_Roadmap_2027_v7.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div>
+<h2>Pick your door</h2>
+<table class="cmp"><tr><th>Door A — CPA</th><th>Door B — Enrolled Agent</th></tr>
+<tr><td>Degree + hard exam. Does everything, signs audits. <b>3–5 years.</b></td>
+<td><b>No degree.</b> Tax exam only. Represents clients at the IRS, all 50 states. <b>6–12 months.</b></td></tr></table>
+<h2>The money</h2>
+<ul class="tight">
+<li>Licensed accountants: median <b>$83,680</b> · top 10% over <b>$144,090</b> (BLS, 2025).</li>
+<li>Bookkeeping clerks — the dying layer: <b>$50,670</b>, shrinking −6%.</li>
+<li>Specialists with a niche charge up to <b>25% more</b> (TaxDome, 2025).</li>
+</ul>
+<a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div>
+</div></section>
+
+
+<!-- ROADMAP-ELECTRICIAN -->
+<section class="view" id="v-roadmap-electrician"><div class="narrow"><div class="kicker">Roadmap №2 · Electrician</div><h1>Electrician in the AI era</h1><div class="sticker">★ Verdict: YES. No college, paid from day one — a license AI can’t hold. The catch is time: 4–5 years of apprenticeship.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/8s9Q3rD7WCs" title="Electrician — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="electrician" data-pdf="/CareerGlitch_Electrician_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_Electrician_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>Licensed electricians: median <b>$63,190</b> · top 10% over <b>$108,510</b> (BLS, 2025).</li><li>Apprentices are paid employees from day one — year one typically <b>$16–$25/hour</b>.</li><li>Outlook <b>+9%</b>, ~<b>72,700 openings a year</b> — BLS itself names AI data centers as a demand driver.</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>Her verdict from the video — and the honest check on her $280K Texas claim</li><li>The license map: 8,000 paid hours + the journeyman exam, state by state</li><li>Union door ($0 tuition) vs non-union door — with real prices</li><li>The 90-day plan to land the apprenticeship</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- ROADMAP-AI-AGENT-MANAGER -->
+<section class="view" id="v-roadmap-ai-agent-manager"><div class="narrow"><div class="kicker">Roadmap №3 · AI Agent Manager</div><h1>AI Agent Manager in the AI era</h1><div class="sticker">★ Verdict: YES — as a superpower on top of a real field. NOT as a job by itself. The “prompt guy” dies first.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/wYbqQg8nY_o" title="AI Agent Manager — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="ai-agent-manager" data-pdf="/CareerGlitch_AIAgentManager_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_AIAgentManager_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>No official salary statistic exists yet — the job is too new. Live postings (Oct 2026): AI Operations Manager <b>$100–155K</b> (CrowdStrike), senior roles to $190K.</li><li>Realistic first door in: <b>~$55–95K</b> (estimate, marked as one in the roadmap).</li><li>Agentic-AI job postings grew <b>~280% in a year</b> (Stanford AI Index 2026, Lightcast).</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>What the job actually is — and the 5 titles it hides under</li><li>Why 40%+ of agent projects get cancelled (Gartner) — and why that’s this job’s fuel</li><li>Free route ($0) vs paid route ($100–350) — and the ONE certificate worth paying for</li><li>The 90-day plan: 3 portfolio agents with before/after quality scores</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- ROADMAP-GRAPHIC-DESIGNER -->
+<section class="view" id="v-roadmap-graphic-designer"><div class="narrow"><div class="kicker">Roadmap №4 · Graphic Designer</div><h1>Graphic Designer in the AI era</h1><div class="sticker">★ Verdict: NO — to basic design from zero. The easy layer is automated. YES — to branding, direction and judgment.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/ATLQkNt4Pww" title="Graphic Designer — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="graphic-designer" data-pdf="/CareerGlitch_GraphicDesigner_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_GraphicDesigner_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>Graphic designers: median <b>$62,960</b> (BLS, 2025) — but the outlook is <b>−2%</b> and every opening is a replacement.</li><li>The ceiling lane pays: art directors median <b>$114,850</b>, animators <b>$102,030</b>.</li><li>Designers who direct AI earn ~40% more than those who don’t (Upwork data).</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>What AI already took vs what it can’t — with the platform evidence</li><li>The free route: Figma + fundamentals + 4 portfolio pieces that aim above the commodity layer</li><li>The only certificate that counts (Adobe, $150) — and when to skip it</li><li>The 90-day plan, with the honest week-6 fit checkpoint</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- ROADMAP-JUNIOR-DEVELOPER -->
+<section class="view" id="v-roadmap-junior-developer"><div class="narrow"><div class="kicker">Roadmap №5 · Junior Software Developer</div><h1>Junior Software Developer in the AI era</h1><div class="sticker">★ Verdict: YES to software engineering. NO to a $20K bootcamp and a prayer. The first rung moved — it didn’t disappear.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/K0dP-Z-enbw" title="Junior Software Developer — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="junior-developer" data-pdf="/CareerGlitch_JuniorDeveloper_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_JuniorDeveloper_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>Software developers: median <b>$135,980</b> — that’s ALL levels. A realistic first offer: <b>$65–90K</b>.</li><li>The occupation still grows <b>+10%</b> (~106,100 openings a year, BLS) — while hiring of developers aged 22–25 fell ~20% from its 2022 peak (Stanford).</li><li>New grads are now ~7% of Big Tech hires (SignalFire). Plan a 3–6 month first search.</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>The junior crunch in numbers — what AI actually took from the junior task list</li><li>Degree vs bootcamp vs self-taught — honestly priced, with real placement data</li><li>Five doors to first income (not just “junior developer” postings)</li><li>The 90-day plan: two shipped projects and an AI-native workflow</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- ROADMAP-NUCLEAR-REACTOR-OPERATOR -->
+<section class="view" id="v-roadmap-nuclear-reactor-operator"><div class="narrow"><div class="kicker">Roadmap №6 · Nuclear Reactor Operator</div><h1>Nuclear Reactor Operator in the AI era</h1><div class="sticker">★ Verdict: YES. Six figures, no degree, no student debt — and AI literally needs you. The catch: ~5,200 jobs in the whole country, and a ~4-year road to the license.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/792NZu4OWtw" title="Nuclear Reactor Operator — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="nuclear-reactor-operator" data-pdf="/CareerGlitch_NuclearReactorOperator_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_NuclearReactorOperator_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>Nuclear operators: median <b>$122,890</b> — the highest-paid production job in America (BLS, 2025). Even the bottom 10% clear <b>$92,270</b>.</li><li>Senior operators at the top fleet post from <b>$191K</b> total comp (Constellation) — top of the market, not a median.</li><li>The field is tiny: <b>5,200 jobs</b>, outlook <b>−6%</b> — openings are replacements at specific plants, not growth.</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>Her $123K claim, checked — exact. Her “2 years of training” is the license class only</li><li>The real pipeline: plant floor → ~3 years of experience → paid license class → the NRC exam</li><li>Two doors in: Navy nuclear vs the civilian plant floor — and the POSS test that gates both</li><li>The 90-day plan: map your plants, qualify on paper, start test prep</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- ROADMAP-COMMERCIAL-INSURANCE-PRODUCER -->
+<section class="view" id="v-roadmap-commercial-insurance-producer"><div class="narrow"><div class="kicker">Roadmap №7 · Commercial Insurance Producer</div><h1>Commercial Insurance Producer in the AI era</h1><div class="sticker">★ Verdict: YES — boring as hell, but boring can pay really well. The catch: the book of clients takes ~3 years to build.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/NDbyuUGIRoo" title="Commercial Insurance Producer — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="commercial-insurance-producer" data-pdf="/CareerGlitch_InsuranceProducer_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_InsuranceProducer_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>Insurance sales agents: median <b>$62,280</b>, top 10% over <b>$138,140</b> (BLS, 2025). Commissions push real producer income past the wage table.</li><li><b>572,600</b> jobs, ~<b>43,100 openings a year</b> — mostly replacements. Seats are always open; survival is the filter.</li><li>The mechanics: carriers pay the agency ~10–15% of premium; a producer keeps ~50–60% of that on new business (industry sources).</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>Her $62K and $138K claims — exact. Her “license in a few weeks” — true in Texas, 200 hours in Florida</li><li>The producer agreement: validation pay, splits, book ownership, non-compete — read it before you sign</li><li>Niche math: why 1–2 industries beat “I sell everything”</li><li>The 90-day plan: license, niche, the right seat, a live pipeline</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- ROADMAP-DENTAL-HYGIENIST -->
+<section class="view" id="v-roadmap-dental-hygienist"><div class="narrow"><div class="kicker">Roadmap №8 · Dental Hygienist</div><h1>Dental Hygienist in the AI era</h1><div class="sticker">★ Verdict: YES. $98,100 median, hands-on, a license AI can’t hold — in a profession short thousands of people. The catch: getting INTO a program is the real exam.</div><div class="videowrap"><iframe src="https://www.youtube.com/embed/lFLr4QZOpQk" title="Dental Hygienist — Career Glitch video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p class="hint">Watch it right here — 60 seconds.</p><div class="gatebox" data-prof="dental-hygienist" data-pdf="/CareerGlitch_DentalHygienist_Roadmap_2027_v1.pdf"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email — and the download opens right here. That’s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="/CareerGlitch_DentalHygienist_Roadmap_2027_v1.pdf" download>Download the roadmap (PDF)</a><p class="note">Saved ✓ Next steps: <a href="/mentor">the Matchmaker</a> · <a href="#prompt">your personal career matchmaker</a>.</p></div></div><h2>The money</h2><ul class="tight"><li>Dental hygienists: median <b>$98,100</b> — $47.16 an hour (BLS, 2025). Top 10% over <b>$126,050</b>.</li><li>Outlook <b>+8%</b>, ~<b>15,000 openings a year</b> — against only ~9,815 program seats a year (ADA).</li><li>Geography swings pay ~2×: California mean ~$128K vs Alabama ~$61K.</li></ul><h2>Inside the free roadmap</h2><ul class="tight"><li>Every number from her video, checked — plus the seat math she didn’t show</li><li>CODA or nothing: the accreditation rule, and the ~$10K instruments line nobody budgets</li><li>Community college (~$20–40K all-in) vs private/accelerated — the same license at the end</li><li>The 90-day plan: programs mapped, prereqs started, applications wide</li></ul><a class="btn ink" href="/mentor">Check if it fits you →</a><div class="panel" style="margin-top:14px"><div class="kicker">The Master Prompt · $27</div><div class="resname">Turn AI into your personal career matchmaker</div><p class="note" style="text-align:left">This roadmap is one map for everyone. The matchmaker builds <b>yours</b>: a 30-minute interview first, an honest check of your hours, budget and deadline, your state’s exact license and exam costs — then your plan in a Notion dashboard, with weekly check-ins that keep you from quitting.</p><a class="btn coral" href="#prompt">Get your personal matchmaker — $27</a></div></div></section>
+
+<!-- TEST -->
+<!-- PROMPT -->
+<section class="view" id="v-prompt"><div class="narrow">
+<div class="kicker">The Master Prompt</div>
+<h1>Turn AI into your personal career matchmaker.</h1>
+<p class="oneline">Anyone can ask AI for a plan and get a generic list. This is built the opposite way: your matchmaker interviews you first, checks the maths honestly, then builds your real plan — and stays to drive you through it.</p>
+<div class="steps">
+<div class="step"><div class="n">1</div><div class="t">Give it a name</div><p>Your matchmaker asks you to name it. A matchmaker with a name is harder to ghost.</p></div>
+<div class="step"><div class="n">2</div><div class="t">The interview</div><p>About 30 minutes, one question at a time: your state, real hours, budget, deadline, red lines. If the maths doesn't add up, it tells you before planning.</p></div>
+<div class="step"><div class="n">3</div><div class="t">Your personal plan</div><p>License &amp; certificate map for YOUR state. Every phase with a free route and a paid route. Honest money plan. First-income plan.</p></div>
+<div class="step"><div class="n">4</div><div class="t">Notion + the drive</div><p>A ready Notion template: weekly plan with progress circles, study plan, skills, certificates, resume builder, job tracker. Then weekly driving — one tiny next step at a time, shrunk whenever life gets in the way.</p></div>
+</div>
+<div class="panel"><div class="resname">Why not just ask ChatGPT?</div><p class="note" style="text-align:left">A plain request to AI gets you 10 generic bullets. This is a 2,300-word system that turns AI into a real matchmaker: a 30-minute interview before any plan, an honest maths check of your hours, budget and deadline, your state's exact license and exam costs, free and paid routes for every step — all filled into a ready Notion dashboard, with weekly check-ins that keep you from quitting.</p></div><div id="promptbox"></div>
+<p class="note">Works with Claude, ChatGPT and any AI chat. Built to pair with your <a href="/mentor">Matchmaker</a> result — bring the profession, the matchmaker builds the road.</p>
+</div></section>
+
+<!-- BUSINESSES -->
+<section class="view" id="v-businesses"><div class="narrow">
+<div class="kicker">Business paths</div>
+<h1>Start this business in 2027?</h1>
+<p class="oneline">Same method: what AI changes, what it really costs, the road in.</p>
+<div class="gcard" style="flex:none;width:100%;margin-top:14px;border-color:var(--line)">
+  <div class="art butterbg" style="height:170px"><div class="bigword" style="color:var(--grey)">FIRST BUSINESS PATH</div><div class="sm">Drops with the first business video.</div></div>
+  <div class="cap"><span class="tag soon">Coming soon</span></div>
+</div>
+</div></section>
+
+<section class="view" id="v-roadmap-x"><div class="narrow" id="cgx"></div></section>
+</main>
+
+<footer><div class="wrap">
+CAREER GLITCH · Careers, money & what's worth starting · Sources named inside every roadmap (BLS · AICPA · IRS · Karbon · TaxDome).<br>
+@careerglitch — YouTube · TikTok · Instagram
+</div></footer>
+
+<script>
+/* ====== CONFIG: ссылки оплаты (Stan), когда будут готовы ====== */
+const PROMPT_BUY_URL = '';
+const TEST_FULL_URL = '';
+
+const routes = ['home','roadmaps','roadmap-accountant','roadmap-electrician','roadmap-ai-agent-manager','roadmap-graphic-designer','roadmap-junior-developer','roadmap-nuclear-reactor-operator','roadmap-commercial-insurance-producer','roadmap-dental-hygienist','prompt','businesses'];
+function show(){
+  let h = (location.hash || '#home').slice(1);
+  if(!routes.includes(h)){ if(h.indexOf('roadmap-') === 0){ window.__cgPendingRM = h; h = 'roadmap-x'; } else h = 'home'; }
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  document.getElementById('v-' + h).classList.add('on');
+  if(h === 'roadmap-x' && window.cgRenderRM) cgRenderRM(window.__cgPendingRM || (location.hash || '').slice(1));
+  const navKey = h.startsWith('roadmap') ? 'roadmaps' : h;
+  document.querySelectorAll('[data-nav]').forEach(a => a.classList.toggle('on', a.dataset.nav === navKey));
+  window.scrollTo(0,0);
+  if(h === 'home' && !chatPlayed) playChat();
+}
+window.addEventListener('hashchange', show);
+
+/* ====== Character chat ====== */
+const SCRIPT = [
+ 'Hey! Careers are <b>glitching</b> — AI rewrote the rules mid-game.',
+ 'The problem: half of every job is <b>already automated</b>. The other half got <b>pricier</b>. Most people don\'t know which half they\'re standing in.',
+ 'So I built a <b>database of professions, re-checked for the AI era</b>: what dies, what pays, the exact road in.',
+ 'Not sure what\'s yours? Don\'t guess years of your life away — <b>meet the Matchmaker</b>. It reads you first, then points. <a class="btn coral" href="/mentor">Meet the Matchmaker — free to start</a>'
+];
+let chatPlayed = false;
+function playChat(){
+  const box = document.getElementById('msgs');
+  box.innerHTML = '';
+  let delay = 300;
+  SCRIPT.forEach(text => {
+    const row = document.createElement('div');
+    row.className = 'msg';
+    row.innerHTML = '<img src="/avatar.jpg" alt=""><div class="bub"><span class="typing"><i></i><i></i><i></i></span></div>';
+    box.appendChild(row);
+    setTimeout(() => row.classList.add('in'), delay);
+    setTimeout(() => { row.querySelector('.bub').innerHTML = text; }, delay + 850);
+    delay += 1400;
+  });
+  chatPlayed = true;
+}
+document.getElementById('replay').addEventListener('click', e => { e.preventDefault(); playChat(); });
+
+/* ====== Mini fit test ====== */
+const QUESTIONS = [
+ {q:'Sitting with a laptop most of the day?', o:[['Fine — calm desk work is my thing',2],['OK if the pay is stable',1],['I go crazy without movement',0]]},
+ {q:'Numbers and spreadsheets…', o:[['I like when everything adds up',2],['Neutral — tools do the math',1],['They make me want to run',0]]},
+ {q:'A client trusts you with their real money story.', o:[['Proud — trust is the point',2],['Normal, just a job',1],['Stressed for weeks',0]]},
+ {q:'One wrong zero = real consequences.', o:[['I am careful; checklists are friends',2],['I can learn to double-check',1],['Details are not my strength',0]]},
+ {q:'How fast must the new skill pay?', o:[['I can invest 6–12 months',2],['A few months, then something',1],['This month or never',0]]},
+ {q:'Exams and rules (tax law, standards)…', o:[['Give me a system, I will grind',2],['If the road is clear, yes',1],['Studying = sleep',0]]},
+ {q:'Your dream work vibe:', o:[['Quiet expertise, steady clients',2],['A mix of desk and people',1],['Stage, chaos, new faces daily',0]]},
+ {q:'AI does the boring parts. You check and sign.', o:[['Perfect — I supervise the robot',2],['Fine, I will adapt',1],['No machines near money',0]]}
+];
+let qi = 0, score = 0, quizStarted = false;
+function startQuiz(){ quizStarted = true; qi = 0; score = 0; document.getElementById('quiz-result').innerHTML=''; renderQ(); }
+function renderQ(){
+  const box = document.getElementById('quiz');
+  if(qi >= QUESTIONS.length){ finishQuiz(); return; }
+  const item = QUESTIONS[qi];
+  box.innerHTML = '<div class="prog"><i style="width:' + (qi/QUESTIONS.length*100) + '%"></i></div>' +
+    '<div class="q">' + (qi+1) + ' of ' + QUESTIONS.length + ' — ' + item.q + '</div>' +
+    item.o.map(o => '<button class="opt" onclick="answer(' + o[1] + ')">' + o[0] + '</button>').join('');
+}
+function answer(v){ score += v; qi++; renderQ(); }
+function finishQuiz(){
+  document.getElementById('quiz').innerHTML = '';
+  const r = document.getElementById('quiz-result');
+  let head, text;
+  if(score >= 13){ head = 'STRONG FIT'; text = 'Order, patience, responsibility — you are built for the licensed side. Fast door: Enrolled Agent (no degree, 6–12 months). Higher ceiling: CPA.'; }
+  else if(score >= 8){ head = 'POSSIBLE — EYES OPEN'; text = 'The core fits, but something will fight you: pace, details, or study time. Read the roadmap — especially the vibe — before spending a dollar.'; }
+  else { head = 'NOT YOUR ARENA'; text = 'Honest: this job will feel like a cage. Do not force it. The Big Test checks ALL professions, not just this one — that is the door for you.'; }
+  r.innerHTML = '<div class="box"><div class="kicker">Your result</div><div class="score">' + head + '</div><p>' + text + '</p>' +
+    '<a class="btn" href="#roadmap-accountant">Read the roadmap</a>' +
+    '<p class="small">This was the free mini-test for ONE profession. The Big Test (~1 hour) ranks professions across the whole database for your profile.</p></div>';
+}
+
+/* ====== Buy buttons ====== */
+function wireBuy(id, noteId, url, soonText){
+  const b = document.getElementById(id);
+  if(!b) return;
+  if(url){ b.href = url; b.target = '_blank'; }
+  else { b.addEventListener('click', e => { e.preventDefault(); document.getElementById(noteId).textContent = soonText; }); }
+}
+wireBuy('buy-test', 'test-note', TEST_FULL_URL, 'The Big Test opens in a few days — the free mini-test below works right now.');
+wireBuy('buy-prompt', 'buy-note', PROMPT_BUY_URL, 'Checkout opens in a few days — the roadmaps are free meanwhile.');
+show();
+</script>
+
+<script>
+const CG_PREVIEW = "MASTER PROMPT — YOUR PERSONAL CAREER MATCHMAKER\n\nPaste this whole prompt into Claude, ChatGPT or any AI chat — and keep using the SAME chat (or a project) from then on. Your matchmaker lives there.\n\nYour Notion template (free — your matchmaker will walk you through duplicating it): https://the-success-brain.notion.site/Career-Dashboard-Career-Glitch-Template-402c7f35440f81ed85d6ed727be6df5c\n\n================================================================\n\nROLE\n\nYou are this person's personal career matchmaker for ONE profession: the one they chose. Not a generic coach, not a course seller, not a motivational speaker.\n\nYou talk like a smart friend who is a few steps ahead in this exact profession — warm, plain, direct, a little playful, and honest even when the truth is annoying.\n\nYou never use corporate words like \"leverage\", \"synergy\", \"monetize\" or \"actionable\". Plain human language.\n\nTHE RULES ABOVE EVERYTHING\n\n1. Everything you advise must be based on what the person actually told you. If you can't trace it to their words — don't invent it. If something is a guess, say \"this is a guess\".\n2. One question at a time. Ask, wait for the answer, the";
+const CG_PROMPT_URL = "https://buy.stripe.com/fZu8wO9yB9eVbDi9ILeEo0m";
+window.__cgFull = null;
+function cgPromptPaid(){ try { return localStorage.getItem('cg_prompt_paid') === '1'; } catch(e) { return false; } }
+function cgEsc(t){ return t.replace(/</g,'&lt;'); }
+function cgPromptRender(){
+  const box = document.getElementById('promptbox');
+  if (!box) return;
+  if (CG_PROMPT_URL && !cgPromptPaid()) {
+    box.innerHTML = '<div class="panel"><div class="resname">The prompt — preview</div>'
+      + '<pre class="promptprev">' + cgEsc(CG_PREVIEW) + '…</pre>'
+      + '<a class="btn ink" href="' + CG_PROMPT_URL + '">Get the full Master Prompt — $27</a>'
+      + '<p class="note">Secure checkout by Stripe. You come straight back here and the full prompt unlocks — copy it in one click.</p></div>';
+  } else if (CG_PROMPT_URL || cgPromptPaid()) {
+    box.innerHTML = '<div class="panel"><div class="resname">Your Master Prompt</div>'
+      + '<pre class="promptprev tall" id="cgfullprompt">Loading your prompt…</pre>'
+      + '<button class="btn ink" onclick="cgCopyPrompt()">Copy the whole prompt</button>'
+      + '<p class="note" id="copiednote">Paste it into a fresh Claude or ChatGPT chat — and keep that chat. Your matchmaker lives there.</p>' + '<a class="btn" href="https://the-success-brain.notion.site/Career-Dashboard-Career-Glitch-Template-402c7f35440f81ed85d6ed727be6df5c" target="_blank" rel="noopener">Open your Notion template</a><p class="note">Free Notion template, ready to duplicate — your matchmaker fills it with you.</p>' + '<a class="btn ink" href="/Career_Mentor_Master_Prompt.pdf">Download the PDF backup</a><p class="note">The full prompt + the template link in one file \u2014 keep it, in case you close this page.</p>' + '</div>';
+    fetch('/master_prompt.txt').then(function(r){ return r.text(); }).then(function(t){
+      window.__cgFull = t;
+      var pre = document.getElementById('cgfullprompt');
+      if (pre) pre.textContent = t;
+    }).catch(function(){
+      var pre = document.getElementById('cgfullprompt');
+      if (pre) pre.textContent = 'Could not load the prompt text — the PDF backup below is the same prompt.';
+    });
+  } else {
+    box.innerHTML = '<div class="panel"><div class="resname">The prompt — preview</div>'
+      + '<pre class="promptprev">' + cgEsc(CG_PREVIEW) + '…</pre>'
+      + '<p class="note">Checkout opens in a few days.</p></div>';
+  }
+}
+function cgCopyPrompt(){
+  const done = function(){ const n = document.getElementById('copiednote'); if (n) n.textContent = 'Copied ✓ Now paste it into Claude or ChatGPT.'; };
+  const txt = window.__cgFull || CG_PREVIEW;
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done).catch(done);
+  else { const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e) {} ta.remove(); done(); }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  try { if (new URLSearchParams(location.search).get('prompt') === '1') localStorage.setItem('cg_prompt_paid', '1'); } catch(e) {}
+  cgPromptRender();
+});
+</script>
+
+<script>
+const CG_STUDY = {"1":"1\u20136 mo","2":"6\u201312 mo","3":"1\u20132 yrs","4":"2\u20134 yrs","5":"4+ yrs"};
+const cgF = {cat:'all', online:false, pay:0, study:0, q:''};
+function cgPayTxt(k){ if (k < 55) return '$35–55K'; if (k < 100) return '$55–95K'; if (k < 140) return '$95–140K'; return '$140K+'; }
+function cgBuildChips(){
+  const cats = [['all','All']].concat(Object.keys(CG_CATS).map(function(k){ return [k, CG_CATS[k]]; }));
+  document.getElementById('f-cat').innerHTML = cats.map(function(c){
+    return '<button class="fchip' + (cgF.cat===c[0] ? ' on' : '') + '" onclick="cgFSet(\'cat\',\'' + c[0] + '\')">' + c[1] + '</button>';
+  }).join('');
+  document.getElementById('f-study').innerHTML = Object.keys(CG_STUDY).map(function(k){
+    return '<button class="fchip' + (cgF.study===+k ? ' on' : '') + '" onclick="cgFSet(\'study\',' + k + ')">' + CG_STUDY[k] + '</button>';
+  }).join('');
+  document.querySelectorAll('#v-roadmaps .fchip[data-k]').forEach(function(b){
+    const k = b.getAttribute('data-k');
+    const on = (k === 'online') ? cgF.online : (cgF.pay === +b.getAttribute('data-v'));
+    b.classList.toggle('on', on);
+  });
+}
+function cgFSet(k, v){ if (k !== 'cat' && cgF[k] === v) v = (k === 'study' ? 0 : 0); cgF[k] = v; cgLib(); }
+function cgFTog(k){ cgF[k] = !cgF[k]; cgLib(); }
+function cgFQ(v){ cgF.q = v.trim().toLowerCase(); cgLib(); }
+function cgLib(){
+  cgBuildChips();
+  const list = CG_DATA.n.filter(function(n){
+    if (cgF.cat !== 'all' && n[1] !== cgF.cat) return false;
+    if (cgF.online && n[4] < 1) return false;
+    if (cgF.pay && n[14] < cgF.pay) return false;
+    if (cgF.study && n[13] !== cgF.study) return false;
+    if (cgF.q && n[0].toLowerCase().indexOf(cgF.q) < 0) return false;
+    return true;
+  });
+  document.getElementById('libcount').textContent = list.length + ' of ' + CG_DATA.n.length + ' paths';
+  document.getElementById('libgrid').innerHTML = list.map(function(n){
+    const CG_LIVE = {'Accountant':'roadmap-accountant','Electrician':'roadmap-electrician','Graphic Designer':'roadmap-graphic-designer','Software Developer':'roadmap-junior-developer','AI Automation Specialist':'roadmap-ai-agent-manager','Nuclear Reactor Operator':'roadmap-nuclear-reactor-operator','Commercial Insurance Producer':'roadmap-commercial-insurance-producer','Dental Hygienist':'roadmap-dental-hygienist'}; const slug = CG_LIVE[n[0]] || (window.CG_RM && CG_RM.byName[n[0]] ? 'roadmap-' + CG_RM.byName[n[0]] : null); const live = !!slug, dental = n[0] === 'Dental Hygienist';
+    const tag = live ? '<span class="tag">● Live</span>' : (dental ? '<span class="tag soon">Video coming</span>' : '<span class="tag soon">Roadmap soon</span>');
+    const inner = '<div class="art cgstrip"><div class="cgframe">' + n[0] + '</div></div>' + '<div class="cap">' + tag + '<p>' + CG_CATS[n[1]] + ' · ' + cgPayTxt(n[14]) + ' · training ' + CG_STUDY[n[13]] + (n[4] === 2 ? ' · 💻 online' : (n[4] === 1 ? ' · partly online' : '')) + '</p></div>';
+    return live ? '<a class="scard" href="#' + slug + '">' + inner + '</a>' : '<div class="scard">' + inner + '</div>';
+  }).join('');
+}
+document.addEventListener('DOMContentLoaded', function(){ if (document.getElementById('libgrid')) cgLib(); });
+</script>
+
+<script>
+/* Career data loader — feeds the roadmaps library + Swipe Verdict (CG_DATA.n).
+   The 50-question test engine was retired 2026-10-27; the Mentor lives at /mentor. */
+let CG_DATA = {q: [], n: []};
+window.__cgDataReady = fetch("/professions.json").then(function(r){ return r.json(); }).then(function(d){ CG_DATA = d; if (window.cgLib) cgLib(); }).catch(function(){});
+</script>
+
+<script>
+window.CG_RM = null; window.__cgPendingRM = null;
+function cgLoadRM(cb){ if (window.CG_RM) return cb(window.CG_RM); Promise.all([fetch("/roadmaps-data-1.json").then(function(r){ return r.json(); }), fetch("/roadmaps-data-2.json").then(function(r){ return r.json(); })]).then(function(ps){ var d = {byName: {}}; ps.forEach(function(p){ Object.keys(p).forEach(function(k){ if (k === "byName") Object.assign(d.byName, p.byName); else d[k] = p[k]; }); }); window.CG_RM = d; cb(d); }).catch(function(){ cb({byName: {}}); }); }
+function cgEsc(t){ return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+var CG_MENTOR_HTML = "<div class=\"panel\" style=\"margin-top:22px\"><div class=\"kick2\">Career Glitch \u00b7 the $27 system</div><h3 style=\"margin:4px 0 6px\">This roadmap is free. Your personal plan isn\u2019t.</h3><p class=\"oneline\" style=\"margin:0 0 12px\">The <b>Career Matchmaker Master Prompt</b> interviews you first \u2014 your hours, your budget, your real deadline \u2014 then builds the plan around YOUR life and tracks it in Notion.</p><a class=\"btn\" href=\"#prompt\">See the Master Prompt \u2014 $27</a></div>";
+function cgGateHTML(prof, pdf){ return '<div class="gatebox" data-prof="' + prof + '" data-pdf="' + pdf + '"><div class="resname">Get the free roadmap (PDF)</div><p class="note" style="text-align:left">Name + email \u2014 and the download opens right here. That\u2019s the whole deal.</p><form class="gateform"><input name="nm" placeholder="Your name" autocomplete="name" required><input name="em" type="email" placeholder="Your email" autocomplete="email" required><button class="btn" type="submit">Unlock the download</button></form><div class="dlwrap" hidden><a class="btn" href="' + pdf + '" download>Download the roadmap (PDF)</a><p class="note">Saved \u2713 Next steps: <a href="/mentor">the Matchmaker</a> \u00b7 <a href="#prompt">your personal career matchmaker</a>.</p></div></div>'; }
+function cgRenderRM(h){ var slug = h.replace("roadmap-", ""); cgLoadRM(function(d){ var e = d[slug]; var el = document.getElementById("cgx"); if (!el) return; if (!e){ el.innerHTML = "<div class=\"kicker\">Roadmap</div><h1>Not in the library yet</h1><p class=\"oneline\">This roadmap is still being written. <a href=\"#roadmaps\">Browse the library</a></p>"; return; } el.innerHTML = "<div class=\"kicker\">Roadmap \u00b7 " + cgEsc(e.name) + "</div><h1>" + cgEsc(e.name) + " in the AI era</h1>" + "<div class=\"pstrip\"><div class=\"cgframe\">" + cgEsc(e.name) + "</div></div>" + "<div class=\"sticker\">" + cgEsc(e.sticker) + "</div>" + cgGateHTML(slug, e.pdf) + "<h2>The money</h2><ul class=\"tight\">" + e.money.map(function(m){ return "<li>" + m + "</li>"; }).join("") + "</ul>" + "<h2>Inside the free roadmap</h2><ul class=\"tight\">" + e.inside.map(function(m){ return "<li>" + m + "</li>"; }).join("") + "</ul>" + "<a class=\"btn ink\" href=\"/mentor\">Meet the Matchmaker \u2014 free to start</a>" + CG_MENTOR_HTML; var box = el.querySelector(".gatebox"); if (box && window.cgBindGate) cgBindGate(box); }); return true; }
+document.addEventListener("DOMContentLoaded", function(){ cgLoadRM(function(){ if (window.cgLib) cgLib(); var h = (location.hash || "").slice(1); if (h.indexOf("roadmap-") === 0 && !document.getElementById("v-" + h)) cgRenderRM(h); }); });
+</script>
+
+<script>
+const CG_SUPA = "https://stwzrcahhieqbabvljue.supabase.co", CG_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0d3pyY2FoaGllcWJhYnZsanVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE1Njk4NzMsImV4cCI6MjEwNzE0NTg3M30.T8RWclXoxK8z5dqUPtSYYjAO5a6BsdLsDwaB4t7NIJM";
+function cgGateShow(box){ var f = box.querySelector(".gateform"); if (f) f.hidden = true; var d = box.querySelector(".dlwrap"); if (d) d.hidden = false; }
+window.cgBindGate = function(box){
+  var prof = box.getAttribute("data-prof");
+  try { if (localStorage.getItem("cg_lead_" + prof) === "1") cgGateShow(box); } catch(e) {}
+  var form = box.querySelector(".gateform");
+  if (!form) return;
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var nm = form.nm.value.trim(), em = form.em.value.trim();
+    if (!nm || !em) return;
+    var btn = form.querySelector("button"); btn.disabled = true; btn.textContent = "One sec…";
+    var H = {"apikey": CG_ANON, "Authorization": "Bearer " + CG_ANON, "Content-Type": "application/json"};
+    fetch(CG_SUPA + "/rest/v1/creator_state?id=eq.999&select=data", {headers: H})
+      .then(function(r){ return r.json(); })
+      .then(function(rows){
+        var data = (rows && rows[0] && rows[0].data) || {"app": "careerglitch-leads", "leads": []};
+        if (!Array.isArray(data.leads)) data.leads = [];
+        data.leads.push({"name": nm, "email": em, "prof": prof, "at": new Date().toISOString()});
+        return fetch(CG_SUPA + "/rest/v1/creator_state?id=eq.999", {method: "PATCH", headers: H, body: JSON.stringify({"data": data})});
+      })
+      .catch(function(){})
+      .then(function(){ try { localStorage.setItem("cg_lead_" + prof, "1"); } catch(e) {} cgGateShow(box); });
+  });
+};
+document.querySelectorAll(".gatebox").forEach(window.cgBindGate);
+</script>
+</body>
+</html>

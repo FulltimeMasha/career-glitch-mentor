@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Glitch Mentor — for students choosing a career</title>
+<meta name="description" content="Your personal career map: an honest AI-risk verdict, 3 paths that fit you, and a 90-day plan. $49, delivered in 48 hours, full refund if it’s not useful.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerglitch.com/start">
+<meta property="og:title" content="Don’t spend 4 years and $112K on a job AI eats by 2030.">
+<meta property="og:description" content="Your personal career map: an honest AI-risk verdict, 3 paths that fit you, and a 90-day plan. $49, delivered in 48 hours, full refund if it’s not useful.">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:wght@400;600&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{--bg:#2a1030;--pink:#F92A82;--paper:#FFFCF6;--ink:#1C1A1F;--blush:#FFD8EA;--mut:rgba(255,252,246,.75)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--paper);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.55;
+background-image:linear-gradient(rgba(249,42,130,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(249,42,130,.13) 1px,transparent 1px);
+background-size:44px 44px}
+.wrap{max-width:720px;margin:0 auto;padding:20px 18px 56px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:6px 0 22px}
+.logo{font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:.06em;color:var(--paper);text-decoration:none;font-size:17px}
+.logo span{color:var(--pink)}
+nav a.home{color:var(--mut);text-decoration:none;font-size:14px}
+h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:33px;line-height:1.14;margin:6px 0 14px}
+h2{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;margin:30px 0 12px}
+.sub{font-size:18px;color:var(--paper);margin-bottom:20px}
+.bullets{display:grid;gap:14px;margin:20px 0 8px}
+.bcard{background:var(--blush);color:var(--ink);border:3px solid var(--ink);border-radius:14px;
+box-shadow:8px 8px 0 var(--pink);padding:15px 16px;font-size:16.5px;font-weight:600}
+.founding{background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:14px;
+box-shadow:8px 8px 0 var(--ink);padding:18px;margin:26px 0 6px}
+.founding p{font-weight:600;font-size:16.5px}
+.counter{display:inline-block;background:var(--ink);color:#fff;font-family:'DM Mono',monospace;
+font-size:16px;padding:9px 14px;border-radius:999px;margin:14px 0 10px}
+.counter.hot{background:#D90429;animation:pulse 1s infinite}
+.bar{background:rgba(28,26,31,.45);border-radius:999px;height:14px;overflow:hidden}
+.barfill{background:var(--paper);height:100%;width:0%;transition:width .6s}
+.barfill.hot{background:#D90429}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.skipbtn{display:none;margin-top:14px;background:#fff;color:var(--ink);font-family:'Outfit',sans-serif;
+font-weight:900;padding:12px 18px;border-radius:10px;border:3px solid var(--ink);text-decoration:none;font-size:16px}
+form,.success{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;
+box-shadow:8px 8px 0 var(--pink);padding:20px;margin-top:16px}
+label{display:block;font-weight:600;font-size:15px;margin:14px 0 6px}
+label:first-child{margin-top:0}
+input[type=text],input[type=email],input[type=tel],select{width:100%;padding:12px;border-radius:10px;
+border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+input[type=range]{width:100%;accent-color:var(--pink)}
+.confval{font-family:'DM Mono',monospace;color:var(--pink);font-weight:700}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.check input{width:20px;height:20px;accent-color:var(--pink);margin-top:2px}
+button.submit{width:100%;margin-top:20px;background:var(--pink);color:#fff;border:3px solid var(--ink);
+border-radius:10px;padding:14px;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;cursor:pointer}
+button.submit:disabled{opacity:.55;cursor:wait}
+.btn2{background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:11px 16px;
+font-family:'Outfit',sans-serif;font-weight:900;font-size:15px;cursor:pointer;margin:8px 8px 0 0}
+.status{margin-top:14px;font-size:15px;min-height:22px;font-weight:600}
+.status.ok{color:#0a7a3d}.status.err{color:#c21807}
+.sharebox{background:var(--blush);border:3px solid var(--ink);border-radius:12px;padding:14px 16px;margin-top:14px}
+.sharebox a{color:var(--ink);font-family:'DM Mono',monospace;font-size:14px;word-break:break-all}
+.faq{display:grid;gap:14px}
+.fitem{background:rgba(255,252,246,.06);border:2px solid rgba(249,42,130,.4);border-radius:12px;padding:14px 16px}
+.fitem b{font-family:'Outfit',sans-serif;display:block;margin-bottom:4px;font-size:16.5px}
+.fitem p{color:var(--mut);font-size:15.5px}
+footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(249,42,130,.4);color:var(--mut);font-size:13px}
+.mut{color:#5c5566;font-weight:400}
+.offer{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--pink);padding:18px;margin:24px 0 8px}
+.offer p{font-weight:600;font-size:17px}
+.offerbtn{display:block;text-align:center;background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:10px;padding:14px;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;text-decoration:none;margin-top:12px}
+.offerbtn.parent{background:#fff;color:var(--ink)}
+.offer .limit{font-size:13.5px;font-weight:400;color:#5c5566;margin-top:10px}
+.notready{margin-top:28px;color:var(--mut);font-size:16px}
+textarea{width:100%;padding:12px;border-radius:10px;border:2px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+.doorline{font-size:16px;margin-bottom:6px}
+.freecheck{background:var(--blush);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--pink);padding:18px;margin:24px 0 8px}
+.fc-h{font-family:'Outfit',sans-serif;font-weight:900;font-size:21px;margin:0 0 10px}
+.fc-card{margin-top:14px;background:#fff;border:3px solid var(--ink);border-radius:12px;padding:14px 16px}
+.fc-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:19px}
+.fc-badge{display:inline-block;padding:5px 13px;border-radius:999px;border:3px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:900;font-size:14px;margin-left:8px;vertical-align:middle}
+.fc-badge.yes{background:#2fbf71;color:#fff}
+.fc-badge.no{background:#D90429;color:#fff}
+.fc-line{margin-top:6px;font-weight:600}
+.fc-take{margin-top:8px;color:#444}
+.fc-cta{display:block;margin-top:14px;font-weight:700;color:var(--ink);font-size:16.5px}
+.fc-hint{margin-top:10px;font-weight:600;color:#c21807}
+@media(max-width:480px){h1{font-size:27px}.sub{font-size:16.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+<a class="logo" href="/">CAREER<span>GLITCH</span></a>
+<a class="home" href="/">careerglitch.com</a>
+</nav>
+<h1>Don’t spend 4 years and $112K on a job AI eats by 2030.</h1>
+<p class="sub">Your personal career map, built for your exact situation: an honest AI-risk verdict on the career you’re eyeing, 3 paths that fit you, and a 90-day plan with first steps this week. $49, delivered in 48 hours — full refund if it’s not useful.</p>
+<section class="freecheck" id="freecheck">
+<h2 class="fc-h">Free instant check</h2>
+<input type="text" id="fcInput" list="profList" placeholder="Type your profession" autocomplete="off">
+<datalist id="profList"></datalist>
+<p class="fc-hint" id="fcHint" style="display:none">Not in our free database yet — your personal $49 map covers any profession. <a href="#offer" style="color:#c21807;font-weight:700;text-decoration:underline">Get my map — $49</a></p>
+<div id="fcResult" style="display:none">
+<div class="fc-card">
+<div><span class="fc-name" id="fcName"></span><span class="fc-badge" id="fcBadge"></span></div>
+<div class="fc-line" id="fcPay"></div>
+<div class="fc-line" id="fcRisk"></div>
+<p class="fc-take" id="fcTake"></p>
+</div>
+<a class="fc-cta" href="#offer">That’s the free check. Want it personal — your situation, your state, your 90-day plan?</a>
+</div>
+</section>
+<section class="offer" id="offer">
+<p>Your personal career map — verdict, 3 paths, 90-day plan. $49. Delivered in 48h by Masha. Full refund if it’s not useful.</p>
+<a class="offerbtn" id="mapBtn" href="#signup">Get my map — $49</a>
+<a class="offerbtn parent" id="mapParentBtn" href="#signup">I’m a parent — get the map for my kid</a>
+<p class="limit">Only 15 maps this week</p>
+</section>
+<div class="bullets">
+<div class="bcard">🎯 3 careers matched to how you actually work</div>
+<div class="bcard">🤖 AI-risk score + real pay for each (real BLS pay data, not vibes)</div>
+<div class="bcard">📅 Your first 90 days, step by step — what to do this week, this month, and next</div>
+</div>
+<section class="founding">
+<p id="foundingCopy">Founding 50: the first 50 people get the AI mentor free for 3 months. After that it’s $29/month.</p>
+<div class="counter" id="cgCounter">🔥 Loading…</div>
+<div class="bar"><div class="barfill" id="cgBarFill"></div></div>
+<a class="skipbtn" id="skipBtn" href="#signup">Skip the line — $29</a>
+</section>
+<p class="notready">Not ready? Join the Founding 50 list instead.</p>
+<h2 id="signup">Get your spot</h2>
+<form id="cgForm" novalidate>
+<label for="fName">Your name</label>
+<input type="text" id="fName" autocomplete="name" required>
+<label for="fEmail">Email</label>
+<input type="email" id="fEmail" autocomplete="email" required>
+<label for="fPhone">Phone <span class="mut">(optional — so your mentor can text you)</span></label>
+<input type="tel" id="fPhone" autocomplete="tel">
+<label for="fAnswer">What are you thinking of studying?</label>
+<input type="text" id="fAnswer" required>
+
+<label for="fConf">How sure are you about your choice right now? <span class="confval" id="confVal">5</span> / 10</label>
+<input type="range" id="fConf" min="1" max="10" step="1" value="5">
+<label class="check"><input type="checkbox" id="fAge"> <span>I’m 14 or older</span></label>
+<button type="submit" class="submit" id="cgSubmit">Join the waitlist</button>
+<div class="status" id="cgStatus"></div>
+</form>
+<div class="success" id="cgSuccess" style="display:none">
+<h2 id="succTitle"></h2>
+<p id="succNote"></p>
+<div class="sharebox">
+<p><b>Move up the line:</b> every friend who signs up with your link moves you up 3 spots.</p>
+<p style="margin-top:8px"><a id="shareLink" href="#"></a></p>
+<button type="button" class="btn2" id="copyLinkBtn">Copy my link</button>
+<button type="button" class="btn2" id="momBtn">📲 Send to Mom/Dad</button>
+</div>
+</div>
+<h2>Questions</h2>
+<div class="faq">
+<div class="fitem"><b>Is it really free?</b><p>The instant check is free. The personal map is $49. The mentor is free for the Founding 50.</p></div>
+<div class="fitem"><b>What does the mentor do?</b><p>It builds your plan, texts you, and adjusts the plan if you fall behind.</p></div>
+<div class="fitem"><b>Can my parents pay later?</b><p>Yes — one tap, you send them a link.</p></div>
+</div>
+<footer>Career Glitch Mentor — built for the Meta Global AI Developer Hackathon.</footer>
+</div>
+<script>
+// STRIPE_LINK_SKIP_LINE: the $29 "skip the line" Stripe Payment Link is NOT SET YET.
+// Masha creates it in her Stripe dashboard; paste the URL here when it exists.
+// While it is empty, the skip-line button (shown when the Founding 50 is full)
+// falls back to the signup form anchor (#signup).
+const STRIPE_LINK_SKIP_LINE = "";
+// STRIPE_MAP_START / STRIPE_MAP_PIVOT / STRIPE_MAP_BRIDGE: the $49 "Get my map" Stripe
+// Payment Links, one per door — NOT SET YET. Masha creates them in her Stripe; paste
+// each URL here. While a constant is empty, that door's button falls back to the
+// waitlist form anchor (#signup).
+// STRIPE_MAP_START_PARENT: separate $49 link for the /start parent button only
+// (measures parent-vs-student payments).
+const STRIPE_MAP_START = "https://buy.stripe.com/aFa6oGeSV8aR5eU6wzeEo0p";
+const STRIPE_MAP_PIVOT = "";
+const STRIPE_MAP_BRIDGE = "";
+const STRIPE_MAP_START_PARENT = "https://buy.stripe.com/9B6cN49yB2Qx22Ig79eEo0o";
+const CG_SUPA = "https://stwzrcahhieqbabvljue.supabase.co";
+const CG_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0d3pyY2FoaGllcWJhYnZsanVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE1Njk4NzMsImV4cCI6MjEwNzE0NTg3M30.T8RWclXoxK8z5dqUPtSYYjAO5a6BsdLsDwaB4t7NIJM";
+const CG_ROW = 1000;
+const FREE_TOTAL = 50;
+const SEGMENT = "start";
+const DEFAULT_SRC = "MAJOR";
+
+function cgHeaders(extra) {
+  return Object.assign({
+    "apikey": CG_ANON,
+    "Authorization": "Bearer " + CG_ANON,
+    "Content-Type": "application/json"
+  }, extra || {});
+}
+async function fetchState() {
+  const r = await fetch(CG_SUPA + "/rest/v1/creator_state?id=eq." + CG_ROW + "&select=data", { headers: cgHeaders() });
+  if (!r.ok) throw new Error("read " + r.status);
+  const rows = await r.json();
+  if (!rows.length || !rows[0].data) throw new Error("no waitlist row");
+  const d = rows[0].data;
+  if (!Array.isArray(d.signups)) d.signups = [];
+  return d;
+}
+function foundingCount(s) { return s.filter(function (x) { return x.founding; }).length; }
+function effPos(me, all) {
+  const refs = all.filter(function (x) { return String(x.ref || "") === String(me.id); }).length;
+  return Math.max(1, (me.position || 1) - 3 * refs);
+}
+function renderCounter(signups) {
+  const fc = foundingCount(signups);
+  const left = FREE_TOTAL - fc;
+  const c = document.getElementById("cgCounter");
+  c.textContent = "\uD83D\uDD25 " + left + " of 50 spots left";
+  document.getElementById("cgBarFill").style.width = Math.min(100, fc / FREE_TOTAL * 100) + "%";
+  if (left <= 10) {
+    c.classList.add("hot");
+    document.getElementById("cgBarFill").classList.add("hot");
+  }
+  if (left <= 0) {
+    document.getElementById("foundingCopy").textContent = "Founding 50 is full. Join the waitlist \u2014 or skip the line for $29 (full refund if it\u2019s not useful).";
+    const b = document.getElementById("skipBtn");
+    b.style.display = "inline-block";
+    if (STRIPE_LINK_SKIP_LINE) { b.href = STRIPE_LINK_SKIP_LINE; b.target = "_blank"; b.rel = "noopener"; }
+    else { b.href = "#signup"; }
+  }
+  return left;
+}
+let PROFDB = null;
+function parseProf(rec) {
+  const sticker = rec.sticker || "";
+  let verdict = null;
+  if (sticker.indexOf("Our take: YES") >= 0) verdict = "YES";
+  else if (sticker.indexOf("Our take: NO") >= 0) verdict = "NO";
+  let take = sticker.replace(/^\u2605\s*Our take:\s*(YES|NO)\s*\u2014\s*/, "").trim();
+  if (take === sticker) take = sticker.replace(/^\u2605\s*/, "");
+  const moneyStr = Array.isArray(rec.money) ? rec.money.join(" ") : String(rec.money || "");
+  const plain = moneyStr.replace(/<[^>]*>/g, "");
+  const payM = plain.match(/~\$[\d,]+K?/);
+  const riskM = plain.match(/AI risk:\s*(\w+)/i);
+  return { name: rec.name, verdict: verdict, take: take, pay: payM ? payM[0] : null, risk: riskM ? riskM[1] : null };
+}
+
+const CG_SYNONYMS = {
+  "nursing": "Registered Nurse",
+  "nurse": "Registered Nurse",
+  "computer science": "Software Developer",
+  "cs": "Software Developer",
+  "coding": "Software Developer",
+  "bookkeeper": "Bookkeeper + Advisory",
+  "bookkeeping": "Bookkeeper + Advisory",
+  "customer service": "Customer Service Representative",
+  "doctor": "Physician",
+  "physician": "Physician",
+  "surgeon": "Physician"
+};
+function findProf(raw) {
+  const q = String(raw || "").trim().toLowerCase().replace(/\s+/g, " ");
+  if (!q || !PROFDB) return null;
+  let p = PROFDB.find(function (x) { return x.name.toLowerCase() === q; });
+  if (p) return p;
+  if (CG_SYNONYMS[q]) {
+    p = PROFDB.find(function (x) { return x.name === CG_SYNONYMS[q]; });
+    if (p) return p;
+  }
+  const subs = PROFDB.filter(function (x) {
+    const n = x.name.toLowerCase();
+    return n.indexOf(q) >= 0 || q.indexOf(n) >= 0;
+  });
+  if (subs.length) return subs.sort(function (a, b) { return a.name.length - b.name.length; })[0];
+  const qw = q.split(/[^a-z0-9]+/).filter(Boolean);
+  const scored = PROFDB.map(function (x) {
+    const nw = x.name.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+    let sc = 0;
+    qw.forEach(function (w) { if (nw.indexOf(w) >= 0) sc++; });
+    return { p: x, sc: sc };
+  }).filter(function (s) { return s.sc > 0; })
+    .sort(function (a, b) { return (b.sc - a.sc) || (a.p.name.length - b.p.name.length); });
+  return scored.length ? scored[0].p : null;
+}
+async function initFreeCheck() {
+  const inp = document.getElementById("fcInput");
+  if (!inp) return;
+  try {
+    const r1 = await fetch("/roadmaps-data-1.json");
+    const r2 = await fetch("/roadmaps-data-2.json");
+    if (!r1.ok || !r2.ok) return;
+    const d1 = await r1.json();
+    const d2 = await r2.json();
+    let d3 = {};
+    try { const r3 = await fetch("/roadmaps-data-3.json"); if (r3.ok) d3 = await r3.json(); } catch (e) {}
+    const all = Object.assign({}, d1, d2, d3);
+    PROFDB = Object.keys(all).filter(function (k) { return k !== "byName"; })
+      .map(function (k) { return parseProf(all[k]); })
+      .filter(function (p) { return p.name; });
+    const dl = document.getElementById("profList");
+    dl.innerHTML = PROFDB.map(function (p) {
+      return '<option value="' + p.name.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">';
+    }).join("");
+    function update() {
+      const q = inp.value.trim().toLowerCase();
+      const p = findProf(inp.value);
+      const res = document.getElementById("fcResult");
+      const hint = document.getElementById("fcHint");
+      if (!p) {
+        res.style.display = "none";
+        hint.style.display = q.length > 2 ? "block" : "none";
+        return;
+      }
+      hint.style.display = "none";
+      document.getElementById("fcName").textContent = p.name;
+      const b = document.getElementById("fcBadge");
+      if (p.verdict) {
+        b.textContent = p.verdict;
+        b.className = "fc-badge " + (p.verdict === "YES" ? "yes" : "no");
+        b.style.display = "inline-block";
+      } else { b.style.display = "none"; }
+      document.getElementById("fcPay").textContent = p.pay ? ("Median pay: " + p.pay) : "";
+      document.getElementById("fcRisk").textContent = p.risk ? ("AI risk: " + p.risk) : "";
+      document.getElementById("fcTake").textContent = p.take || "";
+      res.style.display = "block";
+    }
+    inp.addEventListener("input", update);
+    inp.addEventListener("change", update);
+  } catch (e) {}
+}
+const CG_VIEWS_ROW = 1003;
+async function logView() {
+  try {
+    const r = await fetch(CG_SUPA + "/rest/v1/creator_state?id=eq." + CG_VIEWS_ROW + "&select=data", { headers: cgHeaders() });
+    if (!r.ok) return;
+    const rows = await r.json();
+    if (!rows.length || !rows[0].data) return;
+    const d = rows[0].data;
+    if (!Array.isArray(d.views)) d.views = [];
+    const nextId = d.views.reduce(function (m, x) { return Math.max(m, x.id || 0); }, 0) + 1;
+    d.views.push({ id: nextId, created_at: new Date().toISOString(), door: SEGMENT, src: getSource() });
+    await fetch(CG_SUPA + "/rest/v1/creator_state?id=eq." + CG_VIEWS_ROW, {
+      method: "PATCH", headers: cgHeaders(), body: JSON.stringify({ data: d })
+    });
+  } catch (e) {}
+}
+function urlParam(n) { return new URLSearchParams(location.search).get(n) || ""; }
+function getSource() {
+  const s = (urlParam("src") || "").toUpperCase();
+  return ["MAJOR", "NEXT", "BRIDGE"].indexOf(s) >= 0 ? s : DEFAULT_SRC;
+}
+function setStatus(m, cls) {
+  const e = document.getElementById("cgStatus");
+  e.textContent = m;
+  e.className = "status " + (cls || "");
+}
+function showSuccess(me, all, already) {
+  document.getElementById("cgForm").style.display = "none";
+  const pos = effPos(me, all);
+  document.getElementById("succTitle").textContent = me.founding
+    ? "\uD83C\uDF89 You\u2019re #" + pos + " of the Founding 50!"
+    : "You\u2019re #" + pos + " on the waitlist";
+  const link = "https://careerglitch.com/" + me.segment + "?ref=" + me.id;
+  const sl = document.getElementById("shareLink");
+  sl.textContent = link;
+  sl.href = link;
+  window.__cgShareLink = link;
+  if (already) document.getElementById("succNote").textContent = "You\u2019re already on the list \u2014 no need to sign up twice.";
+  const s = document.getElementById("cgSuccess");
+  s.style.display = "block";
+  s.scrollIntoView({ behavior: "smooth" });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const MAP_LINKS = { "start": STRIPE_MAP_START, "pivot": STRIPE_MAP_PIVOT, "bridge": STRIPE_MAP_BRIDGE };
+  const passRef = urlParam("utm_content") || urlParam("ref");
+  const refSuffix = passRef ? "?client_reference_id=" + encodeURIComponent(passRef) : "";
+  const mb = document.getElementById("mapBtn");
+  if (mb && MAP_LINKS[SEGMENT]) { mb.href = MAP_LINKS[SEGMENT] + refSuffix; mb.target = "_blank"; mb.rel = "noopener"; }
+  const pb = document.getElementById("mapParentBtn");
+  if (pb && STRIPE_MAP_START_PARENT) { pb.href = STRIPE_MAP_START_PARENT + refSuffix; pb.target = "_blank"; pb.rel = "noopener"; }
+  logView();
+  initFreeCheck();
+  fetchState().then(function (d) { renderCounter(d.signups); })
+    .catch(function () { document.getElementById("cgCounter").textContent = "\uD83D\uDD25 50 spots \u2014 join below"; });
+  const conf = document.getElementById("fConf"), cv = document.getElementById("confVal");
+  conf.addEventListener("input", function () { cv.textContent = conf.value; });
+  const copyBtn = document.getElementById("copyLinkBtn");
+  if (copyBtn) copyBtn.addEventListener("click", function () {
+    const link = window.__cgShareLink || "";
+    if (navigator.clipboard) navigator.clipboard.writeText(link).then(function () { copyBtn.textContent = "Copied!"; });
+  });
+  const momBtn = document.getElementById("momBtn");
+  if (momBtn) momBtn.addEventListener("click", function () {
+    const msgs = [
+      "Mom. Before you pay $112K for my college\u2026 look at this \uD83D\uDC40",
+      "Dad, I did something responsible. Don\u2019t panic. \uD83D\uDC47",
+      "I need $29 to not waste $112K. That\u2019s a 3,800x ROI. You\u2019re welcome.",
+      "It\u2019s either this or I become an influencer. Your call. \uD83D\uDC85"
+    ];
+    const text = msgs[Math.floor(Math.random() * msgs.length)] + "\n" + "https://buy.stripe.com/9B6cN49yB2Qx22Ig79eEo0o";
+    if (navigator.share) { navigator.share({ text: text }).catch(function () {}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(text).then(function () { momBtn.textContent = "Copied \u2014 now paste it to Mom/Dad"; }); }
+  });
+  document.getElementById("cgForm").addEventListener("submit", async function (ev) {
+    ev.preventDefault();
+    const btn = document.getElementById("cgSubmit");
+    const name = document.getElementById("fName").value.trim();
+    const email = document.getElementById("fEmail").value.trim();
+    const phone = document.getElementById("fPhone").value.trim();
+    const answer = document.getElementById("fAnswer").value.trim();
+    const a2el = document.getElementById("fAnswer2");
+    const answer2 = a2el ? a2el.value : "";
+    const resEl = document.getElementById("fResidency");
+    const residency = resEl ? resEl.value : "";
+    const confidence = parseInt(conf.value, 10);
+    const age = document.getElementById("fAge").checked;
+    if (!name || !email || email.indexOf("@") < 0 || !answer || (a2el && !answer2) || (resEl && !residency) || !(confidence >= 1 && confidence <= 10)) {
+      setStatus("Please fill in every field, and pick a number from 1 to 10.", "err");
+      return;
+    }
+    if (!age) { setStatus("Please confirm you\u2019re 14 or older.", "err"); return; }
+    btn.disabled = true;
+    setStatus("Saving\u2026", "");
+    try {
+      const data = await fetchState();
+      const signups = data.signups;
+      const dupe = signups.find(function (x) { return (x.email || "").toLowerCase() === email.toLowerCase(); });
+      if (dupe) { renderCounter(signups); showSuccess(dupe, signups, true); btn.disabled = false; return; }
+      const nextId = signups.reduce(function (m, x) { return Math.max(m, x.id || 0); }, 0) + 1;
+      const me = {
+        id: nextId,
+        created_at: new Date().toISOString(),
+        segment: SEGMENT,
+        name: name, email: email, phone: phone,
+        answer: answer, answer2: answer2,
+        residency: residency,
+        confidence: confidence,
+        founding: foundingCount(signups) < FREE_TOTAL,
+        position: signups.length + 1,
+        utm_source: urlParam("utm_source"),
+        utm_campaign: urlParam("utm_campaign"),
+        ref: urlParam("ref"),
+        src: getSource()
+      };
+      signups.push(me);
+      data.signups = signups;
+      const r = await fetch(CG_SUPA + "/rest/v1/creator_state?id=eq." + CG_ROW, {
+        method: "PATCH",
+        headers: cgHeaders({ "Prefer": "return=representation" }),
+        body: JSON.stringify({ data: data })
+      });
+      if (!r.ok) throw new Error("write " + r.status);
+      renderCounter(signups);
+      showSuccess(me, signups, false);
+    } catch (e) {
+      setStatus("Something went wrong and nothing was saved. Please try again in a minute.", "err");
+    }
+    btn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>

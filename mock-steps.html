@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it works — 3 compact variants</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Instrument+Sans:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#FAF5EC; font-family:'Instrument Sans',sans-serif; color:#1C1A1F; padding:26px 16px 70px; }
+  .wrap { max-width:430px; margin:0 auto; }
+  .lbl { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.16em; color:#b3a48e; margin:46px 4px 14px; }
+  .lbl:first-child { margin-top:6px; }
+  h2 { font-family:'Outfit',sans-serif; font-weight:900; font-size:22px; margin-bottom:12px; }
+  .tile { background:#fff; border-radius:26px; padding:22px; box-shadow:0 12px 30px rgba(42,36,48,.06); }
+
+  /* A — three columns in one tile */
+  .cols { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; padding:20px 8px; }
+  .col { text-align:center; padding:0 8px; }
+  .col + .col { border-left:2px solid #F3EEE3; }
+  .col .n { font-family:'Outfit',sans-serif; font-weight:900; font-size:15px; color:#DE7CA8; }
+  .col .w { font-family:'Outfit',sans-serif; font-weight:900; font-size:17px; margin:2px 0 4px; }
+  .col .t { font-size:12.5px; line-height:1.4; color:#6f6a5e; }
+
+  /* B — one strip */
+  .strip { background:#FFEEF5; border-radius:20px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .strip .s { text-align:center; flex:1; }
+  .strip .s b { font-family:'Outfit',sans-serif; font-weight:900; font-size:16px; display:block; }
+  .strip .s span { font-size:12px; color:#6f6a5e; }
+  .strip .arr { color:#DE7CA8; font-weight:900; font-size:16px; }
+
+  /* C — one tile, three hairline rows */
+  .rows { padding:8px 22px; }
+  .row { display:flex; gap:14px; align-items:baseline; padding:13px 0; }
+  .row + .row { border-top:2px solid #F3EEE3; }
+  .row .n { width:30px; height:30px; flex:none; border-radius:50%; background:#FFD8EA; font-family:'Outfit',sans-serif; font-weight:900; font-size:14px; display:flex; align-items:center; justify-content:center; transform:translateY(7px); }
+  .row p { font-size:15px; line-height:1.45; }
+  .row p b { font-family:'Outfit',sans-serif; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lbl">VARIANT A — «IN A ROW» · THREE COLUMNS, ONE TILE</div>
+  <h2>How it works</h2>
+  <div class="tile cols">
+    <div class="col"><div class="n">1</div><div class="w">Talk</div><div class="t">10 minutes about you</div></div>
+    <div class="col"><div class="n">2</div><div class="w">See</div><div class="t">verdict + your top-3</div></div>
+    <div class="col"><div class="n">3</div><div class="w">Move</div><div class="t">90-day plan + check-ins</div></div>
+  </div>
+
+  <div class="lbl">VARIANT B — «ONE LINE» · A SINGLE STRIP</div>
+  <h2>How it works</h2>
+  <div class="strip">
+    <div class="s"><b>Talk</b><span>10 min</span></div><div class="arr">→</div>
+    <div class="s"><b>See</b><span>your matches</span></div><div class="arr">→</div>
+    <div class="s"><b>Move</b><span>90-day plan</span></div>
+  </div>
+
+  <div class="lbl">VARIANT C — «ONE TILE» · THREE SHORT ROWS</div>
+  <h2>How it works</h2>
+  <div class="tile rows">
+    <div class="row"><div class="n">1</div><p><b>Talk.</b> About your life, money and time — 10 minutes.</p></div>
+    <div class="row"><div class="n">2</div><p><b>See.</b> A straight verdict and your top-3, on real data.</p></div>
+    <div class="row"><div class="n">3</div><p><b>Move.</b> A 90-day plan — she checks in so you don't quit.</p></div>
+  </div>
+
+</div>
+</body>
+</html>

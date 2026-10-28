@@ -19,6 +19,8 @@ module.exports = async (req, res) => {
     const out = await handleMentorRequest(body);
     res.status(out.status).json(out.json);
   } catch (e) {
-    res.status(500).json({ ok: false, error: `mentor api boot failure: ${e.message}` });
+    // No internal error text to the client (audit V14) — the failure is
+    // ours, the message stays plain.
+    res.status(500).json({ ok: false, error: 'The matchmaker is unavailable right now — try again in a moment.' });
   }
 };

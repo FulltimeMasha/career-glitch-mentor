@@ -1,0 +1,9732 @@
+[
+ {
+  "slug": "software-developer",
+  "verdict": "YES",
+  "payK": 136,
+  "training_months": 12,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "data-analyst",
+  "verdict": "YES",
+  "payK": 90,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "data-scientist-ml-engineer",
+  "verdict": "YES",
+  "payK": 120,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "ux-ui-designer",
+  "verdict": "YES",
+  "payK": 105,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "web-designer",
+  "verdict": "NO",
+  "payK": 63,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "product-manager",
+  "verdict": "NO",
+  "payK": 118,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "qa-engineer",
+  "verdict": "YES",
+  "payK": 104,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "devops-engineer",
+  "verdict": "YES",
+  "payK": 130,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "cybersecurity-analyst",
+  "verdict": "YES",
+  "payK": 125,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "ai-automation-specialist",
+  "verdict": "YES",
+  "payK": 100,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "no-code-developer",
+  "verdict": "NO",
+  "payK": 93,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mobile-app-developer",
+  "verdict": "YES",
+  "payK": 125,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "it-support-specialist",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "technical-writer",
+  "verdict": "NO",
+  "payK": 90,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 2,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "video-editor",
+  "verdict": "YES",
+  "payK": 71,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "motion-designer-3d-artist",
+  "verdict": "NO",
+  "payK": 102,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "game-designer",
+  "verdict": "NO",
+  "payK": 104,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "seo-specialist",
+  "verdict": "NO",
+  "payK": 79,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 2,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "ppc-paid-ads-specialist",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "smm-manager",
+  "verdict": "NO",
+  "payK": 62,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "content-strategist",
+  "verdict": "NO",
+  "payK": 78,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 2,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "copywriter",
+  "verdict": "NO",
+  "payK": 77,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 2,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "podcast-producer",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "online-tutor",
+  "verdict": "NO",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "virtual-assistant",
+  "verdict": "NO",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 2,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "e-commerce-manager",
+  "verdict": "YES",
+  "payK": 83,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "crm-email-marketer",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "accountant",
+  "verdict": "YES",
+  "payK": 84,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "enrolled-agent-tax-pro",
+  "verdict": "YES",
+  "payK": 55,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "bookkeeper-advisory",
+  "verdict": "NO",
+  "payK": 51,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 2,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "financial-analyst",
+  "verdict": "YES",
+  "payK": 105,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "insurance-agent",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mortgage-broker",
+  "verdict": "NO",
+  "payK": 77,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "b2b-sales-rep",
+  "verdict": "YES",
+  "payK": 76,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "recruiter",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "hr-specialist",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "project-manager",
+  "verdict": "YES",
+  "payK": 102,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "operations-manager",
+  "verdict": "YES",
+  "payK": 106,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "grant-writer",
+  "verdict": "NO",
+  "payK": 58,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "translator-interpreter",
+  "verdict": "NO",
+  "payK": 60,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 2,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "brand-strategist",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pr-specialist",
+  "verdict": "NO",
+  "payK": 75,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "market-researcher",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "customer-success-manager",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "business-consultant",
+  "verdict": "YES",
+  "payK": 120,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "real-estate-agent",
+  "verdict": "NO",
+  "payK": 53,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "luxury-real-estate-agent",
+  "verdict": "YES",
+  "payK": 140,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "online-course-creator",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "streamer-content-creator",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "ugc-creator",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "dental-hygienist",
+  "verdict": "YES",
+  "payK": 98,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "registered-nurse",
+  "verdict": "YES",
+  "payK": 98,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "lpn-lvn",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "medical-assistant",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "phlebotomist",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "radiology-tech",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "sonographer-ultrasound",
+  "verdict": "YES",
+  "payK": 97,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mri-technologist",
+  "verdict": "YES",
+  "payK": 95,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "respiratory-therapist",
+  "verdict": "YES",
+  "payK": 82,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "physical-therapist",
+  "verdict": "YES",
+  "payK": 100,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pt-assistant",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "occupational-therapist",
+  "verdict": "YES",
+  "payK": 100,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "speech-therapist",
+  "verdict": "YES",
+  "payK": 98,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "massage-therapist",
+  "verdict": "YES",
+  "payK": 58,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "esthetician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "dental-assistant",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "vet-technician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pharmacist",
+  "verdict": "YES",
+  "payK": 135,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pharmacy-technician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "surgical-technologist",
+  "verdict": "YES",
+  "payK": 65,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "emt-paramedic",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "lab-technician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "dialysis-technician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "home-health-aide",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "doula",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "optometrist",
+  "verdict": "YES",
+  "payK": 130,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "nutrition-coach-dietitian",
+  "verdict": "YES",
+  "payK": 76,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "medical-coder",
+  "verdict": "NO",
+  "payK": 51,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 2,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "sterile-processing-tech",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "ekg-technician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "electrician",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "plumber",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "hvac-technician",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "carpenter",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "house-painter",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "drywall-finisher",
+  "verdict": "NO",
+  "payK": 68,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "tile-setter",
+  "verdict": "YES",
+  "payK": 51,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "roofer",
+  "verdict": "YES",
+  "payK": 55,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "welder",
+  "verdict": "YES",
+  "payK": 54,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "auto-mechanic",
+  "verdict": "YES",
+  "payK": 51,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "diesel-mechanic",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "locksmith",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "appliance-repair-tech",
+  "verdict": "YES",
+  "payK": 51,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "elevator-mechanic",
+  "verdict": "YES",
+  "payK": 105,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "solar-installer",
+  "verdict": "YES",
+  "payK": 52,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "landscaper-lawn-pro",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pool-technician",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pest-control-tech",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "home-inspector",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "general-contractor",
+  "verdict": "YES",
+  "payK": 105,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "flooring-installer",
+  "verdict": "YES",
+  "payK": 54,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "garage-door-tech",
+  "verdict": "YES",
+  "payK": 50,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "arborist-tree-pro",
+  "verdict": "YES",
+  "payK": 51,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "concrete-finisher",
+  "verdict": "YES",
+  "payK": 57,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "glazier-glass",
+  "verdict": "YES",
+  "payK": 55,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "handyman-solo-pro",
+  "verdict": "YES",
+  "payK": 50,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cabinet-maker",
+  "verdict": "YES",
+  "payK": 46,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "furniture-restorer",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "boat-mechanic-marine-tech",
+  "verdict": "YES",
+  "payK": 58,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "aircraft-mechanic-a-p",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "photographer",
+  "verdict": "NO",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "wedding-photographer",
+  "verdict": "YES",
+  "payK": 43,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "videographer",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "graphic-designer",
+  "verdict": "NO",
+  "payK": 63,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "illustrator",
+  "verdict": "NO",
+  "payK": 55,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "tattoo-artist",
+  "verdict": "NO",
+  "payK": 59,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "florist",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "interior-designer",
+  "verdict": "YES",
+  "payK": 63,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "home-stager",
+  "verdict": "YES",
+  "payK": 67,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "event-planner",
+  "verdict": "YES",
+  "payK": 59,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "wedding-planner",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "dj-event-host",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "voice-actor",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "animator",
+  "verdict": "NO",
+  "payK": 102,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "makeup-artist",
+  "verdict": "NO",
+  "payK": 97,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "personal-fashion-stylist",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "art-director",
+  "verdict": "NO",
+  "payK": 120,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "set-production-designer",
+  "verdict": "NO",
+  "payK": 75,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "music-instructor",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "jewelry-maker",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cosmetologist-hair-stylist",
+  "verdict": "NO",
+  "payK": 36,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "barber",
+  "verdict": "NO",
+  "payK": 38,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "nail-technician",
+  "verdict": "NO",
+  "payK": 36,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "lash-brow-artist",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "permanent-makeup-artist",
+  "verdict": "YES",
+  "payK": 55,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "beauty-salon-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "fitness-trainer",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "yoga-pilates-instructor",
+  "verdict": "NO",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "wellness-coach",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "spa-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "chef",
+  "verdict": "NO",
+  "payK": 62,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "baker",
+  "verdict": "NO",
+  "payK": 37,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "private-chef",
+  "verdict": "NO",
+  "payK": 48,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "caterer",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "food-truck-owner",
+  "verdict": "NO",
+  "payK": 69,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "bakery-caf-owner",
+  "verdict": "NO",
+  "payK": 69,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "barista-craft-coffee",
+  "verdict": "NO",
+  "payK": 31,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "butcher",
+  "verdict": "NO",
+  "payK": 40,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "restaurant-manager",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "meal-prep-business-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "chocolatier-candy-maker",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "farmers-market-producer",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "sommelier",
+  "verdict": "NO",
+  "payK": 35,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "school-teacher",
+  "verdict": "YES",
+  "payK": 67,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "preschool-teacher",
+  "verdict": "NO",
+  "payK": 38,
+  "training_months": 18,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "special-education-teacher",
+  "verdict": "YES",
+  "payK": 67,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "school-counselor",
+  "verdict": "NO",
+  "payK": 64,
+  "training_months": 48,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "private-tutor-in-person",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "childcare-center-owner",
+  "verdict": "NO",
+  "payK": 59,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "aba-therapist-kids",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "social-worker",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "psychologist-therapist",
+  "verdict": "YES",
+  "payK": 105,
+  "training_months": 48,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "life-coach",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "dance-instructor",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "swim-instructor",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "driving-instructor",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "corporate-trainer",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "sports-coach",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "speech-public-speaking-coach",
+  "verdict": "YES",
+  "payK": 47,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "nanny-family-assistant-pro",
+  "verdict": "NO",
+  "payK": 35,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "elder-care-companion-pro",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cdl-truck-driver",
+  "verdict": "YES",
+  "payK": 59,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "owner-operator-trucking",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "commercial-pilot",
+  "verdict": "YES",
+  "payK": 123,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "flight-attendant",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "boat-captain",
+  "verdict": "YES",
+  "payK": 92,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "yacht-broker",
+  "verdict": "YES",
+  "payK": 150,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "dispatcher-trucking",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "logistics-coordinator",
+  "verdict": "YES",
+  "payK": 82,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "moving-company-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "tow-truck-operator",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "medical-courier-owner-route",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "auto-detailing-mobile-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cleaning-company-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "handyman-company-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "painting-company-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "lawn-care-company-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pressure-washing-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "window-cleaning-owner",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "junk-removal-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "home-organizer-pro",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "property-manager",
+  "verdict": "YES",
+  "payK": 70,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "insurance-claims-adjuster",
+  "verdict": "NO",
+  "payK": 78,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 2,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "administrative-assistant",
+  "verdict": "NO",
+  "payK": 48,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 2,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "executive-assistant",
+  "verdict": "NO",
+  "payK": 77,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "loan-officer",
+  "verdict": "NO",
+  "payK": 77,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "airbnb-co-host-str-manager",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "laundromat-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "pet-grooming-salon-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "dog-trainer",
+  "verdict": "YES",
+  "payK": 40,
+  "training_months": 4.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pet-boarding-daycare-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mobile-pet-groomer",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mobile-mechanic-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "vending-atm-route-owner",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 0,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "self-storage-owner",
+  "verdict": "YES",
+  "payK": 85,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "senior-home-care-agency-owner",
+  "verdict": "YES",
+  "payK": 110,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "tutoring-center-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "photo-booth-event-rentals-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "resale-flipping-business",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 2,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "etsy-digital-products-seller",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "print-on-demand-seller",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "amazon-fba-seller",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "real-estate-investor-flips",
+  "verdict": "YES",
+  "payK": 85,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "real-estate-investor-rentals",
+  "verdict": "YES",
+  "payK": 70,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "boat-restoration-flipping",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "car-flipping",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "franchise-owner-home-services",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "wind-turbine-technician",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "robotics-technician",
+  "verdict": "YES",
+  "payK": 68,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "ev-charging-technician",
+  "verdict": "YES",
+  "payK": 63,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "fiber-optic-technician",
+  "verdict": "YES",
+  "payK": 74,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "semiconductor-technician",
+  "verdict": "YES",
+  "payK": 51,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 0,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "tower-climber-telecom",
+  "verdict": "NO",
+  "payK": 64,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "land-surveyor",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "heavy-equipment-operator",
+  "verdict": "YES",
+  "payK": 60,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "crane-operator",
+  "verdict": "YES",
+  "payK": 68,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "pipefitter",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "drone-pilot-commercial",
+  "verdict": "YES",
+  "payK": 123,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "air-traffic-controller",
+  "verdict": "YES",
+  "payK": 130,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": {
+   "max": 30,
+   "source": "FAA — controller applicants must be under 31 at entry"
+  },
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "bus-driver",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "train-conductor",
+  "verdict": "YES",
+  "payK": 72,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "nurse-practitioner",
+  "verdict": "YES",
+  "payK": 132,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "physician-assistant",
+  "verdict": "YES",
+  "payK": 136,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cardiovascular-technologist",
+  "verdict": "NO",
+  "payK": 70,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "nuclear-medicine-technologist",
+  "verdict": "YES",
+  "payK": 101,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "radiation-therapist",
+  "verdict": "YES",
+  "payK": 105,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "audiologist",
+  "verdict": "NO",
+  "payK": 95,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "genetic-counselor",
+  "verdict": "YES",
+  "payK": 100,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "clinical-research-coordinator",
+  "verdict": "NO",
+  "payK": 60,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "veterinary-assistant",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "data-engineer",
+  "verdict": "NO",
+  "payK": 130,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cloud-architect",
+  "verdict": "NO",
+  "payK": 145,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "penetration-tester",
+  "verdict": "NO",
+  "payK": 125,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "salesforce-administrator",
+  "verdict": "YES",
+  "payK": 99,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "ux-researcher",
+  "verdict": "NO",
+  "payK": 110,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "paralegal",
+  "verdict": "NO",
+  "payK": 63,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "actuary",
+  "verdict": "YES",
+  "payK": 125,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "nuclear-reactor-operator",
+  "verdict": "YES",
+  "payK": 123,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "commercial-insurance-producer",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 1,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "computer-network-architect",
+  "verdict": "YES",
+  "payK": 130,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "database-administrator-architect",
+  "verdict": "YES",
+  "payK": 123,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "computer-systems-analyst",
+  "verdict": "YES",
+  "payK": 103,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "gis-specialist-cartographer",
+  "verdict": "YES",
+  "payK": 78,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "certified-anesthesiologist-assistant",
+  "verdict": "YES",
+  "payK": 132,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "cardiovascular-perfusionist",
+  "verdict": "YES",
+  "payK": 135,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "medical-dosimetrist",
+  "verdict": "YES",
+  "payK": 124,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "orthotist-prosthetist",
+  "verdict": "YES",
+  "payK": 81,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "athletic-trainer",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "biomedical-equipment-technician-bmet",
+  "verdict": "YES",
+  "payK": 60,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "millwright",
+  "verdict": "YES",
+  "payK": 72,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "structural-ironworker",
+  "verdict": "YES",
+  "payK": 69,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "brick-mason",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "sheet-metal-worker",
+  "verdict": "YES",
+  "payK": 65,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "water-wastewater-treatment-operator",
+  "verdict": "NO",
+  "payK": 57,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "lineworker-power-lines",
+  "verdict": "YES",
+  "payK": 93,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "sound-engineering-technician",
+  "verdict": "NO",
+  "payK": 60,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "fashion-designer",
+  "verdict": "NO",
+  "payK": 81,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "electrologist",
+  "verdict": "YES",
+  "payK": 48,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "food-scientist-technologist",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "brewer-brewmaster",
+  "verdict": "YES",
+  "payK": 52,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "substance-abuse-counselor",
+  "verdict": "YES",
+  "payK": 59,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "firefighter",
+  "verdict": "YES",
+  "payK": 57,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "funeral-director",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 18,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "emergency-management-director",
+  "verdict": "YES",
+  "payK": 92,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "aircraft-dispatcher-faa",
+  "verdict": "YES",
+  "payK": 65,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": {
+   "min": 23,
+   "source": "FAA — the aircraft dispatcher certificate requires age 23+"
+  },
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "ship-engineer-merchant-marine",
+  "verdict": "YES",
+  "payK": 100,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "insurance-underwriter",
+  "verdict": "NO",
+  "payK": 79,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "real-estate-appraiser",
+  "verdict": "YES",
+  "payK": 68,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "construction-estimator",
+  "verdict": "YES",
+  "payK": 77,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "network-and-computer-systems-administrator",
+  "verdict": "NO",
+  "payK": 97,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "robotics-engineer",
+  "verdict": "YES",
+  "payK": 120,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "computer-hardware-engineer",
+  "verdict": "YES",
+  "payK": 140,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "instructional-designer",
+  "verdict": "YES",
+  "payK": 77,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "veterinarian",
+  "verdict": "YES",
+  "payK": 125,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "dentist",
+  "verdict": "YES",
+  "payK": 179,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "chiropractor",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "epidemiologist",
+  "verdict": "YES",
+  "payK": 83,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "psychiatrist",
+  "verdict": "YES",
+  "payK": 239,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "sleep-technologist",
+  "verdict": "YES",
+  "payK": 58,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "boilermaker",
+  "verdict": "NO",
+  "payK": 76,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "commercial-diver",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "water-well-driller",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "septic-system-installer",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "civil-engineer",
+  "verdict": "YES",
+  "payK": 100,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "landscape-architect",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "commercial-industrial-designer",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "choreographer",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "body-piercing-artist",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "laser-hair-removal-technician",
+  "verdict": "YES",
+  "payK": 52,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "coffee-roaster",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "winemaker-enologist",
+  "verdict": "YES",
+  "payK": 82,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "police-officer",
+  "verdict": "YES",
+  "payK": 72,
+  "training_months": 9,
+  "gates": {
+   "voice_load": true,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "private-investigator",
+  "verdict": "YES",
+  "payK": 52,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "librarian",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 54,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "community-health-worker",
+  "verdict": "YES",
+  "payK": 51,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "locomotive-engineer",
+  "verdict": "NO",
+  "payK": 74,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "delivery-driver-light-truck",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 0,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "personal-financial-advisor",
+  "verdict": "YES",
+  "payK": 120,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "compliance-officer",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "computer-and-information-research-scientist",
+  "verdict": "YES",
+  "payK": 140,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 2,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "site-reliability-engineer",
+  "verdict": "YES",
+  "payK": 135,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "health-informatics-specialist",
+  "verdict": "YES",
+  "payK": 85,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "digital-forensics-analyst",
+  "verdict": "YES",
+  "payK": 120,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "registered-nurse-2",
+  "verdict": "YES",
+  "payK": 237,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "physician",
+  "verdict": "YES",
+  "payK": 238,
+  "training_months": 48,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "podiatrist",
+  "verdict": "YES",
+  "payK": 141,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "recreational-therapist",
+  "verdict": "YES",
+  "payK": 60,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "histotechnologist",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "hazardous-materials-removal-worker",
+  "verdict": "YES",
+  "payK": 50,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "security-and-fire-alarm-systems-installer",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "plasterer-and-stucco-mason",
+  "verdict": "YES",
+  "payK": 55,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "reinforcing-iron-and-rebar-worker",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 0,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "farm-equipment-mechanic",
+  "verdict": "YES",
+  "payK": 52,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "urban-and-regional-planner",
+  "verdict": "YES",
+  "payK": 83,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "museum-curator",
+  "verdict": "YES",
+  "payK": 61,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "film-stage-lighting-technician",
+  "verdict": "YES",
+  "payK": 68,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": true
+ },
+ {
+  "slug": "hair-replacement-wig-specialist",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "reflexologist",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "farm-ranch-manager",
+  "verdict": "NO",
+  "payK": 83,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "food-safety-inspector",
+  "verdict": "YES",
+  "payK": 60,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "marriage-and-family-therapist",
+  "verdict": "YES",
+  "payK": 63,
+  "training_months": 54,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "rehabilitation-counselor",
+  "verdict": "YES",
+  "payK": 47,
+  "training_months": 54,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "probation-officer",
+  "verdict": "YES",
+  "payK": 64,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 1,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mediator-arbitrator",
+  "verdict": "YES",
+  "payK": 67,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "helicopter-pilot",
+  "verdict": "YES",
+  "payK": 110,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "harbor-pilot",
+  "verdict": "YES",
+  "payK": 175,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "transportation-inspector",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "car-wash-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "gym-fitness-studio-owner",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": false,
+  "supplies_stub": false
+ },
+ {
+  "slug": "mechanical-engineer",
+  "verdict": "YES",
+  "payK": 102,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "electrical-engineer",
+  "verdict": "YES",
+  "payK": 118,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "platform-engineer",
+  "verdict": "YES",
+  "payK": 135,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "embedded-systems-engineer",
+  "verdict": "YES",
+  "payK": 130,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "general-surgeon",
+  "verdict": "YES",
+  "payK": 239,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "certified-nurse-midwife",
+  "verdict": "YES",
+  "payK": 132,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "medical-laboratory-scientist",
+  "verdict": "YES",
+  "payK": 63,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "board-certified-behavior-analyst-bcba",
+  "verdict": "YES",
+  "payK": 85,
+  "training_months": 54,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "data-center-technician",
+  "verdict": "YES",
+  "payK": 72,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "cnc-machinist-programmer",
+  "verdict": "YES",
+  "payK": 62,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "avionics-technician",
+  "verdict": "YES",
+  "payK": 79,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "power-plant-operator",
+  "verdict": "NO",
+  "payK": 100,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "telecommunications-equipment-installer",
+  "verdict": "NO",
+  "payK": 64,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "costume-designer",
+  "verdict": "NO",
+  "payK": 65,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "lighting-designer",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 1,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "audio-video-equipment-technician",
+  "verdict": "YES",
+  "payK": 60,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "tattoo-artist-2",
+  "verdict": "NO",
+  "payK": 70,
+  "training_months": 12,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "scalp-micropigmentation-artist",
+  "verdict": "YES",
+  "payK": 75,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 1,
+   "tech": 0,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "food-stylist",
+  "verdict": "YES",
+  "payK": 65,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 0,
+   "creat": 2
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "distiller",
+  "verdict": "YES",
+  "payK": 58,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "vertical-farm-technician",
+  "verdict": "YES",
+  "payK": 48,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 0,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "school-psychologist",
+  "verdict": "YES",
+  "payK": 87,
+  "training_months": 54,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "esl-adult-literacy-teacher",
+  "verdict": "NO",
+  "payK": 60,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "career-and-technical-education-teacher",
+  "verdict": "YES",
+  "payK": 63,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "child-life-specialist",
+  "verdict": "YES",
+  "payK": 58,
+  "training_months": 36,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 0,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "customs-broker",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 2,
+   "hands": 0,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "freight-broker-agent",
+  "verdict": "YES",
+  "payK": 70,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 2,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 2,
+   "out": 0,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "subway-streetcar-operator",
+  "verdict": "YES",
+  "payK": 65,
+  "training_months": 3.5,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "business-broker",
+  "verdict": "YES",
+  "payK": 110,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 1,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "medical-health-services-manager",
+  "verdict": "YES",
+  "payK": 118,
+  "training_months": 36,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 2,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "customer-service-representative",
+  "verdict": "NO",
+  "payK": 45,
+  "training_months": 1,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 2,
+   "remote": 2,
+   "lic": 0,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "medical-secretary",
+  "verdict": "YES",
+  "payK": 45,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 0,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "cad-drafter",
+  "verdict": "NO",
+  "payK": 65,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 1,
+   "lic": 0,
+   "hands": 1,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 1,
+   "care": 0,
+   "creat": 1
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "building-inspector",
+  "verdict": "YES",
+  "payK": 72,
+  "training_months": 9,
+  "gates": {
+   "voice_load": false,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ },
+ {
+  "slug": "civil-engineering-technician",
+  "verdict": "YES",
+  "payK": 65,
+  "training_months": 18,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 1,
+   "biz": 0,
+   "tech": 2,
+   "out": 2,
+   "care": 0,
+   "creat": 0
+  },
+  "age_gate": null,
+  "riasec_stub": true,
+  "supplies_stub": true
+ }
+]

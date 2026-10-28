@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Career Glitch Matchmaker — the AI career matchmaker</title>
+<meta name="description" content="An AI career matchmaker: it knows you, it knows the job market, and it won't let you marry a career AI is about to kill. A 10-minute live matchmaking → a straight verdict, your top-3 professions with income and AI-risk, and a personal plan. Free to start.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerglitch.com/mentor">
+<meta property="og:title" content="Career Glitch Matchmaker — the AI career matchmaker">
+<meta property="og:description" content="An AI career matchmaker: it knows you, it knows the job market, and it won't let you marry a career AI is about to kill. A 10-minute live matchmaking → a straight verdict, your top-3 professions with income and AI-risk, and a personal plan. Free to start.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Instrument+Sans:wght@400;600&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{--bg:#FAF5EC;--lime:#FFE9F3;--dark:#3A2340;--butter:#F0E6CF;--pink:#F92A82;--pinksoft:#FF8CBE;--paper:#fff;--ink:#1C1A1F;--blush:#FFD8EA;--soft:#FFEEF5;--mut:#8d8272;--line:#ECEDE6;--green:#2fbf71;--red:#D90429}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:20px 18px 56px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:6px 0 22px}
+.logo{font-family:'Outfit',sans-serif;font-weight:900;letter-spacing:.06em;color:var(--ink);text-decoration:none;font-size:17px}
+.logo span{color:var(--pink)}
+nav a.home{color:var(--mut);text-decoration:none;font-size:14px}
+h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:33px;line-height:1.14;margin:6px 0 14px}
+.tile-lime h1{font-weight:400;letter-spacing:.01em}
+h2{font-family:'Outfit',sans-serif;font-weight:900;font-size:22px;margin:26px 0 12px}
+.sub{font-size:17px;line-height:1.55;color:#57534a;margin-bottom:6px}
+.mono{font-family:'DM Mono',monospace}
+.pill{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:6px 12px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em}
+.tile{background:#fff;border-radius:26px;padding:24px;box-shadow:0 10px 30px rgba(28,26,31,.05)}
+.bento-hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 6px}
+.bento-hero .wide{grid-column:1/-1}
+.tile-lime{background:linear-gradient(135deg,#FFE9F3,#FFD3E6)}
+.tile-lime .sub{color:rgba(28,26,31,.75)}
+.tile-lime .btn{background:var(--ink);color:#fff}
+.tile-lime .mnote{color:rgba(28,26,31,.6);text-align:left}
+.tile-ava{display:flex;gap:16px;align-items:flex-start}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;padding:20px 8px}
+.col3{text-align:center;padding:0 8px}
+.col3 + .col3{border-left:2px solid #F3EEE3}
+.n3{font-family:'Outfit',sans-serif;font-weight:900;font-size:15px;color:#DE7CA8}
+.w3{font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;margin:2px 0 4px}
+.t3{font-size:12.5px;line-height:1.4;color:var(--mut)}
+.chat5-row{display:flex;gap:12px;align-items:flex-start}
+.chat5-ava{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 10px 20px rgba(42,36,48,.20);transform:rotate(-5deg);margin-top:2px}
+.chat5-bubble{background:#fff;border-radius:6px 22px 22px 22px;padding:16px 18px;box-shadow:0 14px 28px rgba(42,36,48,.18);flex:1;min-width:0}
+.chat5-chips{margin:12px 0 0 68px}
+.tile-ava img.mface{width:84px;height:84px;flex:none;object-fit:cover;object-position:50% 62%;border-radius:50%}
+.mcol{flex:1;min-width:0;display:flex;flex-direction:column}
+.mwho{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c2185b;margin-bottom:6px}
+.mbub{font-size:16px;line-height:1.5}
+.mchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.mchip{border:2px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink)}
+.mchip:hover{background:var(--soft)}
+.mnote{font-size:12.5px;color:var(--mut);margin-top:10px;text-align:center}
+.tile-dark{background:var(--dark);color:var(--blush)}
+.tile-stat{background:#E7E1F8}
+.rdot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--pinksoft);box-shadow:0 0 0 5px rgba(255,140,190,.22);margin-bottom:12px;animation:rdpulse 2.2s infinite}
+@keyframes rdpulse{0%{box-shadow:0 0 0 3px rgba(255,140,190,.28)}55%{box-shadow:0 0 0 9px rgba(255,140,190,.04)}100%{box-shadow:0 0 0 3px rgba(255,140,190,.28)}}
+.dark-big{font-family:'Outfit',sans-serif;font-weight:900;font-size:21px;color:#fff;line-height:1.2}
+.tile-dark p{font-size:13.5px;line-height:1.55;margin-top:6px}
+.stat-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:30px;line-height:1.1}
+.stat-t{font-size:12.5px;color:#8a8378;margin-top:2px;line-height:1.45}
+.stat-min{font-size:17px}
+@media(max-width:640px){.bento-hero{grid-template-columns:1fr}.tile-ava img.mface{width:72px;height:72px}}
+.doors{display:grid;gap:12px;margin:20px 0}
+@media(min-width:560px){.doors{grid-template-columns:1fr 1fr 1fr}}
+.door{background:#E7E1F8;color:var(--ink);border:2px solid transparent;border-radius:26px;box-shadow:0 10px 30px rgba(28,26,31,.05);padding:22px;text-align:left;cursor:pointer;font:inherit;width:100%}
+.door:disabled{opacity:.55;cursor:wait}
+.door:hover,.door.sel{background:var(--lime)}
+.door b{font-family:'Outfit',sans-serif;font-weight:900;font-size:19px;display:block;margin-bottom:6px}
+.door p{font-size:15px;font-weight:600;line-height:1.5}
+.door .path{font-family:'DM Mono',monospace;font-size:13px;color:#c2185b}
+.card{background:#fff;color:var(--ink);border-radius:26px;box-shadow:0 10px 30px rgba(28,26,31,.05);padding:24px;margin-top:16px}
+.card.top1{background:#E7E1F8}
+.notice{background:var(--soft);color:var(--ink);border-radius:20px;padding:16px 18px;font-weight:600;margin:16px 0}
+.progress{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.08em;color:var(--mut);margin:14px 0 8px}
+.bar{background:rgba(28,26,31,.10);border-radius:999px;height:14px;overflow:hidden}
+.barfill{background:var(--ink);height:100%;width:0%;transition:width .4s;border-radius:999px}
+.thread{display:grid;gap:12px;margin-top:14px}
+.thread .histpast{display:grid;gap:12px}
+.msg{border-radius:20px;padding:16px 18px}
+.msg.mentor{background:#fff;color:var(--ink);box-shadow:0 10px 30px rgba(28,26,31,.05)}
+.msg.user{background:var(--lime);color:var(--ink)}
+.msg .who{font-family:'DM Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin-bottom:6px}
+.msg .hint{color:#6d7263;font-size:14.5px;margin-top:6px}
+label{display:block;font-weight:600;font-size:15px;margin:16px 0 6px;color:var(--ink)}
+textarea,input[type=number],input[type=text]{width:100%;padding:12px 14px;border-radius:16px;border:2px solid var(--line);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}
+textarea{min-height:110px;resize:vertical}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button,.ranklist button{background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:10px 14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer}
+.choice{display:grid;gap:9px}
+.choice button{background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:16px;padding:13px 14px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:15px;cursor:pointer;text-align:left;width:100%}
+.seg button.sel,.choice button.sel{background:var(--lime);border-color:#E9A8C6;color:var(--ink)}
+.anchors{display:flex;justify-content:space-between;gap:18px;font-size:13px;color:#5c5566;font-weight:600;margin-top:6px}
+.anchors span{flex:1 1 0;min-width:0;overflow-wrap:break-word}
+.anchors span:last-child{text-align:right}
+.histstrip{width:100%;text-align:left;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:10px 16px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(28,26,31,.04)}
+.badge.floor{background:var(--red);color:#fff}
+.argsec{margin-top:14px}
+.argsec h4{font-family:'Outfit',sans-serif;font-weight:900;font-size:15px;margin-bottom:5px}
+.argsec ul{margin-left:18px;display:grid;gap:6px;font-size:15px;line-height:1.55}
+.argsec ul.warn{list-style:none;margin-left:0}
+.ranklist{display:grid;gap:8px;list-style:none}
+.ranklist li{display:flex;gap:10px;align-items:center;background:#fff;border:2px solid var(--line);border-radius:16px;padding:10px 12px;font-weight:600}
+.ranklist .n{font-family:'DM Mono',monospace;background:var(--ink);color:#fff;border-radius:999px;width:26px;height:26px;display:grid;place-items:center;flex:none}
+.ranklist .up{margin-left:auto;padding:10px 14px;font-size:13px;position:relative;z-index:1;touch-action:manipulation}
+.checks{display:grid;gap:8px}
+.checks label{display:flex;gap:10px;align-items:flex-start;margin:0;background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px 14px;cursor:pointer}
+.checks input{width:20px;height:20px;accent-color:var(--pink);margin-top:2px}
+.btn{width:100%;margin-top:20px;background:#DE7CA8;color:#fff;border:0;border-radius:999px;padding:15px;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.badge{display:inline-block;padding:5px 13px;border-radius:999px;border:2px solid var(--ink);background:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:14px}
+.badge.yes{background:var(--green);color:#fff}.badge.no{background:var(--red);color:#fff}
+section#verdict.card{background:transparent;box-shadow:none;padding:0}
+.verdict pre{white-space:pre-wrap;word-break:break-word;background:#fff;border:2px solid var(--line);border-radius:16px;padding:12px;font-size:13px}
+footer{margin-top:38px;padding-top:16px;border-top:1px solid rgba(28,26,31,.14);color:var(--mut);font-size:13px;display:grid;gap:8px}
+.hidden{display:none!important}
+.facts{display:grid;gap:12px;margin:18px 0 4px}
+.fact{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(28,26,31,.05);padding:16px 18px;font-weight:600;font-size:16px}
+.steps{display:grid;gap:12px}
+.step{background:#fff;color:var(--ink);border-radius:26px;box-shadow:0 10px 30px rgba(28,26,31,.05);padding:22px;font-weight:600;font-size:16px;line-height:1.55}
+.step b{font-family:'Outfit',sans-serif;font-weight:900}
+.ticks,.crosses{list-style:none;display:grid;gap:9px;font-size:16.5px;font-weight:600}
+.get2{list-style:none}
+.get2 li{font-size:15.5px;font-weight:600;line-height:1.4;padding:7px 0;display:flex;gap:10px}
+.get2 li + li{border-top:2px solid #F7F2E7}
+.notfoot{margin-top:12px;font-size:13.5px;color:var(--mut);line-height:1.55;padding:0 6px}
+.notfoot b{color:var(--ink)}
+.faq{display:grid;gap:10px}
+.qa{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(28,26,31,.05);padding:16px 18px}
+.qa b{font-family:'Outfit',sans-serif}
+.qa p{color:#57534a;margin-top:4px}
+.rline{font-size:16.5px;font-weight:600}
+.rnote{color:var(--mut);font-size:13.5px;margin-top:6px}
+.radarWrap{max-width:430px;margin:14px auto 0}
+.radar{position:relative;width:100%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#1c0a20 0%,#24102c 70%,#2a1030 100%);border:2px solid rgba(249,42,130,.55);overflow:hidden}
+.radar svg.rings{position:absolute;inset:0;width:100%;height:100%}
+.sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(249,42,130,.55),rgba(249,42,130,.13) 42deg,transparent 74deg);will-change:transform}
+.hub{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px rgba(249,42,130,.9);z-index:2}
+.blip{position:absolute;width:36px;height:36px;margin:-18px 0 0 -18px;background:none;border:0;padding:0;cursor:pointer;z-index:3;-webkit-tap-highlight-color:transparent;color:#2ad4a7}
+.blip.no{color:var(--pink)}
+.blip i{display:block;width:11px;height:11px;margin:12.5px auto 0;border-radius:50%;background:currentColor;transition:box-shadow .35s}
+.blip.lit i{box-shadow:0 0 15px 4px currentColor}
+.blip.sel i{outline:2px solid #fff;outline-offset:2px}
+.rcard .rname{font-family:'Outfit',sans-serif;font-weight:900;font-size:20px;margin-right:8px}
+.rcard .rrow{margin-top:7px;font-weight:600}
+.ticker{margin-top:14px;background:var(--dark);color:var(--blush);border-radius:20px;padding:13px 16px;font-family:'DM Mono',monospace;font-size:13.5px;min-height:46px;display:flex;align-items:center}
+.ticker .tline{transition:opacity .45s}
+.ticker.stack{display:block}
+.ticker.stack .tline{display:block;padding:3px 0}
+@media (prefers-reduced-motion: reduce){.ticker .tline{transition:none}.rdot{animation:none}}
+@media(max-width:480px){h1{font-size:27px}.sub{font-size:16.5px}}
+.wow-overlay{position:fixed;inset:0;z-index:60;background:#17122B;overflow-y:auto;padding:22px 14px 44px}
+.wow-card{max-width:640px;margin:4vh auto 0;background:#fff;color:var(--ink);border-radius:26px;box-shadow:0 18px 44px rgba(0,0,0,.35);padding:24px 22px}
+.wow-card h2{font-family:'Outfit',sans-serif;font-weight:900;font-size:26px;line-height:1.2;margin:0 0 6px}
+.wow-line{font-size:16.5px;font-weight:600;margin-top:12px}
+.wow-quote{margin-top:16px;background:var(--blush);border-radius:16px;padding:14px 16px;font-size:16px;font-weight:600}
+.wow-quote .cap{font-family:'DM Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:8px;color:#7a1042}
+.wow-close{font-size:16px;margin-top:16px}
+.wow-mono{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#FF8CBE}
+.wow-big{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(38px,9vw,64px);line-height:1.05;color:#FFFCF6;margin:10px 0 4px}
+.wow-stamp{display:inline-block;transform:rotate(-4deg);border:3px solid #F92A82;color:#FF8CBE;font-family:'Outfit',sans-serif;font-weight:900;font-size:19px;padding:7px 16px;border-radius:999px;margin:14px auto 6px;background:rgba(249,42,130,.12)}
+.wow-bars{max-width:440px;margin:18px auto 4px;display:grid;gap:14px;text-align:left}
+.wow-bar-lab{display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:13px;color:#FFFCF6;margin-bottom:5px}
+.wow-track{position:relative;height:14px;background:#3a2b4d;border-radius:999px;border:2px solid rgba(255,252,246,.35)}
+.wow-fill{position:absolute;top:0;bottom:0;background:#FF8CBE;border-radius:999px;transition:width .9s ease}
+.wow-fit{display:inline-block;margin-top:16px;background:#fff;color:var(--ink);border-radius:999px;padding:5px 14px;font-family:'Outfit',sans-serif;font-weight:900;font-size:15px}
+.wow-btn{max-width:440px;margin:22px auto 0}
+.wow-meter{display:flex;align-items:center;gap:10px;margin-top:10px}
+.wow-mlab{font-family:'DM Mono',monospace;font-size:12.5px;font-weight:700;min-width:82px}
+.wow-mtrack{position:relative;flex:1;height:12px;background:rgba(28,26,31,.10);border-radius:999px}
+.wow-mfill{position:absolute;top:0;bottom:0;background:var(--ink);border-radius:999px}
+.wow-mval{font-family:'DM Mono',monospace;font-size:13px;font-weight:700;white-space:nowrap}
+.wow-mcap{font-size:13.5px;color:#5c5566;margin-top:2px}
+.wow-ribbon{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:4px 13px;font-family:'Outfit',sans-serif;font-weight:900;font-size:13.5px;margin-bottom:8px}
+.wow-report p{margin-top:10px}
+.wow-h{font-family:'Outfit',sans-serif;font-size:17.5px;font-weight:800;margin:16px 0 4px;color:var(--ink)}
+.wow-report .wow-h:first-child{margin-top:0}
+.wow-report p:first-child{margin-top:0}
+.wow-lead{font-size:18px;font-weight:600}
+.wow-cushion{background:#F0E6CF}
+.pg-pick-ribbon{display:inline-block;background:var(--dark);color:#fff;border-radius:999px;padding:4px 13px;font-family:'Outfit',sans-serif;font-weight:900;font-size:13.5px;margin:0 6px 8px 0}
+.pg-btn{margin-top:14px}
+.pg-dayline{margin-top:8px;font-size:13.5px;color:#5c5566}
+.pg-pulse{animation:pgpulse 1.1s ease 2}
+@keyframes pgpulse{0%{box-shadow:0 0 0 0 rgba(249,42,130,.45)}100%{box-shadow:0 0 0 18px rgba(249,42,130,0)}}
+.pg-dots{display:flex;gap:7px;margin:6px 0 14px}
+.pg-hero{width:100%;border-radius:18px;margin-bottom:14px}
+.pg-dot{width:11px;height:11px;border-radius:50%;background:rgba(28,26,31,.14)}
+.pg-dot.done{background:var(--ink)}
+.pg-dot.on{background:var(--pink)}
+.pg-time{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:4px 12px;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em}
+.pg-kind{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#c2185b;margin-left:9px}
+.pg-skip{display:block;margin-top:14px;background:none;border:0;color:#c2185b;font-family:'DM Mono',monospace;font-size:13px;cursor:pointer;padding:4px 0;text-decoration:underline}
+@media (prefers-reduced-motion: reduce){.pg-pulse{animation:none}}
+@media (prefers-reduced-motion: reduce){.wow-fill{transition:none}}
+.letter-head{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;background:none;border:0;padding:0;cursor:pointer;font:inherit;text-align:left;color:var(--ink)}
+.letter-title{font-family:'Outfit',sans-serif;font-weight:800;font-size:17px}
+.letter-cta{color:var(--pink);font-family:'Outfit',sans-serif;font-weight:800;white-space:nowrap}
+.letter-body{margin-top:14px}
+.mm-checklist{margin-top:12px;background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(28,26,31,.05);padding:16px 18px}
+.mm-checklist .mm-head{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c2185b;margin-bottom:8px}
+.mm-checklist ul{list-style:none;display:grid;gap:6px}
+.mm-checklist li{font-size:14.5px;font-weight:600;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
+.mm-checklist li .mm-ic{flex:none;width:20px;text-align:center}
+.mm-checklist li.done{color:#8a8378}
+.mm-checklist li.done .mm-ic{color:#F92A82}
+.mm-checklist li.current .mm-ic{color:#c2185b}
+.mm-checklist li.todo{color:#a39a88}
+.wow-sign{display:inline-block;transform:rotate(-3deg);border:3px solid #F92A82;color:#b03060;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;padding:6px 15px;border-radius:999px;margin-top:16px;background:rgba(249,42,130,.10)}
+.mm-sign-note{font-size:13.5px;color:#5c5566;margin-top:8px}
+.mm-nosign{margin-top:14px;font-size:14px;font-weight:600;color:#7a1042;background:var(--soft);border-radius:14px;padding:12px 14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="/">CAREER<span>GLITCH</span></a><a class="home" href="/">careerglitch.com</a></nav>
+
+<section id="startScreen">
+<div class="bento-hero">
+<div class="tile tile-lime wide">
+<span class="pill"><span style="color:#FF8CBE">♥</span> THE AI CAREER MATCHMAKER <span style="color:#FF8CBE">♥</span></span>
+<h1>Get matched. Get skilled. Get there faster.</h1>
+<a class="btn" href="#doorPicker" style="display:block;text-align:center;text-decoration:none">Match me &rarr;</a>
+<div class="mnote">Free to start</div>
+</div>
+<div class="tile tile-stat wide">
+  <div class="stat-n"><span id="profCount">369</span></div>
+  <div class="stat-t">professions checked against real BLS pay &amp; AI-risk levels</div>
+  <div class="stat-n" style="margin-top:14px">10<span class="stat-min"> min</span></div>
+  <div class="stat-t">one live matchmaking — free to start</div>
+</div>
+<div class="chat5 wide">
+  <div class="chat5-row">
+    <img class="chat5-ava" src="/avatar.jpg" alt="Masha — your matchmaker">
+    <div class="chat5-bubble">
+      <div class="mwho">Your matchmaker — the Matchmaker</div>
+      <div class="mbub" id="mentorBubble">Hi — I&rsquo;m the Matchmaker. I know you, I know the job market, and I won&rsquo;t let you marry a career AI is about to kill. Ask me something — or just start.</div>
+    </div>
+  </div>
+  <div class="mchips chat5-chips">
+    <button type="button" class="mchip" data-ask="kill">Will AI kill my job?</button>
+    <button type="button" class="mchip" data-ask="study">I don&rsquo;t know what to study</button>
+    <button type="button" class="mchip" data-ask="late">Is it too late to switch?</button>
+  </div>
+</div>
+</div>
+<div class="tile tile-dark" style="margin-top:26px">
+  <span class="rdot"></span>
+  <div class="dark-big">Market Radar</div>
+  <p>The signals we watch — layoff filings, BLS releases, new AI tools. When a career starts dying, we re-check its verdict.</p>
+</div>
+<h2>The Radar</h2>
+<p class="rline">Every profession, under the beam. Green is growing. Pink is shrinking. Tap a dot — its verdict, outlook and pay show up below.</p>
+<p class="rnote">Signals from BLS 2025–35 projections and AI-exposure data.</p>
+<div class="radarWrap">
+  <div class="radar" id="radarDisc" role="group" aria-label="Career radar — tap a profession">
+    <svg class="rings" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="rgba(255,252,246,.16)" stroke-width=".4">
+        <circle cx="50" cy="50" r="12.5"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="37.5"/><circle cx="50" cy="50" r="49.2"/>
+      </g>
+      <g stroke="rgba(255,252,246,.10)" stroke-width=".35">
+        <line x1="50" y1="1" x2="50" y2="99"/><line x1="1" y1="50" x2="99" y2="50"/>
+        <line x1="15.4" y1="15.4" x2="84.6" y2="84.6"/><line x1="84.6" y1="15.4" x2="15.4" y2="84.6"/>
+      </g>
+    </svg>
+    <div class="sweep" id="radarSweep"></div>
+    <div class="hub"></div>
+  </div>
+</div>
+<div class="card rcard" id="radarCard" aria-live="polite">
+  <span class="rname">Nothing picked yet</span>
+  <p class="rrow">Tap a dot on the radar — the verdict for entering in 2027, the jobs outlook and the median pay land here.</p>
+</div>
+<div class="ticker" id="radarTicker"><span class="tline" id="tickerLine"></span></div>
+<div class="facts">
+  <div class="fact">📉 Young workers in AI-exposed jobs: −13% employment (Stanford, 2025)</div>
+  <div class="fact">🎓 4 in 10 students are rethinking their major because of AI (Gallup–Lumina, 2026)</div>
+  <div class="fact">⏳ The ones who move first get the good seats.</div>
+</div>
+<h2 id="doorPicker">Choose your door</h2>
+<div class="doors">
+  <button type="button" class="door" data-door="start"><b>😰 &ldquo;I don&rsquo;t know what to study.&rdquo;</b><p>4 years and $100K on the line. Make sure the job still exists when you graduate.</p><span class="path">Start here &rarr;</span></button>
+  <button type="button" class="door" data-door="pivot"><b>😬 &ldquo;AI is eating my job.&rdquo;</b><p>Fewer clients, a &ldquo;restructured&rdquo; team, a bad feeling. Find out what&rsquo;s safe — and what&rsquo;s next.</p><span class="path">Save my career &rarr;</span></button>
+  <button type="button" class="door" data-door="bridge"><b>🌍 &ldquo;My degree doesn&rsquo;t count here.&rdquo;</b><p>Nurse, engineer, accountant back home? Here&rsquo;s the exact path to do it again in the U.S.</p><span class="path">Show me the path &rarr;</span></button>
+</div>
+<h2>How it works</h2>
+<div class="tile cols3">
+  <div class="col3"><div class="n3">1</div><div class="w3">Talk</div><div class="t3">10 minutes about you</div></div>
+  <div class="col3"><div class="n3">2</div><div class="w3">See</div><div class="t3">verdict + your top-3</div></div>
+  <div class="col3"><div class="n3">3</div><div class="w3">Move</div><div class="t3">90-day plan, in writing</div></div>
+</div>
+<h2>What you get</h2>
+<div class="tile" style="padding:12px 22px">
+  <ul class="get2">
+    <li><span>✅</span><span>A straight verdict: safe, risky or dying</span></li>
+    <li><span>✅</span><span>Your top-3 careers — with real pay</span></li>
+    <li><span>✅</span><span>A 90-day plan, step by step</span></li>
+    <li><span>✅</span><span>A cushion job, if your #1 pays later — rent covered while you build</span></li>
+    <li><span>🧠</span><span>All of it runs on our smart base — real pay &amp; an AI-risk level on every card</span></li>
+  </ul>
+</div>
+<p class="notfoot">❌ <b>Not a personality quiz.</b> Not a chatbot guessing your future. Not a $500 career coach.</p>
+<a class="btn" href="#doorPicker" style="display:block;text-align:center;text-decoration:none">Find my future-proof job &rarr;</a>
+<h2>FAQ</h2>
+<div class="faq">
+  <div class="qa"><b>Will it just tell me what I want to hear?</b><p>No. If your plan is risky, it tells you — and shows why.</p></div>
+  <div class="qa"><b>Is this ChatGPT?</b><p>The conversation is AI — that&rsquo;s how it can interview you like a person. But your scores and verdicts are computed by a fixed model: the pay figures come from real U.S. government data (BLS, O*NET), and the AI-risk level on each card is the model&rsquo;s own read of that job&rsquo;s tasks. The AI can&rsquo;t move your numbers — it can only explain them.</p></div>
+  <div class="qa"><b>How long does it take?</b><p>About 10 minutes. You leave with a verdict, your top-3 and a 90-day plan.</p></div>
+</div>
+</section>
+
+<section id="interview" class="hidden">
+<div class="progress" id="progressLabel"></div>
+<div class="bar"><div class="barfill" id="barFill"></div></div>
+<div class="mm-checklist hidden" id="mmChecklist"></div>
+<div class="notice hidden" id="localNotice">Live matchmaker brain connects here — this preview collects your answers on this device only.</div>
+<div class="thread" id="thread"></div>
+<div class="card" id="stageCard">
+  <h2 id="stageTitle" style="margin-top:0"></h2>
+  <p id="stagePrompt" style="font-weight:600"></p>
+  <div id="tailWidgets"></div>
+  <label for="freeText">Anything extra, in your own words</label>
+  <textarea id="freeText" placeholder="Be specific. Facts beat self-descriptions."></textarea>
+  <button type="button" class="btn" id="nextBtn">Continue</button>
+  <button type="button" class="btn ghost" id="restartBtn">Start over</button>
+</div>
+</section>
+
+<section id="verdict" class="card verdict hidden">
+<h2 style="margin-top:0">Your verdict</h2>
+<p id="verdictEmpty">No result yet. When your answers are scored, your top jobs land here — each with the reasons, the pay and the honest weak points. Nothing here is invented by the chat.</p>
+<div id="verdictBody"></div>
+<button type="button" class="btn ghost hidden" id="verdictRestart" style="margin-top:16px">Start over — new match</button>
+</section>
+
+<section id="pgView" class="card hidden" style="margin-top:16px">
+<img id="pgHero" class="pg-hero hidden" alt="">
+<div id="pgBody"></div>
+</section>
+
+<footer>
+<p>Data: U.S. Bureau of Labor Statistics &amp; O*NET 30.2 (USDOL/ETA, CC BY 4.0), modified by Career Glitch.</p>
+</footer>
+</div>
+<script>
+const MENTOR_API_BASE = "";
+/* Nothing leaves this browser (founder decision + security fix,
+   27.10.2026): no database writes, no keys in the page. The session
+   lives only in this tab's memory/local state for the visit. */
+
+const STAGES = [
+{ id:"cddq", title:"Before we start — what kind of stuck is this?",
+free_prompt_hint:"In one or two sentences: what makes this decision hard right now?",
+prompt:"Three quick routing questions. They change the route and the emphasis — never your scores.",
+tail:[
+{id:"cddq_motivation",label:"Right now, I…",kind:"choice",options:["am not ready to decide at all","want to decide but keep putting it off","am ready to decide and want a plan"]},
+{id:"cddq_knowledge",label:"What I am missing most is…",kind:"choice",options:["knowledge about myself","knowledge about professions","knowledge about how to decide / the process","not mainly knowledge — my information conflicts"]},
+{id:"cddq_conflict",label:"My biggest conflict is…",kind:"choice",options:["no real conflict","inside me — I want incompatible things","pressure from people around me","conflicting facts about money / time / documents"]}
+]},
+{ id:"stage0", title:"Stage 0 — Point A: facts and resources",
+free_prompt_hint:"Where are you, exactly? Current work, income, time, money, documents, constraints — only facts and numbers.",
+prompt:"No self-descriptions yet. Just Point A: where you live, what you do now, what you earn, what floor you cannot go below, and what resources you actually have.",
+tail:[
+{id:"age_band",label:"Age band",kind:"choice",options:["under 18","18–24","25–34","35–44","45–54","55+"]},
+{id:"current_income_usd",label:"Current income (USD / year, 0 if none)",kind:"number",min:0,placeholder:"e.g. 42000"},
+{id:"income_floor_usd",label:"Income floor you cannot go below (USD / year)",kind:"number",min:0,placeholder:"e.g. 36000"},
+{id:"savings_months",label:"Savings cushion (months of expenses)",kind:"number",min:0,placeholder:"e.g. 3"},
+{id:"hours_per_day",label:"Real hours per day for study / transition",kind:"number",min:0,max:16,placeholder:"e.g. 2"},
+{id:"entry_budget_usd",label:"Budget you can spend on entry / training (USD)",kind:"number",min:0,placeholder:"e.g. 2000"},
+{id:"work_authorization",label:"U.S. work / licence eligibility",kind:"choice",options:["U.S. citizen / authorised, no barrier","authorised, some licence steps still needed","not yet authorised in the U.S.","not sure"]},
+{id:"education",label:"Highest completed education",kind:"choice",options:["high school or less","some college / certificate","associate / bachelor","master or higher","foreign degree (any level)"]},
+{id:"body_limits",label:"Body / health limits that rule out kinds of work (short)",kind:"text_short",placeholder:"e.g. cannot stand 8h, voice limit, none"}
+]},
+{ id:"stage1", title:"Stage 1 — History: behaviour, not self-description",
+free_prompt_hint:"Walk through your past jobs or attempts: what you did, what gave energy, and — most important — why you left each one.",
+prompt:"Preferences lie; behaviour doesn't. The pattern of why you left matters more than what you say you like.",
+tail:[
+{id:"exit_pattern",label:"My most common reason for leaving / quitting was…",kind:"choice",options:["pay / money ran out","boredom / lost interest","people / boss / environment","too hard / felt I couldn't do it","life circumstances","I usually finish what I start"]},
+{id:"completion",label:"Things I started and actually finished",kind:"scale",min:1,max:5,anchor_low:"Almost nothing finished",anchor_high:"Almost everything finished"},
+{id:"energy_theme",label:"Work that reliably gave me energy involved…",kind:"multichoice",options:["people","hands / building","numbers / systems","words / teaching","care / helping","organising / process"]},
+{id:"drain_theme",label:"Work that reliably drained me involved…",kind:"multichoice",options:["people","hands / building","numbers / systems","words / teaching","care / helping","organising / process"]}
+]},
+{ id:"stage2", title:"Stage 2 — Hidden desires, values and supports",
+free_prompt_hint:"Whose life do you envy — specifically, what part of it? And if success were guaranteed and nobody would judge you, what would you do?",
+prompt:"This stage is coaching material: it shapes the explanation and the plan. The rankings below are the structured part.",
+tail:[
+{id:"values_rank6",label:"Rank the 6 work values — tap to move the most important to the top",kind:"rank6",options:["Achievement","Independence","Recognition","Relationships","Support","Working Conditions"]},
+{id:"life_rank",label:"Rank what a good outcome means (most first)",kind:"rank6",options:["Money","Recognition","Freedom","Mastery","Security","Time with family"]},
+{id:"supports",label:"Concrete supports I actually have",kind:"multichoice",options:["money / savings","time","a person who backs me","access to training","a network / audience","none of these yet"]}
+]},
+{ id:"stage3", title:"Stage 3 — Shadows and blockers",
+free_prompt_hint:"What has actually stopped you before — in facts, not feelings? What are you afraid of in each possible ending, and who are you afraid of disappointing?",
+prompt:"Barriers go into your plan, not your score. Red lines go into hard limits on what we may recommend.",
+tail:[
+{id:"main_barrier",label:"The barrier that stopped me most often",kind:"choice",options:["money","time","fear of failing publicly","family / caregiving load","documents / licence","not knowing the first step"]},
+{id:"barrier_strength",label:"How strongly does that barrier bind right now?",kind:"scale",min:1,max:5,anchor_low:"Barely binds",anchor_high:"Completely blocks me"},
+{id:"red_line",label:"One red line — a kind of work / condition I will not accept (short)",kind:"text_short",placeholder:"e.g. night shifts, sales calls, relocating"}
+]},
+{ id:"stage4", title:"Stage 4 — Preferences, tolerances and interests",
+free_prompt_hint:"Think of specific jobs, not activities in general: which daily work sounds tolerable 200 days a year, and which does not?",
+prompt:"Job-focused interest questions — about this work, not about hobbies. Tolerances matter as much as likes.",
+tail:[
+{id:"riasec_hands",label:"Working with hands, tools or machines, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+{id:"riasec_analysis",label:"Analysing data / systems / problems, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+{id:"riasec_people",label:"Helping, teaching or caring for people, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+{id:"riasec_create",label:"Creating, designing or writing, as a job",kind:"scale",min:1,max:5,anchor_low:"Not my day",anchor_high:"My day"},
+{id:"tolerate_paperwork",label:"I can tolerate heavy paperwork / documentation",kind:"scale",min:1,max:5,anchor_low:"Cannot tolerate",anchor_high:"Fine with it"},
+{id:"training_length",label:"Longest training I will accept",kind:"choice",options:["1–6 months","6–12 months","1–2 years","2–4 years","4+ years"]}
+]},
+{ id:"stage5", title:"Stage 5 — Contradictions: the mirror",
+free_prompt_hint:"Read the mirror below when it appears: where your words and your choices disagree. Confirm what is true, correct what is not.",
+prompt:"I will hold up contradictions — for example, saying freedom matters most while repeatedly choosing money. You validate or correct the data before any verdict is built from it.",
+tail:[
+{id:"mirror_ack",label:"The mirror summary (shown in the full matchmaker) is…",kind:"choice",options:["accurate — proceed","partly accurate — I corrected it in my answer above","not accurate — my answer above is the correction"]},
+{id:"priority_final",label:"If I must pick one priority for the next 90 days",kind:"choice",options:["money first","freedom first","mastery first","security first","recognition first"]}
+]},
+{ id:"stage6", title:"Stage 6 — A real Tuesday, and perceived fit",
+free_prompt_hint:"Picture a normal Tuesday in a candidate profession: the routine, the people, the paperwork, the worst parts. Could you do 200 of those Tuesdays?",
+prompt:"Perceived fit is a veto, never a boost: saying 'not mine' lowers a candidate by one fitness category; saying 'mine' never raises a score.",
+tail:[
+{id:"fit_candidate_1",label:"Candidate 1 — the real day feels…",kind:"perceived_fit",options:["mine","tolerable","not mine"]},
+{id:"fit_candidate_2",label:"Candidate 2 — the real day feels…",kind:"perceived_fit",options:["mine","tolerable","not mine"]},
+{id:"fit_candidate_3",label:"Candidate 3 — the real day feels…",kind:"perceived_fit",options:["mine","tolerable","not mine"]},
+{id:"tuesdays_200",label:"I could do 200 Tuesdays like my top candidate's",kind:"scale",min:1,max:5,anchor_low:"No — I would quit",anchor_high:"Yes — that is a life I can live"}
+]}
+];
+
+function deriveCddqType(s){
+if(!s) return null;
+if(String(s.cddq_motivation||"").indexOf("not ready")>=0) return "not_ready";
+if(String(s.cddq_conflict||"").indexOf("no real conflict")<0 && s.cddq_conflict) return "inconsistent_information";
+return "lacks_information";
+}
+
+let state = loadState();
+function newClientRef(){ try{ return "cgm_"+crypto.randomUUID(); }catch(e){ return "cgm_"+Date.now()+"_"+Math.random().toString(36).slice(2,10); } }
+function loadState(){
+try{ const raw=localStorage.getItem("cg_mentor_session"); if(raw){ const s=JSON.parse(raw); if(s && Array.isArray(s.history)) return s; } }catch(e){}
+return { client_ref:newClientRef(), door:null, cddq_type:null, stageIndex:0, status:"in_progress", structured:{}, free:{}, history:[], scores:null, report:null };
+}
+function saveLocal(){ try{ localStorage.setItem("cg_mentor_session", JSON.stringify(state)); }catch(e){} }
+async function saveRemote(){
+/* Local only — the name stays because three call sites use it, but
+   nothing is sent anywhere: no remote save exists anymore. */
+saveLocal();
+}
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function cleanTitle(t){ return String(t||"").replace(/^Stage\s+\d+\s*[—–-]\s*/,"").replace(/\s*\([^)]*\)\s*$/,"").trim(); }
+function fitWord(c){ return {A:"Top fit",B:"Good fit",C:"Weak fit",D:"Not a fit"}[c] || ""; }
+
+const answers = {}; // current stage widget state
+function renderStage(){
+const idx=state.stageIndex;
+const st=STAGES[idx];
+document.getElementById("progressLabel").textContent = "Step "+(idx+1)+" of "+STAGES.length;
+document.getElementById("barFill").style.width = Math.round(idx/STAGES.length*100)+"%";
+document.getElementById("localNotice").classList.toggle("hidden", !!MENTOR_API_BASE);
+const thread=document.getElementById("thread");
+if(state.history.length){
+const nSteps = state.history.filter(function(h){return h.who==="mentor";}).length;
+thread.innerHTML = '<button type="button" class="histstrip" id="histToggle">✓ '+nSteps+' earlier step'+(nSteps===1?"":"s")+' answered — tap to view</button>'
++ '<div class="histpast hidden" id="histPast">'
++ state.history.map(function(h){
+return '<div class="msg '+(h.who==="mentor"?"mentor":"user")+'"><div class="who">'+(h.who==="mentor"?"Matchmaker":"You")+'</div><div>'+esc(h.text)+'</div></div>';
+}).join("")
++ '</div>';
+const tg=document.getElementById("histToggle");
+tg.addEventListener("click",function(){ const p=document.getElementById("histPast"); const nowHidden=p.classList.toggle("hidden"); tg.textContent = nowHidden ? ("✓ "+nSteps+" earlier step"+(nSteps===1?"":"s")+" answered — tap to view") : "Hide earlier steps"; });
+} else { thread.innerHTML=""; }
+document.getElementById("stageTitle").textContent=cleanTitle(st.title);
+document.getElementById("stagePrompt").textContent=st.prompt;
+const ft=document.getElementById("freeText"); ft.value=""; ft.placeholder=st.free_prompt_hint;
+Object.keys(answers).forEach(function(k){delete answers[k];});
+const host=document.getElementById("tailWidgets"); host.innerHTML="";
+(st.tail||[]).forEach(function(item){ host.appendChild(renderWidget(item)); });
+document.getElementById("nextBtn").textContent = idx===STAGES.length-1 ? "Finish — show verdict panel" : "Continue";
+window.scrollTo({top:0,behavior:"smooth"});
+}
+function renderWidget(item){
+const wrap=document.createElement("div");
+const lab=document.createElement("label"); lab.textContent=item.label; wrap.appendChild(lab);
+if(item.kind==="number"){
+const inp=document.createElement("input"); inp.type="number"; if(item.min!=null)inp.min=item.min; if(item.max!=null)inp.max=item.max; inp.placeholder=item.placeholder||"";
+inp.addEventListener("input",function(){ answers[item.id]= inp.value===""?null:Number(inp.value); }); wrap.appendChild(inp);
+} else if(item.kind==="text_short"){
+const inp=document.createElement("input"); inp.type="text"; inp.placeholder=item.placeholder||"";
+inp.addEventListener("input",function(){ answers[item.id]=inp.value.trim(); }); wrap.appendChild(inp);
+} else if(item.kind==="choice" || item.kind==="perceived_fit"){
+const box=document.createElement("div"); box.className="choice";
+(item.options||[]).forEach(function(opt){
+const b=document.createElement("button"); b.type="button"; b.textContent=opt;
+b.addEventListener("click",function(){ box.querySelectorAll("button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); answers[item.id]=opt; });
+box.appendChild(b);
+}); wrap.appendChild(box);
+if(item.kind==="perceived_fit"){ const n=document.createElement("p"); n.style.cssText="font-size:13px;color:#5c5566;margin-top:6px"; n.textContent="'Mine' nudges the grade up; 'not mine' removes the job from your matches."; wrap.appendChild(n); }
+} else if(item.kind==="scale"){
+const box=document.createElement("div"); box.className="seg";
+for(let v=item.min; v<=item.max; v++){ (function(v){ const b=document.createElement("button"); b.type="button"; b.textContent=String(v);
+b.addEventListener("click",function(){ box.querySelectorAll("button").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel"); answers[item.id]=v; }); box.appendChild(b); })(v); }
+wrap.appendChild(box);
+const a=document.createElement("div"); a.className="anchors"; a.innerHTML="<span>"+esc(item.anchor_low||item.min)+"</span><span>"+esc(item.anchor_high||item.max)+"</span>"; wrap.appendChild(a);
+} else if(item.kind==="multichoice"){
+const box=document.createElement("div"); box.className="checks"; answers[item.id]=[];
+const boxesB=[];
+(item.options||[]).forEach(function(opt){
+const l=document.createElement("label"); const c=document.createElement("input"); c.type="checkbox";
+const recB={c:c,v:opt,ex:/^none(\s|$)/i.test(opt)}; boxesB.push(recB);
+c.addEventListener("change",function(){ let arr=answers[item.id]||[];
+if(c.checked){ if(recB.ex){ boxesB.forEach(function(r){ if(r!==recB) r.c.checked=false; }); arr=[opt]; }
+else { boxesB.forEach(function(r){ if(r.ex && r.c.checked){ r.c.checked=false; arr=arr.filter(function(x){return x!==r.v;}); } }); if(arr.indexOf(opt)<0)arr.push(opt); } }
+else arr=arr.filter(function(x){return x!==opt;});
+answers[item.id]=arr; });
+l.appendChild(c); const s=document.createElement("span"); s.textContent=opt; l.appendChild(s); box.appendChild(l);
+}); wrap.appendChild(box);
+} else if(item.kind==="rank6"){
+let order=(item.options||[]).slice(); /* U2: starting order is not an answer until moved/confirmed */
+const ul=document.createElement("ul"); ul.className="ranklist";
+function draw(){ ul.innerHTML=""; order.forEach(function(opt,i){ const li=document.createElement("li");
+li.innerHTML='<span class="n">'+(i+1)+'</span><span>'+esc(opt)+'</span>';
+if(i>0){ const up=document.createElement("button"); up.type="button"; up.className="up"; up.textContent="↑ Move up";
+up.addEventListener("click",function(){ const t=order[i-1]; order[i-1]=order[i]; order[i]=t; answers[item.id]=order.slice(); draw(); }); li.appendChild(up); }
+ul.appendChild(li); }); }
+draw(); wrap.appendChild(ul);
+const okb=document.createElement("button"); okb.type="button"; okb.textContent="This order is fine ✓"; okb.style.cssText="display:block;margin-top:10px;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:10px 14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer";
+okb.addEventListener("click",function(){ answers[item.id]=order.slice(); okb.textContent="Order confirmed ✓"; });
+wrap.appendChild(okb);
+const n=document.createElement("p"); n.style.cssText="font-size:13px;color:#5c5566;margin-top:6px"; n.textContent="Tap “Move up” (or drag on desktop in the full matchmaker) — #1 is most important."; wrap.appendChild(n);
+}
+return wrap;
+}
+async function postTurn(stageId){
+if(!MENTOR_API_BASE) return null;
+try{
+const r=await fetch(MENTOR_API_BASE.replace(/\/$/,"")+"/turn",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({client_ref:state.client_ref,door:state.door,cddq_type:state.cddq_type,stage_id:stageId,free_text:state.free[stageId]||"",structured:state.structured})});
+if(!r.ok) return null; const j=await r.json();
+if(j && j.scores) state.scores=j.scores; if(j && j.report) state.report=j.report; if(j && j.status) state.status=j.status;
+return j;
+}catch(e){ return null; }
+}
+function renderVerdict(){
+const panel=document.getElementById("verdict"); panel.classList.remove("hidden");
+const vr=document.getElementById("verdictRestart"); if(vr) vr.classList.remove("hidden");
+document.getElementById("barFill").style.width="100%";
+const body=document.getElementById("verdictBody"); const s=state.scores;
+if(!s){ document.getElementById("verdictEmpty").style.display="block"; body.innerHTML = MENTOR_API_BASE ? "" : '<div class="notice">Live matchmaker brain connects here — this preview collects your answers on this device only.</div>'; return; }
+document.getElementById("verdictEmpty").style.display="none";
+function band(v){ if(v==null) return "—"; if(Array.isArray(v)) return esc(v[0])+" – "+esc(v[1]); if(typeof v==="object") return esc(v.low??v.min??"")+" – "+esc(v.high??v.max??""); return esc(v); }
+let html="";
+if(s.love||s.LOVE) html+="<p><b>Chemistry:</b> "+band(s.love||s.LOVE)+"</p>";
+if(s.potential||s.POTENTIAL) html+="<p><b>Long-term potential:</b> "+band(s.potential||s.POTENTIAL)+"</p>";
+if(s.category) html+='<p><b>Fit:</b> <span class="badge">'+esc(fitWord(s.category))+"</span></p>";
+if(state.report) html+="<p style='margin-top:10px'>"+esc(state.report)+"</p>";
+body.innerHTML=html;
+}
+document.querySelectorAll(".door").forEach(function(btn){
+btn.addEventListener("click",function(){
+state.door=btn.getAttribute("data-door"); state.status="in_progress"; state.stageIndex=0;
+document.getElementById("startScreen").classList.add("hidden");
+document.getElementById("interview").classList.remove("hidden");
+saveRemote(); renderStage();
+});
+});
+document.getElementById("nextBtn").addEventListener("click", async function(){
+const st=STAGES[state.stageIndex];
+const free=document.getElementById("freeText").value.trim();
+state.free[st.id]=free;
+state.history.push({who:"mentor",text:st.prompt});
+if(free) state.history.push({who:"user",text:free});
+Object.keys(answers).forEach(function(k){ state.structured[k]=answers[k]; });
+if(st.id==="cddq") state.cddq_type=deriveCddqType(state.structured);
+await postTurn(st.id);
+if(state.stageIndex>=STAGES.length-1){ state.status = state.scores ? "scored" : "completed_local"; document.getElementById("stageCard").classList.add("hidden"); saveRemote(); renderVerdict(); document.getElementById("verdict").scrollIntoView({behavior:"smooth"}); return; }
+state.stageIndex+=1; saveRemote(); renderStage();
+});
+document.getElementById("restartBtn").addEventListener("click",function(){
+state={client_ref:newClientRef(),door:null,cddq_type:null,stageIndex:0,status:"in_progress",structured:{},free:{},history:[],scores:null,report:null};
+saveLocal(); location.reload();
+});
+document.getElementById("verdictRestart").addEventListener("click",function(){
+if(window.__cgLiveReset){ window.__cgLiveReset(); return; }
+state={client_ref:newClientRef(),door:null,cddq_type:null,stageIndex:0,status:"in_progress",structured:{},free:{},history:[],scores:null,report:null};
+saveLocal(); location.reload();
+});
+if(state.door){ document.getElementById("startScreen").classList.add("hidden"); document.getElementById("interview").classList.remove("hidden"); if(state.status==="completed_local"||state.status==="scored"){ document.getElementById("stageCard").classList.add("hidden"); renderVerdict(); } else { renderStage(); } }
+</script>
+<script>
+(function(){
+var LIVE_KEY = "cg_mentor_live_v1";
+var live = null;        // { session_id, session }
+var liveDef = null;     // current wire def
+var liveAnswers = {};   // current card's tail answers
+var liveRankTouched = {}; // rank6 cards actually moved/confirmed by the user (U2)
+var liveRatings = {};   // stage-6 ratings { slug: 'mine'|'tolerable'|'not_mine' }
+var busy = false;
+try{ localStorage.removeItem(LIVE_KEY); }catch(e){} // nothing is saved — every visit starts fresh; clear leftovers from earlier visits
+/* Doors stay locked until the live handshake resolves (audit U12,
+   28.10.2026): a tap before the health check finishes must not start
+   the legacy questionnaire, and a double tap must not start twice. */
+var doorEls0 = Array.prototype.slice.call(document.querySelectorAll(".door"));
+doorEls0.forEach(function(b){ b.disabled = true; });
+
+function $(id){ return document.getElementById(id); }
+function store(){ /* Nothing is saved (founder decision, 2026-10-27): the session lives in memory for this visit only. store() stays for its call sites (incl. pg.js via the bridge) and only clears any leftover from an earlier visit. */ try{ localStorage.removeItem(LIVE_KEY); }catch(e){} }
+async function api(body){
+var r = await fetch("/api/mentor", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body) });
+var j = null; try{ j = await r.json(); }catch(e){}
+return { status: r.status, json: j };
+}
+function pct(x){ return Math.round(x * 100); }
+function band(b){ return b ? (pct(b.lo) + "–" + pct(b.hi) + "%") : "—"; }
+
+function stepInfo(){
+if(!live || !live.session) return { n: 1, total: 8 };
+var s = live.session;
+if(s.phase === "cddq") return { n: 1, total: 8 };
+if(s.phase === "stages") return { n: 2 + (s.stage_index || 0), total: 8 };
+if(s.phase === "stage6") return { n: 8, total: 8 };
+return { n: 8, total: 8 };
+}
+
+function renderChecklist(resp){
+var host = $("mmChecklist"); if(!host) return;
+var items = resp && resp.json && resp.json.checklist;
+if(!items || !items.length){ host.classList.add("hidden"); host.innerHTML = ""; return; }
+var icons = { done: "✓", current: "●", todo: "○" };
+var html = '<div class="mm-head">What your matchmaker checks</div><ul>';
+items.forEach(function(it){
+html += '<li class="' + esc(it.state) + '"><span class="mm-ic">' + (icons[it.state] || "○") + '</span><span>' + esc(it.label) + '</span></li>';
+});
+host.innerHTML = html + '</ul>';
+host.classList.remove("hidden");
+}
+
+function bubbleHtml(h){
+return '<div class="msg ' + (h.who === "mentor" ? "mentor" : "user") + '"><div class="who">' + (h.who === "mentor" ? "Matchmaker" : "You") + '</div><div>' + esc(h.text) + '</div></div>';
+}
+
+function renderThread(){
+var t = (live && live.session && live.session.transcript) || [];
+var lastMentor = -1;
+for(var i = 0; i < t.length; i++) if(t[i].who === "mentor") lastMentor = i;
+var doneMode = !!(live && live.session && live.session.phase === "done");
+var past = doneMode ? t.slice() : (lastMentor > 0 ? t.slice(0, lastMentor) : []);
+var current = doneMode ? [] : (lastMentor >= 0 ? t.slice(lastMentor) : t.slice());
+var nSteps = past.filter(function(h){ return h.who === "mentor"; }).length;
+var label = "✓ " + nSteps + " earlier step" + (nSteps === 1 ? "" : "s") + " answered — tap to view";
+var html = "";
+if(past.length){
+html += '<button type="button" class="histstrip" id="histToggle">' + label + '</button>';
+html += '<div class="histpast hidden" id="histPast">' + past.map(bubbleHtml).join("") + '</div>';
+}
+html += '<div id="currentTurn">' + current.map(bubbleHtml).join("") + '</div>';
+$("thread").innerHTML = html;
+var tg = $("histToggle");
+if(tg) tg.addEventListener("click", function(){
+var p = $("histPast"); if(!p) return;
+var nowHidden = p.classList.toggle("hidden");
+tg.textContent = nowHidden ? label : "Hide earlier steps";
+});
+}
+
+function optVal(o){ return (o && typeof o === "object") ? o.value : o; }
+function optLab(o){ return (o && typeof o === "object") ? o.label : String(o); }
+
+function liveWidget(item, key){
+var wrap = document.createElement("div");
+var lab = document.createElement("label"); lab.textContent = item.label || key; wrap.appendChild(lab);
+if(item.kind === "number"){
+var inp = document.createElement("input"); inp.type = "number";
+if(item.min != null) inp.min = item.min; if(item.max != null) inp.max = item.max;
+inp.addEventListener("input", function(){ liveAnswers[key] = inp.value === "" ? null : Number(inp.value); });
+wrap.appendChild(inp);
+} else if(item.kind === "text_short"){
+var ti = document.createElement("input"); ti.type = "text";
+ti.addEventListener("input", function(){ liveAnswers[key] = ti.value.trim(); });
+wrap.appendChild(ti);
+} else if(item.kind === "choice"){
+var box = document.createElement("div"); box.className = "choice";
+(item.options || []).forEach(function(o){
+var b = document.createElement("button"); b.type = "button"; b.textContent = optLab(o);
+b.addEventListener("click", function(){ box.querySelectorAll("button").forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); liveAnswers[key] = optVal(o); });
+box.appendChild(b);
+});
+wrap.appendChild(box);
+} else if(item.kind === "multichoice"){
+var checks = document.createElement("div"); checks.className = "checks"; liveAnswers[key] = [];
+/* Audit V3/U9 (28.10.2026): "none"-type options are exclusive —
+   checking one clears everything else, checking anything else
+   clears the none. The API validator normalises the same way. */
+var boxes = [];
+(item.options || []).forEach(function(o){
+var l = document.createElement("label"); var c = document.createElement("input"); c.type = "checkbox";
+var rec = { c: c, v: optVal(o), ex: !!(o && (o.exclusive === true || optVal(o) === "none" || /^none_/.test(optVal(o) || ""))) };
+boxes.push(rec);
+c.addEventListener("change", function(){
+var arr = liveAnswers[key] || []; var v = rec.v;
+if(c.checked){
+if(rec.ex){
+boxes.forEach(function(r){ if(r !== rec) r.c.checked = false; });
+arr = [v];
+} else {
+boxes.forEach(function(r){ if(r.ex && r.c.checked){ r.c.checked = false; arr = arr.filter(function(x){ return x !== r.v; }); } });
+if(arr.indexOf(v) < 0) arr.push(v);
+}
+} else {
+arr = arr.filter(function(x){ return x !== v; });
+}
+liveAnswers[key] = arr;
+});
+l.appendChild(c); var s = document.createElement("span"); s.textContent = optLab(o); l.appendChild(s); checks.appendChild(l);
+});
+wrap.appendChild(checks);
+} else if(item.kind === "scale"){
+var seg = document.createElement("div"); seg.className = "seg";
+for(var v = item.min; v <= item.max; v++){ (function(v){
+var b = document.createElement("button"); b.type = "button"; b.textContent = String(v);
+b.addEventListener("click", function(){ seg.querySelectorAll("button").forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); liveAnswers[key] = v; });
+seg.appendChild(b);
+})(v); }
+wrap.appendChild(seg);
+if(item.anchors){
+var a = document.createElement("div"); a.className = "anchors";
+a.innerHTML = "<span>" + esc(item.anchors[String(item.min)] || item.min) + "</span><span>" + esc(item.anchors[String(item.max)] || item.max) + "</span>";
+wrap.appendChild(a);
+}
+} else if(item.kind === "rank6"){
+var labels = item.value_labels || {};
+/* Audit U2: the starting order is rendered but NOT registered as an
+   answer. It becomes one only when the user moves an item or taps
+   "This order is fine" — liveContinue blocks otherwise, so the
+   mirror can never cite a #1 the user did not choose. */
+var order = (item.values || []).slice();
+var ul = document.createElement("ul"); ul.className = "ranklist";
+function draw(){
+ul.innerHTML = "";
+order.forEach(function(k, i){
+var li = document.createElement("li");
+li.innerHTML = '<span class="n">' + (i + 1) + '</span><span>' + esc(labels[k] || k) + '</span>';
+if(i > 0){
+var up = document.createElement("button"); up.type = "button"; up.className = "up"; up.textContent = "↑ Move up";
+up.addEventListener("click", function(){ var t = order[i - 1]; order[i - 1] = order[i]; order[i] = t; liveAnswers[key] = order.slice(); liveRankTouched[key] = true; draw(); });
+li.appendChild(up);
+}
+ul.appendChild(li);
+});
+}
+draw(); wrap.appendChild(ul);
+var okBtn = document.createElement("button"); okBtn.type = "button"; okBtn.textContent = "This order is fine ✓";
+okBtn.style.cssText = "display:block;margin-top:10px;background:#fff;color:var(--ink);border:2px solid var(--line);border-radius:14px;padding:10px 14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14.5px;cursor:pointer";
+okBtn.addEventListener("click", function(){ liveAnswers[key] = order.slice(); liveRankTouched[key] = true; okBtn.textContent = "Order confirmed ✓"; });
+wrap.appendChild(okBtn);
+}
+return wrap;
+}
+
+function renderLiveCard(resp){
+liveDef = resp.json.def;
+renderChecklist(resp);
+liveAnswers = {}; liveRatings = {}; liveRankTouched = {};
+var s = live.session;
+var st = stepInfo();
+$("progressLabel").textContent = "Step " + st.n + " of " + st.total;
+$("barFill").style.width = Math.round(st.n / st.total * 100) + "%";
+renderThread();
+var def = liveDef || {};
+$("stageTitle").textContent = cleanTitle(def.title) || (s.phase === "cddq" ? "Before we start" : "Your answers");
+$("stagePrompt").textContent = "";
+if(def.id === 0) $("stagePrompt").textContent = "Point A runs on exact numbers — fill in every field below; I score with exactly these. The box at the bottom is for anything extra, in your own words.";
+var ft = $("freeText"); ft.value = ""; ft.placeholder = "Type your answer…";
+var host = $("tailWidgets"); host.innerHTML = "";
+if(s.phase === "stage6" && def.candidates){
+def.candidates.forEach(function(c){
+var item = { kind: "perceived_fit", label: c.name + " — one real Tuesday in this job feels…" };
+var wrap = document.createElement("div");
+var lab = document.createElement("label"); lab.textContent = item.label; wrap.appendChild(lab);
+var box = document.createElement("div"); box.className = "choice";
+[["mine", "Mine"], ["tolerable", "Tolerable"], ["not_mine", "Not mine"]].forEach(function(pair){
+var b = document.createElement("button"); b.type = "button"; b.textContent = pair[1];
+b.addEventListener("click", function(){ box.querySelectorAll("button").forEach(function(x){ x.classList.remove("sel"); }); b.classList.add("sel"); liveRatings[c.slug] = pair[0]; });
+box.appendChild(b);
+});
+wrap.appendChild(box);
+var note = document.createElement("p"); note.style.cssText = "font-size:13px;color:#5c5566;margin-top:6px";
+note.textContent = "'Mine' nudges this job up in your ranking. 'Not mine' removes it from your matches — the slot goes to the next job.";
+wrap.appendChild(note);
+host.appendChild(wrap);
+});
+$("nextBtn").textContent = "Apply my ratings — finish";
+} else {
+(def.tail || []).forEach(function(item){
+if(item.kind === "derived" || item.kind === "perceived_fit") return;
+var key = item.field || item.id;
+if(!key) return;
+host.appendChild(liveWidget(item, key));
+});
+$("nextBtn").textContent = "Continue";
+}
+var curTurn = $("currentTurn");
+if(curTurn) window.scrollTo({ top: Math.max(0, curTurn.getBoundingClientRect().top + window.scrollY - 8), behavior: "smooth" });
+}
+
+var lastResult = null;   // last bands result, for the share card
+
+var WOW_VALUE_LABELS = { achievement: "Achievement", independence: "Independence", recognition: "Recognition", relationships: "Relationships", support: "Support", working_conditions: "Working conditions" };
+var WOW_EXIT_PHRASES = { money: "the money ran out or never showed up", energy: "the work drained you dry", boss: "the people in charge", market: "the market moved", boredom: "it went flat and routine", mixed: "a mix — no single killer" };
+
+function wowTopBottom(vr){
+var keys = null;
+if(Array.isArray(vr)) keys = vr.filter(function(k){ return WOW_VALUE_LABELS[k]; });
+else if(vr && typeof vr === "object"){
+keys = Object.keys(vr).filter(function(k){ return WOW_VALUE_LABELS[k] && typeof vr[k] === "number"; })
+.sort(function(a, b){ return vr[a] - vr[b]; });
+}
+if(!keys || keys.length < 2) return null;
+return { top: keys[0], bottom: keys[keys.length - 1] };
+}
+
+function showMirror(resp){
+var s = live.session; var st = s.structured || {};
+var lines = "";
+if(typeof st.income_floor_k === "number" && typeof st.cushion_months === "number" && typeof st.hours_per_day === "number"){
+lines += '<p class="wow-line">Your floor is $' + esc(st.income_floor_k) + 'K a year, you have ' + esc(st.cushion_months) + (st.cushion_months === 1 ? ' month' : ' months') + ' of cushion and ' + esc(st.hours_per_day) + ' real hours a day. That\'s not a wish list — that\'s a spec sheet. I match against it, not against a dream.</p>';
+}
+if(typeof st.attempts_started === "number" && st.attempts_started > 0){
+var l2 = 'You\'ve started ' + st.attempts_started + ' serious attempts';
+if(typeof st.attempts_finished === "number") l2 += ' and finished ' + st.attempts_finished;
+l2 += '.';
+var phrase = WOW_EXIT_PHRASES[st.exit_pattern];
+if(phrase) l2 += ' And your exits have a signature: ' + phrase + '. Every job I show you gets checked against that signature.';
+lines += '<p class="wow-line">' + esc(l2) + '</p>';
+} else {
+lines += '<p class="wow-line">No exits behind you yet — so we go by your values, not your scars.</p>';
+}
+var tb = wowTopBottom(st.values_rank);
+if(tb) lines += '<p class="wow-line">You ranked ' + esc(WOW_VALUE_LABELS[tb.top]) + ' first — above ' + esc(WOW_VALUE_LABELS[tb.bottom]) + '. That\'s the order I\'ll defend when the money argues back.</p>';
+var best = "";
+(s.transcript || []).forEach(function(h){
+if(h.who === "user" && typeof h.text === "string" && h.text.length >= 40 && h.text.length > best.length) best = h.text;
+});
+var quote = best ? '<div class="wow-quote">«' + esc(best.slice(0, 180)) + '»<div class="cap">Your words. Not mine.</div></div>' : "";
+var ov = document.createElement("div");
+ov.className = "wow-overlay"; ov.id = "wowMirror";
+ov.innerHTML = '<div class="wow-card"><h2>Hold on. Here\'s what I\'m hearing.</h2>' + lines + quote +
+'<p class="wow-close">None of this is a guess — you told me all of it. Now the part most people skip: the shadows.</p>' +
+'<button type="button" class="btn" id="wowMirrorBtn">I\'m listening — continue →</button></div>';
+document.body.appendChild(ov);
+document.getElementById("wowMirrorBtn").addEventListener("click", function(){ ov.remove(); renderLiveCard(resp); });
+}
+
+function wowMeter(label, b, caption){
+if(!b || typeof b.lo !== "number" || typeof b.hi !== "number")
+return '<p style="margin-top:8px">' + label + ' ' + band(b) + ' — ' + esc(caption) + '</p>';
+var lo = pct(b.lo), hi = pct(b.hi);
+return '<div class="wow-meter"><span class="wow-mlab">' + label + '</span><span class="wow-mtrack"><span class="wow-mfill" style="left:' + lo + '%;width:' + Math.max(hi - lo, 2) + '%"></span></span><span class="wow-mval">' + band(b) + '</span></div><p class="wow-mcap">' + esc(caption) + '</p>';
+}
+
+function wowBarRow(label, b){
+if(!b || typeof b.lo !== "number" || typeof b.hi !== "number") return "";
+var lo = pct(b.lo), hi = pct(b.hi);
+return '<div><div class="wow-bar-lab"><span>' + label + '</span><span>' + band(b) + '</span></div><div class="wow-track"><span class="wow-fill" data-w="' + (hi - lo) + '" style="left:' + lo + '%;width:0%"></span></div></div>';
+}
+
+// The reveal stamp must agree with the fit grade on the cards: "IT'S A
+// MATCH" only for a genuinely strong #1 (category A); a weak #1 is
+// announced as one — the matchmaker protects the user, not the drama.
+function stampFor(top){
+if(!top) return "THE MATCHMAKER HAS SPOKEN";
+if(top.category === "A") return "IT'S A MATCH 💘";
+if(top.category === "B") return "A GOOD MATCH — EYES OPEN";
+if(top.category === "C") return "AN HONEST MAYBE — WEAK FIT";
+return "THE MATCHMAKER HAS SPOKEN";
+}
+
+function showReveal(r){
+var top = (r.top3 || [])[0]; if(!top) return;
+var old = document.getElementById("wowReveal"); if(old) old.remove();
+var stamp = stampFor(top);
+var fw = fitWord(top.category);
+var ov = document.createElement("div");
+ov.className = "wow-overlay"; ov.id = "wowReveal";
+ov.innerHTML = '<div style="max-width:640px;margin:6vh auto 0;text-align:center">' +
+'<div class="wow-mono">Your #1 match</div>' +
+'<div class="wow-big">' + esc(top.name) + '</div>' +
+'<div><span class="wow-stamp">' + esc(stamp) + '</span></div>' +
+'<div class="wow-bars">' + wowBarRow("Chemistry", top.love) + wowBarRow("Long-term potential", top.potential) + '</div>' +
+(fw ? '<div><span class="wow-fit">' + esc(fw) + '</span></div>' : '') +
+'<button type="button" class="btn wow-btn" id="wowRevealBtn">See the full verdict →</button></div>';
+document.body.appendChild(ov);
+var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ov.querySelectorAll(".wow-fill").forEach(function(f){
+var target = f.getAttribute("data-w") + "%";
+if(reduced){ f.style.width = target; return; }
+requestAnimationFrame(function(){ requestAnimationFrame(function(){ f.style.width = target; }); });
+});
+document.getElementById("wowRevealBtn").addEventListener("click", function(){ ov.remove(); });
+}
+
+function wowRR(ctx, x, y, w, h, r){
+ctx.beginPath();
+if(ctx.roundRect){ ctx.roundRect(x, y, w, h, r); return; }
+ctx.moveTo(x + r, y);
+ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r);
+ctx.closePath();
+}
+
+async function shareResultCard(){
+var r = lastResult; if(!r) return;
+var top = (r.top3 || [])[0]; if(!top) return;
+try{ await document.fonts.ready; }catch(e){}
+var W = 1080, H = 1350;
+var cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+var ctx = cv.getContext("2d");
+ctx.fillStyle = "#17122B"; ctx.fillRect(0, 0, W, H);
+ctx.textAlign = "center";
+ctx.fillStyle = "#FF8CBE"; ctx.font = "150px sans-serif";
+ctx.fillText("♥", W / 2, 215);
+ctx.font = "30px 'DM Mono', monospace";
+ctx.fillText("CAREER GLITCH — MY #1 MATCH", W / 2, 305);
+function wrapName(name, size){
+ctx.font = "900 " + size + "px Outfit, sans-serif";
+var words = String(name).split(/\s+/), lines = [], cur = "";
+words.forEach(function(w){
+var t = cur ? cur + " " + w : w;
+if(cur && ctx.measureText(t).width > W - 160){ lines.push(cur); cur = w; } else cur = t;
+});
+if(cur) lines.push(cur);
+return lines;
+}
+var size = 100, nameLines = wrapName(top.name, size);
+while(nameLines.length > 2 && size > 44){ size -= 8; nameLines = wrapName(top.name, size); }
+ctx.fillStyle = "#FFFCF6"; ctx.font = "900 " + size + "px Outfit, sans-serif";
+var y = 425;
+nameLines.forEach(function(l){ ctx.fillText(l, W / 2, y); y += Math.round(size * 1.08); });
+var stamp = stampFor(top);
+ctx.save(); ctx.translate(W / 2, y + 48); ctx.rotate(-0.06);
+ctx.font = "900 42px Outfit, sans-serif";
+var sw = ctx.measureText(stamp).width + 68;
+wowRR(ctx, -sw / 2, -42, sw, 84, 42); ctx.strokeStyle = "#F92A82"; ctx.lineWidth = 5; ctx.stroke();
+ctx.fillStyle = "#FF8CBE"; ctx.fillText(stamp, 0, 15);
+ctx.restore();
+function drawBar(label, b, yy){
+if(!b || typeof b.lo !== "number" || typeof b.hi !== "number") return yy;
+ctx.textAlign = "left"; ctx.fillStyle = "#FFFCF6"; ctx.font = "700 34px 'DM Mono', monospace";
+ctx.fillText(label + "  " + band(b), 110, yy);
+ctx.fillStyle = "#3a2b4d"; wowRR(ctx, 110, yy + 24, W - 220, 34, 17); ctx.fill();
+ctx.fillStyle = "#FF8CBE"; wowRR(ctx, 110 + b.lo * (W - 220), yy + 24, Math.max((b.hi - b.lo) * (W - 220), 12), 34, 17); ctx.fill();
+ctx.textAlign = "center";
+return yy + 108;
+}
+y += 140;
+var butTxt = (top.argument && top.argument.but && top.argument.but[0]) ? String(top.argument.but[0]) : "";
+if(butTxt){
+ctx.textAlign = "center"; ctx.fillStyle = "#FF8CBE"; ctx.font = "28px 'DM Mono', monospace";
+ctx.fillText("🚩 THE CATCH", W / 2, y); y += 38;
+ctx.fillStyle = "#FFFCF6"; ctx.font = "600 33px 'Instrument Sans', sans-serif";
+var bw = butTxt.split(/\s+/), cl = [], cur2 = "";
+bw.forEach(function(w){ var t = cur2 ? cur2 + " " + w : w; if(cur2 && ctx.measureText(t).width > W - 200){ cl.push(cur2); cur2 = w; } else cur2 = t; });
+if(cur2) cl.push(cur2);
+cl.slice(0, 2).forEach(function(l){ ctx.fillText(l, W / 2, y); y += 38; });
+y += 14;
+}
+y = drawBar("Chemistry", top.love, y); y = drawBar("Long-term potential", top.potential, y);
+var anti = (r.bottom3 && r.bottom3[0]) || r.anti_match || null;
+if(anti && anti.name){
+y += 22;
+ctx.textAlign = "center"; ctx.fillStyle = "#FF8CBE"; ctx.font = "28px 'DM Mono', monospace";
+ctx.fillText("🚫 BLOCKED FOR ME BY THE MATCHMAKER", W / 2, y); y += 44;
+var asz = 46; ctx.font = "800 " + asz + "px Outfit, sans-serif";
+while(ctx.measureText(String(anti.name)).width > W - 160 && asz > 26){ asz -= 4; ctx.font = "800 " + asz + "px Outfit, sans-serif"; }
+ctx.fillStyle = "#FFFCF6"; ctx.fillText(String(anti.name), W / 2, y);
+}
+ctx.textAlign = "center"; ctx.fillStyle = "#FFFCF6"; ctx.font = "600 31px 'Instrument Sans', sans-serif";
+ctx.fillText("An AI career matchmaker: it knows you, it knows the job market.", W / 2, H - 108);
+ctx.fillStyle = "#FF8CBE"; ctx.font = "28px 'DM Mono', monospace";
+ctx.fillText("careerglitch.com/mentor", W / 2, H - 52);
+cv.toBlob(function(blob){
+if(!blob) return;
+var file = null;
+try{ file = new File([blob], "careerglitch-my-match.png", { type: "image/png" }); }catch(e){}
+if(file && navigator.canShare && navigator.canShare({ files: [file] }) && navigator.share){
+navigator.share({ files: [file], title: "My Career Glitch match" }).catch(function(){});
+}
+var url = URL.createObjectURL(blob);
+var a = document.createElement("a"); a.href = url; a.download = "careerglitch-my-match.png";
+document.body.appendChild(a); a.click(); a.remove();
+setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+}, "image/png");
+}
+
+function appendShareBtn(){
+var btn = document.createElement("button");
+btn.type = "button"; btn.className = "btn"; btn.textContent = "📸 Save my result card";
+btn.addEventListener("click", function(){ shareResultCard(); });
+$("verdictBody").appendChild(btn);
+}
+
+function argSection(title, lines, warn){
+if(!lines || !lines.length) return "";
+var html = '<div class="argsec"><h4>' + esc(title) + '</h4><ul' + (warn ? ' class="warn"' : '') + '>';
+lines.forEach(function(l){ html += '<li>' + (warn ? '⚠️ ' : '') + esc(l) + '</li>'; });
+return html + '</ul></div>';
+}
+
+function candidateCard(c, heading, isAnti, isTop){
+var html = '<div class="card' + (isTop ? ' top1' : '') + '" data-cardslug="' + esc(c.slug || "") + '" style="margin-top:12px">';
+var ribbons = "";
+if(isTop) ribbons += '<span class="wow-ribbon">💘 Matchmaker\'s pick</span>';
+if(!isAnti && pgPick() === c.slug) ribbons += '<span class="pg-pick-ribbon">💍 Your pick</span>';
+if(ribbons) html += '<div>' + ribbons + '</div>';
+html += '<b style="font-family:Outfit,sans-serif;font-size:19px">' + esc(heading || c.name) + '</b>';
+if(!isAnti && fitWord(c.category)) html += ' <span class="badge">' + esc(fitWord(c.category)) + '</span>';
+if(c.verdict) html += ' <span class="badge ' + (c.verdict === "YES" ? "yes" : "no") + '">' + esc(c.verdict) + '</span>';
+if(c.floor_status === "below_floor") html += ' <span class="badge floor">Below your floor</span>';
+html += wowMeter("Chemistry", c.love, "how much it matches what you love");
+html += wowMeter("Long-term potential", c.potential, "how strong your chances look: what you already have, plus demand");
+var arg = c.argument || {};
+if(isAnti){
+html += argSection("🚩 Red flags", (c.why_not && c.why_not.length) ? c.why_not : arg.but, true);
+html += argSection("The math", arg.math, false);
+if(c.closing) html += '<p style="margin-top:8px">' + esc(c.closing) + '</p>';
+} else {
+html += argSection("Green flags", arg.why_you, false);
+html += argSection("The math", arg.math, false);
+html += argSection("The catch", arg.but, true);
+html += argSection("First steps", arg.bridge, false);
+var day = pgDay(c.slug);
+html += '<button type="button" class="btn ghost pg-btn" data-pg="' + esc(c.slug) + '">' + (day && day.done ? "↻ Live the day again" : "▶ Live one day first") + '</button>';
+if(day && day.done) html += '<p class="pg-dayline">' + esc(pgDayLine(day)) + '</p>';
+}
+html += '</div>';
+return html;
+}
+
+function renderResult(resp){
+var s = live.session; var r = s.result || resp.json.result;
+renderChecklist(resp);
+$("stageCard").classList.add("hidden");
+renderThread();
+$("barFill").style.width = "100%";
+$("progressLabel").textContent = "Done";
+var panel = $("verdict"); panel.classList.remove("hidden");
+var vr = $("verdictRestart"); if(vr) vr.classList.remove("hidden");
+$("verdictEmpty").style.display = "none";
+var html = "";
+var hasTop = false;
+if(!r){
+html = '<div class="notice">The session ended without a scoring result — nothing was invented to fill the gap. Start over to try again.</div>';
+} else if(r.mode === "insufficient_data"){
+html += '<p><b>Honest answer: not enough signal for a verdict yet.</b></p>';
+if(r.mode_reason) html += '<p style="margin-top:6px">' + esc(r.mode_reason) + '</p>';
+if(r.exploration_plan && r.exploration_plan.length){
+html += '<h3 style="margin:14px 0 8px;font-family:Outfit,sans-serif">Your exploration plan</h3><ol style="margin-left:20px;display:grid;gap:6px">';
+r.exploration_plan.forEach(function(step){ html += '<li>' + esc(step) + '</li>'; });
+html += '</ol>';
+}
+} else {
+lastResult = r; hasTop = (r.top3 || []).length > 0;
+if(r.set_reason) html += hasTop ? '<h3 style="margin:6px 0 8px;font-family:Outfit,sans-serif">Why these three</h3><p>' + esc(r.set_reason) + '</p>' : '<div class="notice">' + esc(r.set_reason) + '</div>';
+(r.top3 || []).forEach(function(c, i){ html += candidateCard(c, (i + 1) + ". " + c.name, false, i === 0); });
+if(r.bridge_pick){
+var bp = r.bridge_pick;
+var top1 = (r.top3 || [])[0];
+html += '<div class="card wow-cushion" style="margin-top:14px">';
+html += '<div class="wow-mono" style="color:#7a1042">🛟 Your cushion</div>';
+html += '<b style="font-family:Outfit,sans-serif;font-size:19px">' + esc(bp.name) + '</b>';
+if(fitWord(bp.category)) html += ' <span class="badge">' + esc(fitWord(bp.category)) + '</span>';
+if(bp.verdict) html += ' <span class="badge ' + (bp.verdict === "YES" ? "yes" : "no") + '">' + esc(bp.verdict) + '</span>';
+if(top1) html += '<p style="margin-top:8px">' + esc(top1.name) + ' pays later — income there is built, not hired. This job pays from the first paycheck while you build it.</p>';
+html += wowMeter("Chemistry", bp.love, "how much it matches what you love");
+html += wowMeter("Long-term potential", bp.potential, "how strong your chances look: what you already have, plus demand");
+html += argSection("Why this one", bp.why_bridge, false);
+html += '</div>';
+}
+var bottom = r.bottom3 || (r.anti_match ? [r.anti_match] : []);
+if(bottom.length){
+html += '<div id="antiBlock">';
+html += '<h3 style="margin:16px 0 4px;font-family:Outfit,sans-serif">' + (bottom.length > 1 ? bottom.length + " jobs I blocked for you" : "One job I blocked for you") + '</h3>';
+html += '<p>Blocked by your matchmaker, measured on your own answers — worst first. Knowing your no-list is half the match.</p>';
+bottom.forEach(function(c){ html += candidateCard(c, "🚫 Blocked: " + c.name, true); });
+html += '</div>';
+}
+html += '<p style="margin-top:12px;color:#5c5566;font-size:14px">Scores are ranges, never one magic number. Every figure comes from your answers and checked job-market data.</p>';
+}
+$("verdictBody").innerHTML = html;
+$("verdictBody").querySelectorAll("[data-pg]").forEach(function(b){
+b.addEventListener("click", function(){ openPlayground(b.getAttribute("data-pg")); });
+});
+if(hasTop){ appendShareBtn(); showReveal(r); }
+panel.scrollIntoView({ behavior: "smooth" });
+if(r && s.phase === "done"){ if(s.report) renderStoredLetter(s); else tryReport(); }
+}
+
+function letterTile(innerHtml){
+var card = document.createElement("div");
+card.className = "card letter-card"; card.style.marginTop = "14px";
+card.innerHTML = '<button type="button" class="letter-head"><span class="letter-title">💌 A letter from your matchmaker</span><span class="letter-cta">Read the letter →</span></button>' +
+'<div class="letter-body hidden">' + innerHtml + '</div>';
+var head = card.querySelector(".letter-head");
+var lbody = card.querySelector(".letter-body");
+head.addEventListener("click", function(){
+var nowHidden = lbody.classList.toggle("hidden");
+head.querySelector(".letter-cta").textContent = nowHidden ? "Read the letter →" : "Close ↑";
+});
+return card;
+}
+
+function letterHtml(text){
+var lines = String(text).split(/\n/), out = [], buf = [];
+function bold(t){ return t.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+function flush(){ if(buf.length){ out.push("<p>" + buf.join("<br>") + "</p>"); buf = []; } }
+lines.forEach(function(ln){
+var t = ln.trim();
+if(/^#{2,3}\s/.test(t)){ flush(); out.push('<h4 class="wow-h">' + bold(esc(t.replace(/^#{2,3}\s+/, ""))) + "</h4>"); }
+else if(t === ""){ flush(); }
+else { buf.push(bold(esc(t))); }
+});
+flush();
+for(var i = 0; i < out.length; i++){ if(out[i].indexOf("<p>") === 0){ out[i] = out[i].replace("<p>", '<p class="wow-lead">'); break; } }
+return out.join("");
+}
+
+function renderStoredLetter(s){
+var body = $("verdictBody");
+if(!body || body.querySelector(".letter-card")) return;
+var card = letterTile('<div class="wow-report">' + letterHtml(s.report) + '</div>');
+var lbody = card.querySelector(".letter-body");
+var ver = s.verification;
+if(ver && ver.signed){
+var sign = document.createElement("div");
+sign.innerHTML = '<span class="wow-sign">✍ Signed — your matchmaker</span>' +
+'<p class="mm-sign-note">Before this letter reached you, every figure in it was checked against the job data and your own answers. It passed.</p>';
+lbody.appendChild(sign);
+} else if(ver){
+var nosign = document.createElement("p");
+nosign.className = "mm-nosign";
+nosign.textContent = "Not signed. Part of this letter could not be checked against your answers and the checked job data, so it was trimmed where it failed — or should be read with care. The verdict and the cards above are the checked part.";
+lbody.appendChild(nosign);
+}
+var anti = document.getElementById("antiBlock");
+if(anti && anti.parentNode === body) body.insertBefore(card, anti); else body.appendChild(card);
+}
+
+async function tryReport(){
+if(document.querySelector("#verdictBody .letter-card")) return;
+var res;
+try { res = await api({ action: "report", session_id: live.session_id, session: live.session }); }
+catch(e){ res = { json: null }; }
+var body = $("verdictBody");
+if(res.json && res.json.ok && res.json.report){
+live.session = res.json.session; store();
+var card = letterTile('<div class="wow-report">' + letterHtml(res.json.report) + '</div>');
+var lbody = card.querySelector(".letter-body");
+var ver = (res.json.session && res.json.session.verification) || res.json.verification;
+if(ver && ver.signed){
+var sign = document.createElement("div");
+sign.innerHTML = '<span class="wow-sign">✍ Signed — your matchmaker</span>' +
+'<p class="mm-sign-note">Before this letter reached you, every figure in it was checked against the job data and your own answers. It passed.</p>';
+lbody.appendChild(sign);
+} else if(ver){
+var nosign = document.createElement("p");
+nosign.className = "mm-nosign";
+nosign.textContent = "Not signed. Part of this letter could not be checked against your answers and the checked job data, so it was trimmed where it failed — or should be read with care. The verdict and the cards above are the checked part.";
+lbody.appendChild(nosign);
+}
+var anti = document.getElementById("antiBlock");
+if(anti && anti.parentNode === body) body.insertBefore(card, anti); else body.appendChild(card);
+} else {
+var noteCard = letterTile('<p style="color:#5c5566;font-size:14.5px;line-height:1.55">The written matchmaker report is generated by the matchmaker model — it is not available on this host right now, so nothing was fabricated in its place. Your verdict above is the complete deterministic result.</p>');
+body.appendChild(noteCard);
+}
+}
+
+function route(resp){
+if(!resp.json || !resp.json.ok){
+// The server only sends clean, human error lines (V14 — no internals),
+// so show its reason when it gives one: it names what is missing
+// instead of a generic glitch. This line stays as the fallback.
+$("stagePrompt").textContent = (resp.json && resp.json.error) || "Something glitched on my side with that card — your answers were not scored, and nothing was saved. Press Continue to try again; if it keeps happening, tap Start over.";
+busy = false; return;
+}
+var keepMirror = !!(live && live.mirrorShown);
+var keepPg = live && live.pg ? live.pg : null;
+live = { session_id: resp.json.session_id, session: resp.json.session };
+if(keepMirror) live.mirrorShown = true;
+if(keepPg) live.pg = keepPg;
+store();
+if(live.session.phase === "done") renderResult(resp);
+else if(live.session.phase === "stages" && live.session.stage_index === 3 && !live.mirrorShown){
+live.mirrorShown = true; store();
+showMirror(resp);
+}
+else renderLiveCard(resp);
+busy = false;
+}
+
+async function liveContinue(){
+if(busy || !live) return; busy = true;
+var s = live.session;
+var free = $("freeText").value.trim();
+// The routing card (CDDQ): the engine requires all three answers — catch
+// an unanswered question HERE, in plain words, instead of sending the
+// card and surfacing the raw API error (founder QA, 27.10.2026).
+if(s.phase === "cddq"){
+var missC = [];
+((liveDef && liveDef.tail) || []).forEach(function(item){
+var v = liveAnswers[item.field];
+if(v === undefined || v === null || v === "") missC.push(item.label || item.field);
+});
+if(missC.length){
+$("stagePrompt").textContent = "Three quick questions set the route — these are still open: " + missC.join("; ") + ". Pick the closest answer for each one; they change the route and the emphasis, never your scores.";
+busy = false; return;
+}
+}
+// Stage 6: at least one gut vote is the whole point of the card — an
+// empty submit used to come back as a raw API error.
+if(s.phase === "stage6" && !Object.keys(liveRatings).length){
+$("stagePrompt").textContent = "Give at least one of these jobs your verdict — mine, tolerable or not mine. That vote is the whole point of this card: it moves the list.";
+busy = false; return;
+}
+// Rankings (audit U2, 28.10.2026): a rank6 card still sitting in its
+// starting order is NOT an answer — the mirror would otherwise claim
+// "you ranked X first" about an order the person never chose. Same
+// house guard pattern as Point A: block, and name what is missing.
+if(s.phase === "stages" && liveDef){
+var rankMiss = [];
+(liveDef.tail || []).forEach(function(item){
+if(item.kind === "rank6"){ var k = item.field || item.id; if(k && !liveRankTouched[k]) rankMiss.push(item.label || k); }
+});
+if(rankMiss.length){
+$("stagePrompt").textContent = "One ranking is still in its starting order: " + rankMiss.join("; ") + ". Move at least one line up to make it yours — or tap “This order is fine” under it if it already is.";
+busy = false; return;
+}
+}
+// Point A (stage 0): the structured fields are the source of truth for
+// scoring — the stage cannot be skipped with only free text in the box.
+if(s.phase === "stages" && liveDef && liveDef.id === 0){
+var miss = [];
+(liveDef.tail || []).forEach(function(item){
+if(item.required === false || item.kind === "derived") return;
+var v = liveAnswers[item.field];
+if(v === undefined || v === null || v === "" || (typeof v === "string" && !v.trim()) || (Array.isArray(v) && v.length === 0)) miss.push(item.label || item.field);
+});
+if(miss.length){
+$("stagePrompt").textContent = "Point A runs on exact numbers — these are still empty: " + miss.join("; ") + ". Fill them in above; I score with exactly these.";
+busy = false; return;
+}
+}
+// Every other stage, same pattern (found 28.10.2026): the server
+// derives progress from the answers themselves, so a required widget
+// left empty here (an untouched scale, an empty multichoice) quietly
+// rewinds the interview on the NEXT card and dead-ends it. Block on
+// this card, in plain words, like Point A does.
+if(s.phase === "stages" && liveDef){
+var missAll = [];
+(liveDef.tail || []).forEach(function(item){
+if(item.required === false || item.kind === "derived" || item.kind === "rank6" || item.kind === "perceived_fit") return;
+var v = liveAnswers[item.field];
+if(v === undefined || v === null || v === "" || (typeof v === "string" && !v.trim()) || (Array.isArray(v) && v.length === 0)) missAll.push(item.label || item.field);
+});
+if(missAll.length){
+$("stagePrompt").textContent = "Almost — these are still empty: " + missAll.join("; ") + ". They steer the matching, so I can't score honestly without them.";
+busy = false; return;
+}
+}
+try{
+var res;
+if(s.phase === "cddq") res = await api({ action: "cddq", session_id: live.session_id, session: s, answers: liveAnswers, free_text: free });
+else if(s.phase === "stage6") res = await api({ action: "fit", session_id: live.session_id, session: s, ratings: liveRatings });
+else res = await api({ action: "stage", session_id: live.session_id, session: s, free_text: free, tail: liveAnswers });
+route(res);
+}catch(e){
+$("stagePrompt").textContent = "Connection to the matchmaker API failed — press Continue to retry. Nothing was scored or saved from this card.";
+busy = false;
+}
+}
+
+var startBusy = false;
+async function liveStart(door){
+/* Audit U12 (28.10.2026): the first tap locks every door until the
+   start handshake resolves — a double tap cannot create two sessions.
+   A failed start is no longer silent: the doors unlock and the
+   matchmaker bubble says, in plain words, to tap again. */
+if(startBusy || live) return;
+startBusy = true;
+document.querySelectorAll(".door").forEach(function(b){
+b.disabled = true;
+if(b.getAttribute("data-door") === door){
+var p = b.querySelector(".path");
+if(p){ p.setAttribute("data-orig", p.textContent); p.textContent = "Starting…"; }
+}
+});
+try{
+var res = await api({ action: "start", door: door });
+if(!res.json || !res.json.ok) throw new Error("start failed");
+live = { session_id: res.json.session_id, session: res.json.session };
+store();
+$("startScreen").classList.add("hidden");
+$("interview").classList.remove("hidden");
+$("verdict").classList.add("hidden");
+$("stageCard").classList.remove("hidden");
+route(res);
+}catch(e){
+startBusy = false;
+document.querySelectorAll(".door").forEach(function(b){
+b.disabled = false;
+var p = b.querySelector(".path");
+if(p && p.getAttribute("data-orig")){ p.textContent = p.getAttribute("data-orig"); p.removeAttribute("data-orig"); }
+});
+var bub = $("mentorBubble");
+if(bub) bub.textContent = "I couldn't open the matchmaking just now — something glitched on my side, and nothing was scored or saved. Tap your door again and I'll start properly.";
+}
+}
+
+fetch("/api/mentor?action=health").then(function(r){ return r.json(); }).then(function(h){
+if(!h || !h.ok){ doorEls0.forEach(function(b){ b.disabled = false; }); return; } // guided mode: hand the original doors back, untouched
+var pc = $("profCount"); if(pc && h.professions) pc.textContent = h.professions;
+var notice = $("localNotice");
+notice.textContent = "Live matchmaker connected. Your answers are scored on the server with real job-market data — nothing is made up on this phone.";
+notice.classList.remove("hidden");
+document.querySelectorAll(".door").forEach(function(btn){
+var clone = btn.cloneNode(true);
+btn.parentNode.replaceChild(clone, btn);
+clone.disabled = false; // the clone inherits the U12 lock — release it now the handshake is done
+clone.addEventListener("click", function(){ liveStart(clone.getAttribute("data-door")); });
+});
+var next = $("nextBtn"); var nextClone = next.cloneNode(true); next.parentNode.replaceChild(nextClone, next);
+nextClone.addEventListener("click", liveContinue);
+var rst = $("restartBtn"); var rstClone = rst.cloneNode(true); rst.parentNode.replaceChild(rstClone, rst);
+rstClone.addEventListener("click", function(){ live = null; store(); location.reload(); });
+window.__cgLiveReset = function(){ live = null; store(); location.reload(); };
+/* Nothing is saved: no session restore — clear any leftover from an
+   earlier visit and always show the start screen. */
+try{ localStorage.removeItem(LIVE_KEY); }catch(e){}
+$("startScreen").classList.remove("hidden");
+$("interview").classList.add("hidden");
+}).catch(function(){ doorEls0.forEach(function(b){ b.disabled = false; }); /* probe failed — guided mode, doors handed back */ });
+/* pg.js bridge: the playground code lives in its own file (per-file size
+   ceiling) but shares this closure — expose the bindings it uses. */
+window.$ = $; window.api = api; window.store = store;
+Object.defineProperty(window, "live", { configurable: true, get: function(){ return live; }, set: function(v){ live = v; } });
+Object.defineProperty(window, "lastResult", { configurable: true, get: function(){ return lastResult; }, set: function(v){ lastResult = v; } });
+})();
+</script>
+<script src="/pg.js"></script>
+<script src="/lead.js"></script>
+<script>
+(function(){
+var BLIPS = [
+["AI Automation Specialist","YES",100,58.8,17.2,null],
+["Cybersecurity Analyst","YES",125,81.2,21.9,null],
+["Data Analyst","YES",90,76.4,44.4,null],
+["Accountant (CPA track)","YES",120,91.5,61.1,"Growing · +5% to 2035 (BLS)"],
+["Bookkeeper + Advisory","NO",51,74.4,69.1,"Shrinking · −6% to 2035 (BLS)"],
+["Translator / Interpreter","NO",60,70.7,88.8,"Growing · +2% to 2035 (BLS)"],
+["Copywriter","NO",75,53.6,75.7,null],
+["Registered Nurse","YES",98,39.5,86.5,"Growing · +6% to 2035 (BLS)"],
+["Dental Hygienist","YES",98,32.1,72.9,"Growing · +8% projected growth (its card, BLS-based)"],
+["Pharmacist","YES",135,11.8,73.8,null],
+["Electrician","YES",62,17.7,56.9,null],
+["HVAC Technician","YES",61,26.2,46.7,null],
+["Wind Turbine Technician","YES",62,15.2,28.3,null],
+["Graphic Designer","NO",45,30.2,30.2,"Shrinking · −2% (its card, BLS May 2025)"],
+["Videographer","YES",75,34.4,16.5,null],
+["Photographer","NO",45,46.3,7.2,null],
+["School Teacher","YES",67,62.9,34.7,null],
+["Psychologist / Therapist","YES",105,92.0,48.5,null],
+["Chef","NO",62,60.9,63.0,null],
+["CDL Truck Driver","YES",59,34.4,59.0,null],
+["Commercial Pilot","YES",160,7.5,38.6,null],
+["Barber","NO",38,42.0,67.2,null],
+["Administrative Assistant","NO",48,23.5,16.1,null]
+];
+var TICKER = [
+"Customer Service Representatives: −5% to 2035 · AI exposure: Very high (BLS)",
+"Bookkeeping clerks: −6% to 2035 · −85,600 jobs (BLS)",
+"Computer Programmers: −7% to 2035 (BLS)",
+"Interpreters & Translators: +2% to 2035 (BLS)"
+];
+function escR(s){ return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+var disc = document.getElementById("radarDisc");
+var sweep = document.getElementById("radarSweep");
+var card = document.getElementById("radarCard");
+if(!disc || !sweep || !card) return;
+var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+var blipEls = [];
+BLIPS.forEach(function(b){
+var name = b[0], verdict = b[1], payK = b[2], x = b[3], y = b[4], outlook = b[5];
+var el = document.createElement("button");
+el.type = "button";
+el.className = "blip" + (verdict === "NO" ? " no" : "");
+el.style.left = x + "%"; el.style.top = y + "%";
+el.setAttribute("aria-label", name + " — verdict " + verdict + " for entering in 2027");
+el.innerHTML = "<i></i>";
+var ang = (Math.atan2(x - 50, -(y - 50)) * 180 / Math.PI + 360) % 360;
+el.addEventListener("click", function(){
+blipEls.forEach(function(o){ o.el.classList.remove("sel"); });
+el.classList.add("sel");
+var html = '<span class="rname">' + escR(name) + '</span>';
+html += '<span class="badge ' + (verdict === "YES" ? "yes" : "no") + '">' + verdict + '</span>';
+html += '<p class="rrow">Our verdict for entering this profession in 2027.</p>';
+if(outlook) html += '<p class="rrow">Jobs outlook: ' + escR(outlook) + '</p>';
+if(payK != null) html += '<p class="rrow">Median pay in the base: ~$' + payK + 'K</p>';
+html += '<a class="btn" href="#doorPicker" style="display:block;text-align:center;text-decoration:none;margin-top:14px">Is this your job? &rarr;</a>';
+card.innerHTML = html;
+});
+disc.appendChild(el);
+blipEls.push({ el: el, ang: ang, lastOp: -1, lit: false });
+});
+
+var ticker = document.getElementById("radarTicker");
+var tline = document.getElementById("tickerLine");
+if(ticker && tline){
+if(reduced){
+ticker.classList.add("stack");
+tline.remove();
+TICKER.forEach(function(line){
+var s = document.createElement("span"); s.className = "tline"; s.textContent = "▸ " + line;
+ticker.appendChild(s);
+});
+} else {
+var ti = 0;
+tline.textContent = "▸ " + TICKER[0];
+setInterval(function(){
+tline.style.opacity = "0";
+setTimeout(function(){
+ti = (ti + 1) % TICKER.length;
+tline.textContent = "▸ " + TICKER[ti];
+tline.style.opacity = "1";
+}, 460);
+}, 4200);
+}
+}
+
+if(reduced){
+sweep.style.transform = "rotate(-24deg)";
+blipEls.forEach(function(b){ b.el.style.opacity = "0.9"; });
+return;
+}
+var inView = true, angle = 0, last = performance.now();
+function frame(now){
+var dt = now - last; last = now;
+if(inView && !document.hidden){
+angle = (angle + dt / 6000 * 360) % 360;
+var ang = angle;
+sweep.style.transform = "rotate(" + ang.toFixed(1) + "deg)";
+for(var i = 0; i < blipEls.length; i++){
+var b = blipEls[i];
+var diff = (ang - b.ang + 360) % 360;
+var op = diff <= 170 ? 0.35 + 0.65 * (1 - diff / 170) : 0.35;
+var rop = Math.round(op * 20) / 20;
+if(rop !== b.lastOp){ b.el.style.opacity = rop; b.lastOp = rop; }
+var lit = diff < 28;
+if(lit !== b.lit){ b.el.classList.toggle("lit", lit); b.lit = lit; }
+}
+}
+requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+if("IntersectionObserver" in window){
+new IntersectionObserver(function(en){ inView = en[0].isIntersecting; }, { threshold: 0.05 }).observe(disc);
+}
+})();
+</script>
+<script>
+(function(){
+var bub=document.getElementById("mentorBubble"); if(!bub) return;
+var answers={
+kill:"Depends on the tasks, not the title. I break your job into tasks and check every one against real BLS data. Some \u201csafe\u201d jobs are 60% automatable. Some \u201cdoomed\u201d ones are fine. Tap Match me \u2014 I\u2019ll show you your number.",
+study:"Good \u2014 this is the cheapest moment to get it right. Tell me what you like and what you hate, and I\u2019ll match you to professions that will still exist on your graduation day \u2014 with the pay printed on the card.",
+late:"People switch at 35, 45, 55. The bridge is usually shorter than you fear: your old skills count. In the matchmaking we measure the distance in months \u2014 not in regrets."
+};
+var timer=null;
+function say(text){
+if(timer) clearInterval(timer);
+if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){ bub.textContent=text; return; }
+bub.textContent=""; var i=0;
+timer=setInterval(function(){ i+=2; bub.textContent=text.slice(0,i); if(i>=text.length) clearInterval(timer); },14);
+}
+document.querySelectorAll(".mchip").forEach(function(ch){
+ch.addEventListener("click",function(){ var a=answers[ch.getAttribute("data-ask")]; if(a) say(a); });
+});
+})();
+</script>
+</body>
+</html>

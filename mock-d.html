@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept D — Plum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Instrument+Sans:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#251331; font-family:'Instrument Sans',sans-serif; color:#2A2430; padding:28px 16px 60px; }
+  .wrap { max-width:430px; margin:0 auto; }
+  .brand { font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; color:#9d8ab0; text-align:center; margin-bottom:26px; }
+  .brand b { color:#F2A9C9; }
+  .lbl { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.18em; color:#7d6a94; margin:38px 4px 12px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .tile { border-radius:26px; padding:22px; background:#FBF7EF; }
+  .wide { grid-column:1 / -1; }
+  .pill { display:inline-block; background:#2A2430; color:#fff; font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.12em; padding:6px 11px; border-radius:99px; }
+  h1 { font-family:'Outfit',sans-serif; font-weight:900; font-size:34px; line-height:1.05; margin:14px 0 10px; }
+  .sub { font-size:15px; line-height:1.5; color:rgba(42,36,48,.72); }
+  .blush { background:linear-gradient(135deg,#F8D3E4,#F2B9D6); }
+  .btn { display:block; text-align:center; background:#2A2430; color:#fff; font-family:'Outfit',sans-serif; font-weight:800; font-size:16px; padding:15px; border-radius:99px; margin-top:16px; }
+  .ava { display:flex; gap:12px; align-items:center; }
+  .ava img { width:58px; height:58px; border-radius:50%; object-fit:cover; }
+  .ava p { font-size:14px; line-height:1.45; }
+  .ava b { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.14em; color:#c05c8d; display:block; margin-bottom:3px; }
+  .pale { background:#EFE6B8; }
+  .pale .big { font-family:'Outfit',sans-serif; font-weight:900; font-size:21px; line-height:1.2; }
+  .pale p { font-size:13px; line-height:1.5; margin-top:6px; color:rgba(42,36,48,.75); }
+  .pale .dot { width:9px; height:9px; border-radius:50%; background:#c05c8d; box-shadow:0 0 0 5px rgba(192,92,141,.18); display:inline-block; margin-bottom:10px; }
+  .lav { background:#CFC4EE; }
+  .stat .n { font-family:'Outfit',sans-serif; font-weight:900; font-size:30px; }
+  .stat .t { font-size:12.5px; color:rgba(42,36,48,.62); margin-top:2px; line-height:1.4; }
+  .dots { display:flex; gap:6px; margin-bottom:16px; }
+  .dots i { height:6px; flex:1; border-radius:99px; background:#EFE7F2; }
+  .dots i.on { background:#2A2430; }
+  .q { font-family:'Outfit',sans-serif; font-weight:800; font-size:21px; line-height:1.25; margin-bottom:14px; }
+  .opt { border:2px solid #F0EAF3; border-radius:16px; padding:13px 14px; font-size:14.5px; margin-bottom:9px; background:#fff; }
+  .opt.sel { border-color:#b7a6e8; background:#E7E1F8; font-weight:600; }
+  .stamp { display:inline-block; transform:rotate(-4deg); border:2.5px solid #2A2430; color:#2A2430; font-family:'Outfit',sans-serif; font-weight:900; font-size:12.5px; letter-spacing:.05em; padding:5px 11px; border-radius:10px; background:#fff; }
+  .job { font-family:'Outfit',sans-serif; font-weight:900; font-size:26px; line-height:1.1; margin:12px 0 4px; }
+  .fit { font-size:13.5px; font-weight:600; }
+  .meter { margin-top:14px; }
+  .meter .ml { display:flex; justify-content:space-between; font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.12em; }
+  .meter .track { height:12px; background:rgba(42,36,48,.12); border-radius:99px; margin-top:5px; position:relative; }
+  .meter .fill { position:absolute; top:0; bottom:0; border-radius:99px; background:#2A2430; }
+  .butter { background:#F3E9D2; }
+  .butter .k { font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.16em; color:#8a6d1f; }
+  .butter .job { font-size:21px; }
+  .butter p { font-size:13.5px; line-height:1.5; color:#5c5136; margin-top:5px; }
+  .letter h3 { font-family:'Outfit',sans-serif; font-size:16.5px; font-weight:800; }
+  .letter p { font-size:13px; color:#8d8296; margin-top:3px; line-height:1.45; }
+  .letter .arr { color:#c05c8d; font-weight:800; margin-top:8px; display:block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">♥ CAREER GLITCH — CONCEPT D «PLUM»</div>
+
+  <div class="lbl">01 — START</div>
+  <div class="grid">
+    <div class="tile wide blush">
+      <span class="pill">THE AI CAREER MATCHMAKER</span>
+      <h1>Is AI coming for your job?</h1>
+      <p class="sub">Ten minutes. A straight verdict, your top-3 professions and a plan.</p>
+      <div class="btn">Start the interview →</div>
+    </div>
+    <div class="tile ava" style="grid-column:1/-1">
+      <img src="/avatar.jpg" alt="">
+      <p><b>THE MATCHMAKER</b>It knows you, it knows the market — and it won't let you marry a career AI is about to kill.</p>
+    </div>
+    <div class="tile pale">
+      <span class="dot"></span>
+      <div class="big">Market Radar</div>
+      <p>We re-check the news every day. If AI moves, your verdict moves.</p>
+    </div>
+    <div class="tile stat lav">
+      <div class="n">369</div>
+      <div class="t">professions checked against real BLS pay &amp; AI-risk data</div>
+      <div class="n" style="margin-top:14px">10<span style="font-size:17px"> min</span></div>
+      <div class="t">one live interview — free to start</div>
+    </div>
+  </div>
+
+  <div class="lbl">02 — THE INTERVIEW</div>
+  <div class="tile">
+    <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="q">What kind of stuck is this?</div>
+    <div class="opt">I haven't really decided to change anything yet</div>
+    <div class="opt sel">I want to choose, but I don't know enough yet ✓</div>
+    <div class="opt">I keep getting conflicting signals</div>
+    <div class="btn">Continue →</div>
+  </div>
+
+  <div class="lbl">03 — YOUR RESULT</div>
+  <div class="grid">
+    <div class="tile wide blush">
+      <span class="stamp">IT'S A MATCH 💘</span>
+      <div class="job">Streamer / Content Creator</div>
+      <div class="fit">Top fit · typical pay ~$75K</div>
+      <div class="meter"><div class="ml"><span>CHEMISTRY</span><span>74–98%</span></div><div class="track"><div class="fill" style="left:8%; right:4%"></div></div></div>
+      <div class="meter"><div class="ml"><span>LONG-TERM POTENTIAL</span><span>69–100%</span></div><div class="track"><div class="fill" style="left:5%; right:2%"></div></div></div>
+    </div>
+    <div class="tile butter">
+      <div class="k">🛟 YOUR CUSHION</div>
+      <div class="job">AI Automation Specialist</div>
+      <p>~$120K from the first paycheck, while you build the main road. In: ~2.5 months.</p>
+    </div>
+    <div class="tile letter">
+      <h3>💌 A letter from your matchmaker</h3>
+      <p>The full verdict, the honest BUT and your 90-day plan — in one letter.</p>
+      <span class="arr">Read the letter →</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>
