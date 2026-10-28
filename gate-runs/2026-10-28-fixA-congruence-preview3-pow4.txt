@@ -1,0 +1,63 @@
+Regression gate → https://careerglitch-3r2sty58x-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 38) · modes {"bands":38,"direct":1,"insufficient_data":11} · 447s
+Top3 stub share 14% (base 21%) · distinct jobs 49 · most frequent: Luxury Real Estate Agent 8, Commercial Insurance Producer 7, Corporate Trainer 4, Business Broker 4, UX/UI Designer 4
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 1 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD no adult-only/licensed job for under-18 (heuristic — review)  — 7 case(s)
+   · special "age 15" age=15 floor=90 red=none → Luxury Real Estate Agent ($140K, 9mo)
+   · random #1 age=15 floor=70 red=no_nights → Mobile Mechanic (owner) ($75K, 3.5mo)
+   · random #5 age=17 floor=0 red=none → Personal Financial Advisor ($120K, 36mo)
+   · random #8 age=17 floor=50 red=no_nights+no_degree → Insurance Agent ($61K, 3.5mo)
+   · random #27 age=17 floor=130 red=none → Commercial Insurance Producer ($62K, 1mo)
+   · random #27 age=17 floor=130 red=none → Luxury Real Estate Agent ($140K, 9mo)
+
+HARD copy matches count (no "three" with <3 cards)  — 12 case(s)
+   · random #1 age=15 floor=70 red=no_nights n=2
+   · random #6 age=45 floor=35 red=no_nights+no_public_voice+no_degree n=2
+   · random #13 age=19 floor=50 red=none n=2
+   · random #14 age=60 floor=50 red=no_nights+no_public_voice n=2
+   · random #15 age=28 floor=90 red=no_public_voice+no_kids n=2
+   · random #16 age=52 floor=50 red=no_relocation n=2
+
+HARD red line no_public_voice (heuristic list — review)  — 3 case(s)
+   · random #6 age=45 floor=35 red=no_nights+no_public_voice+no_degree → Music Instructor ($45K, 9mo)
+   · random #14 age=60 floor=50 red=no_nights+no_public_voice → Firefighter ($57K, 9mo)
+   · random #30 age=60 floor=90 red=no_public_voice+no_kids → Music Instructor ($45K, 9mo)
+
+HARD health limit voice  — 2 case(s)
+   · random #10 age=52 floor=130 red=no_public_voice+no_kids → Commercial Insurance Producer ($62K, 1mo)
+   · random #27 age=17 floor=130 red=none → Commercial Insurance Producer ($62K, 1mo)
+
+HARD red line no_nights (heuristic list — review)  — 1 case(s)
+   · random #14 age=60 floor=50 red=no_nights+no_public_voice → Firefighter ($57K, 9mo)
+
+HARD pay below floor only with explicit top-decile reason  — 2 case(s)
+   · random #22 age=28 floor=50 red=none → Music Instructor ($45K, 9mo) status=below_floor
+   · random #30 age=60 floor=90 red=no_public_voice+no_kids → Music Instructor ($45K, 9mo) status=below_floor
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT persona gets at least one job from its obvious field  — 1 case(s)
+   · Ex-mechanic, hands-on, outdoors → Home Inspector, Computer Systems Analyst, Business Broker
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Luxury Real Estate Agent in 8 of 38 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 18 of 38
+
+FAIL — 8 hard + 3 soft rule(s) broken. Do not deploy.
