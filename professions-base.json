@@ -5352,7 +5352,7 @@
   "slug": "yacht-broker",
   "kind": "career",
   "verdict": "YES",
-  "payK": 150,
+  "payK": 76,
   "training_months": 9,
   "gates": {
    "voice_load": true,

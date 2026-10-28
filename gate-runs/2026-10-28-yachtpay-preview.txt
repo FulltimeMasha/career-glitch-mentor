@@ -1,0 +1,45 @@
+Regression gate → https://careerglitch-247td9kno-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 29) · modes {"bands":27,"direct":4,"insufficient_data":19} · 377s
+Top3 stub share 0% (base 4%) · distinct jobs 52 · most frequent: Drone Pilot (commercial) 5, Tutoring Center Owner 3, UX/UI Designer 3, Corporate Trainer 2, Mobile Mechanic (owner) 2
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 2 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+   · random #15 age=38 floor=90 red=no_nights+no_relocation+no_kids+no_degree mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD copy matches count (no "three" with <3 cards)  — 10 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none n=2
+   · random #2 age=17 floor=0 red=no_relocation n=2
+   · random #4 age=17 floor=35 red=no_public_voice+no_kids+no_degree n=2
+   · random #13 age=28 floor=90 red=none n=2
+   · random #16 age=52 floor=20 red=no_nights+no_relocation+no_public_voice n=2
+   · random #20 age=17 floor=0 red=no_nights n=2
+
+HARD pay below floor only with explicit top-decile reason  — 7 case(s)
+   · special "age 45, ATC-shaped interests" age=45 floor=130 red=none → Corporate Trainer ($69K, 9mo) status=below_floor
+   · random #8 age=38 floor=130 red=no_relocation → Yacht Broker ($76K, 9mo) status=below_floor
+   · random #14 age=17 floor=130 red=no_nights+no_relocation+no_kids → Pharmacy Technician ($45K, 9mo) status=below_floor
+   · random #14 age=17 floor=130 red=no_nights+no_relocation+no_kids → Career and Technical Education Teacher ($63K, 36mo) status=below_floor
+   · random #24 age=38 floor=90 red=no_nights+no_relocation → Drone Pilot (commercial) ($75K, 9mo) status=below_floor
+   · random #36 age=19 floor=70 red=no_degree → PT Assistant ($45K, 9mo) status=below_floor
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Drone Pilot (commercial) in 5 of 29 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 13 of 29
+
+FAIL — 4 hard + 2 soft rule(s) broken. Do not deploy.

@@ -1,0 +1,45 @@
+Regression gate → https://careerglitch.com/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 36) · modes {"bands":35,"direct":3,"insufficient_data":12} · 351s
+Top3 stub share 2% (base 4%) · distinct jobs 52 · most frequent: UX/UI Designer 7, Drone Pilot (commercial) 6, Tutoring Center Owner 5, Software Developer 4, AI Automation Specialist 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 2 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+   · special "optional fields sent as null" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD pay below floor only with explicit top-decile reason  — 11 case(s)
+   · random #4 age=60 floor=90 red=no_relocation+no_kids+no_degree → Corporate Trainer ($69K, 9mo) status=below_floor
+   · random #4 age=60 floor=90 red=no_relocation+no_kids+no_degree → EKG Technician ($45K, 9mo) status=below_floor
+   · random #6 age=60 floor=90 red=no_nights+no_public_voice → Drone Pilot (commercial) ($75K, 9mo) status=below_floor
+   · random #17 age=45 floor=130 red=no_kids → Tutoring Center Owner ($75K, 9mo) status=below_floor
+   · random #18 age=60 floor=130 red=no_public_voice → Home Stager ($67K, 3.5mo) status=below_floor
+   · random #27 age=17 floor=90 red=no_relocation → Doula ($45K, 4.5mo) status=below_floor
+
+HARD copy matches count (no "three" with <3 cards)  — 14 case(s)
+   · random #5 age=17 floor=0 red=no_nights n=2
+   · random #10 age=19 floor=70 red=no_public_voice+no_kids n=2
+   · random #12 age=22 floor=50 red=no_relocation n=2
+   · random #13 age=28 floor=0 red=no_nights+no_public_voice+no_degree n=2
+   · random #17 age=45 floor=130 red=no_kids n=2
+   · random #18 age=60 floor=130 red=no_public_voice n=2
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · UX/UI Designer in 7 of 36 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 20 of 36
+
+FAIL — 4 hard + 2 soft rule(s) broken. Do not deploy.
