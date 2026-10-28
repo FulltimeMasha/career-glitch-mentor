@@ -24,7 +24,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-import { metaRespond, MODELS } from '../engine/llm.mjs';
+import { metaRespond, MODELS } from '../api/_lib/engine/llm.mjs';
 import {
   createSession,
   applyCddq,
@@ -32,7 +32,7 @@ import {
   applyStage,
   assemblePerson,
   generateReport,
-} from '../engine/interview.mjs';
+} from '../api/_lib/engine/interview.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(HERE, '..', 'smoke-output', 'persona10');

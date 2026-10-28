@@ -6,8 +6,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { auditNumbers, verifyReport, buildGroundTruth, removeSentences, extractFigures } from '../engine/verify.mjs';
-import { generateVerifiedReport, buildChecklist } from '../engine/interview.mjs';
+import { auditNumbers, verifyReport, buildGroundTruth, removeSentences, extractFigures } from '../api/_lib/engine/verify.mjs';
+import { generateVerifiedReport, buildChecklist } from '../api/_lib/engine/interview.mjs';
 
 // ---------------------------------------------------------------------------
 // Fixtures — a finished bands-mode session with one top pick (Doula).

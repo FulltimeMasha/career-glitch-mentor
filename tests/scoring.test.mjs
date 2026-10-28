@@ -4,8 +4,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { loadProfessions } from '../engine/professions.mjs';
-import { scorePerson, scoreCandidate } from '../engine/scoring.mjs';
+import { loadProfessions } from '../api/_lib/engine/professions.mjs';
+import { scorePerson, scoreCandidate } from '../api/_lib/engine/scoring.mjs';
 
 const professions = loadProfessions();
 
