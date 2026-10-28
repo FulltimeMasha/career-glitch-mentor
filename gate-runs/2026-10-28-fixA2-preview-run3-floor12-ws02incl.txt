@@ -1,0 +1,71 @@
+Regression gate → https://careerglitch-j7qfpt44z-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 39) · modes {"bands":37,"direct":3,"insufficient_data":10} · 1177s
+Top3 stub share 2% (base 21%) · distinct jobs 45 · most frequent: Drone Pilot (commercial) 14, IT Support Specialist 5, Caterer 5, Commercial Insurance Producer 5, Corporate Trainer 4
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD no dead end: empty top3 needs an exploration plan  — 1 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD copy matches count (no "three" with <3 cards)  — 13 case(s)
+   · special "optional fields sent as null" age=34 floor=40 red=none n=2
+   · random #2 age=52 floor=90 red=no_degree n=2
+   · random #5 age=45 floor=90 red=no_degree n=2
+   · random #6 age=15 floor=0 red=no_relocation+no_kids n=2
+   · random #8 age=17 floor=50 red=no_nights n=2
+   · random #18 age=52 floor=35 red=no_public_voice+no_degree n=2
+
+HARD no adult-only/licensed job for under-18 (heuristic — review)  — 11 case(s)
+   · special "age 15" age=15 floor=90 red=none → Drone Pilot (commercial) ($123K, 9mo)
+   · random #6 age=15 floor=0 red=no_relocation+no_kids → Drone Pilot (commercial) ($123K, 9mo)
+   · random #8 age=17 floor=50 red=no_nights → Drone Pilot (commercial) ($123K, 9mo)
+   · random #8 age=17 floor=50 red=no_nights → Spa Owner ($75K, 9mo)
+   · random #10 age=17 floor=0 red=no_nights+no_relocation+no_kids+no_degree → Gym / Fitness Studio Owner ($75K, 3.5mo)
+   · random #10 age=17 floor=0 red=no_nights+no_relocation+no_kids+no_degree → Drone Pilot (commercial) ($123K, 9mo)
+
+HARD pay below floor only with explicit top-decile reason  — 5 case(s)
+   · special "age 15" age=15 floor=90 red=none → Caterer ($69K, 9mo) status=below_floor
+   · random #12 age=15 floor=130 red=no_relocation → Event Planner ($59K, 36mo) status=below_floor
+   · random #14 age=52 floor=70 red=no_public_voice+no_kids → Dispatcher (trucking) ($45K, 3.5mo) status=below_floor
+   · random #16 age=34 floor=70 red=none → IT Support Specialist ($45K, 9mo) status=below_floor
+   · random #29 age=19 floor=90 red=no_public_voice → Dispatcher (trucking) ($45K, 3.5mo) status=below_floor
+
+HARD red line no_nights (heuristic list — review)  — 4 case(s)
+   · random #0 age=52 floor=20 red=no_nights+no_degree → Firefighter ($57K, 9mo)
+   · random #8 age=17 floor=50 red=no_nights → Drone Pilot (commercial) ($123K, 9mo)
+   · random #10 age=17 floor=0 red=no_nights+no_relocation+no_kids+no_degree → Drone Pilot (commercial) ($123K, 9mo)
+   · random #30 age=52 floor=70 red=no_nights+no_public_voice+no_kids+no_degree → Drone Pilot (commercial) ($123K, 9mo)
+
+HARD red line no_public_voice (heuristic list — review)  — 4 case(s)
+   · random #7 age=60 floor=50 red=no_nights+no_relocation+no_public_voice+no_degree → Community Health Worker ($51K, 3.5mo)
+   · random #11 age=17 floor=20 red=no_relocation+no_public_voice+no_degree → Private Tutor (in person) ($45K, 9mo)
+   · random #18 age=52 floor=35 red=no_public_voice+no_degree → Corporate Trainer ($69K, 9mo)
+   · random #29 age=19 floor=90 red=no_public_voice → Emergency Management Director ($92K, 36mo)
+
+HARD health limit voice  — 2 case(s)
+   · random #9 age=45 floor=130 red=none → Commercial Insurance Producer ($62K, 1mo)
+   · random #30 age=52 floor=70 red=no_nights+no_public_voice+no_kids+no_degree → Commercial Insurance Producer ($62K, 1mo)
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT persona gets at least one job from its obvious field  — 1 case(s)
+   · Ex-mechanic, hands-on, outdoors → Logistics Coordinator, Computer Systems Analyst, Personal Financial Advisor
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Drone Pilot (commercial) in 14 of 39 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 18 of 39
+
+FAIL — 8 hard + 3 soft rule(s) broken. Do not deploy.
+EXIT=1
