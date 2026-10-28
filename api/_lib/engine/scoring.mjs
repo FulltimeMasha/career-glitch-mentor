@@ -698,10 +698,30 @@ function potentialPivot(person, prof, professions, flags) {
     const start = potentialStart(person, prof);
     return { ...start, profile: 'start_fallback_for_pivot' };
   }
+  // Hands-capital credit (ex-mechanic fix, 28.10.2026): the transfer
+  // formula reads the person's capital from their CURRENT job title
+  // alone. A dispatcher who spent years turning wrenches scores
+  // hands = 0, so every hands-on target ate the full shortage charge
+  // on that axis (−0.55·shortage − 0.25·feasibilityPenalty ≈ −0.12
+  // POTENTIAL) and landed in category C however high its LOVE was —
+  // measured trades lost to desk profiles for every hands-on person
+  // whose current title is a desk (gate persona "Ex-mechanic" failed
+  // on every run: Electrician LOVE .91 sat at rank 43, category C).
+  // The person's measured RIASEC R is their hands history in coded
+  // form (the 12 "in this job you would…" items): a maxed R means the
+  // hands are not a gap to close, they are capital already held.
+  // Credit it on the hands axis only, in attr units — ⌊R/5⌋ capped
+  // at 2 (R ≥ 10 → 2, R ≥ 5 → 1, below → 0). Every other axis keeps
+  // reading the current job exactly as before, and the credit can
+  // only raise the effective current-hands, never lower it.
+  const handsCredit = person.riasec && isNum(person.riasec.R)
+    ? Math.min(2, Math.floor(person.riasec.R / 5))
+    : 0;
   const transferVals = [];
   const shortageVals = [];
   for (const attr of TRANSFER_ATTRS) {
-    const cur = current.attrs ? current.attrs[attr] : null;
+    let cur = current.attrs ? current.attrs[attr] : null;
+    if (attr === 'hands' && isNum(cur) && handsCredit > cur) cur = handsCredit;
     const tgt = prof.attrs ? prof.attrs[attr] : null;
     if (isNum(cur) && isNum(tgt)) {
       transferVals.push(Math.min(cur, tgt) / 2);
