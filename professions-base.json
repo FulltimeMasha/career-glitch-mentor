@@ -5904,7 +5904,7 @@
  {
   "slug": "drone-pilot-commercial",
   "verdict": "YES",
-  "payK": 123,
+  "payK": 75,
   "training_months": 9,
   "gates": {
    "voice_load": false,

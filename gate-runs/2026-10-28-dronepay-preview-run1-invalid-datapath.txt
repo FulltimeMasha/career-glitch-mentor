@@ -1,0 +1,71 @@
+Regression gate → https://careerglitch-acwcnssh9-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 37) · modes {"bands":34,"direct":5,"insufficient_data":11} · 428s
+Top3 stub share 19% (base 23%) · distinct jobs 44 · most frequent: Commercial Insurance Producer 12, Luxury Real Estate Agent 7, Freight Broker / Agent 6, Drone Pilot (commercial) 6, Home Stager 5
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  FAIL  flipping not_ready → lacks_information must be rejected
+  FAIL  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+HARD red line no_public_voice (heuristic list — review)  — 3 case(s)
+   · persona "Creative, no public voice" age=34 floor=55 red=no_public_voice → Online Course Creator ($75K, 3.5mo)
+   · random #31 age=19 floor=130 red=no_nights+no_relocation+no_public_voice → Private Tutor (in person) ($45K, 9mo)
+   · random #35 age=60 floor=20 red=no_public_voice+no_kids+no_degree → Community Health Worker ($51K, 3.5mo)
+
+HARD no dead end: empty top3 needs an exploration plan  — 2 case(s)
+   · special "all three rated not_mine" age=34 floor=40 red=none mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+   · random #1 age=15 floor=70 red=no_nights+no_public_voice+no_kids mode=bands reason="You crossed out every finalist yourself — each one got your "not mine" at the fi"
+
+HARD no adult-only/licensed job for under-18 (heuristic — review)  — 11 case(s)
+   · special "age 15" age=15 floor=90 red=none → Commercial Insurance Producer ($62K, 1mo)
+   · special "age 15" age=15 floor=90 red=none → Luxury Real Estate Agent ($140K, 9mo)
+   · special "age 15" age=15 floor=90 red=none → Drone Pilot (commercial) ($123K, 9mo)
+   · random #0 age=15 floor=35 red=no_relocation → Commercial Insurance Producer ($62K, 1mo)
+   · random #0 age=15 floor=35 red=no_relocation → Insurance Agent ($61K, 3.5mo)
+   · random #11 age=15 floor=70 red=no_nights → Luxury Real Estate Agent ($140K, 9mo)
+
+HARD copy matches count (no "three" with <3 cards)  — 9 case(s)
+   · random #0 age=15 floor=35 red=no_relocation n=2
+   · random #6 age=34 floor=70 red=no_kids n=2
+   · random #7 age=45 floor=0 red=no_relocation n=2
+   · random #9 age=22 floor=0 red=no_relocation+no_public_voice+no_kids n=2
+   · random #10 age=38 floor=35 red=no_nights n=2
+   · random #19 age=45 floor=130 red=no_nights+no_relocation+no_public_voice n=2
+
+HARD red line no_nights (heuristic list — review)  — 4 case(s)
+   · random #4 age=19 floor=35 red=no_nights → Flight Attendant ($45K, 3.5mo)
+   · random #11 age=15 floor=70 red=no_nights → Drone Pilot (commercial) ($123K, 9mo)
+   · random #26 age=17 floor=70 red=no_nights+no_relocation+no_kids+no_degree → Drone Pilot (commercial) ($123K, 9mo)
+   · random #39 age=28 floor=90 red=no_nights+no_public_voice+no_kids+no_degree → Drone Pilot (commercial) ($123K, 9mo)
+
+HARD health limit voice  — 3 case(s)
+   · random #6 age=34 floor=70 red=no_kids → Online Course Creator ($75K, 3.5mo)
+   · random #25 age=52 floor=130 red=no_degree → Commercial Insurance Producer ($62K, 1mo)
+   · random #26 age=17 floor=70 red=no_nights+no_relocation+no_kids+no_degree → Commercial Insurance Producer ($62K, 1mo)
+
+HARD pay below floor only with explicit top-decile reason  — 2 case(s)
+   · random #25 age=52 floor=130 red=no_degree → Spa Owner ($75K, 9mo) status=below_floor
+   · random #31 age=19 floor=130 red=no_nights+no_relocation+no_public_voice → Private Tutor (in person) ($45K, 9mo) status=below_floor
+
+HARD security / validation  — 2 case(s)
+   · flipping not_ready → lacks_information must be rejected
+   · Point A with no required fields must be rejected
+
+SOFT persona gets at least one job from its obvious field  — 2 case(s)
+   · Care-minded, wants patient work, short training → Corporate Trainer, Customer Success Manager, Commercial Insurance Producer
+   · Ex-mechanic, hands-on, outdoors → Freight Broker / Agent, Business Broker, Project Manager
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Commercial Insurance Producer in 12 of 37 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 11 of 37
+
+FAIL — 8 hard + 3 soft rule(s) broken. Do not deploy.
+EXIT=1
+NOTE (added 28.10): this run went through the preview API, but the API fetches profession data from CG_DATA_BASE (default = production URL), so it measured PROD data (drone $123K), not the preview files. Invalid as a preview gate for a data fix. Superseded by the run against preview dpl_7gi1CxqG with CG_DATA_BASE(preview) pointed at the preview deployment itself.
