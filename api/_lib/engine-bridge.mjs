@@ -3,6 +3,7 @@
 export {
   createSession,
   applyCddq,
+  recomputeCddqType,
   stagePrompt,
   applyStage,
   applyPerceivedFit,

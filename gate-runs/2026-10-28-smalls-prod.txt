@@ -1,0 +1,21 @@
+Regression gate → https://careerglitch.com/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 50 (completed 50, with results 31) · modes {"bands":26,"direct":6,"insufficient_data":18} · 416s
+Top3 stub share 0% (base 4%) · distinct jobs 48 · most frequent: UX/UI Designer 5, Commercial Insurance Producer 3, AI Automation Specialist 3, Drone Pilot (commercial) 3, Software Developer 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · UX/UI Designer in 5 of 31 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 18 of 31
+
+FAIL — 0 hard + 2 soft rule(s) broken. Do not deploy.

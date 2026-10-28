@@ -198,9 +198,25 @@ test('exploitation flag when payK is below the income floor and LOVE is high; bl
   assert.ok(cand.love.mid >= 0.62, `fixture LOVE should be high, got ${cand.love.mid}`);
   assert.ok(cand.flags.includes('exploitation_risk'), 'exploitation_risk flag must be set');
 
+  // Gate smalls (28.10.2026): with no sourced top-earner figure the
+  // flagged profession is below_floor, and below_floor is not seated
+  // as a match at all — so it cannot anchor a direct verdict by
+  // construction. (The earlier version of this test seated it as
+  // top3[0] under the retired floor-relaxing pass.)
   const out = scorePerson(person, [lowPayProf]);
-  assert.equal(out.top3[0].slug, 'care-pro');
+  assert.equal(out.top3.length, 0, 'a below-floor candidate is not seated as a match');
   assert.notEqual(out.mode, 'direct', 'an exploitation-flagged candidate cannot anchor a direct verdict');
+
+  // The flag's mode-blocking role stays live where a pick CAN seat
+  // under the floor: a sourced top-decile figure clears it
+  // (top_decile_only) — the pick seats, the flag fires on payK below
+  // the floor, and the verdict still may not go direct on it.
+  const decileProf = makeProf({ slug: 'care-pro-decile', payK: 30, pay_top_decile_k: 144, supplies_stub: false, riasec_stub: false, data_flags: [] });
+  const out2 = scorePerson(person, [decileProf]);
+  assert.equal(out2.top3[0].slug, 'care-pro-decile');
+  assert.equal(out2.top3[0].floor_status, 'top_decile_only');
+  assert.ok(out2.top3[0].flags.includes('exploitation_risk'), 'the flag fires on the seated decile-backed pick');
+  assert.notEqual(out2.mode, 'direct', 'an exploitation-flagged top pick blocks direct mode');
 });
 
 // ---------------------------------------------------------------------------
@@ -547,19 +563,31 @@ test('career/side-hustle: the idea respects the named budget and hours, and stay
   assert.equal(noTime.side_hustle_pick, null, 'zero named spare hours — no side idea');
 });
 
-test('floor demotion: a below-floor favourite yields the slot to a floor-clearing pick, and is marked when kept', () => {
+test('floor rule: a below-floor favourite is not seated as a match — the floor-clearing pick stands alone', () => {
   // Fixture profession swapped 28.10.2026: this test used Streamer /
   // Content Creator as the favourite — under the career/side-hustle
-  // rule a streamer is no longer a match at all, so the demotion
-  // mechanics are asserted on Video Editor instead (a creator-family
-  // CAREER, $71K against the persona's $120K floor).
+  // rule a streamer is no longer a match at all, so the mechanics
+  // are asserted on Video Editor instead (a creator-family CAREER,
+  // $71K against the persona's $120K floor).
+  // Rule updated the same day (gate smalls, N5): a below-floor pick
+  // used to be able to stay in the set "as a marked extra" — its pay
+  // warning treated as its reason. A warning is not a pay path: with
+  // no sourced top-earner figure clearing the floor (floor_status
+  // top_tier_only / top_decile_only is the only honest reason), the
+  // favourite is not seated at all. The earlier version of this test
+  // asserted the marked-extra behaviour and was rewritten with the
+  // rule — the floor-clearing pick leading was kept.
   const streamer = professions.find((p) => p.slug === 'video-editor');
   const pilot = professions.find((p) => p.slug === 'commercial-pilot');
   assert.ok(streamer && pilot, 'fixture professions exist');
   const out = scorePerson(creatorPersona, [streamer, pilot]);
+  assert.equal(out.top3.length, 1, 'only the floor-clearing pick is seated');
   assert.equal(out.top3[0].slug, 'commercial-pilot', 'the floor-clearing pick leads');
-  const kept = out.top3.find((r) => r.slug === 'video-editor');
-  assert.ok(kept, 'the below-floor favourite may stay only as a marked extra');
-  assert.equal(kept.floor_status, 'below_floor');
-  assert.ok(kept.argument.math.some((l) => l.includes('under your $120K minimum')), 'the card must state the floor miss in plain words');
+  assert.ok(!out.top3.some((r) => r.slug === 'video-editor'), 'the below-floor favourite is not seated as a match');
+  // The profession's own card still states the floor miss plainly —
+  // that honesty lives on the candidate wherever it legitimately
+  // surfaces (bottom-3, the exploration plan), just never as a match.
+  const card = scoreCandidate(creatorPersona, streamer, [streamer, pilot]);
+  assert.equal(card.floor_status, 'below_floor');
+  assert.ok(card.argument.math.some((l) => l.includes('under your $120K minimum')), 'the card must state the floor miss in plain words');
 });

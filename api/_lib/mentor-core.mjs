@@ -39,6 +39,7 @@ import { randomUUID } from 'node:crypto';
 import {
   createSession,
   applyCddq,
+  recomputeCddqType,
   stagePrompt,
   applyStage,
   applyPerceivedFit,
@@ -342,6 +343,11 @@ export async function handleMentorRequest(body) {
         return { status: 400, json: { ok: false, error: 'session object is required for this action' } };
       }
       const leadSession = deserializeSession(body.session);
+      // CDDQ type integrity (gate smalls, 28.10.2026): the claimed
+      // type is ignored — recompute it from the stored votes before
+      // the snapshot's recompute reads it (see the shared path below).
+      const leadType = recomputeCddqType(leadSession);
+      if (leadType) leadSession.cddq_type = leadType;
       const leadProg = deriveProgress(leadSession);
       if (!leadProg.cddqDone || leadProg.stagesAnswered < 6) {
         return { status: 409, json: { ok: false, error: 'No verdict to attach yet — the interview is not finished.' } };
@@ -378,6 +384,14 @@ export async function handleMentorRequest(body) {
       return { status: 400, json: { ok: false, error: 'session object is required for this action' } };
     }
     const session = deserializeSession(body.session);
+    // CDDQ type integrity (gate smalls, 28.10.2026): the session is
+    // client-held, so the cddq_type it claims proves nothing — the
+    // type is recomputed from the stored votes (recomputeCddqType,
+    // interview.mjs) and the claimed value is overwritten before any
+    // action reads it. Rewritten votes or disagreeing copies throw
+    // here and get the clean 400 from the catch below.
+    const recomputedType = recomputeCddqType(session);
+    if (recomputedType) session.cddq_type = recomputedType;
     const sessionId = typeof body.session_id === 'string' && body.session_id ? body.session_id : randomUUID();
 
     if (action === 'current') {

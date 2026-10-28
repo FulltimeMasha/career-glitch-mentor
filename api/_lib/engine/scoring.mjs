@@ -46,6 +46,7 @@
 // import: side-hustle.mjs never imports back; scorePerson hands it
 // the scored results plus the small helpers it needs.
 import { pickSideHustle } from './side-hustle.mjs';
+import { buildEmptySetPlan } from './empty-plan.mjs';
 
 const clamp01 = (x) => (x == null || Number.isNaN(x) ? null : Math.min(1, Math.max(0, x)));
 const isNum = (x) => typeof x === 'number' && Number.isFinite(x);
@@ -247,6 +248,7 @@ const BLOCK_REASON_PHRASES = {
   physical_limit_gate: 'collided with the physical limit you named',
   age_gate: 'sat behind a legal age limit',
   perceived_fit_veto: 'got your own "not mine"',
+  below_floor: 'paid under the minimum you set, with no checked top-earner figure clearing it',
 };
 
 // ---------------------------------------------------------------------------
@@ -931,7 +933,7 @@ function buildArgument(person, prof, ctx) {
   if (flags.includes('perceived_fit_veto')) but.push('You pictured one real Tuesday in this job and said "not mine" — that pulled its grade down. Believe that answer.');
   if (flags.includes('physical_limit')) but.push('You named a physical limit, and this job is heavy on the body — its grade was held down for exactly that reason.');
   if (flags.includes('current_profession_not_in_base')) but.push('Your current job is not in our base yet, so your chances here were scored the starter way.');
-  if (category === 'C') but.push('Honest grade: this is the weakest fit of your three. Try it cheap before you believe in it.');
+  if (category === 'C') but.push('Honest grade: this is the weakest fit among your picks. Try it cheap before you believe in it.');
 
   // ---- FIRST STEPS — the bridge out of the person's real situation.
   if (person.current_profession_name) bridge.push(`Keep ${person.current_profession_name} paying while you switch — it funds the bridge. Do not quit first.`);
@@ -1167,6 +1169,10 @@ function buildExplorationPlan(person) {
   return steps.slice(0, 6);
 }
 
+// The empty-final-set exploration plan lives in ./empty-plan.mjs
+// (this file is at the deploy size cap — same one-way import pattern
+// as the side-hustle pick): buildEmptySetPlan() at the return below.
+
 // SIDE-HUSTLE IDEA (founder's rule, 28.10.2026): the pick lives in
 // ./side-hustle.mjs (this file is at the deploy size cap) —
 // pickSideHustle() below the cushion block in scorePerson.
@@ -1264,39 +1270,45 @@ export function scorePerson(person, professions) {
   const selectionPool = frozenSet ? sortable.filter((r) => frozenSet.has(r.slug)) : sortable;
 
   // ---- Top-3 selection: diversity + income floor, scores never inflated.
-  // Pass 1: best-ranked candidates whose family is not yet represented AND
-  //         whose typical pay does not fail the person's floor.
-  // Pass 2: best-ranked remaining candidates from families still not
-  //         represented (a below-floor pick may enter here — its card then
-  //         carries the pay warning, never silence).
-  // Pass 3 (audit L4): the clearly-best exception — see below the passes.
-  // If fewer than 3 families clear the bar, the list is honestly
-  // shorter than 3.
+  // One ranked pass over the pool: best-ranked candidates whose family
+  // is not yet represented AND whose pay story against the person's
+  // floor is honest — typical pay clears it, or a SOURCED upper-tail
+  // figure clears it (floor_status top_tier_only / top_decile_only;
+  // the card prints exactly that reason). A below_floor candidate —
+  // typical pay under the floor and NO sourced figure showing its top
+  // earners clearing it — is never seated as a match (gate smalls,
+  // 28.10.2026: the second, floor-relaxing pass that used to admit it
+  // "with a warning" is retired; a warning is not a pay path). It can
+  // still surface where being ruled out is the point (bottom-3, the
+  // empty-set exploration plan). Then pass 3 (audit L4): the
+  // clearly-best exception — see below. If fewer than 3 families
+  // clear the bar, the list is honestly shorter than 3.
   const top3 = [];
   const usedFamilies = new Set();
   // Bridge door anchor: the person's OWN profession, when the base has it
   // and nothing rules it out, is the bridge itself — it takes the first
-  // slot and the ranked passes fill around it.
+  // slot and the ranked pass fills around it. The floor rule binds the
+  // anchor too: an own profession that is below_floor does not anchor
+  // (the pass below decides its fate like any other candidate's — and
+  // below_floor never seats).
   let bridgeAnchorSlug = null;
   if (person.door === 'bridge') {
     const currentProf = findProfessionByName(person.current_profession_name, list);
     if (currentProf) {
       const self = selectionPool.find((r) => r.slug === currentProf.slug);
-      if (self) {
+      if (self && self.floor_status !== 'below_floor') {
         top3.push(self);
         usedFamilies.add(self.family);
         bridgeAnchorSlug = self.slug;
       }
     }
   }
-  for (const pass of [1, 2]) {
-    for (const r of selectionPool) {
-      if (top3.length >= 3) break;
-      if (top3.includes(r) || usedFamilies.has(r.family)) continue;
-      if (pass === 1 && r.floor_status === 'below_floor') continue;
-      top3.push(r);
-      usedFamilies.add(r.family);
-    }
+  for (const r of selectionPool) {
+    if (top3.length >= 3) break;
+    if (top3.includes(r) || usedFamilies.has(r.family)) continue;
+    if (r.floor_status === 'below_floor') continue;
+    top3.push(r);
+    usedFamilies.add(r.family);
   }
   // ---- Direction anchor (founder decision, 27.10.2026): a field the
   // person NAMED as their direction (stage 2, person.target_fields)
@@ -1325,7 +1337,11 @@ export function scorePerson(person, professions) {
       const inField = (r) => targetFields.includes(fieldOf(r));
       direction = { fields: targetFields, anchored_slug: null, blocked_reasons: {} };
       if (!top3.some(inField)) {
-        const cand = selectionPool.find((r) => !top3.includes(r) && inField(r));
+        // The floor rule binds the anchor too (gate smalls,
+        // 28.10.2026): a below_floor in-field candidate cannot hold
+        // the seat — the next in-field candidate with an honest pay
+        // story anchors instead.
+        const cand = selectionPool.find((r) => !top3.includes(r) && inField(r) && r.floor_status !== 'below_floor');
         if (cand) {
           if (top3.length >= 3) {
             // Displacement: the weakest displaceable pick goes — a
@@ -1349,15 +1365,20 @@ export function scorePerson(person, professions) {
           });
           cand.flags.push('direction_anchor');
           const labels = targetFields.map((f) => DIRECTION_FIELD_LABELS[f]).join(' / ');
-          cand.argument.why_you.unshift(`You named ${labels} as the field you are aiming at — this is the strongest door into it that your own lines allow, so it holds a seat in your three even where other jobs scored closer to the work you do now.`);
+          cand.argument.why_you.unshift(`You named ${labels} as the field you are aiming at — this is the strongest door into it that your own lines allow, so it holds a seat in your set even where other jobs scored closer to the work you do now.`);
           direction.anchored_slug = cand.slug;
         } else {
           for (const r of results) {
-            if (!inField(r) || !r.top_block) continue;
+            if (!inField(r)) continue;
             // Side hustles are not doors into a field — they are not
             // careers, so their blocks never pad the field's count.
             if ((profBySlug.get(r.slug) || {}).kind === 'side_hustle') continue;
-            direction.blocked_reasons[r.top_block] = (direction.blocked_reasons[r.top_block] || 0) + 1;
+            // A door can be shut by a hard block OR by the pay floor
+            // (below_floor never seats — see the selection pass):
+            // both are recorded, so the "every door was checked" line
+            // in the set reason names the real mix of reasons.
+            const reason = r.top_block || (r.floor_status === 'below_floor' ? 'below_floor' : null);
+            if (reason) direction.blocked_reasons[reason] = (direction.blocked_reasons[reason] || 0) + 1;
           }
         }
       }
@@ -1395,6 +1416,7 @@ export function scorePerson(person, professions) {
       const bar = Math.max(victim ? sumOf(victim) : 0, bestOtherFamily ? sumOf(bestOtherFamily) : 0);
       if (
         victim &&
+        dupCand.floor_status !== 'below_floor' &&
         sumOf(dupCand) - bar >= FAMILY_DUPLICATE_MARGIN &&
         !(dupCand.floor_status === 'below_floor' && victim.floor_status !== 'below_floor')
       ) {
@@ -1516,7 +1538,10 @@ export function scorePerson(person, professions) {
     if (top3.length >= 2) {
       const labels = [...new Set(top3.map((r) => FAMILY_LABELS[r.family] || r.family))];
       if (labels.length === top3.length) {
-        parts.push(`These picks are deliberately from different worlds — ${labels.join(', ')} — not three versions of the same job.`);
+        // The count word follows the ACTUAL set size (gate smalls,
+        // 28.10.2026): with two cards the sentence says "two", never
+        // a hard-coded "three" the cards contradict.
+        parts.push(`These picks are deliberately from different worlds — ${labels.join(', ')} — not ${top3.length === 3 ? 'three' : 'two'} versions of the same job.`);
       } else {
         // A family holds two seats (the clearly-best exception): say so
         // plainly instead of claiming three different worlds.
@@ -1537,7 +1562,7 @@ export function scorePerson(person, professions) {
     if (blockedCount > 0) parts.push('Some jobs that fit parts of your answers were not proposed at all: they cross a line you set — a red line, a hard NO from our base, or your own "not mine". The matchmaker does not propose what is ruled out.');
     if (direction && direction.anchored_slug) {
       const labels = direction.fields.map((f) => DIRECTION_FIELD_LABELS[f]).join(' / ');
-      parts.push(`You named ${labels} as your direction — one of these three is the strongest legal door into it, kept on your list on purpose, at its honest grade.`);
+      parts.push(`You named ${labels} as your direction — one of these picks is the strongest legal door into it, kept on your list on purpose, at its honest grade.`);
     } else if (direction && Object.keys(direction.blocked_reasons).length > 0) {
       const labels = direction.fields.map((f) => DIRECTION_FIELD_LABELS[f]).join(' / ');
       const reasonText = Object.entries(direction.blocked_reasons)
@@ -1657,7 +1682,11 @@ export function scorePerson(person, professions) {
     bridge_pick: bridgePick || null,
     side_hustle_pick: sideHustlePick,
     results_count: results.length,
-    exploration_plan: mode === 'insufficient_data' ? buildExplorationPlan(person) : [],
+    // An empty final set in verdict mode is not a dead end either:
+    // it carries the empty-set plan (gate smalls, 28.10.2026).
+    exploration_plan: mode === 'insufficient_data'
+      ? buildExplorationPlan(person)
+      : (top3.length === 0 ? buildEmptySetPlan(person, results, { blockPhrases: BLOCK_REASON_PHRASES }) : []),
   };
 }
 

@@ -1060,7 +1060,7 @@ html += '</ol>';
 }
 } else {
 lastResult = r; hasTop = (r.top3 || []).length > 0;
-if(r.set_reason) html += hasTop ? '<h3 style="margin:6px 0 8px;font-family:Outfit,sans-serif">Why these three</h3><p>' + esc(r.set_reason) + '</p>' : '<div class="notice">' + esc(r.set_reason) + '</div>';
+if(r.set_reason) html += hasTop ? '<h3 style="margin:6px 0 8px;font-family:Outfit,sans-serif">Why these picks</h3><p>' + esc(r.set_reason) + '</p>' : '<div class="notice">' + esc(r.set_reason) + '</div>';
 (r.top3 || []).forEach(function(c, i){ html += candidateCard(c, (i + 1) + ". " + c.name, false, i === 0); });
 if(r.bridge_pick){
 var bp = r.bridge_pick;

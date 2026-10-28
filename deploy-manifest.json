@@ -1397,7 +1397,7 @@
   },
   {
    "file": "mentor.html",
-   "sha": "1a68dd048742d4bbf933f1be5ba9768754f932a8",
+   "sha": "324f207b9bcb01dafb93fdeab81cf8f7801f5edf",
    "size": 94955
   },
   {
@@ -1407,18 +1407,18 @@
   },
   {
    "file": "api/_lib/mentor-core.mjs",
-   "sha": "afab2a3b6041eb099810e7910bd8b8e9919c84ae",
-   "size": 30088
+   "sha": "f330e2cfb2ecc5bbc4ec6c257198823fd282c166",
+   "size": 30945
   },
   {
    "file": "api/_lib/engine-bridge.mjs",
-   "sha": "e687614d45e72f1438a3567cb40a4ac5d9ec2951",
-   "size": 780
+   "sha": "4f7002d59f9b2fe3f7e084b410729ef333d2cf24",
+   "size": 801
   },
   {
    "file": "api/_lib/engine/interview.mjs",
-   "sha": "9146814a2f41d85b98787f51f96ace05a0d64b76",
-   "size": 44292
+   "sha": "3e005074a9e0307c181c4a4ea2d0c47f7fd6ea31",
+   "size": 47585
   },
   {
    "file": "api/_lib/engine/llm.mjs",
@@ -1432,8 +1432,8 @@
   },
   {
    "file": "api/_lib/engine/scoring.mjs",
-   "sha": "ef88cf7ee49436db6a3f021e88ec724fab644fba",
-   "size": 92598
+   "sha": "f536ffc0c7c56dee7a730f0c752a5789e6af5d8f",
+   "size": 94668
   },
   {
    "file": "api/_lib/engine/stages.json",
@@ -1779,7 +1779,12 @@
    "file": "sh.js",
    "sha": "b8aef54e7a17bc72ca96d82ec750c0de4c40d588",
    "size": 2376
+  },
+  {
+   "file": "api/_lib/engine/empty-plan.mjs",
+   "sha": "779c8b0e375b9bd0ffe23cfbdba1b5c917d9797b",
+   "size": 3235
   }
  ],
- "deployment": "dpl_DrVnAKkwKZSEGzqa5Zdj9iyCNwXB"
+ "deployment": "dpl_7E7sD6fX6ubZRY2BJ8zYTGVtrcui"
 }

@@ -359,6 +359,43 @@ export function applyCddq(session, answersByItemId) {
 }
 
 // ---------------------------------------------------------------------------
+// CDDQ type integrity (gate smalls, 28.10.2026). The session is
+// client-held, so a client-sent cddq_type proves nothing: the type is
+// RECOMPUTED from the stored votes — the same option resolution
+// applyCddq used to derive it — and the API layer overwrites the
+// session's type with the recomputed value before anything reads it
+// (assemblePerson consumes session.cddq_type; the claimed value is
+// ignored). applyCddq writes the votes twice — cddq_answers by item
+// id and structured by field — from the same answers; when both
+// copies are complete they must agree, and every stored vote must
+// resolve to a declared option of its item. A flipped type or a
+// rewritten vote set throws here, and the API answers a clean 400.
+// Returns the recomputed type, or null when the opening is not fully
+// answered yet (nothing to recompute — the type is not in force).
+// ---------------------------------------------------------------------------
+function typeFromStoredVotes(getAnswer) {
+  const votes = { not_ready: 0, lacks_information: 0, inconsistent_information: 0 };
+  for (const item of CDDQ.items) {
+    const answer = getAnswer(item);
+    if (answer === undefined || answer === null || answer === '') return null;
+    const { votes_for } = resolveCddqVote(item, answer); // throws on junk
+    votes[votes_for] += 1;
+  }
+  const max = Math.max(...Object.values(votes));
+  return CDDQ_TIE_BREAK.find((t) => votes[t] === max);
+}
+
+export function recomputeCddqType(session) {
+  if (!session || typeof session !== 'object') return null;
+  const byId = typeFromStoredVotes((item) => (session.cddq_answers || {})[item.id]);
+  const byField = typeFromStoredVotes((item) => (session.structured || {})[item.field]);
+  if (byId && byField && byId !== byField) {
+    throw new Error('recomputeCddqType: the two stored copies of the CDDQ votes disagree');
+  }
+  return byId || byField;
+}
+
+// ---------------------------------------------------------------------------
 // Stages
 // ---------------------------------------------------------------------------
 
@@ -504,6 +541,30 @@ export function applyStage(session, { freeText = '', tailAnswers = {} } = {}, pr
 
   if (typeof freeText === 'string' && freeText.trim().length > 0) {
     session.transcript.push({ stage: def.id, who: 'user', text: freeText });
+  }
+
+  // Required-fields enforcement (gate smalls, 28.10.2026): a stage is
+  // only APPLIED when every required item of THIS stage stands filled
+  // in the merged answers (what the session already held plus this
+  // submission) — the same completeness test deriveProgress uses,
+  // pointed at one stage, with the required set read from stages.json
+  // itself (an absent `required` flag counts as required, exactly as
+  // in deriveProgress; derived items never count). Before this check
+  // a stage call with an empty tail was ACCEPTED and merely failed to
+  // advance the derived progress: the API said ok while Point A stood
+  // empty. A blank required field is "absent" (see the blank rule
+  // above), so it lands here as unfilled and the call is rejected —
+  // the API layer turns the throw into a clean 400, and the session
+  // the client holds is untouched.
+  {
+    const missing = def.tail
+      .filter((t) => t.kind !== 'derived' && t.required !== false)
+      .filter((t) => (t.field === 'values_rank'
+        ? !normalizeValuesRank(session.structured[t.field])
+        : !isFilled(session.structured[t.field])));
+    if (missing.length) {
+      throw new Error(`applyStage: stage ${def.id} (${def.slug}) is missing required answers: ${missing.map((t) => t.field).join(', ')}`);
+    }
   }
 
   if (def.id < 5) {
