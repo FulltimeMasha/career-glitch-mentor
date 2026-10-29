@@ -1857,8 +1857,8 @@
   },
   {
    "file": "chat.js",
-   "sha": "a8ff6379e123cefacaf9902d4e5888006ff96851",
-   "size": 31301
+   "sha": "fb5fda3d025fb75c67a519a26778367a1501d715",
+   "size": 37020
   },
   {
    "file": "api/_lib/engine/chat.mjs",
@@ -1871,5 +1871,5 @@
    "size": 22485
   }
  ],
- "deployment": "dpl_EPeiqxE3TTgBJvnFzFUJonRPaHbF"
+ "deployment": "dpl_D94QjtZr867iX2ZATSAtQeSYwHYL"
 }

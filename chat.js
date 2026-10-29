@@ -42,6 +42,10 @@
     ".chat-line .drop{float:right;color:#b03a6b;cursor:pointer;font-size:13px;background:none;border:none;font:inherit}" +
     ".chat-line.struck{opacity:.45;text-decoration:line-through}" +
     ".chat-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}" +
+    ".chat-row-top{margin-top:0;margin-bottom:10px}" +
+    ".chat-fixbox{padding:4px 0 10px}" +
+    ".chat-fixbox label{font-weight:600;font-size:14.5px;display:block;margin-bottom:6px}" +
+    ".chat-fixsel{width:100%;padding:12px 14px;border-radius:16px;border:2px solid var(--line);background:#fff;color:var(--ink);font-size:16px;font-family:inherit}" +
     ".chat-note{font-size:13.5px;color:#5c5566;margin-top:8px;line-height:1.45}" +
     ".chat-widgets{display:grid;gap:14px;margin:12px 0}" +
     ".chat-widgets label{font-weight:600;font-size:14.5px;display:block;margin-bottom:6px}" +
@@ -277,6 +281,81 @@
     });
   }
 
+  // Enum fix controls: a confirm line for a choice field edits through
+  // a <select> showing the bank's option LABELS — the value written to
+  // S.fixAnswers (and so sent back) stays the internal enum value the
+  // engine expects; only the presentation changes. When the field's
+  // owning item is not on this packet (a banked cross-stage fact), the
+  // option lists below mirror the stages.json stage 0/1 choice items
+  // exactly — they cover every single-value enum field the extractor
+  // or the revise path can propose.
+  var ENUM_FIX_OPTIONS = {
+    documents_ok: [
+      { value: "yes", label: "In order — I can get licensed where a license is required" },
+      { value: "partial", label: "Partially — something is missing or in progress" },
+      { value: "no", label: "No — I currently cannot be licensed / legally work in licensed roles" },
+    ],
+    degree_status: [
+      { value: "us_degree", label: "In the US" },
+      { value: "foreign_degree", label: "Outside the US (a foreign degree)" },
+      { value: "none", label: "No degree" },
+    ],
+    degree_field: [
+      { value: "engineering", label: "Engineering" },
+      { value: "medicine", label: "Medicine" },
+      { value: "nursing", label: "Nursing" },
+      { value: "dentistry", label: "Dentistry" },
+      { value: "pharmacy", label: "Pharmacy" },
+      { value: "law", label: "Law" },
+      { value: "accounting_business", label: "Accounting / business" },
+      { value: "education", label: "Education" },
+      { value: "it_computing", label: "IT / computing" },
+      { value: "architecture", label: "Architecture" },
+      { value: "other", label: "Another field" },
+    ],
+    degree_level: [
+      { value: "bachelor", label: "Bachelor's" },
+      { value: "master", label: "Master's" },
+      { value: "doctorate_professional", label: "Doctorate / professional degree" },
+      { value: "associate", label: "Associate" },
+      { value: "other", label: "Another level" },
+    ],
+    exit_pattern: [
+      { value: "money", label: "Money — pay too low or income collapsed" },
+      { value: "energy", label: "Energy — the work drained me / burnout" },
+      { value: "boss", label: "People in charge — boss, management, clients from hell" },
+      { value: "market", label: "Market — the work itself disappeared or stopped paying" },
+      { value: "boredom", label: "Boredom — it became routine, I lost interest" },
+      { value: "mixed", label: "Mixed — no single dominant reason" },
+      { value: "none_yet", label: "Nothing to leave yet — no past roles/attempts" },
+    ],
+  };
+
+  function enumFixWidget(field, options, label) {
+    var wrap = document.createElement("div");
+    var lab = document.createElement("label"); lab.textContent = label; wrap.appendChild(lab);
+    var sel = document.createElement("select"); sel.className = "chat-fixsel";
+    var cur = S.fixAnswers[field];
+    var seen = false;
+    (options || []).forEach(function (o) {
+      var op = document.createElement("option");
+      op.value = optVal(o); op.textContent = optLab(o);
+      if (optVal(o) === cur) { op.selected = true; seen = true; }
+      sel.appendChild(op);
+    });
+    if (!seen && cur != null) {
+      // Current value outside the bank list (should not happen): keep
+      // it visible and selected rather than silently swapping it for
+      // the first option — S.fixAnswers still holds it until changed.
+      var op0 = document.createElement("option");
+      op0.value = cur; op0.textContent = String(cur); op0.selected = true;
+      sel.insertBefore(op0, sel.firstChild);
+    }
+    sel.addEventListener("change", function () { S.fixAnswers[field] = sel.value; });
+    wrap.appendChild(sel);
+    return wrap;
+  }
+
   function renderConfirmCard(packet) {
     var conf = packet.confirm;
     S.fixAnswers = {};
@@ -287,6 +366,19 @@
     var box = document.createElement("div");
     box.className = "chat-cardbox confirm";
     box.innerHTML = "<h3>" + (conf.revise ? "✏️ Corrections I heard — check them" : "👂 Here is what I heard — check it") + "</h3>";
+    // The same two actions sit at the TOP of the card and again below
+    // the lines, so confirming never means scrolling past every line
+    // (and its editor) first. Both rows call the same sends.
+    function actionRow(top) {
+      var r = document.createElement("div"); r.className = "chat-row" + (top ? " chat-row-top" : "");
+      var yes = document.createElement("button"); yes.type = "button"; yes.className = "btn"; yes.textContent = "✓ That's right";
+      yes.addEventListener("click", function () { send({ confirm: true }); });
+      var fix = document.createElement("button"); fix.type = "button"; fix.className = "btn ghost"; fix.textContent = "Use my fixes";
+      fix.addEventListener("click", function () { send({ fix_values: S.fixAnswers }); });
+      r.appendChild(yes); r.appendChild(fix);
+      return r;
+    }
+    box.appendChild(actionRow(true));
     var list = document.createElement("div");
     conf.lines.forEach(function (line, i) {
       var field = Object.keys(conf.values)[i];
@@ -299,26 +391,45 @@
         if (field in S.fixAnswers) { delete S.fixAnswers[field]; row.classList.add("struck"); drop.textContent = "removed"; }
       });
       row.appendChild(drop);
-      list.appendChild(row);
       // Editable where the item definition is on this packet (or the
       // value is a plain number / short text for earlier-stage fixes).
+      // A choice field edits through a label select (see above). The
+      // editor starts COLLAPSED behind the line's "Fix" toggle — a
+      // card of many lines stays a card, not a wall of inputs.
       var item = byField[field];
       var val = conf.values[field];
-      if (item && (item.kind === "number" || item.kind === "text_short")) {
-        list.appendChild(widget(item, S.fixAnswers, function (k, v) { S.fixAnswers[k] = v; }));
+      var editor = null;
+      if (item && item.kind === "choice" && (item.options || []).length) {
+        editor = enumFixWidget(field, item.options, item.label || field);
+      } else if (item && (item.kind === "number" || item.kind === "text_short")) {
+        editor = widget(item, S.fixAnswers, function (k, v) { S.fixAnswers[k] = v; });
+      } else if (!item && ENUM_FIX_OPTIONS[field] && typeof val === "string") {
+        editor = enumFixWidget(field, ENUM_FIX_OPTIONS[field], "Fix: " + field.replace(/_/g, " "));
       } else if (!item && (typeof val === "number" || typeof val === "string")) {
         var pseudo = { field: field, kind: typeof val === "number" ? "number" : "text_short", label: "Fix: " + field.replace(/_/g, " ") };
-        list.appendChild(widget(pseudo, S.fixAnswers, function (k, v) { S.fixAnswers[k] = v; }));
+        editor = widget(pseudo, S.fixAnswers, function (k, v) { S.fixAnswers[k] = v; });
+      }
+      if (editor) {
+        var fixBox = document.createElement("div");
+        fixBox.className = "chat-fixbox"; fixBox.style.display = "none";
+        fixBox.appendChild(editor);
+        var tog = document.createElement("button");
+        tog.type = "button"; tog.className = "drop"; tog.textContent = "Fix";
+        tog.addEventListener("click", function () {
+          var open = fixBox.style.display !== "none";
+          fixBox.style.display = open ? "none" : "";
+          tog.textContent = open ? "Fix" : "Hide";
+          if (!open) fixBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+        row.appendChild(tog);
+        list.appendChild(row);
+        list.appendChild(fixBox);
+      } else {
+        list.appendChild(row);
       }
     });
     box.appendChild(list);
-    var row = document.createElement("div"); row.className = "chat-row";
-    var yes = document.createElement("button"); yes.type = "button"; yes.className = "btn"; yes.textContent = "✓ That's right";
-    yes.addEventListener("click", function () { send({ confirm: true }); });
-    var fix = document.createElement("button"); fix.type = "button"; fix.className = "btn ghost"; fix.textContent = "Use my fixes";
-    fix.addEventListener("click", function () { send({ fix_values: S.fixAnswers }); });
-    row.appendChild(yes); row.appendChild(fix);
-    box.appendChild(row);
+    box.appendChild(actionRow(false));
     var note = document.createElement("p"); note.className = "chat-note";
     note.textContent = "Only what stands on this card — after your OK or your fixes — is used for your match. Remove a line and it never counts.";
     box.appendChild(note);
