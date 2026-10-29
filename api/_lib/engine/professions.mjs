@@ -43,6 +43,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export const DEFAULT_SITE_DIR = join(homedir(), 'workspace', 'careerglitch-site');
 
@@ -1465,38 +1466,47 @@ export function buildProfessions(profData, roadmapData) {
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // WS2 swap: merge data/onet-import.json (O*NET 30.2) into the built
-// professions. The import file is looked for relative to this module so
-// the same code works in the repo layout (engine/ -> ../data/) and in
-// the deployed Vercel bundle (api/_lib/engine/ -> ../data/), with cwd
-// fallbacks for serverless hosts. Absent file → Day-1 behaviour,
-// untouched (stubs + nulls + flags).
+// professions. The import is looked for in data dirs resolved from THIS
+// MODULE's location (fileURLToPath of import.meta.url), so the same code
+// works in the repo layout (engine/ -> ../data/) and in the deployed
+// Vercel bundle (api/_lib/engine/ -> ../data/) from ANY process cwd.
+// cwd-based dirs remain as later fallbacks only.
+//
+// History: the module-relative dirs used to be passed to path.join() as
+// URL objects; join() throws on non-strings, the catch swallowed it, and
+// only the cwd fallback ever loaded the shards. Started from a foreign
+// cwd the merge silently no-opped (0/376 professions with onet_soc) and
+// the engine degraded to stubs with no error. Now the dirs are plain
+// strings, and a total miss THROWS: a half-loaded engine must never
+// serve results quietly.
 // ---------------------------------------------------------------------------
-function readOnetImport() {
-  const candidates = [
-    new URL('../data/onet-import.json', import.meta.url),
-    new URL('./data/onet-import.json', import.meta.url),
-  ];
+function onetDataDirs() {
+  const dirs = [];
+  const push = (p) => { if (p && !dirs.includes(p)) dirs.push(p); };
+  try { push(fileURLToPath(new URL('../data/', import.meta.url))); } catch { /* no module url */ }
+  try { push(fileURLToPath(new URL('./data/', import.meta.url))); } catch { /* no module url */ }
   try {
-    candidates.push(join(process.cwd(), 'data', 'onet-import.json'));
-    candidates.push(join(process.cwd(), 'api', '_lib', 'data', 'onet-import.json'));
-  } catch { /* no cwd — module-relative paths only */ }
-  for (const c of candidates) {
+    push(join(process.cwd(), 'data'));
+    push(join(process.cwd(), 'api', '_lib', 'data'));
+  } catch { /* no cwd — module-relative dirs only */ }
+  return dirs;
+}
+
+function readOnetImport() {
+  const dirs = onetDataDirs();
+  const tried = [];
+  for (const d of dirs) {
+    const single = join(d, 'onet-import.json');
+    tried.push(single);
     try {
-      if (existsSync(c)) return JSON.parse(readFileSync(c, 'utf8'));
+      if (existsSync(single)) return JSON.parse(readFileSync(single, 'utf8'));
     } catch { /* unreadable candidate — try the next */ }
   }
   // Sharded form (deployed bundle): the connector upload path caps a
   // single file at ~90 KB, so the bundle ships onet-import-NN.json
   // shards in the data dir; merge them back into one import object.
-  const dirs = [
-    new URL('../data/', import.meta.url),
-    new URL('./data/', import.meta.url),
-  ];
-  try {
-    dirs.push(join(process.cwd(), 'data'));
-    dirs.push(join(process.cwd(), 'api', '_lib', 'data'));
-  } catch { /* module-relative dirs only */ }
   for (const d of dirs) {
+    tried.push(join(d, 'onet-import-*.json'));
     try {
       const names = readdirSync(d).filter((n) => /^onet-import-\d+\.json$/.test(n)).sort();
       if (!names.length) continue;
@@ -1509,14 +1519,19 @@ function readOnetImport() {
       if (Object.keys(merged.professions).length) return merged;
     } catch { /* not this dir — try the next */ }
   }
-  return null;
+  throw new Error(
+    `readOnetImport: O*NET import not found or unreadable in any data dir (tried: ${tried.join('; ')}). `
+    + 'Refusing to run a half-loaded engine: without the O*NET merge the base degrades to stubs silently.',
+  );
 }
 
 const dropFlags = (p, names) => { p.data_flags = p.data_flags.filter((f) => !names.includes(f)); };
 
 export function applyOnetImport(profs) {
-  const imp = readOnetImport();
-  if (!imp || !imp.professions) return profs;
+  const imp = readOnetImport(); // throws when the import is absent/unreadable
+  if (!imp || !imp.professions || !Object.keys(imp.professions).length) {
+    throw new Error('applyOnetImport: O*NET import carries no professions — refusing to run a half-loaded engine.');
+  }
   for (const p of profs) {
     // bls_vintage stamps the BLS projection vintage of the site series
     // (2025–35) on EVERY vector, matched or not (model v2 §1в).

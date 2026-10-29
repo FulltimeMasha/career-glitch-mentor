@@ -1427,8 +1427,8 @@
   },
   {
    "file": "api/_lib/engine/professions.mjs",
-   "sha": "373adb394e053daa654a57f316475ea19c90081f",
-   "size": 88584
+   "sha": "193b0ef8a41c27a0f582d891fd43a194e8420410",
+   "size": 89558
   },
   {
    "file": "api/_lib/engine/scoring.mjs",
@@ -1871,5 +1871,5 @@
    "size": 22485
   }
  ],
- "deployment": "dpl_FYvY5cNtug3j4tT5V5RKNLvQykYy"
+ "deployment": "dpl_7qTXLWvvRvrpki53xBNgpnRr19YD"
 }

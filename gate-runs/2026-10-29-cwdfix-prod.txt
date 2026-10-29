@@ -1,0 +1,29 @@
+cwd-fix pass (professions.mjs O*NET loader) — PROD gate.
+Target: https://careerglitch.com/api/mentor (production, deployment dpl_7qTXLWvvRvrpki53xBNgpnRr19YD).
+Gate client cwd = /home/hatch/workspace/career-glitch-mentor (client cwd is immaterial; recorded per protocol).
+Frozen door pages /, /start, /pivot, /bridge re-fetched post-deploy: sha1 byte-identical to deploy-manifest.json.
+
+Regression gate → https://careerglitch.com/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Chat intake: clean 12 calls / 6 messages (server turns 6), injection 14 calls / 8 messages, proposals clean 3 vs injection 3
+Chat early dumper: 14 calls / 8 messages (server turns 8), dump proposed 12 fields in turn 1
+
+Sessions 51 (completed 51, with results 34) · modes {"bands":30,"direct":5,"insufficient_data":16} · 660s
+Top3 stub share 0% (base 4%) · distinct jobs 44 · most frequent: UX/UI Designer 6, Med Spa Owner 6, AI Automation Specialist 5, Software Developer 4, Project Manager 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · UX/UI Designer in 6 of 34 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 23 of 34
+
+FAIL — 0 hard + 2 soft rule(s) broken. Do not deploy.
