@@ -86,6 +86,7 @@ const SOURCED_OUTLOOK = {
   'bookkeeper-advisory': 'Shrinking · −6% to 2035 (BLS)',
   'translator-interpreter': 'Growing · +2% to 2035 (BLS)',
   'registered-nurse': 'Growing · +6% to 2035 (BLS)',
+  'certified-nursing-assistant': 'Growing · +3% to 2035 (BLS)',
   'dental-hygienist': 'Growing · +8% projected growth (its card, BLS-based)',
   'graphic-designer': 'Shrinking · −2% (its card, BLS May 2025)',
   'customer-service-representative': 'Shrinking · −5% to 2035 (BLS)',
@@ -608,6 +609,12 @@ const AGE_GATES = {
   'home-inspector': { min: 18, source: 'Home-inspector licensing (in licensing states) requires 18' },
   // 18 — state-board licensed clinical professions (licence + degree).
   'registered-nurse': { min: 18, source: 'State nursing licensure requires 18' },
+  // Matchmaker 2.0 core (28.10.2026): the two new licensed/owner rows
+  // of the nursing → aesthetics ladder. certified-nursing-assistant
+  // deliberately has NO entry: NC Nurse Aide I programmes admit from
+  // 16½ (Wake Tech), so an 18+ gate would be an invented barrier.
+  'aesthetic-nurse-nurse-injector': { min: 18, source: 'Practised on the RN licence — state nursing licensure requires 18' },
+  'med-spa-owner': { min: 18, source: 'Owning the business — contracts, leases, business credit — requires legal majority (18)' },
   'registered-nurse-2': { min: 18, source: 'State nursing licensure requires 18 (CRNA practice sits on the RN licence)' },
   'lpn-lvn': { min: 18, source: 'State practical-nursing licensure requires 18' },
   'nurse-practitioner': { min: 18, source: 'State APRN licensure requires 18' },
@@ -692,6 +699,80 @@ const AGE_GATES = {
   'real-estate-investor-flips': { min: 18, source: 'Buying and selling property requires legal majority (18) — contracts and financing' },
   'real-estate-investor-rentals': { min: 18, source: 'Buying and holding rental property requires legal majority (18) — contracts and financing' },
   'franchise-owner-home-services': { min: 18, source: 'A franchise agreement is a major contract — it requires legal majority (18)' },
+};
+
+// ---------------------------------------------------------------------------
+// CAREER LADDERS (Matchmaker 2.0 core, brief 28.10.2026 §5.2) — the
+// only producer of entry_steps / next_steps / prerequisites, attached
+// in buildProfessions() below and projected into professions-base.json
+// by scripts/export_base.mjs. A ladder answers "how is this job
+// actually reached": entry_steps are the rungs of the standard route
+// IN ORDER, from zero (entry_steps[0] is the first paid rung a person
+// can stand on); a step's training_months / cost_k describe THAT step
+// (its own programme), not the whole road. next_steps are the rungs
+// the profession grows into. prerequisites are facts that must hold
+// first (a licence, a capital fact), in words.
+//
+// Filled cluster by cluster, by hand, from named sources — the rest
+// of the base carries empty ladders honestly until its cluster is
+// done. First cluster (28.10.2026): the nursing → aesthetics ladder
+// of the Marina benchmark — CNA → LPN → RN → Aesthetic Nurse →
+// Med Spa Owner. Sources: BLS OOH (Nursing Assistants; LPN; RN),
+// NC DHHS / Wake Tech (Nurse Aide I: 75+ hours incl. 16 clinical,
+// community-college tuition in the hundreds of dollars), ZipRecruiter
+// salary data for the injector rung. Step costs beyond the CNA rung
+// are editorial mid-range programme costs, recorded as such in
+// DATA_PASS_CHANGELOG.md.
+// ---------------------------------------------------------------------------
+const LADDERS = {
+  'certified-nursing-assistant': {
+    entry_steps: [],
+    next_steps: [{ slug: 'lpn-lvn' }, { slug: 'registered-nurse' }],
+    prerequisites: [
+      { what: 'A state-approved Nurse Aide I programme and the state competency exam (NC: 75+ training hours including 16 clinical hours; listing on the NC Nurse Aide I Registry)' },
+    ],
+  },
+  'lpn-lvn': {
+    entry_steps: [{ slug: 'certified-nursing-assistant', training_months: 2, cost_k: 1 }],
+    next_steps: [{ slug: 'registered-nurse' }],
+    prerequisites: [
+      { what: 'A practical-nursing programme and the NCLEX-PN licence exam; bridge programmes credit Nurse Aide I experience' },
+    ],
+  },
+  'registered-nurse': {
+    entry_steps: [
+      { slug: 'certified-nursing-assistant', training_months: 2, cost_k: 1 },
+      { slug: 'lpn-lvn', training_months: 9, cost_k: 6 },
+    ],
+    next_steps: [{ slug: 'aesthetic-nurse-nurse-injector' }, { slug: 'nurse-practitioner' }],
+    prerequisites: [
+      { what: 'An accredited nursing degree (ADN or BSN) and the NCLEX-RN licence exam' },
+      { what: 'Routes differ: CNA → RN directly, or CNA → LPN → RN with credit for the aide work — either way the degree and the licence run in the US; a foreign degree is not itself a licence' },
+    ],
+  },
+  'aesthetic-nurse-nurse-injector': {
+    entry_steps: [
+      { slug: 'certified-nursing-assistant', training_months: 2, cost_k: 1 },
+      { slug: 'registered-nurse', training_months: 36, cost_k: 20 },
+    ],
+    next_steps: [{ slug: 'med-spa-owner' }],
+    prerequisites: [
+      { what: 'An active RN licence — injectables are practised on the nursing licence, under a medical director' },
+      { what: 'Most employers want 1–2 years of clinical nursing first; the certification courses (neuromodulators, dermal fillers, IV therapy) come after the licence, not instead of it' },
+    ],
+  },
+  'med-spa-owner': {
+    entry_steps: [
+      { slug: 'certified-nursing-assistant', training_months: 2, cost_k: 1 },
+      { slug: 'registered-nurse', training_months: 36, cost_k: 20 },
+      { slug: 'aesthetic-nurse-nurse-injector', training_months: 6, cost_k: 4 },
+    ],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A clinical licence of your own (RN/NP/PA/MD, by state) or a contracted medical director — a med spa is a medical practice, not a salon' },
+      { what: 'Startup capital well beyond training money: devices, premises, product, insurance and compliance — ownership money, not course money' },
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -1179,6 +1260,12 @@ export function buildProfessions(profData, roadmapData) {
         // physical: maximum hands-on load.
         physical: hands === 2,
       },
+      // --- career ladder (Matchmaker 2.0 core, 28.10.2026): from the
+      // LADDERS table above; empty arrays are the honest state for a
+      // profession whose cluster has not been filled yet.
+      entry_steps: (LADDERS[slug] && LADDERS[slug].entry_steps) || [],
+      next_steps: (LADDERS[slug] && LADDERS[slug].next_steps) || [],
+      prerequisites: (LADDERS[slug] && LADDERS[slug].prerequisites) || [],
       // --- cause-B base fields (28.10.2026): placeholders, derived for
       // real in finalizeBaseFields() once the import has merged.
       kind: 'career', // placeholder — finalizeBaseFields() sets the real value

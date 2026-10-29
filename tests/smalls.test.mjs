@@ -190,8 +190,11 @@ test('below-floor: no top-3 card under the floor without a data-backed top-earne
     const out = scorePerson(person, professions);
     for (const r of out.top3) {
       if (person.income_floor_k > r.payK) {
-        assert.ok(['top_decile_only', 'top_tier_only'].includes(r.floor_status),
+        assert.ok(['top_decile_only', 'top_tier_only', 'clears_via_ladder'].includes(r.floor_status),
           `${r.slug} pays $${r.payK}K under the $${person.income_floor_k}K floor with status ${r.floor_status} — no data-backed reason`);
+        if (r.floor_status === 'clears_via_ladder') {
+          assert.ok(r.floor_path && r.floor_path.reaches_floor, `${r.slug} claims a ladder path but prints none`);
+        }
       }
     }
   }

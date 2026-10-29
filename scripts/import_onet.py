@@ -289,6 +289,12 @@ _O = {
     'scalp-micropigmentation-artist': ('39-5094.00', 'hand-reviewed 28.10.2026: scalp micropigmentation IS permanent makeup; same licence-family home as permanent-makeup-artist (Skincare Specialists)', False),
     'vertical-farm-technician': ('45-2092.00', 'hand-reviewed 28.10.2026: "Hydroponic Controlled Environment Agricultural Grower" is an O*NET alternate title of Farmworkers and Laborers, Crop, Nursery, and Greenhouse — the taxonomy home of CEA growing work', False),
     'esl-adult-literacy-teacher': ('25-3011.00', 'hand-reviewed 28.10.2026: the occupation title itself is Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors', False),
+    # -- Matchmaker 2.0 core rows (28.10.2026): the nursing -> aesthetics
+    # ladder rows were added to the base with editorial tuples; linking
+    # them here so their measured profiles are O*NET data, not stubs.
+    'certified-nursing-assistant': ('31-1131.00', 'hand-reviewed 28.10.2026: Nursing Assistants is the exact SOC occupation', False),
+    'aesthetic-nurse-nurse-injector': ('29-1141.00', 'hand-reviewed 28.10.2026: aesthetic/injector nursing has no own SOC; it is practised on the RN licence, so the measured profile is Registered Nurses (pay is NOT inherited — the card figure is labelled job-posting data)', False),
+    'med-spa-owner': ('11-9111.00', 'hand-reviewed 28.10.2026: a med spa is a medical practice and its working owner has no own SOC; the measured profile is Medical and Health Services Managers (pay is NOT inherited — the card figure is an editorial owner-income estimate)', False),
 }
 
 # --- Supplies donors ------------------------------------------------------

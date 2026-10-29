@@ -27,7 +27,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "data-analyst",
@@ -57,7 +60,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "data-scientist-ml-engineer",
@@ -87,7 +93,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ux-ui-designer",
@@ -117,7 +126,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "web-designer",
@@ -147,7 +159,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "product-manager",
@@ -177,7 +192,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "qa-engineer",
@@ -207,7 +225,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "devops-engineer",
@@ -237,7 +258,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cybersecurity-analyst",
@@ -267,7 +291,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ai-automation-specialist",
@@ -297,7 +324,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "no-code-developer",
@@ -327,7 +357,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mobile-app-developer",
@@ -357,7 +390,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "it-support-specialist",
@@ -387,7 +423,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "technical-writer",
@@ -417,7 +456,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "video-editor",
@@ -447,7 +489,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "motion-designer-3d-artist",
@@ -477,7 +522,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "game-designer",
@@ -507,7 +555,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "seo-specialist",
@@ -537,7 +588,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ppc-paid-ads-specialist",
@@ -567,7 +621,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "smm-manager",
@@ -597,7 +654,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "content-strategist",
@@ -627,7 +687,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "copywriter",
@@ -657,7 +720,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "podcast-producer",
@@ -687,7 +753,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "online-tutor",
@@ -717,7 +786,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "virtual-assistant",
@@ -747,7 +819,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "e-commerce-manager",
@@ -777,7 +852,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "crm-email-marketer",
@@ -807,7 +885,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "accountant",
@@ -840,7 +921,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "enrolled-agent-tax-pro",
@@ -870,7 +954,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "bookkeeper-advisory",
@@ -900,7 +987,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "financial-analyst",
@@ -930,7 +1020,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "insurance-agent",
@@ -963,7 +1056,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mortgage-broker",
@@ -996,7 +1092,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "b2b-sales-rep",
@@ -1026,7 +1125,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "recruiter",
@@ -1056,7 +1158,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "hr-specialist",
@@ -1086,7 +1191,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "project-manager",
@@ -1116,7 +1224,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "operations-manager",
@@ -1146,7 +1257,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "grant-writer",
@@ -1176,7 +1290,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "translator-interpreter",
@@ -1206,7 +1323,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "brand-strategist",
@@ -1236,7 +1356,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pr-specialist",
@@ -1266,7 +1389,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "market-researcher",
@@ -1296,7 +1422,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "customer-success-manager",
@@ -1326,7 +1455,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "business-consultant",
@@ -1356,7 +1488,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "real-estate-agent",
@@ -1389,7 +1524,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "online-course-creator",
@@ -1419,7 +1557,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "streamer-content-creator",
@@ -1449,7 +1590,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ugc-creator",
@@ -1479,7 +1623,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dental-hygienist",
@@ -1509,7 +1656,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "registered-nurse",
@@ -1542,7 +1692,35 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [
+   {
+    "slug": "certified-nursing-assistant",
+    "training_months": 2,
+    "cost_k": 1
+   },
+   {
+    "slug": "lpn-lvn",
+    "training_months": 9,
+    "cost_k": 6
+   }
+  ],
+  "next_steps": [
+   {
+    "slug": "aesthetic-nurse-nurse-injector"
+   },
+   {
+    "slug": "nurse-practitioner"
+   }
+  ],
+  "prerequisites": [
+   {
+    "what": "An accredited nursing degree (ADN or BSN) and the NCLEX-RN licence exam"
+   },
+   {
+    "what": "Routes differ: CNA → RN directly, or CNA → LPN → RN with credit for the aide work — either way the degree and the licence run in the US; a foreign degree is not itself a licence"
+   }
+  ]
  },
  {
   "slug": "lpn-lvn",
@@ -1575,7 +1753,24 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [
+   {
+    "slug": "certified-nursing-assistant",
+    "training_months": 2,
+    "cost_k": 1
+   }
+  ],
+  "next_steps": [
+   {
+    "slug": "registered-nurse"
+   }
+  ],
+  "prerequisites": [
+   {
+    "what": "A practical-nursing programme and the NCLEX-PN licence exam; bridge programmes credit Nurse Aide I experience"
+   }
+  ]
  },
  {
   "slug": "medical-assistant",
@@ -1605,7 +1800,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "phlebotomist",
@@ -1635,7 +1833,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "radiology-tech",
@@ -1665,7 +1866,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sonographer-ultrasound",
@@ -1695,7 +1899,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mri-technologist",
@@ -1725,7 +1932,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "respiratory-therapist",
@@ -1758,7 +1968,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "physical-therapist",
@@ -1791,7 +2004,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pt-assistant",
@@ -1821,7 +2037,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "occupational-therapist",
@@ -1854,7 +2073,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "speech-therapist",
@@ -1887,7 +2109,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "massage-therapist",
@@ -1917,7 +2142,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "esthetician",
@@ -1947,7 +2175,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dental-assistant",
@@ -1977,7 +2208,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "vet-technician",
@@ -2007,7 +2241,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pharmacist",
@@ -2040,7 +2277,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pharmacy-technician",
@@ -2070,7 +2310,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "surgical-technologist",
@@ -2100,7 +2343,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "emt-paramedic",
@@ -2130,7 +2376,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "lab-technician",
@@ -2160,7 +2409,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dialysis-technician",
@@ -2190,7 +2442,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "home-health-aide",
@@ -2220,7 +2475,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "doula",
@@ -2250,7 +2508,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "optometrist",
@@ -2283,7 +2544,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "nutrition-coach-dietitian",
@@ -2316,7 +2580,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "medical-coder",
@@ -2346,7 +2613,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sterile-processing-tech",
@@ -2376,7 +2646,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ekg-technician",
@@ -2406,7 +2679,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "electrician",
@@ -2436,7 +2712,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "plumber",
@@ -2466,7 +2745,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "hvac-technician",
@@ -2496,7 +2778,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "carpenter",
@@ -2526,7 +2811,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "house-painter",
@@ -2556,7 +2844,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "drywall-finisher",
@@ -2586,7 +2877,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "tile-setter",
@@ -2616,7 +2910,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "roofer",
@@ -2646,7 +2943,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "welder",
@@ -2676,7 +2976,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "auto-mechanic",
@@ -2706,7 +3009,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "diesel-mechanic",
@@ -2736,7 +3042,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "locksmith",
@@ -2766,7 +3075,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "appliance-repair-tech",
@@ -2796,7 +3108,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "elevator-mechanic",
@@ -2829,7 +3144,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "solar-installer",
@@ -2859,7 +3177,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "landscaper-lawn-pro",
@@ -2889,7 +3210,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pool-technician",
@@ -2919,7 +3243,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pest-control-tech",
@@ -2952,7 +3279,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "home-inspector",
@@ -2985,7 +3315,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "general-contractor",
@@ -3018,7 +3351,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "flooring-installer",
@@ -3048,7 +3384,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "garage-door-tech",
@@ -3078,7 +3417,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "arborist-tree-pro",
@@ -3108,7 +3450,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "concrete-finisher",
@@ -3138,7 +3483,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "glazier-glass",
@@ -3168,7 +3516,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "handyman-solo-pro",
@@ -3198,7 +3549,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cabinet-maker",
@@ -3228,7 +3582,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "furniture-restorer",
@@ -3258,7 +3615,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "boat-mechanic-marine-tech",
@@ -3288,7 +3648,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "aircraft-mechanic-a-p",
@@ -3321,7 +3684,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "photographer",
@@ -3351,7 +3717,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "wedding-photographer",
@@ -3381,7 +3750,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "videographer",
@@ -3411,7 +3783,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "graphic-designer",
@@ -3441,7 +3816,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "illustrator",
@@ -3471,7 +3849,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "tattoo-artist",
@@ -3504,7 +3885,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "florist",
@@ -3534,7 +3918,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "interior-designer",
@@ -3564,7 +3951,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "home-stager",
@@ -3594,7 +3984,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "event-planner",
@@ -3624,7 +4017,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "wedding-planner",
@@ -3654,7 +4050,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dj-event-host",
@@ -3684,7 +4083,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "voice-actor",
@@ -3714,7 +4116,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "animator",
@@ -3744,7 +4149,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "makeup-artist",
@@ -3774,7 +4182,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "personal-fashion-stylist",
@@ -3804,7 +4215,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "art-director",
@@ -3834,7 +4248,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "set-production-designer",
@@ -3864,7 +4281,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "music-instructor",
@@ -3894,7 +4314,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "jewelry-maker",
@@ -3924,7 +4347,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cosmetologist-hair-stylist",
@@ -3954,7 +4380,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "barber",
@@ -3984,7 +4413,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "nail-technician",
@@ -4014,7 +4446,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "lash-brow-artist",
@@ -4044,7 +4479,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "permanent-makeup-artist",
@@ -4074,7 +4512,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "beauty-salon-owner",
@@ -4107,7 +4548,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "fitness-trainer",
@@ -4137,7 +4581,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "yoga-pilates-instructor",
@@ -4167,7 +4614,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "wellness-coach",
@@ -4197,7 +4647,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "spa-owner",
@@ -4230,7 +4683,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "chef",
@@ -4260,7 +4716,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "baker",
@@ -4290,7 +4749,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "private-chef",
@@ -4320,7 +4782,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "caterer",
@@ -4350,7 +4815,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "food-truck-owner",
@@ -4383,7 +4851,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "bakery-caf-owner",
@@ -4416,7 +4887,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "barista-craft-coffee",
@@ -4446,7 +4920,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "butcher",
@@ -4476,7 +4953,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "restaurant-manager",
@@ -4506,7 +4986,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "meal-prep-business-owner",
@@ -4539,7 +5022,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "chocolatier-candy-maker",
@@ -4569,7 +5055,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "farmers-market-producer",
@@ -4599,7 +5088,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sommelier",
@@ -4629,7 +5121,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "school-teacher",
@@ -4659,7 +5154,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "preschool-teacher",
@@ -4689,7 +5187,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "special-education-teacher",
@@ -4719,7 +5220,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "school-counselor",
@@ -4752,7 +5256,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "private-tutor-in-person",
@@ -4782,7 +5289,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "childcare-center-owner",
@@ -4815,7 +5325,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "aba-therapist-kids",
@@ -4845,7 +5358,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "social-worker",
@@ -4878,7 +5394,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "psychologist-therapist",
@@ -4911,7 +5430,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "life-coach",
@@ -4941,7 +5463,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dance-instructor",
@@ -4971,7 +5496,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "swim-instructor",
@@ -5001,7 +5529,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "driving-instructor",
@@ -5031,7 +5562,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "corporate-trainer",
@@ -5061,7 +5595,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sports-coach",
@@ -5091,7 +5628,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "speech-public-speaking-coach",
@@ -5121,7 +5661,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "nanny-family-assistant-pro",
@@ -5151,7 +5694,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "elder-care-companion-pro",
@@ -5181,7 +5727,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cdl-truck-driver",
@@ -5214,7 +5763,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "owner-operator-trucking",
@@ -5247,7 +5799,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "commercial-pilot",
@@ -5280,7 +5835,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "flight-attendant",
@@ -5313,7 +5871,10 @@
   "public_voice": true,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "boat-captain",
@@ -5346,7 +5907,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "yacht-broker",
@@ -5379,7 +5943,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dispatcher-trucking",
@@ -5409,7 +5976,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "logistics-coordinator",
@@ -5439,7 +6009,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "moving-company-owner",
@@ -5472,7 +6045,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "tow-truck-operator",
@@ -5502,7 +6078,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "medical-courier-owner-route",
@@ -5535,7 +6114,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "auto-detailing-mobile-owner",
@@ -5568,7 +6150,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cleaning-company-owner",
@@ -5601,7 +6186,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "handyman-company-owner",
@@ -5634,7 +6222,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "painting-company-owner",
@@ -5667,7 +6258,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "lawn-care-company-owner",
@@ -5700,7 +6294,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pressure-washing-owner",
@@ -5733,7 +6330,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "window-cleaning-owner",
@@ -5766,7 +6366,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "junk-removal-owner",
@@ -5799,7 +6402,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "home-organizer-pro",
@@ -5829,7 +6435,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "property-manager",
@@ -5862,7 +6471,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "insurance-claims-adjuster",
@@ -5895,7 +6507,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "administrative-assistant",
@@ -5925,7 +6540,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "executive-assistant",
@@ -5955,7 +6573,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "loan-officer",
@@ -5988,7 +6609,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "airbnb-co-host-str-manager",
@@ -6018,7 +6642,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "laundromat-owner",
@@ -6051,7 +6678,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pet-grooming-salon-owner",
@@ -6084,7 +6714,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dog-trainer",
@@ -6114,7 +6747,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pet-boarding-daycare-owner",
@@ -6147,7 +6783,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mobile-pet-groomer",
@@ -6177,7 +6816,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mobile-mechanic-owner",
@@ -6210,7 +6852,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "vending-atm-route-owner",
@@ -6243,7 +6888,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "self-storage-owner",
@@ -6276,7 +6924,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "senior-home-care-agency-owner",
@@ -6309,7 +6960,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "tutoring-center-owner",
@@ -6342,7 +6996,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "photo-booth-event-rentals-owner",
@@ -6375,7 +7032,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "resale-flipping-business",
@@ -6405,7 +7065,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "etsy-digital-products-seller",
@@ -6435,7 +7098,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "print-on-demand-seller",
@@ -6465,7 +7131,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "amazon-fba-seller",
@@ -6495,7 +7164,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "real-estate-investor-flips",
@@ -6528,7 +7200,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "real-estate-investor-rentals",
@@ -6561,7 +7236,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "boat-restoration-flipping",
@@ -6591,7 +7269,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "car-flipping",
@@ -6621,7 +7302,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "franchise-owner-home-services",
@@ -6654,7 +7338,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "wind-turbine-technician",
@@ -6684,7 +7371,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "robotics-technician",
@@ -6714,7 +7404,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ev-charging-technician",
@@ -6744,7 +7437,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "fiber-optic-technician",
@@ -6774,7 +7470,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "semiconductor-technician",
@@ -6804,7 +7503,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "tower-climber-telecom",
@@ -6834,7 +7536,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "land-surveyor",
@@ -6867,7 +7572,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "heavy-equipment-operator",
@@ -6897,7 +7605,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "crane-operator",
@@ -6927,7 +7638,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "pipefitter",
@@ -6957,7 +7671,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "drone-pilot-commercial",
@@ -6990,7 +7707,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "air-traffic-controller",
@@ -7023,7 +7743,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "bus-driver",
@@ -7056,7 +7779,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "train-conductor",
@@ -7089,7 +7815,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "nurse-practitioner",
@@ -7122,7 +7851,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "physician-assistant",
@@ -7155,7 +7887,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cardiovascular-technologist",
@@ -7185,7 +7920,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "nuclear-medicine-technologist",
@@ -7215,7 +7953,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "radiation-therapist",
@@ -7248,7 +7989,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "audiologist",
@@ -7281,7 +8025,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "genetic-counselor",
@@ -7314,7 +8061,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "clinical-research-coordinator",
@@ -7344,7 +8094,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "veterinary-assistant",
@@ -7374,7 +8127,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "data-engineer",
@@ -7404,7 +8160,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cloud-architect",
@@ -7434,7 +8193,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "penetration-tester",
@@ -7464,7 +8226,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "salesforce-administrator",
@@ -7494,7 +8259,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ux-researcher",
@@ -7524,7 +8292,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "paralegal",
@@ -7554,7 +8325,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "actuary",
@@ -7584,7 +8358,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "nuclear-reactor-operator",
@@ -7617,7 +8394,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "commercial-insurance-producer",
@@ -7650,7 +8430,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "computer-network-architect",
@@ -7680,7 +8463,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "database-administrator-architect",
@@ -7710,7 +8496,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "computer-systems-analyst",
@@ -7740,7 +8529,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "gis-specialist-cartographer",
@@ -7770,7 +8562,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "certified-anesthesiologist-assistant",
@@ -7803,7 +8598,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cardiovascular-perfusionist",
@@ -7836,7 +8634,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "medical-dosimetrist",
@@ -7866,7 +8667,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "orthotist-prosthetist",
@@ -7896,7 +8700,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "athletic-trainer",
@@ -7929,7 +8736,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "biomedical-equipment-technician-bmet",
@@ -7959,7 +8769,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "millwright",
@@ -7989,7 +8802,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "structural-ironworker",
@@ -8019,7 +8835,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "brick-mason",
@@ -8049,7 +8868,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sheet-metal-worker",
@@ -8079,7 +8901,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "water-wastewater-treatment-operator",
@@ -8112,7 +8937,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "lineworker-power-lines",
@@ -8142,7 +8970,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sound-engineering-technician",
@@ -8172,7 +9003,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "fashion-designer",
@@ -8202,7 +9036,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "electrologist",
@@ -8232,7 +9069,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "food-scientist-technologist",
@@ -8262,7 +9102,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "brewer-brewmaster",
@@ -8292,7 +9135,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "substance-abuse-counselor",
@@ -8325,7 +9171,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "firefighter",
@@ -8358,7 +9207,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "funeral-director",
@@ -8391,7 +9243,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "emergency-management-director",
@@ -8421,7 +9276,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "aircraft-dispatcher-faa",
@@ -8454,7 +9312,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "ship-engineer-merchant-marine",
@@ -8487,7 +9348,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "insurance-underwriter",
@@ -8517,7 +9381,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "real-estate-appraiser",
@@ -8550,7 +9417,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "construction-estimator",
@@ -8580,7 +9450,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "network-and-computer-systems-administrator",
@@ -8610,7 +9483,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "robotics-engineer",
@@ -8640,7 +9516,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "computer-hardware-engineer",
@@ -8670,7 +9549,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "instructional-designer",
@@ -8700,7 +9582,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "veterinarian",
@@ -8733,7 +9618,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "dentist",
@@ -8766,7 +9654,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "chiropractor",
@@ -8799,7 +9690,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "epidemiologist",
@@ -8829,7 +9723,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "psychiatrist",
@@ -8862,7 +9759,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "sleep-technologist",
@@ -8892,7 +9792,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "boilermaker",
@@ -8922,7 +9825,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "commercial-diver",
@@ -8955,7 +9861,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "water-well-driller",
@@ -8985,7 +9894,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "septic-system-installer",
@@ -9015,7 +9927,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "civil-engineer",
@@ -9045,7 +9960,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "landscape-architect",
@@ -9075,7 +9993,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "commercial-industrial-designer",
@@ -9105,7 +10026,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "choreographer",
@@ -9135,7 +10059,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "body-piercing-artist",
@@ -9168,7 +10095,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "laser-hair-removal-technician",
@@ -9198,7 +10128,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "coffee-roaster",
@@ -9228,7 +10161,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "winemaker-enologist",
@@ -9258,7 +10194,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "police-officer",
@@ -9291,7 +10230,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "private-investigator",
@@ -9324,7 +10266,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "librarian",
@@ -9354,7 +10299,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "community-health-worker",
@@ -9384,7 +10332,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "locomotive-engineer",
@@ -9417,7 +10368,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "delivery-driver-light-truck",
@@ -9447,7 +10401,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "personal-financial-advisor",
@@ -9480,7 +10437,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "compliance-officer",
@@ -9510,7 +10470,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "computer-and-information-research-scientist",
@@ -9540,7 +10503,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "site-reliability-engineer",
@@ -9570,7 +10536,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "health-informatics-specialist",
@@ -9600,7 +10569,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "digital-forensics-analyst",
@@ -9630,7 +10602,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "registered-nurse-2",
@@ -9663,7 +10638,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "physician",
@@ -9696,7 +10674,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "podiatrist",
@@ -9729,7 +10710,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "recreational-therapist",
@@ -9759,7 +10743,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "histotechnologist",
@@ -9789,7 +10776,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "hazardous-materials-removal-worker",
@@ -9822,7 +10812,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "security-and-fire-alarm-systems-installer",
@@ -9852,7 +10845,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "plasterer-and-stucco-mason",
@@ -9882,7 +10878,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "reinforcing-iron-and-rebar-worker",
@@ -9912,7 +10911,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "farm-equipment-mechanic",
@@ -9942,7 +10944,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "urban-and-regional-planner",
@@ -9972,7 +10977,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "museum-curator",
@@ -10002,7 +11010,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "film-stage-lighting-technician",
@@ -10032,7 +11043,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "hair-replacement-wig-specialist",
@@ -10062,7 +11076,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "reflexologist",
@@ -10092,7 +11109,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "farm-ranch-manager",
@@ -10122,7 +11142,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "food-safety-inspector",
@@ -10152,7 +11175,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "marriage-and-family-therapist",
@@ -10185,7 +11211,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "rehabilitation-counselor",
@@ -10215,7 +11244,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "probation-officer",
@@ -10248,7 +11280,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mediator-arbitrator",
@@ -10278,7 +11313,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "helicopter-pilot",
@@ -10311,7 +11349,10 @@
   "public_voice": true,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "harbor-pilot",
@@ -10341,7 +11382,10 @@
   "public_voice": false,
   "relocation_required": true,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "transportation-inspector",
@@ -10371,7 +11415,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "car-wash-owner",
@@ -10404,7 +11451,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "gym-fitness-studio-owner",
@@ -10437,7 +11487,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "mechanical-engineer",
@@ -10467,7 +11520,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "electrical-engineer",
@@ -10497,7 +11553,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "platform-engineer",
@@ -10527,7 +11586,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "embedded-systems-engineer",
@@ -10557,7 +11619,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "general-surgeon",
@@ -10590,7 +11655,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": true,
-  "supplies_stub": true
+  "supplies_stub": true,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "certified-nurse-midwife",
@@ -10623,7 +11691,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "medical-laboratory-scientist",
@@ -10653,7 +11724,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "board-certified-behavior-analyst-bcba",
@@ -10683,7 +11757,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "data-center-technician",
@@ -10713,7 +11790,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cnc-machinist-programmer",
@@ -10743,7 +11823,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "avionics-technician",
@@ -10773,7 +11856,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "power-plant-operator",
@@ -10803,7 +11889,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "telecommunications-equipment-installer",
@@ -10833,7 +11922,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "costume-designer",
@@ -10863,7 +11955,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "lighting-designer",
@@ -10893,7 +11988,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "audio-video-equipment-technician",
@@ -10923,7 +12021,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "tattoo-artist-2",
@@ -10956,7 +12057,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "scalp-micropigmentation-artist",
@@ -10989,7 +12093,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "food-stylist",
@@ -11019,7 +12126,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "distiller",
@@ -11049,7 +12159,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "vertical-farm-technician",
@@ -11079,7 +12192,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "school-psychologist",
@@ -11112,7 +12228,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "esl-adult-literacy-teacher",
@@ -11142,7 +12261,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "career-and-technical-education-teacher",
@@ -11172,7 +12294,10 @@
   "public_voice": true,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "child-life-specialist",
@@ -11202,7 +12327,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "customs-broker",
@@ -11235,7 +12363,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "freight-broker-agent",
@@ -11265,7 +12396,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "subway-streetcar-operator",
@@ -11298,7 +12432,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "business-broker",
@@ -11331,7 +12468,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "medical-health-services-manager",
@@ -11361,7 +12501,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "customer-service-representative",
@@ -11391,7 +12534,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "medical-secretary",
@@ -11421,7 +12567,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "cad-drafter",
@@ -11451,7 +12600,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "building-inspector",
@@ -11481,7 +12633,10 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
  },
  {
   "slug": "civil-engineering-technician",
@@ -11511,6 +12666,170 @@
   "public_voice": false,
   "relocation_required": false,
   "riasec_stub": false,
-  "supplies_stub": false
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [],
+  "prerequisites": []
+ },
+ {
+  "slug": "certified-nursing-assistant",
+  "kind": "career",
+  "verdict": "YES",
+  "payK": 42,
+  "training_months": 2,
+  "gates": {
+   "voice_load": false,
+   "physical": true
+  },
+  "attrs": {
+   "pay": 1,
+   "ai": 0,
+   "remote": 0,
+   "lic": 1,
+   "hands": 2,
+   "people": 2,
+   "biz": 0,
+   "tech": 0,
+   "out": 1,
+   "care": 2,
+   "creat": 0
+  },
+  "age_gate": null,
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
+  "riasec_stub": false,
+  "supplies_stub": false,
+  "entry_steps": [],
+  "next_steps": [
+   {
+    "slug": "lpn-lvn"
+   },
+   {
+    "slug": "registered-nurse"
+   }
+  ],
+  "prerequisites": [
+   {
+    "what": "A state-approved Nurse Aide I programme and the state competency exam (NC: 75+ training hours including 16 clinical hours; listing on the NC Nurse Aide I Registry)"
+   }
+  ]
+ },
+ {
+  "slug": "aesthetic-nurse-nurse-injector",
+  "kind": "career",
+  "verdict": "YES",
+  "payK": 80,
+  "training_months": 6,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 2,
+   "ai": 1,
+   "remote": 0,
+   "lic": 2,
+   "hands": 1,
+   "people": 2,
+   "biz": 0,
+   "tech": 1,
+   "out": 0,
+   "care": 2,
+   "creat": 1
+  },
+  "age_gate": {
+   "min": 18,
+   "source": "Practised on the RN licence — state nursing licensure requires 18"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
+  "riasec_stub": false,
+  "supplies_stub": false,
+  "entry_steps": [
+   {
+    "slug": "certified-nursing-assistant",
+    "training_months": 2,
+    "cost_k": 1
+   },
+   {
+    "slug": "registered-nurse",
+    "training_months": 36,
+    "cost_k": 20
+   }
+  ],
+  "next_steps": [
+   {
+    "slug": "med-spa-owner"
+   }
+  ],
+  "prerequisites": [
+   {
+    "what": "An active RN licence — injectables are practised on the nursing licence, under a medical director"
+   },
+   {
+    "what": "Most employers want 1–2 years of clinical nursing first; the certification courses (neuromodulators, dermal fillers, IV therapy) come after the licence, not instead of it"
+   }
+  ]
+ },
+ {
+  "slug": "med-spa-owner",
+  "kind": "career",
+  "verdict": "YES",
+  "payK": 150,
+  "training_months": 12,
+  "gates": {
+   "voice_load": true,
+   "physical": false
+  },
+  "attrs": {
+   "pay": 3,
+   "ai": 1,
+   "remote": 1,
+   "lic": 1,
+   "hands": 1,
+   "people": 2,
+   "biz": 1,
+   "tech": 1,
+   "out": 0,
+   "care": 1,
+   "creat": 1
+  },
+  "age_gate": {
+   "min": 18,
+   "source": "Owning the business — contracts, leases, business credit — requires legal majority (18)"
+  },
+  "night_shifts": false,
+  "public_voice": false,
+  "relocation_required": false,
+  "riasec_stub": false,
+  "supplies_stub": false,
+  "entry_steps": [
+   {
+    "slug": "certified-nursing-assistant",
+    "training_months": 2,
+    "cost_k": 1
+   },
+   {
+    "slug": "registered-nurse",
+    "training_months": 36,
+    "cost_k": 20
+   },
+   {
+    "slug": "aesthetic-nurse-nurse-injector",
+    "training_months": 6,
+    "cost_k": 4
+   }
+  ],
+  "next_steps": [],
+  "prerequisites": [
+   {
+    "what": "A clinical licence of your own (RN/NP/PA/MD, by state) or a contracted medical director — a med spa is a medical practice, not a salon"
+   },
+   {
+    "what": "Startup capital well beyond training money: devices, premises, product, insurance and compliance — ownership money, not course money"
+   }
+  ]
  }
 ]

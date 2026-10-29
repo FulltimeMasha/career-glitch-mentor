@@ -642,6 +642,22 @@ export function applyPerceivedFit(session, ratings, professionsOverride = null) 
 // Person assembly — the exact shape scoring.mjs consumes.
 // ---------------------------------------------------------------------------
 
+// Stated targets (Matchmaker 2.0 core, 28.10.2026): the specific job
+// the person NAMED as their goal (stage 2 free text) — plus,
+// defensively, a stated_targets list if a client sends one. Names
+// stay RAW here: resolving them against the base is the deterministic
+// matcher's job (engine/target-match.mjs), never this layer's and
+// never the LLM's. Capped at 3 — a person has a goal, not a catalogue.
+function collectStatedTargets(s) {
+  const out = [];
+  const push = (v) => {
+    if (typeof v === 'string' && v.trim() && !out.includes(v.trim())) out.push(v.trim());
+  };
+  push(s.stated_target);
+  if (Array.isArray(s.stated_targets)) for (const v of s.stated_targets) push(v);
+  return out.slice(0, 3);
+}
+
 export function assemblePerson(session) {
   const s = session.structured || {};
   const num = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
@@ -692,6 +708,7 @@ export function assemblePerson(session) {
     autonomy_need: num(s.autonomy_need),
     relatedness_need: num(s.relatedness_need),
     target_fields: Array.isArray(s.target_fields) ? s.target_fields.filter((v) => TARGET_FIELDS.includes(v)) : [],
+    stated_target_names: collectStatedTargets(s),
     supports: Object.keys(supports).length > 0 ? supports : null,
     riasec,
     tolerances: Object.keys(tolerances).length > 0 ? tolerances : null,

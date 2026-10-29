@@ -168,5 +168,53 @@
    "Two doors in — the standard route and the alternative, honestly priced",
    "The 6-step roadmap and your first 90 days, day by day"
   ]
+ },
+ "certified-nursing-assistant": {
+  "name": "Certified Nursing Assistant",
+  "codeword": "AIDE",
+  "sticker": "★ Our take: YES — The fastest paid door into healthcare there is. As a whole career it underpays; as the first rung of the nursing ladder — CNA → LPN → RN — it is exactly how the ladder is climbed.",
+  "money": [
+   "<b>~$42K</b> median — nursing assistants (BLS Occupational Outlook Handbook, May 2025).",
+   "Training: <b>~2 months</b> · a state-approved Nurse Aide I programme (NC: 75+ hours incl. 16 clinical) plus the state competency exam; community-college tuition is usually a few hundred dollars.",
+   "AI risk: <b>low</b> — hands-on patient care: lifting, washing, feeding, watching. AI reaches this work last."
+  ],
+  "inside": [
+   "The honest take — the money, the training, the catch",
+   "What AI already took vs what it can’t touch",
+   "The ladder up: CNA → LPN → RN, honestly priced",
+   "The 6-step roadmap and your first 90 days, day by day"
+  ]
+ },
+ "aesthetic-nurse-nurse-injector": {
+  "name": "Aesthetic Nurse / Nurse Injector",
+  "codeword": "GLOW",
+  "sticker": "★ Our take: YES — On top of an RN licence, never instead of one. The licence is the career; injectables are the specialty that pays for taste, a steady hand and a booked chair.",
+  "money": [
+   "<b>~$80K</b> average — aesthetic nurse injectors (ZipRecruiter salary data, October 2026 — job-posting data, not BLS; BLS publishes no series for this specialty, and hospital RN medians run higher).",
+   "Training: <b>~6 months</b> · certification courses in neuromodulators, fillers and IV therapy plus supervised practice — after the RN licence; most employers want 1–2 years of clinical nursing first.",
+   "AI risk: <b>low</b> — a licensed hand, a face in the chair, and liability that stays human."
+  ],
+  "inside": [
+   "The honest take — the money, the training, the catch",
+   "What AI already took vs what it can’t touch",
+   "Two doors in — the standard route and the alternative, honestly priced",
+   "The 6-step roadmap and your first 90 days, day by day"
+  ]
+ },
+ "med-spa-owner": {
+  "name": "Med Spa Owner",
+  "codeword": "SPA",
+  "sticker": "★ Our take: YES — As a working owner with a clinical licence, not as a passive investor. A med spa is a medical practice with a retail face: the owner who treats, hires and watches the numbers owns a business; the absentee owns a bill.",
+  "money": [
+   "<b>~$150K</b> — working-owner income, our editorial estimate: industry sources put mature single-location owner earnings anywhere from ~$120K to $300K+ (AmSpa revenue data runs through most of them — revenue is not income, so we print the conservative end).",
+   "Training: <b>~12 months</b> · to stand the business up — entity, medical-director contract, state licensing, premises and devices — on top of the clinical licence it stands on.",
+   "AI risk: <b>medium</b> — booking, marketing and follow-up automate fast; licensed treatment and ownership liability do not."
+  ],
+  "inside": [
+   "The honest take — the money, the training, the catch",
+   "What AI already took vs what it can’t touch",
+   "Two doors in — the standard route and the alternative, honestly priced",
+   "The 6-step roadmap and your first 90 days, day by day"
+  ]
  }
 }

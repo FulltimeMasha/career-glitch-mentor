@@ -47,6 +47,9 @@
 // the scored results plus the small helpers it needs.
 import { pickSideHustle } from './side-hustle.mjs';
 import { buildEmptySetPlan } from './empty-plan.mjs';
+import { ladderPathToFloor, ladderCard, ladderChains, floorStatus } from './ladders.mjs';
+import { buildTargetEvaluation, applyTargetAnchor, TARGET_FIELDS, DIRECTION_FIELD_LABELS, BLOCK_REASON_PHRASES, professionField, professionFamily, FAMILY_LABELS } from './targets.mjs';
+export { TARGET_FIELDS, professionField, professionFamily };
 
 const clamp01 = (x) => (x == null || Number.isNaN(x) ? null : Math.min(1, Math.max(0, x)));
 const isNum = (x) => typeof x === 'number' && Number.isFinite(x);
@@ -107,149 +110,6 @@ function confidenceLevel(totalNullParts, completeness) {
   return 'medium';
 }
 
-// ---------------------------------------------------------------------------
-// Profession families for the top-3 diversity rule. A family is the base
-// category, EXCEPT the creator economy, which the base splits across
-// 'online' and 'creative' while being one job wearing many hats (streaming,
-// courses, UGC, content strategy…). At most ONE profession per family may
-// appear in a top-3 — three wrappers of the same job are not three options.
-// ---------------------------------------------------------------------------
-const CREATOR_CLUSTER = new Set([
-  'streamer-content-creator', 'online-course-creator', 'ugc-creator',
-  'content-strategist', 'copywriter', 'podcast-producer', 'video-editor',
-  'brand-strategist', 'videographer', 'voice-actor', 'photographer',
-  'wedding-photographer',
-]);
-
-export function professionFamily(prof) {
-  if (!prof) return 'other';
-  if (CREATOR_CLUSTER.has(prof.slug)) return 'creator';
-  return prof.category || `solo:${prof.slug}`;
-}
-
-const FAMILY_LABELS = {
-  creator: 'online content creation',
-  online: 'online and digital work',
-  health: 'healthcare',
-  trades: 'the trades',
-  creative: 'creative work',
-  beauty: 'beauty',
-  food: 'food',
-  people: 'working with people',
-  transport: 'transport',
-  business: 'business',
-};
-
-// ---------------------------------------------------------------------------
-// FIELD CLUSTERS for the DIRECTION ANCHOR (founder decision, 27.10.2026).
-// Stage 2 asks the person which fields they are seriously aiming at
-// (person.target_fields, values below). Membership of a profession in a
-// field comes from data the profession already carries: its base
-// category for the clean categories, the creator cluster for creator
-// work, and an explicit override map for the professions whose category
-// misfiles their field (the 'people', 'online' and 'business' buckets
-// mix fields by construction — care roles sit in 'people', professions
-// practised online sit in 'online'). The override map is editorial and
-// reviewed by hand, the same way the verdicts are.
-// ---------------------------------------------------------------------------
-export const TARGET_FIELDS = [
-  'health', 'trades', 'tech', 'creative', 'business',
-  'education', 'transport', 'food', 'beauty', 'public_service',
-];
-
-const DIRECTION_FIELD_LABELS = {
-  health: 'healthcare',
-  trades: 'the trades, construction and engineering',
-  tech: 'tech and IT',
-  creative: 'creative and media work',
-  business: 'business and finance',
-  education: 'education, teaching and coaching',
-  transport: 'logistics and transport',
-  food: 'hospitality and food',
-  beauty: 'beauty and personal care',
-  public_service: 'public service and safety',
-};
-
-const FIELD_OVERRIDES = {
-  // 'people' → healthcare: care and therapy roles filed under 'people'.
-  'psychologist-therapist': 'health', 'substance-abuse-counselor': 'health',
-  'marriage-and-family-therapist': 'health', 'rehabilitation-counselor': 'health',
-  'school-psychologist': 'health', 'community-health-worker': 'health',
-  'child-life-specialist': 'health', 'aba-therapist-kids': 'health',
-  'social-worker': 'health', 'elder-care-companion-pro': 'health',
-  // 'people' → education: teaching, instruction and coaching roles.
-  'school-teacher': 'education', 'preschool-teacher': 'education',
-  'special-education-teacher': 'education', 'school-counselor': 'education',
-  'private-tutor-in-person': 'education',
-  'esl-adult-literacy-teacher': 'education', 'career-and-technical-education-teacher': 'education',
-  'music-instructor': 'education', 'dance-instructor': 'education',
-  'swim-instructor': 'education', 'driving-instructor': 'education',
-  'corporate-trainer': 'education', 'sports-coach': 'education',
-  'fitness-trainer': 'education', 'yoga-pilates-instructor': 'education',
-  'life-coach': 'education', 'wellness-coach': 'education',
-  // 'people' → public service.
-  'firefighter': 'public_service', 'police-officer': 'public_service',
-  'probation-officer': 'public_service', 'emergency-management-director': 'public_service',
-  // 'online' → creative: design and media/marketing work (the rest of
-  // 'online' defaults to tech below).
-  'ux-ui-designer': 'creative', 'web-designer': 'creative', 'game-designer': 'creative',
-  'motion-designer-3d-artist': 'creative', 'seo-specialist': 'creative',
-  'ppc-paid-ads-specialist': 'creative', 'smm-manager': 'creative',
-  'crm-email-marketer': 'creative', 'pr-specialist': 'creative',
-  // 'online' → business: professions practised online, not tech work.
-  'accountant': 'business', 'enrolled-agent-tax-pro': 'business',
-  'bookkeeper-advisory': 'business', 'financial-analyst': 'business',
-  'insurance-agent': 'business', 'mortgage-broker': 'business',
-  'b2b-sales-rep': 'business', 'recruiter': 'business', 'hr-specialist': 'business',
-  'project-manager': 'business', 'operations-manager': 'business',
-  'e-commerce-manager': 'business', 'real-estate-agent': 'business',
-  'luxury-real-estate-agent': 'business', 'business-consultant': 'business',
-  'customer-success-manager': 'business', 'market-researcher': 'business',
-  'virtual-assistant': 'business', 'actuary': 'business',
-  // 'online' → health / education / trades, or no cluster at all.
-  'medical-coder': 'health', 'health-informatics-specialist': 'health',
-  'online-tutor': 'education', 'instructional-designer': 'education',
-  'mechanical-engineer': 'trades', 'electrical-engineer': 'trades',
-  'translator-interpreter': null, 'paralegal': null, 'grant-writer': null,
-  // 'business' → health: a salaried role inside healthcare delivery
-  // (owner/operator businesses keep the business field — their work is
-  // running a company, whatever sector it sells into).
-  'medical-health-services-manager': 'health',
-  // 'creative' → hospitality / public service.
-  'event-planner': 'food', 'wedding-planner': 'food',
-  'urban-and-regional-planner': 'public_service',
-};
-
-const CATEGORY_FIELDS = {
-  health: 'health', trades: 'trades', creative: 'creative', transport: 'transport',
-  food: 'food', beauty: 'beauty', business: 'business', online: 'tech',
-  // 'people' has NO default: its members join a field only via
-  // FIELD_OVERRIDES above — the bucket genuinely mixes fields.
-};
-
-/** The direction-anchor field a profession belongs to, or null. */
-export function professionField(prof) {
-  if (!prof) return null;
-  if (Object.prototype.hasOwnProperty.call(FIELD_OVERRIDES, prof.slug)) return FIELD_OVERRIDES[prof.slug];
-  if (CREATOR_CLUSTER.has(prof.slug)) return 'creative';
-  return CATEGORY_FIELDS[prof.category] ?? null;
-}
-
-// Plain phrases for why in-field candidates were ruled out — used when
-// the direction anchor cannot fire because every door into the named
-// field is blocked by the person's own lines.
-const BLOCK_REASON_PHRASES = {
-  base_verdict_no: 'carried a hard NO from the market base',
-  training_red_line: 'needed training longer than the limit you set',
-  public_voice_red_line: 'crossed your no-public-voice line',
-  kids_red_line: 'crossed your no-children line',
-  nights_red_line: 'crossed your no-nights line',
-  relocation_red_line: 'crossed your no-relocation line',
-  physical_limit_gate: 'collided with the physical limit you named',
-  age_gate: 'sat behind a legal age limit',
-  perceived_fit_veto: 'got your own "not mine"',
-  below_floor: 'paid under the minimum you set, with no checked top-earner figure clearing it',
-};
 
 // ---------------------------------------------------------------------------
 // SLOW-MONEY professions — EDITORIAL classification (founder's rule,
@@ -266,7 +126,7 @@ export const SLOW_MONEY_NAMES = new Set([
   'Streamer / Content Creator', 'UGC Creator', 'Online Course Creator',
   'Podcast Producer', 'Real Estate Agent', 'Luxury Real Estate Agent',
   'Insurance Agent', 'Mortgage Broker', 'Copywriter', 'Brand Strategist',
-  'Business Consultant', 'Video Editor', 'Grant Writer',
+  'Business Consultant', 'Video Editor', 'Grant Writer', 'Med Spa Owner',
   'Translator / Interpreter', 'Motion Designer / 3D Artist', 'Web Designer',
   'Photographer', 'Wedding Photographer', 'Videographer', 'Tattoo Artist',
   'Illustrator', 'Fashion Designer', 'Voice Actor', 'DJ / Event Host',
@@ -313,31 +173,6 @@ export function isSlowMoney(profOrName) {
   if (!profOrName) return false;
   const name = typeof profOrName === 'string' ? profOrName : profOrName.name;
   return typeof name === 'string' && SLOW_MONEY_NAMES.has(name);
-}
-
-// ---------------------------------------------------------------------------
-// Income-floor status of one candidate vs the person's own stated minimum.
-//   clears          — typical pay is at or above the floor.
-//   top_tier_only   — typical pay is under the floor, but the top 25% clear
-//                     it (only when a sourced top-quartile figure exists).
-//   top_decile_only — typical pay is under the floor, but the sourced BLS
-//                     top-10% threshold clears it (audit V12, 28.10.2026:
-//                     the only upper-tail figures in the project are
-//                     decile thresholds from three roadmap cards — they
-//                     get their own status, never the quartile label).
-//   below_floor     — typical pay is under the floor and no sourced figure
-//                     shows the top earners clearing it.
-//   null            — no floor stated, or no pay figure to compare.
-// ---------------------------------------------------------------------------
-function floorStatus(person, prof) {
-  const floor = person ? person.income_floor_k : null;
-  if (!isNum(floor) || !prof || !isNum(prof.payK)) return null;
-  if (prof.payK >= floor) return 'clears';
-  const tq = isNum(prof.pay_top_quartile_k) ? prof.pay_top_quartile_k : null;
-  if (tq != null && tq >= floor) return 'top_tier_only';
-  const dec = isNum(prof.pay_top_decile_k) ? prof.pay_top_decile_k : null;
-  if (dec != null && dec >= floor) return 'top_decile_only';
-  return 'below_floor';
 }
 
 /** Spread of a person's measured interests (max − min RIASEC letter,
@@ -799,7 +634,7 @@ function valueFits(person, prof) {
 }
 
 function buildArgument(person, prof, ctx) {
-  const { love, potential, category, flags, floor_status: fs } = ctx;
+  const { love, potential, category, flags, floor_status: fs, floor_path: floorPath, ladder } = ctx;
   const res = person.resources || {};
   const why = [];
   const math = [];
@@ -887,6 +722,9 @@ function buildArgument(person, prof, ctx) {
   const dec = isNum(prof.pay_top_decile_k) ? prof.pay_top_decile_k : null;
   if (floor != null && isNum(prof.payK)) {
     if (fs === 'clears') math.push(`Your minimum is $${floor}K — typical pay clears it.`);
+    else if (fs === 'clears_via_ladder') math.push(floorPath
+      ? `Typical pay ($${prof.payK}K) starts under your $${floor}K minimum — but this job is a ladder, not a seat: its own road reaches ${floorPath.via_name} at ~$${floorPath.via_pay_k}K in about ${floorPath.years_to_floor} years of steps. The path is the pay story here, and it is printed, not hidden.`
+      : `Typical pay ($${prof.payK}K) starts under your $${floor}K minimum, but this job's own ladder reaches it — the path is printed on the card, not hidden.`);
     else if (fs === 'top_tier_only') math.push(`Typical pay ($${prof.payK}K) is under your $${floor}K minimum. The top 25% earn about $${tq}K — this only works if you reach that tier.`);
     else if (fs === 'top_decile_only') math.push(`Typical pay ($${prof.payK}K) is under your $${floor}K minimum. Only the top 10% of earners clear it — they earn over $${dec}K — so this only works if you land in that top tenth.`);
     else if (fs === 'below_floor') {
@@ -948,6 +786,12 @@ function buildArgument(person, prof, ctx) {
     bridge.push(line + '.');
     if (isNum(res.cushion_months) && res.cushion_months < prof.training_months) {
       bridge.push(`Your cushion (${fmtMonths(res.cushion_months)}) is shorter than the training — keep some income running next to it.`);
+    }
+  }
+  if (ladder && Array.isArray(ladder.entry_steps) && ladder.entry_steps.length) {
+    const step = ladder.entry_steps[0];
+    if (step && isNum(step.training_months)) {
+      bridge.push(`The ladder into this job starts lower and faster than the job itself: ${step.name} first — about ${fmtMonths(step.training_months)} — a real rung under you while the longer road runs.`);
     }
   }
   bridge.push('First step this week: do one real task from this job — a trial day or a sample project — before you spend a dollar on it.');
@@ -1104,7 +948,12 @@ export function scoreCandidate(person, prof, professions = []) {
     flags.push('exploitation_risk');
   }
 
-  const fs = floorStatus(person, prof);
+  const bySlug = professions && professions.length ? new Map(professions.map((p) => [p.slug, p])) : null;
+  const fs = floorStatus(person, prof, bySlug);
+  const floorPath = fs === 'clears_via_ladder' && bySlug
+    ? ladderPathToFloor(person.income_floor_k, prof, bySlug)
+    : null;
+  const ladder = ladderCard(prof, bySlug);
   return {
     slug: prof.slug,
     name: prof.name,
@@ -1126,11 +975,13 @@ export function scoreCandidate(person, prof, professions = []) {
     ai_risk_source: prof.bls_ai_exposure ? 'sourced' : (prof.attrs && isNum(prof.attrs.ai) ? 'base_band' : null),
     top_block: topBlockReason(person, prof),
     floor_status: fs,
+    floor_path: floorPath,
+    ladder,
     love,
     potential,
     confidence,
     flags,
-    argument: buildArgument(person, prof, { love, potential, category, flags, floor_status: fs }),
+    argument: buildArgument(person, prof, { love, potential, category, flags, floor_status: fs, floor_path: floorPath, ladder }),
   };
 }
 
@@ -1180,7 +1031,7 @@ function buildExplorationPlan(person) {
 // ---------------------------------------------------------------------------
 // scorePerson(person, professions) →
 //   { mode, mode_reason, top3, bottom3, bridge_pick, side_hustle_pick,
-//     results_count, exploration_plan }
+//     target_evaluation, results_count, exploration_plan }
 // bridge_pick is the slow-money cushion (see the block above the return);
 // null unless the founder's 27.10.2026 rule fires and a candidate clears.
 // No `match` / `percent` field exists anywhere in this output — by design.
@@ -1310,6 +1161,19 @@ export function scorePerson(person, professions) {
     top3.push(r);
     usedFamilies.add(r.family);
   }
+  // ---- Stated-target anchor (Matchmaker 2.0 core, brief §5.1):
+  // a job the person NAMED as their goal is evaluated first (its card
+  // is target_evaluation in the return) and, when their own lines
+  // allow it, holds a seat in the three; when the named door is shut,
+  // a seatable rung of its own ladder holds the seat instead. The
+  // mechanism lives in targets.mjs (applyTargetAnchor) — scoring.mjs
+  // sits at the deploy upload cap. Skipped under the stage-6 freeze.
+  const targetAnchorOut = applyTargetAnchor({
+    person, list, results, selectionPool, sortable, top3, usedFamilies,
+    bridgeAnchorSlug, profBySlug, frozen: !!frozenSet,
+  });
+  const targetAnchoredSlugs = targetAnchorOut.slugs;
+  const targetAnchorInfo = targetAnchorOut.info;
   // ---- Direction anchor (founder decision, 27.10.2026): a field the
   // person NAMED as their direction (stage 2, person.target_fields)
   // holds ONE seat in the three. Before this rule, a person who said
@@ -1346,9 +1210,11 @@ export function scorePerson(person, professions) {
           if (top3.length >= 3) {
             // Displacement: the weakest displaceable pick goes — a
             // same-family one first, so the three stay three different
-            // worlds. The bridge anchor is never displaced.
+            // worlds. The bridge anchor is never displaced, and
+            // neither is a stated-target seat (the person's own named
+            // goal outranks a field preference).
             const byWeakness = top3
-              .filter((r) => r.slug !== bridgeAnchorSlug)
+              .filter((r) => r.slug !== bridgeAnchorSlug && !targetAnchoredSlugs.has(r.slug))
               .sort((a, b) => sortable.indexOf(b) - sortable.indexOf(a));
             const victim = byWeakness.find((r) => r.family === cand.family) || byWeakness[0];
             if (victim) {
@@ -1406,7 +1272,7 @@ export function scorePerson(person, professions) {
     const seatedFamilies = new Set(top3.map((r) => r.family));
     const dupCand = selectionPool.find((r) => !top3.includes(r) && seatedFamilies.has(r.family));
     if (dupCand) {
-      const protectedSlugs = new Set([bridgeAnchorSlug, direction && direction.anchored_slug].filter(Boolean));
+      const protectedSlugs = new Set([bridgeAnchorSlug, direction && direction.anchored_slug, ...targetAnchoredSlugs].filter(Boolean));
       const victim = top3
         .filter((r) => !protectedSlugs.has(r.slug))
         .sort((a, b) => sortable.indexOf(b) - sortable.indexOf(a))[0];
@@ -1571,6 +1437,12 @@ export function scorePerson(person, professions) {
         .join('; ');
       parts.push(`You named ${labels} as your direction, so every door into it was checked: ${reasonText}. None of them can be proposed honestly under the lines you set — loosen one line and the field comes back.`);
     }
+    if (targetAnchorInfo && targetAnchorInfo.anchored.length) {
+      const a = targetAnchorInfo.anchored[0];
+      parts.push(a.via === 'named_target'
+        ? `You named ${a.name} as your goal — it stands in your three at its honest grade.`
+        : `You named ${a.requested} as your goal. That exact door is shut by a line you set, so a rung of its own ladder — ${a.name} — stands in your three instead, with the whole ladder printed.`);
+    }
     if (top3.length > 0) parts.push('Next step: pick the one you would try first — the 90-day plan starts there.');
     if (parts.length) setReason = parts.join(' ');
     if (top3.length === 0) {
@@ -1666,6 +1538,16 @@ export function scorePerson(person, professions) {
         isNum, isStubProfile, valueFits, riasecKeys: RIASEC_KEYS, dayThemes: RIASEC_DAY_THEMES, valueLabels: VALUE_LABELS,
       });
 
+  // ---- Stated-target evaluation (Matchmaker 2.0 core): every job the
+  // person named as their goal, evaluated on its own card — in EVERY
+  // mode, because the evaluation is not a match and owes no verdict.
+  // in_top3 reads the RETURNED three: in insufficient_data mode there
+  // is no returned three, so no card may claim a seat.
+  const targetEvaluation = buildTargetEvaluation(person, results, list, {
+    blockPhrases: BLOCK_REASON_PHRASES,
+    topSlugs: mode === 'insufficient_data' ? new Set() : topSlugs,
+  });
+
   return {
     mode,
     mode_reason: modeReason,
@@ -1681,6 +1563,7 @@ export function scorePerson(person, professions) {
     bottom3: mode === 'insufficient_data' ? [] : bottom3,
     bridge_pick: bridgePick || null,
     side_hustle_pick: sideHustlePick,
+    target_evaluation: targetEvaluation,
     results_count: results.length,
     // An empty final set in verdict mode is not a dead end either:
     // it carries the empty-set plan (gate smalls, 28.10.2026).

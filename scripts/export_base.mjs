@@ -33,6 +33,12 @@ const rows = professions.map((p) => ({
   relocation_required: p.relocation_required,
   riasec_stub: p.riasec_stub,
   supplies_stub: p.supplies_stub,
+  // Career ladders (Matchmaker 2.0 core, 28.10.2026): the gate checks
+  // the Marina acceptance assertions against these fields — the first
+  // entry step's training months and cost are part of the contract.
+  entry_steps: p.entry_steps || [],
+  next_steps: p.next_steps || [],
+  prerequisites: p.prerequisites || [],
 }));
 
 writeFileSync(join(ROOT, 'professions-base.json'), JSON.stringify(rows, null, 1) + '\n');

@@ -118,7 +118,8 @@ function check(o, tag) {
     if (a.documents_ok === 'no' && p.attrs?.lic >= 2) add('HARD documents=no excludes licensed jobs', tg);
     const ag = p.age_gate || {}; if (a.age != null && ((ag.max != null && a.age > ag.max) || (ag.min != null && a.age < ag.min))) add('HARD age_gate respected', tg);
     if (a.age != null && a.age < 18 && p.age_gate && a.age < p.age_gate.min) add('HARD no adult-only/licensed job for under-18 (base age_gate)', tg);
-    if (a.income_floor_k > x.payK && !['top_decile_only', 'top_tier_only'].includes(x.floor_status)) add('HARD pay below floor only with explicit top-decile reason', `${tg} status=${x.floor_status}`);
+    if (a.income_floor_k > x.payK && !['top_decile_only', 'top_tier_only', 'clears_via_ladder'].includes(x.floor_status)) add('HARD pay below floor only with explicit top-decile reason', `${tg} status=${x.floor_status}`);
+    if (x.floor_status === 'clears_via_ladder' && !(x.floor_path && x.floor_path.reaches_floor)) add('HARD ladder floor status must print its path', `${tg} claims clears_via_ladder without a reaching floor_path`);
     const txt = [...(x.argument?.math || []), ...(x.argument?.but || []), ...(x.argument?.bridge || [])].join(' ');
     const m = txt.match(/cushion (?:is|\()(\d+) months/); if (m && a.cushion_months != null && +m[1] !== +a.cushion_months) add('HARD card text matches answers (cushion)', `${tg} says ${m[1]} vs answered ${a.cushion_months}`);
   }
@@ -142,6 +143,15 @@ const PERSONAS = [
   { name: 'Foreign accountant (bridge)', door: 'bridge', a: { ...base, age: 38, current_profession_name: 'Accountant', income_floor_k: 45, documents_ok: 'partial', languages: ['en', 'ru'], hands_pref: 0, people_pref: 0, remote_pref: 2, energy_themes: ['numbers'], ...R([0, 0], [2, 2], [0, 0], [1, 1], [0, 1], [4, 4]) }, expect: /account|book|tax|audit|compliance|financial|underwrit|actuar/i },
   { name: 'Foreign civil engineer (bridge)', door: 'bridge', a: { ...base, age: 45, current_profession_name: 'Civil Engineer', income_floor_k: 60, ...R([3, 2], [4, 3], [1, 0], [1, 1], [2, 2], [3, 3]) }, expect: /engineer|drafter|inspector|estimator|surveyor|construction/i },
   { name: 'Creative, no public voice', door: 'pivot', a: { ...base, current_profession_name: 'Graphic Designer', income_floor_k: 55, red_lines: ['no_public_voice'], autonomy_need: 2, relatedness_need: 0, people_pref: 0, remote_pref: 2, hands_pref: 0, energy_themes: ['creative', 'problem_solving'], values_rank: ['independence', 'achievement', 'recognition', 'working_conditions', 'support', 'relationships'], ...R([0, 0], [3, 3], [4, 4], [1, 0], [1, 1], [1, 1]) }, expect: /design|illustr|animat|artist|ux|video|motion|editor|web/i },
+  // Marina — the founder's benchmark (brief 28.10.2026 §4): 37,
+  // Charlotte NC, unrecognised Belarus engineering degree, 10 years
+  // running her own painting/renovation business, 5 homeschooled
+  // kids, 2–3 h/day, $5K budget, 3-month cushion, no nights, $100K
+  // floor, and a NAMED goal: Registered Nurse, on the way to
+  // aesthetics (Botox/IV). Her answers below; the hard acceptance
+  // assertions on her result are in the run section (Matchmaker 2.0
+  // core — gate change, recorded separately in the commit).
+  { name: 'Marina benchmark — painting owner → RN / aesthetics', door: 'pivot', a: { ...base, age: 37, state: 'NC', current_profession_name: 'Painting Company Owner', income_floor_k: 100, cushion_months: 3, hours_per_day: 2.5, budget_k: 5, documents_ok: 'partial', languages: ['en', 'ru'], attempts_started: 3, attempts_finished: 2, exit_pattern: 'energy', energy_themes: ['people', 'building'], values_rank: ['working_conditions', 'relationships', 'support', 'achievement', 'recognition', 'independence'], autonomy_need: 1, relatedness_need: 2, supports_money: 1, supports_time: 0, supports_people: 2, supports_learning_access: 2, barriers: ['time', 'money'], red_lines: ['no_nights'], target_fields: ['health'], stated_target: 'Registered Nurse', remote_pref: 0, hands_pref: 1, people_pref: 2, ...R([3, 3], [2, 2], [1, 1], [4, 4], [2, 1], [2, 2]) }, expect: /nurse|medical|health|aesthetic/i },
 ];
 const SPECIAL = [
   { name: 'all three rated not_mine', run: () => session('pivot', { ...base, ...R([1, 1], [3, 3], [4, 4], [1, 1], [2, 2], [1, 1]) }, { fit: () => 'not_mine' }) },
@@ -187,6 +197,24 @@ spec.forEach((o, i) => check(o, `special "${SPECIAL[i].name}"`));
 rand.forEach((o, i) => check(o, `random #${i}`));
 for (const [name, ok] of atk) if (!ok) add('HARD security / validation', name);
 PERSONAS.forEach((p, i) => { const t = top3(pers[i]); if (!t.some(x => p.expect.test(x.name))) add('SOFT persona gets at least one job from its obvious field', `${p.name} → ${t.map(x => x.name).join(', ') || '(none)'}`); });
+
+// Marina acceptance (brief §4/§5 — Matchmaker 2.0 core, gate change
+// recorded separately in the commit): the named goal gets its own
+// card with the ruling filter or the path named; her top-3 holds a
+// healthcare ladder whose first step is fast and cheap; the old
+// CIP/Drone pattern is gone; the RN card prints the ladder path to
+// the floor instead of dying silently at $98K vs $100K.
+{
+  const mi = PERSONAS.findIndex(p => /^Marina/.test(p.name));
+  const mo = pers[mi]; const mr = (mo && mo.result) || {};
+  const mTop = top3(mo || {});
+  const rnCard = (mr.target_evaluation || []).find(c => c.slug === 'registered-nurse');
+  if (!rnCard || !rnCard.matched || rnCard.verdict == null || !((rnCard.ruled_out_by || []).length || rnCard.floor_path)) add('HARD marina: RN target card with verdict and ruling filter or path', rnCard ? `verdict=${rnCard.verdict} blocks=${(rnCard.ruled_out_by || []).map(b => b.filter).join('+') || 'none'} path=${rnCard.floor_path ? rnCard.floor_path.via_name : 'none'}` : 'no RN card in target_evaluation');
+  if (!rnCard || !(rnCard.floor_path && rnCard.floor_path.reaches_floor === true)) add('HARD marina: RN floor path printed (ladder to aesthetics/ownership)', rnCard ? `floor_status=${rnCard.floor_status} path=${rnCard.floor_path ? JSON.stringify(rnCard.floor_path) : 'none'}` : 'no RN card');
+  const firstStepOk = mTop.some(x => { const e0 = (PROF[x.slug] || {}).entry_steps && PROF[x.slug].entry_steps[0]; return e0 && e0.training_months != null && e0.training_months <= 3 && e0.cost_k != null && e0.cost_k <= 5; });
+  if (!firstStepOk) add('HARD marina: top3 holds a ladder whose first step is ≤3 months and ≤$5K (CNA)', mTop.map(x => x.name).join(', ') || '(empty top3)');
+  if (mTop.some(x => x.name === 'Commercial Insurance Producer' || /Drone Pilot/.test(x.name))) add('HARD marina: no CIP / no Drone Pilot in her top3', mTop.map(x => x.name).join(', '));
+}
 
 // soft (distribution) rules
 const stubShare = stats.slots ? stats.stubSlots / stats.slots : 0;

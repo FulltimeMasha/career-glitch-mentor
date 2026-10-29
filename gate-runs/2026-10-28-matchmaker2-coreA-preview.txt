@@ -1,0 +1,23 @@
+Regression gate → https://careerglitch-g857fwfjk-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 51 (completed 51, with results 36) · modes {"bands":32,"direct":6,"insufficient_data":13} · 684s
+Top3 stub share 0% (base 4%) · distinct jobs 50 · most frequent: Med Spa Owner 6, UX/UI Designer 5, Aesthetic Nurse / Nurse Injector 5, Project Manager 4, Corporate Trainer 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Med Spa Owner in 6 of 36 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 16 of 36
+
+FAIL — 0 hard + 2 soft rule(s) broken. Do not deploy.
+
+NOTE (28.10.2026): preview deployment dpl_ALVydjdDU8Jjz18uoFro9JZVbEfw (careerglitch-g857fwfjk-pro38.vercel.app); its API read professions/roadmaps via CG_DATA_BASE(preview) pointed at preview dpl_8tVLjYgGu8zEpab6GGxk537fafTj (identical data files), while the O*NET import shards rode in the function bundle itself. Two earlier attempts crashed in attacks() on a cold first call (Vercel cold starts >100s that evening) and one run (dpl_5kMXxoQhxLfyNoi6Fe4BHSgvc14M era files) measured the pre-O*NET-linking base: 0 hard + 3 soft with the stub rule firing at 10% — the regression the in-pass O*NET linking of the three new rows fixed. CG_DATA_BASE(preview) was reset to https://careerglitch.com after this run.

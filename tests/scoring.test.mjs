@@ -514,7 +514,7 @@ test('career/side-hustle: base classification is complete, explicit and defaulte
     'resale-flipping-business', 'self-storage-owner', 'streamer-content-creator',
     'vending-atm-route-owner', 'wellness-coach',
   ]);
-  assert.equal(professions.length - side.length, 355, 'career count the page stat may claim');
+  assert.equal(professions.length - side.length, 358, 'career count the page stat may claim'); // 355 + the three Matchmaker 2.0 nursing-ladder careers (28.10.2026)
   // Borderline rows the founder reviews by name — kept careers on the
   // record (client-hired services and operating owners).
   for (const slug of ['ugc-creator', 'doula', 'personal-fashion-stylist', 'tutoring-center-owner',
