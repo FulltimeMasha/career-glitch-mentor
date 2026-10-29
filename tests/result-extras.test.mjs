@@ -169,3 +169,27 @@ test('decorator: no state / no degree -> nothing invented', () => {
   assert.equal(session.result.bridge_evaluation, undefined);
   assert.equal(session.result.state_pay, undefined);
 });
+
+// ------------------------------------------------------- band percentages
+test('band pct: result cards carry the canonical rounded percentages', () => {
+  const session = {
+    structured: {},
+    result: {
+      mode: 'direct',
+      top3: [{
+        slug: 'aesthetic-nurse-nurse-injector', name: 'Aesthetic Nurse / Nurse Injector',
+        love: { lo: 0.685, mid: 0.805, hi: 0.925 },
+        potential: { lo: 0.5, mid: 0.62, hi: 0.74 },
+      }],
+      target_evaluation: [],
+    },
+  };
+  decorateResult(session, professions);
+  const card = session.result.top3[0];
+  // The cards render Chemistry with Math.round (mentor.html pct(),
+  // tg.js tgBand): 0.685 -> 69, 0.925 -> 93. The decoration must hand
+  // the letter writer the SAME integers — regression test for the live
+  // Marina mismatch (letter LOVE 68–92% vs card Chemistry 69–93%).
+  assert.deepEqual(card.love_pct, { lo: 69, hi: 93, mid: 81 });
+  assert.deepEqual(card.potential_pct, { lo: 50, hi: 74, mid: 62 });
+});

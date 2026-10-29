@@ -948,3 +948,119 @@ evaluation): закрывает предпосылки уровня диплом
    cost_k 1.1, months 2.
 
 Ранжирование — по цене, затем по сроку; комиссий нет и быть не может.
+
+## Remainder pass — 29.10.2026 (остаток данных и текстов карт)
+
+### flight-attendant · payK · 45 → 64
+
+Источник: BLS Occupational Outlook Handbook, Flight Attendants —
+медианная годовая зарплата $63,580 (май 2025), страница прочитана
+29.10.2026. Округление до целых $K, как принято в базе. Изменены:
+professions.json (tuple payK), roadmaps-data-1.json (строка money
+карты: «~$64K median — the Career Glitch base figure (BLS OOH
+ranges)» — атрибуция BLS здесь правдива, у профессии есть ряд OOH) и
+PDF роадмапа (см. ниже). Старая цифра $45K источником не подтверждалась.
+
+### Сроки обучения докторских профессий · training_months
+
+Было: потолок study-band 5 (54 мес) у surgeon/psychiatrist/dentist/
+veterinarian/podiatrist/chiropractor/school-psychologist и т.д. и
+«только программа» (48) у physician/psychologist/optometrist/
+pharmacist/audiologist/physical-therapist — при реальном полном пути
+84–156 мес. Стало: TRAINING_OVERRIDES в api/_lib/engine/
+professions.mjs, каждое значение — полный стандартный путь по BLS OOH
+«How to Become» (бакалавриат + докторат + резидентура, где она нужна
+для лицензии); базис записан комментарием у каждой строки в коде:
+
+- general-surgeon · 54 → 156 · 48 бакалавриат + 48 MD/DO + 60 резидентура общей хирургии (5 лет)
+- psychiatrist · 54 → 144 · 48 + 48 MD/DO + 48 резидентура психиатрии (4 года)
+- physician · 48 → 132 · 48 + 48 MD/DO + 36 резидентура семейной медицины (3 года; строка базы — family physicians)
+- podiatrist · 54 → 132 · 48 + 48 DPM + 36 резидентура PMSR (3 года, обязательна для лицензии)
+- psychologist-therapist · 48 → 108 · 48 + ~60 докторат PhD/PsyD (BLS: 4–6 лет, включая интернатуру; взята середина 5 лет)
+- dentist · 54 → 96 · 48 + 48 DDS/DMD
+- veterinarian · 54 → 96 · 48 + 48 DVM
+- optometrist · 48 → 96 · 48 + 48 OD
+- pharmacist · 48 → 96 · 48 + 48 PharmD (типичный бакалаврский маршрут; минимум BLS — 2 года пререквизитов, итог был бы 72)
+- chiropractor · 54 → 96 · 48 + 48 DC (BLS: программа DC — 4 года; бакалавриат требует большинство штатов для лицензии)
+- audiologist · 48 → 96 · 48 + 48 AuD
+- physical-therapist · 48 → 84 · 48 + 36 DPT (типичная длина программы — 3 года)
+
+Критерий отбора: входной креденшл профессии — докторат. Магистерские
+профессии (PA, CAA, perfusionist и др.) не тронуты: у базы для них
+другая конвенция учёта, их пересмотр — отдельный проход.
+
+### Предпосылки (prerequisites) докторских профессий, NP и CRNA
+
+LADDERS в professions.mjs дополнен записями только с prerequisites
+(без ступеней — ступеней в базе для этих кластеров честно нет):
+nurse-practitioner и registered-nurse-2 (CRNA) — явная предпосылка
+«сначала лицензия RN» (у CRNA — плюс минимум год опыта в critical
+care/ICU, это жёсткое требование приёма в программы, BLS OOH); у 12
+докторских строк выше — цепочка «степень → докторат → резидентура/
+лицензия» словами. Тексты видны на карточке названной цели (tg.js
+рендерит ladder.prerequisites) и попадают в professions-base.json.
+
+### Честный текст AI-риска на карточках
+
+AI_BAND_LINES в scoring.mjs утверждали «our task-by-task check» —
+проверки задача-за-задачей в базе нет ни у одной строки
+(has_ai_risk_text=false по всей базе); уровень — собственная оценка
+модели по профилю задач профессии. Текст заменён на формулировку FAQ
+страницы /mentor («the model's own read of that job's tasks»):
+«AI risk: low/medium/high — our own read of this job's tasks, not a
+measured audit: …». Других поверхностей с утверждением о проверке не
+нашлось (grep по html/js/txt репозитория).
+
+### PDF роадмапов: yacht-broker и flight-attendant перегенерированы
+
+Генератор: ~/workspace/mediakit/build_templated.py (build_t) по
+~/workspace/careerglitch-rm/{merged,todo}.json; полные регенерации
+всех PDF НЕ было — собраны только две профессии отдельной сборкой,
+остальные PDF байт-в-байт не тронуты.
+
+- yacht-broker: PDF печатал ~$150K и атрибуцию «BLS, Occupational
+  Outlook Handbook ranges» после того, как база была исправлена на
+  $76K (запись от 28.10 вечер). В исходниках воркшопа исправлены
+  todo.json payK 150 → 76 и merged.json TL;DR («Top-of-scale money at
+  ~$150K» → «Real money at ~$76K»); 'Yacht Broker' добавлен в NO_BLS
+  в build_templated.py, чтобы будущие регенерации не вернули ложную
+  атрибуцию BLS. Новый PDF: медиана $76K, бары $47K/$76K/$110K,
+  money-note дословно как на исправленной карте сайта: «industry
+  salary data — BLS publishes no yacht-broker series; income is
+  commission on sales, not a salary». Проверка текста PDF: «76»
+  есть, «$150»/«150K» отсутствуют, структура и остальные секции —
+  без изменений (diff по предложениям: только деньги и строка
+  источников).
+- flight-attendant: PDF печатал $45K; todo.json payK 45 → 64,
+  merged.json TL;DR «Median ~$45K» → «~$64K»; новый PDF: медиана
+  $64K, бары $40K/$64K/$93K; diff — только деньги.
+
+### Chemistry в письме = Chemistry на карточке (фикс расхождения ±1)
+
+Живой прогон Marina 28.10: письмо печатало LOVE 68–92%, карточка —
+Chemistry 69–93% при одной и той же полосе (lo 0.685, hi 0.925).
+Причина: карточка округляет (Math.round), а писатель письма
+конвертировал 0–1 значения сам, без правила округления. Фикс —
+один источник: scoring.bandPct() (каноническое округление);
+result-extras вешает love_pct/potential_pct на каждую карточку
+результата; REPORT_STRUCTURE требует печатать именно эти целые;
+verify.mjs теперь заземляет процентные утверждения на округлённые
+целые и сужает допуск с ±1.05 до ±0.51 — полоса, напечатанная на
+пункт мимо карточки, не проходит проверку и уходит в correction
+pass. Тесты: tests/result-extras.test.mjs (декорация даёт {69, 93}
+на полосе Марины) и tests/verify.test.mjs (письмо с 69–93%
+проходит, с 68–92% — нет).
+
+### CSV-экспорт: проверка поля outlook (без изменений)
+
+Проверено: ~/workspace/your_files/cg-professions-base/
+professions-list-2026-10-28-v3.csv против движка (buildProfessions):
+заголовок «BLS outlook», заполнено 308 строк — ровно столько, сколько
+ненулевых bls_outlook в движке (308). Пословное сравнение по всем
+общим slug: единственное расхождение — luxury-real-estate-agent,
+строка удалена из базы позже в тот же день (коммит 3a34fc6); три
+slug отсутствуют в CSV, потому что добавлены после экспорта (ядро
+2.0: CNA, Aesthetic Nurse, Med Spa Owner). Вывод: экспорт брал
+правильное поле bls_outlook из SOURCED_OUTLOOK (professions.mjs);
+менять в репозитории нечего — расхождения объясняются датой
+экспорта, а не полем.

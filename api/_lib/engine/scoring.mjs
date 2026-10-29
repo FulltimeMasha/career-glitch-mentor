@@ -104,6 +104,24 @@ function band(mid, nullParts, age) {
   return { mid: m, lo: clamp01(m - half), hi: clamp01(m + half) };
 }
 
+/** Canonical display percentages for a score band — THE single rounding
+ *  every surface prints: the mentor card (mentor.html pct()), the target
+ *  card (tg.js tgBand) and the matchmaker letter. result-extras.mjs
+ *  attaches these integers to every result card (love_pct /
+ *  potential_pct) so the letter writer copies them verbatim instead of
+ *  converting the 0–1 values itself, and verify.mjs grounds percent
+ *  claims on the same integers — a letter can no longer print a band
+ *  one point off the card (live Marina run, 28.10.2026: the letter said
+ *  LOVE 68–92% where the card showed Chemistry 69–93%). */
+export function bandPct(b) {
+  if (!b || !isNum(b.lo) || !isNum(b.hi)) return null;
+  return {
+    lo: Math.round(b.lo * 100),
+    hi: Math.round(b.hi * 100),
+    mid: isNum(b.mid) ? Math.round(b.mid * 100) : null,
+  };
+}
+
 function confidenceLevel(totalNullParts, completeness) {
   if (totalNullParts >= 2 || (isNum(completeness) && completeness < 0.5)) return 'low';
   if (totalNullParts === 0 && isNum(completeness) && completeness >= 0.8) return 'high';
@@ -254,12 +272,15 @@ export function topBlockReason(person, prof) {
 
 // Plain-language lines for the derived AI-risk band (attrs.ai, 0..2) —
 // used on the card whenever no sourced exposure text exists, so the AI
-// line NEVER renders empty (founder QA, 27.10.2026). These describe OUR
-// task-by-task band honestly; they do not pretend to be a BLS citation.
+// line NEVER renders empty (founder QA, 27.10.2026). The level is the
+// model's own read of the job's task profile — an editorial assessment,
+// NOT a measured task-by-task audit (no row in the base carries a
+// verified audit), and the lines say so in the same framing as the
+// mentor page FAQ (honesty pass, 29.10.2026).
 export const AI_BAND_LINES = {
-  0: 'AI risk: low in our task-by-task check of this job — the core work is hands, presence and licence, the parts AI reaches last.',
-  1: 'AI risk: medium in our task-by-task check of this job — AI is taking the routine parts; the human core of the work stays.',
-  2: 'AI risk: high in our task-by-task check of this job — much of its routine work is exactly what AI is learning to do.',
+  0: 'AI risk: low — our own read of this job\'s tasks, not a measured audit: the core work is hands, presence and licence, the parts AI reaches last.',
+  1: 'AI risk: medium — our own read of this job\'s tasks, not a measured audit: AI is taking the routine parts; the human core of the work stays.',
+  2: 'AI risk: high — our own read of this job\'s tasks, not a measured audit: much of its routine work is exactly what AI is learning to do.',
 };
 
 const RIASEC_DAY_THEMES = {

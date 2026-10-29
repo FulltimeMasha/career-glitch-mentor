@@ -10,10 +10,14 @@
 //                              profession with an OEWS row
 //   programs[]               — real local programs on the first ladder step
 //                              where a hand-collected cluster exists
+//   love_pct / potential_pct — the canonical rounded display percentages
+//                              of each card's score bands (scoring.bandPct),
+//                              so the letter prints the card's own figures
 // Scoring is never touched here; nothing in this file can move a verdict.
 import { buildBridgeEvaluation, professionFieldKey } from './bridge-eval.mjs';
 import { statePayFor, normalizeState, stateName, STATE_PAY_SOURCE } from './state-pay.mjs';
 import { programsForStep } from './programs.mjs';
+import { bandPct } from './scoring.mjs';
 
 function attachStatePayToStep(step, bySlug, state) {
   if (!step || !step.slug) return;
@@ -43,6 +47,11 @@ function attachFloorPathExtras(floorPath, bySlug, state) {
 
 function attachCardExtras(card, bySlug, state) {
   if (!card || typeof card !== 'object') return;
+  // Canonical display percentages for the score bands (scoring.bandPct):
+  // the letter writer copies love_pct / potential_pct verbatim, so the
+  // letter's ranges match the card's Chemistry figures digit for digit.
+  if (card.love) card.love_pct = bandPct(card.love);
+  if (card.potential) card.potential_pct = bandPct(card.potential);
   const prof = card.slug ? bySlug.get(card.slug) : null;
   if (prof) {
     const sp = statePayFor(prof.onet_soc, state);

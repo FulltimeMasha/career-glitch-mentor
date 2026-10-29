@@ -7,12 +7,12 @@
   },
   {
    "file": "professions.json",
-   "sha": "6f3e4fe003571708de9e41ff3f5ddff070b0b7e4",
+   "sha": "9d7d66b09481962163211f4147737e4b025ee6fd",
    "size": 33292
   },
   {
    "file": "roadmaps-data-1.json",
-   "sha": "d048266e19a823cf9fbffe2fc55ccf60b7e55a9f",
+   "sha": "71cbb5d15750d58170ea2da2ad3ea9b946094293",
    "size": 94408
   },
   {
@@ -512,8 +512,8 @@
   },
   {
    "file": "CareerGlitch_FlightAttendant_Roadmap_2027_v1.pdf",
-   "sha": "b7b255d3b7f44d6a105a86b819661d641980d153",
-   "size": 78893
+   "sha": "f1f4d25463ac4f721ab7611fda2f69784709ca9e",
+   "size": 78883
   },
   {
    "file": "CareerGlitch_FlooringInstaller_Roadmap_2027_v1.pdf",
@@ -1312,8 +1312,8 @@
   },
   {
    "file": "CareerGlitch_YachtBroker_Roadmap_2027_v1.pdf",
-   "sha": "16b2f5c41c0617e6c3a96a35b406e5df5a221c22",
-   "size": 78222
+   "sha": "7cd09800b3bb73d2aaa3b244fcaa95e3c7b3642c",
+   "size": 78231
   },
   {
    "file": "CareerGlitch_YogaPilatesInstructor_Roadmap_2027_v1.pdf",
@@ -1417,8 +1417,8 @@
   },
   {
    "file": "api/_lib/engine/interview.mjs",
-   "sha": "275b997129bfdefe4beb4dc6addb281c64b4dd4b",
-   "size": 54274
+   "sha": "d4fc21330d555ad4b8512972160ecbda299f0029",
+   "size": 54502
   },
   {
    "file": "api/_lib/engine/llm.mjs",
@@ -1427,13 +1427,13 @@
   },
   {
    "file": "api/_lib/engine/professions.mjs",
-   "sha": "2ce8eb7b99968af5e9c8c23636813284b1639a24",
-   "size": 81752
+   "sha": "373adb394e053daa654a57f316475ea19c90081f",
+   "size": 88584
   },
   {
    "file": "api/_lib/engine/scoring.mjs",
-   "sha": "109e21f5deaa3510163ab3fdabe3ad0f9aeec478",
-   "size": 89357
+   "sha": "bbc7287741ae9ea020a2b44ff721a5f9c67ac424",
+   "size": 90450
   },
   {
    "file": "api/_lib/engine/stages.json",
@@ -1477,8 +1477,8 @@
   },
   {
    "file": "api/_lib/engine/verify.mjs",
-   "sha": "726d39de070ea9aa33b96ce3d66dc9ffc4faccb4",
-   "size": 25376
+   "sha": "64638e7fe9c5e35d3924500f72488370964b9e9e",
+   "size": 26080
   },
   {
    "file": "mock-a.html",
@@ -1842,8 +1842,8 @@
   },
   {
    "file": "api/_lib/engine/result-extras.mjs",
-   "sha": "a3b9915c93357c85e747c4b070ce0e026bb3dee9",
-   "size": 4655
+   "sha": "b1307d3b681a1e8ab8ec886de09d0d4a110ddbb1",
+   "size": 5266
   },
   {
    "file": "api/_lib/data/state-pay.json",
@@ -1871,5 +1871,5 @@
    "size": 22485
   }
  ],
- "deployment": "dpl_D94QjtZr867iX2ZATSAtQeSYwHYL"
+ "deployment": "dpl_FYvY5cNtug3j4tT5V5RKNLvQykYy"
 }

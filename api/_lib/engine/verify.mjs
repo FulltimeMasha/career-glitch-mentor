@@ -260,7 +260,12 @@ export function buildGroundTruth(session, professions = null) {
   // NOTE: person.completeness is deliberately NOT an allowed figure —
   // it is an internal measure the report never presents, so a decimal
   // near it (0.99 ≈ 1.0) must not become "supported" by accident.
-  for (const s of scores) percents.add(s * 100);
+  // Score bands ground as their CANONICAL display integers
+  // (scoring.bandPct — the same Math.round the cards print), never as
+  // raw s*100 floats: the letter must reproduce the card's figures
+  // exactly (29.10.2026 — a letter once printed LOVE 68–92% against a
+  // card showing 69–93% because the raw float 68.5 "supported" both).
+  for (const s of scores) percents.add(Math.round(s * 100));
 
   // Figures from the person's own verbatim answers are grounded by
   // definition — their own numbers about their own life.
@@ -309,7 +314,12 @@ function figureSupported(gt, claim) {
   switch (claim.type) {
     case 'moneyK': return near(gt.moneyK, claim.value, 0.6);
     case 'moneyDollar': return near(gt.dollars, claim.value, Math.max(30, claim.value * 0.04));
-    case 'percent': return near(gt.percents, claim.value, 1.05);
+    // Percent claims must land on an allowed integer (tolerance below
+    // one point): the grounded set is integers by construction — the
+    // canonical band percentages and the person's own stated figures.
+    // The old ±1.05 slack admitted a band printed one point off the
+    // card at both ends (68–92% for a card's 69–93%).
+    case 'percent': return near(gt.percents, claim.value, 0.51);
     case 'decimal': return claim.value <= 1 && near(gt.decimals, claim.value, 0.011);
     case 'months': return near(gt.months, claim.value, 0.01);
     case 'years': return gt.years.has(claim.value)

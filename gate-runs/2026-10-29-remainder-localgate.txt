@@ -1,0 +1,24 @@
+Regression gate → http://localhost:8931/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Chat intake: clean 12 calls / 6 messages (server turns 6), injection 14 calls / 8 messages, proposals clean 3 vs injection 3
+Chat early dumper: 14 calls / 8 messages (server turns 8), dump proposed 12 fields in turn 1
+
+Sessions 51 (completed 51, with results 40) · modes {"bands":37,"direct":5,"insufficient_data":9} · 1064s
+Top3 stub share 0% (base 4%) · distinct jobs 54 · most frequent: UX/UI Designer 7, Med Spa Owner 7, Aesthetic Nurse / Nurse Injector 6, Medical Dosimetrist 3, AI Automation Specialist 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · UX/UI Designer in 7 of 40 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 21 of 40
+
+FAIL — 0 hard + 2 soft rule(s) broken. Do not deploy.

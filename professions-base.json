@@ -1978,7 +1978,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 100,
-  "training_months": 48,
+  "training_months": 84,
   "gates": {
    "voice_load": true,
    "physical": true
@@ -2007,7 +2007,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a Doctor of Physical Therapy (DPT) programme — typically 3 years"
+   },
+   {
+    "what": "A state PT licence after the degree (the NPTE exam)"
+   }
+  ]
  },
  {
   "slug": "pt-assistant",
@@ -2251,7 +2258,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 135,
-  "training_months": 48,
+  "training_months": 96,
   "gates": {
    "voice_load": true,
    "physical": false
@@ -2280,7 +2287,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "Undergraduate prerequisites first (2+ years; most entrants hold a bachelor's), then a 4-year Doctor of Pharmacy (PharmD) degree"
+   },
+   {
+    "what": "A state pharmacist licence after the degree (NAPLEX and law exams); many roles add a 1–2 year residency"
+   }
+  ]
  },
  {
   "slug": "pharmacy-technician",
@@ -2518,7 +2532,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 130,
-  "training_months": 48,
+  "training_months": 96,
   "gates": {
    "voice_load": true,
    "physical": false
@@ -2547,7 +2561,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a 4-year Doctor of Optometry (OD) degree"
+   },
+   {
+    "what": "A state optometry licence after the degree (NBEO exams)"
+   }
+  ]
  },
  {
   "slug": "nutrition-coach-dietitian",
@@ -5404,7 +5425,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 105,
-  "training_months": 48,
+  "training_months": 108,
   "gates": {
    "voice_load": true,
    "physical": false
@@ -5433,7 +5454,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a doctoral degree in psychology (PhD or PsyD — typically about 5 years including the supervised internship)"
+   },
+   {
+    "what": "A state psychology licence after the doctorate and supervised experience (the EPPP exam)"
+   }
+  ]
  },
  {
   "slug": "life-coach",
@@ -5844,7 +5872,7 @@
   "slug": "flight-attendant",
   "kind": "career",
   "verdict": "YES",
-  "payK": 45,
+  "payK": 64,
   "training_months": 3.5,
   "gates": {
    "voice_load": false,
@@ -7854,7 +7882,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "An active RN licence first — nurse practitioner is an advanced-practice role built on registered nursing; it is not an entry point"
+   },
+   {
+    "what": "A graduate nursing programme (MSN or DNP) after the RN, plus national APRN certification; most programmes want clinical RN experience first"
+   }
+  ]
  },
  {
   "slug": "physician-assistant",
@@ -7999,7 +8034,7 @@
   "kind": "career",
   "verdict": "NO",
   "payK": 95,
-  "training_months": 48,
+  "training_months": 96,
   "gates": {
    "voice_load": true,
    "physical": false
@@ -8028,7 +8063,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a 4-year Doctor of Audiology (AuD) degree"
+   },
+   {
+    "what": "A state audiology licence after the degree and its clinical externship"
+   }
+  ]
  },
  {
   "slug": "genetic-counselor",
@@ -9592,7 +9634,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 125,
-  "training_months": 54,
+  "training_months": 96,
   "gates": {
    "voice_load": true,
    "physical": true
@@ -9621,14 +9663,21 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree with the science prerequisites vet schools name, then a 4-year Doctor of Veterinary Medicine (DVM) degree"
+   },
+   {
+    "what": "A state veterinary licence after the degree (the NAVLE exam)"
+   }
+  ]
  },
  {
   "slug": "dentist",
   "kind": "career",
   "verdict": "YES",
   "payK": 179,
-  "training_months": 54,
+  "training_months": 96,
   "gates": {
    "voice_load": true,
    "physical": true
@@ -9657,14 +9706,21 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree with the science prerequisites dental schools name, then a 4-year dental degree (DDS or DMD)"
+   },
+   {
+    "what": "A state dental licence after the degree — national board exams plus a clinical exam; a specialty adds a residency"
+   }
+  ]
  },
  {
   "slug": "chiropractor",
   "kind": "career",
   "verdict": "YES",
   "payK": 79,
-  "training_months": 54,
+  "training_months": 96,
   "gates": {
    "voice_load": true,
    "physical": true
@@ -9693,7 +9749,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "At least 3 years of undergraduate study first (most states require a bachelor's for licensure), then a 4-year Doctor of Chiropractic (DC) programme"
+   },
+   {
+    "what": "A state chiropractic licence after the degree (NBCE exams)"
+   }
+  ]
  },
  {
   "slug": "epidemiologist",
@@ -9733,7 +9796,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 239,
-  "training_months": 54,
+  "training_months": 144,
   "gates": {
    "voice_load": true,
    "physical": false
@@ -9762,7 +9825,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a 4-year medical degree (MD or DO)"
+   },
+   {
+    "what": "A 4-year psychiatry residency after medical school, then state licensure and board certification"
+   }
+  ]
  },
  {
   "slug": "sleep-technologist",
@@ -10641,14 +10711,21 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "An active RN licence first, with at least a year of critical-care (ICU) nursing experience — a hard admission requirement for nurse-anesthesia programmes, not a preference"
+   },
+   {
+    "what": "A nurse-anesthesia graduate programme (doctoral, about 3 years) after the RN and ICU experience, then national certification (NBCRNA)"
+   }
+  ]
  },
  {
   "slug": "physician",
   "kind": "career",
   "verdict": "YES",
   "payK": 238,
-  "training_months": 48,
+  "training_months": 132,
   "gates": {
    "voice_load": true,
    "physical": false
@@ -10677,14 +10754,21 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a 4-year medical degree (MD or DO)"
+   },
+   {
+    "what": "A residency after medical school — 3 years for family medicine, longer for most other specialties — then state licensure"
+   }
+  ]
  },
  {
   "slug": "podiatrist",
   "kind": "career",
   "verdict": "YES",
   "payK": 141,
-  "training_months": 54,
+  "training_months": 132,
   "gates": {
    "voice_load": true,
    "physical": true
@@ -10713,7 +10797,14 @@
   "supplies_stub": false,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a 4-year Doctor of Podiatric Medicine (DPM) degree"
+   },
+   {
+    "what": "A 3-year podiatric residency (PMSR) after the degree — required for licensure — then the state licence"
+   }
+  ]
  },
  {
   "slug": "recreational-therapist",
@@ -11629,7 +11720,7 @@
   "kind": "career",
   "verdict": "YES",
   "payK": 239,
-  "training_months": 54,
+  "training_months": 156,
   "gates": {
    "voice_load": false,
    "physical": true
@@ -11658,7 +11749,14 @@
   "supplies_stub": true,
   "entry_steps": [],
   "next_steps": [],
-  "prerequisites": []
+  "prerequisites": [
+   {
+    "what": "A bachelor's degree, then a 4-year medical degree (MD or DO) — there is no direct or shorter entry"
+   },
+   {
+    "what": "A 5-year general-surgery residency after medical school, then state licensure and board certification; a subspecialty fellowship adds years on top"
+   }
+  ]
  },
  {
   "slug": "certified-nurse-midwife",

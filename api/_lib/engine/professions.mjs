@@ -423,6 +423,40 @@ const TRAINING_OVERRIDES = {
   // Choreographers: years of formal dance training plus experience as a
   // dancer first (BLS OOH) — 4–5 years, not the band-1 midpoint of 3.5.
   'choreographer': 54,
+  // Doctoral-entry professions (remainder pass, 29.10.2026): the band-5
+  // figure (54) and the programme-only figures (48) understate the
+  // standard route by 2–3×. Each total is the full standard path from
+  // BLS OOH "How to Become" — bachelor's + doctorate (+ the residency
+  // licensure requires). The chain is also stated in the profession's
+  // LADDERS prerequisites, so the card shows WHY it takes this long.
+  // Surgeon: 48 bachelor's + 48 MD/DO + 60 general-surgery residency (5y).
+  'general-surgeon': 156,
+  // Psychiatrist: 48 + 48 MD/DO + 48 psychiatry residency (4y).
+  'psychiatrist': 144,
+  // Physician (this row is family physicians): 48 + 48 MD/DO + 36
+  // family-medicine residency (3y).
+  'physician': 132,
+  // Podiatrist: 48 + 48 DPM + 36 PMSR residency (3y, required for licensure).
+  'podiatrist': 132,
+  // Psychologist: 48 + ~60 doctoral (PhD/PsyD, 4–6y incl. the internship
+  // year; 5y is the middle of the BLS range).
+  'psychologist-therapist': 108,
+  // Dentist: 48 + 48 DDS/DMD.
+  'dentist': 96,
+  // Veterinarian: 48 + 48 DVM.
+  'veterinarian': 96,
+  // Optometrist: 48 + 48 OD.
+  'optometrist': 96,
+  // Pharmacist: 48 + 48 PharmD (the typical bachelor's route; the BLS
+  // minimum is 2 years of prerequisites, which would total 72).
+  'pharmacist': 96,
+  // Chiropractor: 48 + 48 DC (BLS: DC programmes run 4 years; a
+  // bachelor's is required for licensure in most states).
+  'chiropractor': 96,
+  // Audiologist: 48 + 48 AuD.
+  'audiologist': 96,
+  // Physical therapist: 48 + 36 DPT (3y is the typical programme length).
+  'physical-therapist': 84,
 };
 
 // ---------------------------------------------------------------------------
@@ -771,6 +805,125 @@ const LADDERS = {
     prerequisites: [
       { what: 'A clinical licence of your own (RN/NP/PA/MD, by state) or a contracted medical director — a med spa is a medical practice, not a salon' },
       { what: 'Startup capital well beyond training money: devices, premises, product, insurance and compliance — ownership money, not course money' },
+    ],
+  },
+  // Prerequisites-only entries (remainder pass, 29.10.2026): professions
+  // whose honest entry chain was invisible while their ladder was empty.
+  // No rungs are declared — the prerequisites state the chain in words,
+  // exactly as the field is defined above. NP and CRNA state the RN
+  // prerequisite the founder's standard requires; the doctoral set
+  // states the degree → doctorate → residency chain that matches the
+  // TRAINING_OVERRIDES totals. Sources: BLS OOH "How to Become".
+  'nurse-practitioner': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'An active RN licence first — nurse practitioner is an advanced-practice role built on registered nursing; it is not an entry point' },
+      { what: 'A graduate nursing programme (MSN or DNP) after the RN, plus national APRN certification; most programmes want clinical RN experience first' },
+    ],
+  },
+  'registered-nurse-2': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'An active RN licence first, with at least a year of critical-care (ICU) nursing experience — a hard admission requirement for nurse-anesthesia programmes, not a preference' },
+      { what: 'A nurse-anesthesia graduate programme (doctoral, about 3 years) after the RN and ICU experience, then national certification (NBCRNA)' },
+    ],
+  },
+  'general-surgeon': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a 4-year medical degree (MD or DO) — there is no direct or shorter entry' },
+      { what: 'A 5-year general-surgery residency after medical school, then state licensure and board certification; a subspecialty fellowship adds years on top' },
+    ],
+  },
+  'psychiatrist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a 4-year medical degree (MD or DO)' },
+      { what: 'A 4-year psychiatry residency after medical school, then state licensure and board certification' },
+    ],
+  },
+  'physician': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a 4-year medical degree (MD or DO)' },
+      { what: 'A residency after medical school — 3 years for family medicine, longer for most other specialties — then state licensure' },
+    ],
+  },
+  'dentist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree with the science prerequisites dental schools name, then a 4-year dental degree (DDS or DMD)' },
+      { what: 'A state dental licence after the degree — national board exams plus a clinical exam; a specialty adds a residency' },
+    ],
+  },
+  'veterinarian': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree with the science prerequisites vet schools name, then a 4-year Doctor of Veterinary Medicine (DVM) degree' },
+      { what: 'A state veterinary licence after the degree (the NAVLE exam)' },
+    ],
+  },
+  'podiatrist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a 4-year Doctor of Podiatric Medicine (DPM) degree' },
+      { what: 'A 3-year podiatric residency (PMSR) after the degree — required for licensure — then the state licence' },
+    ],
+  },
+  'optometrist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a 4-year Doctor of Optometry (OD) degree' },
+      { what: 'A state optometry licence after the degree (NBEO exams)' },
+    ],
+  },
+  'pharmacist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'Undergraduate prerequisites first (2+ years; most entrants hold a bachelor\'s), then a 4-year Doctor of Pharmacy (PharmD) degree' },
+      { what: 'A state pharmacist licence after the degree (NAPLEX and law exams); many roles add a 1–2 year residency' },
+    ],
+  },
+  'chiropractor': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'At least 3 years of undergraduate study first (most states require a bachelor\'s for licensure), then a 4-year Doctor of Chiropractic (DC) programme' },
+      { what: 'A state chiropractic licence after the degree (NBCE exams)' },
+    ],
+  },
+  'psychologist-therapist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a doctoral degree in psychology (PhD or PsyD — typically about 5 years including the supervised internship)' },
+      { what: 'A state psychology licence after the doctorate and supervised experience (the EPPP exam)' },
+    ],
+  },
+  'audiologist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a 4-year Doctor of Audiology (AuD) degree' },
+      { what: 'A state audiology licence after the degree and its clinical externship' },
+    ],
+  },
+  'physical-therapist': {
+    entry_steps: [],
+    next_steps: [],
+    prerequisites: [
+      { what: 'A bachelor\'s degree, then a Doctor of Physical Therapy (DPT) programme — typically 3 years' },
+      { what: 'A state PT licence after the degree (the NPTE exam)' },
     ],
   },
 };

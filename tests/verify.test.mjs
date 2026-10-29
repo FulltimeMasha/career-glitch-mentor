@@ -311,3 +311,27 @@ test('ground truth: a top-3 candidate\'s own ladder figures are grounded too', (
   const text = 'It starts under your floor, but its ladder reaches Med Spa Owner at $150K in about 4 years. The first rung, Certified Nursing Assistant, costs $1K.';
   assert.deepEqual(auditNumbers(s, text), []);
 });
+
+// ------------------------------------------------- letter band == card band
+test('letter band must equal the card band (canonical rounded percents)', () => {
+  const s = {
+    person: { resources: {} },
+    result: {
+      mode: 'direct',
+      top3: [{
+        slug: 'aesthetic-nurse-nurse-injector', name: 'Aesthetic Nurse / Nurse Injector',
+        payK: 80, training_months: 42,
+        love: { lo: 0.685, mid: 0.805, hi: 0.925 },
+        potential: { lo: 0.5, mid: 0.62, hi: 0.74 },
+      }],
+      bottom3: [],
+    },
+    transcript: [],
+  };
+  // The card prints LOVE 69–93% (Math.round of the same band). A letter
+  // printing exactly the card's figures is supported; one point off at
+  // either end is not (regression: live letter said 68–92%).
+  assert.deepEqual(auditNumbers(s, 'Aesthetic Nurse is your strongest match — LOVE 69–93%.'), []);
+  const issues = auditNumbers(s, 'Aesthetic Nurse is your strongest match — LOVE 68–92%.');
+  assert.ok(issues.length >= 1, `expected the off-by-one band flagged, got ${JSON.stringify(issues)}`);
+});
