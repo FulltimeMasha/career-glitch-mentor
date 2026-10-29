@@ -73,6 +73,7 @@ import { scorePerson, TARGET_FIELDS } from './scoring.mjs';
 import { loadProfessions } from './professions.mjs';
 import { metaRespond, MODELS, sanitizeUserText } from './llm.mjs';
 import { verifyReport, buildVerifyFeedback, removeSentences } from './verify.mjs';
+import { decorateResult } from './result-extras.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const STAGES_DATA = JSON.parse(readFileSync(join(HERE, 'stages.json'), 'utf8'));
@@ -578,9 +579,11 @@ export function applyStage(session, { freeText = '', tailAnswers = {} } = {}, pr
   // themselves (e.g. fetched over HTTP where no site dir exists);
   // default behaviour is unchanged: read the local site files.
   const person = assemblePerson(session);
-  const result = scorePerson(person, professionsOverride ?? loadProfessions());
+  const profs = professionsOverride ?? loadProfessions();
+  const result = scorePerson(person, profs);
   session.person = person;
   session.result = result;
+  decorateResult(session, profs);
   session.candidates = result.top3;
   if (result.mode === 'insufficient_data') {
     session.phase = 'done'; // no stage 6, no forced verdict
@@ -633,6 +636,7 @@ export function applyPerceivedFit(session, ratings, professionsOverride = null) 
   const result = scorePerson(person, professions);
   session.person = person;
   session.result = result;
+  decorateResult(session, professions);
   session.candidates = result.top3;
   session.phase = 'done';
   return session;
@@ -785,6 +789,23 @@ const SIDE_HUSTLE_NOTE = 'The input also contains "side_hustle_pick" — ONE sid
 // evaluation card; the writer argues from the card, never around it.
 const TARGET_NOTE = 'The input also contains "target_evaluation" — the job (or jobs) this person NAMED as their goal, each already evaluated by the deterministic engine on its own card. After the top-candidates section (and after the cushion / side-hustle sections when present), add one section titled "The job you named", with one short part per evaluated goal. For a matched goal: name it, give the matchmaker verdict from its card (YES or NO) and its honest standing for this person. If "in_top3" is true, say it stands in the three at its honest grade, not a promoted one. If it is ruled out, name the blocker(s) from "ruled_out_by" in plain words — which line of theirs shut this door (their no-nights line, their training limit, the market verdict, the documents gate) — never soften it into "not the right time". If the card carries a "floor_path", print the path: the rungs in order, the rung it reaches their pay floor at, that rung\'s pay, and the years of steps the card gives. If it clears the floor only at the top tier or the top tenth of earners, say exactly that. If the card gives a ladder ("ladder.entry_steps"), name the first rung with its training time and entry cost from the card. For an unmatched goal ("matched": false): say plainly that no exact match for that name exists in the checked base and it was not silently swapped for a different job, and name the nearest field when the card gives one. Argue ONLY from the target_evaluation cards and the result JSON; invent nothing — every figure (pay, step costs, months, years) must be a figure the card itself carries.';
 
+const DEGREE_NOTE = 'The input also contains "bridge_evaluation" — the deterministic route for this person\'s FOREIGN degree, computed by rule from the degree field they named, never by opinion. Add one section titled "Your degree", after the top-candidates section. Name the degree by its field (and level and country when the evaluation gives them) and walk its steps in the order given: credential evaluation first (WES / ECE, and the field\'s own evaluator_note when the evaluation carries one), then the field route steps exactly as the evaluation states them. Repeat the evaluation\'s credit note honestly: the evaluated degree satisfies degree-level prerequisites in its own field, and it does NOT shorten any state-set training length — never write that their degree "counts toward" a step\'s months, and never invent a shorter timeline, a cost, or an exam detail the evaluation does not carry. Argue ONLY from the bridge_evaluation object; invent nothing.';
+const STATE_PAY_NOTE = 'Some cards and ladder steps in the input carry "pay_state" / "pay_state_k" — the BLS OEWS May 2024 median pay for that exact job in THIS person\'s state (the state is named in result.state_pay). When a job you discuss carries a state figure, give it next to the national figure, like: "$98K nationally, about $82K in North Carolina". Use ONLY the state figures the cards carry; for a job without one, give the national figure alone — never estimate a state number, never say a state pays "about the same", and never present a state figure as an upside for a job whose verdict is NO.';
+const PROGRAMS_NOTE = 'Some ladder first steps in the input carry "programs" — real, named local programs for that exact step, collected from the schools\' own publications. When you name such a first step, name its programs too: school, program, the cost the data gives (read its cost_note before rounding), and its length. Never add a school, a price or a duration that is not in the programs data, and never call a program "accredited" or "best" — the data carries no such claim.';
+
+// True when any card in the result carries real programs on a ladder step.
+function resultHasPrograms(result) {
+  const cards = [
+    ...(Array.isArray(result.top3) ? result.top3 : []),
+    ...(Array.isArray(result.target_evaluation) ? result.target_evaluation : []),
+    ...(result.bridge_pick ? [result.bridge_pick] : []),
+  ];
+  return cards.some((c) => {
+    const steps = (c && c.ladder && Array.isArray(c.ladder.entry_steps)) ? c.ladder.entry_steps : [];
+    return steps.some((s) => Array.isArray(s.programs) && s.programs.length);
+  });
+}
+
 export async function generateReport(session, opts = {}) {
   if (!session.result) {
     throw new Error('generateReport: session has no scoring result yet (finish stage 5 first)');
@@ -828,7 +849,10 @@ export async function generateReport(session, opts = {}) {
     : (REPORT_STRUCTURE
       + (session.result && session.result.bridge_pick ? '\n' + BRIDGE_NOTE : '')
       + (session.result && session.result.side_hustle_pick ? '\n' + SIDE_HUSTLE_NOTE : '')
-      + (session.result && (session.result.target_evaluation || []).length ? '\n' + TARGET_NOTE : ''));
+      + (session.result && (session.result.target_evaluation || []).length ? '\n' + TARGET_NOTE : '')
+      + (session.result && session.result.bridge_evaluation ? '\n' + DEGREE_NOTE : '')
+      + (session.result && session.result.state_pay ? '\n' + STATE_PAY_NOTE : '')
+      + (session.result && resultHasPrograms(session.result) ? '\n' + PROGRAMS_NOTE : ''));
   if (opts && typeof opts.verifyFeedback === 'string' && opts.verifyFeedback.trim()) {
     // Correction pass (verification layer, engine/verify.mjs): the
     // previous draft failed the checker's audit; the mismatches are

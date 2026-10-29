@@ -18,5 +18,6 @@ export {
 export { scorePerson } from './engine/scoring.mjs';
 export { metaRespond, MODELS, sanitizeUserText } from './engine/llm.mjs';
 export { generatePlayground, templateDay } from './engine/playground.mjs';
+export { decorateResult } from './engine/result-extras.mjs';
 export { getStoredPlaygroundDay, loadPlaygroundDays } from './engine/playground-days.mjs';
 export { loadProfessions, buildProfessions, ROADMAP_FILE_NAMES } from './engine/professions.mjs';

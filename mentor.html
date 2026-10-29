@@ -1340,8 +1340,7 @@ try{ localStorage.removeItem(LIVE_KEY); }catch(e){}
 $("startScreen").classList.remove("hidden");
 $("interview").classList.add("hidden");
 }).catch(function(){ doorEls0.forEach(function(b){ b.disabled = false; }); /* probe failed — guided mode, doors handed back */ });
-/* pg.js bridge: the playground code lives in its own file (per-file size
-   ceiling) but shares this closure — expose the bindings it uses. */
+/* pg.js bridge: expose the bindings the external files use. */
 window.$ = $; window.api = api; window.store = store;
 Object.defineProperty(window, "live", { configurable: true, get: function(){ return live; }, set: function(v){ live = v; } });
 Object.defineProperty(window, "lastResult", { configurable: true, get: function(){ return lastResult; }, set: function(v){ lastResult = v; } });
@@ -1351,6 +1350,7 @@ Object.defineProperty(window, "lastResult", { configurable: true, get: function(
 <script src="/lead.js"></script>
 <script src="/sh.js"></script>
 <script src="/tg.js"></script>
+<script src="/x2.js"></script>
 <script>
 (function(){
 var BLIPS = [

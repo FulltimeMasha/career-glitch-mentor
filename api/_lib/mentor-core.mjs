@@ -26,6 +26,11 @@
 //   { action: 'playground', session, slug }             -> the profession's
 //        canonical stored day (generated once, same for everyone;
 //        deterministic template day when none is stored yet)
+//   { action: 'plan_save', session, email, consent, lead_id? }
+//        -> stores the FULL server-computed plan snapshot (verdict,
+//        targets, ladders, programs) in cg_leads (db/004); consent must
+//        be exactly true; no email is sent — the product has no mail
+//        service, the save itself is what is confirmed.
 // Responses: { ok, session_id, session, def, candidates, result,
 //              mentor_message, llm: {status, error?}, persistence }
 //
@@ -58,8 +63,9 @@ import {
   loadProfessions,
   buildProfessions,
   ROADMAP_FILE_NAMES,
+  decorateResult,
 } from './engine-bridge.mjs';
-import { leadStoreConfig, insertLead, updateLead, LEAD_REACTIONS } from './leads.mjs';
+import { leadStoreConfig, insertLead, updateLead, savePlanSnapshot, LEAD_REACTIONS } from './leads.mjs';
 
 const DATA_BASE = process.env.CG_DATA_BASE || 'https://careerglitch.com';
 
@@ -241,6 +247,10 @@ async function finalResultForLead(sess, professions) {
       applyPerceivedFit(sess, ratings, professions);
     } catch { /* junk ratings in a hand-built session: the recomputed result stands */ }
   }
+  // Deterministic decorations (bridge evaluation, state pay, programs)
+  // ride along on every lead-side result too — applyPerceivedFit already
+  // decorated when it ran; decorateResult is idempotent.
+  decorateResult(sess, professions);
   return { person, result: sess.result };
 }
 
@@ -288,6 +298,70 @@ export async function handleMentorRequest(body) {
     // 503 and the page offers "continue without saving" — the interview
     // actions below never depend on the lead store.
     // -----------------------------------------------------------------
+    // -----------------------------------------------------------------
+    // Save my plan (Matchmaker 2.0 extension, brief §5.8): after the
+    // verdict, the visitor may leave an email + explicit consent; the
+    // server then stores the FULL plan snapshot — the result it computed
+    // itself from the coded answers (audit C2: the client-sent result is
+    // ignored) — into the cg_leads plan columns (db/004). No phone is
+    // asked, nothing is sold, and NO email is sent: the product has no
+    // mail service, so the API only confirms the save. Until migration
+    // 004 is applied in Supabase, the store's schema error maps to the
+    // same clean 503 as an unconfigured store.
+    // -----------------------------------------------------------------
+    if (action === 'plan_save') {
+      const cfg = leadStoreConfig();
+      if (!cfg) {
+        return { status: 503, json: { ok: false, error: 'Saving plans is not switched on yet.' } };
+      }
+      if (body.consent !== true) {
+        return { status: 400, json: { ok: false, error: 'Saving your plan needs your OK — tick the consent box first.' } };
+      }
+      const planEmail = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+      if (!LEAD_EMAIL_RE.test(planEmail) || planEmail.length > 254) {
+        return { status: 400, json: { ok: false, error: 'That email does not look right — check it and try again.' } };
+      }
+      if (!body.session || typeof body.session !== 'object') {
+        return { status: 400, json: { ok: false, error: 'session object is required for this action' } };
+      }
+      const planSession = deserializeSession(body.session);
+      const planType = recomputeCddqType(planSession);
+      if (planType) planSession.cddq_type = planType;
+      const planProg = deriveProgress(planSession);
+      if (!planProg.cddqDone || planProg.stagesAnswered < 6) {
+        return { status: 409, json: { ok: false, error: 'There is no finished plan to save yet — the interview is not complete.' } };
+      }
+      const planProfessions = await getProfessions();
+      const { result: planResult } = await finalResultForLead(planSession, planProfessions);
+      const now = new Date().toISOString();
+      const snapshot = {
+        v: 1,
+        saved_at: now,
+        door: planSession.door ?? null,
+        mode: planResult ? planResult.mode : null,
+        result: planResult,
+      };
+      const maybeLeadId = typeof body.lead_id === 'string' && LEAD_UUID_RE.test(body.lead_id) ? body.lead_id : null;
+      try {
+        const rowId = await savePlanSnapshot(cfg, {
+          leadId: maybeLeadId,
+          email: planEmail,
+          snapshot,
+          consentAt: now,
+          savedAt: now,
+        });
+        return { status: 200, json: { ok: true, saved: true, lead_id: rowId } };
+      } catch (e) {
+        const msg = (e && e.message) || '';
+        if (/PGRST204|schema cache|column/i.test(msg)) {
+          console.error('plan save: plan columns missing (migration 004 not applied):', msg);
+          return { status: 503, json: { ok: false, error: 'Saving plans is not switched on yet.' } };
+        }
+        console.error('plan save failed:', msg);
+        return { status: 502, json: { ok: false, error: 'That did not save — your plan is still on your screen; try again in a moment.' } };
+      }
+    }
+
     if (action === 'lead' || action === 'lead_verdict' || action === 'lead_reaction') {
       const cfg = leadStoreConfig();
       if (!cfg) {
@@ -414,6 +488,7 @@ export async function handleMentorRequest(body) {
       const person = assemblePerson(sess);
       sess.person = person;
       sess.result = scorePerson(person, professions);
+      decorateResult(sess, professions);
       sess.candidates = sess.result.top3;
       return professions;
     };

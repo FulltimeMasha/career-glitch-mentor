@@ -1,0 +1,22 @@
+Regression gate → https://careerglitch-h6c6z7mv7-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 51 (completed 51, with results 34) · modes {"bands":32,"direct":5,"insufficient_data":14} · 311s
+Top3 stub share 0% (base 4%) · distinct jobs 47 · most frequent: Project Manager 6, Med Spa Owner 5, Commercial / Industrial Designer 3, Sonographer (Ultrasound) 3, AI Automation Specialist 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Project Manager in 6 of 34 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 20 of 34
+
+FAIL — 0 hard + 2 soft rule(s) broken. Do not deploy.
+GATE EXIT: 1

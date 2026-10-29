@@ -1,0 +1,19 @@
+Regression gate → https://careerglitch.com/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 51 (completed 51, with results 34) · modes {"bands":32,"direct":4,"insufficient_data":15} · 343s
+Top3 stub share 0% (base 4%) · distinct jobs 48 · most frequent: UX/UI Designer 5, Project Manager 5, Med Spa Owner 3, Gym / Fitness Studio Owner 3, Drone Pilot (commercial) 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 23 of 34
+
+FAIL — 0 hard + 1 soft rule(s) broken. Do not deploy.
+GATE EXIT: 1

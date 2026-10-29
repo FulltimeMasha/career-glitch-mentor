@@ -64,3 +64,25 @@ export async function updateLead(cfg, id, patch) {
   });
   return Array.isArray(out) && out.length > 0;
 }
+
+// Save the FULL plan snapshot (Matchmaker 2.0 extension, brief §5.8) into
+// the plan columns added by db/004_cg_leads_plan.sql. When a lead id is
+// given and the row exists, the snapshot attaches to that row; otherwise a
+// fresh row is created (name '' — the plan block asks only for an email).
+// Returns the row id written. Throws on any store error; until migration
+// 004 is applied, PostgREST answers with a schema-cache / column error and
+// the caller maps that to a clean 503 ("not switched on yet"), not a 502.
+export async function savePlanSnapshot(cfg, { leadId, email, snapshot, consentAt, savedAt }) {
+  const patch = {
+    plan: snapshot,
+    plan_email: email,
+    plan_consent_at: consentAt,
+    plan_saved_at: savedAt,
+  };
+  if (leadId) {
+    const found = await updateLead(cfg, leadId, patch);
+    if (found) return leadId;
+  }
+  const id = await insertLead(cfg, { name: '', email, ...patch });
+  return id;
+}

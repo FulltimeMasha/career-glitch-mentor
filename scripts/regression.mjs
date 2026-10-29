@@ -151,7 +151,7 @@ const PERSONAS = [
   // aesthetics (Botox/IV). Her answers below; the hard acceptance
   // assertions on her result are in the run section (Matchmaker 2.0
   // core — gate change, recorded separately in the commit).
-  { name: 'Marina benchmark — painting owner → RN / aesthetics', door: 'pivot', a: { ...base, age: 37, state: 'NC', current_profession_name: 'Painting Company Owner', income_floor_k: 100, cushion_months: 3, hours_per_day: 2.5, budget_k: 5, documents_ok: 'partial', languages: ['en', 'ru'], attempts_started: 3, attempts_finished: 2, exit_pattern: 'energy', energy_themes: ['people', 'building'], values_rank: ['working_conditions', 'relationships', 'support', 'achievement', 'recognition', 'independence'], autonomy_need: 1, relatedness_need: 2, supports_money: 1, supports_time: 0, supports_people: 2, supports_learning_access: 2, barriers: ['time', 'money'], red_lines: ['no_nights'], target_fields: ['health'], stated_target: 'Registered Nurse', remote_pref: 0, hands_pref: 1, people_pref: 2, ...R([3, 3], [2, 2], [1, 1], [4, 4], [2, 1], [2, 2]) }, expect: /nurse|medical|health|aesthetic/i },
+  { name: 'Marina benchmark — painting owner → RN / aesthetics', door: 'pivot', a: { ...base, age: 37, state: 'NC', current_profession_name: 'Painting Company Owner', income_floor_k: 100, cushion_months: 3, hours_per_day: 2.5, budget_k: 5, documents_ok: 'partial', languages: ['en', 'ru'], degree_status: 'foreign_degree', degree_field: 'engineering', degree_level: 'bachelor', degree_country: 'Belarus', degree_years: 10, attempts_started: 3, attempts_finished: 2, exit_pattern: 'energy', energy_themes: ['people', 'building'], values_rank: ['working_conditions', 'relationships', 'support', 'achievement', 'recognition', 'independence'], autonomy_need: 1, relatedness_need: 2, supports_money: 1, supports_time: 0, supports_people: 2, supports_learning_access: 2, barriers: ['time', 'money'], red_lines: ['no_nights'], target_fields: ['health'], stated_target: 'Registered Nurse', remote_pref: 0, hands_pref: 1, people_pref: 2, ...R([3, 3], [2, 2], [1, 1], [4, 4], [2, 1], [2, 2]) }, expect: /nurse|medical|health|aesthetic/i },
 ];
 const SPECIAL = [
   { name: 'all three rated not_mine', run: () => session('pivot', { ...base, ...R([1, 1], [3, 3], [4, 4], [1, 1], [2, 2], [1, 1]) }, { fit: () => 'not_mine' }) },
@@ -214,6 +214,33 @@ PERSONAS.forEach((p, i) => { const t = top3(pers[i]); if (!t.some(x => p.expect.
   const firstStepOk = mTop.some(x => { const e0 = (PROF[x.slug] || {}).entry_steps && PROF[x.slug].entry_steps[0]; return e0 && e0.training_months != null && e0.training_months <= 3 && e0.cost_k != null && e0.cost_k <= 5; });
   if (!firstStepOk) add('HARD marina: top3 holds a ladder whose first step is ≤3 months and ≤$5K (CNA)', mTop.map(x => x.name).join(', ') || '(empty top3)');
   if (mTop.some(x => x.name === 'Commercial Insurance Producer' || /Drone Pilot/.test(x.name))) add('HARD marina: no CIP / no Drone Pilot in her top3', mTop.map(x => x.name).join(', '));
+}
+
+// Marina extension (Matchmaker 2.0 extension, brief §5.4-5.6 — gate
+// change recorded separately in the commit): her foreign engineering
+// degree is evaluated deterministically in the RESULT (bridge_evaluation
+// with the WES/ECE route — a result-field check, never LLM text); her
+// cards carry the NC state median (OEWS May 2024) wherever BLS publishes
+// a row; and the first rung of her road (CNA) carries at least one real
+// Charlotte/NC program with a price and a duration. Assertion (h) — the
+// plan snapshot write — is an API-level test (tests/plan-save.test.mjs),
+// not a session-gate rule.
+{
+  const mi = PERSONAS.findIndex(p => /^Marina/.test(p.name));
+  const mo = pers[mi]; const mr = (mo && mo.result) || {};
+  const mTop = top3(mo || {});
+  const rnCard = (mr.target_evaluation || []).find(c => c.slug === 'registered-nurse');
+  const be = mr.bridge_evaluation;
+  if (!be || !be.degree || be.degree.field !== 'engineering' || !JSON.stringify(be.steps || []).includes('WES')) add('HARD marina: (e) bridge_evaluation names her engineering degree with the WES/ECE route', be ? `field=${be.degree && be.degree.field}` : 'no bridge_evaluation in result');
+  if (!rnCard || typeof rnCard.pay_state_k !== 'number' || !rnCard.pay_state || rnCard.pay_state.state !== 'NC') add('HARD marina: (f) RN card carries pay_state_k for NC', rnCard ? `pay_state_k=${rnCard.pay_state_k}` : 'no RN card');
+  if (!mTop.some(x => typeof x.pay_state_k === 'number')) add('HARD marina: (f) at least one top-3 card carries pay_state_k', mTop.map(x => x.name).join(', ') || '(empty top3)');
+  const progCards = rnCard ? [...mTop, rnCard] : mTop;
+  const progOk = progCards.some(c => {
+    const steps = (c && c.ladder && Array.isArray(c.ladder.entry_steps)) ? c.ladder.entry_steps : [];
+    const firsts = [...steps.slice(0, 1), ...(c && c.entry_step ? [c.entry_step] : [])];
+    return firsts.some(s => Array.isArray(s.programs) && s.programs.some(p => typeof p.cost_k === 'number' && p.cost_k > 0 && typeof p.months === 'number' && p.months > 0));
+  });
+  if (!progOk) add('HARD marina: (g) first ladder step (CNA) carries a real program with price and duration', progCards.map(x => x.name).join(', ') || '(no cards)');
 }
 
 // soft (distribution) rules

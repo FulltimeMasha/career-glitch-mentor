@@ -157,6 +157,7 @@
       var res = await callApi({ action: "lead", name: name, email: email, self_role: role, ua: coarseUa() });
       if (!res || !res.json || !res.json.ok || !res.json.lead_id) throw new Error("lead save failed");
       S.id = res.json.lead_id;
+      S.email = email;
       S.done = true;
       closeGate();
       proceed();
@@ -241,4 +242,10 @@
       if (letter || Date.now() - S.verdictAt > 8000) attachReaction(body, letter);
     }
   }, 800);
+
+  // Read-only handle for companion blocks (x2.js "Save my plan"): the
+  // gate's lead id and the email the visitor typed, when they saved one.
+  window.cgLead = function () {
+    return { id: S.id || null, email: S.email || null };
+  };
 })();
