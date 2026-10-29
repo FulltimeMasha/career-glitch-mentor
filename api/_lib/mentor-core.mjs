@@ -64,6 +64,10 @@ import {
   buildProfessions,
   ROADMAP_FILE_NAMES,
   decorateResult,
+  ensureChat,
+  applyChatInput,
+  chatStateView,
+  CHAT_TURN_CAP,
 } from './engine-bridge.mjs';
 import { leadStoreConfig, insertLead, updateLead, savePlanSnapshot, LEAD_REACTIONS } from './leads.mjs';
 
@@ -204,6 +208,38 @@ function wireDef(session) {
   return out;
 }
 
+// ---------------------------------------------------------------------------
+// Conversational intake (brief 28.10.2026 §6): the packet the chat
+// client renders from. The state machine lives in engine/chat.mjs;
+// this layer adds the mentor's voice (Spark for open questions —
+// deterministic text wherever exact figures are on screen, so a
+// number the person confirms is never paraphrased by a model) and
+// shapes the response like every other action's.
+// ---------------------------------------------------------------------------
+const CHAT_STATIC_MESSAGES = {
+  confirm: 'Here is what I heard from that — check it before I use any of it. If a line is wrong, fix it right on the card.',
+  revise: 'Tell me what I got wrong: correct the answers below, then answer the mirror question again. Nothing changes until you confirm it.',
+  cap: `We have used this chat's ${CHAT_TURN_CAP} messages and there is no verdict yet — nothing you confirmed is lost. Continue in the classic form: it picks up from exactly the answers you confirmed.`,
+};
+
+function chatPacket(session) {
+  const view = chatStateView(session);
+  const def = wireDef(session);
+  return {
+    kind: view.kind,
+    turns: view.turns,
+    cap: view.cap,
+    def,
+    candidates: def && def.candidates ? def.candidates : null,
+    missing: view.missing,
+    staged_values: view.staged_values,
+    confirm: view.pending
+      ? { stage: view.pending.stage, values: view.pending.values, lines: view.pending.lines, revise: !!view.pending.revise }
+      : null,
+    instruction_flag: view.instruction_flag,
+  };
+}
+
 function baseResponse(sessionId, session, extra = {}) {
   return {
     ok: true,
@@ -287,6 +323,18 @@ export async function handleMentorRequest(body) {
       if (msg.text) session.transcript.push({ stage: 'cddq', who: 'mentor', text: msg.text });
       const persistence = await persistSession(sessionId, session);
       return { status: 200, json: baseResponse(sessionId, session, { mentor_message: msg.text, llm: msg.llm, persistence }) };
+    }
+
+    if (action === 'chat_start') {
+      // Conversational intake (brief §6): same session, same opening —
+      // the chat state rides along from the first response.
+      const session = createSession(body.door);
+      ensureChat(session);
+      const sessionId = randomUUID();
+      const msg = await sparkMessage({ def: stagePrompt(session), session, lastUserText: null });
+      if (msg.text) session.transcript.push({ stage: 'cddq', who: 'mentor', text: msg.text });
+      const persistence = await persistSession(sessionId, session);
+      return { status: 200, json: baseResponse(sessionId, session, { mentor_message: msg.text, llm: msg.llm, persistence, chat: chatPacket(session) }) };
     }
 
     // -----------------------------------------------------------------
@@ -470,6 +518,48 @@ export async function handleMentorRequest(body) {
 
     if (action === 'current') {
       return { status: 200, json: baseResponse(sessionId, session, { mentor_message: null, llm: { status: 'not_called' } }) };
+    }
+
+    if (action === 'chat') {
+      // Conversational intake (brief §6). All state transitions run
+      // through engine/chat.mjs (extraction → confirm → the same
+      // apply functions the cards use); this layer only adds the
+      // mentor's voice and the packet. A rejected input answers 400
+      // with the module's own plain line and NO session — the client
+      // keeps the state it had, exactly as with the card actions.
+      ensureChat(session);
+      const syncStagePointer = () => {
+        const prog = deriveProgress(session);
+        if (prog.cddqDone && prog.stagesAnswered < 6 && session.phase !== 'done' && session.phase !== 'stage6') {
+          session.phase = 'stages';
+          session.stage_index = prog.stagesAnswered;
+        }
+      };
+      syncStagePointer();
+      try {
+        applyChatInput(session, {
+          text: typeof body.text === 'string' ? body.text : undefined,
+          chips: body.chips && typeof body.chips === 'object' && !Array.isArray(body.chips) ? body.chips : undefined,
+          confirm: body.confirm === true,
+          fix_values: body.fix_values && typeof body.fix_values === 'object' && !Array.isArray(body.fix_values) ? body.fix_values : undefined,
+          revise: body.revise && typeof body.revise === 'object' && !Array.isArray(body.revise) ? body.revise : undefined,
+        }, await getProfessions());
+      } catch (e) {
+        return { status: 400, json: { ok: false, error: (e && e.message) || 'Those answers could not be applied — nothing was changed.' } };
+      }
+      syncStagePointer();
+      const packet = chatPacket(session);
+      let msg = { text: null, llm: { status: 'not_called' } };
+      const transcriptStage = session.phase === 'cddq' ? 'cddq' : (session.phase === 'stage6' ? 6 : session.stage_index);
+      if (packet.kind === 'question' || packet.kind === 'fit') {
+        msg = await sparkMessage({ def: stagePrompt(session), session, lastUserText: typeof body.text === 'string' ? body.text : null });
+        if (msg.text) session.transcript.push({ stage: transcriptStage, who: 'mentor', text: msg.text });
+      } else if (CHAT_STATIC_MESSAGES[packet.kind]) {
+        msg = { text: CHAT_STATIC_MESSAGES[packet.kind], llm: { status: 'not_called' } };
+        session.transcript.push({ stage: transcriptStage, who: 'mentor', text: msg.text });
+      }
+      const persistence = await persistSession(sessionId, session);
+      return { status: 200, json: baseResponse(sessionId, session, { mentor_message: msg.text, llm: msg.llm, persistence, chat: packet }) };
     }
 
     // -----------------------------------------------------------------

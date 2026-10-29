@@ -14,7 +14,17 @@ export {
   buildChecklist,
   deserializeSession,
   serializeSession,
+  validateTailValue,
+  normalizeValuesRank,
+  isFilled,
+  STAGES_DATA,
 } from './engine/interview.mjs';
+export {
+  ensureChat,
+  applyChatInput,
+  chatStateView,
+  CHAT_TURN_CAP,
+} from './engine/chat.mjs';
 export { scorePerson } from './engine/scoring.mjs';
 export { metaRespond, MODELS, sanitizeUserText } from './engine/llm.mjs';
 export { generatePlayground, templateDay } from './engine/playground.mjs';

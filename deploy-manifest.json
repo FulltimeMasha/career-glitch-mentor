@@ -1397,8 +1397,8 @@
   },
   {
    "file": "mentor.html",
-   "sha": "c41880dcbd58c29eafceeed0823a96ac6b74a399",
-   "size": 94935
+   "sha": "431c6a47847ef398bdf1cb23ab88860ab0da2a9b",
+   "size": 94961
   },
   {
    "file": "api/mentor.js",
@@ -1407,18 +1407,18 @@
   },
   {
    "file": "api/_lib/mentor-core.mjs",
-   "sha": "e082696a821f5405e56a031074292977cda15e68",
-   "size": 34959
+   "sha": "c0c034814fc556becee8d75e672813927704f8d4",
+   "size": 39895
   },
   {
    "file": "api/_lib/engine-bridge.mjs",
-   "sha": "b6b3d01c94d7038415813303770d3944a0e68945",
-   "size": 862
+   "sha": "7236064f182dd402b6816e075c9d10ead08dcb08",
+   "size": 1036
   },
   {
    "file": "api/_lib/engine/interview.mjs",
-   "sha": "e8e3e32fe5bf37a2605f7a7ac92a3c855ee40095",
-   "size": 53596
+   "sha": "6b41ec2642eb9aca79b20b06ed4df47fffc1c017",
+   "size": 53791
   },
   {
    "file": "api/_lib/engine/llm.mjs",
@@ -1854,7 +1854,22 @@
    "file": "api/_lib/data/programs.json",
    "sha": "75b6a67d704fed941f3efc05d967ed7afc551429",
    "size": 2364
+  },
+  {
+   "file": "chat.js",
+   "sha": "a8ff6379e123cefacaf9902d4e5888006ff96851",
+   "size": 31301
+  },
+  {
+   "file": "api/_lib/engine/chat.mjs",
+   "sha": "63380cec234502a288ccff1ecd1d029b9284207b",
+   "size": 19962
+  },
+  {
+   "file": "api/_lib/engine/chat-extract.mjs",
+   "sha": "b270c484b04a74a257957a21dc5da3028ac9baa5",
+   "size": 21139
   }
  ],
- "deployment": "dpl_HyngNBpZYYZyQjoneg2L3qY3vF7J"
+ "deployment": "dpl_4ytC2YHayCdy6zKTWms8L4wtdKqE"
 }

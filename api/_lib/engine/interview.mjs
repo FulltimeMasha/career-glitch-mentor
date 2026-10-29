@@ -87,7 +87,7 @@ const DOORS = ['start', 'pivot', 'bridge'];
 const CDDQ_TIE_BREAK = ['inconsistent_information', 'lacks_information', 'not_ready'];
 const PERCEIVED_FIT_VALUES = ['mine', 'tolerable', 'not_mine'];
 
-const isFilled = (v) => {
+export const isFilled = (v) => {
   if (v === null || v === undefined) return false;
   if (typeof v === 'string') return v.trim().length > 0;
   if (Array.isArray(v)) return v.length > 0;
@@ -113,7 +113,7 @@ function deriveAgeBand(age) {
  *  Object-form ranks must be a true forced ranking — integers 1..6, all
  *  distinct (audit V1, 27.10.2026: any numbers at all were accepted, so
  *  a rank of 99 silently poisoned the needs–supplies math). */
-function normalizeValuesRank(raw) {
+export function normalizeValuesRank(raw) {
   if (!raw) return null;
   if (Array.isArray(raw)) {
     // Ordered list, most important first.
@@ -159,7 +159,7 @@ function normalizeValuesRank(raw) {
 // ---------------------------------------------------------------------------
 const NUMBER_SANITY_CEILING = 100000;
 
-function validateTailValue(item, value) {
+export function validateTailValue(item, value) {
   switch (item.kind) {
     case 'number':
     case 'scale': {
@@ -282,6 +282,7 @@ export function createSession(door) {
     cddq_type: null,
     structured: {},
     transcript: [],
+    chat: null, // conversational-intake state (engine/chat.mjs); null until used
     candidates: null,
     result: null,
     person: null,
@@ -304,6 +305,7 @@ export function deserializeSession(json) {
     cddq_type: s.cddq_type ?? null,
     structured: s.structured ?? {},
     transcript: s.transcript ?? [],
+    chat: (s.chat && typeof s.chat === 'object' && !Array.isArray(s.chat)) ? s.chat : null,
     candidates: s.candidates ?? null,
     result: s.result ?? null,
     person: s.person ?? null,
