@@ -776,6 +776,15 @@ const BRIDGE_NOTE = 'The input also contains "bridge_pick" — a stable hired jo
 // fourth match.
 const SIDE_HUSTLE_NOTE = 'The input also contains "side_hustle_pick" — ONE side-hustle idea the engine picked for extra money on the side. After the top-candidates section, add one short section titled "A side-hustle idea". Name it once. Say plainly: nobody hires you into it — it is extra money built sale by sale next to a main job, not a career, not a match and not a verdict. Argue it ONLY from its why_side lines and its figures in the JSON; invent nothing. Two or three sentences, no more.';
 
+// Appended to REPORT_STRUCTURE only when the person NAMED a goal and
+// the deterministic engine evaluated it (result.target_evaluation,
+// Matchmaker 2.0 core): the letter owes the named job its own section —
+// the verdict on it, the exact line of theirs that shut the door when
+// it is shut, and the printed ladder path when the path is what clears
+// their floor. Presentation only — every fact is already final on the
+// evaluation card; the writer argues from the card, never around it.
+const TARGET_NOTE = 'The input also contains "target_evaluation" — the job (or jobs) this person NAMED as their goal, each already evaluated by the deterministic engine on its own card. After the top-candidates section (and after the cushion / side-hustle sections when present), add one section titled "The job you named", with one short part per evaluated goal. For a matched goal: name it, give the matchmaker verdict from its card (YES or NO) and its honest standing for this person. If "in_top3" is true, say it stands in the three at its honest grade, not a promoted one. If it is ruled out, name the blocker(s) from "ruled_out_by" in plain words — which line of theirs shut this door (their no-nights line, their training limit, the market verdict, the documents gate) — never soften it into "not the right time". If the card carries a "floor_path", print the path: the rungs in order, the rung it reaches their pay floor at, that rung\'s pay, and the years of steps the card gives. If it clears the floor only at the top tier or the top tenth of earners, say exactly that. If the card gives a ladder ("ladder.entry_steps"), name the first rung with its training time and entry cost from the card. For an unmatched goal ("matched": false): say plainly that no exact match for that name exists in the checked base and it was not silently swapped for a different job, and name the nearest field when the card gives one. Argue ONLY from the target_evaluation cards and the result JSON; invent nothing — every figure (pay, step costs, months, years) must be a figure the card itself carries.';
+
 export async function generateReport(session, opts = {}) {
   if (!session.result) {
     throw new Error('generateReport: session has no scoring result yet (finish stage 5 first)');
@@ -818,7 +827,8 @@ export async function generateReport(session, opts = {}) {
     ? REPORT_STRUCTURE_INSUFFICIENT
     : (REPORT_STRUCTURE
       + (session.result && session.result.bridge_pick ? '\n' + BRIDGE_NOTE : '')
-      + (session.result && session.result.side_hustle_pick ? '\n' + SIDE_HUSTLE_NOTE : ''));
+      + (session.result && session.result.side_hustle_pick ? '\n' + SIDE_HUSTLE_NOTE : '')
+      + (session.result && (session.result.target_evaluation || []).length ? '\n' + TARGET_NOTE : ''));
   if (opts && typeof opts.verifyFeedback === 'string' && opts.verifyFeedback.trim()) {
     // Correction pass (verification layer, engine/verify.mjs): the
     // previous draft failed the checker's audit; the mismatches are

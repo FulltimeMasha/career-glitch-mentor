@@ -1,0 +1,21 @@
+Regression gate → https://careerglitch-8j7sne5wd-pro38.vercel.app/api/mentor  (random n=40, seed=1, base=professions-base.json)
+
+Sessions 51 (completed 51, with results 38) · modes {"bands":34,"direct":7,"insufficient_data":10} · 390s
+Top3 stub share 0% (base 4%) · distinct jobs 49 · most frequent: Med Spa Owner 7, UX/UI Designer 5, IT Support Specialist 4, Corporate Trainer 3, Aesthetic Nurse / Nurse Injector 3
+
+Attacks:
+  PASS  skip to stage 5 must be rejected
+  PASS  forged result must not reach the report
+  PASS  flipping not_ready → lacks_information must be rejected
+  PASS  Point A with no required fields must be rejected
+  PASS  unknown option value must be rejected
+  PASS  null in optional fields must be accepted
+  PASS  rank6 with ties must be rejected
+
+SOFT no single job dominates (≤15% of sessions)  — 1 case(s)
+   · Med Spa Owner in 7 of 38 sessions with results
+
+SOFT ≤20% of results have fewer than 3 cards  — 1 case(s)
+   · 21 of 38
+
+FAIL — 0 hard + 2 soft rule(s) broken. Do not deploy.

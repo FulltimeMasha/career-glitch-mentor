@@ -187,6 +187,35 @@ export function buildGroundTruth(session, professions = null) {
   const moneyK = new Set();
   const trainingMonths = new Set();
   const scores = new Set();
+  const years = new Set();
+  const extraMonths = new Set();
+  // Ladder figures (Matchmaker 2.0 core B): the letter prints ladder
+  // paths — a floor_path's rungs, reaching pay and years of steps, and
+  // the entry/next steps' pay, training and entry costs. Those figures
+  // are checked data like any other: they ground the letter's target
+  // and ladder sentences exactly like a candidate's own pay does.
+  const addPath = (fp) => {
+    if (!fp) return;
+    if (isNum(fp.via_pay_k)) moneyK.add(fp.via_pay_k);
+    if (isNum(fp.months_to_floor)) extraMonths.add(fp.months_to_floor);
+    if (isNum(fp.years_to_floor)) {
+      years.add(fp.years_to_floor);
+      years.add(Math.floor(fp.years_to_floor));
+      years.add(Math.ceil(fp.years_to_floor));
+    }
+    for (const s of fp.steps || []) {
+      if (isNum(s.pay_k)) moneyK.add(s.pay_k);
+      if (isNum(s.cumulative_months)) extraMonths.add(s.cumulative_months);
+    }
+  };
+  const addLadder = (l) => {
+    if (!l) return;
+    for (const s of [...(l.entry_steps || []), ...(l.next_steps || [])]) {
+      if (isNum(s.pay_k)) moneyK.add(s.pay_k);
+      if (isNum(s.training_months)) { trainingMonths.add(s.training_months); extraMonths.add(s.training_months); }
+      if (isNum(s.cost_k)) moneyK.add(s.cost_k);
+    }
+  };
   for (const c of cands) {
     if (isNum(c.payK)) moneyK.add(c.payK);
     if (isNum(c.pay_top_quartile_k)) moneyK.add(c.pay_top_quartile_k);
@@ -196,17 +225,35 @@ export function buildGroundTruth(session, professions = null) {
       if (!b) continue;
       for (const v of [b.lo, b.mid, b.hi]) if (isNum(v)) scores.add(v);
     }
+    addPath(c.floor_path);
+    addLadder(c.ladder);
+  }
+  // The stated-target cards are checked data too (their own pay and
+  // training, their bands, their floor path and ladder, the first
+  // rung's cost) — the letter's "The job you named" section argues
+  // from exactly these figures.
+  for (const t of result.target_evaluation || []) {
+    if (!t || t.matched !== true) continue;
+    if (isNum(t.pay_k)) moneyK.add(t.pay_k);
+    if (isNum(t.training_months)) trainingMonths.add(t.training_months);
+    for (const b of [t.love, t.potential]) {
+      if (!b) continue;
+      for (const v of [b.lo, b.mid, b.hi]) if (isNum(v)) scores.add(v);
+    }
+    addPath(t.floor_path);
+    addLadder(t.ladder);
+    if (t.entry_step) addLadder({ entry_steps: [t.entry_step], next_steps: [] });
   }
   if (isNum(person.income_floor_k)) moneyK.add(person.income_floor_k);
   if (isNum(person.current_income_k)) moneyK.add(person.current_income_k);
   if (isNum(res.budget_k)) moneyK.add(res.budget_k);
 
   const months = new Set([...trainingMonths, 1, 2, 3]); // plan months 1–3
+  for (const m of extraMonths) months.add(m);
   if (isNum(res.cushion_months)) months.add(res.cushion_months);
   const insufficient = result.mode === 'insufficient_data';
   if (insufficient) { months.add(6); months.add(12); }
 
-  const years = new Set();
   if (isNum(person.age)) years.add(person.age);
   const percents = new Set();
   const decimals = new Set(scores);
@@ -313,6 +360,16 @@ const CLAIM_INSTRUCTIONS = [
  *  would make the check circular. */
 function slimResultFacts(result) {
   if (!result) return null;
+  const slimPath = (fp) => (fp ? {
+    via_name: fp.via_name ?? null,
+    via_pay_k: fp.via_pay_k ?? null,
+    years_to_floor: fp.years_to_floor ?? null,
+    steps: (fp.steps || []).map((s) => ({ name: s.name, pay_k: s.pay_k ?? null })),
+  } : null);
+  const slimLadder = (l) => (l ? {
+    entry_steps: (l.entry_steps || []).map((s) => ({ name: s.name, training_months: s.training_months ?? null, cost_k: s.cost_k ?? null, pay_k: s.pay_k ?? null })),
+    next_steps: (l.next_steps || []).map((s) => ({ name: s.name })),
+  } : null);
   const slim = (c) => ({
     name: c.name,
     category: c.category,
@@ -324,7 +381,24 @@ function slimResultFacts(result) {
     floor_status: c.floor_status ?? null,
     love: c.love ? { lo: c.love.lo, hi: c.love.hi } : null,
     potential: c.potential ? { lo: c.potential.lo, hi: c.potential.hi } : null,
+    floor_path: slimPath(c.floor_path),
+    ladder: slimLadder(c.ladder),
   });
+  const slimTarget = (t) => (t && t.matched ? {
+    requested: t.requested,
+    name: t.name,
+    verdict: t.verdict ?? null,
+    category: t.category ?? null,
+    payK: t.pay_k ?? null,
+    training_months: t.training_months ?? null,
+    floor_status: t.floor_status ?? null,
+    seatable: !!t.seatable,
+    in_top3: !!t.in_top3,
+    ruled_out_by: (t.ruled_out_by || []).map((b) => b.name || b.filter),
+    floor_path: slimPath(t.floor_path),
+    ladder: slimLadder(t.ladder),
+    entry_step: t.entry_step ? { name: t.entry_step.name, training_months: t.entry_step.training_months ?? null, cost_k: t.entry_step.cost_k ?? null } : null,
+  } : { requested: t ? t.requested : null, matched: false, nearest_field: t ? (t.nearest_field ?? null) : null });
   return {
     mode: result.mode,
     income_floor_k: result.income_floor_k ?? null,
@@ -332,6 +406,7 @@ function slimResultFacts(result) {
     bottom: (result.bottom3 || []).map(slim),
     cushion: result.bridge_pick ? slim(result.bridge_pick) : null,
     side_hustle: result.side_hustle_pick ? slim(result.side_hustle_pick) : null,
+    targets: (result.target_evaluation || []).map(slimTarget),
   };
 }
 

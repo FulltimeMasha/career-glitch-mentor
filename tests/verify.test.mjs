@@ -225,3 +225,89 @@ test('extractFigures: ranges carry their unit to both endpoints', () => {
   assert.deepEqual(dec.sort(), [0.5, 0.8]);
   assert.ok(figs.some((f) => f.type === 'percent' && f.value === 13));
 });
+
+// ---------------------------------------------------------------------------
+// Ladder + stated-target figures (Matchmaker 2.0 core B): the letter's
+// "The job you named" section and the ladder paths printed on cards
+// carry figures that live ONLY on floor_path / ladder / the target
+// card — step pay, step costs, cumulative months, years to the floor.
+// The number audit must ground exactly those, and still catch
+// inventions next to them.
+// ---------------------------------------------------------------------------
+
+function targetSession() {
+  const s = fakeSession();
+  s.result.income_floor_k = 100;
+  s.person.income_floor_k = 100;
+  s.result.target_evaluation = [{
+    requested: 'Registered Nurse', matched: true, matched_via: 'base_name',
+    slug: 'registered-nurse', name: 'Registered Nurse', verdict: 'YES',
+    category: 'B', love: { lo: 0.6, mid: 0.7, hi: 0.82 }, potential: { lo: 0.55, mid: 0.66, hi: 0.78 },
+    pay_k: 98, training_months: 36, floor_status: 'clears_via_ladder',
+    floor_path: {
+      reaches_floor: true, via_slug: 'med-spa-owner', via_name: 'Med Spa Owner', via_pay_k: 150,
+      years_to_floor: 4, months_to_floor: 48,
+      steps: [
+        { slug: 'registered-nurse', name: 'Registered Nurse', pay_k: 98, cumulative_months: 36 },
+        { slug: 'med-spa-owner', name: 'Med Spa Owner', pay_k: 150, cumulative_months: 48 },
+      ],
+    },
+    ruled_out_by: [{ filter: 'nights_red_line', name: 'your no-nights line', detail: 'crossed your no-nights line' }],
+    seatable: false, in_top3: false,
+    ladder: {
+      entry_steps: [{ slug: 'certified-nursing-assistant', name: 'Certified Nursing Assistant', training_months: 2, cost_k: 1, pay_k: 42 }],
+      next_steps: [{ slug: 'nurse-practitioner', name: 'Nurse Practitioner', training_months: 48, cost_k: null, pay_k: 132 }],
+      prerequisites: [],
+    },
+    entry_step: { slug: 'certified-nursing-assistant', name: 'Certified Nursing Assistant', training_months: 2, cost_k: 1, pay_k: 42 },
+  }];
+  return s;
+}
+
+test('ground truth: target-card and ladder figures enter the checked sets', () => {
+  const gt = buildGroundTruth(targetSession());
+  assert.ok(gt.moneyK.has(98), 'target pay');
+  assert.ok(gt.moneyK.has(150), 'floor-path reaching pay');
+  assert.ok(gt.moneyK.has(42), 'entry step pay');
+  assert.ok(gt.moneyK.has(1), 'entry step cost');
+  assert.ok(gt.moneyK.has(132), 'next step pay');
+  assert.ok(gt.months.has(48), 'months to floor');
+  assert.ok(gt.months.has(36), 'cumulative step months');
+  assert.ok(gt.months.has(2), 'entry step training months');
+  assert.ok(gt.years.has(4), 'years to floor');
+  assert.ok([...gt.percents].some((p) => Math.abs(p - 60) < 0.01) && [...gt.percents].some((p) => Math.abs(p - 82) < 0.01), 'target band edges as percents');
+});
+
+test('number audit: a letter section built from target/ladder figures passes clean', () => {
+  const text = [
+    'The job you named is Registered Nurse. Typical pay is about $98K, and entry training takes about 36 months.',
+    'The ladder in starts with Certified Nursing Assistant: about 2 months, $1K to enter, paying about $42K.',
+    'The path reaches Med Spa Owner at $150K in about 4 years of steps, over the $100K minimum you named.',
+    'From Registered Nurse the ladder grows to Nurse Practitioner at $132K.',
+  ].join('\n\n');
+  assert.deepEqual(auditNumbers(targetSession(), text), []);
+});
+
+test('number audit: invented step cost and invented years are still caught beside real ladder figures', () => {
+  const bad = 'The first step costs $7K to enter, and the path reaches the top in about 5 years.';
+  const issues = auditNumbers(targetSession(), bad);
+  const tokens = issues.map((i) => i.token);
+  assert.ok(tokens.some((t) => t.includes('7')), `expected the $7K step cost flagged, got ${JSON.stringify(issues)}`);
+  assert.ok(tokens.some((t) => t.includes('5')), `expected the 5-year path flagged, got ${JSON.stringify(issues)}`);
+});
+
+test('ground truth: a top-3 candidate\'s own ladder figures are grounded too', () => {
+  const s = targetSession();
+  s.result.top3[0].floor_status = 'clears_via_ladder';
+  s.result.top3[0].floor_path = {
+    reaches_floor: true, via_slug: 'med-spa-owner', via_name: 'Med Spa Owner', via_pay_k: 150,
+    years_to_floor: 4, months_to_floor: 48,
+    steps: [{ slug: 'doula', name: 'Doula', pay_k: 75, cumulative_months: 12 }],
+  };
+  s.result.top3[0].ladder = {
+    entry_steps: [{ slug: 'certified-nursing-assistant', name: 'Certified Nursing Assistant', training_months: 2, cost_k: 1, pay_k: 42 }],
+    next_steps: [], prerequisites: [],
+  };
+  const text = 'It starts under your floor, but its ladder reaches Med Spa Owner at $150K in about 4 years. The first rung, Certified Nursing Assistant, costs $1K.';
+  assert.deepEqual(auditNumbers(s, text), []);
+});
