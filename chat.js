@@ -39,7 +39,7 @@
     ".chat-cardbox h3{font-family:Outfit,sans-serif;margin:0 0 8px;font-size:17px}" +
     ".chat-line{font-size:15px;line-height:1.45;padding:6px 0;border-bottom:1px dashed rgba(28,26,31,.12)}" +
     ".chat-line:last-of-type{border-bottom:none}" +
-    ".chat-line .drop{float:right;color:#b03a6b;cursor:pointer;font-size:13px;background:none;border:none;font:inherit}" +
+    ".chat-line .drop{float:right;margin-left:12px;color:#b03a6b;cursor:pointer;font-size:13px;background:none;border:none;font:inherit}" +
     ".chat-line.struck{opacity:.45;text-decoration:line-through}" +
     ".chat-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}" +
     ".chat-row-top{margin-top:0;margin-bottom:10px}" +

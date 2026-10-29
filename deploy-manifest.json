@@ -1397,8 +1397,8 @@
   },
   {
    "file": "mentor.html",
-   "sha": "431c6a47847ef398bdf1cb23ab88860ab0da2a9b",
-   "size": 94961
+   "sha": "58c57ec94fa4167090009f85034df6989f37d7ca",
+   "size": 94972
   },
   {
    "file": "api/mentor.js",
@@ -1857,8 +1857,8 @@
   },
   {
    "file": "chat.js",
-   "sha": "fb5fda3d025fb75c67a519a26778367a1501d715",
-   "size": 37020
+   "sha": "825c6045c0acfbeb6589a0c73c70771d4fff0e5f",
+   "size": 37037
   },
   {
    "file": "api/_lib/engine/chat.mjs",
@@ -1869,7 +1869,12 @@
    "file": "api/_lib/engine/chat-extract.mjs",
    "sha": "66e735926a807cfd39d36f9820b7f5c222a9f3fb",
    "size": 22485
+  },
+  {
+   "file": "ux.js",
+   "sha": "8d5b27b9ece081cffa0f490d071b1ae2cb2aa032",
+   "size": 10496
   }
  ],
- "deployment": "dpl_7qTXLWvvRvrpki53xBNgpnRr19YD"
+ "deployment": "dpl_Q1tnNhA1JZgy79fNxd6zU85s3aDZ"
 }
