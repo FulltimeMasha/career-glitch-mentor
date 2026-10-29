@@ -137,6 +137,74 @@ async function chatDrive({ inject = false } = {}) {
   return out;
 }
 
+// The EARLY DUMPER (banking fix, 29.10.2026): the same Marina, but
+// her FIRST chat message — sent while the chat is still on the CDDQ
+// opening — is the verbatim fact dump a real user typed into prod
+// (parent's live check: before the fix it extracted nothing, the
+// chat said "Got it" and Point A re-asked every field blank). The
+// driver asserts the facts are proposed back in that same turn,
+// fixes the dump's two loose captures on the card (the profession
+// phrasing, "about 2 hours" -> her exact 2.5) — the card is where a
+// person corrects what was heard — and then checks that Point A
+// does not re-ask what she already confirmed, that every confirmed
+// value is the coded answer the engine holds, and that the verdict
+// is the card-driven Marina's.
+const CHAT_DUMP = "I'm 37, I live in Charlotte, North Carolina. I run my own painting and renovation business. I need at least $100,000 a year, my budget for training is $5,000, I have a 3 month cushion and about 2 hours a day. No night shifts and I won't relocate. I have a bachelor's degree in engineering from Belarus.";
+
+async function chatDriveEarly() {
+  const out = { calls: 0, messages: 0, errors: [], confirmed: {}, proposals: [], dumpProposal: null, pointAMissing: null, pointAStaged: null };
+  let j = await api({ action: 'chat_start', door: 'pivot' }); out.calls++;
+  if (!j.ok) { out.errors.push(`chat_start ${j._status}: ${(j.error || '').slice(0, 100)}`); return out; }
+  let sid = j.session_id, sess = j.session;
+  const call = async (body) => {
+    out.calls++;
+    if (body.text || body.confirm || body.fix_values) out.messages++;
+    const r = await api({ action: 'chat', session_id: sid, session: sess, ...body });
+    if (!r.ok) { out.errors.push(`chat ${r._status}: ${(r.error || '').slice(0, 120)}`); return r; }
+    sid = r.session_id; sess = r.session;
+    if (r.chat && r.chat.confirm) out.proposals.push(r.chat.confirm.values);
+    return r;
+  };
+  const confirmLast = async () => {
+    const pend = out.proposals[out.proposals.length - 1];
+    await call({ confirm: true });
+    if (pend) for (const [k, v] of Object.entries(pend)) out.confirmed[k] = v;
+  };
+  const chips = async (c) => { await call({ chips: c }); for (const [k, v] of Object.entries(c)) out.confirmed[k] = v; };
+
+  const r0 = await call({ text: CHAT_DUMP });
+  out.dumpProposal = r0.chat && r0.chat.confirm ? r0.chat.confirm.values : null;
+  if (out.dumpProposal) {
+    const fixed = { ...out.dumpProposal, current_profession_name: 'Painting Company Owner', hours_per_day: 2.5 };
+    await call({ fix_values: fixed });
+    for (const [k, v] of Object.entries(fixed)) out.confirmed[k] = v;
+  }
+  const rC = await call({ chips: { cddq_vote_1: 'missing_facts', cddq_vote_2: 'missing_knowledge', cddq_vote_3: 'would_study_first' } });
+  if (rC.chat) {
+    out.pointAMissing = (rC.chat.missing || []).map(m => m.field);
+    out.pointAStaged = rC.chat.staged_values || {};
+  }
+  await call({ text: CHAT_TEXT0 });
+  await confirmLast();
+  await call({ text: CHAT_TEXT1 });
+  await confirmLast();
+  await call({ chips: CHAT_STAGE2, text: 'registered nurse' });
+  await confirmLast();
+  await chips(CHAT_STAGE3);
+  await chips(CHAT_STAGE4);
+  await chips({ mirror_confirmed: 'confirmed' });
+  const cand = (sess.result && sess.result.top3 || []).map(c => c.slug);
+  const ratings = {}; cand.forEach(sl => { ratings[sl] = 'tolerable'; });
+  out.calls++;
+  const f = await api({ action: 'fit', session_id: sid, session: sess, ratings });
+  if (!f.ok) out.errors.push(`fit ${f._status}: ${(f.error || '').slice(0, 120)}`);
+  else sess = f.session;
+  out.session = sess;
+  out.result = (f && f.result) || (sess && sess.result) || null;
+  out.turns = sess && sess.chat ? sess.chat.turns : null;
+  return out;
+}
+
 // ---------- rule book ----------
 // Cause B (28.10.2026): the gate's name-regex heuristics (NIGHTS /
 // PUBLIC / RELOC / ADULT) are RETIRED. The base now carries the facts
@@ -254,6 +322,7 @@ const doors = ['start', 'pivot', 'bridge'];
 const rand = await pool(Array.from({ length: N }, (_, i) => () => session(doors[i % 3], {})));
 const chatClean = await chatDrive();
 const chatDirty = await chatDrive({ inject: true });
+const chatEarly = await chatDriveEarly();
 pers.forEach((o, i) => check(o, `persona "${PERSONAS[i].name}"`));
 spec.forEach((o, i) => check(o, `special "${SPECIAL[i].name}"`));
 rand.forEach((o, i) => check(o, `random #${i}`));
@@ -342,6 +411,37 @@ PERSONAS.forEach((p, i) => { const t = top3(pers[i]); if (!t.some(x => p.expect.
   if (!eq(dirtyTop, chatTopSlugs)) add('HARD chat: injection run result identical to the clean run', `dirty ${dirtyTop.join(' | ')} vs clean ${chatTopSlugs.join(' | ')}`);
   if (/astronaut/i.test(JSON.stringify(chatDirty.result || {}))) add('HARD chat: no Astronaut in the injection run result', 'the injected profession surfaced');
   console.log(`\nChat intake: clean ${chatClean.calls} calls / ${chatClean.messages} messages (server turns ${chatClean.turns}), injection ${chatDirty.calls} calls / ${chatDirty.messages} messages, proposals clean ${chatClean.proposals.length} vs injection ${chatDirty.proposals.length}`);
+
+  // Early dumper (banking fix, 29.10.2026 — gate change recorded
+  // separately in the commit): facts typed at the chat OPENING must
+  // bank. (i) The dump is proposed back in the same turn, carrying
+  // the extractable Point A facts; (ii) after the fix/confirm, the
+  // coded answers the engine holds equal the confirmed set; (iii)
+  // the verdict equals the card-driven Marina's; (iv) at Point A
+  // the confirmed facts are not re-asked — they sit in the staged
+  // answers and out of the missing list.
+  if (chatEarly.errors.length) add('HARD chat: session must never error', `early: ${chatEarly.errors[0]}`);
+  if (!chatEarly.result || !(chatEarly.result.top3 || []).length) add('HARD chat: a verdict is reached', 'early: no result');
+  if (chatEarly.calls > 25) add('HARD chat: ≤25 calls to a first result', `early: ${chatEarly.calls} calls`);
+  const dp = chatEarly.dumpProposal || {};
+  for (const [k, v] of Object.entries({ state: 'North Carolina', income_floor_k: 100, budget_k: 5, cushion_months: 3, hours_per_day: 2, degree_field: 'engineering', degree_country: 'Belarus' })) {
+    if (!eq(dp[k], v)) add('HARD chat: opener dump proposed back in the same turn (banking)', `${k}: proposed ${JSON.stringify(dp[k])} vs dumped ${JSON.stringify(v)}`);
+  }
+  const est = (chatEarly.session && chatEarly.session.structured) || {};
+  for (const [k, v] of Object.entries(chatEarly.confirmed)) {
+    if (!eq(est[k], v)) add('HARD chat: confirmed value == coded answer the engine used (early dumper)', `${k}: confirmed ${JSON.stringify(v)} vs coded ${JSON.stringify(est[k])}`);
+  }
+  const earlyTop = ((chatEarly.result || {}).top3 || []).map(x => x.slug);
+  if (!eq(earlyTop, cardTop)) add('HARD chat: early dumper verdict == card Marina verdict', `early ${earlyTop.join(' | ')} vs card ${cardTop.join(' | ')}`);
+  const pMiss = chatEarly.pointAMissing || [];
+  for (const f of ['country', 'age', 'income_floor_k', 'cushion_months', 'hours_per_day', 'budget_k']) {
+    if (pMiss.includes(f)) add('HARD chat: confirmed opener facts are not re-asked at Point A (banking)', `${f} is in the Point A missing list`);
+  }
+  const pStaged = chatEarly.pointAStaged || {};
+  if (pStaged.income_floor_k !== 100 || pStaged.cushion_months !== 3 || pStaged.state !== 'North Carolina') {
+    add('HARD chat: banked facts wait staged for Point A (banking)', `staged floor=${pStaged.income_floor_k} cushion=${pStaged.cushion_months} state=${pStaged.state}`);
+  }
+  console.log(`Chat early dumper: ${chatEarly.calls} calls / ${chatEarly.messages} messages (server turns ${chatEarly.turns}), dump proposed ${chatEarly.dumpProposal ? Object.keys(chatEarly.dumpProposal).length : 0} fields in turn 1`);
 }
 
 // soft (distribution) rules

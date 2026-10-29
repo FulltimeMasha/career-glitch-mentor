@@ -30,6 +30,20 @@
 //     never proposed again — extraction fills gaps, it does not
 //     overwrite. Changing an applied answer goes through the revise
 //     path (engine/chat.mjs), which is also confirmed.
+//   * BANKING (fix, 29.10.2026): the Point A fact set is extracted
+//     from EVERY message, whatever stage is being answered. A person
+//     who front-loads their facts at the chat opening ("I'm 37, I
+//     live in Charlotte…, my floor is $100K…") previously lost them
+//     silently — extraction only ran at stages 0/1/2, the opener
+//     extracted nothing, and Point A then asked everything again
+//     blank (verified live on prod). Now those facts become the same
+//     confirmable proposal they would have been at stage 0, in the
+//     same turn they were typed; engine/chat.mjs routes each
+//     confirmed value home (staged for its stage's own completion,
+//     or into the coded answers when that stage already applied).
+//     Scored and enumerated fields still extract NOWHERE from text —
+//     banking widens WHEN the factual set is read, never WHAT can be
+//     read from prose.
 // ---------------------------------------------------------------------------
 
 import { extractStage0Numbers } from './interview.mjs';
@@ -329,6 +343,12 @@ function parseStatedTarget(text) {
 // answering NOW (0..5), or 'cddq'. `have` is the set of fields already
 // answered anywhere (structured ∪ staged ∪ this call's chips) —
 // extraction fills gaps only. Returns { values, instructionLike }.
+//
+// The stage's own extractor runs first (history at stage 1, the named
+// goal at stage 2); then the Point A fact set is BANKED from the same
+// message whatever the stage (see the banking rule above). The two
+// sets are field-disjoint, and the gap rule keeps either from ever
+// re-proposing an answered field.
 // ---------------------------------------------------------------------------
 export function extractChatAnswers(stageId, rawText, have = new Set()) {
   const text = String(rawText || '');
@@ -338,24 +358,26 @@ export function extractChatAnswers(stageId, rawText, have = new Set()) {
   const out = {};
   const put = (field, v) => { if (v !== null && v !== undefined && !have.has(field)) out[field] = v; };
 
-  if (stageId === 0) {
-    const nums = extractStage0Numbers(text);
-    for (const [k, v] of Object.entries(nums)) put(k, v);
-    const place = parsePlace(text);
-    put('country', place.country); put('state', place.state);
-    put('current_profession_name', parseCurrentProfession(text));
-    put('documents_ok', parseDocumentsOk(lower));
-    put('health_limits', parseHealthLimits(lower));
-    put('languages', parseLanguages(lower));
-    const deg = parseDegree(text, lower);
-    for (const [k, v] of Object.entries(deg)) put(k, v);
-  } else if (stageId === 1) {
+  if (stageId === 1) {
     const s1 = parseStage1(lower);
     for (const [k, v] of Object.entries(s1)) put(k, v);
   } else if (stageId === 2) {
     put('stated_target', parseStatedTarget(text));
   }
-  // Stages 3/4/5 and the CDDQ opening extract nothing: every field
-  // there is a scored or enumerated answer and arrives by chips.
+  // Banking: the Point A facts are read from EVERY message — the
+  // opener, the scored stages, the mirror. Everything scored or
+  // enumerated (values, scales, RIASEC items, tolerances, red lines,
+  // stage-6 ratings) still arrives by chips only: no parser below
+  // can produce those fields.
+  const nums = extractStage0Numbers(text);
+  for (const [k, v] of Object.entries(nums)) put(k, v);
+  const place = parsePlace(text);
+  put('country', place.country); put('state', place.state);
+  put('current_profession_name', parseCurrentProfession(text));
+  put('documents_ok', parseDocumentsOk(lower));
+  put('health_limits', parseHealthLimits(lower));
+  put('languages', parseLanguages(lower));
+  const deg = parseDegree(text, lower);
+  for (const [k, v] of Object.entries(deg)) put(k, v);
   return { values: out, instructionLike: false };
 }

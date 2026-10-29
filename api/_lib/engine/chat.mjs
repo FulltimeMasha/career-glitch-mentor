@@ -19,6 +19,16 @@
 //             proposal) moves it into the staged answers. While a
 //             proposal is open, no stage completes — the engine can
 //             never consume a value the person has not seen.
+//             BANKING (fix, 29.10.2026): extraction also reads the
+//             Point A fact set from messages sent at ANY stage (a
+//             fact dump typed at the CDDQ opening previously vanished
+//             — verified live on prod). A confirmed banked value is
+//             routed home: staged, when its stage is current or
+//             still ahead (that stage's own completion consumes it,
+//             exactly as if typed at home); written into the coded
+//             answers through the revision machinery, when its stage
+//             has already applied (an optional fact volunteered late
+//             can never be re-staged — nothing would consume it).
 //   revise  — corrections to already-applied answers (the stage-5
 //             mirror's "corrected" path): validated writes into
 //             structured, with the result recomputed exactly the way
@@ -155,6 +165,18 @@ function owningItem(field) {
   return null;
 }
 
+// The index of the stage whose tail owns a field, or null when no
+// stage owns it (the CDDQ votes — extraction never proposes those,
+// so a proposal never needs routing for them). Compared against
+// deriveProgress().stagesAnswered it tells whether the field's home
+// stage has already been applied.
+function homeStageIndex(field) {
+  for (let i = 0; i < STAGES.length; i++) {
+    if ((STAGES[i].tail || []).some((t) => t.field === field)) return i;
+  }
+  return null;
+}
+
 // Write corrections into the applied answers and, when a result
 // already exists, recompute it exactly the way the report path does
 // (person rebuilt from structured, deterministic engine re-run,
@@ -244,10 +266,39 @@ export function applyChatInput(session, input = {}, professions = null) {
       confirmPlan = { values, drop: [], via: hasFix ? 'fix' : 'text', target: 'revise' };
     } else if (hasFix) {
       const only = new Set(Object.keys(chat.pending.values));
-      const { values, drop } = validateValueMap(surface, input.fix_values, { onlyFields: only });
+      // A proposal may carry BANKED facts whose home stage is not
+      // the surface on screen (a Point A dump confirmed during the
+      // CDDQ opening): their fix values validate against the OWNING
+      // stage's item rules, not the current surface's.
+      const extraItems = [...only]
+        .map((f) => owningItem(f))
+        .filter((it) => it && !surface.items.some((t) => t.field === it.field));
+      const { values, drop } = validateValueMap({ items: [...surface.items, ...extraItems] }, input.fix_values, { onlyFields: only });
       confirmPlan = { values, drop, via: 'fix' };
     } else {
       confirmPlan = { values: { ...chat.pending.values }, drop: [], via: 'text' };
+    }
+    // Route every confirmed value home (banking, 29.10.2026): a
+    // field whose stage is current or still ahead waits in the
+    // staged answers for that stage's own completion; a field whose
+    // stage has ALREADY applied is written straight into the coded
+    // answers by applyRevisions in the mutation phase — validated
+    // HERE, against its owning stage's rules, because the session is
+    // client-held and a pending proposal inside it is forgeable: an
+    // out-of-range value must be rejected before anything mutates,
+    // never trusted into structured.
+    const progNow = deriveProgress(session);
+    confirmPlan.staged = {};
+    confirmPlan.late = {};
+    for (const [f, v] of Object.entries(confirmPlan.values)) {
+      const home = homeStageIndex(f);
+      if (home != null && home < progNow.stagesAnswered) {
+        const item = owningItem(f);
+        try { confirmPlan.late[f] = validateTailValue(item, v); }
+        catch { throw new Error(`One answer could not be used: “${(item && item.label) || f}”. Nothing was changed — check it and send again.`); }
+      } else {
+        confirmPlan.staged[f] = v;
+      }
     }
   }
   let chipPlan = null;
@@ -292,9 +343,15 @@ export function applyChatInput(session, input = {}, professions = null) {
   }
   if (confirmPlan) {
     for (const f of confirmPlan.drop) delete chat.staged[f];
-    for (const [f, v] of Object.entries(confirmPlan.values)) {
+    for (const [f, v] of Object.entries(confirmPlan.staged)) {
       chat.staged[f] = v;
       logResult(chat, surface.key, f, v, confirmPlan.via);
+    }
+    // Banked facts whose home stage already applied land directly
+    // in the coded answers (validated in the phase above); dropped
+    // late fields simply never land — nothing was staged for them.
+    if (Object.keys(confirmPlan.late).length) {
+      applyRevisions(session, confirmPlan.late, professions, chat, confirmPlan.via);
     }
     chat.pending = null;
   }
@@ -309,11 +366,14 @@ export function applyChatInput(session, input = {}, professions = null) {
       // A proposal REPLACES any earlier unconfirmed proposal for the
       // same stage — it never merges silently, and nothing already
       // staged or applied is inside it (the extractor's gap rule).
+      // Banked fields belong to a stage that may not be on screen:
+      // their confirm lines come from the OWNING stage's item, so a
+      // fact confirmed at the opening still shows its label and unit.
       const itemsByField = new Map(surface.items.map((t) => [t.field, t]));
       chat.pending = {
         stage: surface.key,
         values: extraction.values,
-        lines: Object.entries(extraction.values).map(([f, v]) => describeValue(itemsByField.get(f) || { field: f, label: f }, v)),
+        lines: Object.entries(extraction.values).map(([f, v]) => describeValue(itemsByField.get(f) || owningItem(f) || { field: f, label: f }, v)),
       };
     } else if (chat.mirror_corrected && !chat.pending) {
       // Mirror "corrected" mode: the person is fixing APPLIED

@@ -87,10 +87,43 @@ test('extraction: the named goal — labelled and bare forms', () => {
   assert.equal(extractChatAnswers(2, 'I want to become an electrician one day', new Set()).values.stated_target, 'electrician');
 });
 
-test('extraction: scored stages and the opening extract nothing from text', () => {
+test('extraction: scored answers never come from text — at any stage', () => {
   for (const stageId of ['cddq', 3, 4, 5]) {
     const { values } = extractChatAnswers(stageId, 'no nights, no public speaking, I love building things, definitely a 4', new Set());
-    assert.deepEqual(values, {}, `stage ${stageId} must stay chip-only`);
+    assert.deepEqual(values, {}, `stage ${stageId} must stay chip-only for scored fields`);
+  }
+  // …but a factual Point A statement inside the same prose banks
+  // (banking, 29.10.2026): the fact is proposed, the scored content
+  // around it still extracts nothing.
+  const mixed = extractChatAnswers(3, 'no nights for me. Also, my budget is $5K.', new Set());
+  assert.deepEqual(mixed.values, { budget_k: 5 });
+});
+
+// The exact fact dump a person typed into the chat OPENING in the
+// live prod check of 29.10.2026 (Marina's facts, her phrasing) —
+// before the fix it extracted nothing there and Point A re-asked
+// every field blank.
+const OPENER_DUMP = "I'm 37, I live in Charlotte, North Carolina. I run my own painting and renovation business. I need at least $100,000 a year, my budget for training is $5,000, I have a 3 month cushion and about 2 hours a day. No night shifts and I won't relocate. I have a bachelor's degree in engineering from Belarus.";
+
+test('banking: the opener dump maps to the Point A facts at EVERY stage', () => {
+  for (const stageId of ['cddq', 0, 1, 2, 3, 4, 5]) {
+    const { values, instructionLike } = extractChatAnswers(stageId, OPENER_DUMP, new Set());
+    assert.equal(instructionLike, false);
+    assert.equal(values.state, 'North Carolina', `stage ${stageId}`);
+    assert.equal(values.country, 'United States', `stage ${stageId}`);
+    assert.equal(values.age, 37, `stage ${stageId}`);
+    assert.equal(values.income_floor_k, 100, `stage ${stageId}`);
+    assert.equal(values.budget_k, 5, `stage ${stageId}`);
+    assert.equal(values.cushion_months, 3, `stage ${stageId} — the number-first "3 month cushion" form`);
+    assert.equal(values.hours_per_day, 2, `stage ${stageId}`);
+    assert.equal(values.degree_field, 'engineering', `stage ${stageId}`);
+    assert.equal(values.degree_country, 'Belarus', `stage ${stageId}`);
+    assert.equal(values.degree_status, 'foreign_degree', `stage ${stageId}`);
+    assert.equal(values.degree_level, 'bachelor', `stage ${stageId}`);
+    // NOT in the extractor's vocabulary, by design: "no night
+    // shifts" / "won't relocate" are the scored red_lines field —
+    // they arrive by stage-3 chips, never from prose.
+    assert.equal('red_lines' in values, false, `stage ${stageId}`);
   }
 });
 
@@ -150,6 +183,75 @@ test('a rejected input leaves the session untouched (validation before mutation)
   assert.throws(() => applyChatInput(s, { chips: { not_a_field: 1 } }, professions));
   assert.throws(() => applyChatInput(s, { confirm: true }, professions)); // nothing pending
   assert.equal(JSON.stringify(s), before);
+});
+
+// ---------------------------------------------------------------- banking
+test('banking: a dump at the opening is proposed in the same turn and confirmed before anything advances', () => {
+  const s = createSession('pivot'); ensureChat(s);
+  applyChatInput(s, { text: OPENER_DUMP }, professions);
+  const view = chatStateView(s);
+  assert.equal(view.kind, 'confirm', 'the proposal is on screen in the same turn the facts were typed');
+  assert.equal(view.pending.values.income_floor_k, 100);
+  assert.equal(view.pending.values.cushion_months, 3);
+  assert.ok(view.pending.lines.some((l) => l.includes('$100K')), 'banked lines carry units from the owning stage');
+  assert.ok(view.pending.lines.some((l) => l.includes('North Carolina')));
+  assert.equal(s.structured.income_floor_k, undefined, 'nothing is used before the OK');
+  // CDDQ chips sent while the proposal is open stage their votes but
+  // the opening does NOT complete behind an unconfirmed card.
+  applyChatInput(s, { chips: MARINA.cddq }, professions);
+  assert.equal(deriveProgress(s).cddqDone, false, 'no stage advances past an open proposal');
+  applyChatInput(s, { confirm: true }, professions);
+  assert.equal(deriveProgress(s).cddqDone, true, 'the opening completes once the card is confirmed');
+  // The banked facts wait in the staged answers for Point A itself…
+  assert.equal(s.chat.staged.income_floor_k, 100);
+  assert.equal(s.chat.staged.state, 'North Carolina');
+  // …and Point A does not re-ask them: only the facts the dump did
+  // not carry are still missing.
+  const atPointA = chatStateView(s);
+  assert.equal(atPointA.surface_key, 0);
+  const missingFields = atPointA.missing.map((m) => m.field);
+  for (const f of ['country', 'age', 'income_floor_k', 'cushion_months', 'hours_per_day', 'budget_k']) {
+    assert.equal(missingFields.includes(f), false, `${f} was confirmed at the opening — not re-asked`);
+  }
+  assert.deepEqual(missingFields.sort(), ['documents_ok', 'health_limits', 'languages']);
+});
+
+test('banking: fixing a banked proposal at the opening validates against the owning stage', () => {
+  const s = createSession('pivot'); ensureChat(s);
+  applyChatInput(s, { text: OPENER_DUMP }, professions);
+  const pending = chatStateView(s).pending.values;
+  applyChatInput(s, { fix_values: { ...pending, income_floor_k: 90, current_profession_name: 'Painting Company Owner' } }, professions);
+  assert.equal(s.chat.staged.income_floor_k, 90, 'the fixed value is the banked value');
+  assert.equal(s.chat.staged.current_profession_name, 'Painting Company Owner');
+  // A fix the owning stage's rules reject changes nothing at all.
+  const s2 = createSession('pivot'); ensureChat(s2);
+  applyChatInput(s2, { text: OPENER_DUMP }, professions);
+  const before = JSON.stringify(s2);
+  assert.throws(() => applyChatInput(s2, { fix_values: { ...chatStateView(s2).pending.values, income_floor_k: 'lots' } }, professions));
+  assert.equal(JSON.stringify(s2), before);
+});
+
+test('banking: a fact volunteered after its stage applied lands in the coded answers', () => {
+  const s = createSession('pivot'); ensureChat(s);
+  applyChatInput(s, { chips: MARINA.cddq }, professions);
+  // Point A completed by chips alone — the optional degree fields
+  // are never given, so stage 0 applies without them.
+  applyChatInput(s, { chips: {
+    country: 'United States', age: 37, income_floor_k: 100, cushion_months: 3,
+    hours_per_day: 2, budget_k: 5, documents_ok: 'yes', health_limits: ['none'], languages: ['en'],
+  } }, professions);
+  assert.equal(deriveProgress(s).stagesAnswered, 1);
+  assert.equal(s.structured.degree_level, undefined);
+  applyChatInput(s, { text: "By the way — I have a master's degree in engineering, and I worked in the field for 12 years." }, professions);
+  const prop = chatStateView(s).pending;
+  assert.ok(prop && !prop.revise, 'a late fact is an ordinary proposal, shown back first');
+  assert.equal(prop.values.degree_level, 'master');
+  assert.equal(s.structured.degree_level, undefined, 'still unapplied before the OK');
+  applyChatInput(s, { confirm: true }, professions);
+  assert.equal(s.structured.degree_level, 'master', 'the confirmed late fact lands in the coded answers');
+  assert.equal(s.structured.degree_field, 'engineering');
+  assert.equal(s.structured.degree_years, 12);
+  assert.equal(s.chat.staged.degree_level, undefined, 'it is not stranded in the staged answers');
 });
 
 // ------------------------------------------------------------ full drives

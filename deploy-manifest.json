@@ -1417,8 +1417,8 @@
   },
   {
    "file": "api/_lib/engine/interview.mjs",
-   "sha": "6b41ec2642eb9aca79b20b06ed4df47fffc1c017",
-   "size": 53791
+   "sha": "275b997129bfdefe4beb4dc6addb281c64b4dd4b",
+   "size": 54274
   },
   {
    "file": "api/_lib/engine/llm.mjs",
@@ -1862,14 +1862,14 @@
   },
   {
    "file": "api/_lib/engine/chat.mjs",
-   "sha": "63380cec234502a288ccff1ecd1d029b9284207b",
-   "size": 19962
+   "sha": "279304a59792775fdcc8a181d7c1dbd5f37eec1d",
+   "size": 23305
   },
   {
    "file": "api/_lib/engine/chat-extract.mjs",
-   "sha": "b270c484b04a74a257957a21dc5da3028ac9baa5",
-   "size": 21139
+   "sha": "66e735926a807cfd39d36f9820b7f5c222a9f3fb",
+   "size": 22485
   }
  ],
- "deployment": "dpl_4ytC2YHayCdy6zKTWms8L4wtdKqE"
+ "deployment": "dpl_EPeiqxE3TTgBJvnFzFUJonRPaHbF"
 }

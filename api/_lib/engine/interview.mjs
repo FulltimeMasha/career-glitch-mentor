@@ -465,6 +465,13 @@ export function extractStage0Numbers(text) {
   } else if ((m = t.match(new RegExp(`${NUM_TOKEN}\\s*months?\\s*of\\s*(?:savings|expenses|runway)`)))) {
     const v = numFromToken(m[1]);
     if (v != null && v <= 120) out.cushion_months = v;
+  } else if ((m = t.match(new RegExp(`${NUM_TOKEN}\\s*-?\\s*months?\\s+(?:of\\s+)?(?:cushion|runway|savings)`)))) {
+    // Number-first form: "I have a 3 month cushion" (chat banking QA,
+    // 29.10.2026 — the exact phrasing a person front-loading their
+    // facts in the chat opener used, and neither pattern above sees
+    // it: the keyword follows the number instead of preceding it).
+    const v = numFromToken(m[1]);
+    if (v != null && v <= 120) out.cushion_months = v;
   }
   // Age.
   if ((m = t.match(/(?:i am|i'm|age[:\s]+)\s*(\d{2})\b/)) || (m = t.match(/\b(\d{2})\s*years?\s*old\b/))) {
